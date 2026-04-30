@@ -24,14 +24,14 @@
 
         <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
           <StackPanel>
-            <TextBlock Text="Most Used Keyboards" FontWeight="Bold" />
+            <TextBlock Text="Top Keyboards by Connected Time" FontWeight="Bold" />
             <TextBlock Text="{Binding TopKeyboardsSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
           </StackPanel>
         </Border>
 
         <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
           <StackPanel>
-            <TextBlock Text="Most Used Mice" FontWeight="Bold" />
+            <TextBlock Text="Top Mice by Connected Time" FontWeight="Bold" />
             <TextBlock Text="{Binding TopMiceSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
           </StackPanel>
         </Border>
@@ -99,14 +99,14 @@
         Grid.Row="0"
         Grid.Column="0"
         Margin="4"
-        Model="{Binding KeyboardUsagePiePlot}"
+        Model="{Binding KeyboardConnectionDurationPiePlot}"
         Controller="{Binding PieHoverController}"
       />
       <oxy:PlotView
         Grid.Row="0"
         Grid.Column="1"
         Margin="4"
-        Model="{Binding MouseUsagePiePlot}"
+        Model="{Binding MouseConnectionDurationPiePlot}"
         Controller="{Binding PieHoverController}"
       />
 

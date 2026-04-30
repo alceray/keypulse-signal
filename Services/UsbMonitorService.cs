@@ -156,7 +156,7 @@ public class UsbMonitorService : IDisposable
         }
         else if (deviceEvent.EventType.IsClosingEvent())
         {
-            trackedDevice.CommitSessionUsage(deviceEvent.EventTime);
+            trackedDevice.CommitSession(deviceEvent.EventTime);
         }
 
         _dataService.SaveDevice(trackedDevice);

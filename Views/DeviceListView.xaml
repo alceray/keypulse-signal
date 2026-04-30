@@ -102,8 +102,8 @@
           Width="Auto"
         />
         <DataGridTextColumn
-          Header="Total Usage"
-          Binding="{Binding TotalUsage, Converter={StaticResource TimeSpanToStringConverter}}"
+          Header="Total Connected Time"
+          Binding="{Binding ConnectionDuration, Converter={StaticResource TimeSpanToStringConverter}}"
           MinWidth="80"
           Width="Auto"
         />

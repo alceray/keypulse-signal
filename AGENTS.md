@@ -39,7 +39,7 @@ Injection
     - Single source for all database operations
     - Runs migrations and enables SQLite WAL mode on startup
     - Crash recovery: detects unclean shutdowns and writes missing `AppEnded`/`ConnectionEnded` events
-    - Rebuilds persisted device usage snapshots from the event log on startup
+    - Rebuilds persisted device connection-duration snapshots from the event log on startup
     - Persists and queries minute-level `ActivitySnapshot` rows
     - See: `Services/DataService.cs`
 
@@ -56,7 +56,7 @@ Injection
 - **DeviceEvents** = immutable, append-only log of app/device lifecycle transitions (source of truth for connection
   history)
 - **Devices** = mutable, fast-read snapshot used by the UI (`DeviceName`, `DeviceType`, `LastConnectedAt`, stored
-  `TotalUsage`)
+  `ConnectionDuration`)
 - **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseActiveSeconds`
 - Updates flow in two directions:
     - lifecycle changes append to `DeviceEvents` and update the corresponding `Device` snapshot
@@ -73,7 +73,7 @@ Injection
     - database migrations run,
     - SQLite WAL mode is enabled,
     - `DataService.RecoverFromCrash()` backfills missing close events if needed,
-    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalUsage` and clears stale `SessionStartedAt`,
+    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `ConnectionDuration` and clears stale `SessionStartedAt`,
     - historical `Devices` / `DeviceEvents` are loaded,
     - the heartbeat timer starts.
 6. Show the main window immediately or initialize the tray icon, depending on background mode.
@@ -104,7 +104,7 @@ Event types are defined in `Models/DeviceEvent.cs` and categorized by `EventType
 Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 
 - opening events set `SessionStartedAt`
-- closing events commit elapsed time into stored usage and clear `SessionStartedAt`
+- closing events commit elapsed time into stored connection duration and clear `SessionStartedAt`
 - app-level events are logged without touching per-device state
 
 ### Device Identification
@@ -119,12 +119,12 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - **ObservableObject** base class (in `Helpers/`) wraps `INotifyPropertyChanged`
 - Automatically marshals property changes to UI thread via `Application.Current.Dispatcher`
 - See `Models/Device.cs` for example: `SessionStartedAt` triggers dependent notifications for `IsConnected` and
-  `TotalUsage`
+  `ConnectionDuration`
 - **Important**: `IsConnected` and `IsActive` are different concepts:
     - `IsConnected` means the device currently has an open connection session (`SessionStartedAt.HasValue`)
     - `IsActive` is a transient raw-input hold-state flag used to highlight devices while keys/buttons are currently
       held
-- **Important**: `TotalUsage` is computed while connected; it displays the stored value plus elapsed time since
+- **Important**: `ConnectionDuration` is computed while connected; it displays the stored value plus elapsed time since
   `SessionStartedAt`
 
 ### Raw Input Activity Semantics
@@ -136,9 +136,9 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
   0–60).
 - Completed minutes flush every 60 seconds; dispose/shutdown flushes the current partial minute as well.
 
-### Dashboard Behavior (Usage + Activity)
+### Dashboard Behavior (Connection Duration + Activity)
 
-- Dashboard top cards show current connected count and top-3 keyboard/mouse device usage summaries.
+- Dashboard top cards show current connected count and top-3 keyboard/mouse device connection-duration summaries.
 - Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `1 Year`, and `All Time`.
 - Activity chart supports configurable `bucketMinutes` and trailing moving-average `smoothingWindow` (both normalized
   to >= 1).
@@ -150,7 +150,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
     - `< 7 days`: `MM-dd HH:mm`
     - `>= 7 days and < 365 days`: `MM-dd`
     - `>= 365 days`: `yyyy-MM`
-- Pie charts use hover tracking metadata (status, usage, share, connection time text) and update dashboard hover-preview
+- Pie charts use hover tracking metadata (status, connection duration, share, connection time text) and update dashboard hover-preview
   state via tracker events.
 
 ### Duplicate Detection
@@ -219,11 +219,11 @@ dotnet ef database update SomeOlderMigrationName
 
 1. On startup, check if last app-lifecycle event was `AppStarted` (unmatched)
 2. If so, retroactively add `AppEnded` and `ConnectionEnded` for orphaned devices
-3. Event log stays consistent for future usage calculations
+3. Event log stays consistent for future connection-duration calculations
 
 **Snapshot Rebuild** (`DataService.RebuildDeviceSnapshots`):
 
-- Recomputes persisted `TotalUsage` from the event log
+- Recomputes persisted `ConnectionDuration` from the event log
 - Clears runtime-only `SessionStartedAt` so devices do not appear connected after an unclean shutdown
 - Called at startup after recovery
 
@@ -237,12 +237,12 @@ dotnet ef database update SomeOlderMigrationName
 - Only emits one `Connected` event per physical device insertion
 - DB unique constraint `(DeviceId, EventTime, EventType)` is secondary safeguard
 
-### CurrentSessionUsage ("Session" vs. "Total")
+### Current Session Connection Duration ("Session" vs. "Total")
 
 - **SessionStartedAt**: Set when device becomes active (opening event), cleared when inactive
 - **IsConnected**: Computed from `SessionStartedAt.HasValue`
 - **IsActive**: Separate transient hold-state driven by `RawInputService.ActivityStateChanged`
-- **TotalUsage**: Displays stored value + elapsed since SessionStartedAt (live tick while active)
+- **ConnectionDuration**: Displays stored value + elapsed since SessionStartedAt (live tick while active)
 - Avoids stale timing from unclean shutdown; current session always starts fresh
 
 ### ActivitySnapshots
@@ -251,7 +251,7 @@ dotnet ef database update SomeOlderMigrationName
 - `Keystrokes` counts key-down events.
 - `MouseClicks` counts mouse button-down events.
 - `MouseActiveSeconds` stores how many distinct seconds within the minute saw mouse movement.
-- The current code persists snapshots, but the main UI primarily exposes live connection/activity state and total usage
+- The current code persists snapshots, but the main UI primarily exposes live connection/activity state and total connection duration
   rather than a dedicated activity-history view.
 
 ### Device Name Resolution

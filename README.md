@@ -17,15 +17,15 @@ WMI (`System.Management`), Windows Raw Input (`WM_INPUT`), and the WinForms tray
 - Detects USB keyboard and mouse devices connected to the system at startup.
 - Monitors device insertion and removal events via WMI.
 - Maintains per-device session duration tracking for active connections.
-- Derives total usage metrics from persisted connection event history.
+- Derives total connection-duration metrics from persisted connection event history.
 - Records minute-level activity snapshots per device, including:
   - keystroke counts,
   - mouse click counts,
   - mouse movement active seconds (`0`-`60`).
 - Provides real-time visual indicators for active input (key/button hold state).
 - Implements a comprehensive dashboard featuring:
-  - connected-device and top-usage summary cards,
-  - keyboard/mouse usage distribution charts with configurable time ranges,
+  - connected-device and top connection-duration summary cards,
+  - keyboard/mouse connection-duration distribution charts with configurable time ranges,
   - activity timeline visualization with adjustable bucket size and smoothing parameters.
 - Offers a device management interface with support for device renaming and event history inspection.
 - Supports background/tray startup mode for production deployments.
@@ -58,12 +58,12 @@ WMI (`System.Management`), Windows Raw Input (`WM_INPUT`), and the WinForms tray
 - **Initialization sequence**:
   - Executes database migrations,
   - Performs crash recovery for unclean shutdowns if necessary,
-  - Rebuilds persisted device usage snapshots,
+  - Rebuilds persisted device connection-duration snapshots,
   - Loads persisted devices and lifecycle events,
   - Catalogs currently connected HID-compliant devices,
   - Initializes WMI event watchers for device state changes,
   - Begins capturing per-device raw input activity.
-- **Usage metrics**: `TotalUsage` is computed from connection events and continuously increments while a device maintains an active session.
+- **Connection duration metrics**: `ConnectionDuration` is computed from connection events and continuously increments while a device maintains an active session.
 - **Connection state**: `IsConnected` reflects the current connection state and is used for device list filtering.
 - **Activity state**: `IsActive` is a transient flag distinct from connection state, driven by momentary raw input (key/button hold) and used for activity highlighting only.
 - **Activity snapshots**: Input activity is persisted at minute-level granularity per device in the `ActivitySnapshots` table.
@@ -83,7 +83,7 @@ KeyPulse persists three main record types:
 
 - `Devices`
   - mutable snapshot for fast UI reads,
-  - stores metadata like `DeviceName`, `DeviceType`, `LastConnectedAt`, and persisted `TotalUsage`.
+  - stores metadata like `DeviceName`, `DeviceType`, `LastConnectedAt`, and persisted `ConnectionDuration`.
 - `DeviceEvents`
   - immutable lifecycle log,
   - stores `AppStarted`, `AppEnded`, `ConnectionStarted`, `ConnectionEnded`, `Connected`, and `Disconnected`.
@@ -172,5 +172,5 @@ For installed users, updates are installer-driven: run the latest installer over
   - owns database access,
   - runs migrations,
   - performs crash recovery,
-  - rebuilds persisted usage snapshots on startup,
+  - rebuilds persisted connection-duration snapshots on startup,
   - relies on `HeartbeatFile` to estimate the approximate end time of an unclean previous session.

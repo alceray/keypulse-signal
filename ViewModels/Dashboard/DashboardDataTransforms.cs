@@ -29,22 +29,22 @@ internal static class DashboardRangeResolver
 }
 
 /// <summary>
-/// Computes dashboard usage totals from device lifecycle events.
+/// Computes dashboard connection duration totals from device lifecycle events.
 /// </summary>
-internal static class DashboardUsageCalculator
+internal static class DashboardConnectionDurationCalculator
 {
     /// <summary>
-    /// Calculates per-device usage minutes within the requested range by pairing opening and closing events.
+    /// Calculates per-device connection-duration minutes within the requested range by pairing opening and closing events.
     /// Open sessions are clipped to <paramref name="rangeEnd"/>.
     /// </summary>
-    public static IReadOnlyDictionary<string, double> ComputeUsageMinutesByDevice(
+    public static IReadOnlyDictionary<string, double> ComputeConnectionDurationMinutesByDevice(
         IReadOnlyList<DeviceEvent> events,
         DateTime? rangeStart,
         DateTime rangeEnd
     )
     {
         var openByDevice = new Dictionary<string, DateTime>();
-        var usageByDevice = new Dictionary<string, double>();
+        var connectionDurationMinutesByDevice = new Dictionary<string, double>();
 
         foreach (var deviceEvent in events)
         {
@@ -60,8 +60,8 @@ internal static class DashboardUsageCalculator
             if (!openByDevice.TryGetValue(deviceEvent.DeviceId, out var startTime))
                 continue;
 
-            AddIntervalUsage(
-                usageByDevice,
+            AddIntervalConnectionDuration(
+                connectionDurationMinutesByDevice,
                 deviceEvent.DeviceId,
                 startTime,
                 deviceEvent.EventTime,
@@ -72,16 +72,23 @@ internal static class DashboardUsageCalculator
         }
 
         foreach (var (deviceId, startTime) in openByDevice)
-            AddIntervalUsage(usageByDevice, deviceId, startTime, rangeEnd, rangeStart, rangeEnd);
+            AddIntervalConnectionDuration(
+                connectionDurationMinutesByDevice,
+                deviceId,
+                startTime,
+                rangeEnd,
+                rangeStart,
+                rangeEnd
+            );
 
-        return usageByDevice;
+        return connectionDurationMinutesByDevice;
     }
 
     /// <summary>
-    /// Adds a clipped interval duration to the target usage accumulator.
+    /// Adds a clipped interval duration to the target connection-duration accumulator.
     /// </summary>
-    private static void AddIntervalUsage(
-        IDictionary<string, double> usageByDevice,
+    private static void AddIntervalConnectionDuration(
+        IDictionary<string, double> connectionDurationMinutesByDevice,
         string deviceId,
         DateTime intervalStart,
         DateTime intervalEnd,
@@ -98,9 +105,12 @@ internal static class DashboardUsageCalculator
         if (end <= start)
             return;
 
-        var usageMinutes = (end - start).TotalMinutes;
-        usageByDevice[deviceId] = usageByDevice.TryGetValue(deviceId, out var existing)
-            ? existing + usageMinutes
-            : usageMinutes;
+        var connectionDurationMinutes = (end - start).TotalMinutes;
+        connectionDurationMinutesByDevice[deviceId] = connectionDurationMinutesByDevice.TryGetValue(
+            deviceId,
+            out var existing
+        )
+            ? existing + connectionDurationMinutes
+            : connectionDurationMinutes;
     }
 }

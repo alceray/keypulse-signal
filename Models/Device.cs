@@ -24,13 +24,13 @@ public enum DeviceTypes
 
 /// <summary>
 /// Represents a connected USB input device (keyboard, mouse, etc.).
-/// Tracks device metadata, connection status, and usage statistics.
+/// Tracks device metadata, connection status, and connection duration statistics.
 /// </summary>
 [Table("Devices")]
 public class Device : ObservableObject
 {
     private string _deviceName = "";
-    private TimeSpan _storedTotalUsage = TimeSpan.Zero;
+    private TimeSpan _storedConnectionDuration = TimeSpan.Zero;
     private DateTime? _sessionStartedAt;
     private DateTime? _lastConnectedAt;
     private DateTime? _lastSeenAt;
@@ -73,24 +73,24 @@ public class Device : ObservableObject
     public bool IsConnected => _sessionStartedAt.HasValue;
 
     /// <summary>
-    /// Cumulative usage time snapshot rebuilt from connection event boundaries.
+    /// Cumulative connection duration snapshot rebuilt from connection event boundaries.
     /// While active, display value ticks by adding elapsed time since SessionStartedAt.
     /// </summary>
-    public TimeSpan TotalUsage
+    public TimeSpan ConnectionDuration
     {
         get
         {
             if (!_sessionStartedAt.HasValue)
-                return _storedTotalUsage;
+                return _storedConnectionDuration;
 
             var elapsed = DateTime.Now - _sessionStartedAt.Value;
-            return _storedTotalUsage + (elapsed > TimeSpan.Zero ? elapsed : TimeSpan.Zero);
+            return _storedConnectionDuration + (elapsed > TimeSpan.Zero ? elapsed : TimeSpan.Zero);
         }
         set
         {
-            if (!_storedTotalUsage.Equals(value))
+            if (!_storedConnectionDuration.Equals(value))
             {
-                _storedTotalUsage = value;
+                _storedConnectionDuration = value;
                 OnPropertyChanged();
             }
         }
@@ -110,7 +110,7 @@ public class Device : ObservableObject
                 _sessionStartedAt = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(IsConnected));
-                OnPropertyChanged(nameof(TotalUsage));
+                OnPropertyChanged(nameof(ConnectionDuration));
             }
         }
     }
@@ -215,17 +215,17 @@ public class Device : ObservableObject
     }
 
     /// <summary>
-    /// Commits elapsed time from the active session into stored usage,
+    /// Commits elapsed time from the active session into stored connection duration,
     /// then marks the device as inactive.
     /// </summary>
-    public void CommitSessionUsage(DateTime endTime)
+    public void CommitSession(DateTime endTime)
     {
         if (!_sessionStartedAt.HasValue)
             return;
 
         var elapsed = endTime - _sessionStartedAt.Value;
         if (elapsed > TimeSpan.Zero)
-            _storedTotalUsage += elapsed;
+            _storedConnectionDuration += elapsed;
 
         SessionStartedAt = null;
     }
@@ -235,7 +235,7 @@ public class Device : ObservableObject
     /// </summary>
     public void RefreshDynamicProperties()
     {
-        OnPropertyChanged(nameof(TotalUsage));
+        OnPropertyChanged(nameof(ConnectionDuration));
         OnPropertyChanged(nameof(LastConnectedRelative));
         OnPropertyChanged(nameof(LastSeenRelative));
     }

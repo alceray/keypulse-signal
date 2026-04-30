@@ -284,12 +284,12 @@ public class DataService
     }
 
     /// <summary>
-    /// Recomputes total usage for a device from the event log.
+    /// Recomputes total connection duration for a device from the event log.
     /// Accepts an open context so callers sharing a unit of work can avoid extra round-trips.
     /// </summary>
-    private static TimeSpan ComputeTotalUsage(ApplicationDbContext ctx, string deviceId)
+    private static TimeSpan ComputeConnectionDuration(ApplicationDbContext ctx, string deviceId)
     {
-        var totalUsage = TimeSpan.Zero;
+        var connectionDuration = TimeSpan.Zero;
         DateTime? lastStartTime = null;
         var events = ctx.DeviceEvents.Where(e => e.DeviceId == deviceId).OrderBy(e => e.DeviceEventId).ToList();
 
@@ -300,11 +300,11 @@ public class DataService
             }
             else if (deviceEvent.EventType.IsClosingEvent() && lastStartTime.HasValue)
             {
-                totalUsage += deviceEvent.EventTime - lastStartTime.Value;
+                connectionDuration += deviceEvent.EventTime - lastStartTime.Value;
                 lastStartTime = null;
             }
 
-        return totalUsage;
+        return connectionDuration;
     }
 
     /// <summary>
@@ -400,7 +400,7 @@ public class DataService
             Log.Information("Snapshot rebuild started for {DeviceCount} devices", devices.Count);
             foreach (var device in devices)
             {
-                device.TotalUsage = ComputeTotalUsage(ctx, device.DeviceId);
+                device.ConnectionDuration = ComputeConnectionDuration(ctx, device.DeviceId);
                 device.SessionStartedAt = null;
                 device.LastSeenAt ??= GetLastDeviceEvent(device.DeviceId)?.EventTime;
             }
