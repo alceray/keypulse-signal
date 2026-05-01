@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.Management;
 using System.Windows;
 using KeyPulse.Configuration;
@@ -111,7 +112,19 @@ public class UsbMonitorService : IDisposable
 
     private void AddDeviceEvent(DeviceEvent deviceEvent, Device? device = null)
     {
-        Application.Current.Dispatcher.BeginInvoke(() => DeviceEventList.Add(deviceEvent));
+        // During disposal the WPF dispatcher has stopped pumping; skip all UI updates to
+        // avoid a Dispatcher.Invoke deadlock that would let Windows kill the process before
+        // shutdown completes. Data persistence still runs on the calling thread.
+        var appDispatcher = Application.Current?.Dispatcher;
+        var updateUi =
+            !_disposed
+            && appDispatcher != null
+            && !appDispatcher.HasShutdownStarted
+            && !appDispatcher.HasShutdownFinished;
+
+        if (updateUi)
+            appDispatcher!.BeginInvoke(() => DeviceEventList.Add(deviceEvent));
+
         _dataService.SaveDeviceEvent(deviceEvent);
 
         // Skip device operations for app-level events
@@ -120,22 +133,32 @@ public class UsbMonitorService : IDisposable
 
         var trackedDevice = device;
 
-        // Always resolve/apply state on the UI-bound DeviceList instance.
-        // DataService.GetDevice returns detached objects when using DbContextFactory,
-        // so mutating that instance does not update the UI.
-        Application.Current.Dispatcher.Invoke(() =>
+        if (updateUi)
         {
+            // Always resolve/apply state on the UI-bound DeviceList instance.
+            // DataService.GetDevice returns detached objects when using DbContextFactory,
+            // so mutating that instance does not update the UI.
+            appDispatcher!.Invoke(() =>
+            {
+                var existingDevice = DeviceList.FirstOrDefault(d => d.DeviceId == device.DeviceId);
+                if (existingDevice != null)
+                {
+                    trackedDevice = existingDevice;
+                    return;
+                }
+
+                device.PropertyChanged += Device_PropertyChanged;
+                DeviceList.Add(device);
+                trackedDevice = device;
+            });
+        }
+        else
+        {
+            // No UI to update — resolve against the in-memory list without dispatching.
             var existingDevice = DeviceList.FirstOrDefault(d => d.DeviceId == device.DeviceId);
             if (existingDevice != null)
-            {
                 trackedDevice = existingDevice;
-                return;
-            }
-
-            device.PropertyChanged += Device_PropertyChanged;
-            DeviceList.Add(device);
-            trackedDevice = device;
-        });
+        }
 
         // Perform device state management based on event type
         trackedDevice.LastSeenAt = deviceEvent.EventTime;
@@ -253,6 +276,12 @@ public class UsbMonitorService : IDisposable
                 DeviceId = deviceId,
                 EventType = EventTypes.Connected,
             };
+            Log.Information(
+                "Device lifecycle event: {EventType} {DeviceId} at {EventTime}",
+                connectedEvent.EventType.ToString(),
+                connectedEvent.DeviceId,
+                connectedEvent.EventTime.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture)
+            );
             AddDeviceEvent(connectedEvent, device);
             _cachedDevices.TryRemove(deviceId, out _);
         }
@@ -285,6 +314,12 @@ public class UsbMonitorService : IDisposable
                 EventType = EventTypes.Disconnected,
                 EventTime = DateTime.Now,
             };
+            Log.Information(
+                "Device lifecycle event: {EventType} {DeviceId} at {EventTime}",
+                disconnectedEvent.EventType.ToString(),
+                disconnectedEvent.DeviceId,
+                disconnectedEvent.EventTime.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture)
+            );
             AddDeviceEvent(disconnectedEvent, device);
         }
         catch (Exception ex)
@@ -458,6 +493,31 @@ public class UsbMonitorService : IDisposable
             Log.Error(ex, "Failed to clear heartbeat file");
         }
 
+        // Stop WMI watchers first so no new insert/remove callbacks can race against the
+        // shutdown writes below or try to Dispatcher.Invoke into the stopping dispatcher.
+        try
+        {
+            if (_insertWatcher != null)
+            {
+                _insertWatcher.EventArrived -= DeviceInsertedEvent;
+                _insertWatcher.Stop();
+                _insertWatcher.Dispose();
+                _insertWatcher = null;
+            }
+            if (_removeWatcher != null)
+            {
+                _removeWatcher.EventArrived -= DeviceRemovedEvent;
+                _removeWatcher.Stop();
+                _removeWatcher.Dispose();
+                _removeWatcher = null;
+            }
+            Log.Information("USB WMI watchers stopped and disposed");
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Failed to stop USB WMI watchers");
+        }
+
         var sessionTimestamp = DateTime.Now;
         var disconnectedDeviceCount = 0;
 
@@ -485,29 +545,6 @@ public class UsbMonitorService : IDisposable
             );
 
         AddDeviceEvent(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = sessionTimestamp });
-
-        try
-        {
-            if (_insertWatcher != null)
-            {
-                _insertWatcher.EventArrived -= DeviceInsertedEvent;
-                _insertWatcher.Stop();
-                _insertWatcher.Dispose();
-                _insertWatcher = null;
-            }
-            if (_removeWatcher != null)
-            {
-                _removeWatcher.EventArrived -= DeviceRemovedEvent;
-                _removeWatcher.Stop();
-                _removeWatcher.Dispose();
-                _removeWatcher = null;
-            }
-            Log.Information("USB WMI watchers stopped and disposed");
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to stop USB WMI watchers");
-        }
 
         shutdownStopwatch.Stop();
         Log.Information("USB monitoring shutdown completed in {ElapsedMs}ms", shutdownStopwatch.ElapsedMilliseconds);
