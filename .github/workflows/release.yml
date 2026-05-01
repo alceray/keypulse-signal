@@ -25,6 +25,32 @@ jobs:
         shell: pwsh
         run: echo "VERSION=$($env:GITHUB_REF_NAME -replace '^v','')" >> $env:GITHUB_OUTPUT
 
+      - name: Extract release notes from changelog
+        id: notes
+        shell: pwsh
+        run: |
+          $version = "${{ steps.version.outputs.VERSION }}"
+          $changelogPath = "CHANGELOG.md"
+          $notesPath = "release_notes.md"
+
+          if (-not (Test-Path $changelogPath)) {
+            throw "CHANGELOG.md not found."
+          }
+
+          $content = Get-Content $changelogPath -Raw
+          $normalized = $content -replace "`r`n", "`n"
+          $escapedVersion = [Regex]::Escape($version)
+          $pattern = "(?ms)^##\s+\[$escapedVersion\].*?(?=^##\s+\[|\z)"
+          $match = [Regex]::Match($normalized, $pattern)
+
+          if (-not $match.Success) {
+            throw "No changelog section found for version $version in CHANGELOG.md"
+          }
+
+          $notes = $match.Value.Trim()
+          Set-Content -Path $notesPath -Value $notes -NoNewline
+          "NOTES_PATH=$notesPath" >> $env:GITHUB_OUTPUT
+
       - name: Restore & Publish
         shell: pwsh
         run: |
@@ -41,5 +67,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: installer/output/KeyPulse-Signal-Setup-*.exe
-          body_path: CHANGELOG.md
+          body_path: ${{ steps.notes.outputs.NOTES_PATH }}
 

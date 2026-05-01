@@ -2,19 +2,25 @@
 
 All notable changes to this project are documented in this file.
 
-## [Unreleased]
+## [1.1.1] - 2026-04-30
 
 ### Added
 
-- Auto-scroll-to-bottom in Troubleshooting log viewer when tab becomes visible or log content updates.
 - Troubleshooting view with log file browser, color-coded severity levels, search/filter, and live tail.
-- Color-coded and divider-styled log output for improved readability during troubleshooting.
+- Update-check settings with tray status integration for available updates.
 
 ### Changed
 
-- Renamed `TotalUsage` to `ConnectionDuration` throughout codebase and UI for consistency and clarity.
-- Icon management: Added `<ApplicationIcon>` to `.csproj`; icon displays on taskbar button and tray.
-- Improved dashboard refresh reliability when switching tabs.
+- Improved log messages for clearer troubleshooting and production diagnostics.
+- App now opens the main window on first launch before switching to normal tray/background behavior.
+- Centralized periodic timers into a shared timer service for more reliable refresh/update timing across views.
+- Updated application icon so it displays consistently on both taskbar and tray.
+- Renamed `TotalUsage` to `ConnectedTime` in the UI for clarity.
+
+### Fixed
+
+- Dashboard no longer stops periodic refresh after tab switches.
+- Duplicate `Connected` events from bursty WMI insert callbacks are now deduplicated more reliably.
 
 ## [1.1.0] - 2026-04-29
 
