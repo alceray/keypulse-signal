@@ -68,6 +68,7 @@ public partial class TroubleshootingView
     private readonly List<(int Start, int Length)> _matchRanges = [];
     private readonly List<Run> _matchRuns = [];
     private int _currentMatchIndex = -1;
+    private bool _scrollToEndPending;
 
     public TroubleshootingView()
     {
@@ -77,11 +78,18 @@ public partial class TroubleshootingView
         {
             SyncViewModel(e.NewValue as TroubleshootingViewModel);
             UpdateHighlightedLogContent();
+            QueueScrollToEnd();
         };
         Loaded += (_, _) =>
         {
             SyncViewModel(DataContext as TroubleshootingViewModel);
             UpdateHighlightedLogContent();
+            QueueScrollToEnd();
+        };
+        IsVisibleChanged += (_, e) =>
+        {
+            if ((bool)e.NewValue)
+                QueueScrollToEnd();
         };
         SizeChanged += (_, _) => UpdateHighlightedLogContent();
         Unloaded += (_, _) => SyncViewModel(null);
@@ -112,7 +120,7 @@ public partial class TroubleshootingView
 
     private void OnLogsRefreshed()
     {
-        Dispatcher.BeginInvoke(new Action(() => LogViewer.ScrollToEnd()), DispatcherPriority.Background);
+        QueueScrollToEnd();
     }
 
     private void ViewModelOnPropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -125,6 +133,25 @@ public partial class TroubleshootingView
             return;
 
         UpdateHighlightedLogContent();
+
+        if (e.PropertyName == nameof(TroubleshootingViewModel.LogContent))
+            QueueScrollToEnd();
+    }
+
+    private void QueueScrollToEnd()
+    {
+        if (_scrollToEndPending)
+            return;
+
+        _scrollToEndPending = true;
+        Dispatcher.BeginInvoke(
+            new Action(() =>
+            {
+                _scrollToEndPending = false;
+                LogViewer.ScrollToEnd();
+            }),
+            DispatcherPriority.Background
+        );
     }
 
     private void UpdateHighlightedLogContent()
