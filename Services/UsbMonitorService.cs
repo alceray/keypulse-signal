@@ -12,11 +12,8 @@ namespace KeyPulse.Services;
 
 public class UsbMonitorService : IDisposable
 {
-    private ManagementEventWatcher? _insertWatcher;
-    private ManagementEventWatcher? _removeWatcher;
-
-    public ObservableCollection<Device> DeviceList;
-    public ObservableCollection<DeviceEvent> DeviceEventList;
+    public ObservableCollection<Device> DeviceList { get; }
+    public ObservableCollection<DeviceEvent> DeviceEventList { get; }
     public DateTime AppSessionStartedAt { get; private set; }
 
     // A single physical USB connect can raise multiple WMI insert events in quick succession,
@@ -27,13 +24,16 @@ public class UsbMonitorService : IDisposable
     > _cachedDevices = new();
     private readonly ConcurrentDictionary<string, byte> _pendingCachedDeviceProcessing = new();
 
-    private static readonly TimeSpan SignalAggregationWindow = TimeSpan.FromSeconds(
-        AppConstants.UsbMonitoring.SignalAggregationSeconds
-    );
+    private const string DEFAULT_DEVICE_NAME = "Unknown Device";
+    private static readonly TimeSpan HeartbeatInterval = TimeSpan.FromSeconds(30);
+    private static readonly TimeSpan SignalAggregationWindow = TimeSpan.FromSeconds(3);
 
     private bool _disposed;
     private readonly DataService _dataService;
     private readonly Timer _heartbeatTimer;
+
+    private ManagementEventWatcher? _insertWatcher;
+    private ManagementEventWatcher? _removeWatcher;
 
     public UsbMonitorService(DataService dataService)
     {
@@ -50,12 +50,7 @@ public class UsbMonitorService : IDisposable
         // Write heartbeat immediately, then every 30 seconds, so RecoverFromCrash
         // has a recent timestamp if the process is force-killed.
         HeartbeatFile.Write();
-        _heartbeatTimer = new Timer(
-            _ => HeartbeatFile.Write(),
-            null,
-            TimeSpan.FromSeconds(AppConstants.UsbMonitoring.HeartbeatIntervalSeconds),
-            TimeSpan.FromSeconds(AppConstants.UsbMonitoring.HeartbeatIntervalSeconds)
-        );
+        _heartbeatTimer = new Timer(_ => HeartbeatFile.Write(), null, HeartbeatInterval, HeartbeatInterval);
     }
 
     /// <summary>
@@ -240,7 +235,7 @@ public class UsbMonitorService : IDisposable
 
             var device = _dataService.GetDevice(deviceId);
             var deviceType = UsbDeviceClassifier.ResolveDeviceType(keyboardSignals, mouseSignals);
-            var deviceName = DeviceNameLookup.GetDeviceName(deviceId) ?? AppConstants.UsbMonitoring.UnknownDeviceName;
+            var deviceName = DeviceNameLookup.GetDeviceName(deviceId) ?? DEFAULT_DEVICE_NAME;
 
             if (device == null)
                 device = new Device
@@ -402,7 +397,7 @@ public class UsbMonitorService : IDisposable
 
             var currDevice = DeviceList.FirstOrDefault(d => d.DeviceId == deviceId);
             var deviceType = UsbDeviceClassifier.ResolveDeviceType(keyboardSignals, mouseSignals);
-            var deviceName = DeviceNameLookup.GetDeviceName(deviceId) ?? AppConstants.UsbMonitoring.UnknownDeviceName;
+            var deviceName = DeviceNameLookup.GetDeviceName(deviceId) ?? DEFAULT_DEVICE_NAME;
 
             if (currDevice == null)
                 currDevice = new Device
@@ -427,11 +422,7 @@ public class UsbMonitorService : IDisposable
     private static bool IsUnknownDeviceName(string? deviceName)
     {
         return string.IsNullOrWhiteSpace(deviceName)
-            || string.Equals(
-                deviceName,
-                AppConstants.UsbMonitoring.UnknownDeviceName,
-                StringComparison.OrdinalIgnoreCase
-            );
+            || string.Equals(deviceName, DEFAULT_DEVICE_NAME, StringComparison.OrdinalIgnoreCase);
     }
 
     public void Dispose()

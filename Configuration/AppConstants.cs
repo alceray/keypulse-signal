@@ -63,11 +63,12 @@ public static class AppConstants
         public const string RunKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
     }
 
-    public static class UsbMonitoring
+    public static class Dashboard
     {
-        public const int SignalAggregationSeconds = 3;
-        public const int HeartbeatIntervalSeconds = 30;
-        public const string UnknownDeviceName = "Unknown Device";
+        public const int DefaultBucketMinutes = 10;
+        public const int DefaultSmoothingWindow = 2;
+        public static readonly IReadOnlyList<int> BucketSizeOptions = [5, 10, 15, 20, 30];
+        public static readonly IReadOnlyList<int> SmoothingWindowOptions = [1, 2, 3, 4, 5];
     }
 
     public static class Updates

@@ -1,5 +1,4 @@
-﻿using KeyPulse.Helpers;
-using KeyPulse.Models;
+﻿using KeyPulse.Models;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;

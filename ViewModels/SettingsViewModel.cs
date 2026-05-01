@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Threading;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
 using KeyPulse.Services;
@@ -20,7 +19,7 @@ public class SettingsViewModel : ObservableObject, IDisposable
     private string? _latestUpdateVersion;
     private bool _suppressAutoSave;
     private string _statusMessage = string.Empty;
-    private readonly DispatcherTimer _statusTimer;
+    private readonly StatusClearTimer _statusClearTimer;
 
     public SettingsViewModel(
         AppSettingsService appSettingsService,
@@ -39,12 +38,8 @@ public class SettingsViewModel : ObservableObject, IDisposable
         _isUpdateAvailable = _updateService.UpdateAvailable;
         _latestUpdateVersion = _updateService.LatestVersion;
 
-        _statusTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(3) };
-        _statusTimer.Tick += (_, _) =>
-        {
-            _statusTimer.Stop();
-            StatusMessage = string.Empty;
-        };
+        _statusClearTimer = new StatusClearTimer();
+        _statusClearTimer.Elapsed += (_, _) => StatusMessage = string.Empty;
 
         LoadSettings();
     }
@@ -94,10 +89,7 @@ public class SettingsViewModel : ObservableObject, IDisposable
             OnPropertyChanged(nameof(StatusVisibility));
 
             if (!string.IsNullOrEmpty(value))
-            {
-                _statusTimer.Stop();
-                _statusTimer.Start();
-            }
+                _statusClearTimer.Restart();
         }
     }
 
@@ -240,7 +232,7 @@ public class SettingsViewModel : ObservableObject, IDisposable
 
     public void Dispose()
     {
-        _statusTimer.Stop();
+        _statusClearTimer.Dispose();
         _appSettingsService.SettingsChanged -= OnSettingsChanged;
         _updateService.UpdateStatusChanged -= OnUpdateStatusChanged;
     }

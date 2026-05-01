@@ -7,8 +7,22 @@ namespace KeyPulse.ViewModels.Dashboard;
 /// </summary>
 internal static class DashboardRangeResolver
 {
+    public const string RangeOneDay = "1 Day";
+    public const string RangeOneWeek = "1 Week";
+    public const string RangeOneMonth = "1 Month";
+    public const string RangeOneYear = "1 Year";
+    public const string RangeAllTime = "All Time";
+    public const string DefaultRange = RangeOneWeek;
+
     /// <summary>Supported range filters shown in the dashboard toolbar.</summary>
-    public static readonly IReadOnlyList<string> RangeOptions = ["1 Day", "1 Week", "1 Month", "1 Year", "All Time"];
+    public static readonly IReadOnlyList<string> RangeOptions =
+    [
+        RangeOneDay,
+        RangeOneWeek,
+        RangeOneMonth,
+        RangeOneYear,
+        RangeAllTime,
+    ];
 
     /// <summary>
     /// Converts a selected range label to an optional range start.
@@ -18,11 +32,11 @@ internal static class DashboardRangeResolver
     {
         return selectedRange switch
         {
-            "1 Day" => now.AddDays(-1),
-            "1 Week" => now.AddDays(-7),
-            "1 Month" => now.AddMonths(-1),
-            "1 Year" => now.AddYears(-1),
-            "All Time" => null,
+            RangeOneDay => now.AddDays(-1),
+            RangeOneWeek => now.AddDays(-7),
+            RangeOneMonth => now.AddMonths(-1),
+            RangeOneYear => now.AddYears(-1),
+            RangeAllTime => null,
             _ => now.AddDays(-7),
         };
     }

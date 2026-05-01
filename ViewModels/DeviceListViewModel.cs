@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Threading;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
 using KeyPulse.Services;
@@ -15,7 +14,7 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 {
     private readonly UsbMonitorService _usbMonitorService;
     private readonly RawInputService _rawInputService;
-    private readonly DispatcherTimer _timer;
+    private readonly AppTimerService _appTimerService;
     private bool _showAllDevices;
     private string _currentSessionTime = "00:00:00";
 
@@ -58,10 +57,15 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         }
     }
 
-    public DeviceListViewModel(UsbMonitorService usbMonitorService, RawInputService rawInputService)
+    public DeviceListViewModel(
+        UsbMonitorService usbMonitorService,
+        RawInputService rawInputService,
+        AppTimerService appTimerService
+    )
     {
         _usbMonitorService = usbMonitorService;
         _rawInputService = rawInputService;
+        _appTimerService = appTimerService;
 
         DeviceListCollection = CollectionViewSource.GetDefaultView(_usbMonitorService.DeviceList);
         DeviceListCollection.Filter = device => ShowAllDevices || ((Device)device).IsConnected;
@@ -74,18 +78,18 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         RenameDeviceCommand = new RelayCommand(ExecuteRenameDevice, CanExecuteRenameDevice);
 
-        _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-        _timer.Tick += (_, _) =>
-        {
-            // Update app session time from the AppStarted event timestamp.
-            var elapsed = DateTime.Now - _usbMonitorService.AppSessionStartedAt;
-            CurrentSessionTime = $"{(int)elapsed.TotalHours:D2}:{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
+        _appTimerService.SecondTick += OnSecondTick;
+    }
 
-            // Refresh in-memory dynamic device display values.
-            foreach (var device in _usbMonitorService.DeviceList)
-                device.RefreshDynamicProperties();
-        };
-        _timer.Start();
+    private void OnSecondTick(object? sender, EventArgs e)
+    {
+        // Update app session time from the AppStarted event timestamp.
+        var elapsed = DateTime.Now - _usbMonitorService.AppSessionStartedAt;
+        CurrentSessionTime = $"{(int)elapsed.TotalHours:D2}:{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
+
+        // Refresh in-memory dynamic device display values.
+        foreach (var device in _usbMonitorService.DeviceList)
+            device.RefreshDynamicProperties();
     }
 
     private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -159,8 +163,8 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged -= OnActivityStateChanged;
+        _appTimerService.SecondTick -= OnSecondTick;
 
-        _timer.Stop();
         GC.SuppressFinalize(this);
     }
 }

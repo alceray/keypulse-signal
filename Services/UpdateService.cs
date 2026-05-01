@@ -11,15 +11,17 @@ namespace KeyPulse.Services;
 public class UpdateService : IDisposable
 {
     private readonly HttpClient _httpClient;
-    private System.Windows.Threading.DispatcherTimer? _checkTimer;
+    private readonly AppTimerService _appTimerService;
     private string? _latestVersion;
     private bool _updateAvailable;
+    private bool _started;
     private bool _disposed;
 
     public event Action<UpdateAvailableEventArgs>? UpdateStatusChanged;
 
-    public UpdateService()
+    public UpdateService(AppTimerService appTimerService)
     {
+        _appTimerService = appTimerService;
         _httpClient = new HttpClient();
         _httpClient.DefaultRequestHeaders.Add("User-Agent", "KeyPulse-Signal-Update-Checker");
     }
@@ -39,19 +41,20 @@ public class UpdateService : IDisposable
 
     public void Start()
     {
-        if (_checkTimer != null)
+        if (_started)
             return;
 
+        _started = true;
         var startStopwatch = Stopwatch.StartNew();
         Log.Information("Update check started");
         CheckForUpdatesAsync().ConfigureAwait(false);
 
-        _checkTimer = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromHours(1) };
-        _checkTimer.Tick += (_, _) => CheckForUpdatesAsync().ConfigureAwait(false);
-        _checkTimer.Start();
+        _appTimerService.HourlyTick += OnHourlyTick;
         startStopwatch.Stop();
         Log.Information("Update check completed in {ElapsedMs}ms", startStopwatch.ElapsedMilliseconds);
     }
+
+    private void OnHourlyTick(object? sender, EventArgs e) => CheckForUpdatesAsync().ConfigureAwait(false);
 
     public async Task CheckForUpdatesAsync()
     {
@@ -156,8 +159,7 @@ public class UpdateService : IDisposable
         }
 
         _disposed = true;
-        _checkTimer?.Stop();
-        _checkTimer = null;
+        _appTimerService.HourlyTick -= OnHourlyTick;
         _httpClient.Dispose();
         Log.Information("Update check stopped and disposed");
     }

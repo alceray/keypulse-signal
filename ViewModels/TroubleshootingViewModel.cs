@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Threading;
 using KeyPulse.Configuration;
 using KeyPulse.Helpers;
 using KeyPulse.Services;
@@ -26,7 +25,7 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
     private static readonly IReadOnlyList<string> FilterDefinitions = AppConstants.Troubleshooting.FilterNames;
 
     private readonly LogAccessService _logAccessService;
-    private readonly DispatcherTimer _statusTimer;
+    private readonly StatusClearTimer _statusClearTimer;
     private bool _syncingFilters;
     private LogFileOption? _selectedLogFile;
     private string _searchQuery = string.Empty;
@@ -42,12 +41,8 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
         CopyLogsCommand = new RelayCommand(_ => CopyLogs(), _ => !string.IsNullOrEmpty(LogContent));
         OpenLogsFolderCommand = new RelayCommand(_ => OpenLogsFolder());
 
-        _statusTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(3) };
-        _statusTimer.Tick += (_, _) =>
-        {
-            _statusTimer.Stop();
-            StatusMessage = string.Empty;
-        };
+        _statusClearTimer = new StatusClearTimer();
+        _statusClearTimer.Elapsed += (_, _) => StatusMessage = string.Empty;
 
         LogFiles = new ObservableCollection<LogFileOption>();
         LogFilters = new ObservableCollection<LogFilterItem>(
@@ -125,10 +120,7 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
             OnPropertyChanged(nameof(StatusVisibility));
 
             if (!string.IsNullOrEmpty(value))
-            {
-                _statusTimer.Stop();
-                _statusTimer.Start();
-            }
+                _statusClearTimer.Restart();
         }
     }
 
@@ -393,7 +385,7 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
 
     public void Dispose()
     {
-        _statusTimer.Stop();
+        _statusClearTimer.Dispose();
         foreach (var item in LogFilters)
             item.PropertyChanged -= OnFilterItemChanged;
     }

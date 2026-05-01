@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Threading;
 using KeyPulse.Configuration;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
@@ -19,15 +18,15 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 {
     private readonly DataService _dataService;
     private readonly UsbMonitorService _usbMonitorService;
-    private readonly DispatcherTimer _refreshTimer;
+    private readonly AppTimerService _appTimerService;
 
     public ICommand RefreshCommand { get; }
 
     public IPlotController PieHoverController { get; }
 
     public IReadOnlyList<string> RangeOptions => DashboardRangeResolver.RangeOptions;
-    public IReadOnlyList<int> BucketSizeOptions { get; } = [5, 10, 15, 20, 30];
-    public IReadOnlyList<int> SmoothingWindowOptions { get; } = [1, 2, 3, 4, 5];
+    public IReadOnlyList<int> BucketSizeOptions { get; } = AppConstants.Dashboard.BucketSizeOptions;
+    public IReadOnlyList<int> SmoothingWindowOptions { get; } = AppConstants.Dashboard.SmoothingWindowOptions;
 
     public string SelectedRange
     {
@@ -171,15 +170,20 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private string _topKeyboardsSummary = "1. -\n2. -\n3. -";
     private string _topMiceSummary = "1. -\n2. -\n3. -";
     private string _lastUpdatedText = "";
-    private string _selectedRange = "1 Week";
-    private int _selectedBucketMinutes = 10;
-    private int _selectedSmoothingWindow = 2;
+    private string _selectedRange = DashboardRangeResolver.DefaultRange;
+    private int _selectedBucketMinutes = AppConstants.Dashboard.DefaultBucketMinutes;
+    private int _selectedSmoothingWindow = AppConstants.Dashboard.DefaultSmoothingWindow;
     private readonly DashboardHoverPreview _hoverPreview = new();
 
-    public DashboardViewModel(DataService dataService, UsbMonitorService usbMonitorService)
+    public DashboardViewModel(
+        DataService dataService,
+        UsbMonitorService usbMonitorService,
+        AppTimerService appTimerService
+    )
     {
         _dataService = dataService;
         _usbMonitorService = usbMonitorService;
+        _appTimerService = appTimerService;
         PieHoverController = DashboardPieChartBuilder.BuildPieHoverController();
         _hoverPreview.PropertyChanged += HoverPreview_PropertyChanged;
 
@@ -191,9 +195,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged += Device_PropertyChanged;
 
-        _refreshTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(30) };
-        _refreshTimer.Tick += (_, _) => Refresh();
-        _refreshTimer.Start();
+        _appTimerService.ThirtySecondTick += OnRefreshTick;
 
         Refresh();
     }
@@ -333,15 +335,17 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>
-    /// Stops timers and unsubscribes listeners to avoid leaks when the dashboard view is unloaded.
+    /// Stops timers and unsubscribes listeners during application shutdown.
     /// </summary>
     public void Dispose()
     {
-        _refreshTimer.Stop();
+        _appTimerService.ThirtySecondTick -= OnRefreshTick;
         _hoverPreview.PropertyChanged -= HoverPreview_PropertyChanged;
 
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged -= Device_PropertyChanged;
     }
+
+    private void OnRefreshTick(object? sender, EventArgs e) => Refresh();
 }

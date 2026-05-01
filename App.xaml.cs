@@ -197,6 +197,7 @@ public partial class App
         services.AddSingleton<RawInputService>();
         services.AddSingleton<UpdateService>();
         services.AddSingleton<TrayIconService>();
+        services.AddSingleton<AppTimerService>();
         services.AddTransient<DashboardViewModel>();
         services.AddTransient<DeviceListViewModel>();
         services.AddTransient<EventLogViewModel>();
