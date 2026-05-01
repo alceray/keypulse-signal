@@ -31,6 +31,7 @@ public class ApplicationDbContext : DbContext
             .HasDatabaseName("Idx_Devices_DeviceId");
 
         modelBuilder.Entity<Device>().Property(e => e.DeviceType).HasConversion<string>();
+        modelBuilder.Entity<Device>().Property(e => e.TotalInputCount).HasDefaultValue(0L);
 
         modelBuilder.Entity<DeviceEvent>().ToTable("DeviceEvents");
 

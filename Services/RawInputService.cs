@@ -22,6 +22,12 @@ public class RawInputService : IDisposable
     /// </summary>
     public event Action<string, bool>? ActivityStateChanged;
 
+    /// <summary>
+    /// Raised when total input count should increase for a device.
+    /// Payload: (deviceId, delta).
+    /// </summary>
+    public event Action<string, long>? InputCountIncremented;
+
     #region Win32 constants
 
     private const int WM_INPUT = 0x00FF;
@@ -313,14 +319,19 @@ public class RawInputService : IDisposable
                 var kb = Marshal.PtrToStructure<RawKeyboard>(bodyPtr);
                 var isKeyDown = (kb.Flags & RI_KEY_BREAK) == 0;
                 bool nextActivityState;
+                long inputDelta = 0;
 
                 lock (_lock)
                 {
                     if (isKeyDown)
                     {
-                        GetOrCreateBucket(deviceId, minute).Keystrokes++;
                         var pressedKeys = GetOrCreatePressedKeys(deviceId);
-                        pressedKeys.Add(kb.VKey);
+                        // Count only the first key-down while held; ignore auto-repeat key-downs.
+                        if (pressedKeys.Add(kb.VKey))
+                        {
+                            GetOrCreateBucket(deviceId, minute).Keystrokes++;
+                            inputDelta = 1;
+                        }
                     }
                     else if (_pressedKeysByDevice.TryGetValue(deviceId, out var pressedKeys))
                     {
@@ -330,12 +341,16 @@ public class RawInputService : IDisposable
                     nextActivityState = ComputeHoldState(deviceId);
                 }
 
+                if (inputDelta > 0)
+                    RegisterInputCountDelta(deviceId, inputDelta);
+
                 ActivityStateChanged?.Invoke(deviceId, nextActivityState);
             }
             else if (header.dwType == RIM_TYPEMOUSE)
             {
                 var mouse = Marshal.PtrToStructure<RawMouse>(bodyPtr);
                 bool? nextActivityState = null;
+                long inputDelta = 0;
 
                 if (mouse.usButtonFlags == 0)
                 {
@@ -344,7 +359,8 @@ public class RawInputService : IDisposable
                     var second = DateTime.Now.Second; // 0–59
                     lock (_lock)
                     {
-                        GetOrCreateBucket(deviceId, minute).ActiveMovementSeconds.Add(second);
+                        if (GetOrCreateBucket(deviceId, minute).ActiveMovementSeconds.Add(second))
+                            inputDelta += 1;
                     }
                 }
 
@@ -355,6 +371,7 @@ public class RawInputService : IDisposable
                         var pressedButtons = GetOrCreatePressedMouseButtons(deviceId);
                         AddPressedMouseButtons(pressedButtons, mouse.usButtonFlags);
                         nextActivityState = ComputeHoldState(deviceId);
+                        inputDelta += 1;
                     }
 
                 if ((mouse.usButtonFlags & MOUSE_BUTTON_UP_MASK) != 0)
@@ -364,6 +381,9 @@ public class RawInputService : IDisposable
                             RemovePressedMouseButtons(pressedButtons, mouse.usButtonFlags);
                         nextActivityState = ComputeHoldState(deviceId);
                     }
+
+                if (inputDelta > 0)
+                    RegisterInputCountDelta(deviceId, inputDelta);
 
                 if (nextActivityState.HasValue)
                     ActivityStateChanged?.Invoke(deviceId, nextActivityState.Value);
@@ -572,6 +592,11 @@ public class RawInputService : IDisposable
         }
 
         _dataService.SaveActivitySnapshots(snapshots);
+    }
+
+    private void RegisterInputCountDelta(string deviceId, long delta)
+    {
+        InputCountIncremented?.Invoke(deviceId, delta);
     }
 
     public void Dispose()

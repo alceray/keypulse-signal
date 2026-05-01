@@ -75,6 +75,7 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         _usbMonitorService.DeviceList.CollectionChanged += DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged += OnActivityStateChanged;
+        _rawInputService.InputCountIncremented += OnInputCountIncremented;
 
         RenameDeviceCommand = new RelayCommand(ExecuteRenameDevice, CanExecuteRenameDevice);
 
@@ -115,6 +116,18 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         var device = _usbMonitorService.DeviceList.FirstOrDefault(d => d.DeviceId == deviceId);
         if (device != null)
             Application.Current.Dispatcher.BeginInvoke(() => device.SetActivityState(isActive));
+    }
+
+    private void OnInputCountIncremented(string deviceId, long delta)
+    {
+        if (delta <= 0)
+            return;
+
+        var device = _usbMonitorService.DeviceList.FirstOrDefault(d => d.DeviceId == deviceId);
+        if (device == null)
+            return;
+
+        Application.Current.Dispatcher.BeginInvoke(() => device.TotalInputCount += delta);
     }
 
     private void DeviceList_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
@@ -163,6 +176,7 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged -= OnActivityStateChanged;
+        _rawInputService.InputCountIncremented -= OnInputCountIncremented;
         _appTimerService.SecondTick -= OnSecondTick;
 
         GC.SuppressFinalize(this);

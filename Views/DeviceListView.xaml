@@ -95,6 +95,7 @@
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
         <DataGridTextColumn Header="Device Name" Binding="{Binding DeviceName}" Width="*" />
+        <DataGridTextColumn Header="Total Input Count" Binding="{Binding TotalInputCount}" Width="Auto" />
         <DataGridTextColumn
           Header="Last Connected"
           Binding="{Binding LastConnectedRelative}"

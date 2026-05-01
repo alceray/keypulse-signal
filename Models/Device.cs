@@ -35,6 +35,7 @@ public class Device : ObservableObject
     private DateTime? _lastConnectedAt;
     private DateTime? _lastSeenAt;
     private bool _isActive;
+    private long _totalInputCount;
 
     /// <summary>
     /// Unique identifier for the device in format: USB\VID_xxxx&PID_xxxx
@@ -147,6 +148,23 @@ public class Device : ObservableObject
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(LastSeenRelative));
             }
+        }
+    }
+
+    /// <summary>
+    /// Persisted aggregate of all inputs recorded for this device:
+    /// Keystrokes + MouseClicks + MouseMovementSeconds across all snapshots.
+    /// </summary>
+    public long TotalInputCount
+    {
+        get => _totalInputCount;
+        set
+        {
+            if (_totalInputCount == value)
+                return;
+
+            _totalInputCount = value;
+            OnPropertyChanged();
         }
     }
 

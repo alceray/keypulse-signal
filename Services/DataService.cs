@@ -234,25 +234,35 @@ public class DataService
         try
         {
             using var ctx = _factory.CreateDbContext();
+            var devicesById = ctx.Devices.ToDictionary(d => d.DeviceId, d => d);
             foreach (var snapshot in snapshots)
             {
+                if (!devicesById.TryGetValue(snapshot.DeviceId, out var device))
+                    continue;
+
                 var existing = ctx.ActivitySnapshots.SingleOrDefault(s =>
                     s.DeviceId == snapshot.DeviceId && s.Minute == snapshot.Minute
                 );
                 if (existing != null)
                 {
                     // Update existing snapshot (merge activity)
+                    var previousMovementSeconds = existing.MouseMovementSeconds;
                     existing.Keystrokes += snapshot.Keystrokes;
                     existing.MouseClicks += snapshot.MouseClicks;
                     existing.MouseMovementSeconds = Math.Max(
                         existing.MouseMovementSeconds,
                         snapshot.MouseMovementSeconds
                     );
+
+                    var movementDelta = existing.MouseMovementSeconds - previousMovementSeconds;
+                    device.TotalInputCount += snapshot.Keystrokes + snapshot.MouseClicks + movementDelta;
                 }
                 else
                 {
                     // Insert new snapshot
                     ctx.ActivitySnapshots.Add(snapshot);
+                    device.TotalInputCount +=
+                        snapshot.Keystrokes + snapshot.MouseClicks + snapshot.MouseMovementSeconds;
                 }
             }
 
@@ -305,6 +315,18 @@ public class DataService
             }
 
         return connectionDuration;
+    }
+
+    /// <summary>
+    /// Recomputes total input count from immutable activity snapshots.
+    /// Formula: Keystrokes + MouseClicks + MouseMovementSeconds.
+    /// </summary>
+    private static long ComputeTotalInputCount(ApplicationDbContext ctx, string deviceId)
+    {
+        return ctx.ActivitySnapshots.Where(s => s.DeviceId == deviceId)
+                .Select(s => (long?)s.Keystrokes + s.MouseClicks + s.MouseMovementSeconds)
+                .Sum()
+            ?? 0L;
     }
 
     /// <summary>
@@ -401,6 +423,7 @@ public class DataService
             foreach (var device in devices)
             {
                 device.ConnectionDuration = ComputeConnectionDuration(ctx, device.DeviceId);
+                device.TotalInputCount = ComputeTotalInputCount(ctx, device.DeviceId);
                 device.SessionStartedAt = null;
                 device.LastSeenAt ??= GetLastDeviceEvent(device.DeviceId)?.EventTime;
             }
