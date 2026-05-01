@@ -8,6 +8,7 @@
     <AssemblyName>KeyPulse Signal</AssemblyName>
     <Version>1.1.0</Version>
     <FileVersion>1.1.0.0</FileVersion>
+    <ApplicationIcon>Assets\keypulse-signal-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,11 +24,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\keyboard_mouse_icon.ico" />
+    <None Remove="Assets\keypulse-signal-icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Assets\keyboard_mouse_icon.ico">
+    <Content Include="Assets\keypulse-signal-icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

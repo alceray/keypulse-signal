@@ -12,7 +12,7 @@ public class StartupRegistrationService
     {
         try
         {
-            using var runKey = Registry.CurrentUser.OpenSubKey(AppConstants.Registry.RunKeyPath, false);
+            using var runKey = Registry.CurrentUser.OpenSubKey(AppConstants.App.RunKeyPath, false);
             var value = runKey?.GetValue(AppName) as string;
             return !string.IsNullOrWhiteSpace(value);
         }
@@ -27,7 +27,7 @@ public class StartupRegistrationService
     {
         try
         {
-            using var runKey = Registry.CurrentUser.CreateSubKey(AppConstants.Registry.RunKeyPath, true);
+            using var runKey = Registry.CurrentUser.CreateSubKey(AppConstants.App.RunKeyPath, true);
             var command = BuildCommand();
             runKey.SetValue(AppName, command, RegistryValueKind.String);
             Log.Information("Startup registration enabled");
@@ -43,7 +43,7 @@ public class StartupRegistrationService
     {
         try
         {
-            using var runKey = Registry.CurrentUser.OpenSubKey(AppConstants.Registry.RunKeyPath, true);
+            using var runKey = Registry.CurrentUser.OpenSubKey(AppConstants.App.RunKeyPath, true);
             if (runKey?.GetValue(AppName) == null)
                 return;
 

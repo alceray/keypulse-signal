@@ -17,7 +17,7 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
         if (_trayIcon != null)
             return;
 
-        var trayIconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppConstants.Tray.TrayIconRelativePath);
+        var trayIconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppConstants.App.TrayIconRelativePath);
         _trayIcon = new NotifyIcon
         {
             Icon = new Icon(trayIconPath),

@@ -3,19 +3,26 @@ using System.Net.Http;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using KeyPulse.Configuration;
 using Serilog;
 
 namespace KeyPulse.Services;
 
 public class UpdateService : IDisposable
 {
+    private const string GITHUB_OWNER = "alceray";
+    private const string GITHUB_REPO = "keypulse-signal";
+    private const string GITHUB_API_URL = $"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/latest";
+
     private readonly HttpClient _httpClient;
     private readonly AppTimerService _appTimerService;
+
     private string? _latestVersion;
     private bool _updateAvailable;
     private bool _started;
     private bool _disposed;
+
+    private static string GetGitHubReleaseTagUrl(string version) =>
+        $"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tag/v{version}";
 
     public event Action<UpdateAvailableEventArgs>? UpdateStatusChanged;
 
@@ -60,7 +67,7 @@ public class UpdateService : IDisposable
     {
         try
         {
-            using var response = await _httpClient.GetAsync(AppConstants.Updates.GitHubApiUrl);
+            using var response = await _httpClient.GetAsync(GITHUB_API_URL);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -113,7 +120,7 @@ public class UpdateService : IDisposable
 
         try
         {
-            var downloadUrl = AppConstants.Updates.GetGitHubReleaseTagUrl(_latestVersion);
+            var downloadUrl = GetGitHubReleaseTagUrl(_latestVersion);
             Process.Start(new ProcessStartInfo { FileName = downloadUrl, UseShellExecute = true });
             Log.Information("Opened update download page for version v{LatestVersion}", _latestVersion);
         }

@@ -14,6 +14,9 @@ public static class AppConstants
 #endif
         public const string StartupArgument = "--startup";
         public const string ActivationEventSuffix = ".ACTIVATE";
+        public const string RunKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
+        public const string TrayIconRelativePath = @"Assets\keypulse-signal-icon.ico";
+        public const int StartupWarningBalloonTimeoutMs = 5000;
     }
 
     public static class Paths
@@ -27,12 +30,11 @@ public static class AppConstants
         public const string HeartbeatFileName = "heartbeat.txt";
         public const string LogFilePattern = "*.log";
         public const string RollingLogFileTemplate = "keypulse-logs-.log";
+        public const int LogRetentionFileCountLimit = 14;
     }
 
     public static class Troubleshooting
     {
-        public const int RetainedFileCountLimit = 14;
-        public const int StartupWarningBalloonTimeoutMs = 5000;
         public const string AllLabel = "All";
         public const string FatalToken = "[FTL]";
         public const string ErrorToken = "[ERR]";
@@ -58,32 +60,12 @@ public static class AppConstants
         ];
     }
 
-    public static class Registry
-    {
-        public const string RunKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
-    }
-
     public static class Dashboard
     {
         public const int DefaultBucketMinutes = 10;
         public const int DefaultSmoothingWindow = 2;
         public static readonly IReadOnlyList<int> BucketSizeOptions = [5, 10, 15, 20, 30];
         public static readonly IReadOnlyList<int> SmoothingWindowOptions = [1, 2, 3, 4, 5];
-    }
-
-    public static class Updates
-    {
-        private const string GITHUB_OWNER = "alceray";
-        private const string GITHUB_REPO = "keypulse-signal";
-        public const string GitHubApiUrl = $"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/latest";
-
-        public static string GetGitHubReleaseTagUrl(string version) =>
-            $"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tag/v{version}";
-    }
-
-    public static class Tray
-    {
-        public const string TrayIconRelativePath = @"Assets\keyboard_mouse_icon.ico";
     }
 
     public static class Date
