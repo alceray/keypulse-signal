@@ -158,14 +158,14 @@ public class UpdateService : IDisposable
     {
         if (_disposed)
         {
-            Log.Debug("Update check dispose skipped because it was already disposed");
+            Log.Debug("Update checker dispose skipped because it was already disposed");
             return;
         }
 
         _disposed = true;
         _appTimerService.HourlyTick -= OnHourlyTick;
         _httpClient.Dispose();
-        Log.Information("Update check stopped and disposed");
+        Log.Information("Update checker disposed");
     }
 
     public class UpdateAvailableEventArgs

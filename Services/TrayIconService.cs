@@ -95,7 +95,11 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
 
         _disposed = true;
         updateService.UpdateStatusChanged -= OnUpdateStatusChanged;
-        _trayIcon?.Dispose();
+
+        if (_trayIcon == null)
+            return;
+
+        _trayIcon.Dispose();
         _trayIcon = null;
         Log.Information("Tray icon disposed");
     }

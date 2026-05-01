@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using KeyPulse.Configuration;
 using KeyPulse.Data;
+using KeyPulse.Helpers;
 using KeyPulse.Services;
 using KeyPulse.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +22,8 @@ public partial class App
     private TrayIconService? _trayIconService;
     private static Mutex? _appMutex;
     private EventWaitHandle? _activateEvent;
-    private RegisteredWaitHandle? _activateEventRegistration;
+    private volatile bool _isShuttingDown;
+    private volatile bool _isSessionEnding;
     private string? _appName;
     private AppSettingsService? _appSettingsService;
     private StartupRegistrationService? _startupRegistrationService;
@@ -150,9 +152,9 @@ public partial class App
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Update check startup failed");
+            Log.Error(ex, "Update checker startup failed");
             ShowStartupWarning(
-                "Update check failed to start. The app will continue running, and you can still try checking manually from Settings."
+                "Update checker failed to start. The app will continue running, and you can still try checking manually from Settings."
             );
         }
 
@@ -164,14 +166,13 @@ public partial class App
     protected override void OnExit(ExitEventArgs e)
     {
         var shutdownStopwatch = System.Diagnostics.Stopwatch.StartNew();
+        _isShuttingDown = true;
         Log.Information("Application shutdown started");
         try
         {
-            _activateEventRegistration?.Unregister(null);
-            _activateEvent?.Dispose();
-            _appMutex?.ReleaseMutex();
-            _appMutex?.Dispose();
-            ServiceProvider.Dispose();
+            DisposeActivationSignalResources();
+            DisposeMutexResources();
+            DisposeServicesForExitPath();
         }
         catch (Exception ex)
         {
@@ -184,6 +185,40 @@ public partial class App
             Log.CloseAndFlush();
             base.OnExit(e);
         }
+    }
+
+    private void DisposeActivationSignalResources()
+    {
+        var activationEvent = _activateEvent;
+        _activateEvent = null;
+        ShutdownDispose.TryStep(() => activationEvent?.Dispose(), "activation event dispose");
+    }
+
+    private static void DisposeMutexResources()
+    {
+        ShutdownDispose.TryStep(() => _appMutex?.ReleaseMutex(), "app mutex release");
+        ShutdownDispose.TryStep(() => _appMutex?.Dispose(), "app mutex dispose");
+        _appMutex = null;
+    }
+
+    private void DisposeServicesForExitPath()
+    {
+        if (_isSessionEnding)
+        {
+            Log.Information(
+                "Skipping service disposal during Windows session end to avoid blocking shutdown; crash recovery will reconcile state on next startup"
+            );
+            return;
+        }
+
+        ShutdownDispose.TryStep(ServiceProvider.Dispose, "service provider dispose");
+    }
+
+    protected override void OnSessionEnding(SessionEndingCancelEventArgs e)
+    {
+        _isSessionEnding = true;
+        Log.Information("Windows session ending detected: Reason={Reason}", e.ReasonSessionEnding);
+        base.OnSessionEnding(e);
     }
 
     private static void ConfigureServices(IServiceCollection services)
@@ -272,9 +307,21 @@ public partial class App
     private void InitializeActivationSignalListener(string instanceId)
     {
         _activateEvent = new EventWaitHandle(false, EventResetMode.AutoReset, GetActivationEventName(instanceId));
-        _activateEventRegistration = ThreadPool.RegisterWaitForSingleObject(
+        _ = ThreadPool.RegisterWaitForSingleObject(
             _activateEvent,
-            (_, _) => Dispatcher.BeginInvoke(new Action(ShowMainWindow)),
+            (_, _) =>
+            {
+                if (_isShuttingDown || Dispatcher.HasShutdownStarted || Dispatcher.HasShutdownFinished)
+                    return;
+
+                Dispatcher.BeginInvoke(
+                    new Action(() =>
+                    {
+                        if (!_isShuttingDown)
+                            ShowMainWindow();
+                    })
+                );
+            },
             null,
             Timeout.Infinite,
             false

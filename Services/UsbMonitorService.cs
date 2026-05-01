@@ -470,51 +470,40 @@ public class UsbMonitorService : IDisposable
         Log.Information("USB monitoring shutdown started");
         var shutdownStopwatch = Stopwatch.StartNew();
 
-        try
-        {
-            _heartbeatTimer.Dispose();
-            Log.Debug("Heartbeat timer disposed");
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to dispose heartbeat timer");
-        }
-
-        try
-        {
-            HeartbeatFile.Clear();
-            Log.Debug("Heartbeat file cleared");
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to clear heartbeat file");
-        }
-
-        // Stop WMI watchers first so no new insert/remove callbacks can race against the
-        // shutdown writes below or try to Dispatcher.Invoke into the stopping dispatcher.
-        try
-        {
-            if (_insertWatcher != null)
+        ShutdownDispose.TryStep(
+            () =>
             {
-                _insertWatcher.EventArrived -= DeviceInsertedEvent;
-                _insertWatcher.Stop();
-                _insertWatcher.Dispose();
-                _insertWatcher = null;
-            }
-            if (_removeWatcher != null)
-            {
-                _removeWatcher.EventArrived -= DeviceRemovedEvent;
-                _removeWatcher.Stop();
-                _removeWatcher.Dispose();
-                _removeWatcher = null;
-            }
-            Log.Information("USB WMI watchers stopped and disposed");
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to stop USB WMI watchers");
-        }
+                _heartbeatTimer.Dispose();
+                Log.Debug("Heartbeat timer disposed");
+            },
+            "dispose heartbeat timer"
+        );
 
+        var dispatcher = Application.Current?.Dispatcher;
+
+        if (ShutdownDispose.IsProcessTearingDown(dispatcher))
+            // Windows may be tearing down profile/file-system state; leave heartbeat file for crash recovery.
+            Log.Debug("Heartbeat file clear skipped during shutdown to avoid blocking termination");
+        else
+            ShutdownDispose.TryStep(
+                () =>
+                {
+                    HeartbeatFile.Clear();
+                    Log.Debug("Heartbeat file cleared");
+                },
+                "clear heartbeat file"
+            );
+
+        StopWatchersWithTimeout();
+        CloseOpenConnectionsOnShutdown();
+        _pendingCachedDeviceProcessing.Clear();
+
+        shutdownStopwatch.Stop();
+        Log.Information("USB monitoring shutdown completed in {ElapsedMs}ms", shutdownStopwatch.ElapsedMilliseconds);
+    }
+
+    private void CloseOpenConnectionsOnShutdown()
+    {
         var sessionTimestamp = DateTime.Now;
         var disconnectedDeviceCount = 0;
 
@@ -542,10 +531,51 @@ public class UsbMonitorService : IDisposable
             );
 
         AddDeviceEvent(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = sessionTimestamp });
+    }
 
-        shutdownStopwatch.Stop();
-        Log.Information("USB monitoring shutdown completed in {ElapsedMs}ms", shutdownStopwatch.ElapsedMilliseconds);
+    private void StopWatchersWithTimeout()
+    {
+        // Stop WMI watchers first so no new insert/remove callbacks can race against the
+        // shutdown writes below or try to Dispatcher.Invoke into the stopping dispatcher.
+        // ManagementEventWatcher.Stop() communicates with the WMI service which may itself
+        // be shutting down during OS sign-out — bound the call to avoid a permanent hang.
+        ShutdownDispose.TryStep(
+            () =>
+            {
+                var insertWatcher = _insertWatcher;
+                var removeWatcher = _removeWatcher;
+                _insertWatcher = null;
+                _removeWatcher = null;
 
-        _pendingCachedDeviceProcessing.Clear();
+                if (insertWatcher != null)
+                    insertWatcher.EventArrived -= DeviceInsertedEvent;
+                if (removeWatcher != null)
+                    removeWatcher.EventArrived -= DeviceRemovedEvent;
+
+                static void StopWatcher(ManagementEventWatcher? watcher)
+                {
+                    try
+                    {
+                        watcher?.Stop();
+                        watcher?.Dispose();
+                    }
+                    catch
+                    { /* best-effort */
+                    }
+                }
+
+                var watcherStopTask = Task.Run(() =>
+                {
+                    StopWatcher(insertWatcher);
+                    StopWatcher(removeWatcher);
+                });
+
+                if (watcherStopTask.Wait(TimeSpan.FromMilliseconds(500)))
+                    Log.Information("USB WMI watchers disposed");
+                else
+                    Log.Warning("USB WMI watchers dispose timed out during shutdown; continuing");
+            },
+            "dispose USB WMI watchers"
+        );
     }
 }

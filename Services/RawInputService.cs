@@ -189,6 +189,7 @@ public class RawInputService : IDisposable
     private HwndSource? _hwndSource;
     private readonly DataService _dataService;
     private readonly Timer _flushTimer;
+    private static readonly TimeSpan ShutdownFlushTimeout = TimeSpan.FromMilliseconds(250);
     private bool _disposed;
 
     public RawInputService(DataService dataService)
@@ -611,54 +612,100 @@ public class RawInputService : IDisposable
         var disposeStopwatch = Stopwatch.StartNew();
         Log.Information("Input tracking shutdown started");
 
-        try
-        {
-            _flushTimer.Dispose();
-            Log.Debug("Flush timer disposed");
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to dispose flush timer");
-        }
-
-        // Flush any remaining data (including the current partial minute).
-        try
-        {
-            int flushedBucketCount;
-            lock (_lock)
+        ShutdownDispose.TryStep(
+            () =>
             {
-                flushedBucketCount = _buckets.Count;
-            }
+                _flushTimer.Dispose();
+                Log.Debug("Flush timer disposed");
+            },
+            "dispose flush timer"
+        );
 
-            FlushAllMinutes();
-            Log.Information("Flushed {FlushedBucketCount} pending activity buckets on shutdown", flushedBucketCount);
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Flushing pending activity data failed during shutdown");
-        }
+        // During OS sign-out/shutdown, prioritize fast termination over partial-minute persistence.
+        var dispatcher = Application.Current?.Dispatcher;
 
-        try
-        {
-            Application.Current?.Dispatcher.Invoke(() =>
-            {
-                if (_hwndSource != null)
-                {
-                    _hwndSource.RemoveHook(WndProc);
-                    _hwndSource.Dispose();
-                    _hwndSource = null;
-                    Log.Debug("Message-only window disposed");
-                }
-            });
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Failed to dispose input message window");
-        }
+        if (ShutdownDispose.IsProcessTearingDown(dispatcher))
+            Log.Warning("Skipped pending activity flush during shutdown to avoid blocking termination");
+        else
+            FlushPendingActivityBucketsOnShutdown();
+
+        DisposeMessageWindow(dispatcher);
 
         disposeStopwatch.Stop();
         Log.Information("Input tracking shutdown completed in {ElapsedMs}ms", disposeStopwatch.ElapsedMilliseconds);
+    }
 
-        GC.SuppressFinalize(this);
+    private void FlushPendingActivityBucketsOnShutdown()
+    {
+        // Flush any remaining data (including the current partial minute) on normal app exits.
+        ShutdownDispose.TryStep(
+            () =>
+            {
+                int pendingBucketCount;
+                lock (_lock)
+                {
+                    pendingBucketCount = _buckets.Count;
+                }
+
+                if (pendingBucketCount == 0)
+                    return;
+
+                // Keep shutdown bounded; best-effort flush may continue in background if timeout is hit.
+                var flushTask = Task.Run(FlushAllMinutes);
+                if (flushTask.Wait(ShutdownFlushTimeout))
+                {
+                    Log.Debug("Flushed {FlushedBucketCount} pending activity buckets on shutdown", pendingBucketCount);
+                }
+                else
+                {
+                    Log.Warning(
+                        "Skipped pending activity flush on shutdown due to timeout; PendingBuckets={PendingBucketCount}",
+                        pendingBucketCount
+                    );
+                }
+            },
+            "flush pending activity data"
+        );
+    }
+
+    private void DisposeMessageWindow(System.Windows.Threading.Dispatcher? dispatcher)
+    {
+        ShutdownDispose.TryStep(
+            () =>
+            {
+                var hwndSource = _hwndSource;
+                _hwndSource = null;
+
+                if (hwndSource == null)
+                    return;
+
+                if (!ShutdownDispose.IsDispatcherUsable(dispatcher) || dispatcher!.CheckAccess())
+                {
+                    hwndSource.RemoveHook(WndProc);
+                    hwndSource.Dispose();
+                    Log.Debug("Message-only window disposed");
+                    return;
+                }
+
+                // Do not block shutdown waiting for UI dispatch; best-effort cleanup only.
+                dispatcher.BeginInvoke(
+                    new Action(() =>
+                    {
+                        try
+                        {
+                            hwndSource.RemoveHook(WndProc);
+                            hwndSource.Dispose();
+                            Log.Debug("Message-only window disposed");
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Error(ex, "Failed to dispose input message window on UI dispatcher");
+                        }
+                    })
+                );
+                Log.Debug("Message-only window disposal queued on UI dispatcher");
+            },
+            "dispose input message window"
+        );
     }
 }
