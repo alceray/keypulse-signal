@@ -225,7 +225,7 @@ public class RawInputService : IDisposable
                     _hwndSource.AddHook(WndProc);
 
                     RegisterDevices(_hwndSource.Handle);
-                    Log.Information("Input tracking ready");
+                    Log.Information("Input tracking started");
                 }
                 catch (Exception ex)
                 {
@@ -608,9 +608,8 @@ public class RawInputService : IDisposable
         }
         _disposed = true;
 
-        Log.Information("Input tracking shutdown started");
-
         var disposeStopwatch = Stopwatch.StartNew();
+        Log.Information("Input tracking shutdown started");
 
         try
         {

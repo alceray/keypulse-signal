@@ -6,8 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <AssemblyName>KeyPulse Signal</AssemblyName>
-    <Version>1.1.0</Version>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.1</Version>
+    <FileVersion>1.1.1.0</FileVersion>
     <ApplicationIcon>Assets\keypulse-signal-icon.ico</ApplicationIcon>
   </PropertyGroup>
 

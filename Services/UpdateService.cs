@@ -52,13 +52,10 @@ public class UpdateService : IDisposable
             return;
 
         _started = true;
-        var startStopwatch = Stopwatch.StartNew();
-        Log.Information("Update check started");
-        CheckForUpdatesAsync().ConfigureAwait(false);
+        Log.Information("Update checker started");
 
+        CheckForUpdatesAsync().ConfigureAwait(false);
         _appTimerService.HourlyTick += OnHourlyTick;
-        startStopwatch.Stop();
-        Log.Information("Update check completed in {ElapsedMs}ms", startStopwatch.ElapsedMilliseconds);
     }
 
     private void OnHourlyTick(object? sender, EventArgs e) => CheckForUpdatesAsync().ConfigureAwait(false);

@@ -66,22 +66,19 @@ public class UsbMonitorService : IDisposable
         // which can take 1-3 seconds — run on a thread pool thread to keep the UI responsive.
         // Internal Dispatcher.Invoke calls marshal UI work back to the UI thread safely.
         var snapshotStopwatch = Stopwatch.StartNew();
-        Log.Information("Initial devices snapshot started");
+        Log.Information("Initial device scan started");
         try
         {
             await Task.Run(SetCurrentDevicesFromSystem);
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Initial snapshot failed; continuing with existing data");
+            Log.Error(ex, "Initial device scan failed; continuing with existing data");
         }
         finally
         {
             snapshotStopwatch.Stop();
-            Log.Information(
-                "Initial devices snapshot completed in {ElapsedMs}ms",
-                snapshotStopwatch.ElapsedMilliseconds
-            );
+            Log.Information("Initial device scan completed in {ElapsedMs}ms", snapshotStopwatch.ElapsedMilliseconds);
         }
 
         var usbMonitoringStopwatch = Stopwatch.StartNew();
@@ -92,7 +89,7 @@ public class UsbMonitorService : IDisposable
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "USB monitoring setup failed; running in degraded mode");
+            Log.Error(ex, "USB monitoring failed; running in degraded mode");
         }
         finally
         {

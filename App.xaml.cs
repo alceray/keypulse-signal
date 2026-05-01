@@ -279,7 +279,7 @@ public partial class App
             Timeout.Infinite,
             false
         );
-        Log.Debug("Activation signal listener initialized");
+        Log.Debug("Activation signal listener started");
     }
 
     private static bool SignalExistingInstance(string instanceId)

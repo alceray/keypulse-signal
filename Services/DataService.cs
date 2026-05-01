@@ -29,7 +29,7 @@ public class DataService
     private void InitializeDatabase()
     {
         var stopwatch = Stopwatch.StartNew();
-        Log.Information("Database setup started");
+        Log.Information("Database initialization started");
         using var ctx = _factory.CreateDbContext();
         try
         {
@@ -52,12 +52,12 @@ public class DataService
             ctx.Database.Migrate();
             ctx.Database.ExecuteSqlRaw("PRAGMA journal_mode=WAL;");
             stopwatch.Stop();
-            Log.Information("Database setup completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+            Log.Information("Database initialization completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
         }
         catch (Exception ex)
         {
             stopwatch.Stop();
-            Log.Error(ex, "Database setup failed after {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+            Log.Error(ex, "Database initialization failed after {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
             throw;
         }
     }
@@ -363,7 +363,7 @@ public class DataService
                 : orphanedSessionStart;
 
         Log.Warning(
-            "Recovery detected an unclean shutdown; last session began at {OrphanedSessionStart} and crashed around {HeartbeatTime}",
+            "Recovery check detected an unclean shutdown; last session began at {OrphanedSessionStart} and crashed around {HeartbeatTime}",
             orphanedSessionStart.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture),
             crashTime.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture)
         );
@@ -405,7 +405,7 @@ public class DataService
         );
 
         stopwatch.Stop();
-        Log.Information("Recovery completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+        Log.Information("Recovery check completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
     }
 
     /// <summary>
@@ -419,7 +419,7 @@ public class DataService
             var stopwatch = Stopwatch.StartNew();
             using var ctx = _factory.CreateDbContext();
             var devices = ctx.Devices.ToList();
-            Log.Information("Snapshot rebuild started for {DeviceCount} devices", devices.Count);
+            Log.Information("Device snapshot rebuild started for {DeviceCount} devices", devices.Count);
             foreach (var device in devices)
             {
                 device.ConnectionDuration = ComputeConnectionDuration(ctx, device.DeviceId);
@@ -430,11 +430,11 @@ public class DataService
 
             ctx.SaveChanges();
             stopwatch.Stop();
-            Log.Information("Snapshot rebuild completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+            Log.Information("Device snapshot rebuild completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Snapshot rebuild failed");
+            Log.Error(ex, "Device snapshot rebuild failed");
         }
     }
 }

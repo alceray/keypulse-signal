@@ -17,9 +17,6 @@
       <TabItem Header="{Binding DataContext.DeviceTitleWithCount, ElementName=DeviceListViewControl}">
         <views:DeviceListView x:Name="DeviceListViewControl" />
       </TabItem>
-      <TabItem Header="Event Log">
-        <views:EventLogView />
-      </TabItem>
       <TabItem Header="Settings">
         <views:SettingsView />
       </TabItem>
