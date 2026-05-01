@@ -16,16 +16,23 @@ Injection
 
 ### Major Components
 
-1. **UsbMonitorService** (Singleton)
+1. **AppTimerService** (Singleton)
+    - Owns all periodic UI-thread timers: 1 second, 30 seconds (dashboard refresh), and hourly (update check)
+    - Broadcasts `SecondTick`, `ThirtySecondTick`, and `HourlyTick` events to subscriber services and view-models
+    - Keeps transient view-models lean by centralizing timer ownership
+    - Allows timers to persist across view lifecycle changes (e.g., tab switches)
+    - See: `Services/AppTimerService.cs`
+
+2. **UsbMonitorService** (Singleton)
     - Monitors USB device insertion/removal via WMI `__InstanceCreationEvent` and `__InstanceDeletionEvent`
     - Maintains `DeviceList` and `DeviceEventList` as `ObservableCollection<T>` instances for UI binding
     - Screens for HID keyboard/mouse devices only (`kbdhid`, `mouhid` services)
     - Aggregates bursty insert callbacks into one logical `Connected` event per device burst
     - Writes app/device lifecycle events and keeps the in-memory device snapshot in sync
-    - Owns the heartbeat timer used by crash recovery
+    - Owns the heartbeat timer for crash recovery (separate from UI timers)
     - See: `Services/UsbMonitorService.cs`
 
-2. **RawInputService** (Singleton)
+3. **RawInputService** (Singleton)
     - Registers hidden `WM_INPUT` listeners using `RIDEV_INPUTSINK`, so activity is captured even in tray/background
       mode
     - Maps raw input handles back to KeyPulse `DeviceId` values
@@ -138,6 +145,8 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 
 ### Dashboard Behavior (Connection Duration + Activity)
 
+- **Dashboard refresh**: `DashboardViewModel` subscribes to `AppTimerService.ThirtySecondTick` for periodic refresh
+  (Dashboard is transient, so subscriptions are cleaned up when the view is destroyed and re-created when the tab is switched back)
 - Dashboard top cards show current connected count and top-3 keyboard/mouse device connection-duration summaries.
 - Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `1 Year`, and `All Time`.
 - Activity chart supports configurable `bucketMinutes` and trailing moving-average `smoothingWindow` (both normalized
@@ -183,8 +192,17 @@ dotnet ef database update SomeOlderMigrationName
 
 ### Configuration
 
+- **AppConstants.App** structure consolidates application-level settings:
+  - `ProductName` = "KeyPulse Signal" (from assembly)
+  - `DefaultName` = "KeyPulse Signal" or "KeyPulse Signal (Test)" depending on Debug/Release build
+  - `StartupArgument` = `--startup`
+  - `ActivationEventSuffix` = `.ACTIVATE`
+  - `RunKeyPath` = Windows registry path for startup entries
+  - `TrayIconRelativePath` = relative path to the taskbar icon (`Assets\keypulse-signal-icon.ico`)
+  - `StartupWarningBalloonTimeoutMs` = 5000 (milliseconds for startup warning balloon)
 - **Build mode default**: Debug launches windowed; Release launches to tray/background
 - **Launch args**: `--startup` forces tray/background startup for that process
+- **Application icon**: Set via `<ApplicationIcon>` in `.csproj` for both window and taskbar display; also used for tray icon
 - Tray icon created if background mode enabled; main window created on-demand or at startup
 
 ### Build & Run
@@ -268,6 +286,15 @@ dotnet ef database update SomeOlderMigrationName
 - Helpers that touch the file system, PowerShell, SetupAPI/cfgmgr32, or crash-recovery inputs should log meaningful failures.
 - `HeartbeatFile.Read()` should log `Debug` when no heartbeat file exists and `Warning` if the file exists but contains an invalid timestamp.
 - `UsbDeviceClassifier.ResolveDeviceType()` logs `Warning` when the observed signal pattern does not match a known keyboard/mouse shape.
+
+### Troubleshooting View Auto-scroll Behavior
+
+- Log viewer automatically scrolls to the bottom when:
+  - The tab becomes visible (`IsVisibleChanged` event fires true)
+  - New log content is loaded (`LogContent` property changes)
+  - Logs are refreshed via `RefreshLogs()` command
+- Scrolling uses `DispatcherPriority.Background` to allow layout to settle before scroll
+- Search and entry parsing preserve scroll position only when actively searching; log load and visibility changes always trigger scroll-to-bottom
 
 ### Documentation Entry Points
 
