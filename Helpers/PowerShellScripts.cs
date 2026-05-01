@@ -1,11 +1,13 @@
-﻿using System.Collections.ObjectModel;
-using System.Management.Automation;
+﻿using System.Diagnostics;
+using System.Text;
 using Serilog;
 
 namespace KeyPulse.Helpers;
 
 public static class PowershellScripts
 {
+    private const int TimeoutMs = 10_000;
+
     public static string? GetDeviceName(string deviceId)
     {
         var escapedDeviceId = deviceId.Replace(@"\", @"\\");
@@ -18,26 +20,65 @@ public static class PowershellScripts
             }
             """;
 
-        var results = RunPowerShellScript(script);
-        foreach (var result in results)
-            if (result?.BaseObject is string deviceName && !string.IsNullOrEmpty(deviceName))
-                return deviceName;
+        try
+        {
+            var output = RunPowerShellExternal(script);
+            var firstLine = output
+                .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+                .Select(l => l.Trim())
+                .FirstOrDefault(l => !string.IsNullOrWhiteSpace(l));
 
-        Log.Debug("PowerShell device name lookup returned no result for DeviceId={DeviceId}", deviceId);
-        return null;
+            if (!string.IsNullOrEmpty(firstLine))
+                return firstLine;
+
+            Log.Debug("PowerShell device name lookup returned no result for DeviceId={DeviceId}", deviceId);
+            return null;
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "External PowerShell device name lookup failed for DeviceId={DeviceId}", deviceId);
+            return null;
+        }
     }
 
-    private static Collection<PSObject> RunPowerShellScript(string script)
+    private static string RunPowerShellExternal(string script)
     {
-        using var ps = PowerShell.Create();
-        ps.AddScript("Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process");
-        ps.AddScript(script);
-        var results = ps.Invoke();
+        // Suppress the progress stream so PowerShell does not write CLIXML progress records to stderr.
+        const string preamble = "$ProgressPreference = 'SilentlyContinue'\n";
 
-        if (ps.Streams.Error.Count > 0)
-            foreach (var error in ps.Streams.Error)
-                Log.Warning("PowerShell Error: {PowerShellError}", error.ToString());
+        // Encode as UTF-16LE so the script reaches PowerShell verbatim with no quoting issues.
+        var encodedScript = Convert.ToBase64String(Encoding.Unicode.GetBytes(preamble + script));
 
-        return results;
+        var startInfo = new ProcessStartInfo
+        {
+            FileName = "powershell.exe",
+            Arguments = $"-NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand {encodedScript}",
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            CreateNoWindow = true,
+        };
+
+        using var process = Process.Start(startInfo);
+        if (process == null)
+        {
+            Log.Warning("Failed to start powershell.exe for device name lookup");
+            return string.Empty;
+        }
+
+        var output = process.StandardOutput.ReadToEnd();
+        var error = process.StandardError.ReadToEnd();
+
+        if (!process.WaitForExit(TimeoutMs))
+        {
+            process.Kill();
+            Log.Warning("powershell.exe timed out during device name lookup for and was killed");
+            return string.Empty;
+        }
+
+        if (!string.IsNullOrWhiteSpace(error))
+            Log.Warning("PowerShell stderr: {PowerShellError}", error.Trim());
+
+        return output;
     }
 }

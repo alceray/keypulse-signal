@@ -26,12 +26,19 @@ $fileVersion = "$Version.0"
 Write-Host "Version:     $Version"
 Write-Host "FileVersion: $fileVersion"
 
+$publishDir = Join-Path $root "publish"
+
 # Restore & Publish
 Write-Host "`n--- Restore & Publish ---" -ForegroundColor Cyan
-dotnet restore "KeyPulse Signal.sln"
+dotnet restore "KeyPulse.csproj" -p:Configuration=Release -r win-x64
 if ($LASTEXITCODE -ne 0) { throw "dotnet restore failed." }
 
-dotnet publish "KeyPulse.csproj" -c Release -r win-x64 --no-self-contained -o publish\ /p:Version=$Version /p:FileVersion=$fileVersion
+if (Test-Path $publishDir) {
+    Write-Host "Cleaning publish directory: $publishDir" -ForegroundColor Yellow
+    Remove-Item $publishDir -Recurse -Force
+}
+
+dotnet publish "KeyPulse.csproj" -c Release -r win-x64 --no-self-contained --no-restore -o $publishDir /p:Version=$Version /p:FileVersion=$fileVersion
 if ($LASTEXITCODE -ne 0) { throw "dotnet publish failed." }
 
 # Build installer
