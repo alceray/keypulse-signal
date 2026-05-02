@@ -50,6 +50,7 @@ public class DataService
             }
 
             ctx.Database.Migrate();
+            DatabaseMigrations.RunAll(ctx);
             ctx.Database.ExecuteSqlRaw("PRAGMA journal_mode=WAL;");
             stopwatch.Stop();
             Log.Information("Database initialization completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
@@ -338,7 +339,7 @@ public class DataService
     public void RecoverFromCrash()
     {
         var stopwatch = Stopwatch.StartNew();
-        Log.Information("Recovery check started");
+        Log.Information("Crash recovery check started");
         using var ctx = _factory.CreateDbContext();
 
         var lastAppEvent = ctx
@@ -349,7 +350,7 @@ public class DataService
         if (lastAppEvent == null || lastAppEvent.EventType != EventTypes.AppStarted)
         {
             stopwatch.Stop();
-            Log.Information("Recovery check completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+            Log.Information("Crash recovery check passed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
             return;
         }
 
@@ -357,13 +358,14 @@ public class DataService
         // Falls back to the session start timestamp if no heartbeat is available.
         var orphanedSessionStart = lastAppEvent.EventTime;
         var heartbeatTime = HeartbeatFile.Read();
+        DateTime? heartbeatLocal = heartbeatTime.HasValue ? TimeFormatter.ToLocalTime(heartbeatTime.Value) : null;
         var crashTime =
-            heartbeatTime.HasValue && heartbeatTime.Value > orphanedSessionStart
-                ? heartbeatTime.Value
+            heartbeatLocal.HasValue && heartbeatLocal.Value > orphanedSessionStart
+                ? heartbeatLocal.Value
                 : orphanedSessionStart;
 
         Log.Warning(
-            "Recovery check detected an unclean shutdown; last session began at {OrphanedSessionStart} and crashed around {HeartbeatTime}",
+            "Unclean shutdown detected: last session began at {OrphanedSessionStart} and crashed around {HeartbeatTime}",
             orphanedSessionStart.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture),
             crashTime.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture)
         );
@@ -397,7 +399,15 @@ public class DataService
 
         ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = crashTime });
 
-        ctx.SaveChanges();
+        try
+        {
+            ctx.SaveChanges();
+        }
+        catch (DbUpdateException ex)
+        {
+            Log.Warning(ex, "Duplicate event skipped during crash recovery; proceeding");
+        }
+
         Log.Debug(
             "Backfilled {ConnectionEndedCount} connection close events for {AffectedDeviceIds}",
             unbalancedDeviceIds.Count,
@@ -405,7 +415,7 @@ public class DataService
         );
 
         stopwatch.Stop();
-        Log.Information("Recovery check completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+        Log.Information("Crash recovery completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
     }
 
     /// <summary>

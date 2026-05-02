@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using KeyPulse.Helpers;
 
 namespace KeyPulse.Models;
 
@@ -73,7 +74,10 @@ public class DeviceEvent
 
     /// <summary>When the event occurred.</summary>
     [Required]
-    public DateTime EventTime { get; set; } = DateTime.Now;
+    public DateTime EventTime { get; set; }
+
+    [NotMapped]
+    public DateTime EventTimeLocal => TimeFormatter.ToLocalTime(EventTime);
 
     /// <summary>Type of event (connection, disconnection, app lifecycle, etc.).</summary>
     [Required]

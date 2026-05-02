@@ -1,6 +1,7 @@
 ﻿using KeyPulse.Configuration;
 using KeyPulse.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KeyPulse.Data;
 
@@ -15,6 +16,27 @@ public class ApplicationDbContext : DbContext
         return AppDataPaths.GetPath(AppConstants.Paths.DatabaseFileName);
     }
 
+    private static DateTime ConvertLocalToUtc(DateTime value)
+    {
+        if (value.Kind == DateTimeKind.Utc)
+            return TruncateToSecond(value);
+
+        if (value.Kind == DateTimeKind.Local)
+            return TruncateToSecond(value.ToUniversalTime());
+
+        return TruncateToSecond(DateTime.SpecifyKind(value, DateTimeKind.Local).ToUniversalTime());
+    }
+
+    private static DateTime ConvertUtcToLocal(DateTime value)
+    {
+        return TruncateToSecond(DateTime.SpecifyKind(value, DateTimeKind.Utc).ToLocalTime());
+    }
+
+    private static DateTime TruncateToSecond(DateTime value)
+    {
+        return new DateTime(value.Year, value.Month, value.Day, value.Hour, value.Minute, value.Second, value.Kind);
+    }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Data Source={GetDatabasePath()}");
@@ -24,6 +46,15 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        var localToUtcConverter = new ValueConverter<DateTime, DateTime>(
+            v => ConvertLocalToUtc(v),
+            v => ConvertUtcToLocal(v)
+        );
+
+        var nullableLocalToUtcConverter = new ValueConverter<DateTime?, DateTime?>(
+            v => v.HasValue ? ConvertLocalToUtc(v.Value) : null,
+            v => v.HasValue ? ConvertUtcToLocal(v.Value) : null
+        );
         modelBuilder
             .Entity<Device>()
             .ToTable("Devices")
@@ -33,10 +64,14 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Device>().Property(e => e.DeviceType).HasConversion<string>();
         modelBuilder.Entity<Device>().Property(e => e.TotalInputCount).HasDefaultValue(0L);
 
+        modelBuilder.Entity<Device>().Property(e => e.SessionStartedAt).HasConversion(nullableLocalToUtcConverter);
+        modelBuilder.Entity<Device>().Property(e => e.LastConnectedAt).HasConversion(nullableLocalToUtcConverter);
+        modelBuilder.Entity<Device>().Property(e => e.LastSeenAt).HasConversion(nullableLocalToUtcConverter);
         modelBuilder.Entity<DeviceEvent>().ToTable("DeviceEvents");
 
         modelBuilder.Entity<DeviceEvent>().Property(e => e.EventType).HasConversion<string>();
 
+        modelBuilder.Entity<DeviceEvent>().Property(e => e.EventTime).HasConversion(localToUtcConverter);
         modelBuilder.Entity<DeviceEvent>().HasIndex(e => e.EventTime).HasDatabaseName("Idx_DeviceEvents_EventTime");
 
         modelBuilder
@@ -57,6 +92,7 @@ public class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<ActivitySnapshot>().ToTable("ActivitySnapshots");
 
+        modelBuilder.Entity<ActivitySnapshot>().Property(e => e.Minute).HasConversion(localToUtcConverter);
         modelBuilder
             .Entity<ActivitySnapshot>()
             .HasIndex(e => new { e.DeviceId, e.Minute })

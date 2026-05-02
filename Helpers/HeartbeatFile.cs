@@ -23,7 +23,7 @@ public static class HeartbeatFile
     {
         try
         {
-            File.WriteAllText(FilePath, DateTime.Now.ToString("O"));
+            File.WriteAllText(FilePath, DateTime.UtcNow.ToString("O"));
         }
         catch (Exception ex)
         {
@@ -46,7 +46,7 @@ public static class HeartbeatFile
 
             var text = File.ReadAllText(FilePath).Trim();
             if (DateTime.TryParse(text, null, DateTimeStyles.RoundtripKind, out var dt))
-                return dt;
+                return dt.Kind == DateTimeKind.Utc ? dt : dt.ToUniversalTime();
 
             Log.Warning(
                 "Heartbeat read failed because file content was not a valid timestamp at {HeartbeatPath}",

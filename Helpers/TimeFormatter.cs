@@ -6,11 +6,26 @@
 public static class TimeFormatter
 {
     /// <summary>
+    /// Converts a persisted timestamp to local time for display/use.
+    /// Treats unspecified values as UTC to match legacy SQLite reads.
+    /// </summary>
+    public static DateTime ToLocalTime(DateTime dateTime)
+    {
+        return dateTime.Kind switch
+        {
+            DateTimeKind.Local => dateTime,
+            DateTimeKind.Utc => dateTime.ToLocalTime(),
+            _ => DateTime.SpecifyKind(dateTime, DateTimeKind.Utc).ToLocalTime(),
+        };
+    }
+
+    /// <summary>
     /// Converts a DateTime to a relative time string (e.g., "2 hours ago", "5 seconds ago").
     /// </summary>
     public static string ToRelativeTime(DateTime dateTime)
     {
-        var timeSpan = DateTime.Now - dateTime;
+        var localDateTime = ToLocalTime(dateTime);
+        var timeSpan = DateTime.Now - localDateTime;
 
         if (timeSpan.TotalSeconds < 60)
             return $"{(int)timeSpan.TotalSeconds} seconds ago";

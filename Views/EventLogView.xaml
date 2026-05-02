@@ -16,7 +16,7 @@
       <DataGrid.Columns>
         <DataGridTextColumn
           Header="Event Time"
-          Binding="{Binding EventTime, StringFormat=\{0:yyyy-MM-dd HH:mm:ss\}}"
+          Binding="{Binding EventTimeLocal, StringFormat=\{0:yyyy-MM-dd HH:mm:ss\}}"
           Width="Auto"
         />
         <DataGridTextColumn Header="Event Type" Binding="{Binding EventType}" Width="Auto" />
