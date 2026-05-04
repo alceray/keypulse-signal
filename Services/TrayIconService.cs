@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using KeyPulse.Configuration;
+using KeyPulse.Helpers;
 using Serilog;
 
 namespace KeyPulse.Services;
@@ -68,7 +69,10 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
         }
 
         var dispatcher = System.Windows.Application.Current?.Dispatcher;
-        if (dispatcher == null || dispatcher.CheckAccess())
+        if (!ShutdownDispose.IsDispatcherUsable(dispatcher))
+            return;
+
+        if (dispatcher!.CheckAccess())
         {
             Apply();
             return;

@@ -69,7 +69,7 @@ public class DailyStatsService : IDisposable
 
                 if (lastShutdown.HasValue)
                 {
-                    var lastShutdownDay = DateOnly.FromDateTime(TimeFormatter.ToLocalTime(lastShutdown.Value));
+                    var lastShutdownDay = TimeFormatter.ToLocalDay(lastShutdown.Value);
                     from = lastShutdownDay;
 
                     // A clean shutdown earlier today has no offline gap to rebuild.
@@ -164,12 +164,11 @@ public class DailyStatsService : IDisposable
     /// </summary>
     public void ApplyDeviceEvent(ApplicationDbContext ctx, DeviceEvent deviceEvent)
     {
-        if (deviceEvent.EventType.IsAppEvent())
+        if (deviceEvent.EventType.IsAppEvent() || !deviceEvent.EventType.IsClosingEvent())
             return;
 
-        if (deviceEvent.EventType.IsClosingEvent())
-            ApplyClosingEventToStats(ctx, deviceEvent);
-
+        var day = TimeFormatter.ToLocalDay(deviceEvent.EventTime);
+        RecomputeDailyConnectionStats(ctx, deviceEvent.DeviceId, day);
         ctx.SaveChanges();
     }
 
@@ -325,23 +324,27 @@ public class DailyStatsService : IDisposable
     // Private helpers
     // ─────────────────────────────────────────────────────────────────────────
 
-    /// <summary>Replays closing lifecycle events in the requested local-day range to rebuild connection metrics.</summary>
+    /// <summary>Recomputes connection stats for all (device, day) pairs that have any lifecycle events in the range.</summary>
     private void RecomputeConnectionStatsForRange(ApplicationDbContext ctx, DateOnly from, DateOnly to)
     {
         var (fromBound, toBound) = GetUtcBounds(from, to);
 
-        // Load closing events in range; opening events are looked up per close event in ApplyClosingEventToStats.
-        var closeEvents = ctx
+        var deviceDayPairs = ctx
             .DeviceEvents.Where(e =>
-                (e.EventType == EventTypes.ConnectionEnded || e.EventType == EventTypes.Disconnected)
-                && e.EventTime >= fromBound
+                e.EventTime >= fromBound
                 && e.EventTime < toBound
+                && e.EventType != EventTypes.AppStarted
+                && e.EventType != EventTypes.AppEnded
+                && e.DeviceId != ""
             )
-            .OrderBy(e => e.DeviceEventId)
+            .Select(e => new { e.DeviceId, e.EventTime })
+            .AsEnumerable()
+            .Select(e => (e.DeviceId, Day: TimeFormatter.ToLocalDay(e.EventTime)))
+            .Distinct()
             .ToList();
 
-        foreach (var closeEvent in closeEvents)
-            ApplyClosingEventToStats(ctx, closeEvent);
+        foreach (var (deviceId, day) in deviceDayPairs)
+            RecomputeDailyConnectionStats(ctx, deviceId, day);
 
         ctx.SaveChanges();
     }
@@ -360,51 +363,55 @@ public class DailyStatsService : IDisposable
         ctx.SaveChanges();
     }
 
-    /// <summary>Applies one closing lifecycle event to daily stats by splitting its session across local-day boundaries.</summary>
-    private void ApplyClosingEventToStats(ApplicationDbContext ctx, DeviceEvent closeEvent)
+    /// <summary>
+    /// Overwrites connection stats (SessionCount, ConnectionDuration, LongestSessionDuration) for
+    /// a device on a single local day by replaying all its lifecycle events for that day.
+    /// If the first event in the day is a closing event (cross-midnight session), the session
+    /// start is assumed to be local midnight.
+    /// </summary>
+    private void RecomputeDailyConnectionStats(ApplicationDbContext ctx, string deviceId, DateOnly day)
     {
-        var closeTimeLocal = TimeFormatter.ToLocalTime(closeEvent.EventTime);
-        var closeDay = DateOnly.FromDateTime(closeTimeLocal);
+        var dayStartLocal = day.ToDateTime(TimeOnly.MinValue);
+        var (dayStartUtc, dayEndUtc) = GetUtcBounds(day, day);
 
-        // Find session start from the latest opening event at or before closeTime; fallback to close-day midnight.
-        var sameOrEarlierOpens = ctx
-            .DeviceEvents.Where(e =>
-                e.DeviceId == closeEvent.DeviceId
-                && (e.EventType == EventTypes.ConnectionStarted || e.EventType == EventTypes.Connected)
-                && e.EventTime <= closeEvent.EventTime
-            )
-            .OrderByDescending(e => e.DeviceEventId)
-            .FirstOrDefault();
+        var dayEvents = ctx
+            .DeviceEvents.Where(e => e.DeviceId == deviceId && e.EventTime >= dayStartUtc && e.EventTime < dayEndUtc)
+            .OrderBy(e => e.DeviceEventId)
+            .ToList();
 
-        DateTime startTimeLocal;
-        if (sameOrEarlierOpens != null)
+        var sessionCount = 0;
+        var totalSeconds = 0L;
+        var longestSeconds = 0L;
+        DateTime? currentSessionStartLocal = null;
+
+        foreach (var evt in dayEvents)
         {
-            startTimeLocal = TimeFormatter.ToLocalTime(sameOrEarlierOpens.EventTime);
-            // Only use if it's on the same local day or earlier (cross-midnight opens start from day boundary).
-        }
-        else
-        {
-            // Fallback: midnight of close day.
-            startTimeLocal = closeDay.ToDateTime(TimeOnly.MinValue);
-        }
-
-        // Split the [start, close) interval across local day boundaries.
-        var intervals = TimeFormatter.SplitByLocalDays(startTimeLocal, closeTimeLocal);
-
-        foreach (var (day, seconds) in intervals)
-        {
-            if (seconds <= 0)
-                continue;
-
-            var stat = GetOrCreateDailyStat(ctx, day, closeEvent.DeviceId);
-            stat.SessionCount++;
-            stat.ConnectionDuration += seconds;
-            if (seconds > stat.LongestSessionDuration)
-                stat.LongestSessionDuration = seconds;
-            stat.UpdatedAt = DateTime.UtcNow;
+            if (evt.EventType.IsOpeningEvent())
+            {
+                currentSessionStartLocal = TimeFormatter.ToLocalTime(evt.EventTime);
+            }
+            else if (evt.EventType.IsClosingEvent())
+            {
+                var closeLocal = TimeFormatter.ToLocalTime(evt.EventTime);
+                // No open seen today → cross-midnight session; use midnight as start.
+                var sessionStart = currentSessionStartLocal ?? dayStartLocal;
+                var seconds = (long)(closeLocal - sessionStart).TotalSeconds;
+                if (seconds > 0)
+                {
+                    sessionCount++;
+                    totalSeconds += seconds;
+                    if (seconds > longestSeconds)
+                        longestSeconds = seconds;
+                }
+                currentSessionStartLocal = null;
+            }
         }
 
-        // Closing event fires on its local day — update DisconnectionCount implied by SessionCount above.
+        var stat = GetOrCreateDailyStat(ctx, day, deviceId);
+        stat.SessionCount = sessionCount;
+        stat.ConnectionDuration = totalSeconds;
+        stat.LongestSessionDuration = longestSeconds;
+        stat.UpdatedAt = DateTime.UtcNow;
     }
 
     /// <summary>Projects one minute snapshot into daily stats and records its projection checkpoint.</summary>
@@ -416,7 +423,7 @@ public class DailyStatsService : IDisposable
     )
     {
         var minuteLocal = TimeFormatter.ToLocalTime(snapshot.Minute);
-        var day = DateOnly.FromDateTime(minuteLocal);
+        var day = TimeFormatter.ToLocalDay(snapshot.Minute);
         var hour = minuteLocal.Hour;
         var key = (day, snapshot.DeviceId);
 
@@ -472,10 +479,7 @@ public class DailyStatsService : IDisposable
             };
         }
 
-        var impacted = snapshots
-            .Select(s => (DateOnly.FromDateTime(TimeFormatter.ToLocalTime(s.Minute)), s.DeviceId))
-            .Distinct()
-            .ToList();
+        var impacted = snapshots.Select(s => (TimeFormatter.ToLocalDay(s.Minute), s.DeviceId)).Distinct().ToList();
 
         var impactedSet = impacted.ToHashSet();
         var deviceIds = impacted.Select(k => k.DeviceId).Distinct().ToList();
@@ -524,7 +528,7 @@ public class DailyStatsService : IDisposable
         foreach (var projection in projections)
         {
             var localMinute = TimeFormatter.ToLocalTime(projection.Minute);
-            var key = (DateOnly.FromDateTime(localMinute), projection.DeviceId);
+            var key = (TimeFormatter.ToLocalDay(projection.Minute), projection.DeviceId);
             if (!impactedSet.Contains((key.Item1, key.DeviceId)))
                 continue;
 

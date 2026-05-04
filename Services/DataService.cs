@@ -208,6 +208,13 @@ public class DataService
             .AsReadOnly();
     }
 
+    public void SaveDeviceEvent(ApplicationDbContext ctx, DeviceEvent deviceEvent)
+    {
+        ctx.DeviceEvents.Add(deviceEvent);
+        ctx.SaveChanges();
+        _dailyStats.ApplyDeviceEvent(ctx, deviceEvent);
+    }
+
     public void SaveDeviceEvent(DeviceEvent deviceEvent)
     {
         try
@@ -396,7 +403,8 @@ public class DataService
 
         foreach (var deviceId in unbalancedDeviceIds)
         {
-            ctx.DeviceEvents.Add(
+            SaveDeviceEvent(
+                ctx,
                 new DeviceEvent
                 {
                     DeviceId = deviceId,
@@ -410,7 +418,7 @@ public class DataService
                 device.LastSeenAt = crashTime;
         }
 
-        ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = crashTime });
+        SaveDeviceEvent(ctx, new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = crashTime });
 
         try
         {

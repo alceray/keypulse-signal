@@ -6,6 +6,11 @@
 public static class TimeFormatter
 {
     /// <summary>
+    /// Converts a persisted UTC timestamp to the local calendar day it falls on.
+    /// </summary>
+    public static DateOnly ToLocalDay(DateTime dateTime) => DateOnly.FromDateTime(ToLocalTime(dateTime));
+
+    /// <summary>
     /// Converts a persisted timestamp to local time for display/use.
     /// Treats unspecified values as UTC to match legacy SQLite reads.
     /// </summary>

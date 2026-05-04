@@ -112,15 +112,11 @@ public class UsbMonitorService : IDisposable
         // During disposal the WPF dispatcher has stopped pumping; skip all UI updates to
         // avoid a Dispatcher.Invoke deadlock that would let Windows kill the process before
         // shutdown completes. Data persistence still runs on the calling thread.
-        var appDispatcher = Application.Current?.Dispatcher;
-        var updateUi =
-            !_disposed
-            && appDispatcher != null
-            && !appDispatcher.HasShutdownStarted
-            && !appDispatcher.HasShutdownFinished;
+        var dispatcher = Application.Current?.Dispatcher;
+        var updateUi = !_disposed && ShutdownDispose.IsDispatcherUsable(dispatcher);
 
         if (updateUi)
-            appDispatcher!.BeginInvoke(() => DeviceEventList.Add(deviceEvent));
+            dispatcher!.BeginInvoke(() => DeviceEventList.Add(deviceEvent));
 
         _dataService.SaveDeviceEvent(deviceEvent);
 
@@ -135,7 +131,7 @@ public class UsbMonitorService : IDisposable
             // Always resolve/apply state on the UI-bound DeviceList instance.
             // DataService.GetDevice returns detached objects when using DbContextFactory,
             // so mutating that instance does not update the UI.
-            appDispatcher!.Invoke(() =>
+            dispatcher!.Invoke(() =>
             {
                 var existingDevice = DeviceList.FirstOrDefault(d => d.DeviceId == device.DeviceId);
                 if (existingDevice != null)

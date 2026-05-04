@@ -19,17 +19,20 @@ public static class ShutdownDispose
         }
     }
 
+    private static bool IsDispatcherShuttingDown(System.Windows.Threading.Dispatcher? dispatcher)
+    {
+        return dispatcher == null || dispatcher.HasShutdownStarted || dispatcher.HasShutdownFinished;
+    }
+
     public static bool IsProcessTearingDown(System.Windows.Threading.Dispatcher? dispatcher = null)
     {
         return Environment.HasShutdownStarted
             || AppDomain.CurrentDomain.IsFinalizingForUnload()
-            || dispatcher == null
-            || dispatcher.HasShutdownStarted
-            || dispatcher.HasShutdownFinished;
+            || IsDispatcherShuttingDown(dispatcher);
     }
 
     public static bool IsDispatcherUsable(System.Windows.Threading.Dispatcher? dispatcher)
     {
-        return dispatcher != null && !dispatcher.HasShutdownStarted && !dispatcher.HasShutdownFinished;
+        return !IsDispatcherShuttingDown(dispatcher);
     }
 }
