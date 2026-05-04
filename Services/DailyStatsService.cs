@@ -193,7 +193,7 @@ public class DailyStatsService : IDisposable
         {
             using var ctx = _factory.CreateDbContext();
 
-            var currentBoundary = NormalizeMinute(DateTime.UtcNow);
+            var currentBoundary = TimeFormatter.NormalizeUtcMinute(DateTime.UtcNow);
 
             // Closed-minute filter remains authoritative.
             var unprojected = ctx
@@ -303,7 +303,7 @@ public class DailyStatsService : IDisposable
                 {
                     DeviceId = row.DeviceId,
                     DeviceName = device?.DeviceName ?? row.DeviceId,
-                    DeviceType = device?.DeviceType.ToString() ?? "",
+                    DeviceType = device?.DeviceType ?? DeviceTypes.Unknown,
                     SessionCount = row.SessionCount,
                     ConnectionDuration = row.ConnectionDuration,
                     LongestSessionDuration = row.LongestSessionDuration,
@@ -609,10 +609,14 @@ public class DailyStatsService : IDisposable
                 {
                     DeviceId = r.DeviceId,
                     DeviceName = device?.DeviceName ?? r.DeviceId,
-                    DeviceType = device?.DeviceType.ToString() ?? "",
+                    DeviceType = device?.DeviceType ?? DeviceTypes.Unknown,
                 };
             })
-            .OrderBy(d => d.DeviceType == "Keyboard" ? 0 : 1)
+            .OrderBy(d =>
+                d.DeviceType == DeviceTypes.Keyboard ? 0
+                : d.DeviceType == DeviceTypes.Mouse ? 1
+                : 2
+            )
             .ThenBy(d => d.DeviceName)
             .ToList();
 
@@ -635,19 +639,13 @@ public class DailyStatsService : IDisposable
         return value;
     }
 
-    private static DateTime NormalizeMinute(DateTime timestamp)
-    {
-        var utc = timestamp.Kind == DateTimeKind.Utc ? timestamp : timestamp.ToUniversalTime();
-        return new DateTime(utc.Year, utc.Month, utc.Day, utc.Hour, utc.Minute, 0, DateTimeKind.Utc);
-    }
-
     /// <summary>
     /// Marks activity projection as dirty whenever snapshots are written or merged.
     /// Minute is normalized to a UTC minute boundary for projector close-boundary checks.
     /// </summary>
     public void MarkActivitySnapshotWritten(DateTime minute)
     {
-        var ticks = NormalizeMinute(minute).Ticks;
+        var ticks = TimeFormatter.NormalizeUtcMinute(minute).Ticks;
 
         while (true)
         {

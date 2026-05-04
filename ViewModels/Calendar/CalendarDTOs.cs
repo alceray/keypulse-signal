@@ -1,17 +1,19 @@
-﻿namespace KeyPulse.ViewModels.Calendar;
+﻿using KeyPulse.Models;
+
+namespace KeyPulse.ViewModels.Calendar;
 
 /// <summary>Lightweight device entry shown on a calendar day tile.</summary>
 public sealed class CalendarTileDevice
 {
     public string DeviceId { get; init; } = "";
     public string DeviceName { get; init; } = "";
-    public string DeviceType { get; init; } = "";
+    public DeviceTypes DeviceType { get; init; } = DeviceTypes.Unknown;
 
     public string TypeIcon =>
         DeviceType switch
         {
-            "Keyboard" => "⌨",
-            "Mouse" => "🖱",
+            DeviceTypes.Keyboard => "⌨",
+            DeviceTypes.Mouse => "🖱",
             _ => "?",
         };
 }
@@ -35,7 +37,8 @@ public sealed class CalendarDeviceDetail
 {
     public string DeviceId { get; init; } = "";
     public string DeviceName { get; init; } = "";
-    public string DeviceType { get; init; } = "";
+    public DeviceTypes DeviceType { get; init; } = DeviceTypes.Unknown;
+    public string DeviceTypeText => DeviceType.ToString();
 
     // Connection
     public int SessionCount { get; init; }

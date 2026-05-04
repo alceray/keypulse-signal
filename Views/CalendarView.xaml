@@ -15,7 +15,7 @@
   <Grid Margin="8">
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*" />
-      <ColumnDefinition Width="320" />
+      <ColumnDefinition Width="0.3*" />
     </Grid.ColumnDefinitions>
 
     <!-- Left: Month grid -->
@@ -151,25 +151,29 @@
                                 </Style.Triggers>
                               </Style>
                             </Border.Style>
-                            <StackPanel>
-                              <DockPanel LastChildFill="False">
+                            <Grid>
+                              <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                              </Grid.RowDefinitions>
+                              <DockPanel Grid.Row="0" LastChildFill="False">
                                 <TextBlock
                                   DockPanel.Dock="Left"
                                   Text="{Binding Day.Day}"
                                   FontWeight="Bold"
-                                  FontSize="13"
+                                  FontSize="16"
                                 />
                                 <TextBlock
                                   DockPanel.Dock="Right"
                                   Text="today"
-                                  FontSize="9"
+                                  FontSize="12"
                                   Foreground="#429CF4"
                                   VerticalAlignment="Center"
                                   Visibility="{Binding IsToday, Converter={StaticResource BoolToVisibilityConverter}}"
                                 />
                               </DockPanel>
                               <ScrollViewer
-                                MaxHeight="72"
+                                Grid.Row="1"
                                 Margin="0,3,0,0"
                                 VerticalScrollBarVisibility="Auto"
                                 HorizontalScrollBarVisibility="Disabled"
@@ -186,14 +190,14 @@
                                         <TextBlock
                                           Grid.Column="0"
                                           Text="{Binding TypeIcon}"
-                                          FontSize="10"
+                                          FontSize="12"
                                           Margin="0,0,3,0"
                                           VerticalAlignment="Center"
                                         />
                                         <TextBlock
                                           Grid.Column="1"
                                           Text="{Binding DeviceName}"
-                                          FontSize="10"
+                                          FontSize="12"
                                           TextTrimming="CharacterEllipsis"
                                           VerticalAlignment="Center"
                                         />
@@ -202,7 +206,7 @@
                                   </ItemsControl.ItemTemplate>
                                 </ItemsControl>
                               </ScrollViewer>
-                            </StackPanel>
+                            </Grid>
                           </Border>
                         </DataTemplate>
                       </Setter.Value>
@@ -258,108 +262,80 @@
                     <Border BorderBrush="#E8E8E8" BorderThickness="1" CornerRadius="3" Padding="8" Margin="0,0,0,8">
                       <StackPanel>
                         <TextBlock Text="{Binding DeviceName}" FontWeight="SemiBold" TextWrapping="Wrap" />
-                        <TextBlock Text="{Binding DeviceType}" Foreground="#777" FontSize="12" />
+                        <TextBlock Text="{Binding DeviceTypeText}" Foreground="#777" FontSize="12" />
 
-                        <Grid Margin="0,6,0,0">
-                          <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                          </Grid.ColumnDefinitions>
-                          <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                          </Grid.RowDefinitions>
-
-                          <TextBlock Grid.Row="0" Grid.Column="0" Text="Connected" Foreground="#555" FontSize="12" />
-                          <TextBlock
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Foreground="#222"
-                            FontSize="12"
-                            Text="{Binding ConnectionDuration, Converter={StaticResource SecondsToHhMmSsConverter}}"
-                          />
-
-                          <TextBlock
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Text="Longest session"
-                            Foreground="#555"
-                            FontSize="12"
-                          />
-                          <TextBlock
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Foreground="#222"
-                            FontSize="12"
-                            Text="{Binding LongestSessionDuration, Converter={StaticResource SecondsToHhMmSsConverter}}"
-                          />
-
-                          <TextBlock Grid.Row="2" Grid.Column="0" Text="Sessions" Foreground="#555" FontSize="12" />
-                          <TextBlock
-                            Grid.Row="2"
-                            Grid.Column="1"
-                            Text="{Binding SessionCount}"
-                            Foreground="#222"
-                            FontSize="12"
-                          />
-
-                          <TextBlock Grid.Row="3" Grid.Column="0" Text="Input count" Foreground="#555" FontSize="12" />
-                          <TextBlock
-                            Grid.Row="3"
-                            Grid.Column="1"
-                            Text="{Binding TotalInput}"
-                            Foreground="#222"
-                            FontSize="12"
-                          />
-                        </Grid>
-
-                        <Grid Margin="0,4,0,0">
-                          <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                          </Grid.ColumnDefinitions>
-                          <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                          </Grid.RowDefinitions>
-
-                          <TextBlock
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Text="Active minutes"
-                            Foreground="#555"
-                            FontSize="12"
-                          />
-                          <TextBlock
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Text="{Binding ActiveMinutes}"
-                            Foreground="#222"
-                            FontSize="12"
-                          />
-
-                          <TextBlock Grid.Row="1" Grid.Column="0" Text="Active hours" Foreground="#555" FontSize="12" />
-                          <TextBlock
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Text="{Binding DistinctActiveHours}"
-                            Foreground="#222"
-                            FontSize="12"
-                          />
-
-                          <TextBlock Grid.Row="2" Grid.Column="0" Text="Peak hour" Foreground="#555" FontSize="12" />
-                          <TextBlock
-                            Grid.Row="2"
-                            Grid.Column="1"
-                            Text="{Binding PeakInputHourDisplay}"
-                            Foreground="#222"
-                            FontSize="12"
-                          />
-                        </Grid>
+                        <StackPanel Margin="0,6,0,0" Orientation="Vertical">
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Connected" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding ConnectionDuration, Converter={StaticResource SecondsToHhMmSsConverter}}"
+                            />
+                          </DockPanel>
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Longest session" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding LongestSessionDuration, Converter={StaticResource SecondsToHhMmSsConverter}}"
+                            />
+                          </DockPanel>
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding SessionCount}"
+                            />
+                          </DockPanel>
+                          <DockPanel Margin="0,0,0,8">
+                            <TextBlock DockPanel.Dock="Left" Text="Input count" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding TotalInput}"
+                            />
+                          </DockPanel>
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Active minutes" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding ActiveMinutes}"
+                            />
+                          </DockPanel>
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Active hours" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding DistinctActiveHours}"
+                            />
+                          </DockPanel>
+                          <DockPanel>
+                            <TextBlock DockPanel.Dock="Left" Text="Peak hour" Foreground="#555" FontSize="12" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding PeakInputHourDisplay}"
+                            />
+                          </DockPanel>
+                        </StackPanel>
                       </StackPanel>
                     </Border>
                   </DataTemplate>

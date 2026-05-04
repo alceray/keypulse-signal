@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 using KeyPulse.Helpers;
+using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.ViewModels.Calendar;
 
@@ -280,6 +282,16 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             _todayLiveInputDeltaByDevice[deviceId] =
                 (_todayLiveInputDeltaByDevice.TryGetValue(deviceId, out var existing) ? existing : 0L) + delta;
         }
+
+        // Reflect input changes immediately so today's detail panel feels realtime like Device List.
+        var dispatcher = Application.Current?.Dispatcher;
+        if (!ShutdownDispose.IsDispatcherUsable(dispatcher))
+            return;
+
+        if (dispatcher!.CheckAccess())
+            ApplyRealtimeTodayOverlay();
+        else
+            dispatcher.BeginInvoke(new Action(ApplyRealtimeTodayOverlay));
     }
 
     /// <summary>Refreshes today's persisted baseline every 30 seconds while viewing the current month.</summary>
@@ -384,11 +396,18 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 {
                     DeviceId = device.DeviceId,
                     DeviceName = device.DeviceName,
-                    DeviceType = device.DeviceType.ToString(),
+                    DeviceType = device.DeviceType,
                 };
         }
 
-        return byId.Values.OrderBy(d => d.DeviceType == "Keyboard" ? 0 : 1).ThenBy(d => d.DeviceName).ToList();
+        return byId
+            .Values.OrderBy(d =>
+                d.DeviceType == DeviceTypes.Keyboard ? 0
+                : d.DeviceType == DeviceTypes.Mouse ? 1
+                : 2
+            )
+            .ThenBy(d => d.DeviceName)
+            .ToList();
     }
 
     private void ReplaceTodaySummary(CalendarDaySummary summary)
@@ -490,7 +509,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 {
                     DeviceId = id,
                     DeviceName = persisted?.DeviceName ?? device?.DeviceName ?? id,
-                    DeviceType = persisted?.DeviceType ?? device?.DeviceType.ToString() ?? "",
+                    DeviceType = persisted?.DeviceType ?? device?.DeviceType ?? DeviceTypes.Unknown,
                     SessionCount = sessionCount,
                     ConnectionDuration = baseConnection + connectionOverlay,
                     LongestSessionDuration = Math.Max(baseLongest, connectionOverlay),
@@ -513,9 +532,12 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     private static IEnumerable<CalendarDeviceDetail> OrderDetailsForDisplay(IEnumerable<CalendarDeviceDetail> rows)
     {
         return rows.OrderBy(r =>
-                r.DeviceType == "Keyboard" ? 0
-                : r.DeviceType == "Mouse" ? 1
-                : 2
+                r.DeviceType switch
+                {
+                    DeviceTypes.Keyboard => 0,
+                    DeviceTypes.Mouse => 1,
+                    _ => 2,
+                }
             )
             .ThenBy(r => r.DeviceName);
     }

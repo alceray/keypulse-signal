@@ -120,6 +120,16 @@ public static class TimeFormatter
     }
 
     /// <summary>
+    /// Normalizes a timestamp to its UTC minute boundary.
+    /// Non-UTC values are converted to UTC before truncation.
+    /// </summary>
+    public static DateTime NormalizeUtcMinute(DateTime timestamp)
+    {
+        var utc = timestamp.Kind == DateTimeKind.Utc ? timestamp : timestamp.ToUniversalTime();
+        return new DateTime(utc.Year, utc.Month, utc.Day, utc.Hour, utc.Minute, 0, DateTimeKind.Utc);
+    }
+
+    /// <summary>
     /// Converts a local calendar day to its UTC start boundary.
     /// Useful for inclusive day-range queries represented as UTC timestamps.
     /// </summary>
