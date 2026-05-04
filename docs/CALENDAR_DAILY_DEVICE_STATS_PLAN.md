@@ -1,345 +1,685 @@
 ﻿# Calendar Daily Device Stats Plan
 
-## Goals
+## Purpose
 
-- Add a calendar view that shows daily USB device usage at a glance.
-- Persist a day-level aggregate table for fast month/week queries.
-- Keep aggregates updated incrementally from `DeviceEvents` and closed-minute `ActivitySnapshots`.
-- Rebuild the gap since last clean shutdown on startup; rebuild on-demand per month on first navigation.
+This document now describes the **current calendar + daily-stats pipeline as implemented**, not just the original design direction.
+It uses both:
 
-## Non-Goals
+- **high-level concepts** — source of truth, write-through lifecycle stats, minute projector, UI overlay
+- **concrete implementation names** — `DataService.SaveDeviceEvent`, `DailyStatsService.ProjectClosedActivityMinutes`, `CalendarViewModel.ApplyRealtimeTodayOverlay`, etc.
 
-- No full historical rebuild across all years of data.
-- No change to existing source-of-truth tables (`DeviceEvents`, `ActivitySnapshots`).
+It also calls out where the original plan has been **implemented**, **changed**, or is still **not wired up**.
 
-## Source of Truth
+---
 
-- Connection lifecycle: `DeviceEvents`
-- Input activity: `ActivitySnapshots`
-- Device metadata for detail display: `Devices`
+## Current Outcome
 
-## Timezone Policy
+Today, the calendar feature works as a hybrid of:
 
-- Canonical source timestamps are stored as UTC (all persisted `DateTime` values).
-- Calendar bucketing uses a local calendar timezone (`TimeZoneInfo.Local` by default).
-- `DailyDeviceStats.Day` is the local day key (`DateOnly`) derived from persisted timestamps.
-- Day buckets are half-open local intervals: `[localMidnight, nextLocalMidnight)`.
-- DST transitions are handled by local-midnight boundaries (days may be 23/24/25 hours).
+1. **Persisted daily aggregates** in `DailyDeviceStats`
+2. **Exactly-once minute projection checkpoints** in `ActivityProjections`
+3. **UI-only live overlays** in `CalendarViewModel` for today's open sessions and unprojected input deltas
 
-## New Table
+At a high level, the pipeline is:
 
-Add one table: `DailyDeviceStats`.
+1. **Raw source tables** remain authoritative:
+   - `DeviceEvents` for lifecycle / sessions
+   - `ActivitySnapshots` for minute activity
+2. **`DataService`** writes source rows first.
+3. **`DailyStatsService`** projects / recomputes day-level aggregates into `DailyDeviceStats`.
+4. **`CalendarViewModel`** reads persisted month/day summaries from `DailyStatsService` and overlays today's live state from:
+   - `UsbMonitorService.DeviceList`
+   - `RawInputService.InputCountIncremented`
 
-### Entity (proposed)
+---
 
-```csharp
-public sealed class DailyDeviceStat
-{
-    public int DailyDeviceStatId { get; set; }
+## Persisted Tables in the Current Flow
 
-    // Grain key
-    public DateOnly Day { get; set; }
-    public string DeviceId { get; set; } = "";
+## Source-of-truth tables
 
-    // Connection metrics (from DeviceEvents)
-    public int SessionCount { get; set; }
-    public long ConnectionDuration { get; set; }
-    public long LongestSessionDuration { get; set; }
+- `DeviceEvents`
+  - append-only lifecycle log
+  - opening events: `ConnectionStarted`, `Connected`
+  - closing events: `ConnectionEnded`, `Disconnected`
+  - app events: `AppStarted`, `AppEnded`
+- `ActivitySnapshots`
+  - one canonical row per `(DeviceId, Minute)`
+  - stores `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`
+- `Devices`
+  - mutable snapshot / metadata store used for names, types, current-ish state
 
-    // Activity metrics (from ActivitySnapshots)
-    public long Keystrokes { get; set; }
-    public long MouseClicks { get; set; }
-    public long MouseMovementSeconds { get; set; }
-    public DateTime? FirstActivityAt { get; set; }
-    public DateTime? LastActivityAt { get; set; }
-    public int DistinctActiveHours { get; set; }
-    public int ActiveMinutes { get; set; }
-    public int PeakInputHour { get; set; }
+## Aggregate / projector tables
 
-    public DateTime UpdatedAt { get; set; }
-}
-```
+- `DailyDeviceStats`
+  - one row per `(Day, DeviceId)`
+  - stores connection aggregates + activity aggregates
+- `ActivityProjections`
+  - exactly-once checkpoint table
+  - one row per projected `(DeviceId, Minute)`
 
-### Constraints / Indexes
+See:
 
-- Unique index: `(Day, DeviceId)`
-- Index: `(Day)` for month range fetch
-- Index: `(DeviceId, Day)` for per-device trend views
+- `Models/DailyDeviceStat.cs`
+- `Models/ActivityProjection.cs`
+- `Data/ApplicationDbContext.cs`
 
-## Incremental Collection Strategy (+ Hybrid Rebuild)
+---
 
-Use a mixed strategy:
+## Actual Entity Shape
 
-- `DeviceEvents` update `DailyDeviceStats` immediately on write.
-- `ActivitySnapshots` update `DailyDeviceStats` with a minute-delayed projector that processes only closed minutes.
+## `DailyDeviceStat`
 
-## 1) From `DeviceEvents` (connection duration)
+The original plan included some fields that are **not** in the final model.
+The current entity in `Models/DailyDeviceStat.cs` contains:
 
-Hook in `DataService.SaveDeviceEvent` after insert succeeds.
+- grain key:
+  - `Day`
+  - `DeviceId`
+- connection metrics:
+  - `SessionCount`
+  - `ConnectionDuration`
+  - `LongestSessionDuration`
+- activity metrics:
+  - `Keystrokes`
+  - `MouseClicks`
+  - `MouseMovementSeconds`
+  - `DistinctActiveHours`
+  - `ActiveMinutes`
+  - `PeakInputHour`
+- row maintenance:
+  - `UpdatedAt`
 
-### Event handling rules
+### Not implemented from the original proposal
 
-- Opening events: `ConnectionStarted`, `Connected` — no per-day counter needed
-- Closing events: `ConnectionEnded`, `Disconnected`
-  - Determine session start for this close using same-day fallback rules
-  - Split duration across crossed days and accumulate seconds into `ConnectionDuration` for each day touched
-  - Increment `SessionCount` for each day where this session has non-zero overlap
-  - Update `LongestSessionDuration` for each day touched using that day's overlap seconds
+These planned fields are **not** currently stored in `DailyDeviceStats`:
 
-**Note**: Sessions spanning midnight still accumulate `ConnectionDuration` on both days. `SessionCount` reflects the number of sessions with non-zero overlap on that day.
+- `FirstActivityAt`
+- `LastActivityAt`
 
-### Interval split rule
+That means the current calendar detail panel is intentionally centered on:
 
-For interval `[start, end)`:
+- connection duration
+- session count
+- longest session
+- input totals
+- active minute/hour breadth
+- peak input hour
 
-- Interpret `start`/`end` as persisted UTC instants.
-- Convert boundaries to local calendar timezone and split by local midnight boundaries.
-- If same local day: add total seconds to that `Day`.
-- If multi-day: split by local day boundaries and add seconds to each day bucket.
+---
 
-### Session start fallback rule (no open-match stack)
+## Database Constraints / Indexes
 
-No historical open/close matching is required.
+The current `ApplicationDbContext` configures:
 
-For each closing event on day `D`:
+- `DailyDeviceStats`
+  - unique index on `(Day, DeviceId)`
+  - index on `(Day)`
+  - index on `(DeviceId, Day)`
+- `ActivityProjections`
+  - unique index on `(DeviceId, Minute)`
 
-- Resolve `D` from `closeTime` in local calendar timezone.
-- Try to find an opening event for the same `DeviceId` on day `D` with `EventTime <= closeTime`.
-- If found, use the latest same-day opening event as `start`.
-- If not found, use `start = D 00:00:00` local converted to stored (UTC) format.
+See `Data/ApplicationDbContext.cs`.
 
-Then apply interval split on `[start, closeTime)`.
+---
 
-## 2) From `ActivitySnapshots` (input activity)
+## Time Semantics in the Current Flow
 
-Do not update `DailyDeviceStats` directly inside `SaveActivitySnapshots`.
+## Persisted timestamp normalization
 
-`SaveActivitySnapshots` remains responsible for canonical minute rows in `ActivitySnapshots` (merge/upsert to one row per `(DeviceId, Minute)`).
+`ApplicationDbContext` converts persisted `DateTime` values through value converters:
 
-### Minute-delayed activity projector
+- local/unspecified values are stored as UTC
+- persisted UTC values are read back as local
 
-Run a periodic projector (every 60 seconds) that processes only closed minutes (`Minute < currentMinute`).
+## Helper methods used throughout the pipeline
 
-For each closed `(DeviceId, Minute)` snapshot not yet projected:
+`Helpers/TimeFormatter.cs` is the shared contract for calendar bucketing:
 
-- `Keystrokes += snapshot.Keystrokes`
-- `MouseClicks += snapshot.MouseClicks`
-- `MouseMovementSeconds += snapshot.MouseMovementSeconds`
-- `activeMinuteDelta = 1` if the snapshot has non-zero activity
-- `distinctHourDelta = 1` only when that local hour becomes newly active for that day/device
-- `FirstActivityAt` = min(existing, snapshot minute)
-- `LastActivityAt` = max(existing, snapshot minute)
-- Track per-hour input totals (`Keystrokes + MouseClicks + MouseMovementSeconds`) and update `PeakInputHour` to the local hour with the highest total for that day/device
+- `TimeFormatter.ToLocalTime(DateTime)`
+- `TimeFormatter.ToLocalDay(DateTime)`
+- `TimeFormatter.LocalDayToUtc(DateOnly)`
+- `TimeFormatter.NormalizeUtcMinute(DateTime)`
+- `TimeFormatter.TruncateToMinute(DateTime)`
 
-Apply values to `DailyDeviceStats` for `Day(ToLocal(snapshot.Minute))` and mark the minute as projected.
+### Important distinction
 
-### Idempotency / exactly-once guard
+- `NormalizeUtcMinute(...)`
+  - converts to UTC, then truncates
+  - used by `DailyStatsService` projector logic
+- `TruncateToMinute(...)`
+  - preserves the incoming `DateTimeKind`
+  - used by `RawInputService` local-time minute buckets
 
-Use a projector checkpoint (e.g., `DailyActivityMinuteProjection`) keyed by `(DeviceId, Minute)` so each closed minute is projected once, even across restarts.
+These are **not interchangeable**.
 
-This removes merge-time delta complexity while preserving current `TotalInputCount` semantics.
+---
 
-## 3) Device metadata resolution
+## End-to-End Pipeline
 
-`DailyDeviceStats` stores only numeric metrics. Device name/type are resolved at read time from `Devices` for the day detail panel.
+## 1) Lifecycle events enter through `UsbMonitorService`
 
-## Write-Path Integration Points
+High-level concept:
 
-In `DataService`:
+- USB connect/disconnect events are detected live and persisted as lifecycle rows.
 
-- `SaveDeviceEvent(DeviceEvent deviceEvent)`
-  - After successful insert: `ApplyDailyStatsFromDeviceEvent(ctx, deviceEvent)`
-- `SaveActivitySnapshots(IEnumerable<ActivitySnapshot> snapshots)`
-  - Persist canonical minute snapshots only (no direct `DailyDeviceStats` updates)
-- `ProjectClosedActivityMinutes()` (timer-driven)
-  - Read unprojected closed minutes
-  - Apply to `DailyDeviceStats`
-  - Mark projected minutes
+Concrete flow:
 
-Device-event stats are write-through; activity stats are minute-delayed and projector-driven.
+- `UsbMonitorService.AddDeviceEvent(...)`
+  - updates UI-bound collections when dispatcher is usable
+  - calls `_dataService.SaveDeviceEvent(deviceEvent)`
+  - updates the in-memory `Device` snapshot (`SessionStartedAt`, `CommitSession(...)`, etc.)
+  - persists the `Device` snapshot via `_dataService.SaveDevice(...)`
 
-## Current Day Accuracy
+The lifecycle event itself is the trigger for daily connection stat recomputation.
 
-Real-time accuracy is not a goal for the calendar. Activity remains batched (flushed every ~60 seconds) and open
-session elapsed time is applied as a UI overlay every 30 seconds. Today's tile may therefore lag:
+---
 
-| Lag source | Cause | Max lag |
-|---|---|---|
-| Activity (`InputCount`, activity span, active-hour breadth) | Closed-minute projector after snapshot flush | ~120 seconds |
-| Open session `ConnectionDuration` | VM overlays live elapsed time every 30 seconds via `ThirtySecondTick` | ~30 seconds |
+## 2) `DataService.SaveDeviceEvent(...)` writes source rows first
 
-This lag is acceptable for calendar usage and avoids merge-time double-apply complexity.
+High-level concept:
 
-The `Partial day` UX marker (distinct tile style for today) communicates that the day is still accumulating.
-Today's tile refreshes every 30 seconds via `ThirtySecondTick`, keeping it within ~90 seconds of current activity
-(60-second flush lag + up to 30-second tick lag).
+- lifecycle rows are committed to `DeviceEvents` before calendar aggregates are updated.
 
-### Open session overlay (today only)
+Concrete flow:
 
-For devices that are currently connected, `ConnectionDuration` in `DailyDeviceStats` lags until the session closes.
-On each `ThirtySecondTick` refresh of today's tile, the VM overlays live elapsed time:
+- `DataService.SaveDeviceEvent(DeviceEvent deviceEvent)`
+  - creates a DbContext
+  - adds the `DeviceEvent`
+  - calls `ctx.SaveChanges()`
+  - then calls `_dailyStats.ApplyDeviceEvent(ctx, deviceEvent)`
+- `DataService.SaveDeviceEvent(ApplicationDbContext ctx, DeviceEvent deviceEvent)`
+  - same pattern, but inside an existing unit of work
+  - used by `DataService.RecoverFromCrash()`
 
-```
-displayConnectionDuration = stat.ConnectionDuration
-    + (Device.SessionStartedAt.HasValue
-        ? (DateTime.UtcNow - Device.SessionStartedAt.Value.ToUniversalTime()).TotalSeconds
-        : 0)
-```
+This ordering matters because the recompute query must be able to see the closing event in the database.
 
-This overlay is UI-only — no DB write occurs. The persisted `ConnectionDuration` is updated only when the
-closing event is written (same as today). The overlay is read from the in-memory `UsbMonitorService.DeviceList`,
-which is already on the UI thread and requires no locking.
+---
 
-## Startup / Shutdown Behavior
+## 3) Daily connection stats are write-through on closing events
 
-### On clean shutdown
+High-level concept:
 
-Write `LastCleanShutdownAt` to `AppMeta` before exiting.
+- connection aggregates are not incrementally patched; they are **fully recomputed for that device/day** whenever a closing lifecycle event is written.
 
-### On startup rebuild
+Concrete flow:
+
+- `DailyStatsService.ApplyDeviceEvent(ApplicationDbContext ctx, DeviceEvent deviceEvent)`
+  - ignores app events
+  - ignores non-closing lifecycle events
+  - computes `day = TimeFormatter.ToLocalDay(deviceEvent.EventTime)`
+  - calls `RecomputeDailyConnectionStats(ctx, deviceEvent.DeviceId, day)`
+  - calls `ctx.SaveChanges()`
+
+### Current recompute algorithm
+
+Implemented in:
+
+- `DailyStatsService.RecomputeDailyConnectionStats(...)`
+
+Behavior:
+
+1. Query all `DeviceEvents` for `(deviceId, day)` using UTC day bounds from `GetUtcBounds(day, day)`.
+2. Order by `DeviceEventId`.
+3. Walk events in order.
+4. On an opening event, remember `currentSessionStartLocal`.
+5. On a closing event:
+   - use the remembered open if present
+   - otherwise assume **local midnight** (`dayStartLocal`) as fallback for cross-midnight carry-in
+6. Overwrite:
+   - `SessionCount`
+   - `ConnectionDuration`
+   - `LongestSessionDuration`
+
+### Important difference from the original design
+
+The original plan described interval splitting across multiple days for each close event.
+The implemented version is simpler:
+
+- recompute is **day-local**
+- session count is effectively the number of closing events with positive overlap on that local day
+- if the first event of the day is a close, start is assumed to be midnight
+
+This is the current behavior to document and preserve unless the algorithm changes again.
+
+---
+
+## 4) Crash recovery participates in the same write-through path
+
+High-level concept:
+
+- synthetic close events inserted during crash recovery also feed daily stats through the same pipeline.
+
+Concrete flow:
+
+- `DataService.RecoverFromCrash()`
+  - detects an unmatched `AppStarted`
+  - determines `crashTime` from `HeartbeatFile.Read()` or session start fallback
+  - inserts synthetic `ConnectionEnded` events through `SaveDeviceEvent(ctx, new DeviceEvent { ... })`
+  - inserts synthetic `AppEnded` the same way
+
+Because it uses the `ctx` overload of `SaveDeviceEvent(...)`, daily connection stats are recomputed during crash recovery too.
+
+---
+
+## 5) Raw input becomes canonical minute snapshots first
+
+High-level concept:
+
+- raw keyboard/mouse activity does **not** update `DailyDeviceStats` directly.
+- canonical minute rows land in `ActivitySnapshots` first.
+
+Concrete flow:
+
+- `RawInputService`
+  - tracks activity into in-memory minute buckets keyed by `(DeviceId, Minute)`
+  - uses `DateTime.Now.TruncateToMinute()` for local-time buckets
+  - flushes finished buckets through `DataService.SaveActivitySnapshots(...)`
+- `DataService.SaveActivitySnapshots(IEnumerable<ActivitySnapshot> snapshots)`
+  - upserts/merges canonical snapshot rows
+  - merges into an existing `(DeviceId, Minute)` snapshot when needed
+  - updates `Device.TotalInputCount`
+  - if a minute changed, calls `_dailyStats.MarkActivitySnapshotWritten(snapshot.Minute)`
+  - saves all changes at the end
+
+This is the handoff point from source-of-truth minute activity to the delayed projector path.
+
+---
+
+## 6) Minute activity is projected later via `DailyStatsService`
+
+High-level concept:
+
+- activity aggregates are updated by a **minute-delayed exactly-once projector**.
+- only **closed minutes** are eligible.
+
+Concrete flow:
+
+- `DailyStatsService.MarkActivitySnapshotWritten(DateTime minute)`
+  - normalizes minute with `TimeFormatter.NormalizeUtcMinute(...)`
+  - updates `_latestWriteMinuteTicks`
+  - sets `_activityProjectionDirty = 1`
+- `AppTimerService.MinuteTick` drives `DailyStatsService.OnMinuteTick(...)`
+- `OnMinuteTick(...)`
+  - avoids overlap using `_projectorDispatchInFlight`
+  - dispatches `ProjectClosedActivityMinutes()` on a background task
+- `ProjectClosedActivityMinutes()`
+  - skips if disposed
+  - skips if `_activityProjectionDirty == 0`
+  - computes `currentBoundary = TimeFormatter.NormalizeUtcMinute(DateTime.UtcNow)`
+  - queries `ActivitySnapshots` where:
+    - `Minute < currentBoundary`
+    - no matching `ActivityProjections` row exists
+  - builds cached state with `BuildActivityProjectionState(...)`
+  - applies each minute via `ApplyActivitySnapshot(...)`
+  - writes `ActivityProjection` checkpoints
+  - saves changes
+  - clears the dirty flag when appropriate via `TryClearActivityProjectionDirty(...)`
+
+### Exactly-once behavior
+
+`ActivityProjections` is the guardrail.
+A minute is considered projected when a row exists for `(DeviceId, Minute)`.
+This prevents reapplying closed-minute activity across retries or restarts.
+
+---
+
+## 7) What `ApplyActivitySnapshot(...)` actually updates
+
+High-level concept:
+
+- each closed minute contributes input totals and activity-shape metrics to the local day row.
+
+Concrete flow:
+
+- `DailyStatsService.ApplyActivitySnapshot(...)`
+  - resolves:
+    - `minuteLocal = TimeFormatter.ToLocalTime(snapshot.Minute)`
+    - `day = TimeFormatter.ToLocalDay(snapshot.Minute)`
+    - `hour = minuteLocal.Hour`
+  - increments:
+    - `Keystrokes`
+    - `MouseClicks`
+    - `MouseMovementSeconds`
+  - if the minute had any activity:
+    - increments `ActiveMinutes`
+    - tracks hour membership through `SeenHoursByKey`
+    - updates `DistinctActiveHours`
+    - accumulates per-hour totals in `HourTotalsByKey`
+    - recomputes `PeakInputHour`
+  - updates `UpdatedAt`
+  - inserts the corresponding `ActivityProjection` checkpoint
+
+### Important difference from the original plan
+
+The original design mentioned `FirstActivityAt` / `LastActivityAt` projection.
+Those are **not part of the implemented entity or projector path**.
+
+---
+
+## 8) Full rebuild path exists, but startup wiring is currently commented out
+
+High-level concept:
+
+- there is a complete bounded rebuild implementation, but startup does **not currently invoke it**.
+
+Concrete flow:
+
+- implemented methods:
+  - `DailyStatsService.RebuildGapOnStartup()`
+  - `DailyStatsService.RecomputeDailyDeviceStatsForRange(DateOnly from, DateOnly to)`
+  - `RecomputeConnectionStatsForRange(...)`
+  - `RecomputeActivityStatsForRange(...)`
+- current `App.xaml.cs` status:
+  - startup contains a commented-out background call:
+    - `ServiceProvider.GetRequiredService<DailyStatsService>().RebuildGapOnStartup();`
+
+### What `RebuildGapOnStartup()` would do if enabled
 
 1. Read `LastCleanShutdownAt` from `AppMeta`.
-2. If present: rebuild `DailyDeviceStats` from `LastCleanShutdownAt.LocalDay` through `today` (covers the gap since last run).
-3. If absent (first install or marker cleared): rebuild last 7 local days as a safe fallback.
-4. After rebuild, clear `LastCleanShutdownAt` so next startup only covers the new gap.
+2. Convert it to a local day with `TimeFormatter.ToLocalDay(...)`.
+3. Fallback to the last 7 days if no marker exists.
+4. Cap the rebuild start to the current month.
+5. Delete the marker.
+6. Call `RecomputeDailyDeviceStatsForRange(from, today)` unless a same-day clean shutdown means there is no gap.
 
-This avoids rebuilding already-correct past days on every startup. After a crash, the unwritten `LastCleanShutdownAt` triggers the 7-day fallback which covers all plausible gap days.
+### Current state summary
 
-Existing startup flows (`RecoverFromCrash`, `RebuildDeviceSnapshots`) remain unchanged and run before this rebuild.
-Crash recovery writes synthetic closing events that flow through `SaveDeviceEvent`, so daily stats stay consistent automatically.
+- **Implemented:** bounded rebuild logic
+- **Not currently wired on startup:** yes
+- **Manual/on-demand month rebuild from the original plan:** not currently implemented
 
-### On-demand per-month rebuild
+---
 
-When the user navigates to a month:
+## 9) Current clean-shutdown marker flow
 
-1. Check if that month has been rebuilt this session (track in-memory `HashSet<YearMonth>`).
-2. If not, run `RecomputeDailyDeviceStatsForRange` for that month and mark it rebuilt.
-3. Past months only rebuild once per session; the current month rebuilds on every navigation to it.
+High-level concept:
 
-This ensures stale or missing data is corrected the moment the user sees a month, without paying startup cost for months they never visit.
+- the clean-shutdown marker is written by `DailyStatsService.Dispose()` during normal app disposal.
 
-## Bounded repair
+Concrete flow:
 
-One method for both startup, on-demand, and manual maintenance:
+- `DailyStatsService` subscribes to `AppTimerService.MinuteTick` in its constructor
+- `DailyStatsService.Dispose()`:
+  - unsubscribes `MinuteTick`
+  - calls `WriteLastCleanShutdownAt()`
+- `App.OnExit(...)`
+  - normally disposes `ServiceProvider`, which disposes singleton services
+- `App.OnSessionEnding(...)`
+  - sets `_isSessionEnding = true`
+- `DisposeServicesForExitPath()`
+  - skips DI disposal during Windows session end to avoid blocking OS shutdown
 
-- `RecomputeDailyDeviceStatsForRange(DateOnly from, DateOnly to)`
+### Consequence
 
-- `from`/`to` are local day keys; implementation converts to UTC bounds internally.
-- Clears and recomputes `DailyDeviceStats` rows for the range from source tables.
-- Safe to call multiple times; existing rows for the range are deleted and replaced.
+On Windows session end, `DailyStatsService.Dispose()` is skipped, so `LastCleanShutdownAt` may not be written.
+That is why the rebuild path is designed to tolerate missing markers and fall back safely.
 
-## Query API for Calendar
+---
 
-Add DataService methods:
+## Calendar Query / Read Pipeline
 
-- `GetDailyDeviceStats(DateOnly from, DateOnly to)`
-  - returns per-device day rows (`from`/`to` interpreted in local calendar timezone)
-- `GetCalendarDaySummaries(DateOnly from, DateOnly to)`
-  - grouped day totals across all devices for tile rendering (`from`/`to` local-day range)
-- `GetCalendarDayDetail(DateOnly day)`
-  - per-device list sorted by connected time or activity, with detail activity breakdown joined from `ActivitySnapshots` (same local day)
+## Month summaries for tiles
 
-## Calendar VM Refresh Strategy
+High-level concept:
 
-`CalendarViewModel` is transient (like `DashboardViewModel`) and subscribes to `AppTimerService.ThirtySecondTick`
-for periodic refresh. Subscriptions are set up on construction and cleaned up when the view is destroyed, consistent
-with the Dashboard pattern.
+- month tiles are read from `DailyDeviceStats`, not from raw events.
 
-Refresh triggers:
+Concrete flow:
 
-| Trigger | Action |
-|---|---|
-| Tab becomes visible (`IsVisibleChanged`) | Load current month; trigger on-demand rebuild if not yet rebuilt this session |
-| Month navigation | Load new month; trigger on-demand rebuild if not yet rebuilt this session |
-| `ThirtySecondTick` | Reload today's tile only |
-| Manual refresh (optional) | Reload full current month |
+- `CalendarViewModel.LoadCurrentMonth()`
+  - calls `_dailyStatsService.GetCalendarDaySummaries(year, month)` on a background thread
+- `DailyStatsService.GetCalendarDaySummaries(int year, int month)`
+  - queries `DailyDeviceStats` rows for the month
+  - resolves device metadata from `Devices`
+  - groups by `Day`
+  - fills in missing days with `HasData = false`
+  - calls `ToCalendarDaySummary(...)`
+- `ToCalendarDaySummary(...)`
+  - builds `CalendarTileDevice` DTOs
+  - sorts by `DeviceTypes` rank: keyboard, mouse, other
 
-Past days are immutable once written. Only today's tile needs periodic refresh via `ThirtySecondTick`.
-Per-month on-demand rebuild runs once per session per past month; current month rebuilds on each visit.
+### Current tile DTO shape
 
-## Calendar UI Plan
+`CalendarDaySummary` currently contains:
 
-## Placement
+- `Day`
+- `HasData`
+- `IsSelected`
+- computed `IsToday`
+- `Devices`
 
-- Add a dedicated `Calendar` tab/viewmodel (recommended)
-- Keep Dashboard focused on range charts/cards
-- Calendar tab opens to the current month in a standard month grid.
+It does **not** currently expose day-level totals such as:
 
-## Tile metrics (month grid)
+- total connection duration
+- total input count
+- active device count
 
-Per day (combined across all devices):
+So the implemented calendar month grid is intentionally lighter than the original tile-metrics proposal.
 
-- Connected devices (distinct)
-- Total connection duration
-- Input count (`Keystrokes + MouseClicks + MouseMovementSeconds` combined)
-- Active devices (distinct with activity)
-- Optional badge: high-activity day / no-activity-but-connected day
+---
 
-## Day detail panel
+## Day detail reads
 
-On day click:
+High-level concept:
 
-- Top devices by connection duration
-- Top devices by total input count (`Keystrokes + MouseClicks + MouseMovementSeconds`)
-- Per-device breakdown: connection duration, longest session duration, session count, keystrokes, mouse clicks, mouse movement seconds, active minutes, distinct active hours, peak input hour
-- First activity at and last activity at
-- Uses `DailyDeviceStats` + day-scoped `ActivitySnapshots` query for detail values.
+- the detail panel is backed entirely by `DailyDeviceStats` + device metadata.
 
-## Filters
+Concrete flow:
 
-- Device type: All / Keyboard / Mouse / Other
-- Sort mode: Connected time / Activity / Name
+- `CalendarViewModel.LoadSelectedDayDetails()`
+  - calls `_dailyStatsService.GetCalendarDayDetail(day)` on a background thread
+- `DailyStatsService.GetCalendarDayDetail(DateOnly day)`
+  - loads that day's `DailyDeviceStats`
+  - resolves `DeviceName` / `DeviceType` from `Devices`
+  - returns `CalendarDeviceDetail`
 
-## UX states
+### Current detail DTO shape
 
-- `No data` day (before feature rollout or truly no events)
-- `Partial day` marker for current day
-- Loading placeholders for month switch
+`CalendarDeviceDetail` contains:
 
-## Rollout Plan
+- `SessionCount`
+- `ConnectionDuration`
+- `LongestSessionDuration`
+- `Keystrokes`
+- `MouseClicks`
+- `MouseMovementSeconds`
+- `ActiveMinutes`
+- `DistinctActiveHours`
+- `PeakInputHour`
+- UI-only `LiveInputDelta`
+- computed `TotalInput`
 
-1. Migration: add `DailyDeviceStats` table + indexes.
-2. Wire write-path updates in `DataService` methods.
-3. Add query methods and DTOs for calendar VM.
-4. Build `CalendarViewModel` + `CalendarView`.
-5. Add tab navigation and empty-state copy.
-6. Add optional bounded repair command (dev-only).
+---
 
-## Testing Plan
+## Calendar UI Overlay Pipeline
 
-## Unit tests
+## Baseline load
 
-- Session split across midnight/day boundaries
-- Same-day closing with no same-day opening falls back to midnight start
-- Activity projection correctness for closed minutes (`Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, activity span, active-hour updates, `PeakInputHour`)
-- Closed-minute projector applies each minute exactly once (idempotent checkpoint)
-- Idempotency under duplicate event insert failures
+High-level concept:
 
-## Integration tests
+- the calendar shows persisted stats as its baseline.
 
-- Save opening + closing events and verify `ConnectionDuration`
-- Verify `LongestSessionDuration` uses per-day overlap for cross-midnight sessions
-- Save closing event with no same-day opening and verify midnight fallback duration
-- Save snapshot updates to same minute and verify projector applies that minute once
-- Verify `FirstActivityAt`, `LastActivityAt`, `DistinctActiveHours`, and `PeakInputHour` updates
-- Restart during projection and verify checkpoint resumes without re-applying projected minutes
-- Crash-recovery inserted `ConnectionEnded` updates daily stats as expected
+Concrete flow:
 
-## UI tests (manual)
+- `CalendarViewModel.OnVisible()`
+  - queries `_dailyStatsService.GetEarliestDataDay()`
+  - calls `LoadCurrentMonth()`
+- `LoadCurrentMonth()`
+  - fetches month summaries
+  - passes them to `ApplySummaries(...)`
+- `ApplySummaries(...)`
+  - rebuilds `DaySummaries`
+  - rebuilds `CalendarGridItems`
+  - re-applies tile selection state
+  - immediately calls `ApplyRealtimeTodayOverlay()`
 
-- Month navigation performance
-- Future month navigation is disabled
-- Calendar tab opens to current month grid
-- Tile aggregated values match detail panel sums
-- Rename device updates new days without breaking existing rows
+---
 
-## Performance Notes
+## Today's persisted-baseline refresh
 
-- Reads should primarily hit `DailyDeviceStats` with day-range filtering.
-- No expensive joins on `DeviceEvents`/`ActivitySnapshots` for month calendar render.
-- Keep row size moderate; avoid storing per-minute arrays/blobs.
+High-level concept:
 
-## Open Decisions
+- today's persisted baseline is refreshed every 30 seconds to pick up projector commits and closed-session writes.
 
-- Whether to expose optional day-range repair in production settings.
+Concrete flow:
 
+- `CalendarViewModel` subscribes to `AppTimerService.ThirtySecondTick`
+- `OnThirtySecondTick(...)`
+  - only runs when the displayed month is the current month
+  - re-queries `_dailyStatsService.GetCalendarDaySummaries(...)`
+  - replaces only today's persisted summary in `DaySummaries`
+  - calls `ApplyRealtimeTodayOverlay()`
+
+This is the persisted-baseline refresh path, not the live input path.
+
+---
+
+## Today's live overlay
+
+High-level concept:
+
+- today's tile/detail can be more current than the DB by combining persisted aggregates with live connection and input state.
+
+Concrete flow:
+
+- `CalendarViewModel.OnSecondTick(...)`
+  - calls `ApplyRealtimeTodayOverlay()` every second
+- `CalendarViewModel.OnInputCountIncremented(deviceId, delta)`
+  - updates `_todayLiveInputDeltaByDevice`
+  - uses dispatcher-safe immediate refresh
+  - calls `ApplyRealtimeTodayOverlay()`
+
+### What `ApplyRealtimeTodayOverlay()` does
+
+1. Only operates for the currently displayed month if it is the current month.
+2. Reads the persisted today row from `DaySummaries`.
+3. Builds `connectionOverlayByDevice` from `UsbMonitorService.DeviceList`:
+   - uses `Device.SessionStartedAt`
+   - clamps cross-midnight sessions to local midnight
+4. Reads `inputOverlayByDevice` from `_todayLiveInputDeltaByDevice`.
+5. Creates a new `CalendarDaySummary` for today with:
+   - persisted `HasData` plus any live connection/input state
+   - merged device list from `BuildRealtimeTileDevices(...)`
+6. Replaces today's tile in:
+   - `DaySummaries`
+   - `CalendarGridItems`
+7. If today's day is selected, calls `ApplyRealtimeTodayDetailOverlay(...)`
+
+### What `ApplyRealtimeTodayDetailOverlay(...)` does
+
+For each relevant device ID, it merges:
+
+- persisted day detail from `_todayPersistedDetailByDevice`
+- current connection session from `UsbMonitorService.DeviceList`
+- unprojected live input delta from `_todayLiveInputDeltaByDevice`
+
+The resulting displayed values are:
+
+- `SessionCount`
+  - persisted count + 1 if the device is currently connected
+- `ConnectionDuration`
+  - persisted duration + live elapsed open-session seconds
+- `LongestSessionDuration`
+  - `max(persisted longest, current open-session overlap)`
+- `TotalInput`
+  - persisted input + `LiveInputDelta`
+
+This overlay is **UI-only**. It does not write back to `DailyDeviceStats`.
+
+---
+
+## Current Accuracy Model
+
+## Persisted data
+
+Persisted `DailyDeviceStats` is eventually consistent through two update paths:
+
+- **connection stats** — updated on closing lifecycle events through `ApplyDeviceEvent(...)`
+- **activity stats** — updated on the next minute projector pass through `ProjectClosedActivityMinutes()`
+
+## UI freshness for today
+
+Today's displayed values are fresher than the persisted table because `CalendarViewModel` overlays:
+
+- live open-session duration every second
+- live input deltas immediately on `InputCountIncremented`
+- persisted baseline refresh every 30 seconds
+
+This means:
+
+- closed-session stats persist immediately after close
+- minute activity stats persist on the projector cadence
+- today's on-screen values are still more responsive than the DB alone
+
+---
+
+## What Changed vs the Original Plan
+
+## Implemented or superseded
+
+- `DailyDeviceStats` table exists
+- `ActivityProjections` checkpoint table exists
+- lifecycle stats are write-through on close via `ApplyDeviceEvent(...)`
+- minute activity stats are projector-driven via `ProjectClosedActivityMinutes()`
+- calendar month/day queries exist:
+  - `GetCalendarDaySummaries(...)`
+  - `GetCalendarDayDetail(...)`
+- calendar view + viewmodel exist
+- current-day UI overlay is implemented
+- `DeviceTypes` enums are used in calendar DTOs instead of raw strings
+
+## Implemented differently than planned
+
+- Connection recompute is **day-local full replay**, not multi-day interval splitting during each close write.
+- Current day overlay is **every second + immediate input event refresh**, not only every 30 seconds.
+- Day detail reads come from `DailyDeviceStats` + `Devices`; there is no extra day-scoped `ActivitySnapshots` join for detail fields.
+- Month tiles currently show **device presence/list**, not rich day totals like total input or total connection duration.
+
+## Still not wired / deferred
+
+- `RebuildGapOnStartup()` exists but startup invocation is commented out in `App.xaml.cs`
+- original per-month rebuild/session-cache behavior is not implemented
+- no production/manual repair command is exposed
+- `FirstActivityAt` / `LastActivityAt` are not part of the entity
+- no tile badges or advanced tile metrics from the original UI plan
+
+---
+
+## Recommended Mental Model for Future Work
+
+When changing this feature, think of the system as four layers:
+
+1. **Capture layer**
+   - `UsbMonitorService`
+   - `RawInputService`
+2. **Source-of-truth persistence layer**
+   - `DataService.SaveDeviceEvent(...)`
+   - `DataService.SaveActivitySnapshots(...)`
+   - tables: `DeviceEvents`, `ActivitySnapshots`
+3. **Daily aggregate layer**
+   - `DailyStatsService.ApplyDeviceEvent(...)`
+   - `DailyStatsService.ProjectClosedActivityMinutes()`
+   - table: `DailyDeviceStats`
+   - checkpoint table: `ActivityProjections`
+4. **Calendar presentation layer**
+   - `DailyStatsService.GetCalendarDaySummaries(...)`
+   - `DailyStatsService.GetCalendarDayDetail(...)`
+   - `CalendarViewModel.ApplyRealtimeTodayOverlay()`
+   - `CalendarViewModel.ApplyRealtimeTodayDetailOverlay()`
+
+That separation is the core of the current implementation.
+
+---
+
+## Key Files to Inspect Along This Pipeline
+
+- `Services/UsbMonitorService.cs`
+- `Services/RawInputService.cs`
+- `Services/DataService.cs`
+- `Services/DailyStatsService.cs`
+- `ViewModels/CalendarViewModel.cs`
+- `ViewModels/Calendar/CalendarDTOs.cs`
+- `Models/DailyDeviceStat.cs`
+- `Models/ActivityProjection.cs`
+- `Data/ApplicationDbContext.cs`
+- `App.xaml.cs`

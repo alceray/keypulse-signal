@@ -50,9 +50,17 @@ Injection
     - Persists and queries minute-level `ActivitySnapshot` rows
     - See: `Services/DataService.cs`
 
+4. **DailyStatsService** (Singleton)
+    - Maintains `DailyDeviceStats` table from two write-through sources:
+        - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount`, `ConnectionDuration`, `LongestSessionDuration` with a full non-cumulative replay of the day's events
+        - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, `DistinctActiveHours`, `PeakInputHour`
+    - `RecomputeDailyDeviceStatsForRange(from, to)` provides an idempotent full rebuild for any date range
+    - `RebuildGapOnStartup()` reads `LastCleanShutdownAt` from `AppMeta` and rebuilds the offline gap since last clean shutdown; bounded to the current month
+    - `WriteLastCleanShutdownAt()` persists a clean-shutdown marker on normal exit
+    - See: `Services/DailyStatsService.cs`
+
 4. **ApplicationDbContext** (`DbContext`)
-    - Three tables: `Devices` (mutable snapshot), `DeviceEvents` (immutable lifecycle log), and `ActivitySnapshots` (
-      minute-level input activity)
+    - Four tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, and `DailyDeviceStats`
     - Database stored at `%AppData%\KeyPulse\keypulse-data.db` in Release and `%AppData%\KeyPulse\Test\keypulse-data.db` in Debug/testing builds
     - Unique constraint on `DeviceEvents(DeviceId, EventTime, EventType)` prevents duplicate lifecycle events
     - Unique constraint on `ActivitySnapshots(DeviceId, Minute)` prevents duplicate minute buckets
@@ -65,6 +73,7 @@ Injection
 - **Devices** = mutable, fast-read snapshot used by the UI (`DeviceName`, `DeviceType`, `LastConnectedAt`, stored
   `ConnectionDuration`)
 - **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseActiveSeconds`
+- **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionDuration`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; rebuilt on startup for the offline gap
 - Updates flow in two directions:
     - lifecycle changes append to `DeviceEvents` and update the corresponding `Device` snapshot
     - raw input activity accumulates in memory, then flushes to `ActivitySnapshots`
@@ -162,6 +171,16 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - Pie charts use hover tracking metadata (status, connection duration, share, connection time text) and update dashboard hover-preview
   state via tracker events.
 
+### Calendar View Behavior
+
+- **Data source**: `DailyStatsService.GetCalendarDaySummaries()` and `GetCalendarDayDetail()` — both backed by `DailyDeviceStats`.
+- **Real-time overlay**: `CalendarViewModel` maintains a live in-memory input delta (`_todayLiveInputDeltaByDevice`) and connection overlay per device; `ApplyRealtimeTodayOverlay()` merges persisted + live state on every second tick and every `InputCountIncremented` event.
+- **Persisted baseline refresh**: `OnThirtySecondTick` re-queries today's persisted summary from DB and refreshes the tile and detail panel baseline to catch minute-projector commits.
+- **`CalendarDaySummary.IsToday`**: computed property (`Day == DateOnly.FromDateTime(DateTime.Now)`), never stale.
+- **`CalendarDaySummary.IsSelected`**: UI-only flag toggled in-place via tile selection; never stored in DB.
+- **Calendar DTOs** (`CalendarDaySummary`, `CalendarTileDevice`, `CalendarDeviceDetail`) use `DeviceTypes` enum, not raw strings.
+- Calendar detail panel uses responsive `DockPanel` rows so labels/values stay readable at any panel width.
+
 ### Duplicate Detection
 
 - WMI fires multiple insert events (~2-3) per physical USB connection
@@ -201,6 +220,7 @@ dotnet ef database update SomeOlderMigrationName
   - `TrayIconRelativePath` = relative path to the taskbar icon (`Assets\keypulse-signal-icon.ico`)
   - `StartupWarningBalloonTimeoutMs` = 5000 (milliseconds for startup warning balloon)
 - **Build mode default**: Debug launches windowed; Release launches to tray/background
+- **`LaunchOnLogin` default**: `false` in Debug, `true` in Release (controlled via `#if DEBUG` in `AppUserSettings`)
 - **Launch args**: `--startup` forces tray/background startup for that process
 - **Application icon**: Set via `<ApplicationIcon>` in `.csproj` for both window and taskbar display; also used for tray icon
 - Tray icon created if background mode enabled; main window created on-demand or at startup
@@ -219,11 +239,11 @@ dotnet ef database update SomeOlderMigrationName
 | Folder        | Purpose                                                                                                          |
 |---------------|------------------------------------------------------------------------------------------------------------------|
 | `Helpers/`    | `ObservableObject`, `RelayCommand`, `UsbDeviceClassifier`, `TimeFormatter`, `PowerShellScripts`, `HeartbeatFile` |
-| `Services/`   | `UsbMonitorService`, `RawInputService`, `DataService` — monitoring, activity capture, persistence                |
-| `Models/`     | `Device`, `DeviceEvent`, `ActivitySnapshot` + enums/extensions                                                   |
+| `Services/`   | `UsbMonitorService`, `RawInputService`, `DataService`, `DailyStatsService` — monitoring, activity capture, persistence, daily stats |
+| `Models/`     | `Device`, `DeviceEvent`, `ActivitySnapshot`, `DailyDeviceStat` + enums/extensions                               |
 | `Data/`       | `ApplicationDbContext`, database initialization                                                                  |
-| `ViewModels/` | MVVM viewmodels for each UI view (e.g., `DeviceListViewModel`)                                                   |
-| `Views/`      | XAML + code-behind for UI (e.g., `DeviceListView.xaml`)                                                          |
+| `ViewModels/` | MVVM viewmodels for each UI view; `StatusMessageViewModelBase` provides shared status toast behavior             |
+| `Views/`      | XAML + code-behind for UI; `StatusMessagePanel` is a reusable status toast control                              |
 | `Migrations/` | EF Core snapshot migrations (read-only; auto-generated)                                                          |
 | `docs/`       | release docs, production-readiness plan, and other project documentation                                         |
 
@@ -287,6 +307,30 @@ dotnet ef database update SomeOlderMigrationName
 - `HeartbeatFile.Read()` should log `Debug` when no heartbeat file exists and `Warning` if the file exists but contains an invalid timestamp.
 - `UsbDeviceClassifier.ResolveDeviceType()` logs `Warning` when the observed signal pattern does not match a known keyboard/mouse shape.
 
+### TimeFormatter Helpers
+
+- `ToLocalTime(DateTime)` — converts any `DateTime` to local time, treating `Unspecified` as UTC (matches SQLite reads).
+- `ToLocalDay(DateTime)` — converts a UTC/unspecified timestamp to the local `DateOnly` day. Use this everywhere instead of `DateOnly.FromDateTime(ToLocalTime(...))`.
+- `LocalDayToUtc(DateOnly)` — converts a local day to its UTC start boundary for inclusive range queries.
+- `NormalizeUtcMinute(DateTime)` — converts to UTC then truncates to minute boundary; used by `DailyStatsService` projector.
+- `TruncateToMinute(DateTime)` — truncates to minute while preserving `DateTimeKind`; used by `RawInputService` for local-time minute buckets. **Not interchangeable with `NormalizeUtcMinute`.**
+
+### Status Message Pattern
+
+- `StatusMessageViewModelBase` (`ViewModels/`) provides `StatusMessage`, `StatusVisibility`, and auto-clear timer behavior.
+- ViewModels that need transient toast messages should inherit `StatusMessageViewModelBase` instead of duplicating these fields.
+- `StatusMessagePanel` (`Views/`) is the reusable XAML control with `StatusMessage` and `StatusVisibility` dependency properties.
+- Positioning (alignment, margin, grid row) is controlled by the host view — the panel itself is layout-agnostic.
+
+### Dispatcher Safety in Services
+
+Services that receive background callbacks (WMI events, `RawInputService` message pump) and update UI-bound collections must guard Dispatcher calls.
+Use `ShutdownDispose.IsDispatcherUsable(dispatcher)` before any `Invoke`/`BeginInvoke`. Two shutdown scenarios require this:
+1. **Normal shutdown**: `_disposed = true` is set at Dispose start; subsequent callbacks skip UI updates.
+2. **Windows session end**: disposal is skipped (`_disposed` stays false) but the Dispatcher may be dead; `HasShutdownStarted`/`HasShutdownFinished` checks prevent deadlocks.
+
+Pure services (`DataService`, `DailyStatsService`, helpers) do **not** need dispatcher guards — they have no UI bindings.
+
 ### Troubleshooting View Auto-scroll Behavior
 
 - Log viewer automatically scrolls to the bottom when:
@@ -321,5 +365,9 @@ dotnet ef database update SomeOlderMigrationName
 - `Services/UsbMonitorService.cs` → WMI monitoring, event handling
 - `Services/RawInputService.cs` → per-device raw input capture and minute-bucket flushing
 - `Services/DataService.cs` → crash recovery, snapshot rebuild, event persistence
-- `Models/Device.cs`, `Models/DeviceEvent.cs`, `Models/ActivitySnapshot.cs` → persisted models and runtime state
+- `Services/DailyStatsService.cs` → daily stats write-through, activity projector, startup rebuild
+- `ViewModels/CalendarViewModel.cs` → calendar real-time overlay, persisted baseline refresh
+- `ViewModels/StatusMessageViewModelBase.cs` → shared status toast VM base
+- `Views/StatusMessagePanel.xaml` → reusable status toast control
+- `Models/Device.cs`, `Models/DeviceEvent.cs`, `Models/ActivitySnapshot.cs`, `Models/DailyDeviceStat.cs` → persisted models and runtime state
 
