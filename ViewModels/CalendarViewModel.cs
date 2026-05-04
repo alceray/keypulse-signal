@@ -21,12 +21,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     // UI-only realtime overlay state for today's row/details.
     private readonly object _liveInputLock = new();
     private readonly Dictionary<string, long> _todayLiveInputDeltaByDevice = [];
-    private DateOnly _liveOverlayDay = DateOnly.FromDateTime(DateTime.Now);
-    private CalendarDaySummary? _todayPersistedSummary;
+    private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
 
-    private int _currentYear;
-    private int _currentMonth;
+    private DateOnly _currentDisplayMonth;
     private bool _isLoading;
     private CalendarDaySummary? _selectedDay;
     private bool _disposed;
@@ -44,14 +42,15 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     // Calendar grid needs leading blank cells so the first day aligns with its weekday column.
     public ObservableCollection<object?> CalendarGridItems { get; } = [];
 
-    public string MonthTitle => new DateTime(_currentYear, _currentMonth, 1).ToString("MMMM yyyy");
+    public string MonthTitle => _currentDisplayMonth.ToDateTime(TimeOnly.MinValue).ToString("MMMM yyyy");
 
     public bool CanGoNext
     {
         get
         {
             var today = DateOnly.FromDateTime(DateTime.Now);
-            return _currentYear < today.Year || (_currentYear == today.Year && _currentMonth < today.Month);
+            var firstDayOfThisMonth = today.AddDays(1 - today.Day);
+            return _currentDisplayMonth < firstDayOfThisMonth;
         }
     }
 
@@ -62,8 +61,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             if (_earliestDataDay == null)
                 return true;
             // Disable when already on the earliest month with data.
-            return _currentYear > _earliestDataDay.Value.Year
-                || (_currentYear == _earliestDataDay.Value.Year && _currentMonth > _earliestDataDay.Value.Month);
+            var currentMonthStart = _currentDisplayMonth.AddDays(1 - _currentDisplayMonth.Day);
+            var earliestMonthStart = _earliestDataDay.Value.AddDays(1 - _earliestDataDay.Value.Day);
+            return currentMonthStart > earliestMonthStart;
         }
     }
 
@@ -109,8 +109,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         _appTimerService = appTimerService;
 
         var today = DateOnly.FromDateTime(DateTime.Now);
-        _currentYear = today.Year;
-        _currentMonth = today.Month;
+        _currentDisplayMonth = today.AddDays(1 - today.Day); // First day of current month
 
         PreviousMonthCommand = new RelayCommand(_ => NavigateMonth(-1), _ => CanGoPrevious);
         NextMonthCommand = new RelayCommand(_ => NavigateMonth(1), _ => CanGoNext);
@@ -140,9 +139,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
     private void NavigateMonth(int delta)
     {
-        var dt = new DateTime(_currentYear, _currentMonth, 1).AddMonths(delta);
-        _currentYear = dt.Year;
-        _currentMonth = dt.Month;
+        _currentDisplayMonth = _currentDisplayMonth
+            .AddMonths(delta)
+            .AddDays(1 - _currentDisplayMonth.AddMonths(delta).Day);
 
         OnPropertyChanged(nameof(MonthTitle));
         OnPropertyChanged(nameof(CanGoNext));
@@ -166,8 +165,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     private async void LoadCurrentMonth()
     {
         IsLoading = true;
-        var year = _currentYear;
-        var month = _currentMonth;
+        var year = _currentDisplayMonth.Year;
+        var month = _currentDisplayMonth.Month;
 
         IReadOnlyList<CalendarDaySummary> summaries;
         try
@@ -189,13 +188,12 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     private void ApplySummaries(IReadOnlyList<CalendarDaySummary> summaries, int year, int month)
     {
         // Only apply if still on the same month (user may have navigated away).
-        if (year != _currentYear || month != _currentMonth)
+        if (year != _currentDisplayMonth.Year || month != _currentDisplayMonth.Month)
             return;
 
         var selectedDay = _selectedDay?.Day;
         DaySummaries.Clear();
         CalendarGridItems.Clear();
-        _todayPersistedSummary = null;
 
         // Leading blank tiles so day 1 aligns with its weekday (Monday = 0).
         var firstDay = new DateTime(year, month, 1);
@@ -203,16 +201,12 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         for (var i = 0; i < leadingBlanks; i++)
             CalendarGridItems.Add(null);
 
-        var today = DateOnly.FromDateTime(DateTime.Now);
         foreach (var summary in summaries)
         {
             var styledSummary = CloneSummary(summary, summary.Day == selectedDay);
 
             DaySummaries.Add(styledSummary);
             CalendarGridItems.Add(styledSummary);
-
-            if (styledSummary.Day == today)
-                _todayPersistedSummary = styledSummary;
         }
 
         // Apply in-memory realtime overlay immediately after baseline load.
@@ -277,10 +271,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         var today = DateOnly.FromDateTime(DateTime.Now);
         lock (_liveInputLock)
         {
-            if (_liveOverlayDay != today)
+            if (_accumulatedInputDate != today)
             {
                 _todayLiveInputDeltaByDevice.Clear();
-                _liveOverlayDay = today;
+                _accumulatedInputDate = today;
             }
 
             _todayLiveInputDeltaByDevice[deviceId] =
@@ -288,27 +282,38 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         }
     }
 
-    /// <summary>Refreshes persisted month/day baseline every 30 seconds while viewing the current month.</summary>
+    /// <summary>Refreshes today's persisted baseline every 30 seconds while viewing the current month.</summary>
     private async void OnThirtySecondTick(object? sender, EventArgs e)
     {
         var today = DateOnly.FromDateTime(DateTime.Now);
-        if (today.Year != _currentYear || today.Month != _currentMonth)
+        if (today.Year != _currentDisplayMonth.Year || today.Month != _currentDisplayMonth.Month)
             return;
 
         try
         {
             var summaries = await Task.Run(() =>
-                _dailyStatsService.GetCalendarDaySummaries(_currentYear, _currentMonth)
+                _dailyStatsService.GetCalendarDaySummaries(_currentDisplayMonth.Year, _currentDisplayMonth.Month)
             );
+
+            // Update today's persisted baseline in DaySummaries
             var todaySummary = summaries.FirstOrDefault(s => s.Day == today);
             if (todaySummary != null)
-                _todayPersistedSummary = todaySummary;
+            {
+                for (var i = 0; i < DaySummaries.Count; i++)
+                {
+                    if (DaySummaries[i].Day == today)
+                    {
+                        DaySummaries[i] = todaySummary;
+                        break;
+                    }
+                }
+            }
 
             ApplyRealtimeTodayOverlay();
         }
         catch (Exception ex)
         {
-            Serilog.Log.Error(ex, "Failed to refresh today's calendar summary");
+            Serilog.Log.Error(ex, "Failed to refresh today's calendar baseline");
         }
     }
 
@@ -320,20 +325,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     {
         var today = DateOnly.FromDateTime(DateTime.Now);
 
-        // Reset day-scoped live input deltas on day rollover.
-        lock (_liveInputLock)
-        {
-            if (_liveOverlayDay != today)
-            {
-                _todayLiveInputDeltaByDevice.Clear();
-                _liveOverlayDay = today;
-            }
-        }
-
-        if (today.Year != _currentYear || today.Month != _currentMonth)
+        if (today.Year != _currentDisplayMonth.Year || today.Month != _currentDisplayMonth.Month)
             return;
 
-        var persisted = _todayPersistedSummary ?? DaySummaries.FirstOrDefault(d => d.Day == today);
+        var persisted = DaySummaries.FirstOrDefault(d => d.Day == today);
         if (persisted == null)
             return;
 
@@ -367,7 +362,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         var realtimeSummary = new CalendarDaySummary
         {
             Day = persisted.Day,
-            IsToday = true,
             HasData = persisted.HasData || connectionOverlayByDevice.Count > 0 || inputOverlayTotal > 0,
             IsSelected = _selectedDay?.Day == today,
             Devices = BuildRealtimeTileDevices(persisted.Devices),
@@ -457,7 +451,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         return new CalendarDaySummary
         {
             Day = summary.Day,
-            IsToday = summary.IsToday,
             HasData = summary.HasData,
             IsSelected = isSelected,
             Devices = summary.Devices,

@@ -20,9 +20,11 @@ public sealed class CalendarTileDevice
 public sealed class CalendarDaySummary
 {
     public DateOnly Day { get; init; }
-    public bool IsToday { get; init; }
     public bool HasData { get; init; }
     public bool IsSelected { get; init; }
+
+    /// <summary>Computed live comparison: always returns true if Day equals today.</summary>
+    public bool IsToday => Day == DateOnly.FromDateTime(DateTime.Now);
 
     /// <summary>Devices for this day, ordered keyboards first then mice, alphabetically within each group.</summary>
     public IReadOnlyList<CalendarTileDevice> Devices { get; init; } = [];

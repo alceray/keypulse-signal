@@ -260,7 +260,6 @@ public class DailyStatsService : IDisposable
     /// </summary>
     public IReadOnlyList<CalendarDaySummary> GetCalendarDaySummaries(int year, int month)
     {
-        var today = DateOnly.FromDateTime(DateTime.Now);
         var from = new DateOnly(year, month, 1);
         var daysInMonth = DateTime.DaysInMonth(year, month);
         var to = new DateOnly(year, month, daysInMonth);
@@ -277,7 +276,7 @@ public class DailyStatsService : IDisposable
         for (var day = from; day <= to; day = day.AddDays(1))
         {
             grouped.TryGetValue(day, out var dayRows);
-            result.Add(ToCalendarDaySummary(day, today, dayRows, devicesById));
+            result.Add(ToCalendarDaySummary(day, dayRows, devicesById));
         }
 
         return result.AsReadOnly();
@@ -292,33 +291,29 @@ public class DailyStatsService : IDisposable
         using var ctx = _factory.CreateDbContext();
 
         var rows = ctx.DailyDeviceStats.Where(d => d.Day == day).ToList();
-        var rowById = rows.ToDictionary(r => r.DeviceId);
-
-        if (rowById.Count == 0)
+        if (rows.Count == 0)
             return Array.Empty<CalendarDeviceDetail>();
 
-        var deviceIds = rowById.Keys.ToList();
+        var deviceIds = rows.Select(r => r.DeviceId).ToList();
         var devices = ctx.Devices.Where(d => deviceIds.Contains(d.DeviceId)).ToDictionary(d => d.DeviceId);
 
-        return deviceIds
-            .Select(id =>
+        return rows.Select(row =>
             {
-                rowById.TryGetValue(id, out var row);
-                devices.TryGetValue(id, out var device);
+                devices.TryGetValue(row.DeviceId, out var device);
                 return new CalendarDeviceDetail
                 {
-                    DeviceId = id,
-                    DeviceName = device?.DeviceName ?? id,
+                    DeviceId = row.DeviceId,
+                    DeviceName = device?.DeviceName ?? row.DeviceId,
                     DeviceType = device?.DeviceType.ToString() ?? "",
-                    SessionCount = row?.SessionCount ?? 0,
-                    ConnectionDuration = row?.ConnectionDuration ?? 0,
-                    LongestSessionDuration = row?.LongestSessionDuration ?? 0,
-                    Keystrokes = row?.Keystrokes ?? 0,
-                    MouseClicks = row?.MouseClicks ?? 0,
-                    MouseMovementSeconds = row?.MouseMovementSeconds ?? 0,
-                    ActiveMinutes = row?.ActiveMinutes ?? 0,
-                    DistinctActiveHours = row?.DistinctActiveHours ?? 0,
-                    PeakInputHour = row?.PeakInputHour ?? -1,
+                    SessionCount = row.SessionCount,
+                    ConnectionDuration = row.ConnectionDuration,
+                    LongestSessionDuration = row.LongestSessionDuration,
+                    Keystrokes = row.Keystrokes,
+                    MouseClicks = row.MouseClicks,
+                    MouseMovementSeconds = row.MouseMovementSeconds,
+                    ActiveMinutes = row.ActiveMinutes,
+                    DistinctActiveHours = row.DistinctActiveHours,
+                    PeakInputHour = row.PeakInputHour,
                 };
             })
             .OrderByDescending(r => r.ConnectionDuration)
@@ -335,8 +330,7 @@ public class DailyStatsService : IDisposable
     {
         var (fromBound, toBound) = GetUtcBounds(from, to);
 
-        // Load all closing events whose closeTime falls within the range + all opening events
-        // needed for session-start lookups (slightly broader window to catch cross-midnight openers).
+        // Load closing events in range; opening events are looked up per close event in ApplyClosingEventToStats.
         var closeEvents = ctx
             .DeviceEvents.Where(e =>
                 (e.EventType == EventTypes.ConnectionEnded || e.EventType == EventTypes.Disconnected)
@@ -372,7 +366,7 @@ public class DailyStatsService : IDisposable
         var closeTimeLocal = TimeFormatter.ToLocalTime(closeEvent.EventTime);
         var closeDay = DateOnly.FromDateTime(closeTimeLocal);
 
-        // Find session start: latest same-day opening event before closeTime, else fallback to midnight.
+        // Find session start from the latest opening event at or before closeTime; fallback to close-day midnight.
         var sameOrEarlierOpens = ctx
             .DeviceEvents.Where(e =>
                 e.DeviceId == closeEvent.DeviceId
@@ -497,12 +491,7 @@ public class DailyStatsService : IDisposable
             if (statsByKey.ContainsKey((key.Item1, key.DeviceId)))
                 continue;
 
-            var stat = new DailyDeviceStat
-            {
-                Day = key.Item1,
-                DeviceId = key.DeviceId,
-                UpdatedAt = DateTime.UtcNow,
-            };
+            var stat = CreateDailyDeviceStat(key.Item1, key.DeviceId);
             ctx.DailyDeviceStats.Add(stat);
             statsByKey[(key.Item1, key.DeviceId)] = stat;
         }
@@ -578,14 +567,19 @@ public class DailyStatsService : IDisposable
         if (stat != null)
             return stat;
 
-        stat = new DailyDeviceStat
+        stat = CreateDailyDeviceStat(day, deviceId);
+        ctx.DailyDeviceStats.Add(stat);
+        return stat;
+    }
+
+    private static DailyDeviceStat CreateDailyDeviceStat(DateOnly day, string deviceId)
+    {
+        return new DailyDeviceStat
         {
             Day = day,
             DeviceId = deviceId,
             UpdatedAt = DateTime.UtcNow,
         };
-        ctx.DailyDeviceStats.Add(stat);
-        return stat;
     }
 
     private static (DateTime From, DateTime To) GetUtcBounds(DateOnly from, DateOnly toInclusive)
@@ -595,18 +589,12 @@ public class DailyStatsService : IDisposable
 
     private static CalendarDaySummary ToCalendarDaySummary(
         DateOnly day,
-        DateOnly today,
         IReadOnlyCollection<DailyDeviceStat>? dayRows,
         Dictionary<string, Device>? devicesById = null
     )
     {
         if (dayRows == null)
-            return new CalendarDaySummary
-            {
-                Day = day,
-                IsToday = day == today,
-                HasData = false,
-            };
+            return new CalendarDaySummary { Day = day, HasData = false };
 
         var tileDevices = dayRows
             .Select(r =>
@@ -627,7 +615,6 @@ public class DailyStatsService : IDisposable
         return new CalendarDaySummary
         {
             Day = day,
-            IsToday = day == today,
             HasData = true,
             Devices = tileDevices,
         };
