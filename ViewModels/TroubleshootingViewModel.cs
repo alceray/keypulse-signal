@@ -13,7 +13,7 @@ using Serilog;
 
 namespace KeyPulse.ViewModels;
 
-public class TroubleshootingViewModel : ObservableObject, IDisposable
+public class TroubleshootingViewModel : StatusMessageViewModelBase
 {
     public event Action? LogsRefreshed;
 
@@ -25,13 +25,11 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
     private static readonly IReadOnlyList<string> FilterDefinitions = AppConstants.Troubleshooting.FilterNames;
 
     private readonly LogAccessService _logAccessService;
-    private readonly StatusClearTimer _statusClearTimer;
     private bool _syncingFilters;
     private LogFileOption? _selectedLogFile;
     private string _searchQuery = string.Empty;
     private string _rawLogContent = string.Empty;
     private string _logContent = string.Empty;
-    private string _statusMessage = string.Empty;
 
     public TroubleshootingViewModel(LogAccessService logAccessService)
     {
@@ -40,9 +38,6 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
         RefreshLogsCommand = new RelayCommand(_ => RefreshLogs());
         CopyLogsCommand = new RelayCommand(_ => CopyLogs(), _ => !string.IsNullOrEmpty(LogContent));
         OpenLogsFolderCommand = new RelayCommand(_ => OpenLogsFolder());
-
-        _statusClearTimer = new StatusClearTimer();
-        _statusClearTimer.Elapsed += (_, _) => StatusMessage = string.Empty;
 
         LogFiles = new ObservableCollection<LogFileOption>();
         LogFilters = new ObservableCollection<LogFilterItem>(
@@ -106,26 +101,6 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
             OnPropertyChanged();
         }
     }
-
-    public string StatusMessage
-    {
-        get => _statusMessage;
-        private set
-        {
-            if (_statusMessage == value)
-                return;
-
-            _statusMessage = value;
-            OnPropertyChanged();
-            OnPropertyChanged(nameof(StatusVisibility));
-
-            if (!string.IsNullOrEmpty(value))
-                _statusClearTimer.Restart();
-        }
-    }
-
-    public Visibility StatusVisibility =>
-        string.IsNullOrEmpty(_statusMessage) ? Visibility.Collapsed : Visibility.Visible;
 
     public ICommand RefreshLogsCommand { get; }
 
@@ -383,9 +358,9 @@ public class TroubleshootingViewModel : ObservableObject, IDisposable
         return fileName;
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
-        _statusClearTimer.Dispose();
+        base.Dispose();
         foreach (var item in LogFilters)
             item.PropertyChanged -= OnFilterItemChanged;
     }

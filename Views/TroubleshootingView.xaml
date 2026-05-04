@@ -3,6 +3,7 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:config="clr-namespace:KeyPulse.Configuration"
+  xmlns:local="clr-namespace:KeyPulse.Views"
   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
   Height="Auto"
   Width="Auto"
@@ -139,18 +140,13 @@
       />
     </Border>
 
-    <Border
+    <local:StatusMessagePanel
       Grid.Row="1"
       HorizontalAlignment="Left"
       VerticalAlignment="Bottom"
       Margin="0,0,0,8"
-      Padding="14,8"
-      CornerRadius="6"
-      Background="{x:Static config:AppStyles.StatusBackgroundBrush}"
-      IsHitTestVisible="False"
-      Visibility="{Binding StatusVisibility}"
-    >
-      <TextBlock Text="{Binding StatusMessage}" Foreground="White" FontSize="13" />
-    </Border>
+      StatusMessage="{Binding StatusMessage}"
+      StatusVisibility="{Binding StatusVisibility}"
+    />
   </Grid>
 </UserControl>

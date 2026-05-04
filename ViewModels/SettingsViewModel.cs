@@ -7,7 +7,7 @@ using Serilog;
 
 namespace KeyPulse.ViewModels;
 
-public class SettingsViewModel : ObservableObject, IDisposable
+public class SettingsViewModel : StatusMessageViewModelBase
 {
     private readonly AppSettingsService _appSettingsService;
     private readonly StartupRegistrationService _startupRegistrationService;
@@ -18,8 +18,6 @@ public class SettingsViewModel : ObservableObject, IDisposable
     private bool _isUpdateAvailable;
     private string? _latestUpdateVersion;
     private bool _suppressAutoSave;
-    private string _statusMessage = string.Empty;
-    private readonly StatusClearTimer _statusClearTimer;
 
     public SettingsViewModel(
         AppSettingsService appSettingsService,
@@ -37,9 +35,6 @@ public class SettingsViewModel : ObservableObject, IDisposable
 
         _isUpdateAvailable = _updateService.UpdateAvailable;
         _latestUpdateVersion = _updateService.LatestVersion;
-
-        _statusClearTimer = new StatusClearTimer();
-        _statusClearTimer.Elapsed += (_, _) => StatusMessage = string.Empty;
 
         LoadSettings();
     }
@@ -75,26 +70,6 @@ public class SettingsViewModel : ObservableObject, IDisposable
                 SaveSettings();
         }
     }
-
-    public string StatusMessage
-    {
-        get => _statusMessage;
-        private set
-        {
-            if (_statusMessage == value)
-                return;
-
-            _statusMessage = value;
-            OnPropertyChanged();
-            OnPropertyChanged(nameof(StatusVisibility));
-
-            if (!string.IsNullOrEmpty(value))
-                _statusClearTimer.Restart();
-        }
-    }
-
-    public Visibility StatusVisibility =>
-        string.IsNullOrEmpty(_statusMessage) ? Visibility.Collapsed : Visibility.Visible;
 
     public string CurrentVersionDisplay => $"Version: v{_updateService.CurrentVersion}";
 
@@ -230,9 +205,9 @@ public class SettingsViewModel : ObservableObject, IDisposable
         }
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
-        _statusClearTimer.Dispose();
+        base.Dispose();
         _appSettingsService.SettingsChanged -= OnSettingsChanged;
         _updateService.UpdateStatusChanged -= OnUpdateStatusChanged;
     }
