@@ -10,6 +10,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Device> Devices { get; set; }
     public DbSet<DeviceEvent> DeviceEvents { get; set; }
     public DbSet<ActivitySnapshot> ActivitySnapshots { get; set; }
+    public DbSet<DailyDeviceStat> DailyDeviceStats { get; set; }
+    public DbSet<ActivityProjection> ActivityProjections { get; set; }
 
     private static string GetDatabasePath()
     {
@@ -100,5 +102,27 @@ public class ApplicationDbContext : DbContext
             .IsUnique();
 
         modelBuilder.Entity<ActivitySnapshot>().HasIndex(e => e.Minute).HasDatabaseName("Idx_ActivitySnapshots_Minute");
+
+        modelBuilder.Entity<DailyDeviceStat>().ToTable("DailyDeviceStats");
+        modelBuilder.Entity<DailyDeviceStat>().Property(e => e.UpdatedAt).HasConversion(localToUtcConverter);
+        modelBuilder
+            .Entity<DailyDeviceStat>()
+            .HasIndex(e => new { e.Day, e.DeviceId })
+            .HasDatabaseName("Idx_DailyDeviceStats_DayDeviceId")
+            .IsUnique();
+        modelBuilder.Entity<DailyDeviceStat>().HasIndex(e => e.Day).HasDatabaseName("Idx_DailyDeviceStats_Day");
+        modelBuilder
+            .Entity<DailyDeviceStat>()
+            .HasIndex(e => new { e.DeviceId, e.Day })
+            .HasDatabaseName("Idx_DailyDeviceStats_DeviceIdDay");
+
+        modelBuilder.Entity<ActivityProjection>().ToTable("ActivityProjections");
+        modelBuilder.Entity<ActivityProjection>().Property(e => e.Minute).HasConversion(localToUtcConverter);
+        modelBuilder.Entity<ActivityProjection>().Property(e => e.ProjectedAt).HasConversion(localToUtcConverter);
+        modelBuilder
+            .Entity<ActivityProjection>()
+            .HasIndex(e => new { e.DeviceId, e.Minute })
+            .HasDatabaseName("Idx_ActivityProjections_DeviceIdMinute")
+            .IsUnique();
     }
 }

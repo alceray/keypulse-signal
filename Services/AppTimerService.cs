@@ -11,7 +11,8 @@ public sealed class AppTimerService : IDisposable
 {
     private readonly DispatcherTimer _secondTimer;
     private readonly DispatcherTimer _thirtySecondTimer;
-    private readonly DispatcherTimer _hourlyTimer;
+    private readonly DispatcherTimer _minuteTimer;
+    private readonly DispatcherTimer _dailyTimer;
     private bool _disposed;
 
     /// <summary>Raised on the UI thread every second.</summary>
@@ -20,8 +21,11 @@ public sealed class AppTimerService : IDisposable
     /// <summary>Raised on the UI thread every 30 seconds.</summary>
     public event EventHandler? ThirtySecondTick;
 
-    /// <summary>Raised on the UI thread every hour.</summary>
-    public event EventHandler? HourlyTick;
+    /// <summary>Raised on the UI thread every 60 seconds.</summary>
+    public event EventHandler? MinuteTick;
+
+    /// <summary>Raised on the UI thread every 24 hours.</summary>
+    public event EventHandler? DailyTick;
 
     public AppTimerService()
     {
@@ -33,9 +37,13 @@ public sealed class AppTimerService : IDisposable
         _thirtySecondTimer.Tick += (_, _) => ThirtySecondTick?.Invoke(this, EventArgs.Empty);
         _thirtySecondTimer.Start();
 
-        _hourlyTimer = new DispatcherTimer { Interval = TimeSpan.FromHours(1) };
-        _hourlyTimer.Tick += (_, _) => HourlyTick?.Invoke(this, EventArgs.Empty);
-        _hourlyTimer.Start();
+        _minuteTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(60) };
+        _minuteTimer.Tick += (_, _) => MinuteTick?.Invoke(this, EventArgs.Empty);
+        _minuteTimer.Start();
+
+        _dailyTimer = new DispatcherTimer { Interval = TimeSpan.FromDays(1) };
+        _dailyTimer.Tick += (_, _) => DailyTick?.Invoke(this, EventArgs.Empty);
+        _dailyTimer.Start();
     }
 
     public void Dispose()
@@ -46,6 +54,7 @@ public sealed class AppTimerService : IDisposable
         _disposed = true;
         _secondTimer.Stop();
         _thirtySecondTimer.Stop();
-        _hourlyTimer.Stop();
+        _minuteTimer.Stop();
+        _dailyTimer.Stop();
     }
 }

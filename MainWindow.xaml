@@ -8,6 +8,8 @@
   mc:Ignorable="d"
   Height="1200"
   Width="1600"
+  MinHeight="600"
+  MinWidth="800"
 >
   <Grid>
     <TabControl SelectedIndex="0">
@@ -16,6 +18,9 @@
       </TabItem>
       <TabItem Header="{Binding DataContext.DeviceTitleWithCount, ElementName=DeviceListViewControl}">
         <views:DeviceListView x:Name="DeviceListViewControl" />
+      </TabItem>
+      <TabItem Header="Calendar">
+        <views:CalendarView />
       </TabItem>
       <TabItem Header="Settings">
         <views:SettingsView />

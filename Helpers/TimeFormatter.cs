@@ -113,4 +113,42 @@ public static class TimeFormatter
     {
         return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0, dt.Kind);
     }
+
+    /// <summary>
+    /// Converts a local calendar day to its UTC start boundary.
+    /// Useful for inclusive day-range queries represented as UTC timestamps.
+    /// </summary>
+    public static DateTime LocalDayToUtc(DateOnly day)
+    {
+        var localStart = day.ToDateTime(TimeOnly.MinValue, DateTimeKind.Local);
+        return localStart.ToUniversalTime();
+    }
+
+    /// <summary>
+    /// Splits a local-time interval [startLocal, endLocal) across local day boundaries.
+    /// Returns one entry per local day with elapsed whole seconds in that day.
+    /// </summary>
+    public static List<(DateOnly Day, long Seconds)> SplitByLocalDays(DateTime startLocal, DateTime endLocal)
+    {
+        var result = new List<(DateOnly, long)>();
+
+        if (endLocal <= startLocal)
+            return result;
+
+        var cursor = startLocal;
+        while (cursor < endLocal)
+        {
+            var dayStart = cursor.Date;
+            var nextMidnight = dayStart.AddDays(1);
+            var segmentEnd = endLocal < nextMidnight ? endLocal : nextMidnight;
+            var seconds = (long)(segmentEnd - cursor).TotalSeconds;
+
+            if (seconds > 0)
+                result.Add((DateOnly.FromDateTime(dayStart), seconds));
+
+            cursor = nextMidnight;
+        }
+
+        return result;
+    }
 }

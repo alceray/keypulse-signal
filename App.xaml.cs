@@ -92,6 +92,12 @@ public partial class App
 
         _usbMonitorService = ServiceProvider.GetRequiredService<UsbMonitorService>();
 
+        // Optimization: run daily-stats startup rebuild in background so window appears immediately.
+        // _ = Task.Run(() =>
+        // {
+        //     ServiceProvider.GetRequiredService<DailyStatsService>().RebuildGapOnStartup();
+        // });
+
         // Show window / tray immediately so the UI appears while slow startup runs in the background.
         // First launch always shows the window, even in Release/tray mode.
         var settings = _appSettingsService.GetSettings();
@@ -224,6 +230,7 @@ public partial class App
     private static void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContextFactory<ApplicationDbContext>();
+        services.AddSingleton<DailyStatsService>();
         services.AddSingleton<DataService>();
         services.AddSingleton<AppSettingsService>();
         services.AddSingleton<LogAccessService>();
@@ -238,6 +245,7 @@ public partial class App
         services.AddTransient<EventLogViewModel>();
         services.AddTransient<SettingsViewModel>();
         services.AddTransient<TroubleshootingViewModel>();
+        services.AddTransient<CalendarViewModel>();
     }
 
     private static bool ResolveRunInBackground(IEnumerable<string> args)

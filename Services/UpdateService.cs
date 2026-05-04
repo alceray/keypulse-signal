@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -15,11 +16,16 @@ public class UpdateService : IDisposable
 
     private readonly HttpClient _httpClient;
     private readonly AppTimerService _appTimerService;
+    private readonly CancellationTokenSource _lifetimeCts = new();
+
+    private static readonly TimeSpan UpdateCheckTimeout = TimeSpan.FromSeconds(10);
 
     private string? _latestVersion;
     private bool _updateAvailable;
     private bool _started;
     private bool _disposed;
+    private bool _networkFailureLogged;
+    private int _checkInFlight;
 
     private static string GetGitHubReleaseTagUrl(string version) =>
         $"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tag/v{version}";
@@ -54,17 +60,26 @@ public class UpdateService : IDisposable
         _started = true;
         Log.Information("Update checker started");
 
-        CheckForUpdatesAsync().ConfigureAwait(false);
-        _appTimerService.HourlyTick += OnHourlyTick;
+        _ = CheckForUpdatesAsync();
+        _appTimerService.DailyTick += OnDailyTick;
     }
 
-    private void OnHourlyTick(object? sender, EventArgs e) => CheckForUpdatesAsync().ConfigureAwait(false);
+    private void OnDailyTick(object? sender, EventArgs e) => _ = CheckForUpdatesAsync();
 
     public async Task CheckForUpdatesAsync()
     {
+        if (_disposed)
+            return;
+
+        if (Interlocked.CompareExchange(ref _checkInFlight, 1, 0) != 0)
+            return;
+
         try
         {
-            using var response = await _httpClient.GetAsync(GITHUB_API_URL);
+            using var timeoutCts = new CancellationTokenSource(UpdateCheckTimeout);
+            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(_lifetimeCts.Token, timeoutCts.Token);
+
+            using var response = await _httpClient.GetAsync(GITHUB_API_URL, linkedCts.Token);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -83,6 +98,11 @@ public class UpdateService : IDisposable
 
             var latestVersion = release.TagName.TrimStart('v');
             _latestVersion = latestVersion;
+            if (_networkFailureLogged)
+            {
+                _networkFailureLogged = false;
+                Log.Information("Update check recovered after transient network failure");
+            }
 
             var updateAvailable = IsNewerVersion(CurrentVersion, latestVersion);
 
@@ -101,9 +121,24 @@ public class UpdateService : IDisposable
                 );
             }
         }
+        catch (OperationCanceledException) when (!_lifetimeCts.IsCancellationRequested)
+        {
+            LogTransientNetworkFailure(
+                "Update check timed out after {TimeoutSeconds} seconds",
+                UpdateCheckTimeout.TotalSeconds
+            );
+        }
+        catch (HttpRequestException ex) when (IsTransientNetworkFailure(ex))
+        {
+            LogTransientNetworkFailure("Update check skipped due to transient network issue: {Message}", ex.Message);
+        }
         catch (Exception ex)
         {
             Log.Error(ex, "Update check failed");
+        }
+        finally
+        {
+            Interlocked.Exchange(ref _checkInFlight, 0);
         }
     }
 
@@ -163,9 +198,35 @@ public class UpdateService : IDisposable
         }
 
         _disposed = true;
-        _appTimerService.HourlyTick -= OnHourlyTick;
+        _appTimerService.DailyTick -= OnDailyTick;
+        _lifetimeCts.Cancel();
+        _lifetimeCts.Dispose();
         _httpClient.Dispose();
         Log.Information("Update checker disposed");
+    }
+
+    private void LogTransientNetworkFailure(string messageTemplate, object detail)
+    {
+        if (!_networkFailureLogged)
+        {
+            _networkFailureLogged = true;
+            Log.Warning(messageTemplate, detail);
+            return;
+        }
+
+        Log.Debug(messageTemplate, detail);
+    }
+
+    private static bool IsTransientNetworkFailure(HttpRequestException ex)
+    {
+        if (ex.HttpRequestError == HttpRequestError.NameResolutionError)
+            return true;
+
+        if (ex.InnerException is SocketException socketEx)
+            return socketEx.SocketErrorCode == SocketError.HostNotFound
+                || socketEx.SocketErrorCode == SocketError.TryAgain;
+
+        return false;
     }
 
     public class UpdateAvailableEventArgs

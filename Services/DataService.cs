@@ -13,6 +13,7 @@ namespace KeyPulse.Services;
 public class DataService
 {
     private readonly IDbContextFactory<ApplicationDbContext> _factory;
+    private readonly DailyStatsService _dailyStats;
 
     public sealed class DashboardEventQueryResult
     {
@@ -20,9 +21,10 @@ public class DataService
         public required IReadOnlyList<DeviceEvent> AppLifecycleEvents { get; init; }
     }
 
-    public DataService(IDbContextFactory<ApplicationDbContext> factory)
+    public DataService(IDbContextFactory<ApplicationDbContext> factory, DailyStatsService dailyStats)
     {
         _factory = factory;
+        _dailyStats = dailyStats;
         InitializeDatabase();
     }
 
@@ -213,6 +215,7 @@ public class DataService
             using var ctx = _factory.CreateDbContext();
             ctx.DeviceEvents.Add(deviceEvent);
             ctx.SaveChanges();
+            _dailyStats.ApplyDeviceEvent(ctx, deviceEvent);
         }
         catch (DbUpdateException ex)
         {
@@ -244,6 +247,8 @@ public class DataService
                 var existing = ctx.ActivitySnapshots.SingleOrDefault(s =>
                     s.DeviceId == snapshot.DeviceId && s.Minute == snapshot.Minute
                 );
+                var snapshotChanged = false;
+
                 if (existing != null)
                 {
                     // Update existing snapshot (merge activity)
@@ -256,15 +261,23 @@ public class DataService
                     );
 
                     var movementDelta = existing.MouseMovementSeconds - previousMovementSeconds;
-                    device.TotalInputCount += snapshot.Keystrokes + snapshot.MouseClicks + movementDelta;
+                    var keyDelta = snapshot.Keystrokes + snapshot.MouseClicks;
+                    snapshotChanged = keyDelta > 0 || movementDelta > 0;
+
+                    device.TotalInputCount += keyDelta + movementDelta;
                 }
                 else
                 {
                     // Insert new snapshot
                     ctx.ActivitySnapshots.Add(snapshot);
-                    device.TotalInputCount +=
-                        snapshot.Keystrokes + snapshot.MouseClicks + snapshot.MouseMovementSeconds;
+
+                    var inputDelta = snapshot.Keystrokes + snapshot.MouseClicks + snapshot.MouseMovementSeconds;
+                    snapshotChanged = inputDelta > 0;
+                    device.TotalInputCount += inputDelta;
                 }
+
+                if (snapshotChanged)
+                    _dailyStats.MarkActivitySnapshotWritten(snapshot.Minute);
             }
 
             ctx.SaveChanges();

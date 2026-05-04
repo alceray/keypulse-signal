@@ -14,6 +14,9 @@ public static class AppStyles
     public static Brush SearchCounterBrush { get; } = MakeFrozen(0x88, 0x00, 0x00, 0x00);
     public static Brush LogBorderBrush { get; } = MakeFrozen(0x33, 0x00, 0x00, 0x00);
     public static Brush StatusBackgroundBrush { get; } = MakeFrozen(0xCC, 0x1B, 0x1B, 0x1B);
+    public static Brush CalendarDataTileBackgroundBrush { get; } = MakeFrozen(0xF3, 0xE8, 0xFF);
+    public static Brush CalendarDataTileBorderBrush { get; } = MakeFrozen(0xC4, 0xB5, 0xFD);
+    public static Brush CalendarSelectedTileBorderBrush { get; } = MakeFrozen(0x7E, 0x22, 0xCE);
 
     public static Brush GetLogLevelBrush(string levelName)
     {
