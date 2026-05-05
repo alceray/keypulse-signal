@@ -11,7 +11,7 @@ namespace KeyPulse.ViewModels;
 /// <summary>
 /// Transient view-model for the Calendar tab.
 /// Shows a monthly grid of day tiles and a detail panel for a selected day.
-/// Subscribes to AppTimerService.ThirtySecondTick to keep today's tile fresh.
+/// Subscribes to AppTimerService.SecondTick for per-second realtime overlay updates.
 /// </summary>
 public sealed class CalendarViewModel : ObservableObject, IDisposable
 {
@@ -26,6 +26,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         string,
         (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
     > _todayLiveDeltaByDevice = [];
+    private long _todayLiveInputDeltaTotal;
     private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
     private readonly SemaphoreSlim _arrowNavigationGate = new(1, 1);
@@ -121,7 +122,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         NextMonthCommand = new RelayCommand(_ => _ = NavigateMonthAsync(1), _ => CanGoNext);
         SelectDayCommand = new RelayCommand(day => SelectDay(day as CalendarDaySummary));
 
-        _appTimerService.ThirtySecondTick += OnThirtySecondTick;
         _appTimerService.SecondTick += OnSecondTick;
         _rawInputService.InputDeltaIncremented += OnInputDeltaIncremented;
     }
@@ -143,6 +143,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         _ = LoadCurrentMonthAsync();
     }
 
+    /// <summary>
+    /// Navigates one month forward/backward, updates command state, and reloads the visible month.
+    /// </summary>
     private async Task NavigateMonthAsync(int delta, bool resetSelection = true)
     {
         _currentDisplayMonth = _currentDisplayMonth
@@ -157,6 +160,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         await LoadCurrentMonthAsync();
     }
 
+    /// <summary>Returns data-bearing day tiles in the visible month ordered from oldest to newest.</summary>
     private List<CalendarDaySummary> GetSelectableDaysInCurrentMonth()
     {
         return DaySummaries.Where(s => s.HasData).OrderBy(s => s.Day).ToList();
@@ -226,6 +230,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         }
     }
 
+    /// <summary>Selects a day tile only when it has data; otherwise clears the current selection.</summary>
     private void SelectDay(CalendarDaySummary? day)
     {
         if (day == null || !day.HasData)
@@ -334,90 +339,77 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         ApplyRealtimeTodayOverlay();
     }
 
+    /// <summary>Refreshes today's realtime overlay every second while preserving persisted baselines.</summary>
     private void OnSecondTick(object? sender, EventArgs e)
     {
-        ApplyRealtimeTodayOverlay();
+        var today = DateOnly.FromDateTime(DateTime.Now);
+        var dayRolledOver = ResetLiveInputOverlayIfDayChanged(today);
+        // When the local day rolls over, force one tile-summary refresh to clear stale live overlays.
+        RequestOverlayRefresh(updateTileSummary: dayRolledOver);
     }
 
+    /// <summary>Accumulates in-memory input deltas for today and schedules a UI overlay refresh.</summary>
     private void OnInputDeltaIncremented(
         string deviceId,
         (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta) delta
     )
     {
-        if (delta.KeystrokeDelta + delta.MouseClickDelta + delta.MouseMovementDelta <= 0)
+        var inputDelta = delta.KeystrokeDelta + delta.MouseClickDelta + delta.MouseMovementDelta;
+        if (inputDelta <= 0)
             return;
 
         var today = DateOnly.FromDateTime(DateTime.Now);
+        ResetLiveInputOverlayIfDayChanged(today);
         lock (_liveInputLock)
         {
-            if (_accumulatedInputDate != today)
-            {
-                _todayLiveDeltaByDevice.Clear();
-                _accumulatedInputDate = today;
-            }
+            _todayLiveDeltaByDevice[deviceId] = _todayLiveDeltaByDevice.TryGetValue(deviceId, out var current)
+                ? (
+                    current.KeystrokeDelta + delta.KeystrokeDelta,
+                    current.MouseClickDelta + delta.MouseClickDelta,
+                    current.MouseMovementDelta + delta.MouseMovementDelta
+                )
+                : delta;
 
-            var existing = _todayLiveDeltaByDevice.TryGetValue(deviceId, out var current)
-                ? current
-                : (KeystrokeDelta: 0L, MouseClickDelta: 0L, MouseMovementDelta: 0L);
-
-            _todayLiveDeltaByDevice[deviceId] = (
-                existing.KeystrokeDelta + delta.KeystrokeDelta,
-                existing.MouseClickDelta + delta.MouseClickDelta,
-                existing.MouseMovementDelta + delta.MouseMovementDelta
-            );
+            _todayLiveInputDeltaTotal += inputDelta;
         }
 
-        // Reflect input changes immediately so today's detail panel feels realtime like Device List.
+        RequestOverlayRefresh();
+    }
+
+    /// <summary>Resets in-memory live counters when local time crosses into a new day.</summary>
+    private bool ResetLiveInputOverlayIfDayChanged(DateOnly today)
+    {
+        lock (_liveInputLock)
+        {
+            if (_accumulatedInputDate == today)
+                return false;
+
+            _todayLiveDeltaByDevice.Clear();
+            _todayLiveInputDeltaTotal = 0;
+            _accumulatedInputDate = today;
+            return true;
+        }
+    }
+
+    /// <summary>Runs realtime overlay updates on the UI dispatcher when available.</summary>
+    private void RequestOverlayRefresh(bool updateTileSummary = true)
+    {
         var dispatcher = Application.Current?.Dispatcher;
         if (!ShutdownDispose.IsDispatcherUsable(dispatcher))
             return;
 
         if (dispatcher!.CheckAccess())
-            ApplyRealtimeTodayOverlay();
+            ApplyRealtimeTodayOverlay(updateTileSummary);
         else
-            dispatcher.BeginInvoke(new Action(ApplyRealtimeTodayOverlay));
-    }
-
-    /// <summary>Refreshes today's persisted baseline every 30 seconds while viewing the current month.</summary>
-    private async void OnThirtySecondTick(object? sender, EventArgs e)
-    {
-        var today = DateOnly.FromDateTime(DateTime.Now);
-        if (today.Year != _currentDisplayMonth.Year || today.Month != _currentDisplayMonth.Month)
-            return;
-
-        try
-        {
-            var summaries = await Task.Run(() =>
-                _dailyStatsService.GetCalendarDaySummaries(_currentDisplayMonth.Year, _currentDisplayMonth.Month)
-            );
-
-            // Update today's persisted baseline in DaySummaries
-            var todaySummary = summaries.FirstOrDefault(s => s.Day == today);
-            if (todaySummary != null)
-            {
-                for (var i = 0; i < DaySummaries.Count; i++)
-                {
-                    if (DaySummaries[i].Day == today)
-                    {
-                        DaySummaries[i] = todaySummary;
-                        break;
-                    }
-                }
-            }
-
-            ApplyRealtimeTodayOverlay();
-        }
-        catch (Exception ex)
-        {
-            Serilog.Log.Error(ex, "Failed to refresh today's calendar baseline");
-        }
+            // Raw input and timer callbacks may arrive off-thread; marshal to UI safely.
+            dispatcher.BeginInvoke(new Action(() => ApplyRealtimeTodayOverlay(updateTileSummary)));
     }
 
     /// <summary>
     /// Applies UI-only realtime overlay for today's tile and selected-today detail panel.
     /// Persistence remains in source-table write paths (DeviceEvents/ActivitySnapshots).
     /// </summary>
-    private void ApplyRealtimeTodayOverlay()
+    private void ApplyRealtimeTodayOverlay(bool updateTileSummary = true)
     {
         var today = DateOnly.FromDateTime(DateTime.Now);
 
@@ -428,101 +420,119 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         if (persisted == null)
             return;
 
+        var selectedToday = _selectedDay?.Day == today;
+        if (!updateTileSummary && !selectedToday)
+            return;
+
         var nowLocal = DateTime.Now;
         var dayStartLocal = today.ToDateTime(TimeOnly.MinValue);
-
-        // Connection overlay: open sessions contribute elapsed seconds since max(sessionStart, local midnight).
-        var connectionOverlayByDevice = new Dictionary<string, long>();
-        foreach (var device in _usbMonitorService.DeviceList)
+        Dictionary<string, long>? connectionOverlayByDevice = null;
+        if (selectedToday)
         {
-            if (!device.SessionStartedAt.HasValue)
-                continue;
+            // Connection overlay: open sessions contribute elapsed seconds since max(sessionStart, local midnight).
+            connectionOverlayByDevice = new Dictionary<string, long>();
+            foreach (var device in _usbMonitorService.DeviceList)
+            {
+                if (!device.SessionStartedAt.HasValue)
+                    continue;
 
-            var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt.Value);
-            if (startLocal < dayStartLocal)
-                startLocal = dayStartLocal;
-            if (startLocal >= nowLocal)
-                continue;
+                var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt.Value);
+                if (startLocal < dayStartLocal)
+                    startLocal = dayStartLocal;
+                if (startLocal >= nowLocal)
+                    continue;
 
-            connectionOverlayByDevice[device.DeviceId] = (long)(nowLocal - startLocal).TotalSeconds;
+                connectionOverlayByDevice[device.DeviceId] = (long)(nowLocal - startLocal).TotalSeconds;
+            }
         }
 
-        Dictionary<string, (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)> liveOverlayByDevice;
-        long inputOverlayTotal;
-        lock (_liveInputLock)
+        if (updateTileSummary)
         {
-            liveOverlayByDevice = _todayLiveDeltaByDevice.ToDictionary(k => k.Key, v => v.Value);
-            inputOverlayTotal = liveOverlayByDevice.Values.Sum(v =>
-                v.KeystrokeDelta + v.MouseClickDelta + v.MouseMovementDelta
-            );
-        }
-
-        var realtimeSummary = new CalendarDaySummary
-        {
-            Day = persisted.Day,
-            HasData = persisted.HasData || connectionOverlayByDevice.Count > 0 || inputOverlayTotal > 0,
-            IsSelected = _selectedDay?.Day == today,
-            Devices = BuildRealtimeTileDevices(persisted.Devices),
-        };
-
-        ReplaceTodaySummary(realtimeSummary);
-
-        if (_selectedDay?.Day == today)
-            ApplyRealtimeTodayDetailOverlay(connectionOverlayByDevice, liveOverlayByDevice);
-    }
-
-    /// <summary>Builds today's tile device list by merging persisted devices with currently connected devices.</summary>
-    private IReadOnlyList<CalendarTileDevice> BuildRealtimeTileDevices(IReadOnlyList<CalendarTileDevice> persisted)
-    {
-        var byId = persisted.ToDictionary(d => d.DeviceId);
-        foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsConnected))
-        {
-            if (!byId.ContainsKey(device.DeviceId))
-                byId[device.DeviceId] = new CalendarTileDevice
+            var hasConnectionOverlay = selectedToday
+                ? connectionOverlayByDevice!.Count > 0
+                : _usbMonitorService.DeviceList.Any(device =>
                 {
-                    DeviceId = device.DeviceId,
-                    DeviceName = device.DeviceName,
-                    DeviceType = device.DeviceType,
-                };
-        }
+                    if (!device.SessionStartedAt.HasValue)
+                        return false;
 
-        return byId
-            .Values.OrderBy(d =>
-                d.DeviceType == DeviceTypes.Keyboard ? 0
-                : d.DeviceType == DeviceTypes.Mouse ? 1
-                : 2
-            )
-            .ThenBy(d => d.DeviceName)
-            .ToList();
-    }
+                    var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt.Value);
+                    if (startLocal < dayStartLocal)
+                        startLocal = dayStartLocal;
 
-    private void ReplaceTodaySummary(CalendarDaySummary summary)
-    {
-        for (var i = 0; i < DaySummaries.Count; i++)
-        {
-            if (DaySummaries[i].Day == summary.Day)
+                    return startLocal < nowLocal;
+                });
+
+            long inputOverlayTotal;
+            lock (_liveInputLock)
+                inputOverlayTotal = _todayLiveInputDeltaTotal;
+
+            var byId = persisted.Devices.ToDictionary(d => d.DeviceId);
+            foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsConnected))
             {
-                DaySummaries[i] = summary;
-                break;
+                if (!byId.ContainsKey(device.DeviceId))
+                    byId[device.DeviceId] = new CalendarTileDevice
+                    {
+                        DeviceId = device.DeviceId,
+                        DeviceName = device.DeviceName,
+                        DeviceType = device.DeviceType,
+                    };
+            }
+
+            var todaySummary = new CalendarDaySummary
+            {
+                Day = persisted.Day,
+                HasData = persisted.HasData || hasConnectionOverlay || inputOverlayTotal > 0,
+                IsSelected = selectedToday,
+                Devices = byId
+                    .Values.OrderBy(d =>
+                        d.DeviceType == DeviceTypes.Keyboard ? 0
+                        : d.DeviceType == DeviceTypes.Mouse ? 1
+                        : 2
+                    )
+                    .ThenBy(d => d.DeviceName)
+                    .ToList(),
+            };
+
+            for (var i = 0; i < DaySummaries.Count; i++)
+            {
+                if (DaySummaries[i].Day == todaySummary.Day)
+                {
+                    DaySummaries[i] = todaySummary;
+                    break;
+                }
+            }
+
+            for (var i = 0; i < CalendarGridItems.Count; i++)
+            {
+                if (CalendarGridItems[i] is CalendarDaySummary existing && existing.Day == todaySummary.Day)
+                {
+                    CalendarGridItems[i] = todaySummary;
+                    break;
+                }
             }
         }
 
-        for (var i = 0; i < CalendarGridItems.Count; i++)
+        if (selectedToday)
         {
-            if (CalendarGridItems[i] is CalendarDaySummary existing && existing.Day == summary.Day)
-            {
-                CalendarGridItems[i] = summary;
-                break;
-            }
+            Dictionary<
+                string,
+                (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
+            > liveOverlayByDevice;
+            lock (_liveInputLock)
+                liveOverlayByDevice = _todayLiveDeltaByDevice.ToDictionary(k => k.Key, v => v.Value);
+
+            ApplyRealtimeTodayDetailOverlay(connectionOverlayByDevice!, liveOverlayByDevice);
         }
     }
 
+    /// <summary>Synchronizes selected-state styling in both summary and grid collections.</summary>
     private void ApplySelectionState(DateOnly? selectedDay)
     {
         UpdateSelectionInCollection(DaySummaries, selectedDay);
         UpdateSelectionInGrid(selectedDay);
     }
 
+    /// <summary>Replaces only rows whose selection flag changed to trigger UI updates efficiently.</summary>
     private static void UpdateSelectionInCollection(IList<CalendarDaySummary> summaries, DateOnly? selectedDay)
     {
         for (var i = 0; i < summaries.Count; i++)
@@ -536,6 +546,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         }
     }
 
+    /// <summary>Mirrors selection changes into the mixed grid list that includes leading blank cells.</summary>
     private void UpdateSelectionInGrid(DateOnly? selectedDay)
     {
         for (var i = 0; i < CalendarGridItems.Count; i++)
@@ -551,6 +562,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         }
     }
 
+    /// <summary>Creates a shallow summary copy with explicit selection state for immutable-style updates.</summary>
     private static CalendarDaySummary CloneSummary(CalendarDaySummary summary, bool isSelected)
     {
         return new CalendarDaySummary
@@ -579,6 +591,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             ids.Add(id);
         foreach (var id in liveOverlayByDevice.Keys)
             ids.Add(id);
+        // Union persisted + connected-now + live-input IDs so detail rows stay complete for today's view.
 
         var rows = new List<CalendarDeviceDetail>(ids.Count);
         foreach (var id in ids)
@@ -622,6 +635,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             SelectedDayDetails.Add(row);
     }
 
+    /// <summary>Applies consistent display ordering: keyboard, then mouse, then unknown; name as tie-breaker.</summary>
     private static IEnumerable<CalendarDeviceDetail> OrderDetailsForDisplay(IEnumerable<CalendarDeviceDetail> rows)
     {
         return rows.OrderBy(r =>
@@ -640,8 +654,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         if (_disposed)
             return;
         _disposed = true;
-        _appTimerService.ThirtySecondTick -= OnThirtySecondTick;
         _appTimerService.SecondTick -= OnSecondTick;
         _rawInputService.InputDeltaIncremented -= OnInputDeltaIncremented;
+        _arrowNavigationGate.Dispose();
     }
 }

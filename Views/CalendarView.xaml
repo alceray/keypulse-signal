@@ -129,10 +129,6 @@
                                 <Setter Property="BorderBrush" Value="#DDDDDD" />
                                 <Setter Property="Background" Value="#FAFAFA" />
                                 <Style.Triggers>
-                                  <DataTrigger Binding="{Binding IsToday}" Value="True">
-                                    <Setter Property="BorderBrush" Value="#429CF4" />
-                                    <Setter Property="Background" Value="#EFF6FF" />
-                                  </DataTrigger>
                                   <DataTrigger Binding="{Binding HasData}" Value="True">
                                     <Setter
                                       Property="Background"
