@@ -6,6 +6,9 @@
   xmlns:local="clr-namespace:KeyPulse.Views"
   xmlns:vm="clr-namespace:KeyPulse.ViewModels.Calendar"
   IsVisibleChanged="CalendarView_IsVisibleChanged"
+  Focusable="True"
+  PreviewKeyDown="CalendarView_PreviewKeyDown"
+  PreviewKeyUp="CalendarView_PreviewKeyUp"
 >
   <UserControl.Resources>
     <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />

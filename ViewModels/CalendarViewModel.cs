@@ -25,6 +25,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     private readonly Dictionary<string, long> _todayLiveInputDeltaByDevice = [];
     private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
+    private readonly SemaphoreSlim _arrowNavigationGate = new(1, 1);
 
     private DateOnly _currentDisplayMonth;
     private bool _isLoading;
@@ -113,8 +114,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         var today = DateOnly.FromDateTime(DateTime.Now);
         _currentDisplayMonth = today.AddDays(1 - today.Day); // First day of current month
 
-        PreviousMonthCommand = new RelayCommand(_ => NavigateMonth(-1), _ => CanGoPrevious);
-        NextMonthCommand = new RelayCommand(_ => NavigateMonth(1), _ => CanGoNext);
+        PreviousMonthCommand = new RelayCommand(_ => _ = NavigateMonthAsync(-1), _ => CanGoPrevious);
+        NextMonthCommand = new RelayCommand(_ => _ = NavigateMonthAsync(1), _ => CanGoNext);
         SelectDayCommand = new RelayCommand(day => SelectDay(day as CalendarDaySummary));
 
         _appTimerService.ThirtySecondTick += OnThirtySecondTick;
@@ -136,10 +137,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             Serilog.Log.Error(ex, "Failed to query earliest calendar data day");
         }
 
-        LoadCurrentMonth();
+        _ = LoadCurrentMonthAsync();
     }
 
-    private void NavigateMonth(int delta)
+    private async Task NavigateMonthAsync(int delta, bool resetSelection = true)
     {
         _currentDisplayMonth = _currentDisplayMonth
             .AddMonths(delta)
@@ -148,8 +149,78 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         OnPropertyChanged(nameof(MonthTitle));
         OnPropertyChanged(nameof(CanGoNext));
         OnPropertyChanged(nameof(CanGoPrevious));
-        SelectedDay = null;
-        LoadCurrentMonth();
+        if (resetSelection)
+            SelectedDay = null;
+        await LoadCurrentMonthAsync();
+    }
+
+    private List<CalendarDaySummary> GetSelectableDaysInCurrentMonth()
+    {
+        return DaySummaries.Where(s => s.HasData).OrderBy(s => s.Day).ToList();
+    }
+
+    /// <summary>
+    /// Moves calendar selection by one tile in the provided direction.
+    /// -1 = left (older), +1 = right (newer).
+    /// </summary>
+    public async Task MoveSelectionByArrowAsync(int delta)
+    {
+        if (delta != -1 && delta != 1)
+            return;
+
+        await _arrowNavigationGate.WaitAsync();
+        try
+        {
+            var selectableDays = GetSelectableDaysInCurrentMonth();
+            if (_selectedDay == null)
+            {
+                if (selectableDays.Count == 0)
+                    return;
+
+                // Start from the most recent tile in the visible month when no day is selected.
+                SelectDay(selectableDays[^1]);
+                return;
+            }
+
+            var selectedIndex = selectableDays.FindIndex(s => s.Day == _selectedDay.Day);
+            if (selectedIndex < 0 && selectableDays.Count > 0)
+            {
+                // Selection can become stale when month content changes; recover inside current month first.
+                SelectDay(delta < 0 ? selectableDays[^1] : selectableDays[0]);
+                return;
+            }
+
+            if (selectedIndex >= 0)
+            {
+                var targetIndex = selectedIndex + delta;
+                if (targetIndex >= 0 && targetIndex < selectableDays.Count)
+                {
+                    SelectDay(selectableDays[targetIndex]);
+                    return;
+                }
+            }
+
+            while (true)
+            {
+                if (delta < 0 && !CanGoPrevious)
+                    return;
+                if (delta > 0 && !CanGoNext)
+                    return;
+
+                await NavigateMonthAsync(delta, false);
+
+                selectableDays = GetSelectableDaysInCurrentMonth();
+                if (selectableDays.Count == 0)
+                    continue;
+
+                SelectDay(delta < 0 ? selectableDays[^1] : selectableDays[0]);
+                return;
+            }
+        }
+        finally
+        {
+            _arrowNavigationGate.Release();
+        }
     }
 
     private void SelectDay(CalendarDaySummary? day)
@@ -164,7 +235,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     }
 
     /// <summary>Loads month summaries from persistence and applies them if the view is still on that month.</summary>
-    private async void LoadCurrentMonth()
+    private async Task LoadCurrentMonthAsync()
     {
         IsLoading = true;
         var year = _currentDisplayMonth.Year;
