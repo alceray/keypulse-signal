@@ -22,7 +22,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
     // UI-only realtime overlay state for today's row/details.
     private readonly object _liveInputLock = new();
-    private readonly Dictionary<string, long> _todayLiveInputDeltaByDevice = [];
+    private readonly Dictionary<
+        string,
+        (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
+    > _todayLiveDeltaByDevice = [];
     private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
     private readonly SemaphoreSlim _arrowNavigationGate = new(1, 1);
@@ -120,7 +123,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
         _appTimerService.ThirtySecondTick += OnThirtySecondTick;
         _appTimerService.SecondTick += OnSecondTick;
-        _rawInputService.InputCountIncremented += OnInputCountIncremented;
+        _rawInputService.InputDeltaIncremented += OnInputDeltaIncremented;
     }
 
     /// <summary>Called when the tab becomes visible. Loads current month and triggers rebuild.</summary>
@@ -336,9 +339,12 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         ApplyRealtimeTodayOverlay();
     }
 
-    private void OnInputCountIncremented(string deviceId, long delta)
+    private void OnInputDeltaIncremented(
+        string deviceId,
+        (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta) delta
+    )
     {
-        if (delta <= 0)
+        if (delta.KeystrokeDelta + delta.MouseClickDelta + delta.MouseMovementDelta <= 0)
             return;
 
         var today = DateOnly.FromDateTime(DateTime.Now);
@@ -346,12 +352,19 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         {
             if (_accumulatedInputDate != today)
             {
-                _todayLiveInputDeltaByDevice.Clear();
+                _todayLiveDeltaByDevice.Clear();
                 _accumulatedInputDate = today;
             }
 
-            _todayLiveInputDeltaByDevice[deviceId] =
-                (_todayLiveInputDeltaByDevice.TryGetValue(deviceId, out var existing) ? existing : 0L) + delta;
+            var existing = _todayLiveDeltaByDevice.TryGetValue(deviceId, out var current)
+                ? current
+                : (KeystrokeDelta: 0L, MouseClickDelta: 0L, MouseMovementDelta: 0L);
+
+            _todayLiveDeltaByDevice[deviceId] = (
+                existing.KeystrokeDelta + delta.KeystrokeDelta,
+                existing.MouseClickDelta + delta.MouseClickDelta,
+                existing.MouseMovementDelta + delta.MouseMovementDelta
+            );
         }
 
         // Reflect input changes immediately so today's detail panel feels realtime like Device List.
@@ -434,12 +447,14 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             connectionOverlayByDevice[device.DeviceId] = (long)(nowLocal - startLocal).TotalSeconds;
         }
 
-        Dictionary<string, long> inputOverlayByDevice;
+        Dictionary<string, (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)> liveOverlayByDevice;
         long inputOverlayTotal;
         lock (_liveInputLock)
         {
-            inputOverlayByDevice = _todayLiveInputDeltaByDevice.ToDictionary(k => k.Key, v => v.Value);
-            inputOverlayTotal = inputOverlayByDevice.Values.Sum();
+            liveOverlayByDevice = _todayLiveDeltaByDevice.ToDictionary(k => k.Key, v => v.Value);
+            inputOverlayTotal = liveOverlayByDevice.Values.Sum(v =>
+                v.KeystrokeDelta + v.MouseClickDelta + v.MouseMovementDelta
+            );
         }
 
         var realtimeSummary = new CalendarDaySummary
@@ -453,7 +468,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         ReplaceTodaySummary(realtimeSummary);
 
         if (_selectedDay?.Day == today)
-            ApplyRealtimeTodayDetailOverlay(connectionOverlayByDevice, inputOverlayByDevice);
+            ApplyRealtimeTodayDetailOverlay(connectionOverlayByDevice, liveOverlayByDevice);
     }
 
     /// <summary>Builds today's tile device list by merging persisted devices with currently connected devices.</summary>
@@ -550,7 +565,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     /// <summary>Applies live connection/input overlays to today's detail rows without mutating persisted data.</summary>
     private void ApplyRealtimeTodayDetailOverlay(
         IReadOnlyDictionary<string, long> connectionOverlayByDevice,
-        IReadOnlyDictionary<string, long> inputOverlayByDevice
+        IReadOnlyDictionary<
+            string,
+            (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
+        > liveOverlayByDevice
     )
     {
         if (_selectedDay == null)
@@ -559,7 +577,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         var ids = new HashSet<string>(_todayPersistedDetailByDevice.Keys);
         foreach (var id in connectionOverlayByDevice.Keys)
             ids.Add(id);
-        foreach (var id in inputOverlayByDevice.Keys)
+        foreach (var id in liveOverlayByDevice.Keys)
             ids.Add(id);
 
         var rows = new List<CalendarDeviceDetail>(ids.Count);
@@ -569,7 +587,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             var device = _usbMonitorService.DeviceList.FirstOrDefault(d => d.DeviceId == id);
 
             var connectionOverlay = connectionOverlayByDevice.TryGetValue(id, out var sec) ? sec : 0L;
-            var inputOverlay = inputOverlayByDevice.TryGetValue(id, out var input) ? input : 0L;
+            var liveDelta = liveOverlayByDevice.TryGetValue(id, out var overlay)
+                ? overlay
+                : (KeystrokeDelta: 0L, MouseClickDelta: 0L, MouseMovementDelta: 0L);
             var sessionCount = (persisted?.SessionCount ?? 0) + (device?.IsConnected == true ? 1 : 0);
 
             var baseConnection = persisted?.ConnectionDuration ?? 0L;
@@ -587,7 +607,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     Keystrokes = persisted?.Keystrokes ?? 0,
                     MouseClicks = persisted?.MouseClicks ?? 0,
                     MouseMovementSeconds = persisted?.MouseMovementSeconds ?? 0,
-                    LiveInputDelta = inputOverlay,
+                    MouseMovementDelta = liveDelta.MouseMovementDelta,
+                    KeystrokeDelta = liveDelta.KeystrokeDelta,
+                    MouseClickDelta = liveDelta.MouseClickDelta,
                     ActiveMinutes = persisted?.ActiveMinutes ?? 0,
                     DistinctActiveHours = persisted?.DistinctActiveHours ?? 0,
                     PeakInputHour = persisted?.PeakInputHour ?? -1,
@@ -620,6 +642,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         _disposed = true;
         _appTimerService.ThirtySecondTick -= OnThirtySecondTick;
         _appTimerService.SecondTick -= OnSecondTick;
-        _rawInputService.InputCountIncremented -= OnInputCountIncremented;
+        _rawInputService.InputDeltaIncremented -= OnInputDeltaIncremented;
     }
 }

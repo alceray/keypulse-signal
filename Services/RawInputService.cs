@@ -23,10 +23,13 @@ public class RawInputService : IDisposable
     public event Action<string, bool>? ActivityStateChanged;
 
     /// <summary>
-    /// Raised when total input count should increase for a device.
-    /// Payload: (deviceId, delta).
+    /// Raised when input deltas should increase for a device.
+    /// Payload: (deviceId, (keystrokeDelta, mouseClickDelta, mouseMovementDelta)).
     /// </summary>
-    public event Action<string, long>? InputCountIncremented;
+    public event Action<
+        string,
+        (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
+    >? InputDeltaIncremented;
 
     #region Win32 constants
 
@@ -320,7 +323,7 @@ public class RawInputService : IDisposable
                 var kb = Marshal.PtrToStructure<RawKeyboard>(bodyPtr);
                 var isKeyDown = (kb.Flags & RI_KEY_BREAK) == 0;
                 bool nextActivityState;
-                long inputDelta = 0;
+                long keystrokeDelta = 0;
 
                 lock (_lock)
                 {
@@ -331,7 +334,7 @@ public class RawInputService : IDisposable
                         if (pressedKeys.Add(kb.VKey))
                         {
                             GetOrCreateBucket(deviceId, minute).Keystrokes++;
-                            inputDelta = 1;
+                            keystrokeDelta = 1;
                         }
                     }
                     else if (_pressedKeysByDevice.TryGetValue(deviceId, out var pressedKeys))
@@ -342,8 +345,8 @@ public class RawInputService : IDisposable
                     nextActivityState = ComputeHoldState(deviceId);
                 }
 
-                if (inputDelta > 0)
-                    RegisterInputCountDelta(deviceId, inputDelta);
+                if (keystrokeDelta > 0)
+                    RegisterInputCountDelta(deviceId, keystrokeDelta, 0, 0);
 
                 ActivityStateChanged?.Invoke(deviceId, nextActivityState);
             }
@@ -351,7 +354,8 @@ public class RawInputService : IDisposable
             {
                 var mouse = Marshal.PtrToStructure<RawMouse>(bodyPtr);
                 bool? nextActivityState = null;
-                long inputDelta = 0;
+                var clickDelta = 0;
+                var movementDelta = 0;
 
                 if (mouse.usButtonFlags == 0)
                 {
@@ -361,7 +365,9 @@ public class RawInputService : IDisposable
                     lock (_lock)
                     {
                         if (GetOrCreateBucket(deviceId, minute).ActiveMovementSeconds.Add(second))
-                            inputDelta += 1;
+                        {
+                            movementDelta += 1;
+                        }
                     }
                 }
 
@@ -372,7 +378,7 @@ public class RawInputService : IDisposable
                         var pressedButtons = GetOrCreatePressedMouseButtons(deviceId);
                         AddPressedMouseButtons(pressedButtons, mouse.usButtonFlags);
                         nextActivityState = ComputeHoldState(deviceId);
-                        inputDelta += 1;
+                        clickDelta += 1;
                     }
 
                 if ((mouse.usButtonFlags & MOUSE_BUTTON_UP_MASK) != 0)
@@ -383,8 +389,8 @@ public class RawInputService : IDisposable
                         nextActivityState = ComputeHoldState(deviceId);
                     }
 
-                if (inputDelta > 0)
-                    RegisterInputCountDelta(deviceId, inputDelta);
+                if (clickDelta + movementDelta > 0)
+                    RegisterInputCountDelta(deviceId, 0, clickDelta, movementDelta);
 
                 if (nextActivityState.HasValue)
                     ActivityStateChanged?.Invoke(deviceId, nextActivityState.Value);
@@ -595,9 +601,14 @@ public class RawInputService : IDisposable
         _dataService.SaveActivitySnapshots(snapshots);
     }
 
-    private void RegisterInputCountDelta(string deviceId, long delta)
+    private void RegisterInputCountDelta(
+        string deviceId,
+        long keystrokeDelta,
+        long mouseClickDelta,
+        long mouseMovementDelta
+    )
     {
-        InputCountIncremented?.Invoke(deviceId, delta);
+        InputDeltaIncremented?.Invoke(deviceId, (keystrokeDelta, mouseClickDelta, mouseMovementDelta));
     }
 
     public void Dispose()

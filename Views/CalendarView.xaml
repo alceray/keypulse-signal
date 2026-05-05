@@ -15,7 +15,8 @@
     <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
     <local:SecondsToDisplayConverter x:Key="SecondsToDisplayConverter" />
     <local:MinutesToDisplayConverter x:Key="MinutesToDisplayConverter" />
-    <local:IsMouseDeviceConverter x:Key="IsMouseDeviceConverter" />
+    <local:IsMouseConverter x:Key="IsMouseConverter" />
+    <local:IsKeyboardConverter x:Key="IsKeyboardConverter" />
   </UserControl.Resources>
   <Grid Margin="8">
     <Grid.ColumnDefinitions>
@@ -329,14 +330,14 @@
                           />
                           <DockPanel
                             Margin="0,0,0,3"
-                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseDeviceConverter}}"
+                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseConverter}}"
                           >
                             <TextBlock DockPanel.Dock="Left" Text="Mouse movement time" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding MouseMovementSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
+                              Text="{Binding LiveMouseMovementSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -344,28 +345,34 @@
                             Margin="0,0,0,6"
                             Minimum="0"
                             Maximum="86400"
-                            Value="{Binding MouseMovementSeconds, Mode=OneWay}"
+                            Value="{Binding LiveMouseMovementSeconds, Mode=OneWay}"
                             FlowDirection="LeftToRight"
                             Foreground="#7FD9A8"
                             Background="#EAEAEA"
-                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseDeviceConverter}}"
+                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseConverter}}"
                           />
-                          <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" />
+                          <DockPanel
+                            Margin="0,0,0,8"
+                            Visibility="{Binding DeviceType, Converter={StaticResource IsKeyboardConverter}}"
+                          >
+                            <TextBlock DockPanel.Dock="Left" Foreground="#555" Text="Keystrokes" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding SessionCount}"
+                              Text="{Binding LiveKeystrokes}"
                             />
                           </DockPanel>
-                          <DockPanel Margin="0,0,0,8">
-                            <TextBlock DockPanel.Dock="Left" Text="Input count" Foreground="#555" />
+                          <DockPanel
+                            Margin="0,0,0,8"
+                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseConverter}}"
+                          >
+                            <TextBlock DockPanel.Dock="Left" Foreground="#555" Text="Mouse clicks" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding TotalInput}"
+                              Text="{Binding LiveMouseClicks}"
                             />
                           </DockPanel>
                           <DockPanel Margin="0,0,0,3">
@@ -384,6 +391,15 @@
                               Foreground="#222"
                               TextAlignment="Right"
                               Text="{Binding PeakInputHourDisplay}"
+                            />
+                          </DockPanel>
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              TextAlignment="Right"
+                              Text="{Binding SessionCount}"
                             />
                           </DockPanel>
                         </StackPanel>

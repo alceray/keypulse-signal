@@ -166,12 +166,26 @@ public sealed class MinutesToDisplayConverter : IValueConverter
 }
 
 /// <summary>Shows Visible only for Mouse device type, Collapsed otherwise.</summary>
-public sealed class IsMouseDeviceConverter : IValueConverter
+public sealed class IsMouseConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is DeviceTypes deviceType)
             return deviceType == DeviceTypes.Mouse ? Visibility.Visible : Visibility.Collapsed;
+        return Visibility.Collapsed;
+    }
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}
+
+/// <summary>Shows Visible only for Keyboard device type, Collapsed otherwise.</summary>
+public sealed class IsKeyboardConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is DeviceTypes deviceType)
+            return deviceType == DeviceTypes.Keyboard ? Visibility.Visible : Visibility.Collapsed;
         return Visibility.Collapsed;
     }
 

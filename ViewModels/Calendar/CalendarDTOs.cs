@@ -49,8 +49,12 @@ public sealed class CalendarDeviceDetail
     public long Keystrokes { get; init; }
     public long MouseClicks { get; init; }
     public long MouseMovementSeconds { get; init; }
-    public long LiveInputDelta { get; init; } // UI-only, not persisted
-    public long TotalInput => Keystrokes + MouseClicks + MouseMovementSeconds + LiveInputDelta;
+    public long MouseMovementDelta { get; init; } // UI-only, not persisted
+    public long KeystrokeDelta { get; init; } // UI-only, not persisted
+    public long MouseClickDelta { get; init; } // UI-only, not persisted
+    public long LiveKeystrokes => Keystrokes + KeystrokeDelta;
+    public long LiveMouseClicks => MouseClicks + MouseClickDelta;
+    public long LiveMouseMovementSeconds => MouseMovementSeconds + MouseMovementDelta;
     public int ActiveMinutes { get; init; }
     public int DistinctActiveHours { get; init; }
     public int PeakInputHour { get; init; }

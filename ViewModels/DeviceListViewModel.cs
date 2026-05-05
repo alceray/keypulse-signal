@@ -75,7 +75,7 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         _usbMonitorService.DeviceList.CollectionChanged += DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged += OnActivityStateChanged;
-        _rawInputService.InputCountIncremented += OnInputCountIncremented;
+        _rawInputService.InputDeltaIncremented += OnInputDeltaIncremented;
 
         RenameDeviceCommand = new RelayCommand(ExecuteRenameDevice, CanExecuteRenameDevice);
 
@@ -118,16 +118,20 @@ public class DeviceListViewModel : ObservableObject, IDisposable
             Application.Current.Dispatcher.BeginInvoke(() => device.SetActivityState(isActive));
     }
 
-    private void OnInputCountIncremented(string deviceId, long delta)
+    private void OnInputDeltaIncremented(
+        string deviceId,
+        (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta) delta
+    )
     {
-        if (delta <= 0)
+        var totalDelta = delta.KeystrokeDelta + delta.MouseClickDelta + delta.MouseMovementDelta;
+        if (totalDelta <= 0)
             return;
 
         var device = _usbMonitorService.DeviceList.FirstOrDefault(d => d.DeviceId == deviceId);
         if (device == null)
             return;
 
-        Application.Current.Dispatcher.BeginInvoke(() => device.TotalInputCount += delta);
+        Application.Current.Dispatcher.BeginInvoke(() => device.TotalInputCount += totalDelta);
     }
 
     private void DeviceList_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
@@ -176,7 +180,7 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged -= OnActivityStateChanged;
-        _rawInputService.InputCountIncremented -= OnInputCountIncremented;
+        _rawInputService.InputDeltaIncremented -= OnInputDeltaIncremented;
         _appTimerService.SecondTick -= OnSecondTick;
 
         GC.SuppressFinalize(this);
