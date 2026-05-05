@@ -16,11 +16,11 @@
       <TabItem Header="Dashboard">
         <views:DashboardView />
       </TabItem>
-      <TabItem Header="{Binding DataContext.DeviceTitleWithCount, ElementName=DeviceListViewControl}">
-        <views:DeviceListView x:Name="DeviceListViewControl" />
-      </TabItem>
       <TabItem Header="Calendar">
         <views:CalendarView />
+      </TabItem>
+      <TabItem Header="{Binding DataContext.DeviceTitleWithCount, ElementName=DeviceListViewControl}">
+        <views:DeviceListView x:Name="DeviceListViewControl" />
       </TabItem>
       <TabItem Header="Settings">
         <views:SettingsView />

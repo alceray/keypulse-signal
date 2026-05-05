@@ -13,7 +13,9 @@
   <UserControl.Resources>
     <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
-    <local:SecondsToHhMmSsConverter x:Key="SecondsToHhMmSsConverter" />
+    <local:SecondsToDisplayConverter x:Key="SecondsToDisplayConverter" />
+    <local:MinutesToDisplayConverter x:Key="MinutesToDisplayConverter" />
+    <local:IsMouseDeviceConverter x:Key="IsMouseDeviceConverter" />
   </UserControl.Resources>
   <Grid Margin="8">
     <Grid.ColumnDefinitions>
@@ -265,75 +267,121 @@
                     <Border BorderBrush="#E8E8E8" BorderThickness="1" CornerRadius="3" Padding="8" Margin="0,0,0,8">
                       <StackPanel>
                         <TextBlock Text="{Binding DeviceName}" FontWeight="SemiBold" TextWrapping="Wrap" />
-                        <TextBlock Text="{Binding DeviceTypeText}" Foreground="#777" FontSize="12" />
+                        <TextBlock Text="{Binding DeviceTypeText}" Foreground="#777" />
 
-                        <StackPanel Margin="0,6,0,0" Orientation="Vertical">
+                        <StackPanel Margin="0,6,0,0" Orientation="Vertical" TextElement.FontSize="12">
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Connected" Foreground="#555" FontSize="12" />
+                            <TextBlock DockPanel.Dock="Left" Text="Connected time" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
-                              FontSize="12"
                               TextAlignment="Right"
-                              Text="{Binding ConnectionDuration, Converter={StaticResource SecondsToHhMmSsConverter}}"
+                              Text="{Binding ConnectionDuration, Converter={StaticResource SecondsToDisplayConverter}}"
                             />
                           </DockPanel>
+                          <ProgressBar
+                            Height="6"
+                            Margin="0,0,0,6"
+                            Minimum="0"
+                            Maximum="86400"
+                            Value="{Binding ConnectionDuration, Mode=OneWay}"
+                            FlowDirection="LeftToRight"
+                            Foreground="#4A90E2"
+                            Background="#EAEAEA"
+                          />
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Longest session" Foreground="#555" FontSize="12" />
+                            <TextBlock DockPanel.Dock="Left" Text="Longest session" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
-                              FontSize="12"
                               TextAlignment="Right"
-                              Text="{Binding LongestSessionDuration, Converter={StaticResource SecondsToHhMmSsConverter}}"
+                              Text="{Binding LongestSessionDuration, Converter={StaticResource SecondsToDisplayConverter}}"
                             />
                           </DockPanel>
+                          <ProgressBar
+                            Height="6"
+                            Margin="0,0,0,6"
+                            Minimum="0"
+                            Maximum="86400"
+                            Value="{Binding LongestSessionDuration, Mode=OneWay}"
+                            FlowDirection="LeftToRight"
+                            Foreground="#7DA5D8"
+                            Background="#EAEAEA"
+                          />
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" FontSize="12" />
+                            <TextBlock DockPanel.Dock="Left" Text="Active time" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
-                              FontSize="12"
+                              TextAlignment="Right"
+                              Text="{Binding ActiveMinutes, Converter={StaticResource MinutesToDisplayConverter}}"
+                            />
+                          </DockPanel>
+                          <ProgressBar
+                            Height="6"
+                            Margin="0,0,0,6"
+                            Minimum="0"
+                            Maximum="1440"
+                            Value="{Binding ActiveMinutes, Mode=OneWay}"
+                            FlowDirection="LeftToRight"
+                            Foreground="#50C878"
+                            Background="#EAEAEA"
+                          />
+                          <DockPanel
+                            Margin="0,0,0,3"
+                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseDeviceConverter}}"
+                          >
+                            <TextBlock DockPanel.Dock="Left" Text="Mouse movement time" Foreground="#555" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
+                              TextAlignment="Right"
+                              Text="{Binding MouseMovementSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
+                            />
+                          </DockPanel>
+                          <ProgressBar
+                            Height="6"
+                            Margin="0,0,0,6"
+                            Minimum="0"
+                            Maximum="86400"
+                            Value="{Binding MouseMovementSeconds, Mode=OneWay}"
+                            FlowDirection="LeftToRight"
+                            Foreground="#7FD9A8"
+                            Background="#EAEAEA"
+                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseDeviceConverter}}"
+                          />
+                          <DockPanel Margin="0,0,0,3">
+                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" />
+                            <TextBlock
+                              DockPanel.Dock="Right"
+                              Foreground="#222"
                               TextAlignment="Right"
                               Text="{Binding SessionCount}"
                             />
                           </DockPanel>
                           <DockPanel Margin="0,0,0,8">
-                            <TextBlock DockPanel.Dock="Left" Text="Input count" Foreground="#555" FontSize="12" />
+                            <TextBlock DockPanel.Dock="Left" Text="Input count" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
-                              FontSize="12"
                               TextAlignment="Right"
                               Text="{Binding TotalInput}"
                             />
                           </DockPanel>
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Active minutes" Foreground="#555" FontSize="12" />
+                            <TextBlock DockPanel.Dock="Left" Text="Distinct active hours" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
-                              FontSize="12"
-                              TextAlignment="Right"
-                              Text="{Binding ActiveMinutes}"
-                            />
-                          </DockPanel>
-                          <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Active hours" Foreground="#555" FontSize="12" />
-                            <TextBlock
-                              DockPanel.Dock="Right"
-                              Foreground="#222"
-                              FontSize="12"
                               TextAlignment="Right"
                               Text="{Binding DistinctActiveHours}"
                             />
                           </DockPanel>
                           <DockPanel>
-                            <TextBlock DockPanel.Dock="Left" Text="Peak hour" Foreground="#555" FontSize="12" />
+                            <TextBlock DockPanel.Dock="Left" Text="Peak hour" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
-                              FontSize="12"
                               TextAlignment="Right"
                               Text="{Binding PeakInputHourDisplay}"
                             />

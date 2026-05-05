@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 using KeyPulse.Helpers;
+using KeyPulse.Models;
 using KeyPulse.ViewModels;
 using KeyPulse.ViewModels.Calendar;
 using Microsoft.Extensions.DependencyInjection;
@@ -136,24 +137,8 @@ public sealed class InverseBoolToVisibilityConverter : IValueConverter
         throw new NotSupportedException();
 }
 
-/// <summary>Formats a long (seconds) as h:mm or d h:mm for tile display.</summary>
-public sealed class SecondsToHhMmConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is not long seconds)
-            return "";
-        var ts = TimeSpan.FromSeconds(seconds);
-        var totalHours = (long)ts.TotalHours;
-        return $"{totalHours}:{ts.Minutes:D2}";
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>Formats a long (seconds) as h:mm:ss for detail panel display.</summary>
-public sealed class SecondsToHhMmSsConverter : IValueConverter
+/// <summary>Formats seconds as "Xh Ym Zs" for detail panel display.</summary>
+public sealed class SecondsToDisplayConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
@@ -166,18 +151,28 @@ public sealed class SecondsToHhMmSsConverter : IValueConverter
         throw new NotSupportedException();
 }
 
-/// <summary>Formats a large number compactly: 1000 → 1k, 1000000 → 1M.</summary>
-public sealed class LargeNumberConverter : IValueConverter
+/// <summary>Formats minutes as "Xh Ym" for detail panel display.</summary>
+public sealed class MinutesToDisplayConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is not long n)
+        if (value is not int minutes)
             return "";
-        if (n >= 1_000_000)
-            return $"{n / 1_000_000.0:F1}M";
-        if (n >= 1_000)
-            return $"{n / 1_000.0:F1}k";
-        return n.ToString();
+        return TimeFormatter.FormatDuration(TimeSpan.FromMinutes(minutes));
+    }
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}
+
+/// <summary>Shows Visible only for Mouse device type, Collapsed otherwise.</summary>
+public sealed class IsMouseDeviceConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is DeviceTypes deviceType)
+            return deviceType == DeviceTypes.Mouse ? Visibility.Visible : Visibility.Collapsed;
+        return Visibility.Collapsed;
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
