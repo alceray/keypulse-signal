@@ -9,7 +9,7 @@
 >
   <UserControl.Resources>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-    <local:TimeSpanToStringConverter x:Key="TimeSpanToStringConverter" />
+    <local:SecondsToStringConverter x:Key="SecondsToStringConverter" />
     <local:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter" />
     <local:ActivityColorConverter x:Key="ActivityColorConverter" />
   </UserControl.Resources>
@@ -104,7 +104,7 @@
         />
         <DataGridTextColumn
           Header="Total Connected Time"
-          Binding="{Binding ConnectionDuration, Converter={StaticResource TimeSpanToStringConverter}}"
+          Binding="{Binding TotalConnectionSeconds, Converter={StaticResource SecondsToStringConverter}}"
           MinWidth="80"
           Width="Auto"
         />

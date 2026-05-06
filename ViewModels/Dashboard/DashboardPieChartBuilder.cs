@@ -12,12 +12,12 @@ namespace KeyPulse.ViewModels.Dashboard;
 internal static class DashboardPieChartBuilder
 {
     /// <summary>
-    /// Creates a connection-duration-share pie model for a device category (keyboard or mouse).
+    /// Creates a connection-time-share pie model for a device category (keyboard or mouse).
     /// </summary>
-    public static PlotModel BuildConnectionDurationPiePlot(
+    public static PlotModel BuildConnectionTimePiePlot(
         string title,
         IEnumerable<Device> devices,
-        IReadOnlyDictionary<string, double> connectionDurationMinutesByDevice
+        IReadOnlyDictionary<string, double> connectionMinutesByDevice
     )
     {
         var model = new PlotModel { Title = title };
@@ -25,14 +25,12 @@ internal static class DashboardPieChartBuilder
         var slices = devices
             .Select(d =>
             {
-                connectionDurationMinutesByDevice.TryGetValue(d.DeviceId, out var connectionDurationMinutes);
-                return new DeviceConnectionDurationSlice
+                connectionMinutesByDevice.TryGetValue(d.DeviceId, out var connectionMinutes);
+                return new DeviceConnectionTimeSlice
                 {
                     Name = d.DeviceName,
-                    Value = connectionDurationMinutes,
-                    ConnectionDurationDisplay = TimeFormatter.FormatDuration(
-                        TimeSpan.FromMinutes(connectionDurationMinutes)
-                    ),
+                    Value = connectionMinutes,
+                    ConnectedTimeDisplay = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(connectionMinutes)),
                     StatusTag = d.IsConnected ? "Connected" : "Disconnected",
                     IsConnected = d.IsConnected,
                     ConnectionTimeLabel = d.IsConnected ? "Last connected" : "Last seen",
@@ -72,7 +70,7 @@ internal static class DashboardPieChartBuilder
             TrackerFormatString =
                 "{Label}\n"
                 + "Status: {StatusTag}\n"
-                + "Connected Time: {ConnectionDurationDisplay}\n"
+                + "Connected Time: {ConnectedTimeDisplay}\n"
                 + "Share: {ShareDisplay}\n"
                 + "{ConnectionTimeLabel}: {ConnectionTimeDisplay}",
         };
@@ -81,7 +79,7 @@ internal static class DashboardPieChartBuilder
         {
             var pieSlice = new DashboardPieSlice(slice.Name, slice.Value)
             {
-                ConnectionDurationDisplay = slice.ConnectionDurationDisplay,
+                ConnectedTimeDisplay = slice.ConnectedTimeDisplay,
                 ShareDisplay = slice.ShareDisplay,
                 StatusTag = slice.StatusTag,
                 IsConnected = slice.IsConnected,
@@ -124,11 +122,11 @@ internal static class DashboardPieChartBuilder
     /// <summary>
     /// Internal mutable slice view model used while preparing pie series data.
     /// </summary>
-    private sealed class DeviceConnectionDurationSlice
+    private sealed class DeviceConnectionTimeSlice
     {
         public required string Name { get; init; }
         public double Value { get; init; }
-        public required string ConnectionDurationDisplay { get; init; }
+        public required string ConnectedTimeDisplay { get; init; }
         public string ShareDisplay { get; set; } = "N/A";
         public required string StatusTag { get; init; }
         public required bool IsConnected { get; init; }
@@ -142,7 +140,7 @@ internal static class DashboardPieChartBuilder
 /// </summary>
 internal sealed class DashboardPieSlice(string label, double value) : PieSlice(label, value)
 {
-    public string ConnectionDurationDisplay { get; init; } = "N/A";
+    public string ConnectedTimeDisplay { get; init; } = "N/A";
     public string ShareDisplay { get; init; } = "N/A";
     public string StatusTag { get; init; } = "N/A";
     public bool IsConnected { get; init; }
@@ -158,7 +156,7 @@ internal sealed class DashboardHoverPreview : ObservableObject
     private string _deviceName = "Hover a slice to inspect device metadata.";
     private string _statusTag = "Unknown";
     private Brush _statusBrush = Brushes.Gray;
-    private string _connectionDurationDisplay = "Connected Time: N/A";
+    private string _connectedTimeDisplay = "Connected Time: N/A";
     private string _shareDisplay = "Share: N/A";
     private string _connectionText = "Last seen: N/A";
 
@@ -192,12 +190,12 @@ internal sealed class DashboardHoverPreview : ObservableObject
         }
     }
 
-    public string ConnectionDurationDisplay
+    public string ConnectedTimeDisplay
     {
-        get => _connectionDurationDisplay;
+        get => _connectedTimeDisplay;
         private set
         {
-            _connectionDurationDisplay = value;
+            _connectedTimeDisplay = value;
             OnPropertyChanged();
         }
     }
@@ -230,7 +228,7 @@ internal sealed class DashboardHoverPreview : ObservableObject
         DeviceName = slice.Label;
         StatusTag = slice.StatusTag;
         StatusBrush = slice.IsConnected ? Brushes.ForestGreen : Brushes.IndianRed;
-        ConnectionDurationDisplay = $"Connected Time: {slice.ConnectionDurationDisplay}";
+        ConnectedTimeDisplay = $"Connected Time: {slice.ConnectedTimeDisplay}";
         ShareDisplay = $"Share: {slice.ShareDisplay}";
         ConnectionText = $"{slice.ConnectionTimeLabel}: {slice.ConnectionTimeDisplay}";
     }

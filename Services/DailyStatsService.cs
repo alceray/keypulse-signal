@@ -277,7 +277,7 @@ public class DailyStatsService : IDisposable
     }
 
     /// <summary>
-    /// Returns per-device detail for a single local day, sorted by connection duration descending.
+    /// Returns per-device detail for a single local day, sorted by connection seconds descending.
     /// Device name and type are resolved from the Devices table.
     /// </summary>
     public IReadOnlyList<CalendarDeviceDetail> GetCalendarDayDetail(DateOnly day)
@@ -299,9 +299,10 @@ public class DailyStatsService : IDisposable
                     DeviceId = row.DeviceId,
                     DeviceName = device?.DeviceName ?? row.DeviceId,
                     DeviceType = device?.DeviceType ?? DeviceTypes.Unknown,
+                    IsConnected = false,
                     SessionCount = row.SessionCount,
-                    ConnectionDuration = row.ConnectionDuration,
-                    LongestSessionDuration = row.LongestSessionDuration,
+                    ConnectionSeconds = row.ConnectionSeconds,
+                    LongestSessionSeconds = row.LongestSessionSeconds,
                     Keystrokes = row.Keystrokes,
                     MouseClicks = row.MouseClicks,
                     MouseMovementSeconds = row.MouseMovementSeconds,
@@ -309,7 +310,7 @@ public class DailyStatsService : IDisposable
                     HourlyInputCount = row.HourlyInputCount.ToArray(),
                 };
             })
-            .OrderByDescending(r => r.ConnectionDuration)
+            .OrderByDescending(r => r.ConnectionSeconds)
             .ToList()
             .AsReadOnly();
     }
@@ -358,7 +359,7 @@ public class DailyStatsService : IDisposable
     }
 
     /// <summary>
-    /// Overwrites connection stats (SessionCount, ConnectionDuration, LongestSessionDuration) for
+    /// Overwrites connection stats (SessionCount, ConnectionSeconds, LongestSessionSeconds) for
     /// a device on a single local day by replaying all its lifecycle events for that day.
     /// If the first event in the day is a closing event (cross-midnight session), the session
     /// start is assumed to be local midnight.
@@ -403,8 +404,8 @@ public class DailyStatsService : IDisposable
 
         var stat = GetOrCreateDailyStat(ctx, day, deviceId);
         stat.SessionCount = sessionCount;
-        stat.ConnectionDuration = totalSeconds;
-        stat.LongestSessionDuration = longestSeconds;
+        stat.ConnectionSeconds = totalSeconds;
+        stat.LongestSessionSeconds = longestSeconds;
         stat.UpdatedAt = DateTime.UtcNow;
     }
 

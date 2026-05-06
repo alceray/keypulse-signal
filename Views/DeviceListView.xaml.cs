@@ -18,11 +18,11 @@ public partial class DeviceListView
     }
 }
 
-public class TimeSpanToStringConverter : IValueConverter
+public class SecondsToStringConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return value is TimeSpan ts ? TimeFormatter.FormatDuration(ts) : string.Empty;
+        return value is long seconds ? TimeFormatter.FormatDuration(TimeSpan.FromSeconds(seconds)) : string.Empty;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

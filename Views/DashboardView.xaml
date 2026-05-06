@@ -99,14 +99,14 @@
         Grid.Row="0"
         Grid.Column="0"
         Margin="4"
-        Model="{Binding KeyboardConnectionDurationPiePlot}"
+        Model="{Binding KeyboardConnectionTimePiePlot}"
         Controller="{Binding PieHoverController}"
       />
       <oxy:PlotView
         Grid.Row="0"
         Grid.Column="1"
         Margin="4"
-        Model="{Binding MouseConnectionDurationPiePlot}"
+        Model="{Binding MouseConnectionTimePiePlot}"
         Controller="{Binding PieHoverController}"
       />
 

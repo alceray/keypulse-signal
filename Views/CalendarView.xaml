@@ -170,7 +170,7 @@
                                   DockPanel.Dock="Right"
                                   Text="today"
                                   FontSize="12"
-                                  Foreground="#429CF4"
+                                  Foreground="#222"
                                   VerticalAlignment="Center"
                                   Visibility="{Binding IsToday, Converter={StaticResource BoolToVisibilityConverter}}"
                                 />
@@ -203,7 +203,18 @@
                                           FontSize="12"
                                           TextTrimming="CharacterEllipsis"
                                           VerticalAlignment="Center"
-                                        />
+                                        >
+                                          <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                              <Setter Property="Foreground" Value="#222" />
+                                              <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsConnected}" Value="True">
+                                                  <Setter Property="Foreground" Value="#4A90E2" />
+                                                </DataTrigger>
+                                              </Style.Triggers>
+                                            </Style>
+                                          </TextBlock.Style>
+                                        </TextBlock>
                                       </Grid>
                                     </DataTemplate>
                                   </ItemsControl.ItemTemplate>
@@ -264,7 +275,18 @@
                   <DataTemplate DataType="{x:Type vm:CalendarDeviceDetail}">
                     <Border BorderBrush="#E8E8E8" BorderThickness="1" CornerRadius="3" Padding="8" Margin="0,0,0,8">
                       <StackPanel>
-                        <TextBlock Text="{Binding DeviceName}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding DeviceName}" FontWeight="SemiBold" TextWrapping="Wrap">
+                          <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                              <Setter Property="Foreground" Value="#222" />
+                              <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsConnected}" Value="True">
+                                  <Setter Property="Foreground" Value="#4A90E2" />
+                                </DataTrigger>
+                              </Style.Triggers>
+                            </Style>
+                          </TextBlock.Style>
+                        </TextBlock>
                         <TextBlock Text="{Binding DeviceTypeText}" Foreground="#777" />
 
                         <StackPanel Margin="0,6,0,0" Orientation="Vertical" TextElement.FontSize="12">
@@ -274,7 +296,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding ConnectionDuration, Converter={StaticResource SecondsToDisplayConverter}}"
+                              Text="{Binding ConnectionSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -282,7 +304,7 @@
                             Margin="0,0,0,6"
                             Minimum="0"
                             Maximum="86400"
-                            Value="{Binding ConnectionDuration, Mode=OneWay}"
+                            Value="{Binding ConnectionSeconds, Mode=OneWay}"
                             FlowDirection="LeftToRight"
                             Foreground="#4A90E2"
                             Background="#EAEAEA"
@@ -293,7 +315,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding LongestSessionDuration, Converter={StaticResource SecondsToDisplayConverter}}"
+                              Text="{Binding LongestSessionSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -301,7 +323,7 @@
                             Margin="0,0,0,6"
                             Minimum="0"
                             Maximum="86400"
-                            Value="{Binding LongestSessionDuration, Mode=OneWay}"
+                            Value="{Binding LongestSessionSeconds, Mode=OneWay}"
                             FlowDirection="LeftToRight"
                             Foreground="#7DA5D8"
                             Background="#EAEAEA"

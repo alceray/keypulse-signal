@@ -8,6 +8,7 @@ public sealed class CalendarTileDevice
     public string DeviceId { get; init; } = "";
     public string DeviceName { get; init; } = "";
     public DeviceTypes DeviceType { get; init; } = DeviceTypes.Unknown;
+    public bool IsConnected { get; init; }
 
     public string TypeIcon =>
         DeviceType switch
@@ -41,9 +42,10 @@ public sealed class CalendarDeviceDetail
     public string DeviceTypeText => DeviceType.ToString();
 
     // Connection
+    public bool IsConnected { get; init; }
     public int SessionCount { get; init; }
-    public long ConnectionDuration { get; init; } // seconds
-    public long LongestSessionDuration { get; init; } // seconds
+    public long ConnectionSeconds { get; init; }
+    public long LongestSessionSeconds { get; init; }
 
     // Activity
     public long Keystrokes { get; init; }

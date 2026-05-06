@@ -466,16 +466,25 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             lock (_liveInputLock)
                 inputOverlayTotal = _todayLiveInputDeltaTotal;
 
-            var byId = persisted.Devices.ToDictionary(d => d.DeviceId);
+            var byId = persisted.Devices.ToDictionary(
+                d => d.DeviceId,
+                d => new CalendarTileDevice
+                {
+                    DeviceId = d.DeviceId,
+                    DeviceName = d.DeviceName,
+                    DeviceType = d.DeviceType,
+                    IsConnected = false,
+                }
+            );
             foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsConnected))
             {
-                if (!byId.ContainsKey(device.DeviceId))
-                    byId[device.DeviceId] = new CalendarTileDevice
-                    {
-                        DeviceId = device.DeviceId,
-                        DeviceName = device.DeviceName,
-                        DeviceType = device.DeviceType,
-                    };
+                byId[device.DeviceId] = new CalendarTileDevice
+                {
+                    DeviceId = device.DeviceId,
+                    DeviceName = device.DeviceName,
+                    DeviceType = device.DeviceType,
+                    IsConnected = true,
+                };
             }
 
             var todaySummary = new CalendarDaySummary
@@ -605,8 +614,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 : (KeystrokeDelta: 0L, MouseClickDelta: 0L, MouseMovementDelta: 0L);
             var sessionCount = (persisted?.SessionCount ?? 0) + (device?.IsConnected == true ? 1 : 0);
 
-            var baseConnection = persisted?.ConnectionDuration ?? 0L;
-            var baseLongest = persisted?.LongestSessionDuration ?? 0L;
+            var baseConnection = persisted?.ConnectionSeconds ?? 0L;
+            var baseLongest = persisted?.LongestSessionSeconds ?? 0L;
 
             rows.Add(
                 new CalendarDeviceDetail
@@ -614,9 +623,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     DeviceId = id,
                     DeviceName = persisted?.DeviceName ?? device?.DeviceName ?? id,
                     DeviceType = persisted?.DeviceType ?? device?.DeviceType ?? DeviceTypes.Unknown,
+                    IsConnected = device?.IsConnected == true,
                     SessionCount = sessionCount,
-                    ConnectionDuration = baseConnection + connectionOverlay,
-                    LongestSessionDuration = Math.Max(baseLongest, connectionOverlay),
+                    ConnectionSeconds = baseConnection + connectionOverlay,
+                    LongestSessionSeconds = Math.Max(baseLongest, connectionOverlay),
                     Keystrokes = persisted?.Keystrokes ?? 0,
                     MouseClicks = persisted?.MouseClicks ?? 0,
                     MouseMovementSeconds = persisted?.MouseMovementSeconds ?? 0,

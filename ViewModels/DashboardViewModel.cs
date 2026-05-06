@@ -70,22 +70,22 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
-    public PlotModel KeyboardConnectionDurationPiePlot
+    public PlotModel KeyboardConnectionTimePiePlot
     {
-        get => _keyboardConnectionDurationPiePlot;
+        get => _keyboardConnectionTimePiePlot;
         private set
         {
-            _keyboardConnectionDurationPiePlot = value;
+            _keyboardConnectionTimePiePlot = value;
             OnPropertyChanged();
         }
     }
 
-    public PlotModel MouseConnectionDurationPiePlot
+    public PlotModel MouseConnectionTimePiePlot
     {
-        get => _mouseConnectionDurationPiePlot;
+        get => _mouseConnectionTimePiePlot;
         private set
         {
-            _mouseConnectionDurationPiePlot = value;
+            _mouseConnectionTimePiePlot = value;
             OnPropertyChanged();
         }
     }
@@ -106,7 +106,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
     public Brush HoveredStatusBrush => _hoverPreview.StatusBrush;
 
-    public string HoveredConnectionDurationDisplay => _hoverPreview.ConnectionDurationDisplay;
+    public string HoveredConnectedTimeDisplay => _hoverPreview.ConnectedTimeDisplay;
 
     public string HoveredShareDisplay => _hoverPreview.ShareDisplay;
 
@@ -162,8 +162,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
-    private PlotModel _keyboardConnectionDurationPiePlot = new();
-    private PlotModel _mouseConnectionDurationPiePlot = new();
+    private PlotModel _keyboardConnectionTimePiePlot = new();
+    private PlotModel _mouseConnectionTimePiePlot = new();
     private PlotModel _inputActivityPlot = new();
     private int _connectedDevices;
     private string _connectedDevicesBreakdown = "0 keyboards, 0 mice";
@@ -216,8 +216,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             case nameof(DashboardHoverPreview.StatusBrush):
                 OnPropertyChanged(nameof(HoveredStatusBrush));
                 break;
-            case nameof(DashboardHoverPreview.ConnectionDurationDisplay):
-                OnPropertyChanged(nameof(HoveredConnectionDurationDisplay));
+            case nameof(DashboardHoverPreview.ConnectedTimeDisplay):
+                OnPropertyChanged(nameof(HoveredConnectedTimeDisplay));
                 break;
             case nameof(DashboardHoverPreview.ShareDisplay):
                 OnPropertyChanged(nameof(HoveredShareDisplay));
@@ -274,28 +274,31 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         var devices = _usbMonitorService.DeviceList.ToList();
 
         UpdateConnectedDevicesCount();
-        TopKeyboardsSummary = BuildTopConnectionDurationSummary(devices, DeviceTypes.Keyboard);
-        TopMiceSummary = BuildTopConnectionDurationSummary(devices, DeviceTypes.Mouse);
+        TopKeyboardsSummary = BuildTopConnectionSecondsSummary(devices, DeviceTypes.Keyboard);
+        TopMiceSummary = BuildTopConnectionSecondsSummary(devices, DeviceTypes.Mouse);
 
-        var connectionDurationMinutesByDevice =
-            DashboardConnectionDurationCalculator.ComputeConnectionDurationMinutesByDevice(events, from, to);
+        var connectionMinutesByDevice = DashboardConnectionTimeCalculator.ComputeConnectionMinutesByDevice(
+            events,
+            from,
+            to
+        );
 
-        var keyboardModel = DashboardPieChartBuilder.BuildConnectionDurationPiePlot(
+        var keyboardModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
             "Keyboard Distribution",
             devices.Where(d => d.DeviceType == DeviceTypes.Keyboard),
-            connectionDurationMinutesByDevice
+            connectionMinutesByDevice
         );
-        var mouseModel = DashboardPieChartBuilder.BuildConnectionDurationPiePlot(
+        var mouseModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
             "Mouse Distribution",
             devices.Where(d => d.DeviceType == DeviceTypes.Mouse),
-            connectionDurationMinutesByDevice
+            connectionMinutesByDevice
         );
 
         DashboardPieChartBuilder.AttachTrackerPreview(keyboardModel, _hoverPreview.UpdateFromSlice);
         DashboardPieChartBuilder.AttachTrackerPreview(mouseModel, _hoverPreview.UpdateFromSlice);
 
-        KeyboardConnectionDurationPiePlot = keyboardModel;
-        MouseConnectionDurationPiePlot = mouseModel;
+        KeyboardConnectionTimePiePlot = keyboardModel;
+        MouseConnectionTimePiePlot = mouseModel;
         InputActivityPlot = DashboardActivityChartBuilder.BuildInputActivityPlot(
             snapshots,
             dashboardEvents.AppLifecycleEvents,
@@ -309,11 +312,11 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         LastUpdatedText = $"Last updated: {now.ToString(AppConstants.Date.DateFormat)}";
     }
 
-    private static string BuildTopConnectionDurationSummary(IEnumerable<Device> devices, DeviceTypes type)
+    private static string BuildTopConnectionSecondsSummary(IEnumerable<Device> devices, DeviceTypes type)
     {
         var ranked = devices
             .Where(d => d.DeviceType == type)
-            .OrderByDescending(d => d.ConnectionDuration)
+            .OrderByDescending(d => d.TotalConnectionSeconds)
             .ThenBy(d => d.DeviceName)
             .Take(3)
             .ToList();

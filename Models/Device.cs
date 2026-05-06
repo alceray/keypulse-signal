@@ -30,7 +30,7 @@ public enum DeviceTypes
 public class Device : ObservableObject
 {
     private string _deviceName = "";
-    private TimeSpan _storedConnectionDuration = TimeSpan.Zero;
+    private long _storedConnectionSeconds;
     private DateTime? _sessionStartedAt;
     private DateTime? _lastConnectedAt;
     private DateTime? _lastSeenAt;
@@ -74,24 +74,24 @@ public class Device : ObservableObject
     public bool IsConnected => _sessionStartedAt.HasValue;
 
     /// <summary>
-    /// Cumulative connection duration snapshot rebuilt from connection event boundaries.
-    /// While active, display value ticks by adding elapsed time since SessionStartedAt.
+    /// Cumulative connection-time snapshot rebuilt from connection event boundaries, stored in seconds.
+    /// While active, the getter adds elapsed time since SessionStartedAt for a live display value.
     /// </summary>
-    public TimeSpan ConnectionDuration
+    public long TotalConnectionSeconds
     {
         get
         {
             if (!_sessionStartedAt.HasValue)
-                return _storedConnectionDuration;
+                return _storedConnectionSeconds;
 
-            var elapsed = DateTime.Now - _sessionStartedAt.Value;
-            return _storedConnectionDuration + (elapsed > TimeSpan.Zero ? elapsed : TimeSpan.Zero);
+            var elapsedSeconds = (long)(DateTime.Now - _sessionStartedAt.Value).TotalSeconds;
+            return _storedConnectionSeconds + Math.Max(0L, elapsedSeconds);
         }
         set
         {
-            if (!_storedConnectionDuration.Equals(value))
+            if (_storedConnectionSeconds != value)
             {
-                _storedConnectionDuration = value;
+                _storedConnectionSeconds = value;
                 OnPropertyChanged();
             }
         }
@@ -111,7 +111,7 @@ public class Device : ObservableObject
                 _sessionStartedAt = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(IsConnected));
-                OnPropertyChanged(nameof(ConnectionDuration));
+                OnPropertyChanged(nameof(TotalConnectionSeconds));
             }
         }
     }
@@ -233,7 +233,7 @@ public class Device : ObservableObject
     }
 
     /// <summary>
-    /// Commits elapsed time from the active session into stored connection duration,
+    /// Commits elapsed time from the active session into stored connection seconds,
     /// then marks the device as inactive.
     /// </summary>
     public void CommitSession(DateTime endTime)
@@ -241,9 +241,9 @@ public class Device : ObservableObject
         if (!_sessionStartedAt.HasValue)
             return;
 
-        var elapsed = endTime - _sessionStartedAt.Value;
-        if (elapsed > TimeSpan.Zero)
-            _storedConnectionDuration += elapsed;
+        var elapsedSeconds = (long)(endTime - _sessionStartedAt.Value).TotalSeconds;
+        if (elapsedSeconds > 0)
+            _storedConnectionSeconds += elapsedSeconds;
 
         SessionStartedAt = null;
     }
@@ -253,7 +253,7 @@ public class Device : ObservableObject
     /// </summary>
     public void RefreshDynamicProperties()
     {
-        OnPropertyChanged(nameof(ConnectionDuration));
+        OnPropertyChanged(nameof(TotalConnectionSeconds));
         OnPropertyChanged(nameof(LastConnectedRelative));
         OnPropertyChanged(nameof(LastSeenRelative));
     }
