@@ -44,14 +44,14 @@ public class DailyDeviceStat
     /// <summary>Total mouse movement seconds across all projected minute snapshots for this day.</summary>
     public long MouseMovementSeconds { get; set; }
 
-    /// <summary>Number of distinct local clock-hours (0–23) with any activity on this day.</summary>
-    public int DistinctActiveHours { get; set; }
-
     /// <summary>Number of distinct minutes with any activity on this day.</summary>
     public int ActiveMinutes { get; set; }
 
-    /// <summary>Local clock-hour (0–23) with the highest combined input count on this day. -1 if no activity.</summary>
-    public int PeakInputHour { get; set; } = -1;
+    /// <summary>
+    /// Combined input count by local clock-hour (index 0-23).
+    /// Value = keystrokes + mouse clicks + mouse movement seconds for that hour.
+    /// </summary>
+    public long[] HourlyInputCount { get; set; } = new long[24];
 
     /// <summary>When this row was last written.</summary>
     public DateTime UpdatedAt { get; set; }

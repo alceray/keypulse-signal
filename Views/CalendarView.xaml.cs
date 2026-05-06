@@ -192,3 +192,21 @@ public sealed class IsKeyboardConverter : IValueConverter
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
         throw new NotSupportedException();
 }
+
+/// <summary>Visible when bound width is greater than or equal to the provided minimum width parameter.</summary>
+public sealed class MinWidthToVisibilityConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is not double width)
+            return Visibility.Collapsed;
+
+        if (!double.TryParse(parameter?.ToString(), NumberStyles.Float, CultureInfo.InvariantCulture, out var minWidth))
+            minWidth = 0;
+
+        return width >= minWidth ? Visibility.Visible : Visibility.Collapsed;
+    }
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}

@@ -624,8 +624,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     KeystrokeDelta = liveDelta.KeystrokeDelta,
                     MouseClickDelta = liveDelta.MouseClickDelta,
                     ActiveMinutes = persisted?.ActiveMinutes ?? 0,
-                    DistinctActiveHours = persisted?.DistinctActiveHours ?? 0,
-                    PeakInputHour = persisted?.PeakInputHour ?? -1,
+                    HourlyInputCount = persisted?.HourlyInputCount ?? new long[24],
                 }
             );
         }

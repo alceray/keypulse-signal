@@ -56,7 +56,72 @@ public sealed class CalendarDeviceDetail
     public long LiveMouseClicks => MouseClicks + MouseClickDelta;
     public long LiveMouseMovementSeconds => MouseMovementSeconds + MouseMovementDelta;
     public int ActiveMinutes { get; init; }
-    public int DistinctActiveHours { get; init; }
-    public int PeakInputHour { get; init; }
-    public string? PeakInputHourDisplay => PeakInputHour >= 0 ? $"{PeakInputHour:D2}:00" : null;
+    public IReadOnlyList<long> HourlyInputCount { get; init; } = new long[24];
+
+    public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars
+    {
+        get
+        {
+            var totals =
+                HourlyInputCount.Count == 24
+                    ? HourlyInputCount
+                    : Enumerable
+                        .Range(0, 24)
+                        .Select(i => i < HourlyInputCount.Count ? HourlyInputCount[i] : 0L)
+                        .ToArray();
+
+            var peak = totals.DefaultIfEmpty(0).Max();
+            var baseline = 2.0;
+            var maxHeight = 46.0;
+
+            return totals
+                .Select(
+                    (value, hour) =>
+                        new CalendarHourlyInputBar
+                        {
+                            Hour = hour,
+                            Total = value,
+                            BarHeight =
+                                value <= 0 || peak <= 0
+                                    ? baseline
+                                    : baseline + ((double)value / peak) * (maxHeight - baseline),
+                            IsPeak = peak > 0 && value == peak,
+                        }
+                )
+                .ToList();
+        }
+    }
+}
+
+public sealed class CalendarHourlyInputBar
+{
+    public int Hour { get; init; }
+    public long Total { get; init; }
+    public double BarHeight { get; init; }
+    public bool IsPeak { get; init; }
+
+    /// <summary>Always-visible major anchor labels: 12am and 12pm.</summary>
+    public string MajorLabel =>
+        Hour switch
+        {
+            0 => "12am",
+            12 => "12pm",
+            _ => "",
+        };
+
+    /// <summary>Intermediate labels shown only when the chart is wide enough: 4am, 8am, 4pm, 8pm.</summary>
+    public string MinorLabel =>
+        Hour switch
+        {
+            4 => "4am",
+            8 => "8am",
+            16 => "4pm",
+            20 => "8pm",
+            _ => "",
+        };
+
+    public string Tooltip =>
+        Total > 0
+            ? $"{DateTime.Today.AddHours(Hour):h tt} - {Total:N0} inputs"
+            : $"{DateTime.Today.AddHours(Hour):h tt} - No activity";
 }

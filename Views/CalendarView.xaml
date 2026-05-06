@@ -17,6 +17,7 @@
     <local:MinutesToDisplayConverter x:Key="MinutesToDisplayConverter" />
     <local:IsMouseConverter x:Key="IsMouseConverter" />
     <local:IsKeyboardConverter x:Key="IsKeyboardConverter" />
+    <local:MinWidthToVisibilityConverter x:Key="MinWidthToVisibilityConverter" />
   </UserControl.Resources>
   <Grid Margin="8">
     <Grid.ColumnDefinitions>
@@ -372,24 +373,6 @@
                             />
                           </DockPanel>
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Distinct active hours" Foreground="#555" />
-                            <TextBlock
-                              DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
-                              Text="{Binding DistinctActiveHours}"
-                            />
-                          </DockPanel>
-                          <DockPanel>
-                            <TextBlock DockPanel.Dock="Left" Text="Peak hour" Foreground="#555" />
-                            <TextBlock
-                              DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
-                              Text="{Binding PeakInputHourDisplay}"
-                            />
-                          </DockPanel>
-                          <DockPanel Margin="0,0,0,3">
                             <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
@@ -398,6 +381,88 @@
                               Text="{Binding SessionCount}"
                             />
                           </DockPanel>
+                          <TextBlock Text="Input activity" Foreground="#555" Margin="0,4,0,2" />
+                          <Border Padding="4,4,4,2" Margin="0,0,0,4">
+                            <StackPanel>
+                              <ItemsControl ItemsSource="{Binding HourlyInputBars}">
+                                <ItemsControl.ItemsPanel>
+                                  <ItemsPanelTemplate>
+                                    <UniformGrid Columns="24" />
+                                  </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                  <DataTemplate>
+                                    <Border
+                                      Height="48"
+                                      Margin="0,0.7,0,0.7"
+                                      VerticalAlignment="Bottom"
+                                      Background="Transparent"
+                                    >
+                                      <Border.ToolTip>
+                                        <ToolTip>
+                                          <TextBlock Text="{Binding Tooltip}" />
+                                        </ToolTip>
+                                      </Border.ToolTip>
+                                      <Rectangle
+                                        Width="8"
+                                        Height="{Binding BarHeight}"
+                                        VerticalAlignment="Bottom"
+                                        Fill="#8BB3E8"
+                                      >
+                                        <Rectangle.Style>
+                                          <Style TargetType="Rectangle">
+                                            <Setter Property="Fill" Value="#8BB3E8" />
+                                            <Style.Triggers>
+                                              <DataTrigger Binding="{Binding IsPeak}" Value="True">
+                                                <Setter Property="Fill" Value="#4A90E2" />
+                                              </DataTrigger>
+                                            </Style.Triggers>
+                                          </Style>
+                                        </Rectangle.Style>
+                                      </Rectangle>
+                                    </Border>
+                                  </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                              </ItemsControl>
+                              <ItemsControl
+                                ItemsSource="{Binding HourlyInputBars}"
+                                Margin="0,4,0,0"
+                                ClipToBounds="False"
+                              >
+                                <ItemsControl.ItemsPanel>
+                                  <ItemsPanelTemplate>
+                                    <UniformGrid Columns="24" ClipToBounds="False" />
+                                  </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemContainerStyle>
+                                  <Style TargetType="ContentPresenter">
+                                    <Setter Property="ClipToBounds" Value="False" />
+                                  </Style>
+                                </ItemsControl.ItemContainerStyle>
+                                <ItemsControl.ItemTemplate>
+                                  <DataTemplate>
+                                    <Grid ClipToBounds="False">
+                                      <TextBlock
+                                        Text="{Binding MajorLabel}"
+                                        FontSize="9"
+                                        Foreground="#777"
+                                        HorizontalAlignment="Center"
+                                        Margin="-20,0,-20,0"
+                                      />
+                                      <TextBlock
+                                        Text="{Binding MinorLabel}"
+                                        FontSize="9"
+                                        Foreground="#777"
+                                        HorizontalAlignment="Center"
+                                        Margin="-20,0,-20,0"
+                                        Visibility="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MinWidthToVisibilityConverter}, ConverterParameter=200}"
+                                      />
+                                    </Grid>
+                                  </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                              </ItemsControl>
+                            </StackPanel>
+                          </Border>
                         </StackPanel>
                       </StackPanel>
                     </Border>

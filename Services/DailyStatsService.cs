@@ -19,11 +19,6 @@ public class DailyStatsService : IDisposable
     private sealed class ActivityProjectionState
     {
         public required Dictionary<(DateOnly Day, string DeviceId), DailyDeviceStat> StatsByKey { get; init; }
-        public required Dictionary<(DateOnly Day, string DeviceId), HashSet<int>> SeenHoursByKey { get; init; }
-        public required Dictionary<
-            (DateOnly Day, string DeviceId),
-            Dictionary<int, long>
-        > HourTotalsByKey { get; init; }
     }
 
     private readonly IDbContextFactory<ApplicationDbContext> _factory;
@@ -164,7 +159,7 @@ public class DailyStatsService : IDisposable
     /// </summary>
     public void ApplyDeviceEvent(ApplicationDbContext ctx, DeviceEvent deviceEvent)
     {
-        if (deviceEvent.EventType.IsAppEvent() || !deviceEvent.EventType.IsClosingEvent())
+        if (!deviceEvent.EventType.IsClosingEvent())
             return;
 
         var day = TimeFormatter.ToLocalDay(deviceEvent.EventTime);
@@ -311,8 +306,7 @@ public class DailyStatsService : IDisposable
                     MouseClicks = row.MouseClicks,
                     MouseMovementSeconds = row.MouseMovementSeconds,
                     ActiveMinutes = row.ActiveMinutes,
-                    DistinctActiveHours = row.DistinctActiveHours,
-                    PeakInputHour = row.PeakInputHour,
+                    HourlyInputCount = row.HourlyInputCount.ToArray(),
                 };
             })
             .OrderByDescending(r => r.ConnectionDuration)
@@ -438,16 +432,7 @@ public class DailyStatsService : IDisposable
         if (totalThisMinute > 0)
         {
             stat.ActiveMinutes++;
-
-            var seenHours = GetOrCreate(state.SeenHoursByKey, key, static () => []);
-
-            if (seenHours.Add(hour))
-                stat.DistinctActiveHours = seenHours.Count;
-
-            var hourTotals = GetOrCreate(state.HourTotalsByKey, key, static () => []);
-
-            hourTotals[hour] = (hourTotals.TryGetValue(hour, out var existing) ? existing : 0L) + totalThisMinute;
-            stat.PeakInputHour = hourTotals.OrderByDescending(kv => kv.Value).ThenBy(kv => kv.Key).First().Key;
+            stat.HourlyInputCount[hour] += totalThisMinute;
         }
 
         stat.UpdatedAt = projectedAt;
@@ -471,17 +456,11 @@ public class DailyStatsService : IDisposable
     {
         if (snapshots.Count == 0)
         {
-            return new ActivityProjectionState
-            {
-                StatsByKey = [],
-                SeenHoursByKey = [],
-                HourTotalsByKey = [],
-            };
+            return new ActivityProjectionState { StatsByKey = [] };
         }
 
         var impacted = snapshots.Select(s => (TimeFormatter.ToLocalDay(s.Minute), s.DeviceId)).Distinct().ToList();
 
-        var impactedSet = impacted.ToHashSet();
         var deviceIds = impacted.Select(k => k.DeviceId).Distinct().ToList();
         var days = impacted.Select(k => k.Item1).Distinct().ToList();
 
@@ -500,66 +479,7 @@ public class DailyStatsService : IDisposable
             statsByKey[(key.Item1, key.DeviceId)] = stat;
         }
 
-        var minDay = days.Min();
-        var maxDay = days.Max();
-        var globalFrom = TimeFormatter.LocalDayToUtc(minDay);
-        var globalTo = TimeFormatter.LocalDayToUtc(maxDay.AddDays(1));
-
-        var projections = ctx
-            .ActivityProjections.Where(p =>
-                p.Minute >= globalFrom && p.Minute < globalTo && deviceIds.Contains(p.DeviceId)
-            )
-            .ToList();
-
-        var projectionKeys = projections.Select(p => (p.DeviceId, p.Minute)).ToHashSet();
-        var allSnapshotsInRange = ctx
-            .ActivitySnapshots.Where(s =>
-                s.Minute >= globalFrom && s.Minute < globalTo && deviceIds.Contains(s.DeviceId)
-            )
-            .ToList()
-            .Where(s => projectionKeys.Contains((s.DeviceId, s.Minute)))
-            .ToList();
-
-        var snapshotByKey = allSnapshotsInRange.ToDictionary(s => (s.DeviceId, s.Minute));
-
-        var seenHoursByKey = new Dictionary<(DateOnly Day, string DeviceId), HashSet<int>>();
-        var hourTotalsByKey = new Dictionary<(DateOnly Day, string DeviceId), Dictionary<int, long>>();
-
-        foreach (var projection in projections)
-        {
-            var localMinute = TimeFormatter.ToLocalTime(projection.Minute);
-            var key = (TimeFormatter.ToLocalDay(projection.Minute), projection.DeviceId);
-            if (!impactedSet.Contains((key.Item1, key.DeviceId)))
-                continue;
-
-            var hour = localMinute.Hour;
-
-            var typedKey = (key.Item1, key.DeviceId);
-            var seen = GetOrCreate(seenHoursByKey, typedKey, static () => []);
-            seen.Add(hour);
-
-            var totals = GetOrCreate(hourTotalsByKey, typedKey, static () => []);
-
-            if (snapshotByKey.TryGetValue((projection.DeviceId, projection.Minute), out var s))
-            {
-                var input = (long)s.Keystrokes + s.MouseClicks + s.MouseMovementSeconds;
-                totals[hour] = (totals.TryGetValue(hour, out var existing) ? existing : 0L) + input;
-            }
-        }
-
-        foreach (var key in impacted)
-        {
-            var typedKey = (key.Item1, key.DeviceId);
-            seenHoursByKey.TryAdd(typedKey, []);
-            hourTotalsByKey.TryAdd(typedKey, []);
-        }
-
-        return new ActivityProjectionState
-        {
-            StatsByKey = statsByKey,
-            SeenHoursByKey = seenHoursByKey,
-            HourTotalsByKey = hourTotalsByKey,
-        };
+        return new ActivityProjectionState { StatsByKey = statsByKey };
     }
 
     private static DailyDeviceStat GetOrCreateDailyStat(ApplicationDbContext ctx, DateOnly day, string deviceId)
@@ -626,17 +546,6 @@ public class DailyStatsService : IDisposable
             HasData = true,
             Devices = tileDevices,
         };
-    }
-
-    private static TValue GetOrCreate<TKey, TValue>(Dictionary<TKey, TValue> map, TKey key, Func<TValue> create)
-        where TKey : notnull
-    {
-        if (map.TryGetValue(key, out var value))
-            return value;
-
-        value = create();
-        map[key] = value;
-        return value;
     }
 
     /// <summary>
