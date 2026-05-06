@@ -1,9 +1,5 @@
-﻿using System.Globalization;
-using System.Windows;
-using System.Windows.Data;
+﻿using System.Windows;
 using System.Windows.Input;
-using KeyPulse.Helpers;
-using KeyPulse.Models;
 using KeyPulse.ViewModels;
 using KeyPulse.ViewModels.Calendar;
 using Microsoft.Extensions.DependencyInjection;
@@ -115,98 +111,4 @@ public partial class CalendarView
             _currentHeldArrowKey = Key.None;
         }
     }
-}
-
-/// <summary>true → Visible, false → Collapsed</summary>
-public sealed class BoolToVisibilityConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        value is true ? Visibility.Visible : Visibility.Collapsed;
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>true → Collapsed, false → Visible</summary>
-public sealed class InverseBoolToVisibilityConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        value is true ? Visibility.Collapsed : Visibility.Visible;
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>Formats seconds as "Xh Ym Zs" for detail panel display.</summary>
-public sealed class SecondsToDisplayConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is not long seconds)
-            return "";
-        return TimeFormatter.FormatDuration(TimeSpan.FromSeconds(seconds));
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>Formats minutes as "Xh Ym" for detail panel display.</summary>
-public sealed class MinutesToDisplayConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is not int minutes)
-            return "";
-        return TimeFormatter.FormatDuration(TimeSpan.FromMinutes(minutes));
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>Shows Visible only for Mouse device type, Collapsed otherwise.</summary>
-public sealed class IsMouseConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is DeviceTypes deviceType)
-            return deviceType == DeviceTypes.Mouse ? Visibility.Visible : Visibility.Collapsed;
-        return Visibility.Collapsed;
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>Shows Visible only for Keyboard device type, Collapsed otherwise.</summary>
-public sealed class IsKeyboardConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is DeviceTypes deviceType)
-            return deviceType == DeviceTypes.Keyboard ? Visibility.Visible : Visibility.Collapsed;
-        return Visibility.Collapsed;
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
-/// <summary>Visible when bound width is greater than or equal to the provided minimum width parameter.</summary>
-public sealed class MinWidthToVisibilityConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is not double width)
-            return Visibility.Collapsed;
-
-        if (!double.TryParse(parameter?.ToString(), NumberStyles.Float, CultureInfo.InvariantCulture, out var minWidth))
-            minWidth = 0;
-
-        return width >= minWidth ? Visibility.Visible : Visibility.Collapsed;
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
 }

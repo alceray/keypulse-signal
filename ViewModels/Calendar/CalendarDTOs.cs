@@ -60,39 +60,8 @@ public sealed class CalendarDeviceDetail
     public int ActiveMinutes { get; init; }
     public IReadOnlyList<long> HourlyInputCount { get; init; } = new long[24];
 
-    public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars
-    {
-        get
-        {
-            var totals =
-                HourlyInputCount.Count == 24
-                    ? HourlyInputCount
-                    : Enumerable
-                        .Range(0, 24)
-                        .Select(i => i < HourlyInputCount.Count ? HourlyInputCount[i] : 0L)
-                        .ToArray();
-
-            var peak = totals.DefaultIfEmpty(0).Max();
-            var baseline = 2.0;
-            var maxHeight = 46.0;
-
-            return totals
-                .Select(
-                    (value, hour) =>
-                        new CalendarHourlyInputBar
-                        {
-                            Hour = hour,
-                            Total = value,
-                            BarHeight =
-                                value <= 0 || peak <= 0
-                                    ? baseline
-                                    : baseline + ((double)value / peak) * (maxHeight - baseline),
-                            IsPeak = peak > 0 && value == peak,
-                        }
-                )
-                .ToList();
-        }
-    }
+    public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars =>
+        CalendarHourlyInputBarBuilder.Build(HourlyInputCount);
 }
 
 public sealed class CalendarHourlyInputBar

@@ -11,12 +11,11 @@
   PreviewKeyUp="CalendarView_PreviewKeyUp"
 >
   <UserControl.Resources>
-    <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
-    <local:SecondsToDisplayConverter x:Key="SecondsToDisplayConverter" />
+    <local:DurationSecondsConverter x:Key="DurationSecondsConverter" />
     <local:MinutesToDisplayConverter x:Key="MinutesToDisplayConverter" />
-    <local:IsMouseConverter x:Key="IsMouseConverter" />
-    <local:IsKeyboardConverter x:Key="IsKeyboardConverter" />
+    <local:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter" />
     <local:MinWidthToVisibilityConverter x:Key="MinWidthToVisibilityConverter" />
   </UserControl.Resources>
   <Grid Margin="8">
@@ -94,7 +93,7 @@
           HorizontalAlignment="Center"
           VerticalAlignment="Center"
           Foreground="#888"
-          Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"
+          Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
         />
 
         <ItemsControl
@@ -172,7 +171,7 @@
                                   FontSize="12"
                                   Foreground="#222"
                                   VerticalAlignment="Center"
-                                  Visibility="{Binding IsToday, Converter={StaticResource BoolToVisibilityConverter}}"
+                                  Visibility="{Binding IsToday, Converter={StaticResource BooleanToVisibilityConverter}}"
                                 />
                               </DockPanel>
                               <ScrollViewer
@@ -180,7 +179,7 @@
                                 Margin="0,3,0,0"
                                 VerticalScrollBarVisibility="Auto"
                                 HorizontalScrollBarVisibility="Disabled"
-                                Visibility="{Binding HasData, Converter={StaticResource BoolToVisibilityConverter}}"
+                                Visibility="{Binding HasData, Converter={StaticResource BooleanToVisibilityConverter}}"
                               >
                                 <ItemsControl ItemsSource="{Binding Devices}">
                                   <ItemsControl.ItemTemplate>
@@ -261,7 +260,7 @@
             />
 
             <!-- Day selected -->
-            <StackPanel Visibility="{Binding HasSelectedDay, Converter={StaticResource BoolToVisibilityConverter}}">
+            <StackPanel Visibility="{Binding HasSelectedDay, Converter={StaticResource BooleanToVisibilityConverter}}">
               <TextBlock
                 Text="{Binding SelectedDayTitle}"
                 FontWeight="Bold"
@@ -296,7 +295,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding ConnectionSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
+                              Text="{Binding ConnectionSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -315,7 +314,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding LongestSessionSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
+                              Text="{Binding LongestSessionSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -349,14 +348,14 @@
                           />
                           <DockPanel
                             Margin="0,0,0,3"
-                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseConverter}}"
+                            Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                           >
                             <TextBlock DockPanel.Dock="Left" Text="Mouse movement time" Foreground="#555" />
                             <TextBlock
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding LiveMouseMovementSeconds, Converter={StaticResource SecondsToDisplayConverter}}"
+                              Text="{Binding LiveMouseMovementSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -368,11 +367,11 @@
                             FlowDirection="LeftToRight"
                             Foreground="#7FD9A8"
                             Background="#EAEAEA"
-                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseConverter}}"
+                            Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                           />
                           <DockPanel
                             Margin="0,0,0,8"
-                            Visibility="{Binding DeviceType, Converter={StaticResource IsKeyboardConverter}}"
+                            Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Keyboard}"
                           >
                             <TextBlock DockPanel.Dock="Left" Foreground="#555" Text="Keystrokes" />
                             <TextBlock
@@ -384,7 +383,7 @@
                           </DockPanel>
                           <DockPanel
                             Margin="0,0,0,8"
-                            Visibility="{Binding DeviceType, Converter={StaticResource IsMouseConverter}}"
+                            Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                           >
                             <TextBlock DockPanel.Dock="Left" Foreground="#555" Text="Mouse clicks" />
                             <TextBlock

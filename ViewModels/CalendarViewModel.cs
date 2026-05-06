@@ -26,7 +26,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         string,
         (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
     > _todayLiveDeltaByDevice = [];
-    private long _todayLiveInputDeltaTotal;
     private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
     private readonly SemaphoreSlim _arrowNavigationGate = new(1, 1);
@@ -344,8 +343,15 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     {
         var today = DateOnly.FromDateTime(DateTime.Now);
         var dayRolledOver = ResetLiveInputOverlayIfDayChanged(today);
-        // When the local day rolls over, force one tile-summary refresh to clear stale live overlays.
-        RequestOverlayRefresh(updateTileSummary: dayRolledOver);
+        if (dayRolledOver)
+        {
+            // Rehydrate visible tiles from persistence once at local-day rollover.
+            // This clears yesterday's transient connected highlight without adding extra helper methods.
+            _ = LoadCurrentMonthAsync();
+            return;
+        }
+
+        RequestOverlayRefresh(updateTileSummary: false);
     }
 
     /// <summary>Accumulates in-memory input deltas for today and schedules a UI overlay refresh.</summary>
@@ -354,8 +360,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta) delta
     )
     {
-        var inputDelta = delta.KeystrokeDelta + delta.MouseClickDelta + delta.MouseMovementDelta;
-        if (inputDelta <= 0)
+        if (delta.KeystrokeDelta + delta.MouseClickDelta + delta.MouseMovementDelta <= 0)
             return;
 
         var today = DateOnly.FromDateTime(DateTime.Now);
@@ -369,8 +374,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     current.MouseMovementDelta + delta.MouseMovementDelta
                 )
                 : delta;
-
-            _todayLiveInputDeltaTotal += inputDelta;
         }
 
         RequestOverlayRefresh();
@@ -385,7 +388,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 return false;
 
             _todayLiveDeltaByDevice.Clear();
-            _todayLiveInputDeltaTotal = 0;
             _accumulatedInputDate = today;
             return true;
         }
@@ -433,10 +435,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             connectionOverlayByDevice = new Dictionary<string, long>();
             foreach (var device in _usbMonitorService.DeviceList)
             {
-                if (!device.SessionStartedAt.HasValue)
+                if (!device.IsConnected)
                     continue;
 
-                var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt.Value);
+                var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt!.Value);
                 if (startLocal < dayStartLocal)
                     startLocal = dayStartLocal;
                 if (startLocal >= nowLocal)
@@ -448,24 +450,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
         if (updateTileSummary)
         {
-            var hasConnectionOverlay = selectedToday
-                ? connectionOverlayByDevice!.Count > 0
-                : _usbMonitorService.DeviceList.Any(device =>
-                {
-                    if (!device.SessionStartedAt.HasValue)
-                        return false;
-
-                    var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt.Value);
-                    if (startLocal < dayStartLocal)
-                        startLocal = dayStartLocal;
-
-                    return startLocal < nowLocal;
-                });
-
-            long inputOverlayTotal;
-            lock (_liveInputLock)
-                inputOverlayTotal = _todayLiveInputDeltaTotal;
-
             var byId = persisted.Devices.ToDictionary(
                 d => d.DeviceId,
                 d => new CalendarTileDevice
@@ -490,10 +474,11 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             var todaySummary = new CalendarDaySummary
             {
                 Day = persisted.Day,
-                HasData = persisted.HasData || hasConnectionOverlay || inputOverlayTotal > 0,
+                HasData = persisted.HasData || byId.Values.Any(d => d.IsConnected),
                 IsSelected = selectedToday,
                 Devices = byId
-                    .Values.OrderBy(d =>
+                    .Values.OrderByDescending(d => d.IsConnected)
+                    .ThenBy(d =>
                         d.DeviceType == DeviceTypes.Keyboard ? 0
                         : d.DeviceType == DeviceTypes.Mouse ? 1
                         : 2
@@ -644,10 +629,11 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             SelectedDayDetails.Add(row);
     }
 
-    /// <summary>Applies consistent display ordering: keyboard, then mouse, then unknown; name as tie-breaker.</summary>
+    /// <summary>Applies consistent display ordering: connected first, then keyboard/mouse/unknown, then name.</summary>
     private static IEnumerable<CalendarDeviceDetail> OrderDetailsForDisplay(IEnumerable<CalendarDeviceDetail> rows)
     {
-        return rows.OrderBy(r =>
+        return rows.OrderByDescending(r => r.IsConnected)
+            .ThenBy(r =>
                 r.DeviceType switch
                 {
                     DeviceTypes.Keyboard => 0,
