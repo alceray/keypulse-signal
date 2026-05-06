@@ -51,17 +51,9 @@ public sealed class CalendarDeviceDetail
     public long Keystrokes { get; init; }
     public long MouseClicks { get; init; }
     public long MouseMovementSeconds { get; init; }
-    public long MouseMovementDelta { get; init; } // UI-only, not persisted
-    public long KeystrokeDelta { get; init; } // UI-only, not persisted
-    public long MouseClickDelta { get; init; } // UI-only, not persisted
-    public long LiveKeystrokes => Keystrokes + KeystrokeDelta;
-    public long LiveMouseClicks => MouseClicks + MouseClickDelta;
-    public long LiveMouseMovementSeconds => MouseMovementSeconds + MouseMovementDelta;
     public int ActiveMinutes { get; init; }
-    public IReadOnlyList<long> HourlyInputCount { get; init; } = new long[24];
-
-    public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars =>
-        CalendarHourlyInputBarBuilder.Build(HourlyInputCount);
+    public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars { get; init; } =
+        CalendarHourlyInputBarBuilder.Build(new long[24]);
 }
 
 public sealed class CalendarHourlyInputBar

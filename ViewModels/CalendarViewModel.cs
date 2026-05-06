@@ -28,6 +28,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     > _todayLiveDeltaByDevice = [];
     private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
+
+    // Stable bar references per device; same list instance keeps WPF tooltip elements alive across per-second updates.
+    private readonly Dictionary<string, IReadOnlyList<CalendarHourlyInputBar>> _hourlyBarsCache = [];
     private readonly SemaphoreSlim _arrowNavigationGate = new(1, 1);
 
     private DateOnly _currentDisplayMonth;
@@ -306,6 +309,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     {
         SelectedDayDetails.Clear();
         _todayPersistedDetailByDevice.Clear();
+        _hourlyBarsCache.Clear();
         if (_selectedDay == null || !_selectedDay.HasData)
             return;
 
@@ -345,13 +349,11 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         var dayRolledOver = ResetLiveInputOverlayIfDayChanged(today);
         if (dayRolledOver)
         {
-            // Rehydrate visible tiles from persistence once at local-day rollover.
-            // This clears yesterday's transient connected highlight without adding extra helper methods.
-            _ = LoadCurrentMonthAsync();
+            _ = LoadCurrentMonthAsync(); // clears yesterday's connected highlights
             return;
         }
 
-        RequestOverlayRefresh(updateTileSummary: false);
+        RequestOverlayRefresh();
     }
 
     /// <summary>Accumulates in-memory input deltas for today and schedules a UI overlay refresh.</summary>
@@ -376,7 +378,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 : delta;
         }
 
-        RequestOverlayRefresh();
+        // Tile connected-state doesn't change on keystrokes; skip the tile rebuild.
+        RequestOverlayRefresh(updateTileSummary: false);
     }
 
     /// <summary>Resets in-memory live counters when local time crosses into a new day.</summary>
@@ -602,6 +605,11 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             var baseConnection = persisted?.ConnectionSeconds ?? 0L;
             var baseLongest = persisted?.LongestSessionSeconds ?? 0L;
 
+            // Same reference kept so WPF ItemsControl doesn't recreate bar elements (tooltip-stable).
+            if (!_hourlyBarsCache.TryGetValue(id, out var stableBars))
+                _hourlyBarsCache[id] = stableBars =
+                    persisted?.HourlyInputBars ?? CalendarHourlyInputBarBuilder.Build(new long[24]);
+
             rows.Add(
                 new CalendarDeviceDetail
                 {
@@ -612,21 +620,33 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     SessionCount = sessionCount,
                     ConnectionSeconds = baseConnection + connectionOverlay,
                     LongestSessionSeconds = Math.Max(baseLongest, connectionOverlay),
-                    Keystrokes = persisted?.Keystrokes ?? 0,
-                    MouseClicks = persisted?.MouseClicks ?? 0,
-                    MouseMovementSeconds = persisted?.MouseMovementSeconds ?? 0,
-                    MouseMovementDelta = liveDelta.MouseMovementDelta,
-                    KeystrokeDelta = liveDelta.KeystrokeDelta,
-                    MouseClickDelta = liveDelta.MouseClickDelta,
+                    Keystrokes = (persisted?.Keystrokes ?? 0) + liveDelta.KeystrokeDelta,
+                    MouseClicks = (persisted?.MouseClicks ?? 0) + liveDelta.MouseClickDelta,
+                    MouseMovementSeconds = (persisted?.MouseMovementSeconds ?? 0) + liveDelta.MouseMovementDelta,
                     ActiveMinutes = persisted?.ActiveMinutes ?? 0,
-                    HourlyInputCount = persisted?.HourlyInputCount ?? new long[24],
+                    HourlyInputBars = stableBars,
                 }
             );
         }
 
-        SelectedDayDetails.Clear();
-        foreach (var row in OrderDetailsForDisplay(rows))
-            SelectedDayDetails.Add(row);
+        var ordered = OrderDetailsForDisplay(rows).ToList();
+
+        // Update in-place when order is unchanged to keep tooltip targets alive.
+        var canUpdateInPlace =
+            ordered.Count == SelectedDayDetails.Count
+            && ordered.Select(r => r.DeviceId).SequenceEqual(SelectedDayDetails.Select(r => r.DeviceId));
+
+        if (canUpdateInPlace)
+        {
+            for (var i = 0; i < ordered.Count; i++)
+                SelectedDayDetails[i] = ordered[i];
+        }
+        else
+        {
+            SelectedDayDetails.Clear();
+            foreach (var row in ordered)
+                SelectedDayDetails.Add(row);
+        }
     }
 
     /// <summary>Applies consistent display ordering: connected first, then keyboard/mouse/unknown, then name.</summary>

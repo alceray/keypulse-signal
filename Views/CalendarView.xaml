@@ -108,21 +108,14 @@
           </ItemsControl.ItemsPanel>
           <ItemsControl.ItemTemplate>
             <DataTemplate>
-              <ContentControl Content="{Binding}">
+              <ContentControl Content="{Binding}" MouseLeftButtonUp="DayTile_MouseLeftButtonUp">
                 <ContentControl.Style>
                   <Style TargetType="ContentControl">
                     <!-- Default template: day tile -->
                     <Setter Property="ContentTemplate">
                       <Setter.Value>
                         <DataTemplate DataType="{x:Type vm:CalendarDaySummary}">
-                          <Border
-                            Margin="2"
-                            VerticalAlignment="Stretch"
-                            Padding="6"
-                            CornerRadius="4"
-                            Cursor="Hand"
-                            MouseLeftButtonUp="DayTile_MouseLeftButtonUp"
-                          >
+                          <Border Margin="2" VerticalAlignment="Stretch" Padding="6" CornerRadius="4" Cursor="Hand">
                             <Border.Style>
                               <Style TargetType="Border">
                                 <Setter Property="BorderThickness" Value="1" />
@@ -355,7 +348,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding LiveMouseMovementSeconds, Converter={StaticResource DurationSecondsConverter}}"
+                              Text="{Binding MouseMovementSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
@@ -363,7 +356,7 @@
                             Margin="0,0,0,6"
                             Minimum="0"
                             Maximum="86400"
-                            Value="{Binding LiveMouseMovementSeconds, Mode=OneWay}"
+                            Value="{Binding MouseMovementSeconds, Mode=OneWay}"
                             FlowDirection="LeftToRight"
                             Foreground="#7FD9A8"
                             Background="#EAEAEA"
@@ -378,7 +371,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding LiveKeystrokes}"
+                              Text="{Binding Keystrokes}"
                             />
                           </DockPanel>
                           <DockPanel
@@ -390,7 +383,7 @@
                               DockPanel.Dock="Right"
                               Foreground="#222"
                               TextAlignment="Right"
-                              Text="{Binding LiveMouseClicks}"
+                              Text="{Binding MouseClicks}"
                             />
                           </DockPanel>
                           <DockPanel Margin="0,0,0,3">

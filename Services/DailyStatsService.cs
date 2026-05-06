@@ -307,7 +307,7 @@ public class DailyStatsService : IDisposable
                     MouseClicks = row.MouseClicks,
                     MouseMovementSeconds = row.MouseMovementSeconds,
                     ActiveMinutes = row.ActiveMinutes,
-                    HourlyInputCount = row.HourlyInputCount.ToArray(),
+                    HourlyInputBars = CalendarHourlyInputBarBuilder.Build(row.HourlyInputCount),
                 };
             })
             .OrderByDescending(r => r.ConnectionSeconds)
