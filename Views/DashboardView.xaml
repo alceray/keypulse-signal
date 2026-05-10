@@ -3,9 +3,17 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:oxy="http://oxyplot.org/wpf"
+  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
   Height="Auto"
   Width="Auto"
 >
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles/RoundHoverIconButtonStyle.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
   <Grid Margin="8">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -40,11 +48,8 @@
       <Grid Margin="4,0,4,0">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="Auto" />
-          <ColumnDefinition Width="Auto" />
-          <ColumnDefinition Width="Auto" />
-          <ColumnDefinition Width="Auto" />
-          <ColumnDefinition Width="Auto" />
           <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
         <ComboBox
@@ -53,35 +58,30 @@
           Margin="0,0,8,0"
           ItemsSource="{Binding RangeOptions}"
           SelectedItem="{Binding SelectedRange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+          VerticalAlignment="Center"
         />
-
-        <ComboBox
-          Grid.Column="1"
-          Width="80"
-          Margin="0,0,8,0"
-          ToolTip="Bucket size (minutes)"
-          ItemsSource="{Binding BucketSizeOptions}"
-          SelectedItem="{Binding SelectedBucketMinutes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-        />
-
-        <ComboBox
-          Grid.Column="2"
-          Width="80"
-          Margin="0,0,8,0"
-          ToolTip="Smoothing window (number of buckets)"
-          ItemsSource="{Binding SmoothingWindowOptions}"
-          SelectedItem="{Binding SelectedSmoothingWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-        />
-
-        <Button Grid.Column="3" Margin="0,0,8,0" Padding="10,4" Command="{Binding RefreshCommand}">Refresh</Button>
 
         <TextBlock
-          Grid.Column="5"
-          Text="{Binding LastUpdatedText}"
-          HorizontalAlignment="Right"
+          Grid.Column="1"
+          Text="{Binding RangeDisplayText}"
           VerticalAlignment="Center"
+          HorizontalAlignment="Center"
           Foreground="#666666"
+          FontWeight="SemiBold"
         />
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+          <TextBlock Text="{Binding LastUpdatedText}" VerticalAlignment="Center" Foreground="#666666" />
+          <Button
+            Margin="4,0,0,0"
+            Command="{Binding RefreshCommand}"
+            ToolTip="Refresh"
+            VerticalAlignment="Center"
+            Style="{StaticResource RoundHoverIconButtonStyle}"
+          >
+            <iconPacks:PackIconPhosphorIcons Kind="ArrowClockwise" VerticalAlignment="Center" Foreground="#666" />
+          </Button>
+        </StackPanel>
       </Grid>
     </StackPanel>
 

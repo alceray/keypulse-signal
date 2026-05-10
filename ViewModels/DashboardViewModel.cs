@@ -25,8 +25,6 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     public IPlotController PieHoverController { get; }
 
     public IReadOnlyList<string> RangeOptions => DashboardRangeResolver.RangeOptions;
-    public IReadOnlyList<int> BucketSizeOptions { get; } = AppConstants.Dashboard.BucketSizeOptions;
-    public IReadOnlyList<int> SmoothingWindowOptions { get; } = AppConstants.Dashboard.SmoothingWindowOptions;
 
     public string SelectedRange
     {
@@ -37,34 +35,6 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
                 return;
 
             _selectedRange = value;
-            OnPropertyChanged();
-            Refresh();
-        }
-    }
-
-    public int SelectedBucketMinutes
-    {
-        get => _selectedBucketMinutes;
-        set
-        {
-            if (_selectedBucketMinutes == value)
-                return;
-
-            _selectedBucketMinutes = value;
-            OnPropertyChanged();
-            Refresh();
-        }
-    }
-
-    public int SelectedSmoothingWindow
-    {
-        get => _selectedSmoothingWindow;
-        set
-        {
-            if (_selectedSmoothingWindow == value)
-                return;
-
-            _selectedSmoothingWindow = value;
             OnPropertyChanged();
             Refresh();
         }
@@ -162,6 +132,16 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
+    public string RangeDisplayText
+    {
+        get => _rangeDisplayText;
+        private set
+        {
+            _rangeDisplayText = value;
+            OnPropertyChanged();
+        }
+    }
+
     private PlotModel _keyboardConnectionTimePiePlot = new();
     private PlotModel _mouseConnectionTimePiePlot = new();
     private PlotModel _inputActivityPlot = new();
@@ -170,9 +150,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private string _topKeyboardsSummary = "1. -\n2. -\n3. -";
     private string _topMiceSummary = "1. -\n2. -\n3. -";
     private string _lastUpdatedText = "";
+    private string _rangeDisplayText = "";
     private string _selectedRange = DashboardRangeResolver.DefaultRange;
-    private int _selectedBucketMinutes = AppConstants.Dashboard.DefaultBucketMinutes;
-    private int _selectedSmoothingWindow = AppConstants.Dashboard.DefaultSmoothingWindow;
     private readonly DashboardHoverPreview _hoverPreview = new();
 
     public DashboardViewModel(
@@ -266,6 +245,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         var now = DateTime.Now;
         var from = DashboardRangeResolver.ResolveRangeStart(SelectedRange, now);
         var to = now;
+        RangeDisplayText = TimeFormatter.FormatDateRange(from, to);
 
         var snapshots = _dataService.GetActivitySnapshots(from: from, to: to).ToList();
         var dashboardEvents = _dataService.GetDashboardEvents(to);
@@ -284,12 +264,12 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         );
 
         var keyboardModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
-            "Keyboard Distribution",
+            "Keyboards",
             devices.Where(d => d.DeviceType == DeviceTypes.Keyboard),
             connectionMinutesByDevice
         );
         var mouseModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
-            "Mouse Distribution",
+            "Mice",
             devices.Where(d => d.DeviceType == DeviceTypes.Mouse),
             connectionMinutesByDevice
         );
@@ -303,10 +283,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             snapshots,
             dashboardEvents.AppLifecycleEvents,
             from,
-            to,
-            SelectedRange,
-            SelectedBucketMinutes,
-            SelectedSmoothingWindow
+            to
         );
 
         LastUpdatedText = $"Last updated: {now.ToString(AppConstants.Date.DateFormat)}";

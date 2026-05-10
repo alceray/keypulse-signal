@@ -1,4 +1,5 @@
-﻿using KeyPulse.Models;
+﻿using KeyPulse.Configuration;
+using KeyPulse.Models;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
@@ -10,6 +11,8 @@ namespace KeyPulse.ViewModels.Dashboard;
 /// </summary>
 internal static class DashboardActivityChartBuilder
 {
+    private const int SMOOTHING_WINDOW = AppConstants.Dashboard.DefaultSmoothingWindow;
+
     /// <summary>
     /// Creates a time-series chart from minute snapshots, with configurable time resolution and smoothing.
     /// Buckets outside app-running intervals are forced to zero.
@@ -18,18 +21,41 @@ internal static class DashboardActivityChartBuilder
         IEnumerable<ActivitySnapshot> snapshots,
         IEnumerable<DeviceEvent> lifecycleEvents,
         DateTime? from,
-        DateTime to,
-        string rangeLabel,
-        int bucketMinutes,
-        int smoothingWindow
+        DateTime to
     )
     {
-        var normalizedBucketMinutes = Math.Max(1, bucketMinutes);
-        var normalizedSmoothingWindow = Math.Max(1, smoothingWindow);
-
-        var model = new PlotModel { Title = $"Input Activity ({rangeLabel})" };
+        var model = new PlotModel { Title = "Input Activity" };
 
         var rangeSpan = to - (from ?? to);
+        // Dynamic aggregation and label
+        int bucketMinutes;
+        string yAxisLabel;
+        if (rangeSpan.TotalDays <= 1)
+        {
+            bucketMinutes = 10;
+            yAxisLabel = "Input count per 10 min";
+        }
+        else if (rangeSpan.TotalDays <= 7)
+        {
+            bucketMinutes = 60;
+            yAxisLabel = "Input count per hour";
+        }
+        else if (rangeSpan.TotalDays <= 93) // 3 months
+        {
+            bucketMinutes = 360;
+            yAxisLabel = "Input count per 6 hours";
+        }
+        else if (rangeSpan.TotalDays <= 370)
+        {
+            bucketMinutes = 1440;
+            yAxisLabel = "Input count per day";
+        }
+        else
+        {
+            bucketMinutes = 10080;
+            yAxisLabel = "Input count per week";
+        }
+
         var monthsOnly = rangeSpan.TotalDays >= 365;
         var datesOnly = !monthsOnly && rangeSpan.TotalDays >= 7;
 
@@ -53,22 +79,19 @@ internal static class DashboardActivityChartBuilder
             new LinearAxis
             {
                 Position = AxisPosition.Left,
-                Title = "Input Count",
+                Title = yAxisLabel,
                 Minimum = 0,
             }
         );
 
-        var bucketTimeline = BuildBucketTimeline(snapshots, lifecycleEvents, from, to, normalizedBucketMinutes);
+        var bucketTimeline = BuildBucketTimeline(snapshots, lifecycleEvents, from, to, bucketMinutes);
         if (bucketTimeline.Count == 0)
             return model;
 
         var appIntervals = BuildAppRunningIntervals(lifecycleEvents, to);
         var isAppRunningByBucket = bucketTimeline.ToDictionary(
             bucket => bucket,
-            bucket =>
-                appIntervals.Any(interval =>
-                    BucketsOverlap(bucket, interval.Start, interval.End, normalizedBucketMinutes)
-                )
+            bucket => appIntervals.Any(interval => BucketsOverlap(bucket, interval.Start, interval.End, bucketMinutes))
         );
 
         var keyboardByBucket = BuildBucketMetric(
@@ -77,7 +100,7 @@ internal static class DashboardActivityChartBuilder
             to,
             snapshot => snapshot.Keystrokes,
             isAppRunningByBucket,
-            normalizedBucketMinutes
+            bucketMinutes
         );
         var mouseByBucket = BuildBucketMetric(
             snapshots,
@@ -85,16 +108,11 @@ internal static class DashboardActivityChartBuilder
             to,
             snapshot => snapshot.MouseClicks + snapshot.MouseMovementSeconds,
             isAppRunningByBucket,
-            normalizedBucketMinutes
+            bucketMinutes
         );
 
-        keyboardByBucket = SmoothBuckets(
-            keyboardByBucket,
-            bucketTimeline,
-            isAppRunningByBucket,
-            normalizedSmoothingWindow
-        );
-        mouseByBucket = SmoothBuckets(mouseByBucket, bucketTimeline, isAppRunningByBucket, normalizedSmoothingWindow);
+        keyboardByBucket = SmoothBuckets(keyboardByBucket, bucketTimeline, isAppRunningByBucket, SMOOTHING_WINDOW);
+        mouseByBucket = SmoothBuckets(mouseByBucket, bucketTimeline, isAppRunningByBucket, SMOOTHING_WINDOW);
 
         var keyboardSeries = new LineSeries { Title = "Keyboard Inputs (Keystrokes)", StrokeThickness = 2 };
         var mouseSeries = new LineSeries { Title = "Mouse Inputs (Clicks + Movement)", StrokeThickness = 2 };

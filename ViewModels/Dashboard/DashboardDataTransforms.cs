@@ -10,6 +10,7 @@ internal static class DashboardRangeResolver
     public const string RangeOneDay = "1 Day";
     public const string RangeOneWeek = "1 Week";
     public const string RangeOneMonth = "1 Month";
+    public const string RangeThreeMonths = "3 Months";
     public const string RangeOneYear = "1 Year";
     public const string RangeAllTime = "All Time";
     public const string DefaultRange = RangeOneWeek;
@@ -20,6 +21,7 @@ internal static class DashboardRangeResolver
         RangeOneDay,
         RangeOneWeek,
         RangeOneMonth,
+        RangeThreeMonths,
         RangeOneYear,
         RangeAllTime,
     ];
@@ -35,6 +37,7 @@ internal static class DashboardRangeResolver
             RangeOneDay => now.AddDays(-1),
             RangeOneWeek => now.AddDays(-7),
             RangeOneMonth => now.AddMonths(-1),
+            RangeThreeMonths => now.AddMonths(-3),
             RangeOneYear => now.AddYears(-1),
             RangeAllTime => null,
             _ => now.AddDays(-7),

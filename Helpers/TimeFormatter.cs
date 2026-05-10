@@ -6,6 +6,22 @@
 public static class TimeFormatter
 {
     /// <summary>
+    /// Formats a date range as "May 01, 2026 - May 02, 2026" or "All Time".
+    /// </summary>
+    public static string FormatDateRange(DateTime? from, DateTime to)
+    {
+        if (!from.HasValue)
+            return "All Time";
+        var fromLocal = ToLocalTime(from.Value);
+        var toLocal = ToLocalTime(to);
+        string fromStr = fromLocal.ToString("MMM dd, yyyy");
+        string toStr = toLocal.ToString("MMM dd, yyyy");
+        if (fromStr == toStr)
+            return fromStr;
+        return $"{fromStr} - {toStr}";
+    }
+
+    /// <summary>
     /// Converts a persisted UTC timestamp to the local calendar day it falls on.
     /// </summary>
     public static DateOnly ToLocalDay(DateTime dateTime) => DateOnly.FromDateTime(ToLocalTime(dateTime));

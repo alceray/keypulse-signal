@@ -62,10 +62,7 @@ public static class AppConstants
 
     public static class Dashboard
     {
-        public const int DefaultBucketMinutes = 10;
-        public const int DefaultSmoothingWindow = 2;
-        public static readonly IReadOnlyList<int> BucketSizeOptions = [5, 10, 15, 20, 30];
-        public static readonly IReadOnlyList<int> SmoothingWindowOptions = [1, 2, 3, 4, 5];
+        public const int DefaultSmoothingWindow = 3;
     }
 
     public static class Date
