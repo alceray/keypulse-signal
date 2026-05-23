@@ -7,7 +7,7 @@ using OxyPlot.Series;
 namespace KeyPulse.ViewModels.Dashboard;
 
 /// <summary>
-/// Builds the dashboard activity plot for keyboard and mouse input totals.
+/// Builds the dashboard activity plot for per-device keyboard and mouse input totals.
 /// </summary>
 internal static class DashboardActivityChartBuilder
 {
@@ -18,15 +18,21 @@ internal static class DashboardActivityChartBuilder
     /// Buckets outside app-running intervals are forced to zero.
     /// </summary>
     public static PlotModel BuildInputActivityPlot(
-        IEnumerable<ActivitySnapshot> snapshots,
-        IEnumerable<DeviceEvent> lifecycleEvents,
+        IReadOnlyCollection<ActivitySnapshot> snapshots,
+        IReadOnlyCollection<Device> devices,
+        IReadOnlyCollection<DeviceEvent> lifecycleEvents,
         DateTime? from,
-        DateTime to
+        DateTime to,
+        IReadOnlyDictionary<string, OxyColor> colorsByDevice
     )
     {
         var model = new PlotModel { Title = "Input Activity" };
 
-        var rangeSpan = to - (from ?? to);
+        var chartStart = ResolveChartStart(snapshots, lifecycleEvents, from);
+        var rangeSpan = chartStart.HasValue ? to - chartStart.Value : TimeSpan.Zero;
+        if (rangeSpan < TimeSpan.Zero)
+            rangeSpan = TimeSpan.Zero;
+
         // Dynamic aggregation and label
         int bucketMinutes;
         string yAxisLabel;
@@ -84,7 +90,7 @@ internal static class DashboardActivityChartBuilder
             }
         );
 
-        var bucketTimeline = BuildBucketTimeline(snapshots, lifecycleEvents, from, to, bucketMinutes);
+        var bucketTimeline = BuildBucketTimeline(chartStart, to, bucketMinutes);
         if (bucketTimeline.Count == 0)
             return model;
 
@@ -94,61 +100,115 @@ internal static class DashboardActivityChartBuilder
             bucket => appIntervals.Any(interval => BucketsOverlap(bucket, interval.Start, interval.End, bucketMinutes))
         );
 
-        var keyboardByBucket = BuildBucketMetric(
-            snapshots,
-            from,
-            to,
-            snapshot => snapshot.Keystrokes,
-            isAppRunningByBucket,
-            bucketMinutes
-        );
-        var mouseByBucket = BuildBucketMetric(
-            snapshots,
-            from,
-            to,
-            snapshot => snapshot.MouseClicks + snapshot.MouseMovementSeconds,
-            isAppRunningByBucket,
-            bucketMinutes
-        );
-
-        keyboardByBucket = SmoothBuckets(keyboardByBucket, bucketTimeline, isAppRunningByBucket, SMOOTHING_WINDOW);
-        mouseByBucket = SmoothBuckets(mouseByBucket, bucketTimeline, isAppRunningByBucket, SMOOTHING_WINDOW);
-
-        var keyboardSeries = new LineSeries { Title = "Keyboard Inputs (Keystrokes)", StrokeThickness = 2 };
-        var mouseSeries = new LineSeries { Title = "Mouse Inputs (Clicks + Movement)", StrokeThickness = 2 };
-
-        foreach (var bucket in bucketTimeline)
+        foreach (var device in devices)
         {
-            var x = DateTimeAxis.ToDouble(bucket);
-            keyboardByBucket.TryGetValue(bucket, out var keyboardValue);
-            mouseByBucket.TryGetValue(bucket, out var mouseValue);
+            var deviceSnapshots = snapshots.Where(s => s.DeviceId == device.DeviceId).ToList();
+            if (deviceSnapshots.Count == 0)
+                continue;
 
-            keyboardSeries.Points.Add(new DataPoint(x, keyboardValue));
-            mouseSeries.Points.Add(new DataPoint(x, mouseValue));
+            var valuesByBucket = BuildBucketMetric(
+                deviceSnapshots,
+                from,
+                to,
+                GetActivityValueSelector(device.DeviceType),
+                isAppRunningByBucket,
+                bucketMinutes
+            );
+
+            valuesByBucket = SmoothBuckets(valuesByBucket, bucketTimeline, isAppRunningByBucket, SMOOTHING_WINDOW);
+            if (valuesByBucket.Values.All(value => value <= 0))
+                continue;
+
+            var series = new LineSeries
+            {
+                Title = device.DeviceName,
+                StrokeThickness = 2,
+                Color = colorsByDevice.TryGetValue(device.DeviceId, out var color) ? color : OxyColors.Automatic,
+            };
+
+            AddPositiveActivityPoints(series, bucketTimeline, valuesByBucket);
+
+            model.Series.Add(series);
         }
 
-        model.Series.Add(keyboardSeries);
-        model.Series.Add(mouseSeries);
-
         return model;
+    }
+
+    private static void AddPositiveActivityPoints(
+        LineSeries series,
+        IReadOnlyList<DateTime> bucketTimeline,
+        IReadOnlyDictionary<DateTime, double> valuesByBucket
+    )
+    {
+        var hasOpenSegment = false;
+        for (var i = 0; i < bucketTimeline.Count; i++)
+        {
+            var bucket = bucketTimeline[i];
+            valuesByBucket.TryGetValue(bucket, out var value);
+            var shouldPlot = value > 0 || HasPositiveNeighbor(bucketTimeline, valuesByBucket, i);
+            if (!shouldPlot)
+            {
+                if (hasOpenSegment)
+                {
+                    series.Points.Add(DataPoint.Undefined);
+                    hasOpenSegment = false;
+                }
+
+                continue;
+            }
+
+            series.Points.Add(new DataPoint(DateTimeAxis.ToDouble(bucket), value));
+            hasOpenSegment = true;
+        }
+    }
+
+    private static bool HasPositiveNeighbor(
+        IReadOnlyList<DateTime> bucketTimeline,
+        IReadOnlyDictionary<DateTime, double> valuesByBucket,
+        int index
+    )
+    {
+        if (index > 0 && valuesByBucket.TryGetValue(bucketTimeline[index - 1], out var previous) && previous > 0)
+            return true;
+
+        return index + 1 < bucketTimeline.Count
+            && valuesByBucket.TryGetValue(bucketTimeline[index + 1], out var next)
+            && next > 0;
+    }
+
+    private static Func<ActivitySnapshot, double> GetActivityValueSelector(DeviceTypes deviceType) =>
+        deviceType == DeviceTypes.Keyboard
+            ? snapshot => snapshot.Keystrokes
+            : snapshot => snapshot.MouseClicks + snapshot.MouseMovementSeconds;
+
+    /// <summary>
+    /// Resolves the first timestamp that should influence chart density and bucket generation.
+    /// </summary>
+    private static DateTime? ResolveChartStart(
+        IReadOnlyCollection<ActivitySnapshot> snapshots,
+        IReadOnlyCollection<DeviceEvent> lifecycleEvents,
+        DateTime? from
+    )
+    {
+        if (from.HasValue)
+            return from.Value;
+
+        var firstSnapshotMinute = snapshots.Select(s => s.Minute).DefaultIfEmpty().Min();
+        var firstLifecycleMinute = lifecycleEvents.Select(e => e.EventTime).DefaultIfEmpty().Min();
+
+        var inferredStart = MinNonDefault(firstSnapshotMinute, firstLifecycleMinute);
+        return inferredStart == default ? null : inferredStart;
     }
 
     /// <summary>
     /// Builds the full bucket timeline that the chart should render for the selected range.
     /// </summary>
-    private static List<DateTime> BuildBucketTimeline(
-        IEnumerable<ActivitySnapshot> snapshots,
-        IEnumerable<DeviceEvent> lifecycleEvents,
-        DateTime? from,
-        DateTime to,
-        int bucketMinutes
-    )
+    private static List<DateTime> BuildBucketTimeline(DateTime? chartStart, DateTime to, int bucketMinutes)
     {
-        var firstSnapshotMinute = snapshots.Select(s => s.Minute).DefaultIfEmpty().Min();
-        var firstLifecycleMinute = lifecycleEvents.Select(e => e.EventTime).DefaultIfEmpty().Min();
+        if (!chartStart.HasValue)
+            return [];
 
-        var inferredStart = MinNonDefault(firstSnapshotMinute, firstLifecycleMinute);
-        var start = ToBucketStart(from ?? inferredStart, bucketMinutes);
+        var start = ToBucketStart(chartStart.Value, bucketMinutes);
         var end = ToBucketStart(to, bucketMinutes);
 
         if (start == default || end < start)
@@ -165,7 +225,7 @@ internal static class DashboardActivityChartBuilder
     /// Aggregates one metric into chart buckets and zeroes values while the app is not running.
     /// </summary>
     private static Dictionary<DateTime, double> BuildBucketMetric(
-        IEnumerable<ActivitySnapshot> snapshots,
+        IReadOnlyCollection<ActivitySnapshot> snapshots,
         DateTime? from,
         DateTime to,
         Func<ActivitySnapshot, double> selector,
@@ -200,15 +260,16 @@ internal static class DashboardActivityChartBuilder
     /// </summary>
     private static DateTime ToBucketStart(DateTime minute, int bucketMinutes)
     {
-        var normalizedMinute = minute.Minute / bucketMinutes * bucketMinutes;
-        return new DateTime(minute.Year, minute.Month, minute.Day, minute.Hour, normalizedMinute, 0, minute.Kind);
+        var bucketTicks = TimeSpan.FromMinutes(bucketMinutes).Ticks;
+        var normalizedTicks = minute.Ticks / bucketTicks * bucketTicks;
+        return new DateTime(normalizedTicks, minute.Kind);
     }
 
     /// <summary>
     /// Reconstructs app-running intervals from AppStarted/AppEnded lifecycle events.
     /// </summary>
     private static IReadOnlyList<(DateTime Start, DateTime End)> BuildAppRunningIntervals(
-        IEnumerable<DeviceEvent> lifecycleEvents,
+        IReadOnlyCollection<DeviceEvent> lifecycleEvents,
         DateTime chartEnd
     )
     {

@@ -11,49 +11,39 @@ namespace KeyPulse.ViewModels.Dashboard;
 /// </summary>
 internal static class DashboardPieChartBuilder
 {
+    private const string TrackerFormat =
+        "{Label}\n"
+        + "{StatusLine}"
+        + "Connected Time: {ConnectedTimeDisplay}\n"
+        + "Share: {ShareDisplay}\n"
+        + "{ConnectionTimeLine}"
+        + "{GroupedDevicesText}";
+
     /// <summary>
     /// Creates a connection-time-share pie model for a device category (keyboard or mouse).
     /// </summary>
     public static PlotModel BuildConnectionTimePiePlot(
         string title,
         IEnumerable<Device> devices,
-        IReadOnlyDictionary<string, double> connectionMinutesByDevice
+        IReadOnlyDictionary<string, double> connectionMinutesByDevice,
+        IReadOnlyDictionary<string, OxyColor> colorsByDevice
     )
     {
         var model = new PlotModel { Title = title };
 
+        // Build all candidate slices (one per device with non-zero connection time),
+        // sorted deterministically so equal values don't visibly flip between refreshes.
         var slices = devices
-            .Select(d =>
-            {
-                connectionMinutesByDevice.TryGetValue(d.DeviceId, out var connectionMinutes);
-                return new DeviceConnectionTimeSlice
-                {
-                    Name = d.DeviceName,
-                    Value = connectionMinutes,
-                    ConnectedTimeDisplay = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(connectionMinutes)),
-                    StatusTag = d.IsConnected ? "Connected" : "Disconnected",
-                    IsConnected = d.IsConnected,
-                    ConnectionTimeLabel = d.IsConnected ? "Last connected" : "Last seen",
-                    ConnectionTimeDisplay = d.IsConnected ? d.LastConnectedRelative : d.LastSeenRelative,
-                };
-            })
+            .Select(d => CreateDeviceSlice(d, connectionMinutesByDevice, colorsByDevice))
             .Where(s => s.Value > 0)
             .OrderByDescending(s => s.Value)
+            .ThenBy(s => s.Label, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(s => s.DeviceId, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
         if (slices.Count == 0)
         {
-            model.Series.Add(
-                new PieSeries
-                {
-                    Diameter = 0.95,
-                    StrokeThickness = 1,
-                    AngleSpan = 360,
-                    StartAngle = 0,
-                    TrackerFormatString = "No connected time data yet.",
-                    Slices = { new PieSlice("No data", 1) },
-                }
-            );
+            model.Series.Add(BuildEmptyPieSeries());
             return model;
         }
 
@@ -61,37 +51,86 @@ internal static class DashboardPieChartBuilder
         foreach (var slice in slices)
             slice.ShareDisplay = total > 0 ? $"{slice.Value / total:P1}" : "N/A";
 
+        // Split visible vs. "Others"-grouped slices using the palette thresholds.
+        var visibleSlices = new List<DashboardPieSlice>();
+        var otherSlices = new List<DashboardPieSlice>();
+        for (var i = 0; i < slices.Count; i++)
+        {
+            var slice = slices[i];
+            var share = total > 0 ? slice.Value / total : 0;
+            var isVisible =
+                i < DashboardDeviceColorPalette.MaxColoredDevicesPerType
+                && share > DashboardDeviceColorPalette.OthersShareThreshold;
+
+            (isVisible ? visibleSlices : otherSlices).Add(slice);
+        }
+
+        if (otherSlices.Count > 0)
+            visibleSlices.Add(CreateOthersSlice(otherSlices, total));
+
         var series = new PieSeries
         {
             Diameter = 0.95,
             StrokeThickness = 1,
             AngleSpan = 360,
             StartAngle = 0,
-            TrackerFormatString =
-                "{Label}\n"
-                + "Status: {StatusTag}\n"
-                + "Connected Time: {ConnectedTimeDisplay}\n"
-                + "Share: {ShareDisplay}\n"
-                + "{ConnectionTimeLabel}: {ConnectionTimeDisplay}",
+            TrackerFormatString = TrackerFormat,
         };
-
-        foreach (var slice in slices)
-        {
-            var pieSlice = new DashboardPieSlice(slice.Name, slice.Value)
-            {
-                ConnectedTimeDisplay = slice.ConnectedTimeDisplay,
-                ShareDisplay = slice.ShareDisplay,
-                StatusTag = slice.StatusTag,
-                IsConnected = slice.IsConnected,
-                ConnectionTimeLabel = slice.ConnectionTimeLabel,
-                ConnectionTimeDisplay = slice.ConnectionTimeDisplay,
-            };
-            series.Slices.Add(pieSlice);
-        }
+        foreach (var slice in visibleSlices)
+            series.Slices.Add(slice);
 
         model.Series.Add(series);
         return model;
     }
+
+    private static DashboardPieSlice CreateDeviceSlice(
+        Device device,
+        IReadOnlyDictionary<string, double> connectionMinutesByDevice,
+        IReadOnlyDictionary<string, OxyColor> colorsByDevice
+    )
+    {
+        connectionMinutesByDevice.TryGetValue(device.DeviceId, out var connectionMinutes);
+        var color = colorsByDevice.TryGetValue(device.DeviceId, out var c) ? c : OxyColors.Automatic;
+
+        return new DashboardPieSlice(device.DeviceName, connectionMinutes)
+        {
+            DeviceId = device.DeviceId,
+            Fill = color,
+            ConnectedTimeDisplay = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(connectionMinutes)),
+            IsConnected = device.IsConnected,
+            ConnectionTimeLabel = device.IsConnected ? "Last connected" : "Last seen",
+            ConnectionTimeDisplay = device.IsConnected ? device.LastConnectedRelative : device.LastSeenRelative,
+        };
+    }
+
+    private static DashboardPieSlice CreateOthersSlice(IReadOnlyList<DashboardPieSlice> otherSlices, double total)
+    {
+        var otherValue = otherSlices.Sum(s => s.Value);
+        var groupedDevicesText =
+            $"Grouped Devices: {otherSlices.Count}\n"
+            + string.Join("\n", otherSlices.Select(s => $"- {s.Label}"));
+
+        return new DashboardPieSlice("Others", otherValue)
+        {
+            DeviceId = "",
+            Fill = DashboardDeviceColorPalette.OthersColor,
+            ConnectedTimeDisplay = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(otherValue)),
+            ShareDisplay = total > 0 ? $"{otherValue / total:P1}" : "N/A",
+            GroupedDevicesText = groupedDevicesText,
+            IsOthers = true,
+        };
+    }
+
+    private static PieSeries BuildEmptyPieSeries() =>
+        new()
+        {
+            Diameter = 0.95,
+            StrokeThickness = 1,
+            AngleSpan = 360,
+            StartAngle = 0,
+            TrackerFormatString = "No connected time data yet.",
+            Slices = { new PieSlice("No data", 1) },
+        };
 
     /// <summary>
     /// Creates an interaction controller that shows trackers on hover.
@@ -118,34 +157,29 @@ internal static class DashboardPieChartBuilder
                 onSliceHovered(slice);
         };
     }
-
-    /// <summary>
-    /// Internal mutable slice view model used while preparing pie series data.
-    /// </summary>
-    private sealed class DeviceConnectionTimeSlice
-    {
-        public required string Name { get; init; }
-        public double Value { get; init; }
-        public required string ConnectedTimeDisplay { get; init; }
-        public string ShareDisplay { get; set; } = "N/A";
-        public required string StatusTag { get; init; }
-        public required bool IsConnected { get; init; }
-        public required string ConnectionTimeLabel { get; init; }
-        public required string ConnectionTimeDisplay { get; init; }
-    }
 }
 
 /// <summary>
-/// Tracker payload attached to each pie slice for rich hover text.
+/// Tracker payload attached to each pie slice for rich hover text and the bound hover preview.
 /// </summary>
 internal sealed class DashboardPieSlice(string label, double value) : PieSlice(label, value)
 {
+    public string DeviceId { get; init; } = "";
     public string ConnectedTimeDisplay { get; init; } = "N/A";
-    public string ShareDisplay { get; init; } = "N/A";
-    public string StatusTag { get; init; } = "N/A";
+    public string ShareDisplay { get; set; } = "N/A";
     public bool IsConnected { get; init; }
-    public string ConnectionTimeLabel { get; init; } = "N/A";
-    public string ConnectionTimeDisplay { get; init; } = "N/A";
+    public string ConnectionTimeLabel { get; init; } = "";
+    public string ConnectionTimeDisplay { get; init; } = "";
+    public string GroupedDevicesText { get; init; } = "";
+    public bool IsOthers { get; init; }
+
+    public string StatusTag => IsOthers ? "" : IsConnected ? "Connected" : "Disconnected";
+
+    // Tracker template placeholders. Kept as derived strings so the OxyPlot tracker popup
+    // can hide the whole line for "Others" slices and disconnected metadata.
+    public string StatusLine => IsOthers ? "" : $"Status: {StatusTag}\n";
+    public string ConnectionTimeLine =>
+        IsOthers || string.IsNullOrEmpty(ConnectionTimeLabel) ? "" : $"{ConnectionTimeLabel}: {ConnectionTimeDisplay}\n";
 }
 
 /// <summary>
@@ -159,6 +193,7 @@ internal sealed class DashboardHoverPreview : ObservableObject
     private string _connectedTimeDisplay = "Connected Time: N/A";
     private string _shareDisplay = "Share: N/A";
     private string _connectionText = "Last seen: N/A";
+    private string _groupedDevicesText = "";
 
     public string DeviceName
     {
@@ -220,16 +255,37 @@ internal sealed class DashboardHoverPreview : ObservableObject
         }
     }
 
+    public string GroupedDevicesText
+    {
+        get => _groupedDevicesText;
+        private set
+        {
+            _groupedDevicesText = value;
+            OnPropertyChanged();
+        }
+    }
+
     /// <summary>
     /// Copies values from the hovered pie slice into the preview state.
     /// </summary>
     public void UpdateFromSlice(DashboardPieSlice slice)
     {
         DeviceName = slice.Label;
+        ShareDisplay = $"Share: {slice.ShareDisplay}";
+        GroupedDevicesText = slice.GroupedDevicesText;
+
+        if (slice.IsOthers)
+        {
+            StatusTag = "";
+            StatusBrush = Brushes.Gray;
+            ConnectedTimeDisplay = $"Connected Time: {slice.ConnectedTimeDisplay}";
+            ConnectionText = "";
+            return;
+        }
+
         StatusTag = slice.StatusTag;
         StatusBrush = slice.IsConnected ? Brushes.ForestGreen : Brushes.IndianRed;
         ConnectedTimeDisplay = $"Connected Time: {slice.ConnectedTimeDisplay}";
-        ShareDisplay = $"Share: {slice.ShareDisplay}";
         ConnectionText = $"{slice.ConnectionTimeLabel}: {slice.ConnectionTimeDisplay}";
     }
 }

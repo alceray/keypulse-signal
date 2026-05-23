@@ -1,4 +1,4 @@
-﻿using System.Collections.Specialized;
+﻿﻿using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -82,6 +82,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
     public string HoveredConnectionText => _hoverPreview.ConnectionText;
 
+    public string HoveredGroupedDevicesText => _hoverPreview.GroupedDevicesText;
+
     public int ConnectedDevices
     {
         get => _connectedDevices;
@@ -153,6 +155,9 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private string _rangeDisplayText = "";
     private string _selectedRange = DashboardRangeResolver.DefaultRange;
     private readonly DashboardHoverPreview _hoverPreview = new();
+    private readonly DashboardDeviceColorPalette _deviceColorPalette = new();
+    private int _refreshScheduled;
+    private int _refreshRunning;
 
     public DashboardViewModel(
         DataService dataService,
@@ -204,6 +209,9 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             case nameof(DashboardHoverPreview.ConnectionText):
                 OnPropertyChanged(nameof(HoveredConnectionText));
                 break;
+            case nameof(DashboardHoverPreview.GroupedDevicesText):
+                OnPropertyChanged(nameof(HoveredGroupedDevicesText));
+                break;
         }
     }
 
@@ -225,9 +233,9 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
                 device.PropertyChanged -= Device_PropertyChanged;
     }
 
-    private void UpdateConnectedDevicesCount()
+    private void UpdateConnectedDevicesCount(DataService.DashboardDeviceQueryResult dashboardDevices)
     {
-        var connectedDevices = _usbMonitorService.DeviceList.Where(d => d.IsConnected).ToList();
+        var connectedDevices = dashboardDevices.Devices.Where(d => d.IsConnected).ToList();
         ConnectedDevices = connectedDevices.Count;
 
         var activeKeyboards = connectedDevices.Count(d => d.DeviceType == DeviceTypes.Keyboard);
@@ -239,76 +247,127 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
     /// <summary>
     /// Rebuilds dashboard metrics and chart models for the current range and chart settings.
+    /// Database queries and chart construction run on a background thread; only the final
+    /// property assignments are marshaled back to the UI thread. Bursty calls are coalesced.
     /// </summary>
-    public void Refresh()
+    private void Refresh()
+    {
+        // Mark a refresh as pending; if one is already running, it will pick up the latest state when it finishes.
+        Interlocked.Exchange(ref _refreshScheduled, 1);
+
+        // Only one background refresh in flight at a time.
+        if (Interlocked.CompareExchange(ref _refreshRunning, 1, 0) != 0)
+            return;
+
+        _ = Task.Run(RunRefreshLoopAsync);
+    }
+
+    private async Task RunRefreshLoopAsync()
+    {
+        try
+        {
+            while (Interlocked.Exchange(ref _refreshScheduled, 0) == 1)
+            {
+                await RefreshOnceAsync().ConfigureAwait(false);
+            }
+        }
+        finally
+        {
+            Interlocked.Exchange(ref _refreshRunning, 0);
+
+            // If a request landed between the last check and clearing the running flag,
+            // restart the loop so we don't drop the latest refresh.
+            if (Interlocked.CompareExchange(ref _refreshScheduled, 0, 0) == 1
+                && Interlocked.CompareExchange(ref _refreshRunning, 1, 0) == 0)
+            {
+                _ = Task.Run(RunRefreshLoopAsync);
+            }
+        }
+    }
+
+    private async Task RefreshOnceAsync()
     {
         var now = DateTime.Now;
         var from = DashboardRangeResolver.ResolveRangeStart(SelectedRange, now);
         var to = now;
-        RangeDisplayText = TimeFormatter.FormatDateRange(from, to);
 
-        var snapshots = _dataService.GetActivitySnapshots(from: from, to: to).ToList();
-        var dashboardEvents = _dataService.GetDashboardEvents(to);
-        var events = dashboardEvents.DeviceEvents;
-
-        var devices = _usbMonitorService.DeviceList.ToList();
-
-        UpdateConnectedDevicesCount();
-        TopKeyboardsSummary = BuildTopConnectionSecondsSummary(devices, DeviceTypes.Keyboard);
-        TopMiceSummary = BuildTopConnectionSecondsSummary(devices, DeviceTypes.Mouse);
+        // Heavy work off the UI thread.
+        var dashboardDevices = _dataService.GetDashboardDevices();
+        var devices = dashboardDevices.Devices;
+        var snapshots = _dataService.GetActivitySnapshots(from: from, to: to);
+        var dashboardEvents = _dataService.GetDashboardEvents(from, to);
 
         var connectionMinutesByDevice = DashboardConnectionTimeCalculator.ComputeConnectionMinutesByDevice(
-            events,
+            dashboardEvents.DeviceEvents,
             from,
             to
         );
+        var colorsByDevice = _deviceColorPalette.GetColorsForDevices(devices, connectionMinutesByDevice);
 
         var keyboardModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
             "Keyboards",
             devices.Where(d => d.DeviceType == DeviceTypes.Keyboard),
-            connectionMinutesByDevice
+            connectionMinutesByDevice,
+            colorsByDevice
         );
         var mouseModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
             "Mice",
             devices.Where(d => d.DeviceType == DeviceTypes.Mouse),
-            connectionMinutesByDevice
+            connectionMinutesByDevice,
+            colorsByDevice
         );
 
         DashboardPieChartBuilder.AttachTrackerPreview(keyboardModel, _hoverPreview.UpdateFromSlice);
         DashboardPieChartBuilder.AttachTrackerPreview(mouseModel, _hoverPreview.UpdateFromSlice);
 
-        KeyboardConnectionTimePiePlot = keyboardModel;
-        MouseConnectionTimePiePlot = mouseModel;
-        InputActivityPlot = DashboardActivityChartBuilder.BuildInputActivityPlot(
+        var activityModel = DashboardActivityChartBuilder.BuildInputActivityPlot(
             snapshots,
+            devices,
             dashboardEvents.AppLifecycleEvents,
             from,
-            to
+            to,
+            colorsByDevice
         );
 
-        LastUpdatedText = $"Last updated: {now.ToString(AppConstants.Date.DateFormat)}";
+        var topKeyboards = BuildTopByConnectionSecondsSummary(dashboardDevices.TopKeyboardsByConnectionSeconds);
+        var topMice = BuildTopByConnectionSecondsSummary(dashboardDevices.TopMiceByConnectionSeconds);
+        var rangeDisplay = TimeFormatter.FormatDateRange(from, to);
+        var lastUpdated = $"Last updated: {now.ToString(AppConstants.Date.DateFormat)}";
+
+        // Apply results on the UI thread.
+        var dispatcher = System.Windows.Application.Current?.Dispatcher;
+        if (dispatcher == null)
+            return;
+
+        await dispatcher
+            .InvokeAsync(() =>
+            {
+                RangeDisplayText = rangeDisplay;
+                UpdateConnectedDevicesCount(dashboardDevices);
+                TopKeyboardsSummary = topKeyboards;
+                TopMiceSummary = topMice;
+                KeyboardConnectionTimePiePlot = keyboardModel;
+                MouseConnectionTimePiePlot = mouseModel;
+                InputActivityPlot = activityModel;
+                LastUpdatedText = lastUpdated;
+            });
     }
 
-    private static string BuildTopConnectionSecondsSummary(IEnumerable<Device> devices, DeviceTypes type)
+    /// <summary>
+    /// Builds the top-3 all-time summary from the persisted connection-time snapshot.
+    /// </summary>
+    private static string BuildTopByConnectionSecondsSummary(IReadOnlyList<Device> devices)
     {
-        var ranked = devices
-            .Where(d => d.DeviceType == type)
-            .OrderByDescending(d => d.TotalConnectionSeconds)
-            .ThenBy(d => d.DeviceName)
-            .Take(3)
-            .ToList();
-
         var lines = new List<string>(3);
         for (var i = 0; i < 3; i++)
         {
-            if (i >= ranked.Count)
+            if (i >= devices.Count || devices[i].TotalConnectionSeconds <= 0)
             {
                 lines.Add($"{i + 1}. -");
                 continue;
             }
 
-            var device = ranked[i];
-            lines.Add($"{i + 1}. {device.DeviceName}");
+            lines.Add($"{i + 1}. {devices[i].DeviceName}");
         }
 
         return string.Join("\n", lines);

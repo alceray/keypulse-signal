@@ -32,14 +32,14 @@
 
         <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
           <StackPanel>
-            <TextBlock Text="Top Keyboards by Connected Time" FontWeight="Bold" />
+            <TextBlock Text="Most Connected Keyboards of All Time" FontWeight="Bold" />
             <TextBlock Text="{Binding TopKeyboardsSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
           </StackPanel>
         </Border>
 
         <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
           <StackPanel>
-            <TextBlock Text="Top Mice by Connected Time" FontWeight="Bold" />
+            <TextBlock Text="Most Connected Mice of All Time" FontWeight="Bold" />
             <TextBlock Text="{Binding TopMiceSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
           </StackPanel>
         </Border>

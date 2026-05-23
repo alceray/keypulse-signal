@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿﻿using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using KeyPulse.Configuration;
@@ -19,6 +19,13 @@ public class DataService
     {
         public required IReadOnlyList<DeviceEvent> DeviceEvents { get; init; }
         public required IReadOnlyList<DeviceEvent> AppLifecycleEvents { get; init; }
+    }
+
+    public sealed class DashboardDeviceQueryResult
+    {
+        public required IReadOnlyList<Device> Devices { get; init; }
+        public required IReadOnlyList<Device> TopKeyboardsByConnectionSeconds { get; init; }
+        public required IReadOnlyList<Device> TopMiceByConnectionSeconds { get; init; }
     }
 
     public DataService(IDbContextFactory<ApplicationDbContext> factory, DailyStatsService dailyStats)
@@ -119,6 +126,41 @@ public class DataService
         return ctx.Devices.ToList().AsReadOnly();
     }
 
+    public DashboardDeviceQueryResult GetDashboardDevices()
+    {
+        using var ctx = _factory.CreateDbContext();
+        var devices = ctx
+            .Devices
+            .OrderBy(d => d.DeviceType)
+            .ThenBy(d => d.DeviceName)
+            .ToList();
+
+        return new DashboardDeviceQueryResult
+        {
+            Devices = devices.AsReadOnly(),
+            TopKeyboardsByConnectionSeconds = GetTopDevicesByConnectionSeconds(
+                    devices,
+                    DeviceTypes.Keyboard
+                )
+                .AsReadOnly(),
+            TopMiceByConnectionSeconds = GetTopDevicesByConnectionSeconds(devices, DeviceTypes.Mouse)
+                .AsReadOnly(),
+        };
+    }
+
+    private static List<Device> GetTopDevicesByConnectionSeconds(
+        IEnumerable<Device> devices,
+        DeviceTypes deviceType
+    )
+    {
+        return devices
+            .Where(d => d.DeviceType == deviceType)
+            .OrderByDescending(d => d.TotalConnectionSeconds)
+            .ThenBy(d => d.DeviceName)
+            .Take(3)
+            .ToList();
+    }
+
     public void SaveDevice(Device device)
     {
         try
@@ -144,21 +186,77 @@ public class DataService
     }
 
     /// <summary>
-    /// Returns dashboard-ready event sets ordered up to the requested end time.
+    /// Returns dashboard-ready event sets bounded to the requested range.
+    /// When <paramref name="from"/> is provided, includes pre-range seed events so that
+    /// connection-state and app-running reconstruction is correct: the last opening event
+    /// per device before <paramref name="from"/>, and the last AppStarted before <paramref name="from"/>.
     /// </summary>
-    public DashboardEventQueryResult GetDashboardEvents(DateTime to)
+    public DashboardEventQueryResult GetDashboardEvents(DateTime? from, DateTime to)
     {
         using var ctx = _factory.CreateDbContext();
 
-        var allEvents = ctx
-            .DeviceEvents.Where(e => e.EventTime <= to)
+        var inRange = ctx
+            .DeviceEvents.Where(e => e.EventTime <= to && (!from.HasValue || e.EventTime >= from.Value))
             .OrderBy(e => e.EventTime)
             .ThenBy(e => e.DeviceEventId)
             .ToList();
 
-        var deviceEvents = allEvents.Where(e => e.DeviceId != "" && !e.EventType.IsAppEvent()).ToList();
-        var appLifecycleEvents = allEvents
-            .Where(e => e.EventType == EventTypes.AppStarted || e.EventType == EventTypes.AppEnded)
+        var seedDeviceEvents = new List<DeviceEvent>();
+        var seedAppEvents = new List<DeviceEvent>();
+
+        if (from.HasValue)
+        {
+            var fromValue = from.Value;
+
+            // Seed: last opening event per device strictly before `from`, but only if no closing event
+            // has occurred between that opening and `from` (i.e. the device was still connected at `from`).
+            // Single query: take the latest opening-or-closing event before `from` for each device, then
+            // keep only those whose latest pre-range state was open.
+            var preRangeLatestPerDevice = ctx
+                .DeviceEvents.Where(e =>
+                    e.EventTime < fromValue
+                    && e.DeviceId != ""
+                    && (
+                        e.EventType == EventTypes.ConnectionStarted
+                        || e.EventType == EventTypes.Connected
+                        || e.EventType == EventTypes.ConnectionEnded
+                        || e.EventType == EventTypes.Disconnected
+                    )
+                )
+                .GroupBy(e => e.DeviceId)
+                .Select(g => g.OrderByDescending(e => e.EventTime).ThenByDescending(e => e.DeviceEventId).First())
+                .ToList();
+
+            seedDeviceEvents.AddRange(
+                preRangeLatestPerDevice.Where(e =>
+                    e.EventType == EventTypes.ConnectionStarted || e.EventType == EventTypes.Connected
+                )
+            );
+
+            // Seed: last AppStarted strictly before `from` if app was still running at `from`.
+            var lastAppLifecycle = ctx
+                .DeviceEvents.Where(e =>
+                    e.EventTime < fromValue
+                    && (e.EventType == EventTypes.AppStarted || e.EventType == EventTypes.AppEnded)
+                )
+                .OrderByDescending(e => e.EventTime)
+                .ThenByDescending(e => e.DeviceEventId)
+                .FirstOrDefault();
+
+            if (lastAppLifecycle != null && lastAppLifecycle.EventType == EventTypes.AppStarted)
+                seedAppEvents.Add(lastAppLifecycle);
+        }
+
+        var deviceEvents = seedDeviceEvents
+            .Concat(inRange.Where(e => e.DeviceId != "" && !e.EventType.IsAppEvent()))
+            .OrderBy(e => e.EventTime)
+            .ThenBy(e => e.DeviceEventId)
+            .ToList();
+
+        var appLifecycleEvents = seedAppEvents
+            .Concat(inRange.Where(e => e.EventType == EventTypes.AppStarted || e.EventType == EventTypes.AppEnded))
+            .OrderBy(e => e.EventTime)
+            .ThenBy(e => e.DeviceEventId)
             .ToList();
 
         return new DashboardEventQueryResult
