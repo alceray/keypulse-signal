@@ -368,3 +368,6 @@ FodyWeavers.xsd
 
 # Inno Setup installer output (compiled .exe artifacts)
 installer/output/
+
+# Junie working folder
+.junie
