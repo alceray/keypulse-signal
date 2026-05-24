@@ -11,13 +11,13 @@ namespace KeyPulse.ViewModels.Dashboard;
 /// </summary>
 internal static class DashboardPieChartBuilder
 {
-    private const string TrackerFormat =
+    private const string TRACKER_FORMAT =
         "{Label}\n"
         + "{StatusLine}"
-        + "Connected Time: {ConnectedTimeDisplay}\n"
-        + "Share: {ShareDisplay}\n"
-        + "{ConnectionTimeLine}"
-        + "{GroupedDevicesText}";
+        + "Connected Time: {ConnectedTime}\n"
+        + "Percentage: {Percentage}\n"
+        + "{LastSeenOrConnectedLine}"
+        + "{GroupedDevices}";
 
     /// <summary>
     /// Creates a connection-time-share pie model for a device category (keyboard or mouse).
@@ -49,7 +49,7 @@ internal static class DashboardPieChartBuilder
 
         var total = slices.Sum(s => s.Value);
         foreach (var slice in slices)
-            slice.ShareDisplay = total > 0 ? $"{slice.Value / total:P1}" : "N/A";
+            slice.Percentage = total > 0 ? $"{slice.Value / total:P1}" : "N/A";
 
         // Split visible vs. "Others"-grouped slices using the palette thresholds.
         var visibleSlices = new List<DashboardPieSlice>();
@@ -74,7 +74,7 @@ internal static class DashboardPieChartBuilder
             StrokeThickness = 1,
             AngleSpan = 360,
             StartAngle = 0,
-            TrackerFormatString = TrackerFormat,
+            TrackerFormatString = TRACKER_FORMAT,
         };
         foreach (var slice in visibleSlices)
             series.Slices.Add(slice);
@@ -96,27 +96,25 @@ internal static class DashboardPieChartBuilder
         {
             DeviceId = device.DeviceId,
             Fill = color,
-            ConnectedTimeDisplay = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(connectionMinutes)),
+            ConnectedTime = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(connectionMinutes)),
             IsConnected = device.IsConnected,
-            ConnectionTimeLabel = device.IsConnected ? "Last connected" : "Last seen",
-            ConnectionTimeDisplay = device.IsConnected ? device.LastConnectedRelative : device.LastSeenRelative,
+            LastSeenOrConnectedLabel = device.IsConnected ? "Last connected" : "Last seen",
+            LastSeenOrConnectedValue = device.IsConnected ? device.LastConnectedRelative : device.LastSeenRelative,
         };
     }
 
     private static DashboardPieSlice CreateOthersSlice(IReadOnlyList<DashboardPieSlice> otherSlices, double total)
     {
         var otherValue = otherSlices.Sum(s => s.Value);
-        var groupedDevicesText =
-            $"Grouped Devices: {otherSlices.Count}\n"
-            + string.Join("\n", otherSlices.Select(s => $"- {s.Label}"));
+        var groupedDevices = "Grouped Devices:\n" + string.Join("\n", otherSlices.Select(s => $"- {s.Label}"));
 
-        return new DashboardPieSlice("Others", otherValue)
+        return new DashboardPieSlice($"Others ({otherSlices.Count})", otherValue)
         {
             DeviceId = "",
             Fill = DashboardDeviceColorPalette.OthersColor,
-            ConnectedTimeDisplay = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(otherValue)),
-            ShareDisplay = total > 0 ? $"{otherValue / total:P1}" : "N/A",
-            GroupedDevicesText = groupedDevicesText,
+            ConnectedTime = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(otherValue)),
+            Percentage = total > 0 ? $"{otherValue / total:P1}" : "N/A",
+            GroupedDevices = groupedDevices,
             IsOthers = true,
         };
     }
@@ -139,8 +137,8 @@ internal static class DashboardPieChartBuilder
     {
         var controller = new PlotController();
         controller.UnbindAll();
-        controller.Bind(new OxyMouseEnterGesture(OxyModifierKeys.None), PlotCommands.HoverTrack);
-        controller.Bind(new OxyMouseDownGesture(OxyMouseButton.Left, OxyModifierKeys.None, 1), PlotCommands.HoverTrack);
+        controller.Bind(new OxyMouseEnterGesture(), PlotCommands.HoverTrack);
+        controller.Bind(new OxyMouseDownGesture(OxyMouseButton.Left), PlotCommands.HoverTrack);
         return controller;
     }
 
@@ -165,21 +163,26 @@ internal static class DashboardPieChartBuilder
 internal sealed class DashboardPieSlice(string label, double value) : PieSlice(label, value)
 {
     public string DeviceId { get; init; } = "";
-    public string ConnectedTimeDisplay { get; init; } = "N/A";
-    public string ShareDisplay { get; set; } = "N/A";
+    public string ConnectedTime { get; init; } = "N/A";
+    public string Percentage { get; set; } = "N/A";
     public bool IsConnected { get; init; }
-    public string ConnectionTimeLabel { get; init; } = "";
-    public string ConnectionTimeDisplay { get; init; } = "";
-    public string GroupedDevicesText { get; init; } = "";
+    public string LastSeenOrConnectedLabel { get; init; } = "";
+    public string LastSeenOrConnectedValue { get; init; } = "";
+    public string GroupedDevices { get; init; } = "";
     public bool IsOthers { get; init; }
 
-    public string StatusTag => IsOthers ? "" : IsConnected ? "Connected" : "Disconnected";
+    public string StatusTag =>
+        IsOthers ? ""
+        : IsConnected ? "Connected"
+        : "Disconnected";
 
     // Tracker template placeholders. Kept as derived strings so the OxyPlot tracker popup
     // can hide the whole line for "Others" slices and disconnected metadata.
     public string StatusLine => IsOthers ? "" : $"Status: {StatusTag}\n";
-    public string ConnectionTimeLine =>
-        IsOthers || string.IsNullOrEmpty(ConnectionTimeLabel) ? "" : $"{ConnectionTimeLabel}: {ConnectionTimeDisplay}\n";
+    public string LastSeenOrConnectedLine =>
+        IsOthers || string.IsNullOrEmpty(LastSeenOrConnectedLabel)
+            ? ""
+            : $"{LastSeenOrConnectedLabel}: {LastSeenOrConnectedValue}\n";
 }
 
 /// <summary>
@@ -190,10 +193,10 @@ internal sealed class DashboardHoverPreview : ObservableObject
     private string _deviceName = "Hover a slice to inspect device metadata.";
     private string _statusTag = "Unknown";
     private Brush _statusBrush = Brushes.Gray;
-    private string _connectedTimeDisplay = "Connected Time: N/A";
-    private string _shareDisplay = "Share: N/A";
-    private string _connectionText = "Last seen: N/A";
-    private string _groupedDevicesText = "";
+    private string _connectedTime = "Connected Time: N/A";
+    private string _percentage = "Percentage: N/A";
+    private string _lastSeenOrConnected = "Last seen: N/A";
+    private string _groupedDevices = "";
 
     public string DeviceName
     {
@@ -225,42 +228,42 @@ internal sealed class DashboardHoverPreview : ObservableObject
         }
     }
 
-    public string ConnectedTimeDisplay
+    public string ConnectedTime
     {
-        get => _connectedTimeDisplay;
+        get => _connectedTime;
         private set
         {
-            _connectedTimeDisplay = value;
+            _connectedTime = value;
             OnPropertyChanged();
         }
     }
 
-    public string ShareDisplay
+    public string Percentage
     {
-        get => _shareDisplay;
+        get => _percentage;
         private set
         {
-            _shareDisplay = value;
+            _percentage = value;
             OnPropertyChanged();
         }
     }
 
-    public string ConnectionText
+    public string LastSeenOrConnected
     {
-        get => _connectionText;
+        get => _lastSeenOrConnected;
         private set
         {
-            _connectionText = value;
+            _lastSeenOrConnected = value;
             OnPropertyChanged();
         }
     }
 
-    public string GroupedDevicesText
+    public string GroupedDevices
     {
-        get => _groupedDevicesText;
+        get => _groupedDevices;
         private set
         {
-            _groupedDevicesText = value;
+            _groupedDevices = value;
             OnPropertyChanged();
         }
     }
@@ -271,21 +274,21 @@ internal sealed class DashboardHoverPreview : ObservableObject
     public void UpdateFromSlice(DashboardPieSlice slice)
     {
         DeviceName = slice.Label;
-        ShareDisplay = $"Share: {slice.ShareDisplay}";
-        GroupedDevicesText = slice.GroupedDevicesText;
+        Percentage = $"Percentage: {slice.Percentage}";
+        GroupedDevices = slice.GroupedDevices;
 
         if (slice.IsOthers)
         {
             StatusTag = "";
             StatusBrush = Brushes.Gray;
-            ConnectedTimeDisplay = $"Connected Time: {slice.ConnectedTimeDisplay}";
-            ConnectionText = "";
+            ConnectedTime = $"Connected Time: {slice.ConnectedTime}";
+            LastSeenOrConnected = "";
             return;
         }
 
         StatusTag = slice.StatusTag;
         StatusBrush = slice.IsConnected ? Brushes.ForestGreen : Brushes.IndianRed;
-        ConnectedTimeDisplay = $"Connected Time: {slice.ConnectedTimeDisplay}";
-        ConnectionText = $"{slice.ConnectionTimeLabel}: {slice.ConnectionTimeDisplay}";
+        ConnectedTime = $"Connected Time: {slice.ConnectedTime}";
+        LastSeenOrConnected = $"{slice.LastSeenOrConnectedLabel}: {slice.LastSeenOrConnectedValue}";
     }
 }

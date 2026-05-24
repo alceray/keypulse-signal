@@ -1,4 +1,4 @@
-﻿﻿using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -40,22 +40,22 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
-    public PlotModel KeyboardConnectionTimePiePlot
+    public PlotModel KeyboardPiePlot
     {
-        get => _keyboardConnectionTimePiePlot;
+        get => _keyboardPiePlot;
         private set
         {
-            _keyboardConnectionTimePiePlot = value;
+            _keyboardPiePlot = value;
             OnPropertyChanged();
         }
     }
 
-    public PlotModel MouseConnectionTimePiePlot
+    public PlotModel MousePiePlot
     {
-        get => _mouseConnectionTimePiePlot;
+        get => _mousePiePlot;
         private set
         {
-            _mouseConnectionTimePiePlot = value;
+            _mousePiePlot = value;
             OnPropertyChanged();
         }
     }
@@ -76,13 +76,13 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
     public Brush HoveredStatusBrush => _hoverPreview.StatusBrush;
 
-    public string HoveredConnectedTimeDisplay => _hoverPreview.ConnectedTimeDisplay;
+    public string HoveredConnectedTime => _hoverPreview.ConnectedTime;
 
-    public string HoveredShareDisplay => _hoverPreview.ShareDisplay;
+    public string HoveredPercentage => _hoverPreview.Percentage;
 
-    public string HoveredConnectionText => _hoverPreview.ConnectionText;
+    public string HoveredLastSeenOrConnected => _hoverPreview.LastSeenOrConnected;
 
-    public string HoveredGroupedDevicesText => _hoverPreview.GroupedDevicesText;
+    public string HoveredGroupedDevices => _hoverPreview.GroupedDevices;
 
     public int ConnectedDevices
     {
@@ -144,8 +144,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
-    private PlotModel _keyboardConnectionTimePiePlot = new();
-    private PlotModel _mouseConnectionTimePiePlot = new();
+    private PlotModel _keyboardPiePlot = new();
+    private PlotModel _mousePiePlot = new();
     private PlotModel _inputActivityPlot = new();
     private int _connectedDevices;
     private string _connectedDevicesBreakdown = "0 keyboards, 0 mice";
@@ -200,17 +200,17 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             case nameof(DashboardHoverPreview.StatusBrush):
                 OnPropertyChanged(nameof(HoveredStatusBrush));
                 break;
-            case nameof(DashboardHoverPreview.ConnectedTimeDisplay):
-                OnPropertyChanged(nameof(HoveredConnectedTimeDisplay));
+            case nameof(DashboardHoverPreview.ConnectedTime):
+                OnPropertyChanged(nameof(HoveredConnectedTime));
                 break;
-            case nameof(DashboardHoverPreview.ShareDisplay):
-                OnPropertyChanged(nameof(HoveredShareDisplay));
+            case nameof(DashboardHoverPreview.Percentage):
+                OnPropertyChanged(nameof(HoveredPercentage));
                 break;
-            case nameof(DashboardHoverPreview.ConnectionText):
-                OnPropertyChanged(nameof(HoveredConnectionText));
+            case nameof(DashboardHoverPreview.LastSeenOrConnected):
+                OnPropertyChanged(nameof(HoveredLastSeenOrConnected));
                 break;
-            case nameof(DashboardHoverPreview.GroupedDevicesText):
-                OnPropertyChanged(nameof(HoveredGroupedDevicesText));
+            case nameof(DashboardHoverPreview.GroupedDevices):
+                OnPropertyChanged(nameof(HoveredGroupedDevices));
                 break;
         }
     }
@@ -277,8 +277,10 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
             // If a request landed between the last check and clearing the running flag,
             // restart the loop so we don't drop the latest refresh.
-            if (Interlocked.CompareExchange(ref _refreshScheduled, 0, 0) == 1
-                && Interlocked.CompareExchange(ref _refreshRunning, 1, 0) == 0)
+            if (
+                Interlocked.CompareExchange(ref _refreshScheduled, 0, 0) == 1
+                && Interlocked.CompareExchange(ref _refreshRunning, 1, 0) == 0
+            )
             {
                 _ = Task.Run(RunRefreshLoopAsync);
             }
@@ -339,18 +341,17 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         if (dispatcher == null)
             return;
 
-        await dispatcher
-            .InvokeAsync(() =>
-            {
-                RangeDisplayText = rangeDisplay;
-                UpdateConnectedDevicesCount(dashboardDevices);
-                TopKeyboardsSummary = topKeyboards;
-                TopMiceSummary = topMice;
-                KeyboardConnectionTimePiePlot = keyboardModel;
-                MouseConnectionTimePiePlot = mouseModel;
-                InputActivityPlot = activityModel;
-                LastUpdatedText = lastUpdated;
-            });
+        await dispatcher.InvokeAsync(() =>
+        {
+            RangeDisplayText = rangeDisplay;
+            UpdateConnectedDevicesCount(dashboardDevices);
+            TopKeyboardsSummary = topKeyboards;
+            TopMiceSummary = topMice;
+            KeyboardPiePlot = keyboardModel;
+            MousePiePlot = mouseModel;
+            InputActivityPlot = activityModel;
+            LastUpdatedText = lastUpdated;
+        });
     }
 
     /// <summary>
