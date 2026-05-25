@@ -13,6 +13,9 @@ internal static class DashboardActivityChartBuilder
 {
     private const int SMOOTHING_WINDOW = AppConstants.Dashboard.DefaultSmoothingWindow;
 
+    /// <summary>Screen-pixel tolerance for selecting / cursor-detecting an activity line (nearest series).</summary>
+    public const double LineHitTolerance = 20;
+
     /// <summary>
     /// Creates a time-series chart from minute snapshots, with configurable time resolution and smoothing.
     /// Buckets outside app-running intervals are forced to zero.
@@ -23,7 +26,8 @@ internal static class DashboardActivityChartBuilder
         IReadOnlyCollection<DeviceEvent> lifecycleEvents,
         DateTime? from,
         DateTime to,
-        IReadOnlyDictionary<string, OxyColor> colorsByDevice
+        IReadOnlyDictionary<string, OxyColor> colorsByDevice,
+        string? selectedDeviceId = null
     )
     {
         var model = new PlotModel { Title = "Input Activity" };
@@ -119,11 +123,19 @@ internal static class DashboardActivityChartBuilder
             if (valuesByBucket.Values.All(value => value <= 0))
                 continue;
 
+            var color = colorsByDevice.TryGetValue(device.DeviceId, out var deviceColor) ? deviceColor : OxyColors.Automatic;
+            if (
+                !string.IsNullOrEmpty(selectedDeviceId)
+                && !string.Equals(device.DeviceId, selectedDeviceId, StringComparison.OrdinalIgnoreCase)
+            )
+                color = DashboardDeviceColorPalette.Faded(color);
+
             var series = new LineSeries
             {
                 Title = device.DeviceName,
                 StrokeThickness = 2,
-                Color = colorsByDevice.TryGetValue(device.DeviceId, out var color) ? color : OxyColors.Automatic,
+                Color = color,
+                Tag = device.DeviceId,
             };
 
             AddPositiveActivityPoints(series, bucketTimeline, valuesByBucket);

@@ -8,6 +8,7 @@ using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.ViewModels.Dashboard;
 using OxyPlot;
+using OxyPlot.Series;
 
 namespace KeyPulse.ViewModels;
 
@@ -159,6 +160,22 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private int _refreshScheduled;
     private int _refreshRunning;
 
+    private string? _selectedDeviceId;
+
+    // Snapshot of the inputs from the last data refresh, so a selection click can rebuild the plots
+    // (emphasize selected / fade the rest) without re-querying the DB. Replaced as a unit on each refresh.
+    private DashboardRenderInputs? _renderInputs;
+
+    private sealed record DashboardRenderInputs(
+        IReadOnlyList<Device> Devices,
+        IReadOnlyList<ActivitySnapshot> Snapshots,
+        IReadOnlyList<DeviceEvent> AppLifecycleEvents,
+        IReadOnlyDictionary<string, double> ConnectionMinutes,
+        IReadOnlyDictionary<string, OxyColor> Colors,
+        DateTime? From,
+        DateTime To
+    );
+
     public DashboardViewModel(
         DataService dataService,
         UsbMonitorService usbMonitorService,
@@ -168,7 +185,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         _dataService = dataService;
         _usbMonitorService = usbMonitorService;
         _appTimerService = appTimerService;
-        PieHoverController = DashboardPieChartBuilder.BuildPieHoverController();
+        PieHoverController = DashboardPieChartBuilder.BuildPieHoverController(HandlePlotClick);
         _hoverPreview.PropertyChanged += HoverPreview_PropertyChanged;
 
         RefreshCommand = new RelayCommand(_ => Refresh());
@@ -313,30 +330,22 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         );
         var colorsByDevice = _deviceColorPalette.GetColorsForDevices(devices, connectionMinutesByDevice);
 
-        var keyboardModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
-            "Keyboards",
-            devices.Where(d => d.DeviceType == DeviceTypes.Keyboard),
-            connectionMinutesByDevice,
-            colorsByDevice
-        );
-        var mouseModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
-            "Mice",
-            devices.Where(d => d.DeviceType == DeviceTypes.Mouse),
-            connectionMinutesByDevice,
-            colorsByDevice
-        );
-
-        DashboardPieChartBuilder.AttachTrackerPreview(keyboardModel, _hoverPreview.UpdateFromSlice);
-        DashboardPieChartBuilder.AttachTrackerPreview(mouseModel, _hoverPreview.UpdateFromSlice);
-
-        var activityModel = DashboardActivityChartBuilder.BuildInputActivityPlot(
-            snapshots,
+        var renderInputs = new DashboardRenderInputs(
             devices,
+            snapshots,
             dashboardEvents.AppLifecycleEvents,
+            connectionMinutesByDevice,
+            colorsByDevice,
             from,
-            to,
-            colorsByDevice
+            to
         );
+
+        // Preserve the current selection across refreshes; drop it if that device is gone.
+        var selectedDeviceId = _selectedDeviceId;
+        if (selectedDeviceId != null && !visibleDeviceIds.Contains(selectedDeviceId))
+            selectedDeviceId = null;
+
+        var (keyboardModel, mouseModel, activityModel) = BuildPlotModels(renderInputs, selectedDeviceId);
 
         var topKeyboards = BuildTopByConnectionSecondsSummary(dashboardDevices.TopKeyboardsByConnectionSeconds);
         var topMice = BuildTopByConnectionSecondsSummary(dashboardDevices.TopMiceByConnectionSeconds);
@@ -350,6 +359,9 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
         await dispatcher.InvokeAsync(() =>
         {
+            _selectedDeviceId = selectedDeviceId;
+            _renderInputs = renderInputs;
+
             RangeDisplayText = rangeDisplay;
             UpdateConnectedDevicesCount(dashboardDevices);
             TopKeyboardsSummary = topKeyboards;
@@ -359,6 +371,95 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             InputActivityPlot = activityModel;
             LastUpdatedText = lastUpdated;
         });
+    }
+
+    /// <summary>
+    /// Handles a left-click on any dashboard plot. Clicking a pie slice or activity line selects that device
+    /// (emphasized, others faded); clicking the grouped "Others" slice or empty space clears the selection.
+    /// </summary>
+    private void HandlePlotClick(IPlotView view, OxyMouseDownEventArgs args)
+    {
+        var model = view.ActualModel;
+        string? deviceId = null;
+
+        if (model != null)
+        {
+            if (model.Series.OfType<PieSeries>().Any())
+            {
+                var slice = DashboardPieChartBuilder.GetSliceAt(model, args.Position);
+                deviceId = slice is { IsOthers: false } ? slice.DeviceId : null;
+            }
+            else if (
+                model.GetSeriesFromPoint(args.Position, DashboardActivityChartBuilder.LineHitTolerance) is LineSeries line
+                && line.Tag is string lineDeviceId
+            )
+            {
+                // Nearest series (matching the hover tracker) so selection aligns with the hover text.
+                deviceId = lineDeviceId;
+            }
+        }
+
+        SetSelectedDevice(deviceId);
+        args.Handled = true;
+    }
+
+    private void SetSelectedDevice(string? deviceId)
+    {
+        if (_selectedDeviceId == deviceId)
+            return;
+
+        _selectedDeviceId = deviceId;
+        RenderModelsFromCache();
+    }
+
+    /// <summary>Rebuilds the three plot models from cached data for the current selection (no DB query).</summary>
+    private void RenderModelsFromCache()
+    {
+        if (_renderInputs is not { } inputs)
+            return;
+
+        var (keyboardModel, mouseModel, activityModel) = BuildPlotModels(inputs, _selectedDeviceId);
+
+        KeyboardPiePlot = keyboardModel;
+        MousePiePlot = mouseModel;
+        InputActivityPlot = activityModel;
+    }
+
+    /// <summary>Builds the keyboard pie, mouse pie, and activity models for a given selection state.</summary>
+    private (PlotModel Keyboard, PlotModel Mouse, PlotModel Activity) BuildPlotModels(
+        DashboardRenderInputs inputs,
+        string? selectedDeviceId
+    )
+    {
+        var keyboardModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
+            "Keyboards",
+            inputs.Devices.Where(d => d.DeviceType == DeviceTypes.Keyboard),
+            inputs.ConnectionMinutes,
+            inputs.Colors,
+            selectedDeviceId
+        );
+        var mouseModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
+            "Mice",
+            inputs.Devices.Where(d => d.DeviceType == DeviceTypes.Mouse),
+            inputs.ConnectionMinutes,
+            inputs.Colors,
+            selectedDeviceId
+        );
+
+        DashboardPieChartBuilder.AttachTrackerPreview(keyboardModel, _hoverPreview.UpdateFromSlice);
+        DashboardPieChartBuilder.AttachTrackerPreview(mouseModel, _hoverPreview.UpdateFromSlice);
+
+        var activityModel = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            inputs.Snapshots,
+            inputs.Devices,
+            inputs.AppLifecycleEvents,
+            inputs.From,
+            inputs.To,
+            inputs.Colors,
+            selectedDeviceId
+        );
+
+        return (keyboardModel, mouseModel, activityModel);
     }
 
     /// <summary>

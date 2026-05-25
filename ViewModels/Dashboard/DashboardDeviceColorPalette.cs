@@ -14,6 +14,9 @@ internal sealed class DashboardDeviceColorPalette
 
     public static readonly OxyColor OthersColor = OxyColor.FromRgb(150, 156, 166);
 
+    /// <summary>Returns a low-alpha version of a color, used to de-emphasize non-selected devices.</summary>
+    public static OxyColor Faded(OxyColor color) => OxyColor.FromAColor(60, color);
+
     /// <summary>
     /// Cool palette for keyboards - follows color wheel order from cyan (180°) to magenta (300°)
     /// Muted/slightly desaturated for professional appearance

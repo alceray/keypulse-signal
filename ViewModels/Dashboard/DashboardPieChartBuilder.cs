@@ -26,7 +26,8 @@ internal static class DashboardPieChartBuilder
         string title,
         IEnumerable<Device> devices,
         IReadOnlyDictionary<string, double> connectionMinutesByDevice,
-        IReadOnlyDictionary<string, OxyColor> colorsByDevice
+        IReadOnlyDictionary<string, OxyColor> colorsByDevice,
+        string? selectedDeviceId = null
     )
     {
         var model = new PlotModel { Title = title };
@@ -68,6 +69,11 @@ internal static class DashboardPieChartBuilder
         if (otherSlices.Count > 0)
             visibleSlices.Add(CreateOthersSlice(otherSlices, total));
 
+        if (!string.IsNullOrEmpty(selectedDeviceId))
+            foreach (var slice in visibleSlices)
+                if (!string.Equals(slice.DeviceId, selectedDeviceId, StringComparison.OrdinalIgnoreCase))
+                    slice.Fill = DashboardDeviceColorPalette.Faded(slice.Fill);
+
         var series = new PieSeries
         {
             Diameter = 0.95,
@@ -81,6 +87,46 @@ internal static class DashboardPieChartBuilder
 
         model.Series.Add(series);
         return model;
+    }
+
+    /// <summary>
+    /// Resolves the pie slice at a screen point. OxyPlot's <see cref="PieSeries"/> doesn't support hit-testing, so we
+    /// map the point's angle from the plot-area center to the cumulative slice angles (null if outside the pie).
+    /// </summary>
+    public static DashboardPieSlice? GetSliceAt(PlotModel model, ScreenPoint point)
+    {
+        var pie = model.Series.OfType<PieSeries>().FirstOrDefault();
+        if (pie == null)
+            return null;
+
+        var area = model.PlotArea;
+        var center = new ScreenPoint((area.Left + area.Right) / 2, (area.Top + area.Bottom) / 2);
+        var dx = point.X - center.X;
+        var dy = point.Y - center.Y;
+
+        var maxRadius = Math.Min(area.Width, area.Height) / 2;
+        if (maxRadius <= 0 || Math.Sqrt((dx * dx) + (dy * dy)) > maxRadius)
+            return null;
+
+        var slices = pie.Slices.OfType<DashboardPieSlice>().ToList();
+        var total = slices.Sum(s => s.Value);
+        if (total <= 0)
+            return null;
+
+        // Screen Y is down, so atan2(dy, dx) increases clockwise from east — matching how PieSeries lays out slices.
+        var angle = (Math.Atan2(dy, dx) * 180 / Math.PI) - pie.StartAngle;
+        angle = ((angle % 360) + 360) % 360;
+
+        var acc = 0.0;
+        foreach (var slice in slices)
+        {
+            var span = slice.Value / total * pie.AngleSpan;
+            if (angle >= acc && angle < acc + span)
+                return slice;
+            acc += span;
+        }
+
+        return null;
     }
 
     private static DashboardPieSlice CreateDeviceSlice(
@@ -131,14 +177,18 @@ internal static class DashboardPieChartBuilder
         };
 
     /// <summary>
-    /// Creates an interaction controller that shows trackers on hover.
+    /// Creates an interaction controller that shows trackers on hover and reports left-clicks (slice/line/empty)
+    /// to <paramref name="onClick"/> so the view-model can drive device selection.
     /// </summary>
-    public static IPlotController BuildPieHoverController()
+    public static IPlotController BuildPieHoverController(Action<IPlotView, OxyMouseDownEventArgs> onClick)
     {
         var controller = new PlotController();
         controller.UnbindAll();
         controller.Bind(new OxyMouseEnterGesture(), PlotCommands.HoverTrack);
-        controller.Bind(new OxyMouseDownGesture(OxyMouseButton.Left), PlotCommands.HoverTrack);
+        controller.Bind(
+            new OxyMouseDownGesture(OxyMouseButton.Left),
+            new DelegatePlotCommand<OxyMouseDownEventArgs>((view, _, args) => onClick(view, args))
+        );
         return controller;
     }
 
