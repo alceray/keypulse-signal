@@ -218,7 +218,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     // Called immediately when any device's IsConnected changes.
     private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(Device.IsConnected))
+        if (e.PropertyName == nameof(Device.IsConnected) || e.PropertyName == nameof(Device.IsHiddenFromDisplay))
             Refresh();
     }
 
@@ -296,11 +296,18 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         // Heavy work off the UI thread.
         var dashboardDevices = _dataService.GetDashboardDevices();
         var devices = dashboardDevices.Devices;
-        var snapshots = _dataService.GetActivitySnapshots(from: from, to: to);
+        var visibleDeviceIds = devices.Select(d => d.DeviceId).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var snapshots = _dataService
+            .GetActivitySnapshots(from: from, to: to)
+            .Where(s => visibleDeviceIds.Contains(s.DeviceId))
+            .ToList();
         var dashboardEvents = _dataService.GetDashboardEvents(from, to);
+        var visibleDeviceEvents = dashboardEvents
+            .DeviceEvents.Where(e => visibleDeviceIds.Contains(e.DeviceId))
+            .ToList();
 
         var connectionMinutesByDevice = DashboardConnectionTimeCalculator.ComputeConnectionMinutesByDevice(
-            dashboardEvents.DeviceEvents,
+            visibleDeviceEvents,
             from,
             to
         );

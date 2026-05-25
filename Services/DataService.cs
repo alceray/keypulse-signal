@@ -131,6 +131,7 @@ public class DataService
         using var ctx = _factory.CreateDbContext();
         var devices = ctx
             .Devices
+            .Where(d => !d.IsHiddenFromDisplay)
             .OrderBy(d => d.DeviceType)
             .ThenBy(d => d.DeviceName)
             .ToList();
@@ -176,6 +177,26 @@ public class DataService
         catch (Exception ex)
         {
             Log.Error(ex, "Failed to save device snapshot for {DeviceId}", device.DeviceId);
+        }
+    }
+
+    public bool SetDeviceHiddenFromDisplay(string deviceId, bool isHiddenFromDisplay)
+    {
+        try
+        {
+            using var ctx = _factory.CreateDbContext();
+            var device = ctx.Devices.SingleOrDefault(d => d.DeviceId == deviceId);
+            if (device == null)
+                return false;
+
+            device.IsHiddenFromDisplay = isHiddenFromDisplay;
+            ctx.SaveChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Failed to update display visibility for {DeviceId}", deviceId);
+            return false;
         }
     }
 

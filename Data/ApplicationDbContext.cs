@@ -117,6 +117,7 @@ public class ApplicationDbContext : DbContext
             .HasDatabaseName("Idx_Devices_DeviceId");
 
         modelBuilder.Entity<Device>().Property(e => e.DeviceType).HasConversion<string>();
+        modelBuilder.Entity<Device>().Property(e => e.IsHiddenFromDisplay).HasDefaultValue(false);
         modelBuilder.Entity<Device>().Property(e => e.TotalInputCount).HasDefaultValue(0L);
 
         modelBuilder.Entity<Device>().Property(e => e.SessionStartedAt).HasConversion(nullableLocalToUtcConverter);

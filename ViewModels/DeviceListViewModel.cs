@@ -15,11 +15,13 @@ public class DeviceListViewModel : ObservableObject, IDisposable
     private readonly UsbMonitorService _usbMonitorService;
     private readonly RawInputService _rawInputService;
     private readonly AppTimerService _appTimerService;
+    private readonly DataService _dataService;
     private bool _showAllDevices;
     private string _currentSessionTime = "00:00:00";
 
     public ICollectionView DeviceListCollection { get; }
     public ICommand RenameDeviceCommand { get; }
+    public ICommand ToggleDeviceDisplayVisibilityCommand { get; }
 
     public string DeviceTitleWithCount => $"Devices ({DeviceListCollection.Cast<object>().Count()})";
 
@@ -60,12 +62,14 @@ public class DeviceListViewModel : ObservableObject, IDisposable
     public DeviceListViewModel(
         UsbMonitorService usbMonitorService,
         RawInputService rawInputService,
-        AppTimerService appTimerService
+        AppTimerService appTimerService,
+        DataService dataService
     )
     {
         _usbMonitorService = usbMonitorService;
         _rawInputService = rawInputService;
         _appTimerService = appTimerService;
+        _dataService = dataService;
 
         DeviceListCollection = CollectionViewSource.GetDefaultView(_usbMonitorService.DeviceList);
         DeviceListCollection.Filter = device => ShowAllDevices || ((Device)device).IsConnected;
@@ -78,6 +82,10 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         _rawInputService.InputDeltaIncremented += OnInputDeltaIncremented;
 
         RenameDeviceCommand = new RelayCommand(ExecuteRenameDevice, CanExecuteRenameDevice);
+        ToggleDeviceDisplayVisibilityCommand = new RelayCommand(
+            ExecuteToggleDeviceDisplayVisibility,
+            CanExecuteToggleDeviceDisplayVisibility
+        );
 
         _appTimerService.SecondTick += OnSecondTick;
     }
@@ -164,6 +172,21 @@ public class DeviceListViewModel : ObservableObject, IDisposable
     }
 
     private bool CanExecuteRenameDevice(object? parameter)
+    {
+        return parameter is Device;
+    }
+
+    private void ExecuteToggleDeviceDisplayVisibility(object? parameter)
+    {
+        if (parameter is not Device device)
+            return;
+
+        var isHiddenFromDisplay = !device.IsHiddenFromDisplay;
+        if (_dataService.SetDeviceHiddenFromDisplay(device.DeviceId, isHiddenFromDisplay))
+            device.IsHiddenFromDisplay = isHiddenFromDisplay;
+    }
+
+    private bool CanExecuteToggleDeviceDisplayVisibility(object? parameter)
     {
         return parameter is Device;
     }

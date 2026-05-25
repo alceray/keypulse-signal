@@ -227,7 +227,13 @@ public class DailyStatsService : IDisposable
         try
         {
             using var ctx = _factory.CreateDbContext();
-            return ctx.DailyDeviceStats.OrderBy(d => d.Day).Select(d => (DateOnly?)d.Day).FirstOrDefault();
+            return ctx
+                .DailyDeviceStats.Where(d =>
+                    !ctx.Devices.Any(device => device.DeviceId == d.DeviceId && device.IsHiddenFromDisplay)
+                )
+                .OrderBy(d => d.Day)
+                .Select(d => (DateOnly?)d.Day)
+                .FirstOrDefault();
         }
         catch (Exception ex)
         {
@@ -260,7 +266,10 @@ public class DailyStatsService : IDisposable
 
         using var ctx = _factory.CreateDbContext();
 
-        var statRows = ctx.DailyDeviceStats.Where(d => d.Day >= from && d.Day <= to).ToList();
+        var statRows = ctx
+            .DailyDeviceStats.Where(d => d.Day >= from && d.Day <= to)
+            .Where(d => !ctx.Devices.Any(dev => dev.DeviceId == d.DeviceId && dev.IsHiddenFromDisplay))
+            .ToList();
         var deviceIds = statRows.Select(r => r.DeviceId).Distinct().ToList();
         var devicesById = ctx.Devices.Where(d => deviceIds.Contains(d.DeviceId)).ToDictionary(d => d.DeviceId);
 
@@ -284,7 +293,10 @@ public class DailyStatsService : IDisposable
     {
         using var ctx = _factory.CreateDbContext();
 
-        var rows = ctx.DailyDeviceStats.Where(d => d.Day == day).ToList();
+        var rows = ctx
+            .DailyDeviceStats.Where(d => d.Day == day)
+            .Where(d => !ctx.Devices.Any(dev => dev.DeviceId == d.DeviceId && dev.IsHiddenFromDisplay))
+            .ToList();
         if (rows.Count == 0)
             return Array.Empty<CalendarDeviceDetail>();
 
@@ -518,7 +530,7 @@ public class DailyStatsService : IDisposable
         Dictionary<string, Device>? devicesById = null
     )
     {
-        if (dayRows == null)
+        if (dayRows == null || dayRows.Count == 0)
             return new CalendarDaySummary { Day = day, HasData = false };
 
         var tileDevices = dayRows

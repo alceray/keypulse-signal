@@ -35,6 +35,7 @@ public class Device : ObservableObject
     private DateTime? _lastConnectedAt;
     private DateTime? _lastSeenAt;
     private bool _isActive;
+    private bool _isHiddenFromDisplay;
     private long _totalInputCount;
 
     /// <summary>
@@ -148,6 +149,23 @@ public class Device : ObservableObject
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(LastSeenRelative));
             }
+        }
+    }
+
+    /// <summary>
+    /// User preference that hides this device from the dashboard and calendar presentation.
+    /// Data capture, event logging, and daily stat projection continue unchanged.
+    /// </summary>
+    public bool IsHiddenFromDisplay
+    {
+        get => _isHiddenFromDisplay;
+        set
+        {
+            if (_isHiddenFromDisplay == value)
+                return;
+
+            _isHiddenFromDisplay = value;
+            OnPropertyChanged();
         }
     }
 

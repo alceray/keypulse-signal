@@ -152,6 +152,11 @@ namespace KeyPulse.Migrations
                     b.Property<DateTime?>("LastConnectedAt")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("IsHiddenFromDisplay")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(false);
+
                     b.Property<DateTime?>("LastSeenAt")
                         .HasColumnType("TEXT");
 

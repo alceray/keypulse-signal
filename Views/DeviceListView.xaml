@@ -9,6 +9,7 @@
 >
   <UserControl.Resources>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
     <local:DurationSecondsConverter x:Key="DurationSecondsConverter" />
     <local:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter" />
     <local:ActivityColorConverter x:Key="ActivityColorConverter" />
@@ -56,6 +57,7 @@
           <Setter Property="Background" Value="Transparent" />
           <Setter Property="Foreground" Value="Black" />
           <Setter Property="BorderBrush" Value="Transparent" />
+          <EventSetter Event="PreviewMouseRightButtonDown" Handler="DataGridRow_PreviewMouseRightButtonDown" />
           <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
               <Setter Property="Background" Value="#11000000" />
@@ -95,6 +97,23 @@
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
         <DataGridTextColumn Header="Device Name" Binding="{Binding DeviceName}" Width="*" />
+        <DataGridTemplateColumn Header="Display" Width="Auto">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Border
+                Background="#FFF3CD"
+                BorderBrush="#E6B800"
+                BorderThickness="1"
+                CornerRadius="3"
+                Padding="5,1"
+                HorizontalAlignment="Center"
+                Visibility="{Binding IsHiddenFromDisplay, Converter={StaticResource BooleanToVisibilityConverter}}"
+              >
+                <TextBlock Text="Hidden" Foreground="#5F4300" FontSize="11" FontWeight="SemiBold" />
+              </Border>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
         <DataGridTextColumn Header="Total Input Count" Binding="{Binding TotalInputCount}" Width="Auto" />
         <DataGridTextColumn
           Header="Last Connected"
@@ -122,11 +141,23 @@
         </DataGridTemplateColumn>
       </DataGrid.Columns>
       <DataGrid.ContextMenu>
-        <ContextMenu>
+        <ContextMenu DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
           <MenuItem
             Header="Rename Device"
             Command="{Binding RenameDeviceCommand}"
             CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+          />
+          <MenuItem
+            Header="Hide from Dashboard and Calendar"
+            Command="{Binding ToggleDeviceDisplayVisibilityCommand}"
+            CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+            Visibility="{Binding PlacementTarget.SelectedItem.IsHiddenFromDisplay, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource InverseBoolToVisibilityConverter}}"
+          />
+          <MenuItem
+            Header="Show in Dashboard and Calendar"
+            Command="{Binding ToggleDeviceDisplayVisibilityCommand}"
+            CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+            Visibility="{Binding PlacementTarget.SelectedItem.IsHiddenFromDisplay, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource BooleanToVisibilityConverter}}"
           />
         </ContextMenu>
       </DataGrid.ContextMenu>

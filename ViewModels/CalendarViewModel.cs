@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Windows.Input;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
@@ -126,6 +128,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
         _appTimerService.SecondTick += OnSecondTick;
         _rawInputService.InputDeltaIncremented += OnInputDeltaIncremented;
+        _usbMonitorService.DeviceList.CollectionChanged += DeviceList_CollectionChanged;
+        foreach (var device in _usbMonitorService.DeviceList)
+            device.PropertyChanged += Device_PropertyChanged;
     }
 
     /// <summary>Called when the tab becomes visible. Loads current month and triggers rebuild.</summary>
@@ -438,7 +443,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             connectionOverlayByDevice = new Dictionary<string, long>();
             foreach (var device in _usbMonitorService.DeviceList)
             {
-                if (!device.IsConnected)
+                if (!device.IsConnected || device.IsHiddenFromDisplay)
                     continue;
 
                 var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt!.Value);
@@ -453,7 +458,13 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
         if (updateTileSummary)
         {
-            var byId = persisted.Devices.ToDictionary(
+            var hiddenDeviceIds = _usbMonitorService
+                .DeviceList.Where(d => d.IsHiddenFromDisplay)
+                .Select(d => d.DeviceId)
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var byId = persisted
+                .Devices.Where(d => !hiddenDeviceIds.Contains(d.DeviceId))
+                .ToDictionary(
                 d => d.DeviceId,
                 d => new CalendarTileDevice
                 {
@@ -463,7 +474,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     IsConnected = false,
                 }
             );
-            foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsConnected))
+            foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsConnected && !d.IsHiddenFromDisplay))
             {
                 byId[device.DeviceId] = new CalendarTileDevice
                 {
@@ -595,6 +606,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         {
             _todayPersistedDetailByDevice.TryGetValue(id, out var persisted);
             var device = _usbMonitorService.DeviceList.FirstOrDefault(d => d.DeviceId == id);
+            if (device?.IsHiddenFromDisplay == true)
+                continue;
 
             var connectionOverlay = connectionOverlayByDevice.TryGetValue(id, out var sec) ? sec : 0L;
             var liveDelta = liveOverlayByDevice.TryGetValue(id, out var overlay)
@@ -664,6 +677,23 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             .ThenBy(r => r.DeviceName);
     }
 
+    private void DeviceList_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+    {
+        if (e.NewItems != null)
+            foreach (Device device in e.NewItems)
+                device.PropertyChanged += Device_PropertyChanged;
+
+        if (e.OldItems != null)
+            foreach (Device device in e.OldItems)
+                device.PropertyChanged -= Device_PropertyChanged;
+    }
+
+    private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(Device.IsHiddenFromDisplay))
+            _ = LoadCurrentMonthAsync();
+    }
+
     public void Dispose()
     {
         if (_disposed)
@@ -671,6 +701,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         _disposed = true;
         _appTimerService.SecondTick -= OnSecondTick;
         _rawInputService.InputDeltaIncremented -= OnInputDeltaIncremented;
+        _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
+        foreach (var device in _usbMonitorService.DeviceList)
+            device.PropertyChanged -= Device_PropertyChanged;
         _arrowNavigationGate.Dispose();
     }
 }
