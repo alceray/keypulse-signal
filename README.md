@@ -8,7 +8,7 @@ KeyPulse Signal is a lightweight Windows desktop app built for keyboard and mous
 
 - **Connection history** — when each device was plugged in, for how long, and how many sessions.
 - **Input activity** — per-device keystrokes, mouse clicks, and movement time captured silently in the background.
-- **Daily summaries** — a calendar view showing which devices were active on any given day, with session counts, active minutes, and peak usage hours.
+- **Daily summaries** — a calendar view showing which devices were active on any given day, with session counts, active minutes, and an hour-by-hour activity breakdown that highlights your peak hour.
 - **Live device state** — a device list showing what's connected right now, with real-time input counters ticking up as you type.
 
 ## Why It's Useful for Collectors
@@ -22,9 +22,10 @@ KeyPulse Signal is a lightweight Windows desktop app built for keyboard and mous
 
 - Detects connected keyboards and mice at startup, then monitors plug/unplug events via WMI.
 - Tracks per-device connection duration with crash-recovery-safe lifecycle reconstruction.
-- Captures minute-level activity snapshots (`Keystrokes`, `MouseClicks`, `MouseActiveSeconds`).
+- Captures minute-level activity snapshots (`Keystrokes`, `MouseClicks`, `MouseMovementSeconds`).
 - Dashboard with connection summaries, distribution charts, and activity timelines across any date range.
 - Calendar view showing per-day and per-device input/connection breakdowns.
+- Hide individual devices from the dashboard and calendar while still tracking them in the background.
 - Troubleshooting log viewer with severity coloring, search/filter, and auto-scroll.
 - Runs in system tray — zero UI clutter while you work.
 - Single-instance; activating a second launch restores the existing window.

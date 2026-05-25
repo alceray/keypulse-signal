@@ -39,7 +39,8 @@ Injection
     - Tracks per-device keystrokes, mouse clicks, and mouse-movement-active seconds in one-minute buckets
     - Flushes completed minute buckets to `ActivitySnapshots` every minute and flushes the current partial minute on
       shutdown
-    - Raises `ActivityStateChanged` so the UI can highlight currently active devices
+    - Raises `ActivityStateChanged` (per-device hold-state) so the UI can highlight currently active devices
+    - Raises `InputDeltaIncremented` with per-device `(KeystrokeDelta, MouseClickDelta, MouseMovementDelta)` so live views (e.g. calendar today-overlay) can tick without waiting for the minute flush
     - See: `Services/RawInputService.cs`
 
 3. **DataService** (Singleton)
@@ -52,8 +53,8 @@ Injection
 
 4. **DailyStatsService** (Singleton)
     - Maintains `DailyDeviceStats` table from two write-through sources:
-        - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount`, `ConnectionDuration`, `LongestSessionDuration` with a full non-cumulative replay of the day's events
-        - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, `DistinctActiveHours`, `PeakInputHour`
+        - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount`, `ConnectionSeconds`, `LongestSessionSeconds` with a full non-cumulative replay of the day's events
+        - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
     - `RecomputeDailyDeviceStatsForRange(from, to)` provides an idempotent full rebuild for any date range
     - `RebuildGapOnStartup()` reads `LastCleanShutdownAt` from `AppMeta` and rebuilds the offline gap since last clean shutdown; bounded to the current month
     - `WriteLastCleanShutdownAt()` persists a clean-shutdown marker on normal exit
@@ -61,7 +62,7 @@ Injection
 
 4. **ApplicationDbContext** (`DbContext`)
     - Four tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, and `DailyDeviceStats`
-    - Database stored at `%AppData%\KeyPulse\keypulse-data.db` in Release and `%AppData%\KeyPulse\Test\keypulse-data.db` in Debug/testing builds
+    - Database stored at `%AppData%\KeyPulse Signal\keypulse-data.db` in Release and `%AppData%\KeyPulse Signal\Test\keypulse-data.db` in Debug/testing builds (folder name = `AppConstants.App.ProductName`, the assembly name)
     - Unique constraint on `DeviceEvents(DeviceId, EventTime, EventType)` prevents duplicate lifecycle events
     - Unique constraint on `ActivitySnapshots(DeviceId, Minute)` prevents duplicate minute buckets
     - See: `Data/ApplicationDbContext.cs`
@@ -71,9 +72,9 @@ Injection
 - **DeviceEvents** = immutable, append-only log of app/device lifecycle transitions (source of truth for connection
   history)
 - **Devices** = mutable, fast-read snapshot used by the UI (`DeviceName`, `DeviceType`, `LastConnectedAt`, stored
-  `ConnectionDuration`)
-- **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseActiveSeconds`
-- **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionDuration`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; rebuilt on startup for the offline gap
+  `TotalConnectionSeconds`, `TotalInputCount`, `IsHiddenFromDisplay`)
+- **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseMovementSeconds`
+- **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionSeconds`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; rebuilt on startup for the offline gap
 - Updates flow in two directions:
     - lifecycle changes append to `DeviceEvents` and update the corresponding `Device` snapshot
     - raw input activity accumulates in memory, then flushes to `ActivitySnapshots`
@@ -89,7 +90,7 @@ Injection
     - database migrations run,
     - SQLite WAL mode is enabled,
     - `DataService.RecoverFromCrash()` backfills missing close events if needed,
-    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `ConnectionDuration` and clears stale `SessionStartedAt`,
+    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalConnectionSeconds` and clears stale `SessionStartedAt`,
     - historical `Devices` / `DeviceEvents` are loaded,
     - the heartbeat timer starts.
 6. Show the main window immediately or initialize the tray icon, depending on background mode.
@@ -135,12 +136,13 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - **ObservableObject** base class (in `Helpers/`) wraps `INotifyPropertyChanged`
 - Automatically marshals property changes to UI thread via `Application.Current.Dispatcher`
 - See `Models/Device.cs` for example: `SessionStartedAt` triggers dependent notifications for `IsConnected` and
-  `ConnectionDuration`
+  `TotalConnectionSeconds`
 - **Important**: `IsConnected` and `IsActive` are different concepts:
     - `IsConnected` means the device currently has an open connection session (`SessionStartedAt.HasValue`)
     - `IsActive` is a transient raw-input hold-state flag used to highlight devices while keys/buttons are currently
       held
-- **Important**: `ConnectionDuration` is computed while connected; it displays the stored value plus elapsed time since
+    - `IsHiddenFromDisplay` is a persisted user preference that hides a device from **presentation only** (see "Device Display Visibility" below); it never gates capture, event logging, or stat projection
+- **Important**: `TotalConnectionSeconds` is computed while connected; its getter returns the stored seconds plus elapsed time since
   `SessionStartedAt`
 
 ### Raw Input Activity Semantics
@@ -148,7 +150,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - `RawInputService` creates one in-memory bucket per `(DeviceId, Minute)`.
 - **Keyboard**: every key-down increments `Keystrokes`; key-up only updates hold state.
 - **Mouse buttons**: every button-down increments `MouseClicks`; button-up only updates hold state.
-- **Mouse movement**: movement is recorded as a set of second-of-minute values, then persisted as `MouseActiveSeconds` (
+- **Mouse movement**: movement is recorded as a set of second-of-minute values, then persisted as `MouseMovementSeconds` (
   0–60).
 - Completed minutes flush every 60 seconds; dispose/shutdown flushes the current partial minute as well.
 
@@ -158,28 +160,30 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
   (Dashboard is transient, so subscriptions are cleaned up when the view is destroyed and re-created when the tab is switched back)
 - Dashboard top cards show current connected count and top-3 keyboard/mouse device connection-duration summaries.
 - Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `1 Year`, and `All Time`.
-- Activity chart supports configurable `bucketMinutes` and trailing moving-average `smoothingWindow` (both normalized
-  to >= 1).
+- Activity chart bucket size is **derived from the visible range span**, not user-configurable (`DashboardActivityChartBuilder`): ≤1 day → 10 min, ≤7 days → 1 hour, ≤93 days → 6 hours, ≤370 days → 1 day, else 1 week. Smoothing is a fixed trailing moving average (`AppConstants.Dashboard.DefaultSmoothingWindow` = 3) that never averages across app-off boundaries.
 - Activity chart zeroes buckets where no app-running interval overlaps (`AppStarted`/`AppEnded` reconstruction).
 - Activity chart series use:
     - keyboard = `Keystrokes`
     - mouse = `MouseClicks + MouseMovementSeconds`
+- Devices flagged `IsHiddenFromDisplay` are excluded from cards, charts, and the underlying snapshot/event queries (see "Device Display Visibility").
 - X-axis label format adapts by selected range:
     - `< 7 days`: `MM-dd HH:mm`
     - `>= 7 days and < 365 days`: `MM-dd`
     - `>= 365 days`: `yyyy-MM`
-- Pie charts use hover tracking metadata (status, connection duration, share, connection time text) and update dashboard hover-preview
-  state via tracker events.
+- Pie charts (`DashboardPieChartBuilder`) show connection-time **share** per device. Slices are colored by connection-time rank from `DashboardDeviceColorPalette` (cool palette = keyboards, warm = mice); devices past `MaxColoredDevicesPerType` (12) or below `OthersShareThreshold` (1%) collapse into a single grey "Others (n)" slice listing the grouped device names. Slices are ordered deterministically so equal values don't flip between refreshes.
+- Pie hover tracking surfaces metadata (status, connection time, share, last seen/connected) and pushes it into a bound `DashboardHoverPreview` via OxyPlot tracker events.
 
 ### Calendar View Behavior
 
 - **Data source**: `DailyStatsService.GetCalendarDaySummaries()` and `GetCalendarDayDetail()` — both backed by `DailyDeviceStats`.
-- **Real-time overlay**: `CalendarViewModel` maintains a live in-memory input delta (`_todayLiveInputDeltaByDevice`) and connection overlay per device; `ApplyRealtimeTodayOverlay()` merges persisted + live state on every second tick and every `InputCountIncremented` event.
-- **Persisted baseline refresh**: `OnThirtySecondTick` re-queries today's persisted summary from DB and refreshes the tile and detail panel baseline to catch minute-projector commits.
+- **Real-time overlay**: `CalendarViewModel` maintains a live in-memory input delta (`_todayLiveDeltaByDevice`) and connection overlay per device; `ApplyRealtimeTodayOverlay()` merges persisted + live state on every second tick and every `RawInputService.InputDeltaIncremented` event. There is **no** periodic DB-refresh timer — the calendar does not subscribe to `ThirtySecondTick`; the persisted baseline is re-read on month load, day selection, and day rollover only.
 - **`CalendarDaySummary.IsToday`**: computed property (`Day == DateOnly.FromDateTime(DateTime.Now)`), never stale.
 - **`CalendarDaySummary.IsSelected`**: UI-only flag toggled in-place via tile selection; never stored in DB.
-- **Calendar DTOs** (`CalendarDaySummary`, `CalendarTileDevice`, `CalendarDeviceDetail`) use `DeviceTypes` enum, not raw strings.
+- **Calendar DTOs** (`CalendarDaySummary`, `CalendarTileDevice`, `CalendarDeviceDetail`) use the `DeviceTypes` enum, not raw strings, and report connection time in seconds (`ConnectionSeconds`, `LongestSessionSeconds`).
+- **Hourly activity bars**: `CalendarDeviceDetail.HourlyInputBars` is a 24-slot bar series built by `CalendarHourlyInputBarBuilder` from the day's `HourlyInputCount`; bar heights are normalized to the day's peak hour (`IsPeak` flags it). The same `IReadOnlyList` reference is cached per device across per-second overlay updates so WPF doesn't recreate the bar elements (keeps tooltips alive).
+- **Arrow-key navigation**: `MoveSelectionByArrowAsync(±1)` moves the selection across data-bearing tiles, crossing month boundaries when needed; serialized through `_arrowNavigationGate` (a `SemaphoreSlim`) so rapid key-repeats don't interleave.
 - Calendar detail panel uses responsive `DockPanel` rows so labels/values stay readable at any panel width.
+- Devices flagged `IsHiddenFromDisplay` are excluded from summaries, tiles, and the detail panel; toggling visibility reloads the month (see "Device Display Visibility").
 
 ### Duplicate Detection
 
@@ -188,6 +192,17 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - `_pendingCachedDeviceProcessing` ensures only one delayed aggregation callback runs per device burst, preventing a multi-callback race
 - Only then is a single `Connected` event recorded
 - `DeviceEvents` unique constraint prevents DB duplicates even if code fails
+
+### Device Display Visibility
+
+- `Device.IsHiddenFromDisplay` (persisted on `Devices`, default `false`, migration `AddDeviceDisplayVisibility`) is a **presentation-only** filter. Hidden devices still capture raw input, still append lifecycle events, and are still projected into `DailyDeviceStats` — only their *display* is suppressed.
+- **Toggle path**: right-clicking a row in `DeviceListView` opens a context menu ("Hide/Show in Dashboard and Calendar"). `DeviceListViewModel.ToggleDeviceDisplayVisibilityCommand` calls `DataService.SetDeviceHiddenFromDisplay(deviceId, ...)`, and only flips the in-memory `Device.IsHiddenFromDisplay` if the DB write succeeds.
+- **The device list itself does not hide hidden devices** — it shows a "Hidden" badge instead. Only the dashboard and calendar exclude them.
+- **Where filtering happens**:
+    - `DataService.GetDashboardDevices()` excludes hidden devices at the query.
+    - `DashboardViewModel` derives a visible-device id set from that and filters snapshots + events before charting; it refreshes when any `Device.IsHiddenFromDisplay` changes.
+    - `DailyStatsService` excludes hidden devices from the earliest-day query, `GetCalendarDaySummaries` range, and `GetCalendarDayDetail`. A day whose visible rows are empty yields `HasData = false`.
+    - `CalendarViewModel` excludes hidden devices from the realtime overlay, tile summary, and detail panel, and subscribes to per-device `PropertyChanged` (managed via `DeviceList.CollectionChanged`) so toggling visibility reloads the current month.
 
 ---
 
@@ -229,8 +244,8 @@ dotnet ef database update SomeOlderMigrationName
 
 - Target: `.net8.0-windows`, WPF enabled
 - Debug builds auto-generate WPF XAML behind the scenes
-- **Build may fail** if KeyPulse.exe is locked — stop running instance first
-- **Assets**: `Assets/keyboard_mouse_icon.ico` copied to build output
+- **Build may fail** if `KeyPulse Signal.exe` is locked — stop running instance first
+- **Assets**: `Assets\keypulse-signal-icon.ico` (the `<ApplicationIcon>`) copied to build output
 
 ---
 
@@ -242,8 +257,8 @@ dotnet ef database update SomeOlderMigrationName
 | `Services/`   | `UsbMonitorService`, `RawInputService`, `DataService`, `DailyStatsService` — monitoring, activity capture, persistence, daily stats |
 | `Models/`     | `Device`, `DeviceEvent`, `ActivitySnapshot`, `DailyDeviceStat` + enums/extensions                               |
 | `Data/`       | `ApplicationDbContext`, database initialization                                                                  |
-| `ViewModels/` | MVVM viewmodels for each UI view; `StatusMessageViewModelBase` provides shared status toast behavior             |
-| `Views/`      | XAML + code-behind for UI; `StatusMessagePanel` is a reusable status toast control                              |
+| `ViewModels/` | MVVM viewmodels for each UI view; `StatusMessageViewModelBase` provides shared status toast behavior. `Dashboard/` and `Calendar/` subfolders hold the chart/pie/color builders, DTOs, and per-view helpers extracted from the larger view-models |
+| `Views/`      | XAML + code-behind for UI; `StatusMessagePanel` is a reusable status toast control; `SharedConverters.cs` holds shared `IValueConverter`s (e.g. `InverseBoolToVisibilityConverter`, `DurationSecondsConverter`) |
 | `Migrations/` | EF Core snapshot migrations (read-only; auto-generated)                                                          |
 | `docs/`       | release docs, production-readiness plan, and other project documentation                                         |
 
@@ -261,7 +276,7 @@ dotnet ef database update SomeOlderMigrationName
 
 **Snapshot Rebuild** (`DataService.RebuildDeviceSnapshots`):
 
-- Recomputes persisted `ConnectionDuration` from the event log
+- Recomputes persisted `TotalConnectionSeconds` from the event log
 - Clears runtime-only `SessionStartedAt` so devices do not appear connected after an unclean shutdown
 - Called at startup after recovery
 
@@ -280,7 +295,7 @@ dotnet ef database update SomeOlderMigrationName
 - **SessionStartedAt**: Set when device becomes active (opening event), cleared when inactive
 - **IsConnected**: Computed from `SessionStartedAt.HasValue`
 - **IsActive**: Separate transient hold-state driven by `RawInputService.ActivityStateChanged`
-- **ConnectionDuration**: Displays stored value + elapsed since SessionStartedAt (live tick while active)
+- **TotalConnectionSeconds**: getter returns stored seconds + elapsed since SessionStartedAt (live tick while active)
 - Avoids stale timing from unclean shutdown; current session always starts fresh
 
 ### ActivitySnapshots
@@ -288,7 +303,7 @@ dotnet ef database update SomeOlderMigrationName
 - One row represents one device during one minute.
 - `Keystrokes` counts key-down events.
 - `MouseClicks` counts mouse button-down events.
-- `MouseActiveSeconds` stores how many distinct seconds within the minute saw mouse movement.
+- `MouseMovementSeconds` stores how many distinct seconds within the minute saw mouse movement.
 - The current code persists snapshots, but the main UI primarily exposes live connection/activity state and total connection duration
   rather than a dedicated activity-history view.
 
@@ -353,7 +368,7 @@ Pure services (`DataService`, `DailyStatsService`, helpers) do **not** need disp
 | Issue                                                       | Cause                                                | Fix                                                   |
 |-------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------|
 | Second launch opens existing window instead of new instance | Mutex check + activation signal                      | Expected behavior                                     |
-| Build fails, file locked                                    | KeyPulse.exe running                                 | Stop KeyPulse, then rebuild                           |
+| Build fails, file locked                                    | `KeyPulse Signal.exe` running                        | Stop KeyPulse, then rebuild                           |
 | Device shows as "Unknown Device"                            | Windows didn't provide friendly name                 | Rename manually in UI or check Windows Device Manager |
 | Duplicate events in debug output                            | Expected behavior; deduped by cache or DB constraint | No action needed                                      |
 
