@@ -74,6 +74,14 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         DeviceListCollection = CollectionViewSource.GetDefaultView(_usbMonitorService.DeviceList);
         DeviceListCollection.Filter = device => ShowAllDevices || ((Device)device).IsConnected;
 
+        // Default sort: status (Connected, Hidden, Disconnected), with Device ID as the tiebreaker.
+        DeviceListCollection.SortDescriptions.Add(
+            new SortDescription(nameof(Device.StatusSortOrder), ListSortDirection.Ascending)
+        );
+        DeviceListCollection.SortDescriptions.Add(
+            new SortDescription(nameof(Device.DeviceId), ListSortDirection.Ascending)
+        );
+
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged += Device_PropertyChanged;
 

@@ -75,6 +75,22 @@ public class Device : ObservableObject
     public bool IsConnected => _sessionStartedAt.HasValue;
 
     /// <summary>
+    /// Display status for the device list: "Disconnected", "Connected", or "Hidden" (connected but hidden from display).
+    /// </summary>
+    [NotMapped]
+    public string StatusText =>
+        !IsConnected ? "Disconnected"
+        : IsHiddenFromDisplay ? "Hidden"
+        : "Connected";
+
+    /// <summary>Sort key for the status column: Connected (0), Hidden (1), Disconnected (2).</summary>
+    [NotMapped]
+    public int StatusSortOrder =>
+        !IsConnected ? 2
+        : IsHiddenFromDisplay ? 1
+        : 0;
+
+    /// <summary>
     /// Cumulative connection-time snapshot rebuilt from connection event boundaries, stored in seconds.
     /// While active, the getter adds elapsed time since SessionStartedAt for a live display value.
     /// </summary>
@@ -112,6 +128,7 @@ public class Device : ObservableObject
                 _sessionStartedAt = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(IsConnected));
+                OnPropertyChanged(nameof(StatusText));
                 OnPropertyChanged(nameof(TotalConnectionSeconds));
             }
         }
@@ -166,6 +183,7 @@ public class Device : ObservableObject
 
             _isHiddenFromDisplay = value;
             OnPropertyChanged();
+            OnPropertyChanged(nameof(StatusText));
         }
     }
 

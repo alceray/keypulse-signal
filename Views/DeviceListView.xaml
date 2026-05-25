@@ -70,11 +70,25 @@
           <Setter Property="Foreground" Value="Black" />
           <Setter Property="BorderBrush" Value="Transparent" />
           <Setter Property="BorderThickness" Value="0" />
+          <!-- Center cell content vertically while the Border still fills the row height. -->
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="DataGridCell">
+                <Border
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                >
+                  <ContentPresenter VerticalAlignment="Center" />
+                </Border>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
         </Style>
       </DataGrid.Resources>
       <DataGrid.Columns>
         <DataGridTextColumn Header="Device ID" Binding="{Binding DeviceId}" MinWidth="175" Width="Auto" />
-        <DataGridTemplateColumn Header="Device Type" Width="80">
+        <DataGridTemplateColumn Header="Device Type" SortMemberPath="DeviceType" Width="80">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
               <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -97,24 +111,6 @@
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
         <DataGridTextColumn Header="Device Name" Binding="{Binding DeviceName}" Width="*" />
-        <DataGridTemplateColumn Header="Display" Width="Auto">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Border
-                Background="#FFF3CD"
-                BorderBrush="#E6B800"
-                BorderThickness="1"
-                CornerRadius="3"
-                Padding="5,1"
-                HorizontalAlignment="Center"
-                Visibility="{Binding IsHiddenFromDisplay, Converter={StaticResource BooleanToVisibilityConverter}}"
-              >
-                <TextBlock Text="Hidden" Foreground="#5F4300" FontSize="11" FontWeight="SemiBold" />
-              </Border>
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTextColumn Header="Total Input Count" Binding="{Binding TotalInputCount}" Width="Auto" />
         <DataGridTextColumn
           Header="Last Connected"
           Binding="{Binding LastConnectedRelative}"
@@ -127,18 +123,44 @@
           MinWidth="80"
           Width="Auto"
         />
-        <DataGridTemplateColumn Header="Connected" Width="Auto">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <TextBlock
-                Text="✓"
-                Visibility="{Binding IsConnected, Converter={StaticResource BooleanToVisibilityConverter}}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-              />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="Total Inputs" Binding="{Binding TotalInputCount}" Width="Auto" />
+        <DataGridTextColumn
+          Header="Status"
+          Binding="{Binding StatusText}"
+          SortMemberPath="StatusSortOrder"
+          SortDirection="Ascending"
+          MinWidth="100"
+          Width="Auto"
+        >
+          <DataGridTextColumn.CellStyle>
+            <Style TargetType="DataGridCell">
+              <Setter Property="BorderThickness" Value="0" />
+              <Setter Property="BorderBrush" Value="Transparent" />
+              <!-- Whole-cell color by status; default is disconnected (red). -->
+              <Setter Property="Background" Value="#F8D7DA" />
+              <Setter Property="Foreground" Value="#721C24" />
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="DataGridCell">
+                    <Border Background="{TemplateBinding Background}">
+                      <ContentPresenter VerticalAlignment="Center" />
+                    </Border>
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+              <Style.Triggers>
+                <DataTrigger Binding="{Binding StatusText}" Value="Connected">
+                  <Setter Property="Background" Value="#D4EDDA" />
+                  <Setter Property="Foreground" Value="#155724" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding StatusText}" Value="Hidden">
+                  <Setter Property="Background" Value="#FFF3CD" />
+                  <Setter Property="Foreground" Value="#5F4300" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </DataGridTextColumn.CellStyle>
+        </DataGridTextColumn>
       </DataGrid.Columns>
       <DataGrid.ContextMenu>
         <ContextMenu DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
