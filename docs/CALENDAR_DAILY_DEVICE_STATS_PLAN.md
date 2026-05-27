@@ -356,62 +356,60 @@ Those are **not part of the implemented entity or projector path**.
 
 ---
 
-## 8) Full rebuild path exists, but startup wiring is currently commented out
+## 8) Startup rebuild: one-time full backfill + per-startup drift recovery
 
 High-level concept:
 
-- there is a complete bounded rebuild implementation, but startup does **not currently invoke it**.
+- `App.OnStartup` invokes `DailyStatsService.RunStartupRebuild()` on a background thread.
+- The first run does a one-time full historical backfill; every later run does a cheap drift-recovery pass.
+- The previous "current-month gap rebuild on every startup" was removed as redundant: write-through keeps
+  connection stats current (including crash-recovery close events), and the live projector drains all
+  unprojected closed minutes on startup regardless of age.
 
-Concrete flow:
+Concrete flow (`DailyStatsService.RunStartupRebuild()`):
 
-- implemented methods:
-  - `DailyStatsService.RebuildGapOnStartup()`
-  - `DailyStatsService.RecomputeDailyDeviceStatsForRange(DateOnly from, DateOnly to)`
-  - `RecomputeConnectionStatsForRange(...)`
-  - `RecomputeActivityStatsForRange(...)`
-- current `App.xaml.cs` status:
-  - startup contains a commented-out background call:
-    - `ServiceProvider.GetRequiredService<DailyStatsService>().RebuildGapOnStartup();`
+1. Read the `DailyStatsFullBackfillAt` marker from `AppMeta`.
+2. If **absent** (first run after this feature shipped):
+   - `GetEarliestSourceDay()` = min local day across device lifecycle events and activity snapshots.
+   - `RebuildAllHistory(earliest, today)` recomputes month-by-month via
+     `RecomputeDailyDeviceStatsForRange(...)`, each month in its own context to bound memory.
+   - Write the marker. (Return — a fresh full build leaves nothing to reconcile.)
+3. If **present**: run `ReconcileDriftedDays(today)`.
 
-### What `RebuildGapOnStartup()` would do if enabled
+### `ReconcileDriftedDays(today)` — structural drift recovery
 
-1. Read `LastCleanShutdownAt` from `AppMeta`.
-2. Convert it to a local day with `TimeFormatter.ToLocalDay(...)`.
-3. Fallback to the last 7 days if no marker exists.
-4. Cap the rebuild start to the current month.
-5. Delete the marker.
-6. Call `RecomputeDailyDeviceStatsForRange(from, today)` unless a same-day clean shutdown means there is no gap.
+- Bounded to the current month; read-only detection then targeted heal.
+- Evidence = `(DeviceId, localDay)` pairs that have a closing `DeviceEvent` or an `ActivitySnapshot` in the
+  window. Drift = evidence keys with **no** matching `DailyDeviceStats` row.
+- For each drifted day, `RecomputeDailyDeviceStatsForRange(day, day)`; logs `Warning` per healed day,
+  `Debug` "integrity OK" when none.
+- Scope: catches MISSING aggregate rows (the only drift write-through/projector cannot self-heal). Subtle
+  wrong-VALUE corruption is handled by the one-time backfill / manual `RecomputeDailyDeviceStatsForRange`.
+
+### Concurrency
+
+- All `DailyDeviceStats` mutations (range recompute, live projector, connection write-through) serialize on a
+  single reentrant in-process gate so concurrent writers can't collide on the unique
+  `ActivityProjections(DeviceId, Minute)` / `DailyDeviceStats(Day, DeviceId)` indexes.
 
 ### Current state summary
 
-- **Implemented:** bounded rebuild logic
-- **Not currently wired on startup:** yes
-- **Manual/on-demand month rebuild from the original plan:** not currently implemented
+- **Implemented & wired on startup:** yes (background `RunStartupRebuild()`).
+- **One-time full historical backfill:** yes (marker-guarded).
+- **Recurring blind month rebuild:** removed.
+- **`LastCleanShutdownAt` clean-shutdown marker:** removed (see section 9).
 
 ---
 
-## 9) Current clean-shutdown marker flow
+## 9) Clean-shutdown marker (removed)
 
-High-level concept:
+The `LastCleanShutdownAt` marker (formerly written by `DailyStatsService.Dispose()` and read by the old
+`RebuildGapOnStartup()`) has been **removed**. It existed only to bound the recurring gap rebuild, which is
+gone (section 8). Its long-standing edge case — `Dispose()` is skipped on Windows session end, so the marker
+could be missed — is now moot, and crash detection still works independently via the last `AppEnded` event +
+the heartbeat file in `DataService.RecoverFromCrash()`.
 
-- the clean-shutdown marker is written by `DailyStatsService.Dispose()` during normal app disposal.
-
-Concrete flow:
-
-- `DailyStatsService` subscribes to `AppTimerService.MinuteTick` in its constructor
-- `DailyStatsService.Dispose()`:
-  - unsubscribes `MinuteTick`
-  - calls `WriteLastCleanShutdownAt()`
-- `App.OnExit(...)`
-  - normally disposes `ServiceProvider`, which disposes singleton services
-- `App.OnSessionEnding(...)`
-  - sets `_isSessionEnding = true`
-- `DisposeServicesForExitPath()`
-  - skips DI disposal during Windows session end to avoid blocking OS shutdown
-
-### Consequence
-
-On Windows session end, `DailyStatsService.Dispose()` is skipped, so `LastCleanShutdownAt` may not be written.
+`DailyStatsService.Dispose()` now only unsubscribes from `AppTimerService.MinuteTick`.
 That is why the rebuild path is designed to tolerate missing markers and fall back safely.
 
 ---
@@ -637,9 +635,9 @@ This means:
 
 ## Still not wired / deferred
 
-- `RebuildGapOnStartup()` exists but startup invocation is commented out in `App.xaml.cs`
+- `RunStartupRebuild()` is wired on startup (background): one-time full backfill, then per-startup drift recovery (section 8)
 - original per-month rebuild/session-cache behavior is not implemented
-- no production/manual repair command is exposed
+- no production/manual repair command is exposed (drift recovery is automatic + bounded to the current month; full re-backfill requires clearing the `DailyStatsFullBackfillAt` marker)
 - `FirstActivityAt` / `LastActivityAt` are not part of the entity
 - no tile badges or advanced tile metrics from the original UI plan
 

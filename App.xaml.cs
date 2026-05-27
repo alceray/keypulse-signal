@@ -92,11 +92,12 @@ public partial class App
 
         _usbMonitorService = ServiceProvider.GetRequiredService<UsbMonitorService>();
 
-        // Optimization: run daily-stats startup rebuild in background so window appears immediately.
-        // _ = Task.Run(() =>
-        // {
-        //     ServiceProvider.GetRequiredService<DailyStatsService>().RebuildGapOnStartup();
-        // });
+        // Run the daily-stats startup rebuild in the background so the window appears immediately.
+        // First run does a one-time full historical backfill; later runs do a cheap drift-recovery pass.
+        _ = Task.Run(() =>
+        {
+            ServiceProvider.GetRequiredService<DailyStatsService>().RunStartupRebuild();
+        });
 
         // Show window / tray immediately so the UI appears while slow startup runs in the background.
         // First launch always shows the window, even in Release/tray mode.

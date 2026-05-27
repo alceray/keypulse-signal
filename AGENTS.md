@@ -56,8 +56,11 @@ Injection
         - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount`, `ConnectionSeconds`, `LongestSessionSeconds` with a full non-cumulative replay of the day's events
         - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
     - `RecomputeDailyDeviceStatsForRange(from, to)` provides an idempotent full rebuild for any date range
-    - `RebuildGapOnStartup()` reads `LastCleanShutdownAt` from `AppMeta` and rebuilds the offline gap since last clean shutdown; bounded to the current month
-    - `WriteLastCleanShutdownAt()` persists a clean-shutdown marker on normal exit
+    - `RunStartupRebuild()` (called on a background thread from `App.OnStartup`) is the startup entry point:
+        - **First run only** (when the `DailyStatsFullBackfillAt` `AppMeta` marker is absent): runs a one-time full historical backfill from the earliest source day through today via `RebuildAllHistory(...)`, chunked month-by-month so memory stays bounded, then writes the marker
+        - **Every later run**: runs `ReconcileDriftedDays(today)` — a cheap, non-destructive integrity pass over the current month that heals only `(DeviceId, day)` rows MISSING from `DailyDeviceStats` despite a closing event or activity snapshot existing (the one drift the write-through / projector paths cannot self-heal), logging any discrepancy
+    - No recurring blind rebuild: ongoing data is kept current by write-through (connection) + the live projector (activity), which drains all unprojected closed minutes on startup regardless of age
+    - All `DailyDeviceStats` mutations (range recompute, live projector, connection write-through) serialize on a single in-process gate so concurrent writers can't collide on the unique `ActivityProjections(DeviceId, Minute)` / `DailyDeviceStats(Day, DeviceId)` indexes
     - See: `Services/DailyStatsService.cs`
 
 4. **ApplicationDbContext** (`DbContext`)
@@ -74,7 +77,7 @@ Injection
 - **Devices** = mutable, fast-read snapshot used by the UI (`DeviceName`, `DeviceType`, `LastConnectedAt`, stored
   `TotalConnectionSeconds`, `TotalInputCount`, `IsHiddenFromDisplay`)
 - **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseMovementSeconds`
-- **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionSeconds`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; rebuilt on startup for the offline gap
+- **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionSeconds`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; backfilled in full once on first startup, then kept current by write-through + the live projector with a per-startup drift-recovery pass
 - Updates flow in two directions:
     - lifecycle changes append to `DeviceEvents` and update the corresponding `Device` snapshot
     - raw input activity accumulates in memory, then flushes to `ActivitySnapshots`

@@ -371,3 +371,7 @@ installer/output/
 
 # Junie working folder
 .junie
+
+# Claude working folders
+.claude
+tasks/

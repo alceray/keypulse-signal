@@ -28,7 +28,13 @@ public class DailyStatsService : IDisposable
     private long _latestWriteMinuteTicks;
     private int _projectorDispatchInFlight;
 
-    private const string LAST_CLEAN_SHUTDOWN_META_KEY = "LastCleanShutdownAt";
+    // Serializes all DailyDeviceStats mutations (range recompute, live projector, connection write-through)
+    // so they cannot race on the unique ActivityProjections(DeviceId, Minute) / DailyDeviceStats(Day, DeviceId)
+    // indexes. Reentrant: the one-time backfill holds it across its month loop while each per-month
+    // RecomputeDailyDeviceStatsForRange re-locks on the same thread.
+    private readonly object _projectionGate = new();
+
+    private const string FULL_BACKFILL_META_KEY = "DailyStatsFullBackfillAt";
 
     public DailyStatsService(IDbContextFactory<ApplicationDbContext> factory, AppTimerService appTimerService)
     {
@@ -42,77 +48,183 @@ public class DailyStatsService : IDisposable
     // ─────────────────────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Reads LastCleanShutdownAt from AppMeta and rebuilds DailyDeviceStats for the gap period.
-    /// Falls back to last 7 local days when the marker is absent (first install or unclean shutdown).
-    /// Optimized: rebuild is capped to the current month to keep startup work bounded.
+    /// Startup entry point. The first run after this feature ships (marker absent) performs a one-time full
+    /// historical backfill of DailyDeviceStats from the earliest source day through today, then records the
+    /// marker. Every subsequent startup runs a cheap structural drift-recovery pass instead, since the
+    /// write-through (connection) and live projector (activity) paths already keep ongoing data current.
+    /// Intended to be called on a background thread so the UI can appear immediately.
     /// </summary>
-    public void RebuildGapOnStartup()
+    public void RunStartupRebuild()
     {
         try
         {
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
-            Log.Information("Daily stats rebuild started");
-
             var today = DateOnly.FromDateTime(DateTime.Now);
-            var currentMonthStart = new DateOnly(today.Year, today.Month, 1);
-            DateOnly from;
-            var skipRebuild = false;
 
+            bool backfillDone;
             using (var ctx = _factory.CreateDbContext())
+                backfillDone = AppMetaStore.ReadUtc(ctx, FULL_BACKFILL_META_KEY).HasValue;
+
+            if (!backfillDone)
             {
-                var lastShutdown = AppMetaStore.ReadUtc(ctx, LAST_CLEAN_SHUTDOWN_META_KEY);
+                Log.Information("Daily stats one-time full backfill started");
 
-                if (lastShutdown.HasValue)
-                {
-                    var lastShutdownDay = TimeFormatter.ToLocalDay(lastShutdown.Value);
-                    from = lastShutdownDay;
-
-                    // A clean shutdown earlier today has no offline gap to rebuild.
-                    // Re-running today would re-apply cross-midnight close splits to prior days.
-                    if (lastShutdownDay == today)
-                        skipRebuild = true;
-                }
+                var earliest = GetEarliestSourceDay();
+                if (earliest.HasValue)
+                    RebuildAllHistory(earliest.Value, today);
                 else
-                {
-                    from = today.AddDays(-6); // 7 days inclusive fallback
-                }
+                    Log.Information("Daily stats full backfill found no source data; nothing to build");
 
-                // Keep startup rebuild bounded to current month.
-                if (from < currentMonthStart)
-                    from = currentMonthStart;
+                using (var ctx = _factory.CreateDbContext())
+                    AppMetaStore.WriteUtc(ctx, FULL_BACKFILL_META_KEY, DateTime.UtcNow);
 
-                // Clear the marker so next startup only covers the new gap.
-                AppMetaStore.Delete(ctx, LAST_CLEAN_SHUTDOWN_META_KEY);
+                stopwatch.Stop();
+                Log.Information(
+                    "Daily stats one-time full backfill completed in {ElapsedMs}ms",
+                    stopwatch.ElapsedMilliseconds
+                );
+                return; // A fresh full build leaves nothing to reconcile.
             }
 
-            if (!skipRebuild && from <= today)
-                RecomputeDailyDeviceStatsForRange(from, today);
-            else if (skipRebuild)
-                Log.Debug("Daily stats rebuild skipped because last clean shutdown was already today ({Day})", today);
+            ReconcileDriftedDays(today);
 
             stopwatch.Stop();
-            Log.Information("Daily stats rebuild completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+            Log.Debug("Daily stats drift check completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Daily stats rebuild failed");
+            Log.Error(ex, "Daily stats startup rebuild failed");
         }
     }
 
     /// <summary>
-    /// Writes LastCleanShutdownAt to AppMeta. Call once during clean shutdown before DB is closed.
+    /// One-time full rebuild from the earliest source day through today, chunked month-by-month so memory
+    /// stays bounded for long histories (each month uses and disposes its own context). Holds the projection
+    /// gate across the whole sweep so the live projector cannot interleave; the per-month
+    /// RecomputeDailyDeviceStatsForRange re-locks reentrantly on the same thread.
     /// </summary>
-    public void WriteLastCleanShutdownAt()
+    private void RebuildAllHistory(DateOnly from, DateOnly today)
     {
-        try
+        if (from > today)
+            return;
+
+        lock (_projectionGate)
         {
-            using var ctx = _factory.CreateDbContext();
-            AppMetaStore.WriteUtc(ctx, LAST_CLEAN_SHUTDOWN_META_KEY, DateTime.UtcNow);
+            var monthCount = 0;
+            var cursor = from;
+            while (cursor <= today)
+            {
+                var lastOfMonth = new DateOnly(cursor.Year, cursor.Month, 1).AddMonths(1).AddDays(-1);
+                var chunkEnd = lastOfMonth < today ? lastOfMonth : today;
+
+                RecomputeDailyDeviceStatsForRange(cursor, chunkEnd);
+                monthCount++;
+
+                cursor = lastOfMonth.AddDays(1);
+            }
+
+            Log.Information(
+                "Daily stats backfill rebuilt {MonthCount} month(s) from {From} to {To}",
+                monthCount,
+                from.ToString(),
+                today.ToString()
+            );
         }
-        catch (Exception ex)
+    }
+
+    /// <summary>
+    /// Cheap, non-destructive integrity pass over the current month. Detects (DeviceId, day) pairs that are
+    /// MISSING from DailyDeviceStats even though a closing DeviceEvent or ActivitySnapshot exists for them —
+    /// the one drift the live paths cannot self-heal (the projector skips checkpointed minutes and
+    /// write-through only fires on new events). Heals each affected day and logs the discrepancy. Subtle
+    /// wrong-value corruption is out of scope here (it would require a full recompute every startup); use the
+    /// one-time backfill or RecomputeDailyDeviceStatsForRange for that.
+    /// </summary>
+    public void ReconcileDriftedDays(DateOnly today)
+    {
+        var monthStart = new DateOnly(today.Year, today.Month, 1);
+        var (fromBound, toBound) = GetUtcBounds(monthStart, today);
+
+        List<(string DeviceId, DateOnly Day)> driftedKeys;
+        using (var ctx = _factory.CreateDbContext())
         {
-            Log.Warning(ex, "Failed to write LastCleanShutdownAt to AppMeta");
+            // Evidence: (device, local day) pairs with a closing lifecycle event in the window.
+            var eventKeys = ctx
+                .DeviceEvents.Where(e =>
+                    e.DeviceId != ""
+                    && e.EventTime >= fromBound
+                    && e.EventTime < toBound
+                    && (e.EventType == EventTypes.ConnectionEnded || e.EventType == EventTypes.Disconnected)
+                )
+                .Select(e => new { e.DeviceId, e.EventTime })
+                .AsEnumerable()
+                .Select(e => (e.DeviceId, Day: TimeFormatter.ToLocalDay(e.EventTime)));
+
+            // Evidence: (device, local day) pairs with an activity snapshot in the window.
+            var snapshotKeys = ctx
+                .ActivitySnapshots.Where(s => s.Minute >= fromBound && s.Minute < toBound)
+                .Select(s => new { s.DeviceId, s.Minute })
+                .AsEnumerable()
+                .Select(s => (s.DeviceId, Day: TimeFormatter.ToLocalDay(s.Minute)));
+
+            var evidenceKeys = eventKeys.Concat(snapshotKeys).Distinct().ToList();
+
+            var existingKeys = ctx
+                .DailyDeviceStats.Where(d => d.Day >= monthStart && d.Day <= today)
+                .Select(d => new { d.DeviceId, d.Day })
+                .AsEnumerable()
+                .Select(d => (d.DeviceId, d.Day))
+                .ToHashSet();
+
+            driftedKeys = evidenceKeys.Where(k => !existingKeys.Contains(k)).ToList();
         }
+
+        if (driftedKeys.Count == 0)
+        {
+            Log.Debug("Daily stats integrity OK for {From}..{To}", monthStart.ToString(), today.ToString());
+            return;
+        }
+
+        var driftedDays = driftedKeys.Select(k => k.Day).Distinct().OrderBy(d => d).ToList();
+        Log.Warning(
+            "Daily stats drift detected: {KeyCount} missing (device, day) row(s) across {DayCount} day(s): {Keys}",
+            driftedKeys.Count,
+            driftedDays.Count,
+            string.Join(", ", driftedKeys.Select(k => $"{k.Day:yyyy-MM-dd}/{k.DeviceId}"))
+        );
+
+        foreach (var day in driftedDays)
+            RecomputeDailyDeviceStatsForRange(day, day);
+
+        Log.Information("Daily stats drift recovery healed {DayCount} day(s)", driftedDays.Count);
+    }
+
+    /// <summary>
+    /// Returns the earliest local day that has source data (a device lifecycle event or an activity snapshot),
+    /// or null when no source data exists yet.
+    /// </summary>
+    private DateOnly? GetEarliestSourceDay()
+    {
+        using var ctx = _factory.CreateDbContext();
+
+        var earliestEvent = ctx
+            .DeviceEvents.Where(e =>
+                e.DeviceId != "" && e.EventType != EventTypes.AppStarted && e.EventType != EventTypes.AppEnded
+            )
+            .OrderBy(e => e.EventTime)
+            .Select(e => (DateTime?)e.EventTime)
+            .FirstOrDefault();
+
+        var earliestSnapshot = ctx
+            .ActivitySnapshots.OrderBy(s => s.Minute)
+            .Select(s => (DateTime?)s.Minute)
+            .FirstOrDefault();
+
+        DateTime? earliest = earliestEvent;
+        if (earliestSnapshot.HasValue && (!earliest.HasValue || earliestSnapshot.Value < earliest.Value))
+            earliest = earliestSnapshot;
+
+        return earliest.HasValue ? TimeFormatter.ToLocalDay(earliest.Value) : null;
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -121,32 +233,35 @@ public class DailyStatsService : IDisposable
 
     /// <summary>
     /// Clears and fully recomputes DailyDeviceStats for a local-day range from source tables.
-    /// Safe to call multiple times (idempotent delete + recompute).
+    /// Safe to call multiple times (idempotent delete plus recompute).
     /// </summary>
     public void RecomputeDailyDeviceStatsForRange(DateOnly from, DateOnly to)
     {
-        using var ctx = _factory.CreateDbContext();
+        lock (_projectionGate)
+        {
+            using var ctx = _factory.CreateDbContext();
 
-        // 1. Delete existing daily rows for this range.
-        var existingRows = ctx.DailyDeviceStats.Where(d => d.Day >= from && d.Day <= to).ToList();
-        ctx.DailyDeviceStats.RemoveRange(existingRows);
+            // 1. Delete existing daily rows for this range.
+            var existingRows = ctx.DailyDeviceStats.Where(d => d.Day >= from && d.Day <= to).ToList();
+            ctx.DailyDeviceStats.RemoveRange(existingRows);
 
-        // 2. Delete projection checkpoints so activity re-projects for the range.
-        var (fromBound, toBound) = GetUtcBounds(from, to);
-        var existingProjections = ctx
-            .ActivityProjections.Where(p => p.Minute >= fromBound && p.Minute < toBound)
-            .ToList();
-        ctx.ActivityProjections.RemoveRange(existingProjections);
+            // 2. Delete projection checkpoints so activity re-projects for the range.
+            var (fromBound, toBound) = GetUtcBounds(from, to);
+            var existingProjections = ctx
+                .ActivityProjections.Where(p => p.Minute >= fromBound && p.Minute < toBound)
+                .ToList();
+            ctx.ActivityProjections.RemoveRange(existingProjections);
 
-        ctx.SaveChanges();
+            ctx.SaveChanges();
 
-        // 3. Recompute from DeviceEvents.
-        RecomputeConnectionStatsForRange(ctx, from, to);
+            // 3. Recompute from DeviceEvents.
+            RecomputeConnectionStatsForRange(ctx, from, to);
 
-        // 4. Recompute from ActivitySnapshots.
-        RecomputeActivityStatsForRange(ctx, from, to);
+            // 4. Recompute from ActivitySnapshots.
+            RecomputeActivityStatsForRange(ctx, from, to);
 
-        Log.Debug("Recomputed daily stats for {From} to {To}", from.ToString(), to.ToString());
+            Log.Debug("Recomputed daily stats for {From} to {To}", from.ToString(), to.ToString());
+        }
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -162,9 +277,14 @@ public class DailyStatsService : IDisposable
         if (!deviceEvent.EventType.IsClosingEvent())
             return;
 
-        var day = TimeFormatter.ToLocalDay(deviceEvent.EventTime);
-        RecomputeDailyConnectionStats(ctx, deviceEvent.DeviceId, day);
-        ctx.SaveChanges();
+        // Gate against the projector / range recompute so concurrent writers can't collide on the
+        // unique DailyDeviceStats(Day, DeviceId) index when first creating a day's row.
+        lock (_projectionGate)
+        {
+            var day = TimeFormatter.ToLocalDay(deviceEvent.EventTime);
+            RecomputeDailyConnectionStats(ctx, deviceEvent.DeviceId, day);
+            ctx.SaveChanges();
+        }
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -184,36 +304,41 @@ public class DailyStatsService : IDisposable
         if (Volatile.Read(ref _activityProjectionDirty) == 0)
             return;
 
-        try
+        // Gate against range recompute / backfill so projection inserts can't collide on the unique
+        // ActivityProjections(DeviceId, Minute) index.
+        lock (_projectionGate)
         {
-            using var ctx = _factory.CreateDbContext();
-
-            var currentBoundary = TimeFormatter.NormalizeUtcMinute(DateTime.UtcNow);
-
-            // Closed-minute filter remains authoritative.
-            var unprojected = ctx
-                .ActivitySnapshots.Where(s =>
-                    s.Minute < currentBoundary
-                    && !ctx.ActivityProjections.Any(p => p.DeviceId == s.DeviceId && p.Minute == s.Minute)
-                )
-                .ToList();
-
-            if (unprojected.Count == 0)
+            try
             {
+                using var ctx = _factory.CreateDbContext();
+
+                var currentBoundary = TimeFormatter.NormalizeUtcMinute(DateTime.UtcNow);
+
+                // Closed-minute filter remains authoritative.
+                var unprojected = ctx
+                    .ActivitySnapshots.Where(s =>
+                        s.Minute < currentBoundary
+                        && !ctx.ActivityProjections.Any(p => p.DeviceId == s.DeviceId && p.Minute == s.Minute)
+                    )
+                    .ToList();
+
+                if (unprojected.Count == 0)
+                {
+                    TryClearActivityProjectionDirty(currentBoundary);
+                    return;
+                }
+
+                var state = BuildActivityProjectionState(ctx, unprojected);
+                foreach (var snapshot in unprojected)
+                    ApplyActivitySnapshot(ctx, snapshot, DateTime.UtcNow, state);
+
+                ctx.SaveChanges();
                 TryClearActivityProjectionDirty(currentBoundary);
-                return;
             }
-
-            var state = BuildActivityProjectionState(ctx, unprojected);
-            foreach (var snapshot in unprojected)
-                ApplyActivitySnapshot(ctx, snapshot, DateTime.UtcNow, state);
-
-            ctx.SaveChanges();
-            TryClearActivityProjectionDirty(currentBoundary);
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex, "Activity minute projector failed");
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Activity minute projector failed");
+            }
         }
     }
 
@@ -629,7 +754,6 @@ public class DailyStatsService : IDisposable
 
         _disposed = true;
         _appTimerService.MinuteTick -= OnMinuteTick;
-        WriteLastCleanShutdownAt();
-        Log.Debug("Daily stats disposed; LastCleanShutdownAt written");
+        Log.Debug("Daily stats disposed");
     }
 }
