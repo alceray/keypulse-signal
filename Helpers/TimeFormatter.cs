@@ -129,10 +129,21 @@ public static class TimeFormatter
 
     /// <summary>
     /// Truncates a DateTime to the start of its minute (zeroes out seconds, milliseconds, ticks).
+    /// Preserves DateTimeKind.
     /// </summary>
     public static DateTime TruncateToMinute(this DateTime dt)
     {
         return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0, dt.Kind);
+    }
+
+    /// <summary>
+    /// Truncates a DateTime to the start of its second (zeroes out milliseconds and ticks).
+    /// Preserves DateTimeKind. Used by the EF value converters to keep persisted timestamps
+    /// at second resolution.
+    /// </summary>
+    public static DateTime TruncateToSecond(this DateTime dt)
+    {
+        return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Kind);
     }
 
     /// <summary>
@@ -141,8 +152,7 @@ public static class TimeFormatter
     /// </summary>
     public static DateTime NormalizeUtcMinute(DateTime timestamp)
     {
-        var utc = timestamp.Kind == DateTimeKind.Utc ? timestamp : timestamp.ToUniversalTime();
-        return new DateTime(utc.Year, utc.Month, utc.Day, utc.Hour, utc.Minute, 0, DateTimeKind.Utc);
+        return timestamp.ToUniversalTime().TruncateToMinute();
     }
 
     /// <summary>
@@ -153,33 +163,5 @@ public static class TimeFormatter
     {
         var localStart = day.ToDateTime(TimeOnly.MinValue, DateTimeKind.Local);
         return localStart.ToUniversalTime();
-    }
-
-    /// <summary>
-    /// Splits a local-time interval [startLocal, endLocal) across local day boundaries.
-    /// Returns one entry per local day with elapsed whole seconds in that day.
-    /// </summary>
-    public static List<(DateOnly Day, long Seconds)> SplitByLocalDays(DateTime startLocal, DateTime endLocal)
-    {
-        var result = new List<(DateOnly, long)>();
-
-        if (endLocal <= startLocal)
-            return result;
-
-        var cursor = startLocal;
-        while (cursor < endLocal)
-        {
-            var dayStart = cursor.Date;
-            var nextMidnight = dayStart.AddDays(1);
-            var segmentEnd = endLocal < nextMidnight ? endLocal : nextMidnight;
-            var seconds = (long)(segmentEnd - cursor).TotalSeconds;
-
-            if (seconds > 0)
-                result.Add((DateOnly.FromDateTime(dayStart), seconds));
-
-            cursor = nextMidnight;
-        }
-
-        return result;
     }
 }

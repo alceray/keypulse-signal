@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using KeyPulse.Configuration;
+using KeyPulse.Helpers;
 using KeyPulse.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -23,22 +24,17 @@ public class ApplicationDbContext : DbContext
     private static DateTime ConvertLocalToUtc(DateTime value)
     {
         if (value.Kind == DateTimeKind.Utc)
-            return TruncateToSecond(value);
+            return value.TruncateToSecond();
 
         if (value.Kind == DateTimeKind.Local)
-            return TruncateToSecond(value.ToUniversalTime());
+            return value.ToUniversalTime().TruncateToSecond();
 
-        return TruncateToSecond(DateTime.SpecifyKind(value, DateTimeKind.Local).ToUniversalTime());
+        return DateTime.SpecifyKind(value, DateTimeKind.Local).ToUniversalTime().TruncateToSecond();
     }
 
     private static DateTime ConvertUtcToLocal(DateTime value)
     {
-        return TruncateToSecond(DateTime.SpecifyKind(value, DateTimeKind.Utc).ToLocalTime());
-    }
-
-    private static DateTime TruncateToSecond(DateTime value)
-    {
-        return new DateTime(value.Year, value.Month, value.Day, value.Hour, value.Minute, value.Second, value.Kind);
+        return DateTime.SpecifyKind(value, DateTimeKind.Utc).ToLocalTime().TruncateToSecond();
     }
 
     private static string SerializeHourlyInputCount(long[]? values)

@@ -25,6 +25,14 @@
     <CopyOutputSymbolsToPublishDirectory>false</CopyOutputSymbolsToPublishDirectory>
   </PropertyGroup>
 
+  <!-- The test project lives in a subfolder; keep its sources out of this project's default globs. -->
+  <ItemGroup>
+    <Compile Remove="KeyPulse.Tests\**" />
+    <EmbeddedResource Remove="KeyPulse.Tests\**" />
+    <None Remove="KeyPulse.Tests\**" />
+    <Page Remove="KeyPulse.Tests\**" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Remove="Assets\keypulse-signal-icon.ico" />
   </ItemGroup>
