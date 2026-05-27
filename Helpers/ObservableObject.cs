@@ -22,8 +22,8 @@ public class ObservableObject : INotifyPropertyChanged
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         else
             // If not on UI thread, asynchronously invoke on UI thread
-            Application.Current.Dispatcher.BeginInvoke(() =>
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName))
+            Application.Current.Dispatcher.BeginInvoke(
+                () => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName))
             );
     }
 }

@@ -1,4 +1,4 @@
-﻿﻿using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using KeyPulse.Configuration;
@@ -130,8 +130,7 @@ public class DataService
     {
         using var ctx = _factory.CreateDbContext();
         var devices = ctx
-            .Devices
-            .Where(d => !d.IsHiddenFromDisplay)
+            .Devices.Where(d => !d.IsHiddenFromDisplay)
             .OrderBy(d => d.DeviceType)
             .ThenBy(d => d.DeviceName)
             .ToList();
@@ -139,20 +138,13 @@ public class DataService
         return new DashboardDeviceQueryResult
         {
             Devices = devices.AsReadOnly(),
-            TopKeyboardsByConnectionSeconds = GetTopDevicesByConnectionSeconds(
-                    devices,
-                    DeviceTypes.Keyboard
-                )
+            TopKeyboardsByConnectionSeconds = GetTopDevicesByConnectionSeconds(devices, DeviceTypes.Keyboard)
                 .AsReadOnly(),
-            TopMiceByConnectionSeconds = GetTopDevicesByConnectionSeconds(devices, DeviceTypes.Mouse)
-                .AsReadOnly(),
+            TopMiceByConnectionSeconds = GetTopDevicesByConnectionSeconds(devices, DeviceTypes.Mouse).AsReadOnly(),
         };
     }
 
-    private static List<Device> GetTopDevicesByConnectionSeconds(
-        IEnumerable<Device> devices,
-        DeviceTypes deviceType
-    )
+    private static List<Device> GetTopDevicesByConnectionSeconds(IEnumerable<Device> devices, DeviceTypes deviceType)
     {
         return devices
             .Where(d => d.DeviceType == deviceType)
@@ -465,8 +457,7 @@ public class DataService
     {
         return ctx.ActivitySnapshots.Where(s => s.DeviceId == deviceId)
                 .Select(s => (long?)s.Keystrokes + s.MouseClicks + s.MouseMovementSeconds)
-                .Sum()
-            ?? 0L;
+                .Sum() ?? 0L;
     }
 
     /// <summary>

@@ -2,7 +2,7 @@
 
 namespace KeyPulse.Views;
 
-public partial class StatusMessagePanel 
+public partial class StatusMessagePanel
 {
     public static readonly DependencyProperty StatusMessageProperty = DependencyProperty.Register(
         nameof(StatusMessage),

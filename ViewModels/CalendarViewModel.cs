@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
@@ -465,15 +465,15 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             var byId = persisted
                 .Devices.Where(d => !hiddenDeviceIds.Contains(d.DeviceId))
                 .ToDictionary(
-                d => d.DeviceId,
-                d => new CalendarTileDevice
-                {
-                    DeviceId = d.DeviceId,
-                    DeviceName = d.DeviceName,
-                    DeviceType = d.DeviceType,
-                    IsConnected = false,
-                }
-            );
+                    d => d.DeviceId,
+                    d => new CalendarTileDevice
+                    {
+                        DeviceId = d.DeviceId,
+                        DeviceName = d.DeviceName,
+                        DeviceType = d.DeviceType,
+                        IsConnected = false,
+                    }
+                );
             foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsConnected && !d.IsHiddenFromDisplay))
             {
                 byId[device.DeviceId] = new CalendarTileDevice

@@ -390,7 +390,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
                 deviceId = slice is { IsOthers: false } ? slice.DeviceId : null;
             }
             else if (
-                model.GetSeriesFromPoint(args.Position, DashboardActivityChartBuilder.LineHitTolerance) is LineSeries line
+                model.GetSeriesFromPoint(args.Position, DashboardActivityChartBuilder.LineHitTolerance)
+                    is LineSeries line
                 && line.Tag is string lineDeviceId
             )
             {

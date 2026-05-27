@@ -1,7 +1,7 @@
-﻿using KeyPulse.ViewModels;
-using Microsoft.Extensions.DependencyInjection;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
+using KeyPulse.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace KeyPulse.Views;
 

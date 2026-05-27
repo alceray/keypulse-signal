@@ -123,7 +123,9 @@ internal static class DashboardActivityChartBuilder
             if (valuesByBucket.Values.All(value => value <= 0))
                 continue;
 
-            var color = colorsByDevice.TryGetValue(device.DeviceId, out var deviceColor) ? deviceColor : OxyColors.Automatic;
+            var color = colorsByDevice.TryGetValue(device.DeviceId, out var deviceColor)
+                ? deviceColor
+                : OxyColors.Automatic;
             if (
                 !string.IsNullOrEmpty(selectedDeviceId)
                 && !string.Equals(device.DeviceId, selectedDeviceId, StringComparison.OrdinalIgnoreCase)
