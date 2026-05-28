@@ -527,7 +527,7 @@ public class RawInputService : IDisposable
     ///   \\?\HID#VID_046D&amp;PID_C548&amp;MI_00#7&amp;...
     /// into the KeyPulse format USB\VID_046D&amp;PID_C548.
     /// </summary>
-    private static string? ParseDeviceId(string devicePath)
+    internal static string? ParseDeviceId(string devicePath)
     {
         var vidIdx = devicePath.IndexOf("VID_", StringComparison.OrdinalIgnoreCase);
         if (vidIdx < 0)

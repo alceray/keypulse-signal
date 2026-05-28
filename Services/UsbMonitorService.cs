@@ -338,7 +338,7 @@ public class UsbMonitorService : IDisposable
         return $"USB\\VID_{vid}&PID_{pid}";
     }
 
-    private static string ExtractValueFromDeviceId(string? deviceId, string identifier)
+    internal static string ExtractValueFromDeviceId(string? deviceId, string identifier)
     {
         if (string.IsNullOrEmpty(deviceId) || string.IsNullOrEmpty(identifier))
             return "";
@@ -447,7 +447,7 @@ public class UsbMonitorService : IDisposable
         }
     }
 
-    private static bool IsUnknownDeviceName(string? deviceName)
+    internal static bool IsUnknownDeviceName(string? deviceName)
     {
         return string.IsNullOrWhiteSpace(deviceName)
             || string.Equals(deviceName, DEFAULT_DEVICE_NAME, StringComparison.OrdinalIgnoreCase);
