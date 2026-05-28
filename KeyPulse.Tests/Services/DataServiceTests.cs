@@ -149,11 +149,8 @@ public class DataServiceTests : IDisposable
         snap.MouseMovementSeconds.ShouldBe((byte)5); // Max(5, 3)
     }
 
-    [Fact(
-        Skip = "GAP: two new snapshots for the same (DeviceId, Minute) in one batch collide on the unique "
-            + "index; SaveChanges throws and the whole batch is dropped in the catch. Expected in-batch dedup/merge."
-    )]
-    public void SaveActivitySnapshots_InBatchDuplicate_ShouldNotLoseBatch()
+    [Fact]
+    public void SaveActivitySnapshots_InBatchDuplicate_MergesInsteadOfLosingBatch()
     {
         Seed(ctx => ctx.Devices.Add(new Device { DeviceId = "D1", DeviceName = "kb" }));
 
@@ -174,7 +171,9 @@ public class DataServiceTests : IDisposable
             ]
         );
 
-        _sut.GetActivitySnapshots().ShouldNotBeEmpty();
+        // The two same-minute snapshots merge into one row rather than colliding and dropping the batch.
+        _sut.GetActivitySnapshots().ShouldHaveSingleItem().Keystrokes.ShouldBe(3);
+        _sut.GetDevice("D1")!.TotalInputCount.ShouldBe(3);
     }
 
     // ── RecoverFromCrash ────────────────────────────────────────────────────────

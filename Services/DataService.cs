@@ -360,9 +360,15 @@ public class DataService
                 if (!devicesById.TryGetValue(snapshot.DeviceId, out var device))
                     continue;
 
-                var existing = ctx.ActivitySnapshots.SingleOrDefault(s =>
-                    s.DeviceId == snapshot.DeviceId && s.Minute == snapshot.Minute
-                );
+                // Check pending (Local) rows first so duplicates within the same batch merge into the
+                // already-added snapshot instead of colliding on the unique (DeviceId, Minute) index.
+                var existing =
+                    ctx.ActivitySnapshots.Local.FirstOrDefault(s =>
+                        s.DeviceId == snapshot.DeviceId && s.Minute == snapshot.Minute
+                    )
+                    ?? ctx.ActivitySnapshots.SingleOrDefault(s =>
+                        s.DeviceId == snapshot.DeviceId && s.Minute == snapshot.Minute
+                    );
                 var snapshotChanged = false;
 
                 if (existing != null)

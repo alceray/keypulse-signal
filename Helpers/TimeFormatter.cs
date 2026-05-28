@@ -1,4 +1,6 @@
-﻿namespace KeyPulse.Helpers;
+﻿using Serilog;
+
+namespace KeyPulse.Helpers;
 
 /// <summary>
 /// Formats DateTime and TimeSpan values as human-readable strings.
@@ -48,8 +50,19 @@ public static class TimeFormatter
         var localDateTime = ToLocalTime(dateTime);
         var timeSpan = DateTime.Now - localDateTime;
 
+        // A future timestamp means a clock-skew or logic bug upstream; surface it rather than render
+        // a nonsensical negative duration.
+        if (timeSpan < TimeSpan.Zero)
+        {
+            Log.Error("Future timestamp received: {Timestamp:o}", dateTime);
+            return "just now";
+        }
+
         if (timeSpan.TotalSeconds < 60)
-            return $"{(int)timeSpan.TotalSeconds} seconds ago";
+        {
+            var seconds = (int)timeSpan.TotalSeconds;
+            return $"{seconds} {(seconds == 1 ? "second" : "seconds")} ago";
+        }
 
         if (timeSpan.TotalMinutes < 60)
         {

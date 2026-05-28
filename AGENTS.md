@@ -320,7 +320,8 @@ dotnet ef database update SomeOlderMigrationName
 
 ### Helper Logging Conventions
 
-- Pure helpers such as `RelayCommand`, `AsyncRelayCommand`, `ObservableObject`, and `TimeFormatter` should stay log-free.
+- Pure helpers such as `RelayCommand`, `AsyncRelayCommand`, and `ObservableObject` should stay log-free. `TimeFormatter` is log-free except `ToRelativeTime`, which logs an error when given a future timestamp.
+- Log messages should state the condition in domain terms and must not expose internal code details (method or class names). For example, `ToRelativeTime`'s future-timestamp log reads `"Future timestamp received"`, not the method name.
 - Helpers that touch the file system, PowerShell, SetupAPI/cfgmgr32, or crash-recovery inputs should log meaningful failures.
 - `HeartbeatFile.Read()` should log `Debug` when no heartbeat file exists and `Warning` if the file exists but contains an invalid timestamp.
 - `UsbDeviceClassifier.ResolveDeviceType()` logs `Warning` when the observed signal pattern does not match a known keyboard/mouse shape.

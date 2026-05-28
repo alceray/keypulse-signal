@@ -131,11 +131,8 @@ public class DeviceTests
         names.ShouldContain(nameof(Device.StatusText));
     }
 
-    [Fact(
-        Skip = "GAP: IsHiddenFromDisplay raises StatusText but not StatusSortOrder, so a list sorted by "
-            + "StatusSortOrder won't reorder when a connected device is hidden/unhidden."
-    )]
-    public void IsHiddenFromDisplay_ShouldRaiseStatusSortOrder()
+    [Fact]
+    public void IsHiddenFromDisplay_RaisesStatusSortOrder()
     {
         var device = NewDevice();
         device.SessionStartedAt = DateTime.Now;

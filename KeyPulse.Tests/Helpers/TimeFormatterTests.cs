@@ -194,17 +194,13 @@ public class TimeFormatterTests
     public void ToRelativeTime_Year_Singular() =>
         TimeFormatter.ToRelativeTime(DateTime.Now.AddDays(-400)).ShouldBe("1 year ago");
 
-    [Fact(
-        Skip = "GAP: the seconds tier has no singular form, so ~1s renders \"1 seconds ago\". Expected \"1 second ago\"."
-    )]
-    public void ToRelativeTime_OneSecond_ShouldBeSingular() =>
+    [Fact]
+    public void ToRelativeTime_OneSecond_IsSingular() =>
         TimeFormatter.ToRelativeTime(DateTime.Now.AddSeconds(-1)).ShouldBe("1 second ago");
 
-    [Fact(
-        Skip = "GAP: future timestamps produce nonsensical negative output (e.g. \"-3600 seconds ago\"). Expected a \"just now\"/future-aware result."
-    )]
-    public void ToRelativeTime_FutureTimestamp_ShouldNotBeNegative() =>
-        TimeFormatter.ToRelativeTime(DateTime.Now.AddHours(1)).ShouldNotContain("-");
+    [Fact]
+    public void ToRelativeTime_FutureTimestamp_ReturnsJustNow() =>
+        TimeFormatter.ToRelativeTime(DateTime.Now.AddHours(1)).ShouldBe("just now");
 
     // ── FormatDuration: top-3 units, no negative/zero, week & month units ──────
 

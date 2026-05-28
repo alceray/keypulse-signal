@@ -74,13 +74,17 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         DeviceListCollection = CollectionViewSource.GetDefaultView(_usbMonitorService.DeviceList);
         DeviceListCollection.Filter = device => ShowAllDevices || ((Device)device).IsConnected;
 
-        // Default sort: status (Connected, Hidden, Disconnected), with Device ID as the tiebreaker.
-        DeviceListCollection.SortDescriptions.Add(
-            new SortDescription(nameof(Device.StatusSortOrder), ListSortDirection.Ascending)
-        );
-        DeviceListCollection.SortDescriptions.Add(
-            new SortDescription(nameof(Device.DeviceId), ListSortDirection.Ascending)
-        );
+        // Sort by status (Connected, Hidden, Disconnected) then Device ID. Guarded because the default
+        // view is shared with the singleton DeviceList and persists across view-model recreations.
+        if (DeviceListCollection.SortDescriptions.Count == 0)
+        {
+            DeviceListCollection.SortDescriptions.Add(
+                new SortDescription(nameof(Device.StatusSortOrder), ListSortDirection.Ascending)
+            );
+            DeviceListCollection.SortDescriptions.Add(
+                new SortDescription(nameof(Device.DeviceId), ListSortDirection.Ascending)
+            );
+        }
 
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged += Device_PropertyChanged;
@@ -111,14 +115,17 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
     private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(Device.IsConnected))
+        // A disconnected device should drop any held activity state.
+        if (e.PropertyName == nameof(Device.IsConnected) && sender is Device { IsConnected: false } device)
         {
-            if (sender is Device device && !device.IsConnected)
-            {
-                _rawInputService.ClearDeviceHoldState(device.DeviceId);
-                device.SetActivityState(false);
-            }
+            _rawInputService.ClearDeviceHoldState(device.DeviceId);
+            device.SetActivityState(false);
+        }
 
+        // A CollectionView re-sorts/filters only on Refresh, not on item property changes — so refresh
+        // when a status change affects ordering/visibility (connect/disconnect or hide/unhide).
+        if (e.PropertyName is nameof(Device.IsConnected) or nameof(Device.StatusSortOrder))
+        {
             Application.Current.Dispatcher.BeginInvoke(() =>
             {
                 DeviceListCollection.Refresh();

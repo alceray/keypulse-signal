@@ -184,6 +184,7 @@ public class Device : ObservableObject
             _isHiddenFromDisplay = value;
             OnPropertyChanged();
             OnPropertyChanged(nameof(StatusText));
+            OnPropertyChanged(nameof(StatusSortOrder));
         }
     }
 
