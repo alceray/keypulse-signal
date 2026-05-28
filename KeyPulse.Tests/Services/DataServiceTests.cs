@@ -316,10 +316,10 @@ public class DataServiceTests : IDisposable
         _sut.GetDashboardEvents(null, At(23, 0)).DeviceEvents.Count.ShouldBe(1);
     }
 
-    // ── GetEventsFromLastCompletedSession ───────────────────────────────────────
+    // ── DevicesWithConnectionEndedInLastSession (computed once at startup) ───────
 
     [Fact]
-    public void GetEventsFromLastCompletedSession_ReturnsEventsBetweenStartAndEnd()
+    public void DevicesWithConnectionEndedInLastSession_IncludesDevicesClosedInLastSession()
     {
         Seed(ctx =>
         {
@@ -328,22 +328,88 @@ public class DataServiceTests : IDisposable
                 new DeviceEvent
                 {
                     DeviceId = "D1",
-                    EventType = EventTypes.Connected,
-                    EventTime = At(9, 1),
+                    EventType = EventTypes.ConnectionEnded,
+                    EventTime = At(9, 30),
+                }
+            );
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "M1",
+                    EventType = EventTypes.ConnectionEnded,
+                    EventTime = At(9, 40),
                 }
             );
             ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = At(10, 0) });
         });
 
-        _sut.GetEventsFromLastCompletedSession().ShouldHaveSingleItem().DeviceId.ShouldBe("D1");
+        var closed = _sut.DevicesWithConnectionEndedInLastSession();
+        closed.ShouldContain("D1");
+        closed.ShouldContain("M1");
     }
 
     [Fact]
-    public void GetEventsFromLastCompletedSession_NoAppEnded_ReturnsEmpty()
+    public void DevicesWithConnectionEndedInLastSession_ExcludesDevicesNotClosed()
+    {
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) });
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "OTHER",
+                    EventType = EventTypes.ConnectionEnded,
+                    EventTime = At(9, 30),
+                }
+            );
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = At(10, 0) });
+        });
+
+        var closed = _sut.DevicesWithConnectionEndedInLastSession();
+        closed.ShouldContain("OTHER");
+        closed.ShouldNotContain("D1");
+    }
+
+    [Fact]
+    public void DevicesWithConnectionEndedInLastSession_NoCompletedSession_ReturnsEmpty()
     {
         Seed(ctx => ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) }));
 
-        _sut.GetEventsFromLastCompletedSession().ShouldBeEmpty();
+        _sut.DevicesWithConnectionEndedInLastSession().ShouldBeEmpty();
+    }
+
+    [Fact]
+    public void DevicesWithConnectionEndedInLastSession_OnlyConsidersTheMostRecentSession()
+    {
+        Seed(ctx =>
+        {
+            // An earlier completed session that closed D1.
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(8, 0) });
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.ConnectionEnded,
+                    EventTime = At(8, 30),
+                }
+            );
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = At(8, 45) });
+            // The most recent completed session closed only M1.
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) });
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "M1",
+                    EventType = EventTypes.ConnectionEnded,
+                    EventTime = At(9, 30),
+                }
+            );
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = At(10, 0) });
+        });
+
+        var closed = _sut.DevicesWithConnectionEndedInLastSession();
+        closed.ShouldContain("M1");
+        closed.ShouldNotContain("D1"); // closed in the earlier session, not the last
     }
 
     // ── GetLastDeviceEvent ──────────────────────────────────────────────────────

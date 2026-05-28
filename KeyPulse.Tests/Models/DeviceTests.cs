@@ -152,7 +152,7 @@ public class DeviceTests
         var device = NewDevice();
         var time = new DateTime(2026, 5, 20, 9, 0, 0);
 
-        device.UpdateLastConnectedAt(time, EventTypes.ConnectionStarted, []);
+        device.UpdateLastConnectedAt(time, EventTypes.ConnectionStarted, false);
 
         device.LastConnectedAt.ShouldBe(time);
     }
@@ -164,7 +164,7 @@ public class DeviceTests
         device.LastConnectedAt = new DateTime(2020, 1, 1);
         var time = new DateTime(2026, 5, 20, 9, 0, 0);
 
-        device.UpdateLastConnectedAt(time, EventTypes.Connected, []);
+        device.UpdateLastConnectedAt(time, EventTypes.Connected, true);
 
         device.LastConnectedAt.ShouldBe(time);
     }
@@ -176,50 +176,33 @@ public class DeviceTests
         var original = new DateTime(2020, 1, 1);
         device.LastConnectedAt = original;
 
-        device.UpdateLastConnectedAt(new DateTime(2026, 5, 20), EventTypes.Disconnected, []);
+        device.UpdateLastConnectedAt(new DateTime(2026, 5, 20), EventTypes.Disconnected, false);
 
         device.LastConnectedAt.ShouldBe(original);
     }
 
     [Fact]
-    public void UpdateLastConnectedAt_ConnectionStarted_NoEndedForThisDevice_Sets()
+    public void UpdateLastConnectedAt_ConnectionStarted_NotEndedLastSession_Sets()
     {
         var device = NewDevice();
         device.LastConnectedAt = new DateTime(2020, 1, 1);
         var time = new DateTime(2026, 5, 20);
-        // A ConnectionEnded exists, but for a DIFFERENT device — the predicate filters on DeviceId.
-        DeviceEvent[] events = [new() { DeviceId = "OTHER", EventType = EventTypes.ConnectionEnded }];
 
-        device.UpdateLastConnectedAt(time, EventTypes.ConnectionStarted, events);
+        device.UpdateLastConnectedAt(time, EventTypes.ConnectionStarted, false);
 
         device.LastConnectedAt.ShouldBe(time);
     }
 
     [Fact]
-    public void UpdateLastConnectedAt_ConnectionStarted_WithEndedForThisDevice_NoOp()
+    public void UpdateLastConnectedAt_ConnectionStarted_EndedLastSession_NoOp()
     {
         var device = NewDevice();
         var original = new DateTime(2020, 1, 1);
         device.LastConnectedAt = original;
-        DeviceEvent[] events = [new() { DeviceId = "DEV1", EventType = EventTypes.ConnectionEnded }];
 
-        device.UpdateLastConnectedAt(new DateTime(2026, 5, 20), EventTypes.ConnectionStarted, events);
+        device.UpdateLastConnectedAt(new DateTime(2026, 5, 20), EventTypes.ConnectionStarted, true);
 
         device.LastConnectedAt.ShouldBe(original);
-    }
-
-    [Fact(
-        Skip = "GAP: UpdateLastConnectedAt throws NullReferenceException when events is null "
-            + "(ConnectionStarted + existing LastConnectedAt reaches events.Any). Should treat null as empty."
-    )]
-    public void UpdateLastConnectedAt_NullEvents_ShouldNotThrow()
-    {
-        var device = NewDevice();
-        device.LastConnectedAt = new DateTime(2020, 1, 1);
-
-        Should.NotThrow(
-            () => device.UpdateLastConnectedAt(new DateTime(2026, 5, 20), EventTypes.ConnectionStarted, null!)
-        );
     }
 
     // ── CommitSession ──────────────────────────────────────────────────────────

@@ -91,6 +91,6 @@ public class EndToEndScenarioTests : IDisposable
 
         // Device snapshot accumulated the input; the completed session is recoverable.
         _data.GetDevice("D1")!.TotalInputCount.ShouldBe(42);
-        _data.GetEventsFromLastCompletedSession().Count.ShouldBe(2); // Connected + Disconnected
+        _data.GetAllDeviceEvents().Count.ShouldBe(4); // AppStarted, Connected, Disconnected, AppEnded
     }
 }

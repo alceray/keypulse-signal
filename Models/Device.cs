@@ -244,12 +244,11 @@ public class Device : ObservableObject
     }
 
     /// <summary>
-    /// Updates LastConnectedAt using event-aware rules:
-    /// - always set on first known connection or Connected events
-    /// - for ConnectionStarted, set only when the last completed session's
-    ///   non-app events contain no ConnectionEnded for this device.
+    /// Updates LastConnectedAt: always set on a first-ever connection or a Connected event; for
+    /// ConnectionStarted, set only when the device was NOT cleanly disconnected last session
+    /// (per <paramref name="hadConnectionEndedInLastSession"/>, which only that path reads).
     /// </summary>
-    public void UpdateLastConnectedAt(DateTime startTime, EventTypes eventType, IEnumerable<DeviceEvent> events)
+    public void UpdateLastConnectedAt(DateTime startTime, EventTypes eventType, bool hadConnectionEndedInLastSession)
     {
         if (!_lastConnectedAt.HasValue || eventType == EventTypes.Connected)
         {
@@ -260,11 +259,7 @@ public class Device : ObservableObject
         if (eventType != EventTypes.ConnectionStarted)
             return;
 
-        var hasConnectionEndedInLastSession = events.Any(e =>
-            e.DeviceId == DeviceId && e.EventType == EventTypes.ConnectionEnded
-        );
-
-        if (!hasConnectionEndedInLastSession)
+        if (!hadConnectionEndedInLastSession)
             LastConnectedAt = startTime;
     }
 

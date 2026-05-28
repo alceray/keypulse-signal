@@ -107,7 +107,11 @@ public class UsbMonitorService : IDisposable
         return new ObservableCollection<Device>(devices);
     }
 
-    private void AddDeviceEvent(DeviceEvent deviceEvent, Device? device = null)
+    private void AddDeviceEvent(
+        DeviceEvent deviceEvent,
+        Device? device = null,
+        bool hadConnectionEndedLastSession = false
+    )
     {
         // During disposal the WPF dispatcher has stopped pumping; skip all UI updates to
         // avoid a Dispatcher.Invoke deadlock that would let Windows kill the process before
@@ -159,10 +163,11 @@ public class UsbMonitorService : IDisposable
         if (deviceEvent.EventType.IsOpeningEvent())
         {
             trackedDevice.SessionStartedAt = deviceEvent.EventTime;
+            // Only ConnectionStarted consults this flag; Connected passes the default false (ignored).
             trackedDevice.UpdateLastConnectedAt(
                 deviceEvent.EventTime,
                 deviceEvent.EventType,
-                _dataService.GetEventsFromLastCompletedSession()
+                hadConnectionEndedLastSession
             );
         }
         else if (deviceEvent.EventType.IsClosingEvent())
@@ -396,6 +401,9 @@ public class UsbMonitorService : IDisposable
         AppSessionStartedAt = DateTime.Now;
         AddDeviceEvent(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = AppSessionStartedAt });
 
+        // Computed once for the whole scan instead of per device.
+        var devicesEndedLastSession = _dataService.DevicesWithConnectionEndedInLastSession();
+
         var devicesById = new Dictionary<string, List<ManagementBaseObject>>();
         ManagementObjectSearcher searcher = new(
             @"
@@ -443,7 +451,7 @@ public class UsbMonitorService : IDisposable
                 EventType = EventTypes.ConnectionStarted,
                 EventTime = AppSessionStartedAt,
             };
-            AddDeviceEvent(connectionStartedEvent, currDevice);
+            AddDeviceEvent(connectionStartedEvent, currDevice, devicesEndedLastSession.Contains(currDevice.DeviceId));
         }
     }
 

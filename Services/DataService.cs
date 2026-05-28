@@ -290,33 +290,31 @@ public class DataService
         return query.OrderByDescending(e => e.DeviceEventId).FirstOrDefault();
     }
 
-    public IReadOnlyCollection<DeviceEvent> GetEventsFromLastCompletedSession()
+    /// <summary>
+    /// Device IDs with a ConnectionEnded in the last completed app session (one query; session bounds
+    /// are inline subqueries, so the set is empty when there is no completed session). Computed once at
+    /// startup so each ConnectionStarted is a set lookup rather than a per-device query.
+    /// </summary>
+    public IReadOnlySet<string> DevicesWithConnectionEndedInLastSession()
     {
         using var ctx = _factory.CreateDbContext();
-
-        var lastAppEnded = ctx
-            .DeviceEvents.Where(e => e.EventType == EventTypes.AppEnded)
-            .OrderByDescending(e => e.DeviceEventId)
-            .Select(e => (int?)e.DeviceEventId)
-            .FirstOrDefault();
-
-        if (!lastAppEnded.HasValue)
-            return [];
-
-        var lastAppStarted = ctx
-            .DeviceEvents.Where(e => e.EventType == EventTypes.AppStarted && e.DeviceEventId < lastAppEnded.Value)
-            .OrderByDescending(e => e.DeviceEventId)
-            .Select(e => (int?)e.DeviceEventId)
-            .FirstOrDefault();
-
-        if (!lastAppStarted.HasValue)
-            return [];
+        var appEnded = ctx.DeviceEvents.Where(e => e.EventType == EventTypes.AppEnded);
 
         return ctx
-            .DeviceEvents.Where(e => e.DeviceEventId > lastAppStarted.Value && e.DeviceEventId < lastAppEnded.Value)
-            .OrderBy(e => e.DeviceEventId)
-            .ToList()
-            .AsReadOnly();
+            .DeviceEvents.Where(e =>
+                e.EventType == EventTypes.ConnectionEnded
+                && e.DeviceId != ""
+                && e.DeviceEventId < appEnded.Max(a => (int?)a.DeviceEventId)
+                && e.DeviceEventId
+                    > ctx.DeviceEvents.Where(s =>
+                            s.EventType == EventTypes.AppStarted
+                            && s.DeviceEventId < appEnded.Max(a => (int?)a.DeviceEventId)
+                        )
+                        .Max(s => (int?)s.DeviceEventId)
+            )
+            .Select(e => e.DeviceId)
+            .Distinct()
+            .ToHashSet();
     }
 
     public void SaveDeviceEvent(ApplicationDbContext ctx, DeviceEvent deviceEvent)
