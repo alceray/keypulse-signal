@@ -1,0 +1,441 @@
+using KeyPulse.Data;
+using KeyPulse.Models;
+using KeyPulse.Services;
+using KeyPulse.Tests.Infrastructure;
+
+namespace KeyPulse.Tests.Services;
+
+/// <summary>
+/// DataService runs Database.Migrate() + DatabaseMigrations.RunAll() in its constructor. Against the
+/// EnsureCreated fixture the migrate is a no-op (migrations are attributed to the base context) and
+/// RunAll operates on the already-created tables. Crash recovery reads a heartbeat file that is absent
+/// in tests (HeartbeatFile.Read() -> null), so crash time falls back to the orphaned session start.
+/// </summary>
+public class DataServiceTests : IDisposable
+{
+    private readonly SqliteTestDatabase _db = new();
+    private readonly AppTimerService _timer = new();
+    private readonly DailyStatsService _dailyStats;
+    private readonly DataService _sut;
+
+    public DataServiceTests()
+    {
+        _dailyStats = new DailyStatsService(_db.Factory, _timer);
+        _sut = new DataService(_db.Factory, _dailyStats);
+    }
+
+    public void Dispose()
+    {
+        _dailyStats.Dispose();
+        _timer.Dispose();
+        _db.Dispose();
+    }
+
+    private static DateTime At(int hour, int minute, int second = 0) =>
+        new(2026, 5, 20, hour, minute, second, DateTimeKind.Local);
+
+    private void Seed(Action<ApplicationDbContext> seed)
+    {
+        using var ctx = _db.CreateContext();
+        seed(ctx);
+        ctx.SaveChanges();
+    }
+
+    // ── SaveDeviceEvent ─────────────────────────────────────────────────────────
+
+    [Fact]
+    public void SaveDeviceEvent_Inserts()
+    {
+        _sut.SaveDeviceEvent(
+            new DeviceEvent
+            {
+                DeviceId = "D1",
+                EventType = EventTypes.Connected,
+                EventTime = At(9, 0),
+            }
+        );
+
+        _sut.GetAllDeviceEvents().Count.ShouldBe(1);
+    }
+
+    [Fact]
+    public void SaveDeviceEvent_Duplicate_SwallowedByParameterlessOverload()
+    {
+        DeviceEvent Make() =>
+            new()
+            {
+                DeviceId = "D1",
+                EventType = EventTypes.Connected,
+                EventTime = At(9, 0),
+            };
+
+        _sut.SaveDeviceEvent(Make());
+        Should.NotThrow(() => _sut.SaveDeviceEvent(Make())); // unique-index violation caught & logged
+
+        _sut.GetAllDeviceEvents().Count.ShouldBe(1);
+    }
+
+    // ── SaveActivitySnapshots ───────────────────────────────────────────────────
+
+    [Fact]
+    public void SaveActivitySnapshots_UnknownDevice_Skipped()
+    {
+        _sut.SaveActivitySnapshots(
+            [
+                new ActivitySnapshot
+                {
+                    DeviceId = "GHOST",
+                    Minute = At(9, 5),
+                    Keystrokes = 5,
+                },
+            ]
+        );
+
+        _sut.GetActivitySnapshots().ShouldBeEmpty();
+    }
+
+    [Fact]
+    public void SaveActivitySnapshots_New_InsertsAndCountsTotalInput()
+    {
+        Seed(ctx => ctx.Devices.Add(new Device { DeviceId = "D1", DeviceName = "kb" }));
+
+        _sut.SaveActivitySnapshots(
+            [
+                new ActivitySnapshot
+                {
+                    DeviceId = "D1",
+                    Minute = At(9, 5),
+                    Keystrokes = 10,
+                    MouseClicks = 2,
+                    MouseMovementSeconds = 3,
+                },
+            ]
+        );
+
+        _sut.GetActivitySnapshots().ShouldHaveSingleItem().Keystrokes.ShouldBe(10);
+        _sut.GetDevice("D1")!.TotalInputCount.ShouldBe(15); // 10 + 2 + 3
+    }
+
+    [Fact]
+    public void SaveActivitySnapshots_MergesExisting_AddsKeysMaxesMovement()
+    {
+        Seed(ctx => ctx.Devices.Add(new Device { DeviceId = "D1", DeviceName = "kb" }));
+
+        _sut.SaveActivitySnapshots(
+            [
+                new ActivitySnapshot
+                {
+                    DeviceId = "D1",
+                    Minute = At(9, 5),
+                    Keystrokes = 10,
+                    MouseMovementSeconds = 5,
+                },
+            ]
+        );
+        _sut.SaveActivitySnapshots(
+            [
+                new ActivitySnapshot
+                {
+                    DeviceId = "D1",
+                    Minute = At(9, 5),
+                    Keystrokes = 4,
+                    MouseMovementSeconds = 3,
+                },
+            ]
+        );
+
+        var snap = _sut.GetActivitySnapshots().ShouldHaveSingleItem();
+        snap.Keystrokes.ShouldBe(14); // additive
+        snap.MouseMovementSeconds.ShouldBe((byte)5); // Max(5, 3)
+    }
+
+    [Fact(
+        Skip = "GAP: two new snapshots for the same (DeviceId, Minute) in one batch collide on the unique "
+            + "index; SaveChanges throws and the whole batch is dropped in the catch. Expected in-batch dedup/merge."
+    )]
+    public void SaveActivitySnapshots_InBatchDuplicate_ShouldNotLoseBatch()
+    {
+        Seed(ctx => ctx.Devices.Add(new Device { DeviceId = "D1", DeviceName = "kb" }));
+
+        _sut.SaveActivitySnapshots(
+            [
+                new ActivitySnapshot
+                {
+                    DeviceId = "D1",
+                    Minute = At(9, 5),
+                    Keystrokes = 1,
+                },
+                new ActivitySnapshot
+                {
+                    DeviceId = "D1",
+                    Minute = At(9, 5),
+                    Keystrokes = 2,
+                },
+            ]
+        );
+
+        _sut.GetActivitySnapshots().ShouldNotBeEmpty();
+    }
+
+    // ── RecoverFromCrash ────────────────────────────────────────────────────────
+
+    [Fact]
+    public void RecoverFromCrash_UnbalancedDevice_WritesCloseAndAppEnded()
+    {
+        Seed(ctx =>
+        {
+            ctx.Devices.Add(new Device { DeviceId = "D1", DeviceName = "kb" });
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) });
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(9, 1),
+                }
+            );
+        });
+
+        _sut.RecoverFromCrash();
+
+        var events = _sut.GetAllDeviceEvents();
+        events.ShouldContain(e => e.DeviceId == "D1" && e.EventType == EventTypes.ConnectionEnded);
+        events.ShouldContain(e => e.EventType == EventTypes.AppEnded);
+    }
+
+    [Fact]
+    public void RecoverFromCrash_CleanShutdown_NoBackfill()
+    {
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) });
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = At(10, 0) });
+        });
+
+        _sut.RecoverFromCrash();
+
+        _sut.GetAllDeviceEvents().Count.ShouldBe(2); // last app event was AppEnded => clean
+    }
+
+    // ── RebuildDeviceSnapshots ──────────────────────────────────────────────────
+
+    [Fact]
+    public void RebuildDeviceSnapshots_RecomputesConnectionSeconds_AndClearsSession()
+    {
+        Seed(ctx =>
+        {
+            ctx.Devices.Add(
+                new Device
+                {
+                    DeviceId = "D1",
+                    DeviceName = "kb",
+                    SessionStartedAt = At(9, 0),
+                }
+            );
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(9, 0),
+                }
+            );
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.Disconnected,
+                    EventTime = At(9, 1),
+                }
+            );
+        });
+
+        _sut.RebuildDeviceSnapshots();
+
+        var device = _sut.GetDevice("D1")!;
+        device.SessionStartedAt.ShouldBeNull();
+        device.TotalConnectionSeconds.ShouldBe(60);
+    }
+
+    // ── GetDashboardEvents (pre-range seeding) ──────────────────────────────────
+
+    [Fact]
+    public void GetDashboardEvents_SeedsStillOpenDevice_ButNotClosedOrPostClose()
+    {
+        var from = At(12, 0);
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "OPEN",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(8, 0),
+                }
+            );
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "CLOSED",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(8, 0),
+                }
+            );
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "CLOSED",
+                    EventType = EventTypes.Disconnected,
+                    EventTime = At(9, 0),
+                }
+            );
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(7, 0) });
+        });
+
+        var result = _sut.GetDashboardEvents(from, At(14, 0));
+
+        result.DeviceEvents.ShouldContain(e => e.DeviceId == "OPEN"); // open at `from` => seeded
+        result.DeviceEvents.ShouldNotContain(e => e.DeviceId == "CLOSED"); // closed before `from`
+        result.AppLifecycleEvents.ShouldContain(e => e.EventType == EventTypes.AppStarted); // app running => seeded
+    }
+
+    [Fact]
+    public void GetDashboardEvents_NullFrom_NoSeeds()
+    {
+        Seed(ctx =>
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(9, 0),
+                }
+            )
+        );
+
+        _sut.GetDashboardEvents(null, At(23, 0)).DeviceEvents.Count.ShouldBe(1);
+    }
+
+    // ── GetEventsFromLastCompletedSession ───────────────────────────────────────
+
+    [Fact]
+    public void GetEventsFromLastCompletedSession_ReturnsEventsBetweenStartAndEnd()
+    {
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) });
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(9, 1),
+                }
+            );
+            ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppEnded, EventTime = At(10, 0) });
+        });
+
+        _sut.GetEventsFromLastCompletedSession().ShouldHaveSingleItem().DeviceId.ShouldBe("D1");
+    }
+
+    [Fact]
+    public void GetEventsFromLastCompletedSession_NoAppEnded_ReturnsEmpty()
+    {
+        Seed(ctx => ctx.DeviceEvents.Add(new DeviceEvent { EventType = EventTypes.AppStarted, EventTime = At(9, 0) }));
+
+        _sut.GetEventsFromLastCompletedSession().ShouldBeEmpty();
+    }
+
+    // ── GetLastDeviceEvent ──────────────────────────────────────────────────────
+
+    [Fact]
+    public void GetLastDeviceEvent_EmptyDb_ReturnsNull() => _sut.GetLastDeviceEvent().ShouldBeNull();
+
+    [Fact]
+    public void GetLastDeviceEvent_FiltersByDeviceOrReturnsLatestOverall()
+    {
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D1",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(9, 0),
+                }
+            );
+            ctx.DeviceEvents.Add(
+                new DeviceEvent
+                {
+                    DeviceId = "D2",
+                    EventType = EventTypes.Connected,
+                    EventTime = At(9, 1),
+                }
+            );
+        });
+
+        _sut.GetLastDeviceEvent("D1")!.DeviceId.ShouldBe("D1");
+        _sut.GetLastDeviceEvent()!.DeviceId.ShouldBe("D2"); // latest overall
+    }
+
+    // ── GetDashboardDevices / visibility ────────────────────────────────────────
+
+    [Fact]
+    public void GetDashboardDevices_ExcludesHidden()
+    {
+        Seed(ctx =>
+        {
+            ctx.Devices.Add(
+                new Device
+                {
+                    DeviceId = "VISIBLE",
+                    DeviceName = "a",
+                    DeviceType = DeviceTypes.Keyboard,
+                }
+            );
+            ctx.Devices.Add(
+                new Device
+                {
+                    DeviceId = "HIDDEN",
+                    DeviceName = "b",
+                    DeviceType = DeviceTypes.Keyboard,
+                    IsHiddenFromDisplay = true,
+                }
+            );
+        });
+
+        var result = _sut.GetDashboardDevices();
+        result.Devices.ShouldContain(d => d.DeviceId == "VISIBLE");
+        result.Devices.ShouldNotContain(d => d.DeviceId == "HIDDEN");
+    }
+
+    [Fact]
+    public void SetDeviceHiddenFromDisplay_MissingDevice_ReturnsFalse() =>
+        _sut.SetDeviceHiddenFromDisplay("GHOST", true).ShouldBeFalse();
+
+    [Fact]
+    public void SetDeviceHiddenFromDisplay_Existing_Updates()
+    {
+        Seed(ctx => ctx.Devices.Add(new Device { DeviceId = "D1", DeviceName = "a" }));
+
+        _sut.SetDeviceHiddenFromDisplay("D1", true).ShouldBeTrue();
+        _sut.GetDevice("D1")!.IsHiddenFromDisplay.ShouldBeTrue();
+    }
+
+    // ── GetActivitySnapshots filtering ──────────────────────────────────────────
+
+    [Fact]
+    public void GetActivitySnapshots_FiltersByDeviceAndRange()
+    {
+        Seed(ctx =>
+        {
+            ctx.ActivitySnapshots.Add(new ActivitySnapshot { DeviceId = "D1", Minute = At(9, 0) });
+            ctx.ActivitySnapshots.Add(new ActivitySnapshot { DeviceId = "D1", Minute = At(10, 0) });
+            ctx.ActivitySnapshots.Add(new ActivitySnapshot { DeviceId = "D2", Minute = At(9, 0) });
+        });
+
+        _sut.GetActivitySnapshots("D1").Count.ShouldBe(2);
+        _sut.GetActivitySnapshots(from: At(9, 30), to: At(10, 30)).Count.ShouldBe(1); // only the 10:00 rows
+        _sut.GetActivitySnapshots().Count.ShouldBe(3); // no filter
+    }
+}

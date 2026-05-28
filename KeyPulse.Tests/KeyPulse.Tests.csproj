@@ -28,6 +28,9 @@
   <ItemGroup>
     <Using Include="Xunit" />
     <Using Include="Shouldly" />
+    <!-- Mirror the app project: avoid System.Drawing/WinForms colliding with System.Windows.Media. -->
+    <Using Remove="System.Drawing" />
+    <Using Remove="System.Windows.Forms" />
   </ItemGroup>
 
 </Project>

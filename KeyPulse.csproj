@@ -25,6 +25,11 @@
     <CopyOutputSymbolsToPublishDirectory>false</CopyOutputSymbolsToPublishDirectory>
   </PropertyGroup>
 
+  <!-- Expose internal types (classifiers, builders, transforms) to the test project. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="KeyPulse.Tests" />
+  </ItemGroup>
+
   <!-- The test project lives in a subfolder; keep its sources out of this project's default globs. -->
   <ItemGroup>
     <Compile Remove="KeyPulse.Tests\**" />

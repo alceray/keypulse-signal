@@ -14,6 +14,7 @@ KeyPulse Signal is a .NET 8 WPF (Windows-only) desktop app that tracks USB keybo
 dotnet build -c Debug          # build (Debug = windowed; Release = tray/background)
 dotnet run -c Debug            # run locally
 dotnet csharpier .             # format (printWidth 120, see .csharpierrc.json)
+dotnet test "KeyPulse Signal.sln"   # run all tests (NOT bare `dotnet test` — see note below)
 
 # EF Core migrations (run from repo root)
 dotnet ef migrations add <Name>
@@ -23,9 +24,9 @@ dotnet ef database update
 .\scripts\Build-Release.ps1 [-Version "1.2.0"]   # publish + Inno Setup installer (needs iscc.exe on PATH)
 ```
 
-- There is **no test project / no automated tests** — verification is manual by running the app.
+- **Tests** live in `KeyPulse.Tests/` (xUnit + Shouldly). Run them via the solution: `dotnet test "KeyPulse Signal.sln"`. Bare `dotnet test` fails (`MSB1011`) because `KeyPulse.csproj` sits beside the `.sln` at the repo root — always name the `.sln` (or `KeyPulse.Tests`). Beyond unit-testing pure helpers, DB-backed tests use the `SqliteTestDatabase` fixture (throwaway file SQLite, real EF model). Behavior that needs the live WMI/Raw Input/WPF stack is still verified manually by running the app.
 - Migrations run automatically on startup via `DataService`; you usually only `add` a migration, not `database update` by hand.
-- **Build fails if a KeyPulse instance is running** (locked `KeyPulse Signal.exe`) — stop it first.
+- **Build fails if a KeyPulse instance is running** (locked `KeyPulse Signal.exe`/`.dll`) — stop it first. This also blocks `dotnet test`, since it rebuilds the app project.
 - `--startup` launch arg forces tray/background mode.
 
 ## Architecture orientation
