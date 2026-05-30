@@ -25,6 +25,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
     public IPlotController PieHoverController { get; }
 
+    public IPlotController ActivityChartController { get; }
+
     public IReadOnlyList<string> RangeOptions => DashboardRangeResolver.RangeOptions;
 
     public string SelectedRange
@@ -182,6 +184,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         _usbMonitorService = usbMonitorService;
         _appTimerService = appTimerService;
         PieHoverController = DashboardPieChartBuilder.BuildPieHoverController(HandlePlotClick);
+        ActivityChartController = DashboardActivityChartBuilder.BuildActivityChartController(HandlePlotClick);
         _hoverPreview.PropertyChanged += HoverPreview_PropertyChanged;
 
         RefreshCommand = new RelayCommand(_ => Refresh());

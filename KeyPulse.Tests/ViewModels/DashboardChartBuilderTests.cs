@@ -374,6 +374,123 @@ public class DashboardActivityChartBuilderTests
     }
 
     [Fact]
+    public void OneDayRange_ShowsDateOnlyOnMidnightTick()
+    {
+        var from = new DateTime(2026, 5, 16, 0, 0, 0, DateTimeKind.Local);
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            from.AddDays(1),
+            new Dictionary<string, OxyColor>()
+        );
+        var timeAxis = (DateTimeAxis)model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+
+        var midnightLabel = timeAxis.FormatValue(
+            DateTimeAxis.ToDouble(new DateTime(2026, 5, 16, 0, 0, 0, DateTimeKind.Local))
+        );
+        var threeAmLabel = timeAxis.FormatValue(
+            DateTimeAxis.ToDouble(new DateTime(2026, 5, 16, 3, 0, 0, DateTimeKind.Local))
+        );
+
+        midnightLabel.ShouldContain("05-16"); // date anchors on the midnight tick
+        threeAmLabel.ShouldNotContain("05-16"); // other ticks show time only
+        threeAmLabel.ShouldContain("03");
+    }
+
+    [Theory]
+    [InlineData(20)] // ~3-week view
+    [InlineData(45)] // ~6-week view
+    [InlineData(90)] // ~3-month view
+    public void DateOnlyTiers_UseWholeDayTicks_SoNoTwoTicksShareADate(int days)
+    {
+        var from = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Local);
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            from.AddDays(days),
+            new Dictionary<string, OxyColor>()
+        );
+
+        var timeAxis = (DateTimeAxis)model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        timeAxis.StringFormat.ShouldBe("MM-dd"); // date-only label
+        timeAxis.MajorStep.ShouldBeGreaterThanOrEqualTo(1.0); // never sub-day, so each tick is a distinct date
+        (timeAxis.MajorStep % 1.0).ShouldBe(0.0); // whole number of days
+    }
+
+    [Fact]
+    public void ZoomingIn_AddsFinerTicksAndTimeToLabels()
+    {
+        var from = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Local);
+        var to = from.AddDays(365); // full-year view => monthly ticks, no time of day
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            to,
+            new Dictionary<string, OxyColor>()
+        );
+        var timeAxis = (DateTimeAxis)model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        timeAxis.StringFormat.ShouldBe("yyyy-MM");
+
+        // Zoom into a single day. Axis.Zoom raises AxisChanged, which re-derives the ticks from the view span.
+        timeAxis.Zoom(DateTimeAxis.ToDouble(from.AddDays(100)), DateTimeAxis.ToDouble(from.AddDays(101)));
+        timeAxis.StringFormat.ShouldBe("HH:mm"); // time of day now shown (date anchors on the midnight tick)
+        timeAxis.MajorStep.ShouldBe(3.0 / 24);
+
+        // Zoom further to a ~6-hour window: hourly, time-only labels.
+        timeAxis.Zoom(DateTimeAxis.ToDouble(from.AddDays(100)), DateTimeAxis.ToDouble(from.AddDays(100.25)));
+        timeAxis.StringFormat.ShouldBe("HH:mm");
+        timeAxis.MajorStep.ShouldBe(1.0 / 24);
+    }
+
+    [Fact]
+    public void Build_LocksValueAxisSoInteractionStaysHorizontal()
+    {
+        var from = new DateTime(2026, 5, 20, 0, 0, 0, DateTimeKind.Local);
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            from.AddDays(1),
+            new Dictionary<string, OxyColor>()
+        );
+
+        var valueAxis = model.Axes.Single(a => a.Position == AxisPosition.Left);
+        valueAxis.IsPanEnabled.ShouldBeFalse();
+        valueAxis.IsZoomEnabled.ShouldBeFalse();
+    }
+
+    [Fact]
+    public void Build_ConfinesPanAndZoomToLoadedWindow()
+    {
+        var from = new DateTime(2026, 5, 20, 0, 0, 0, DateTimeKind.Local);
+        var to = from.AddDays(1);
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            to,
+            new Dictionary<string, OxyColor>()
+        );
+
+        var timeAxis = model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        timeAxis.AbsoluteMinimum.ShouldBe(DateTimeAxis.ToDouble(from));
+        timeAxis.AbsoluteMaximum.ShouldBe(DateTimeAxis.ToDouble(to));
+    }
+
+    [Fact]
     public void Build_PinsTimeAxisToFullRange_RegardlessOfData()
     {
         var from = new DateTime(2026, 5, 20, 0, 0, 0, DateTimeKind.Local);

@@ -109,3 +109,4 @@ DB lives at `%AppData%\KeyPulse Signal\keypulse-data.db` (Release) or `...\Test\
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+- **Concise Comments**: Keep comments short — no more than 2-3 sentences. Explain the non-obvious "why", not the "what"; let the code speak for itself.

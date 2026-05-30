@@ -18,12 +18,14 @@ internal static class DashboardActivityChartBuilder
 
     private const string PlotTitle = "Input Activity";
 
-    /// <summary>Computed chart inputs: axis config, full-range X bounds, and the built series.</summary>
+    // Sub-day tiers label ticks with the time only, except midnight ticks, which also carry the date
+    // (see AdaptiveTimeAxis.FormatValueOverride).
+    private const string TimeTickFormat = "HH:mm";
+    private const string MidnightTickFormat = "MM-dd HH:mm";
+
+    /// <summary>Computed chart inputs. Tick format/spacing is derived from the visible span, not stored here.</summary>
     public sealed record ActivityPlotData(
         string YAxisLabel,
-        string XStringFormat,
-        DateTimeIntervalType XIntervalType,
-        double XMajorStep,
         double? XMinimum,
         double? XMaximum,
         IReadOnlyList<LineSeries> Series
@@ -73,22 +75,18 @@ internal static class DashboardActivityChartBuilder
         if (rangeSpan < TimeSpan.Zero)
             rangeSpan = TimeSpan.Zero;
 
-        // Dynamic aggregation, label, and tick spacing. xMajorStep is in days (NaN = auto); OxyPlot anchors
-        // hour/day ticks to step multiples from midnight, so a 3h / 1d step lands on round clock times.
+        // Data aggregation granularity and value-axis label, by selected range.
         int bucketMinutes;
         string yAxisLabel;
-        var xMajorStep = double.NaN;
         if (rangeSpan.TotalDays <= 1)
         {
             bucketMinutes = 10;
             yAxisLabel = "Input count per 10 min";
-            xMajorStep = 3.0 / 24; // one tick every 3 hours
         }
         else if (rangeSpan.TotalDays <= 7)
         {
             bucketMinutes = 60;
             yAxisLabel = "Input count per hour";
-            xMajorStep = 1; // one tick per day
         }
         else if (rangeSpan.TotalDays <= 93) // 3 months
         {
@@ -106,18 +104,6 @@ internal static class DashboardActivityChartBuilder
             yAxisLabel = "Input count per week";
         }
 
-        var monthsOnly = rangeSpan.TotalDays >= 365;
-        var datesOnly = !monthsOnly && rangeSpan.TotalDays >= 7;
-
-        var xStringFormat =
-            monthsOnly ? "yyyy-MM"
-            : datesOnly ? "MM-dd"
-            : "MM-dd HH:mm";
-        var xIntervalType =
-            monthsOnly ? DateTimeIntervalType.Months
-            : datesOnly ? DateTimeIntervalType.Days
-            : DateTimeIntervalType.Hours;
-
         // Pin the axis to the full requested window so the range shows exactly as selected, regardless of data.
         double? xMinimum = chartStart.HasValue ? DateTimeAxis.ToDouble(chartStart.Value) : null;
         double? xMaximum = chartStart.HasValue ? DateTimeAxis.ToDouble(to) : null;
@@ -126,15 +112,7 @@ internal static class DashboardActivityChartBuilder
 
         var bucketTimeline = BuildBucketTimeline(chartStart, to, bucketMinutes);
         if (bucketTimeline.Count == 0)
-            return new ActivityPlotData(
-                yAxisLabel,
-                xStringFormat,
-                xIntervalType,
-                xMajorStep,
-                xMinimum,
-                xMaximum,
-                seriesList
-            );
+            return new ActivityPlotData(yAxisLabel, xMinimum, xMaximum, seriesList);
 
         var appIntervals = BuildAppRunningIntervals(lifecycleEvents, to);
         var isAppRunningByBucket = bucketTimeline.ToDictionary(
@@ -183,15 +161,7 @@ internal static class DashboardActivityChartBuilder
             seriesList.Add(series);
         }
 
-        return new ActivityPlotData(
-            yAxisLabel,
-            xStringFormat,
-            xIntervalType,
-            xMajorStep,
-            xMinimum,
-            xMaximum,
-            seriesList
-        );
+        return new ActivityPlotData(yAxisLabel, xMinimum, xMaximum, seriesList);
     }
 
     /// <summary>
@@ -212,30 +182,124 @@ internal static class DashboardActivityChartBuilder
         model.InvalidatePlot(true);
     }
 
+    /// <summary>
+    /// Builds the activity chart's interaction controller: hover tracker, left-click device selection, and
+    /// right-drag horizontal panning with mouse-wheel horizontal zoom (vertical is locked via the value axis).
+    /// </summary>
+    public static IPlotController BuildActivityChartController(Action<IPlotView, OxyMouseDownEventArgs> onClick)
+    {
+        var controller = new PlotController();
+        controller.UnbindAll();
+        controller.Bind(new OxyMouseEnterGesture(), PlotCommands.HoverTrack);
+        controller.Bind(
+            new OxyMouseDownGesture(OxyMouseButton.Left),
+            new DelegatePlotCommand<OxyMouseDownEventArgs>((view, _, args) => onClick(view, args))
+        );
+        controller.Bind(new OxyMouseDownGesture(OxyMouseButton.Right), PlotCommands.PanAt);
+        controller.Bind(new OxyMouseWheelGesture(), PlotCommands.ZoomWheel);
+        return controller;
+    }
+
     /// <summary>Creates the time/value axes on first use, then updates their display props in place.</summary>
     private static void ConfigureAxes(PlotModel model, ActivityPlotData data)
     {
         model.Title = PlotTitle;
 
-        if (model.Axes.FirstOrDefault(a => a.Position == AxisPosition.Bottom) is not DateTimeAxis timeAxis)
+        if (model.Axes.FirstOrDefault(a => a.Position == AxisPosition.Bottom) is not AdaptiveTimeAxis timeAxis)
         {
-            timeAxis = new DateTimeAxis { Position = AxisPosition.Bottom, Title = "Time" };
+            timeAxis = new AdaptiveTimeAxis { Position = AxisPosition.Bottom, Title = "Time" };
             model.Axes.Add(timeAxis);
+            // Re-derive tick format/spacing from the visible span on every zoom/pan/reset.
+#pragma warning disable CS0618 // AxisChanged is the supported hook for reacting to pan/zoom in OxyPlot 2.x.
+            timeAxis.AxisChanged += (sender, _) =>
+            {
+                if (((AdaptiveTimeAxis)sender!).ApplyAdaptiveProfile())
+                    model.InvalidatePlot(false);
+            };
+#pragma warning restore CS0618
         }
 
-        timeAxis.StringFormat = data.XStringFormat;
-        timeAxis.IntervalType = data.XIntervalType;
-        timeAxis.MajorStep = data.XMajorStep;
         timeAxis.Minimum = data.XMinimum ?? double.NaN;
         timeAxis.Maximum = data.XMaximum ?? double.NaN;
+        // Confine panning / zooming to the loaded window so the user cannot scroll off into empty time.
+        timeAxis.AbsoluteMinimum = data.XMinimum ?? double.MinValue;
+        timeAxis.AbsoluteMaximum = data.XMaximum ?? double.MaxValue;
+        timeAxis.ApplyAdaptiveProfile();
 
         if (model.Axes.FirstOrDefault(a => a.Position == AxisPosition.Left) is not LinearAxis valueAxis)
         {
-            valueAxis = new LinearAxis { Position = AxisPosition.Left, Minimum = 0 };
+            // Lock the value axis so right-drag pan and wheel zoom only move along the time axis.
+            valueAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Minimum = 0,
+                IsPanEnabled = false,
+                IsZoomEnabled = false,
+            };
             model.Axes.Add(valueAxis);
         }
 
         valueAxis.Title = data.YAxisLabel;
+    }
+
+    /// <summary>Time axis whose tick format/spacing tracks the visible span, so labels gain detail on zoom.</summary>
+    private sealed class AdaptiveTimeAxis : DateTimeAxis
+    {
+        /// <summary>Re-derives format/interval/step from the visible span; returns true if anything changed.</summary>
+        public bool ApplyAdaptiveProfile()
+        {
+            // ViewMinimum/Maximum (the zoomed view, set before AxisChanged fires) else the pinned range.
+            // ActualMinimum/Maximum are avoided — they default to 0/100 until the first render.
+            var min = double.IsNaN(ViewMinimum) ? Minimum : ViewMinimum;
+            var max = double.IsNaN(ViewMaximum) ? Maximum : ViewMaximum;
+            if (double.IsNaN(min) || double.IsNaN(max) || max <= min)
+                return false;
+
+            var (format, interval, majorStep) = ResolveTimeAxisProfile(max - min);
+            if (StringFormat == format && IntervalType == interval && majorStep.Equals(MajorStep))
+                return false; // Equals handles the NaN == NaN ("auto") case
+
+            StringFormat = format;
+            IntervalType = interval;
+            MajorStep = majorStep;
+            return true;
+        }
+
+        /// <summary>In sub-day tiers, midnight ticks carry the date; all other ticks show the time only.</summary>
+        protected override string FormatValueOverride(double x)
+        {
+            if (StringFormat != TimeTickFormat)
+                return base.FormatValueOverride(x);
+
+            var time = ConvertToDateTime(x);
+            var format = time is { Hour: 0, Minute: 0 } ? MidnightTickFormat : TimeTickFormat;
+            return time.ToString(format, ActualCulture);
+        }
+    }
+
+    /// <summary>
+    /// Maps a visible span (in days) to tick format / interval / major step (step in days; NaN = auto).
+    /// OxyPlot anchors hour and day ticks to step multiples from midnight, so the steps land on round times.
+    /// </summary>
+    private static (string Format, DateTimeIntervalType Interval, double MajorStep) ResolveTimeAxisProfile(
+        double spanDays
+    )
+    {
+        // Date-only ("MM-dd") tiers use a whole-day step and month-only ("yyyy-MM") steps in whole months, so
+        // two ticks never share a label; sub-day steps always pair with a time-bearing format.
+        if (spanDays <= 3.0 / 24)
+            return (TimeTickFormat, DateTimeIntervalType.Minutes, 15.0 / 1440); // <=3h: every 15 minutes
+        if (spanDays <= 0.5)
+            return (TimeTickFormat, DateTimeIntervalType.Hours, 1.0 / 24); // <=12h: hourly
+        if (spanDays <= 1)
+            return (TimeTickFormat, DateTimeIntervalType.Hours, 3.0 / 24); // <=1 day: every 3 hours
+        if (spanDays <= 7)
+            return ("MM-dd", DateTimeIntervalType.Days, 1); // <=1 week: daily
+        if (spanDays <= 31)
+            return ("MM-dd", DateTimeIntervalType.Days, 3); // <=1 month: every 3 days
+        if (spanDays <= 92)
+            return ("MM-dd", DateTimeIntervalType.Days, 7); // <=3 months: weekly
+        return ("yyyy-MM", DateTimeIntervalType.Months, double.NaN); // beyond: monthly (auto, whole months)
     }
 
     private static void AddPositiveActivityPoints(

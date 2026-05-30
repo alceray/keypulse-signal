@@ -118,7 +118,7 @@
         Grid.ColumnSpan="2"
         Margin="4"
         Model="{Binding InputActivityPlot}"
-        Controller="{Binding PieHoverController}"
+        Controller="{Binding ActivityChartController}"
         PreviewMouseMove="PlotView_PreviewMouseMove"
       />
     </Grid>
