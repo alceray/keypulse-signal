@@ -16,10 +16,20 @@ internal static class DashboardActivityChartBuilder
     /// <summary>Screen-pixel tolerance for selecting / cursor-detecting an activity line (nearest series).</summary>
     public const double LineHitTolerance = 20;
 
-    /// <summary>
-    /// Creates a time-series chart from minute snapshots, with configurable time resolution and smoothing.
-    /// Buckets outside app-running intervals are forced to zero.
-    /// </summary>
+    private const string PlotTitle = "Input Activity";
+
+    /// <summary>Computed chart inputs: axis config, full-range X bounds, and the built series.</summary>
+    public sealed record ActivityPlotData(
+        string YAxisLabel,
+        string XStringFormat,
+        DateTimeIntervalType XIntervalType,
+        double XMajorStep,
+        double? XMinimum,
+        double? XMaximum,
+        IReadOnlyList<LineSeries> Series
+    );
+
+    /// <summary>Builds a standalone activity model (e.g. for tests); live refresh reuses a persistent model.</summary>
     public static PlotModel BuildInputActivityPlot(
         IReadOnlyCollection<ActivitySnapshot> snapshots,
         IReadOnlyCollection<Device> devices,
@@ -30,25 +40,55 @@ internal static class DashboardActivityChartBuilder
         string? selectedDeviceId = null
     )
     {
-        var model = new PlotModel { Title = "Input Activity" };
+        var model = new PlotModel();
+        var data = ComputeInputActivityPlot(
+            snapshots,
+            devices,
+            lifecycleEvents,
+            from,
+            to,
+            colorsByDevice,
+            selectedDeviceId
+        );
+        ApplyInputActivityPlot(model, data, resetView: false);
+        return model;
+    }
 
+    /// <summary>
+    /// Builds the activity chart's series and axis config from minute snapshots, with configurable time
+    /// resolution and smoothing. Buckets outside app-running intervals are forced to zero. Pure / off-UI-thread.
+    /// </summary>
+    public static ActivityPlotData ComputeInputActivityPlot(
+        IReadOnlyCollection<ActivitySnapshot> snapshots,
+        IReadOnlyCollection<Device> devices,
+        IReadOnlyCollection<DeviceEvent> lifecycleEvents,
+        DateTime? from,
+        DateTime to,
+        IReadOnlyDictionary<string, OxyColor> colorsByDevice,
+        string? selectedDeviceId = null
+    )
+    {
         var chartStart = ResolveChartStart(snapshots, lifecycleEvents, from);
         var rangeSpan = chartStart.HasValue ? to - chartStart.Value : TimeSpan.Zero;
         if (rangeSpan < TimeSpan.Zero)
             rangeSpan = TimeSpan.Zero;
 
-        // Dynamic aggregation and label
+        // Dynamic aggregation, label, and tick spacing. xMajorStep is in days (NaN = auto); OxyPlot anchors
+        // hour/day ticks to step multiples from midnight, so a 3h / 1d step lands on round clock times.
         int bucketMinutes;
         string yAxisLabel;
+        var xMajorStep = double.NaN;
         if (rangeSpan.TotalDays <= 1)
         {
             bucketMinutes = 10;
             yAxisLabel = "Input count per 10 min";
+            xMajorStep = 3.0 / 24; // one tick every 3 hours
         }
         else if (rangeSpan.TotalDays <= 7)
         {
             bucketMinutes = 60;
             yAxisLabel = "Input count per hour";
+            xMajorStep = 1; // one tick per day
         }
         else if (rangeSpan.TotalDays <= 93) // 3 months
         {
@@ -69,34 +109,32 @@ internal static class DashboardActivityChartBuilder
         var monthsOnly = rangeSpan.TotalDays >= 365;
         var datesOnly = !monthsOnly && rangeSpan.TotalDays >= 7;
 
-        model.Axes.Add(
-            new DateTimeAxis
-            {
-                Position = AxisPosition.Bottom,
-                StringFormat =
-                    monthsOnly ? "yyyy-MM"
-                    : datesOnly ? "MM-dd"
-                    : "MM-dd HH:mm",
-                Title = "Time",
-                IntervalType =
-                    monthsOnly ? DateTimeIntervalType.Months
-                    : datesOnly ? DateTimeIntervalType.Days
-                    : DateTimeIntervalType.Hours,
-            }
-        );
+        var xStringFormat =
+            monthsOnly ? "yyyy-MM"
+            : datesOnly ? "MM-dd"
+            : "MM-dd HH:mm";
+        var xIntervalType =
+            monthsOnly ? DateTimeIntervalType.Months
+            : datesOnly ? DateTimeIntervalType.Days
+            : DateTimeIntervalType.Hours;
 
-        model.Axes.Add(
-            new LinearAxis
-            {
-                Position = AxisPosition.Left,
-                Title = yAxisLabel,
-                Minimum = 0,
-            }
-        );
+        // Pin the axis to the full requested window so the range shows exactly as selected, regardless of data.
+        double? xMinimum = chartStart.HasValue ? DateTimeAxis.ToDouble(chartStart.Value) : null;
+        double? xMaximum = chartStart.HasValue ? DateTimeAxis.ToDouble(to) : null;
+
+        var seriesList = new List<LineSeries>();
 
         var bucketTimeline = BuildBucketTimeline(chartStart, to, bucketMinutes);
         if (bucketTimeline.Count == 0)
-            return model;
+            return new ActivityPlotData(
+                yAxisLabel,
+                xStringFormat,
+                xIntervalType,
+                xMajorStep,
+                xMinimum,
+                xMaximum,
+                seriesList
+            );
 
         var appIntervals = BuildAppRunningIntervals(lifecycleEvents, to);
         var isAppRunningByBucket = bucketTimeline.ToDictionary(
@@ -142,10 +180,62 @@ internal static class DashboardActivityChartBuilder
 
             AddPositiveActivityPoints(series, bucketTimeline, valuesByBucket);
 
-            model.Series.Add(series);
+            seriesList.Add(series);
         }
 
-        return model;
+        return new ActivityPlotData(
+            yAxisLabel,
+            xStringFormat,
+            xIntervalType,
+            xMajorStep,
+            xMinimum,
+            xMaximum,
+            seriesList
+        );
+    }
+
+    /// <summary>
+    /// Applies computed data to a persistent model in place, reusing its axis objects so pan/zoom survives.
+    /// Pass <paramref name="resetView"/> = true on a range switch / first load to refit. UI thread only.
+    /// </summary>
+    public static void ApplyInputActivityPlot(PlotModel model, ActivityPlotData data, bool resetView)
+    {
+        ConfigureAxes(model, data);
+
+        model.Series.Clear();
+        foreach (var series in data.Series)
+            model.Series.Add(series);
+
+        if (resetView)
+            model.ResetAllAxes();
+
+        model.InvalidatePlot(true);
+    }
+
+    /// <summary>Creates the time/value axes on first use, then updates their display props in place.</summary>
+    private static void ConfigureAxes(PlotModel model, ActivityPlotData data)
+    {
+        model.Title = PlotTitle;
+
+        if (model.Axes.FirstOrDefault(a => a.Position == AxisPosition.Bottom) is not DateTimeAxis timeAxis)
+        {
+            timeAxis = new DateTimeAxis { Position = AxisPosition.Bottom, Title = "Time" };
+            model.Axes.Add(timeAxis);
+        }
+
+        timeAxis.StringFormat = data.XStringFormat;
+        timeAxis.IntervalType = data.XIntervalType;
+        timeAxis.MajorStep = data.XMajorStep;
+        timeAxis.Minimum = data.XMinimum ?? double.NaN;
+        timeAxis.Maximum = data.XMaximum ?? double.NaN;
+
+        if (model.Axes.FirstOrDefault(a => a.Position == AxisPosition.Left) is not LinearAxis valueAxis)
+        {
+            valueAxis = new LinearAxis { Position = AxisPosition.Left, Minimum = 0 };
+            model.Axes.Add(valueAxis);
+        }
+
+        valueAxis.Title = data.YAxisLabel;
     }
 
     private static void AddPositiveActivityPoints(

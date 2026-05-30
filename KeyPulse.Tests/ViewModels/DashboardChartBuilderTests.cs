@@ -335,4 +335,162 @@ public class DashboardActivityChartBuilderTests
         series.Title.ShouldBe("mouse");
         series.Points.ShouldContain(p => p.Y > 0); // confirms the mouse selector contributed
     }
+
+    [Fact]
+    public void Build_OneDayRange_TicksEveryThreeHours()
+    {
+        var from = new DateTime(2026, 5, 20, 0, 0, 0, DateTimeKind.Local);
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            from.AddDays(1),
+            new Dictionary<string, OxyColor>()
+        );
+
+        var timeAxis = (DateTimeAxis)model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        timeAxis.MajorStep.ShouldBe(3.0 / 24); // 3 hours, expressed in days
+    }
+
+    [Fact]
+    public void Build_OneWeekRange_TicksEveryDay()
+    {
+        var from = new DateTime(2026, 5, 20, 0, 0, 0, DateTimeKind.Local);
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            [],
+            [],
+            [],
+            from,
+            from.AddDays(7),
+            new Dictionary<string, OxyColor>()
+        );
+
+        var timeAxis = (DateTimeAxis)model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        timeAxis.MajorStep.ShouldBe(1.0); // one day
+        timeAxis.IntervalType.ShouldBe(DateTimeIntervalType.Days);
+    }
+
+    [Fact]
+    public void Build_PinsTimeAxisToFullRange_RegardlessOfData()
+    {
+        var from = new DateTime(2026, 5, 20, 0, 0, 0, DateTimeKind.Local);
+        var to = from.AddDays(1);
+
+        // Activity sits in a single 10-min window, but the axis must still span the full requested day.
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            new[] { Snap("K1", from.AddHours(3), keys: 5) },
+            new[] { Dev("K1", "kb") },
+            new[] { AppStarted(from) },
+            from,
+            to,
+            new Dictionary<string, OxyColor>()
+        );
+
+        var timeAxis = model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        timeAxis.Minimum.ShouldBe(DateTimeAxis.ToDouble(from));
+        timeAxis.Maximum.ShouldBe(DateTimeAxis.ToDouble(to));
+    }
+
+    [Fact]
+    public void Apply_TwiceOnSameModel_ReusesAxisInstances()
+    {
+        // The pan/zoom-preservation guarantee: refreshes mutate one model and keep the same axis objects.
+        var model = new PlotModel();
+        var devices = new[] { Dev("K1", "kb") };
+        var lifecycle = new[] { AppStarted(From) };
+
+        var first = DashboardActivityChartBuilder.ComputeInputActivityPlot(
+            new[] { Snap("K1", From.AddMinutes(10), keys: 50) },
+            devices,
+            lifecycle,
+            From,
+            To,
+            new Dictionary<string, OxyColor>()
+        );
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(model, first, resetView: false);
+
+        var bottomBefore = model.Axes.Single(a => a.Position == AxisPosition.Bottom);
+        var leftBefore = model.Axes.Single(a => a.Position == AxisPosition.Left);
+
+        var second = DashboardActivityChartBuilder.ComputeInputActivityPlot(
+            new[] { Snap("K1", From.AddMinutes(20), keys: 99) },
+            devices,
+            lifecycle,
+            From,
+            To,
+            new Dictionary<string, OxyColor>()
+        );
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(model, second, resetView: false);
+
+        model.Axes.Count.ShouldBe(2); // no duplicate axes added on the second apply
+        model.Axes.Single(a => a.Position == AxisPosition.Bottom).ShouldBeSameAs(bottomBefore);
+        model.Axes.Single(a => a.Position == AxisPosition.Left).ShouldBeSameAs(leftBefore);
+    }
+
+    [Fact]
+    public void Apply_ReplacesSeriesWithLatestData()
+    {
+        var model = new PlotModel();
+        var lifecycle = new[] { AppStarted(From) };
+
+        var first = DashboardActivityChartBuilder.ComputeInputActivityPlot(
+            new[] { Snap("K1", From.AddMinutes(10), keys: 50) },
+            new[] { Dev("K1", "kb") },
+            lifecycle,
+            From,
+            To,
+            new Dictionary<string, OxyColor>()
+        );
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(model, first, resetView: false);
+
+        // Second refresh: a different device only. The old series must not linger.
+        var second = DashboardActivityChartBuilder.ComputeInputActivityPlot(
+            new[] { Snap("M1", From.AddMinutes(10), clicks: 7) },
+            new[] { Dev("M1", "mouse", DeviceTypes.Mouse) },
+            lifecycle,
+            From,
+            To,
+            new Dictionary<string, OxyColor>()
+        );
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(model, second, resetView: false);
+
+        var series = model.Series.OfType<LineSeries>().ShouldHaveSingleItem();
+        series.Title.ShouldBe("mouse");
+    }
+
+    [Fact]
+    public void Apply_TierChange_UpdatesAxisLabelInPlace()
+    {
+        var model = new PlotModel();
+
+        var shortRange = DashboardActivityChartBuilder.ComputeInputActivityPlot(
+            [],
+            [],
+            [],
+            From,
+            From.AddHours(1), // <=1d => 10-min buckets
+            new Dictionary<string, OxyColor>()
+        );
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(model, shortRange, resetView: false);
+
+        var leftAxis = model.Axes.Single(a => a.Position == AxisPosition.Left);
+        leftAxis.Title.ShouldBe("Input count per 10 min");
+
+        var multiDay = DashboardActivityChartBuilder.ComputeInputActivityPlot(
+            [],
+            [],
+            [],
+            From,
+            From.AddDays(3), // <=7d => hourly buckets
+            new Dictionary<string, OxyColor>()
+        );
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(model, multiDay, resetView: false);
+
+        // Same axis object, updated label.
+        model.Axes.Single(a => a.Position == AxisPosition.Left).ShouldBeSameAs(leftAxis);
+        leftAxis.Title.ShouldBe("Input count per hour");
+    }
 }

@@ -37,7 +37,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
             _selectedRange = value;
             OnPropertyChanged();
-            Refresh();
+            Refresh(resetActivityView: true);
         }
     }
 
@@ -61,15 +61,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
-    public PlotModel InputActivityPlot
-    {
-        get => _inputActivityPlot;
-        private set
-        {
-            _inputActivityPlot = value;
-            OnPropertyChanged();
-        }
-    }
+    // Persistent model mutated in place each refresh so the PlotView keeps its axes (and pan/zoom state).
+    public PlotModel InputActivityPlot => _inputActivityPlot;
 
     public string HoveredDeviceName => _hoverPreview.DeviceName;
 
@@ -160,6 +153,9 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private int _refreshScheduled;
     private int _refreshRunning;
 
+    // Set on range switch / first load to refit the activity chart; consumed once on the next apply.
+    private int _pendingActivityViewReset;
+
     private string? _selectedDeviceId;
 
     // Snapshot of the inputs from the last data refresh, so a selection click can rebuild the plots
@@ -198,7 +194,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
         _appTimerService.ThirtySecondTick += OnRefreshTick;
 
-        Refresh();
+        Refresh(resetActivityView: true);
     }
 
     /// <summary>
@@ -267,8 +263,11 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     /// Database queries and chart construction run on a background thread; only the final
     /// property assignments are marshaled back to the UI thread. Bursty calls are coalesced.
     /// </summary>
-    private void Refresh()
+    private void Refresh(bool resetActivityView = false)
     {
+        if (resetActivityView)
+            Interlocked.Exchange(ref _pendingActivityViewReset, 1);
+
         // Mark a refresh as pending; if one is already running, it will pick up the latest state when it finishes.
         Interlocked.Exchange(ref _refreshScheduled, 1);
 
@@ -345,7 +344,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         if (selectedDeviceId != null && !visibleDeviceIds.Contains(selectedDeviceId))
             selectedDeviceId = null;
 
-        var (keyboardModel, mouseModel, activityModel) = BuildPlotModels(renderInputs, selectedDeviceId);
+        var (keyboardModel, mouseModel, activityData) = BuildPlotModels(renderInputs, selectedDeviceId);
 
         var topKeyboards = BuildTopByConnectionSecondsSummary(dashboardDevices.TopKeyboardsByConnectionSeconds);
         var topMice = BuildTopByConnectionSecondsSummary(dashboardDevices.TopMiceByConnectionSeconds);
@@ -368,7 +367,8 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             TopMiceSummary = topMice;
             KeyboardPiePlot = keyboardModel;
             MousePiePlot = mouseModel;
-            InputActivityPlot = activityModel;
+            var resetActivityView = Interlocked.Exchange(ref _pendingActivityViewReset, 0) == 1;
+            DashboardActivityChartBuilder.ApplyInputActivityPlot(_inputActivityPlot, activityData, resetActivityView);
             LastUpdatedText = lastUpdated;
         });
     }
@@ -419,18 +419,19 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         if (_renderInputs is not { } inputs)
             return;
 
-        var (keyboardModel, mouseModel, activityModel) = BuildPlotModels(inputs, _selectedDeviceId);
+        var (keyboardModel, mouseModel, activityData) = BuildPlotModels(inputs, _selectedDeviceId);
 
         KeyboardPiePlot = keyboardModel;
         MousePiePlot = mouseModel;
-        InputActivityPlot = activityModel;
+        DashboardActivityChartBuilder.ApplyInputActivityPlot(_inputActivityPlot, activityData, resetView: false);
     }
 
-    /// <summary>Builds the keyboard pie, mouse pie, and activity models for a given selection state.</summary>
-    private (PlotModel Keyboard, PlotModel Mouse, PlotModel Activity) BuildPlotModels(
-        DashboardRenderInputs inputs,
-        string? selectedDeviceId
-    )
+    /// <summary>Builds the keyboard pie, mouse pie, and activity render data for a given selection state.</summary>
+    private (
+        PlotModel Keyboard,
+        PlotModel Mouse,
+        DashboardActivityChartBuilder.ActivityPlotData Activity
+    ) BuildPlotModels(DashboardRenderInputs inputs, string? selectedDeviceId)
     {
         var keyboardModel = DashboardPieChartBuilder.BuildConnectionTimePiePlot(
             "Keyboards",
@@ -450,7 +451,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         DashboardPieChartBuilder.AttachTrackerPreview(keyboardModel, _hoverPreview.UpdateFromSlice);
         DashboardPieChartBuilder.AttachTrackerPreview(mouseModel, _hoverPreview.UpdateFromSlice);
 
-        var activityModel = DashboardActivityChartBuilder.BuildInputActivityPlot(
+        var activityData = DashboardActivityChartBuilder.ComputeInputActivityPlot(
             inputs.Snapshots,
             inputs.Devices,
             inputs.AppLifecycleEvents,
@@ -460,7 +461,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
             selectedDeviceId
         );
 
-        return (keyboardModel, mouseModel, activityModel);
+        return (keyboardModel, mouseModel, activityData);
     }
 
     /// <summary>
