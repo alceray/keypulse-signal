@@ -162,8 +162,8 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - **Dashboard refresh**: `DashboardViewModel` subscribes to `AppTimerService.ThirtySecondTick` for periodic refresh
   (Dashboard is transient, so subscriptions are cleaned up when the view is destroyed and re-created when the tab is switched back)
 - Dashboard top cards show current connected count and top-3 keyboard/mouse device connection-duration summaries.
-- Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `1 Year`, and `All Time`.
-- Activity chart bucket size is **derived from the visible range span**, not user-configurable (`DashboardActivityChartBuilder`): ≤1 day → 10 min, ≤7 days → 1 hour, ≤93 days → 6 hours, ≤370 days → 1 day, else 1 week. Each active run is plotted as a baseline-anchored smooth curve (Catmull-Rom spline through one raw per-bucket total at each bucket midpoint, no moving-average smoothing) that breaks across inactive runs, so separate-time usage on different devices does not appear to overlap.
+- Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `3 Months`, `1 Year`, and `All Time`.
+- Activity chart bucket size is **derived from the selected range span**, not user-configurable (`DashboardActivityChartBuilder.ResolveBucketSize`): the finest size on a human-friendly ladder (1/2/5/10/15/30 min, 1/2/3/6/12 h, 1/2 d, 1/2 wk) that keeps the range under `MaxBucketCount` (400) points, so density stays roughly constant (e.g. 1 day → 5 min, 1 week → 30 min, 1 month → 2 h, 3 months → 6 h, 1 year → 1 day). The bucket is the data resolution: **zoom magnifies these points, it never re-aggregates to a finer bucket**. Each active run is plotted as a baseline-anchored polyline (straight segments through one raw per-bucket total at each bucket midpoint, no interpolation or moving-average smoothing) that breaks across inactive runs, so separate-time usage on different devices does not appear to overlap.
 - Activity chart zeroes buckets where no app-running interval overlaps (`AppStarted`/`AppEnded` reconstruction).
 - Activity chart series use:
     - keyboard = `Keystrokes`

@@ -20,6 +20,29 @@ internal static class DashboardActivityChartBuilder
     private const string TimeTickFormat = "HH:mm";
     private const string MidnightTickFormat = "MM-dd HH:mm";
 
+    /// <summary>Upper bound on plotted buckets per range, so density stays readable and bounded for performance.</summary>
+    private const int MaxBucketCount = 400;
+
+    /// <summary>Human-friendly bucket sizes (minutes), ascending; the finest one under the point cap is chosen.</summary>
+    private static readonly int[] BucketSizeLadderMinutes =
+    [
+        1,
+        2,
+        5,
+        10,
+        15,
+        30, // sub-hour
+        60,
+        120,
+        180,
+        360,
+        720, // 1h .. 12h
+        1440,
+        2880, // 1 day, 2 days
+        10080,
+        20160, // 1 week, 2 weeks
+    ];
+
     /// <summary>Computed chart inputs. Tick format/spacing is derived from the visible span, not stored here.</summary>
     public sealed record ActivityPlotData(
         string YAxisLabel,
@@ -72,34 +95,7 @@ internal static class DashboardActivityChartBuilder
         if (rangeSpan < TimeSpan.Zero)
             rangeSpan = TimeSpan.Zero;
 
-        // Data aggregation granularity and value-axis label, by selected range.
-        int bucketMinutes;
-        string yAxisLabel;
-        if (rangeSpan.TotalDays <= 1)
-        {
-            bucketMinutes = 10;
-            yAxisLabel = "Input count per 10 min";
-        }
-        else if (rangeSpan.TotalDays <= 7)
-        {
-            bucketMinutes = 60;
-            yAxisLabel = "Input count per hour";
-        }
-        else if (rangeSpan.TotalDays <= 93) // 3 months
-        {
-            bucketMinutes = 360;
-            yAxisLabel = "Input count per 6 hours";
-        }
-        else if (rangeSpan.TotalDays <= 370)
-        {
-            bucketMinutes = 1440;
-            yAxisLabel = "Input count per day";
-        }
-        else
-        {
-            bucketMinutes = 10080;
-            yAxisLabel = "Input count per week";
-        }
+        var (bucketMinutes, yAxisLabel) = ResolveBucketSize(rangeSpan);
 
         // Pin the axis to the full requested window so the range shows exactly as selected, regardless of data.
         double? xMinimum = chartStart.HasValue ? DateTimeAxis.ToDouble(chartStart.Value) : null;
@@ -150,7 +146,6 @@ internal static class DashboardActivityChartBuilder
                 StrokeThickness = 2,
                 Color = color,
                 Tag = device.DeviceId,
-                InterpolationAlgorithm = InterpolationAlgorithms.CatmullRomSpline,
             };
 
             AddPositiveActivityPoints(series, bucketTimeline, valuesByBucket, bucketMinutes);
@@ -301,8 +296,8 @@ internal static class DashboardActivityChartBuilder
 
     /// <summary>
     /// Plots one point per active bucket at the bucket's midpoint, rising from and returning to the baseline at
-    /// the run's edges so spline interpolation draws a smooth curve confined to the run's time span. The line
-    /// breaks across inactive runs, so separate-time usage on different devices does not appear to overlap.
+    /// the run's edges so the straight-segment line stays confined to the run's time span (no overshoot, no leak
+    /// into empty buckets). The line breaks across inactive runs, so separate-time usage does not appear to overlap.
     /// </summary>
     private static void AddPositiveActivityPoints(
         LineSeries series,
@@ -352,6 +347,40 @@ internal static class DashboardActivityChartBuilder
         deviceType == DeviceTypes.Keyboard
             ? snapshot => snapshot.Keystrokes
             : snapshot => snapshot.MouseClicks + snapshot.MouseMovementSeconds;
+
+    /// <summary>
+    /// Picks the finest ladder bucket that keeps the range under <see cref="MaxBucketCount"/> points, so density
+    /// stays roughly constant across ranges. The bucket is the data resolution: zoom magnifies, never refines it.
+    /// </summary>
+    private static (int BucketMinutes, string YAxisLabel) ResolveBucketSize(TimeSpan rangeSpan)
+    {
+        var rangeMinutes = Math.Max(rangeSpan.TotalMinutes, 0);
+        var bucketMinutes = BucketSizeLadderMinutes[^1];
+        foreach (var candidate in BucketSizeLadderMinutes)
+        {
+            if (rangeMinutes / candidate <= MaxBucketCount)
+            {
+                bucketMinutes = candidate;
+                break;
+            }
+        }
+
+        return (bucketMinutes, $"Input count {FormatBucketLabel(bucketMinutes)}");
+    }
+
+    /// <summary>Renders a bucket size as a "per …" label using its largest whole unit (min / hour / day / week).</summary>
+    private static string FormatBucketLabel(int bucketMinutes)
+    {
+        if (bucketMinutes < 60)
+            return bucketMinutes == 1 ? "per minute" : $"per {bucketMinutes} min";
+        if (bucketMinutes < 1440)
+            return PerUnit(bucketMinutes / 60, "hour");
+        if (bucketMinutes < 10080)
+            return PerUnit(bucketMinutes / 1440, "day");
+        return PerUnit(bucketMinutes / 10080, "week");
+
+        static string PerUnit(int count, string unit) => count == 1 ? $"per {unit}" : $"per {count} {unit}s";
+    }
 
     /// <summary>
     /// Resolves the first timestamp that should influence chart density and bucket generation.

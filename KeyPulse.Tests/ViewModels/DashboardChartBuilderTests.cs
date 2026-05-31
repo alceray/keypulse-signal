@@ -333,37 +333,26 @@ public class DashboardActivityChartBuilderTests
         model.Series.OfType<LineSeries>().ShouldBeEmpty();
     }
 
-    [Fact]
-    public void Build_ShortRange_UsesTenMinuteBuckets()
+    [Theory]
+    [InlineData(1, "Input count per 5 min")] // 1 Day
+    [InlineData(7, "Input count per 30 min")] // 1 Week
+    [InlineData(30, "Input count per 2 hours")] // 1 Month
+    [InlineData(90, "Input count per 6 hours")] // 3 Months (distinct from 1 Month)
+    [InlineData(365, "Input count per day")] // 1 Year
+    public void Build_BucketSizeScalesWithRange_KeepingPointCountBounded(int rangeDays, string expectedLabel)
     {
-        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
-            [],
-            [],
-            [],
-            From,
-            From.AddHours(1),
-            new Dictionary<string, OxyColor>()
-        );
-
-        model.Axes.Single(a => a.Position == AxisPosition.Left).Title.ShouldBe("Input count per 10 min");
-    }
-
-    [Fact]
-    public void Build_MultiDayRange_UsesHourlyBuckets()
-    {
-        var from = new DateTime(2026, 5, 18, 0, 0, 0, DateTimeKind.Local);
-        var to = from.AddDays(3); // <=7d => hourly
+        var from = new DateTime(2026, 5, 1, 0, 0, 0, DateTimeKind.Local);
 
         var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
             [],
             [],
             [],
             from,
-            to,
+            from.AddDays(rangeDays),
             new Dictionary<string, OxyColor>()
         );
 
-        model.Axes.Single(a => a.Position == AxisPosition.Left).Title.ShouldBe("Input count per hour");
+        model.Axes.Single(a => a.Position == AxisPosition.Left).Title.ShouldBe(expectedLabel);
     }
 
     [Fact]
@@ -639,26 +628,26 @@ public class DashboardActivityChartBuilderTests
             [],
             [],
             From,
-            From.AddHours(1), // <=1d => 10-min buckets
+            From.AddHours(1), // 60 min => 1-min buckets
             new Dictionary<string, OxyColor>()
         );
         DashboardActivityChartBuilder.ApplyInputActivityPlot(model, shortRange, resetView: false);
 
         var leftAxis = model.Axes.Single(a => a.Position == AxisPosition.Left);
-        leftAxis.Title.ShouldBe("Input count per 10 min");
+        leftAxis.Title.ShouldBe("Input count per minute");
 
         var multiDay = DashboardActivityChartBuilder.ComputeInputActivityPlot(
             [],
             [],
             [],
             From,
-            From.AddDays(3), // <=7d => hourly buckets
+            From.AddDays(3), // 4320 min => 15-min buckets
             new Dictionary<string, OxyColor>()
         );
         DashboardActivityChartBuilder.ApplyInputActivityPlot(model, multiDay, resetView: false);
 
         // Same axis object, updated label.
         model.Axes.Single(a => a.Position == AxisPosition.Left).ShouldBeSameAs(leftAxis);
-        leftAxis.Title.ShouldBe("Input count per hour");
+        leftAxis.Title.ShouldBe("Input count per 15 min");
     }
 }
