@@ -60,11 +60,6 @@ public static class AppConstants
         ];
     }
 
-    public static class Dashboard
-    {
-        public const int DefaultSmoothingWindow = 3;
-    }
-
     public static class Date
     {
         public const string DateFormat = "yyyy-MM-dd HH:mm:ss";

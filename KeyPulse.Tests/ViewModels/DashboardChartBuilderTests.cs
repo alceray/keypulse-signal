@@ -248,6 +248,57 @@ public class DashboardActivityChartBuilderTests
     }
 
     [Fact]
+    public void Build_SingleActiveBucket_DoesNotLeakActivityIntoNeighborBuckets()
+    {
+        var devices = new[] { Dev("K1", "kb") };
+        var snapshots = new[] { Snap("K1", From.AddMinutes(10), keys: 50) }; // 09:10, in the 09:10-09:20 bucket
+        var lifecycle = new[] { AppStarted(From) };
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            snapshots,
+            devices,
+            lifecycle,
+            From,
+            To,
+            new Dictionary<string, OxyColor>()
+        );
+
+        var series = model.Series.OfType<LineSeries>().ShouldHaveSingleItem();
+        // With no moving average, only the one active bucket carries activity (no leak into 09:20+, 09:30+).
+        var bucketStart = DateTimeAxis.ToDouble(From.AddMinutes(10));
+        var bucketEnd = DateTimeAxis.ToDouble(From.AddMinutes(20));
+        series.Points.Where(p => p.Y > 0).ShouldAllBe(p => p.X >= bucketStart && p.X <= bucketEnd);
+    }
+
+    [Fact]
+    public void Build_SeparatedActivity_BreaksLineAndAnchorsEachBucketToBaseline()
+    {
+        var devices = new[] { Dev("K1", "kb") };
+        var snapshots = new[]
+        {
+            Snap("K1", From.AddMinutes(10), keys: 50), // 09:10 bucket
+            Snap("K1", From.AddMinutes(40), keys: 30), // 09:40 bucket, two empty buckets later
+        };
+        var lifecycle = new[] { AppStarted(From) };
+
+        var model = DashboardActivityChartBuilder.BuildInputActivityPlot(
+            snapshots,
+            devices,
+            lifecycle,
+            From,
+            To,
+            new Dictionary<string, OxyColor>()
+        );
+
+        var series = model.Series.OfType<LineSeries>().ShouldHaveSingleItem();
+        // Each run breaks instead of ramping diagonally toward the next active bucket.
+        series.Points.Count(p => !p.IsDefined()).ShouldBe(2);
+        // Each run rises from and falls back to the baseline at its own bucket edges (no neighbor-center ramp).
+        series.Points.Count(p => p.IsDefined() && p.Y == 0).ShouldBe(4);
+        series.Points.ShouldContain(p => p.Y > 0);
+    }
+
+    [Fact]
     public void Build_NoLifecycleEvents_AllBucketsZeroedAndSeriesSkipped()
     {
         var devices = new[] { Dev("K1", "kb") };

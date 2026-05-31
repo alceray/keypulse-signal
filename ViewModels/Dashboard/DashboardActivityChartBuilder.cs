@@ -1,5 +1,4 @@
-﻿using KeyPulse.Configuration;
-using KeyPulse.Models;
+﻿using KeyPulse.Models;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
@@ -11,8 +10,6 @@ namespace KeyPulse.ViewModels.Dashboard;
 /// </summary>
 internal static class DashboardActivityChartBuilder
 {
-    private const int SMOOTHING_WINDOW = AppConstants.Dashboard.DefaultSmoothingWindow;
-
     /// <summary>Screen-pixel tolerance for selecting / cursor-detecting an activity line (nearest series).</summary>
     public const double LineHitTolerance = 20;
 
@@ -135,7 +132,6 @@ internal static class DashboardActivityChartBuilder
                 bucketMinutes
             );
 
-            valuesByBucket = SmoothBuckets(valuesByBucket, bucketTimeline, isAppRunningByBucket, SMOOTHING_WINDOW);
             if (valuesByBucket.Values.All(value => value <= 0))
                 continue;
 
@@ -154,9 +150,10 @@ internal static class DashboardActivityChartBuilder
                 StrokeThickness = 2,
                 Color = color,
                 Tag = device.DeviceId,
+                InterpolationAlgorithm = InterpolationAlgorithms.CatmullRomSpline,
             };
 
-            AddPositiveActivityPoints(series, bucketTimeline, valuesByBucket);
+            AddPositiveActivityPoints(series, bucketTimeline, valuesByBucket, bucketMinutes);
 
             seriesList.Add(series);
         }
@@ -302,46 +299,53 @@ internal static class DashboardActivityChartBuilder
         return ("yyyy-MM", DateTimeIntervalType.Months, double.NaN); // beyond: monthly (auto, whole months)
     }
 
+    /// <summary>
+    /// Plots one point per active bucket at the bucket's midpoint, rising from and returning to the baseline at
+    /// the run's edges so spline interpolation draws a smooth curve confined to the run's time span. The line
+    /// breaks across inactive runs, so separate-time usage on different devices does not appear to overlap.
+    /// </summary>
     private static void AddPositiveActivityPoints(
         LineSeries series,
         IReadOnlyList<DateTime> bucketTimeline,
-        IReadOnlyDictionary<DateTime, double> valuesByBucket
+        IReadOnlyDictionary<DateTime, double> valuesByBucket,
+        int bucketMinutes
     )
     {
-        var hasOpenSegment = false;
+        var halfBucket = bucketMinutes / 2.0;
+        var inRun = false;
+        var lastActiveBucket = default(DateTime);
         for (var i = 0; i < bucketTimeline.Count; i++)
         {
             var bucket = bucketTimeline[i];
             valuesByBucket.TryGetValue(bucket, out var value);
-            var shouldPlot = value > 0 || HasPositiveNeighbor(bucketTimeline, valuesByBucket, i);
-            if (!shouldPlot)
+
+            if (value > 0)
             {
-                if (hasOpenSegment)
+                if (!inRun)
                 {
-                    series.Points.Add(DataPoint.Undefined);
-                    hasOpenSegment = false;
+                    series.Points.Add(new DataPoint(DateTimeAxis.ToDouble(bucket), 0)); // rise from baseline at run start
+                    inRun = true;
                 }
 
-                continue;
+                series.Points.Add(new DataPoint(DateTimeAxis.ToDouble(bucket.AddMinutes(halfBucket)), value));
+                lastActiveBucket = bucket;
             }
-
-            series.Points.Add(new DataPoint(DateTimeAxis.ToDouble(bucket), value));
-            hasOpenSegment = true;
+            else if (inRun)
+            {
+                CloseRunAtBaseline(series, lastActiveBucket, bucketMinutes);
+                inRun = false;
+            }
         }
+
+        if (inRun)
+            CloseRunAtBaseline(series, lastActiveBucket, bucketMinutes);
     }
 
-    private static bool HasPositiveNeighbor(
-        IReadOnlyList<DateTime> bucketTimeline,
-        IReadOnlyDictionary<DateTime, double> valuesByBucket,
-        int index
-    )
+    /// <summary>Falls back to the baseline at the run's right edge and breaks the line before the next gap.</summary>
+    private static void CloseRunAtBaseline(LineSeries series, DateTime lastActiveBucket, int bucketMinutes)
     {
-        if (index > 0 && valuesByBucket.TryGetValue(bucketTimeline[index - 1], out var previous) && previous > 0)
-            return true;
-
-        return index + 1 < bucketTimeline.Count
-            && valuesByBucket.TryGetValue(bucketTimeline[index + 1], out var next)
-            && next > 0;
+        series.Points.Add(new DataPoint(DateTimeAxis.ToDouble(lastActiveBucket.AddMinutes(bucketMinutes)), 0));
+        series.Points.Add(DataPoint.Undefined);
     }
 
     private static Func<ActivitySnapshot, double> GetActivityValueSelector(DeviceTypes deviceType) =>
@@ -477,51 +481,6 @@ internal static class DashboardActivityChartBuilder
     {
         var bucketEnd = bucketStart.AddMinutes(bucketMinutes);
         return bucketStart < intervalEnd && intervalStart < bucketEnd;
-    }
-
-    /// <summary>
-    /// Applies trailing moving-average smoothing across consecutive running buckets.
-    /// Smoothing never crosses app-off boundaries.
-    /// </summary>
-    private static Dictionary<DateTime, double> SmoothBuckets(
-        IReadOnlyDictionary<DateTime, double> valuesByBucket,
-        IReadOnlyList<DateTime> timeline,
-        IReadOnlyDictionary<DateTime, bool> isAppRunningByBucket,
-        int smoothingWindow
-    )
-    {
-        if (smoothingWindow <= 1)
-            return timeline.ToDictionary(
-                bucket => bucket,
-                bucket => valuesByBucket.TryGetValue(bucket, out var value) ? value : 0
-            );
-
-        var result = new Dictionary<DateTime, double>(timeline.Count);
-        for (var i = 0; i < timeline.Count; i++)
-        {
-            var bucket = timeline[i];
-            if (!isAppRunningByBucket[bucket])
-            {
-                result[bucket] = 0;
-                continue;
-            }
-
-            var sum = 0.0;
-            var count = 0;
-            for (var j = i; j >= 0 && count < smoothingWindow; j--)
-            {
-                var candidate = timeline[j];
-                if (!isAppRunningByBucket[candidate])
-                    break;
-
-                sum += valuesByBucket.TryGetValue(candidate, out var value) ? value : 0;
-                count++;
-            }
-
-            result[bucket] = count > 0 ? sum / count : 0;
-        }
-
-        return result;
     }
 
     /// <summary>

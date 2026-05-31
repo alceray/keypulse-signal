@@ -163,7 +163,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
   (Dashboard is transient, so subscriptions are cleaned up when the view is destroyed and re-created when the tab is switched back)
 - Dashboard top cards show current connected count and top-3 keyboard/mouse device connection-duration summaries.
 - Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `1 Year`, and `All Time`.
-- Activity chart bucket size is **derived from the visible range span**, not user-configurable (`DashboardActivityChartBuilder`): ≤1 day → 10 min, ≤7 days → 1 hour, ≤93 days → 6 hours, ≤370 days → 1 day, else 1 week. Smoothing is a fixed trailing moving average (`AppConstants.Dashboard.DefaultSmoothingWindow` = 3) that never averages across app-off boundaries.
+- Activity chart bucket size is **derived from the visible range span**, not user-configurable (`DashboardActivityChartBuilder`): ≤1 day → 10 min, ≤7 days → 1 hour, ≤93 days → 6 hours, ≤370 days → 1 day, else 1 week. Each active run is plotted as a baseline-anchored smooth curve (Catmull-Rom spline through one raw per-bucket total at each bucket midpoint, no moving-average smoothing) that breaks across inactive runs, so separate-time usage on different devices does not appear to overlap.
 - Activity chart zeroes buckets where no app-running interval overlaps (`AppStarted`/`AppEnded` reconstruction).
 - Activity chart series use:
     - keyboard = `Keystrokes`
