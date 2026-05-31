@@ -365,7 +365,7 @@ internal static class DashboardActivityChartBuilder
             }
         }
 
-        return (bucketMinutes, $"Input count {FormatBucketLabel(bucketMinutes)}");
+        return (bucketMinutes, $"Inputs {FormatBucketLabel(bucketMinutes)}");
     }
 
     /// <summary>Renders a bucket size as a "per …" label using its largest whole unit (min / hour / day / week).</summary>

@@ -334,11 +334,11 @@ public class DashboardActivityChartBuilderTests
     }
 
     [Theory]
-    [InlineData(1, "Input count per 5 min")] // 1 Day
-    [InlineData(7, "Input count per 30 min")] // 1 Week
-    [InlineData(30, "Input count per 2 hours")] // 1 Month
-    [InlineData(90, "Input count per 6 hours")] // 3 Months (distinct from 1 Month)
-    [InlineData(365, "Input count per day")] // 1 Year
+    [InlineData(1, "Inputs per 5 min")] // 1 Day
+    [InlineData(7, "Inputs per 30 min")] // 1 Week
+    [InlineData(30, "Inputs per 2 hours")] // 1 Month
+    [InlineData(90, "Inputs per 6 hours")] // 3 Months (distinct from 1 Month)
+    [InlineData(365, "Inputs per day")] // 1 Year
     public void Build_BucketSizeScalesWithRange_KeepingPointCountBounded(int rangeDays, string expectedLabel)
     {
         var from = new DateTime(2026, 5, 1, 0, 0, 0, DateTimeKind.Local);
@@ -634,7 +634,7 @@ public class DashboardActivityChartBuilderTests
         DashboardActivityChartBuilder.ApplyInputActivityPlot(model, shortRange, resetView: false);
 
         var leftAxis = model.Axes.Single(a => a.Position == AxisPosition.Left);
-        leftAxis.Title.ShouldBe("Input count per minute");
+        leftAxis.Title.ShouldBe("Inputs per minute");
 
         var multiDay = DashboardActivityChartBuilder.ComputeInputActivityPlot(
             [],
@@ -648,6 +648,6 @@ public class DashboardActivityChartBuilderTests
 
         // Same axis object, updated label.
         model.Axes.Single(a => a.Position == AxisPosition.Left).ShouldBeSameAs(leftAxis);
-        leftAxis.Title.ShouldBe("Input count per 15 min");
+        leftAxis.Title.ShouldBe("Inputs per 15 min");
     }
 }
