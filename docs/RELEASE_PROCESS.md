@@ -12,7 +12,8 @@ The git tag is the single source of truth for release versions. The workflow aut
 - `installer/KeyPulse.iss` `AppVersion` is overridden at compile time via `/DAppVersion=...`
 
 `KeyPulse.csproj` may keep a developer-default version (e.g.
-`1.1.0`) for local builds. It does not need to be bumped before tagging.
+`1.2.0`) for local builds. It does not need to be bumped before tagging, though keeping it in sync
+with the latest tag is good hygiene.
 
 ## Automated Release (GitHub Actions)
 
@@ -21,18 +22,25 @@ Pushing a version tag triggers the release workflow (`.github/workflows/release.
 1. Extracts the version from the pushed tag (e.g. `v1.2.0` → `1.2.0`)
 2. Publishes the app with the tag version injected (`/p:Version=...`, `/p:FileVersion=...`)
 3. Compiles the installer with the tag version injected (`/DAppVersion=...`)
-4. Creates a GitHub Release with the installer attached and `CHANGELOG.md` as release notes
+4. Extracts the matching `## [<version>]` section from `CHANGELOG.md` (via the workflow's
+   `Extract release notes from changelog` step) and creates a GitHub Release with the installer
+   attached and that section as the release notes — not the whole file
 
 ## How to Cut a Release
 
-1. Add an entry to `CHANGELOG.md`.
-2. Commit and push.
-3. Push a version tag with the helper script:
+1. Choose the next version (semver): bump the **minor** when the release adds features
+   (an `### Added` section), the **patch** for fixes-only releases, and the **major** for breaking
+   changes. The changelog's section headings are the quickest tell — any `### Added` entries mean a
+   minor, not a patch.
+2. Add the matching `## [<version>] - <date>` entry to `CHANGELOG.md`, and bump `Version` /
+   `FileVersion` in `KeyPulse.csproj` to keep the developer-default in sync (optional but tidy).
+3. Commit and push.
+4. Push a version tag with the helper script:
    ```powershell
    .\scripts\New-Release.ps1 -Version "1.2.0"
    ```
-4. The script validates a clean working tree and prevents duplicate tags.
-5. GitHub Actions builds and publishes the release automatically.
+5. The script validates a clean working tree and prevents duplicate tags.
+6. GitHub Actions builds and publishes the release automatically.
 
 Manual fallback:
 

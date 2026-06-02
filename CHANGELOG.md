@@ -2,6 +2,31 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.2.0] - 2026-06-01
+
+### Added
+
+- Calendar view with per-day, per-device breakdowns of sessions, active minutes, and an hour-by-hour input activity graph that highlights your peak hour. Navigate days with the arrow keys.
+- Dashboard device selection — click a device to highlight its activity across the charts.
+- Real-time per-device input counters that tick up live as you type and persist on every flush.
+- Pan and zoom on the activity chart — drag horizontally and scroll to explore any part of the selected time window.
+- Hide individual devices from the dashboard and calendar while still tracking them in the background.
+- Progress bars on time-based metrics for at-a-glance comparison.
+
+### Changed
+
+- Per-device activity now uses deterministic color palettes, and small pie-chart slices are grouped into an "Others" category.
+- The device list shows a colored connection-status indicator (replacing the Connected column) and sorts connected devices first by default.
+- The activity chart refreshes in place with a pinned time axis, preserving pan/zoom and scale across updates; time-axis labels were reformatted with per-range tick spacing.
+- Reduced the installed size by ~86% (105 MB → 15 MB) by trimming unused packages and tightening release packaging.
+- Replaced the manual bucket-size and smoothing-window settings with automatic, data-driven values.
+
+### Fixed
+
+- Fixed a dispatcher deadlock that could hang the app during Windows shutdown.
+- Corrected the daily connection-stats calculation.
+- Tooltips now appear on the current-day activity bars.
+
 ## [1.1.1] - 2026-04-30
 
 ### Added

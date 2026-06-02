@@ -1,15 +1,13 @@
-using KeyPulse.Data;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace KeyPulse.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260524000000_AddDeviceDisplayVisibility")]
+    /// <inheritdoc />
     public partial class AddDeviceDisplayVisibility : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<bool>(
@@ -20,6 +18,7 @@ namespace KeyPulse.Migrations
                 defaultValue: false);
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(name: "IsHiddenFromDisplay", table: "Devices");
