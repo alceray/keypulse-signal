@@ -57,8 +57,14 @@ $installer = Get-ChildItem "installer\output\KeyPulse-Signal-Setup-*.exe" -Error
     Select-Object -First 1
 
 if ($installer) {
+    # Publish a SHA-256 checksum alongside the installer so the app can verify auto-update downloads.
+    $hash = (Get-FileHash $installer.FullName -Algorithm SHA256).Hash
+    $shaPath = "$($installer.FullName).sha256"
+    "$hash *$($installer.Name)" | Set-Content -Path $shaPath -NoNewline -Encoding ascii
+
     Write-Host "`n=== Build complete ===" -ForegroundColor Green
     Write-Host "Installer: $($installer.FullName)"
+    Write-Host "SHA-256:   $shaPath"
 } else {
     throw "Installer output not found. Check Inno Setup output."
 }

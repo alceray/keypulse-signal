@@ -27,6 +27,7 @@ public partial class App
     private string? _appName;
     private AppSettingsService? _appSettingsService;
     private StartupRegistrationService? _startupRegistrationService;
+    private string? _promptedVersion;
     private static bool RunInBackground { get; set; }
     public static ServiceProvider ServiceProvider { get; private set; } = null!;
 
@@ -155,6 +156,7 @@ public partial class App
 
         try
         {
+            _updateService.UpdateStatusChanged += OnUpdateAvailable;
             _updateService.Start();
         }
         catch (Exception ex)
@@ -177,6 +179,8 @@ public partial class App
         Log.Information("Application shutdown started");
         try
         {
+            if (_updateService != null)
+                _updateService.UpdateStatusChanged -= OnUpdateAvailable;
             DisposeActivationSignalResources();
             DisposeMutexResources();
             DisposeServicesForExitPath();
@@ -392,6 +396,93 @@ public partial class App
         {
             Log.Error(ex, "Failed to show startup warning");
         }
+    }
+
+    private void OnUpdateAvailable(UpdateService.UpdateAvailableEventArgs args)
+    {
+        if (!args.Available || string.IsNullOrWhiteSpace(args.LatestVersion))
+            return;
+
+        if (_isShuttingDown || !ShutdownDispose.IsDispatcherUsable(Dispatcher))
+            return;
+
+        var version = args.LatestVersion;
+        Dispatcher.BeginInvoke(new Action(() => MaybePromptForUpdate(version)));
+    }
+
+    private async void MaybePromptForUpdate(string version)
+    {
+        if (_isShuttingDown || _updateService == null)
+            return;
+
+        // Prompt at most once per version per session.
+        if (string.Equals(_promptedVersion, version, StringComparison.OrdinalIgnoreCase))
+            return;
+
+        // The setting gates only the proactive prompt; manual install from the tray/Settings still works when off.
+        if (_appSettingsService?.GetSettings().AutoInstallUpdates != true)
+            return;
+
+        _promptedVersion = version;
+
+        if (!PromptForUpdate(version))
+            return;
+
+        try
+        {
+            var installed = await _updateService.DownloadAndInstallAsync();
+            if (!installed && !_isShuttingDown)
+                NotifyUpdateFailed();
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Automatic update failed for v{Version}", version);
+            if (!_isShuttingDown)
+                NotifyUpdateFailed();
+        }
+    }
+
+    private bool PromptForUpdate(string version)
+    {
+        var message = $"KeyPulse Signal v{version} is available. Update now?";
+
+        var main = MainWindow;
+        if (main is { IsVisible: true })
+            return MessageBox.Show(main, message, _appName, MessageBoxButton.YesNo, MessageBoxImage.Information)
+                == MessageBoxResult.Yes;
+
+        // Tray-only mode has no visible window, so use a transient off-screen topmost owner to guarantee
+        // the prompt comes to the foreground.
+        var owner = new Window
+        {
+            ShowInTaskbar = false,
+            Width = 0,
+            Height = 0,
+            WindowStyle = WindowStyle.None,
+            Top = -2000,
+            Left = -2000,
+            Topmost = true,
+        };
+
+        try
+        {
+            owner.Show();
+            return MessageBox.Show(owner, message, _appName, MessageBoxButton.YesNo, MessageBoxImage.Information)
+                == MessageBoxResult.Yes;
+        }
+        finally
+        {
+            owner.Close();
+        }
+    }
+
+    private void NotifyUpdateFailed()
+    {
+        const string message = "The update could not be installed automatically. You can retry from Settings.";
+        if (RunInBackground && _trayIconService != null)
+            _trayIconService.ShowWarning("Update", message, AppConstants.App.StartupWarningBalloonTimeoutMs);
+        else if (MainWindow != null)
+            MessageBox.Show(MainWindow, message, _appName, MessageBoxButton.OK, MessageBoxImage.Warning);
     }
 
     private void ShowMainWindow()

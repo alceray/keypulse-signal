@@ -63,9 +63,21 @@ jobs:
           path: installer\KeyPulse.iss
           options: /DAppVersion=${{ steps.version.outputs.VERSION }}
 
+      - name: Compute installer SHA-256
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem installer/output/KeyPulse-Signal-Setup-*.exe |
+            Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if (-not $installer) { throw "Installer artifact not found." }
+          $hash = (Get-FileHash $installer.FullName -Algorithm SHA256).Hash
+          "$hash *$($installer.Name)" | Set-Content -Path "$($installer.FullName).sha256" -NoNewline -Encoding ascii
+          Write-Host "SHA-256: $hash"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: installer/output/KeyPulse-Signal-Setup-*.exe
+          files: |
+            installer/output/KeyPulse-Signal-Setup-*.exe
+            installer/output/KeyPulse-Signal-Setup-*.exe.sha256
           body_path: ${{ steps.notes.outputs.NOTES_PATH }}
 

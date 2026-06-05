@@ -27,6 +27,11 @@ UninstallDisplayIcon={app}\{#AppExeName}
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 ArchitecturesInstallIn64BitMode=x64compatible
+; AppMutex must match the app's single-instance mutex name (App.GetInstanceId in Release) so the
+; Restart Manager can close the running app before replacing files during an in-place auto-update.
+AppMutex=KeyPulse Signal.Release
+CloseApplications=yes
+RestartApplications=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -44,6 +49,9 @@ Name: "{commondesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Tasks: desk
 
 [Run]
 Filename: "{app}\{#AppExeName}"; Description: "Launch {#AppName}"; Flags: nowait postinstall skipifsilent
+; Silent auto-update path: the postinstall entry above is skipped under /VERYSILENT, so relaunch the app
+; explicitly in tray mode (--startup) and as the original (non-elevated) user after a silent in-place update.
+Filename: "{app}\{#AppExeName}"; Parameters: "--startup"; Flags: nowait runasoriginaluser; Check: WizardSilent
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}"
