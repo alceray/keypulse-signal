@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.2.1] - 2026-06-05
+
+### Added
+
+- Automatic in-place updates: when a new version is available, the app prompts and — on confirmation — downloads the installer, verifies its SHA-256 checksum, and silently upgrades itself in place, relaunching in the tray when done.
+- The "Auto-install updates" setting now governs the update prompt; turning it off keeps update checks passive (tray indicator only) while manual install from Settings or the tray still works.
+- Each release now publishes a SHA-256 checksum alongside the installer; downloads that fail verification are discarded and never run.
+
 ## [1.2.0] - 2026-06-01
 
 ### Added
