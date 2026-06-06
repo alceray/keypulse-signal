@@ -17,8 +17,8 @@ Injection
 ### Major Components
 
 1. **AppTimerService** (Singleton)
-    - Owns all periodic UI-thread timers: 1 second, 30 seconds (dashboard refresh), and hourly (update check)
-    - Broadcasts `SecondTick`, `ThirtySecondTick`, and `HourlyTick` events to subscriber services and view-models
+    - Owns all periodic UI-thread timers: 1 second, 30 seconds (dashboard refresh), 1 minute (stats projection), and daily (update check, retention prune)
+    - Broadcasts `SecondTick`, `ThirtySecondTick`, `MinuteTick`, and `DailyTick` events to subscriber services and view-models
     - Keeps transient view-models lean by centralizing timer ownership
     - Allows timers to persist across view lifecycle changes (e.g., tab switches)
     - See: `Services/AppTimerService.cs`
@@ -43,7 +43,7 @@ Injection
     - Raises `InputDeltaIncremented` with per-device `(KeystrokeDelta, MouseClickDelta, MouseMovementDelta)` so live views (e.g. calendar today-overlay) can tick without waiting for the minute flush
     - See: `Services/RawInputService.cs`
 
-3. **DataService** (Singleton)
+4. **DataService** (Singleton)
     - Single source for all database operations
     - Runs migrations and enables SQLite WAL mode on startup
     - Crash recovery: detects unclean shutdowns and writes missing `AppEnded`/`ConnectionEnded` events
@@ -51,7 +51,7 @@ Injection
     - Persists and queries minute-level `ActivitySnapshot` rows
     - See: `Services/DataService.cs`
 
-4. **DailyStatsService** (Singleton)
+5. **DailyStatsService** (Singleton)
     - Maintains `DailyDeviceStats` table from two write-through sources:
         - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount`, `ConnectionSeconds`, `LongestSessionSeconds` with a full non-cumulative replay of the day's events
         - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
@@ -63,8 +63,15 @@ Injection
     - All `DailyDeviceStats` mutations (range recompute, live projector, connection write-through) serialize on a single in-process gate so concurrent writers can't collide on the unique `ActivityProjections(DeviceId, Minute)` / `DailyDeviceStats(Day, DeviceId)` indexes
     - See: `Services/DailyStatsService.cs`
 
-4. **ApplicationDbContext** (`DbContext`)
-    - Four tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, and `DailyDeviceStats`
+6. **DataRetentionService** (Singleton)
+    - Applies the user's `ActivityRetentionMonths` setting (0 = keep forever) by pruning `ActivitySnapshots` and `ActivityProjections` older than the cutoff day; `DailyDeviceStats` and `DeviceEvents` are always kept, so calendar history and connection totals survive pruning
+    - Invariants: never prunes before the `DailyStatsFullBackfillAt` marker exists (a later first-run backfill would recompute old days from pruned sources and zero them); drains `ProjectClosedActivityMinutes()` before deleting; within each batch window deletes snapshots **before** their projection checkpoints (orphan checkpoints are harmless, orphan snapshots would be re-projected and double-counted)
+    - Deletes in week-sized chunks (short write transactions under WAL); compacts via `VACUUM` only after large prunes
+    - Triggers: chained after `RunStartupRebuild()` on the startup background task, on `DailyTick`, and when the retention setting is tightened
+    - See: `Services/DataRetentionService.cs`
+
+7. **ApplicationDbContext** (`DbContext`)
+    - Five EF tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, `DailyDeviceStats`, and `ActivityProjections` (per-minute projection checkpoints), plus the raw `AppMeta` key/value table created lazily outside EF
     - Database stored at `%AppData%\KeyPulse Signal\keypulse-data.db` in Release and `%AppData%\KeyPulse Signal\Test\keypulse-data.db` in Debug/testing builds (folder name = `AppConstants.App.ProductName`, the assembly name)
     - Unique constraint on `DeviceEvents(DeviceId, EventTime, EventType)` prevents duplicate lifecycle events
     - Unique constraint on `ActivitySnapshots(DeviceId, Minute)` prevents duplicate minute buckets
@@ -78,6 +85,8 @@ Injection
   `TotalConnectionSeconds`, `TotalInputCount`, `IsHiddenFromDisplay`)
 - **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseMovementSeconds`
 - **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionSeconds`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; backfilled in full once on first startup, then kept current by write-through + the live projector with a per-startup drift-recovery pass
+- **ActivityProjections** = per-(device, minute) checkpoints recording which snapshots were projected into `DailyDeviceStats`; grows in lockstep with `ActivitySnapshots` and is pruned together with it by retention
+- Retention prunes only the two per-minute tables; once pruned, `DailyDeviceStats` is the sole surviving record of those days. Pruning has no visible UI effect: the dashboard chart serves hour-aligned bucket tiers (1 Month and longer) from `HourlyInputCount` aggregates via `DashboardHourlyActivityAdapter`, and the raw-minute tiers (1 Day / 1 Week) only ever read windows far newer than the minimum retention cutoff
 - Updates flow in two directions:
     - lifecycle changes append to `DeviceEvents` and update the corresponding `Device` snapshot
     - raw input activity accumulates in memory, then flushes to `ActivitySnapshots`
@@ -93,15 +102,17 @@ Injection
     - database migrations run,
     - SQLite WAL mode is enabled,
     - `DataService.RecoverFromCrash()` backfills missing close events if needed,
-    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalConnectionSeconds` and clears stale `SessionStartedAt`,
+    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalConnectionSeconds` and `TotalInputCount` and clears stale `SessionStartedAt`,
     - historical `Devices` / `DeviceEvents` are loaded,
     - the heartbeat timer starts.
-6. Show the main window immediately or initialize the tray icon, depending on background mode.
-7. Await `UsbMonitorService.StartAsync()`:
+6. `DailyStatsService.RunStartupRebuild()` and `DataRetentionService.RunStartupPrune()` run chained on one background
+   task (prune strictly after rebuild, so a first-run backfill never sees pruned sources).
+7. Show the main window immediately or initialize the tray icon, depending on background mode.
+8. Await `UsbMonitorService.StartAsync()`:
     - `SetCurrentDevicesFromSystem()` writes `AppStarted`, snapshots currently connected HID devices, and emits
       `ConnectionStarted` for each one,
     - then WMI watchers are started for live insert/remove events.
-8. Resolve `RawInputService` and call `Start()` to create the hidden message-only window and begin receiving `WM_INPUT`.
+9. Resolve `RawInputService` and call `Start()` to create the hidden message-only window and begin receiving `WM_INPUT`.
 
 ### Shutdown / Disposal Ownership
 
@@ -178,7 +189,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 
 ### Calendar View Behavior
 
-- **Data source**: `DailyStatsService.GetCalendarDaySummaries()` and `GetCalendarDayDetail()` — both backed by `DailyDeviceStats`.
+- **Data source**: `DailyStatsService.GetVisibleDailyDeviceStats()` (plain `DailyDeviceStat` rows, hidden devices excluded); `CalendarSummaryBuilder` (in `ViewModels/Calendar/`) maps rows + in-memory device metadata to tile summaries and detail rows, so the service never references presentation types.
 - **Real-time overlay**: `CalendarViewModel` maintains a live in-memory input delta (`_todayLiveDeltaByDevice`) and connection overlay per device; `ApplyRealtimeTodayOverlay()` merges persisted + live state on every second tick and every `RawInputService.InputDeltaIncremented` event. There is **no** periodic DB-refresh timer — the calendar does not subscribe to `ThirtySecondTick`; the persisted baseline is re-read on month load, day selection, and day rollover only.
 - **`CalendarDaySummary.IsToday`**: computed property (`Day == DateOnly.FromDateTime(DateTime.Now)`), never stale.
 - **`CalendarDaySummary.IsSelected`**: UI-only flag toggled in-place via tile selection; never stored in DB.
@@ -203,8 +214,8 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - **The device list itself does not hide hidden devices** — it shows a "Hidden" badge instead. Only the dashboard and calendar exclude them.
 - **Where filtering happens**:
     - `DataService.GetDashboardDevices()` excludes hidden devices at the query.
-    - `DashboardViewModel` derives a visible-device id set from that and filters snapshots + events before charting; it refreshes when any `Device.IsHiddenFromDisplay` changes.
-    - `DailyStatsService` excludes hidden devices from the earliest-day query, `GetCalendarDaySummaries` range, and `GetCalendarDayDetail`. A day whose visible rows are empty yields `HasData = false`.
+    - `DashboardViewModel` derives a visible-device id set from that and filters snapshots + events before charting; it refreshes when any `Device.IsHiddenFromDisplay` changes. The activity chart's snapshot source is tiered by range: hour-aligned bucket tiers read `GetVisibleDailyDeviceStats` + `DashboardHourlyActivityAdapter` pseudo-snapshots, finer tiers read raw minute rows.
+    - `DailyStatsService` excludes hidden devices from the earliest-day query and `GetVisibleDailyDeviceStats`. A day whose visible rows are empty yields `HasData = false` (via `CalendarSummaryBuilder`).
     - `CalendarViewModel` excludes hidden devices from the realtime overlay, tile summary, and detail panel, and subscribes to per-device `PropertyChanged` (managed via `DeviceList.CollectionChanged`) so toggling visibility reloads the current month.
 
 ---
@@ -279,7 +290,8 @@ dotnet ef database update SomeOlderMigrationName
 
 **Snapshot Rebuild** (`DataService.RebuildDeviceSnapshots`):
 
-- Recomputes persisted `TotalConnectionSeconds` from the event log
+- Recomputes persisted `TotalConnectionSeconds` from the event log (DeviceEvents are never pruned, so the event-pairing replay stays exact)
+- Recomputes persisted `TotalInputCount` from `DailyDeviceStats` sums plus any snapshots without a projection checkpoint — exact in every DB state (pre-backfill, steady-state, and after retention pruned old snapshots)
 - Clears runtime-only `SessionStartedAt` so devices do not appear connected after an unclean shutdown
 - Called at startup after recovery
 

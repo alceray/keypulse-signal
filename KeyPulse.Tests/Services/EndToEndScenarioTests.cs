@@ -1,6 +1,7 @@
 using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.Tests.Infrastructure;
+using KeyPulse.ViewModels.Calendar;
 
 namespace KeyPulse.Tests.Services;
 
@@ -83,8 +84,10 @@ public class EndToEndScenarioTests : IDisposable
         stat.Keystrokes.ShouldBe(42);
         stat.ActiveMinutes.ShouldBe(1);
 
-        // Calendar detail reflects the same, resolving device metadata.
-        var detail = _dailyStats.GetCalendarDayDetail(day).ShouldHaveSingleItem();
+        // Calendar detail reflects the same: visible-stats query + presentation mapping.
+        var visibleRows = _dailyStats.GetVisibleDailyDeviceStats(day, day);
+        var devicesById = new Dictionary<string, Device> { ["D1"] = _data.GetDevice("D1")! };
+        var detail = CalendarSummaryBuilder.BuildDayDetails(visibleRows, devicesById).ShouldHaveSingleItem();
         detail.DeviceName.ShouldBe("kb");
         detail.ConnectionSeconds.ShouldBe(3600);
         detail.Keystrokes.ShouldBe(42);

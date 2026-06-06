@@ -454,14 +454,26 @@ public class DataService
     }
 
     /// <summary>
-    /// Recomputes total input count from immutable activity snapshots.
-    /// Formula: Keystrokes + MouseClicks + MouseMovementSeconds.
+    /// Recomputes total input count from the daily aggregates plus any snapshots not yet projected
+    /// into them. Every snapshot is counted exactly once through one of the two terms, so the total
+    /// stays exact even after old snapshots are pruned by retention.
     /// </summary>
     private static long ComputeTotalInputCount(ApplicationDbContext ctx, string deviceId)
     {
-        return ctx.ActivitySnapshots.Where(s => s.DeviceId == deviceId)
+        var projected =
+            ctx.DailyDeviceStats.Where(d => d.DeviceId == deviceId)
+                .Select(d => (long?)(d.Keystrokes + d.MouseClicks + d.MouseMovementSeconds))
+                .Sum() ?? 0L;
+
+        var unprojected =
+            ctx.ActivitySnapshots.Where(s =>
+                    s.DeviceId == deviceId
+                    && !ctx.ActivityProjections.Any(p => p.DeviceId == s.DeviceId && p.Minute == s.Minute)
+                )
                 .Select(s => (long?)s.Keystrokes + s.MouseClicks + s.MouseMovementSeconds)
                 .Sum() ?? 0L;
+
+        return projected + unprojected;
     }
 
     /// <summary>

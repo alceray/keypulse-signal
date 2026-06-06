@@ -1,7 +1,6 @@
 ﻿using KeyPulse.Data;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
-using KeyPulse.ViewModels.Calendar;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -34,7 +33,8 @@ public class DailyStatsService : IDisposable
     // RecomputeDailyDeviceStatsForRange re-locks on the same thread.
     private readonly object _projectionGate = new();
 
-    private const string FULL_BACKFILL_META_KEY = "DailyStatsFullBackfillAt";
+    // Shared with DataRetentionService, which must never prune before the one-time backfill has run.
+    internal const string FULL_BACKFILL_META_KEY = "DailyStatsFullBackfillAt";
 
     public DailyStatsService(IDbContextFactory<ApplicationDbContext> factory, AppTimerService appTimerService)
     {
@@ -380,74 +380,17 @@ public class DailyStatsService : IDisposable
     }
 
     /// <summary>
-    /// Returns day-level summaries (across all devices) for a calendar month.
-    /// Each entry covers one day; days with no data are still included so the grid can render empty tiles.
+    /// Returns daily stat rows for a local-day range (inclusive), excluding devices the user has
+    /// hidden from display. Presentation shaping belongs to the caller.
     /// </summary>
-    public IReadOnlyList<CalendarDaySummary> GetCalendarDaySummaries(int year, int month)
+    public IReadOnlyList<DailyDeviceStat> GetVisibleDailyDeviceStats(DateOnly from, DateOnly to)
     {
-        var from = new DateOnly(year, month, 1);
-        var daysInMonth = DateTime.DaysInMonth(year, month);
-        var to = new DateOnly(year, month, daysInMonth);
-
         using var ctx = _factory.CreateDbContext();
-
-        var statRows = ctx
+        return ctx
             .DailyDeviceStats.Where(d => d.Day >= from && d.Day <= to)
             .Where(d => !ctx.Devices.Any(dev => dev.DeviceId == d.DeviceId && dev.IsHiddenFromDisplay))
-            .ToList();
-        var deviceIds = statRows.Select(r => r.DeviceId).Distinct().ToList();
-        var devicesById = ctx.Devices.Where(d => deviceIds.Contains(d.DeviceId)).ToDictionary(d => d.DeviceId);
-
-        var grouped = statRows.GroupBy(d => d.Day).ToDictionary(g => g.Key, g => g.ToList());
-
-        var result = new List<CalendarDaySummary>(daysInMonth);
-        for (var day = from; day <= to; day = day.AddDays(1))
-        {
-            grouped.TryGetValue(day, out var dayRows);
-            result.Add(ToCalendarDaySummary(day, dayRows, devicesById));
-        }
-
-        return result.AsReadOnly();
-    }
-
-    /// <summary>
-    /// Returns per-device detail for a single local day, sorted by connection seconds descending.
-    /// Device name and type are resolved from the Devices table.
-    /// </summary>
-    public IReadOnlyList<CalendarDeviceDetail> GetCalendarDayDetail(DateOnly day)
-    {
-        using var ctx = _factory.CreateDbContext();
-
-        var rows = ctx
-            .DailyDeviceStats.Where(d => d.Day == day)
-            .Where(d => !ctx.Devices.Any(dev => dev.DeviceId == d.DeviceId && dev.IsHiddenFromDisplay))
-            .ToList();
-        if (rows.Count == 0)
-            return Array.Empty<CalendarDeviceDetail>();
-
-        var deviceIds = rows.Select(r => r.DeviceId).ToList();
-        var devices = ctx.Devices.Where(d => deviceIds.Contains(d.DeviceId)).ToDictionary(d => d.DeviceId);
-
-        return rows.Select(row =>
-            {
-                devices.TryGetValue(row.DeviceId, out var device);
-                return new CalendarDeviceDetail
-                {
-                    DeviceId = row.DeviceId,
-                    DeviceName = device?.DeviceName ?? row.DeviceId,
-                    DeviceType = device?.DeviceType ?? DeviceTypes.Unknown,
-                    IsConnected = false,
-                    SessionCount = row.SessionCount,
-                    ConnectionSeconds = row.ConnectionSeconds,
-                    LongestSessionSeconds = row.LongestSessionSeconds,
-                    Keystrokes = row.Keystrokes,
-                    MouseClicks = row.MouseClicks,
-                    MouseMovementSeconds = row.MouseMovementSeconds,
-                    ActiveMinutes = row.ActiveMinutes,
-                    HourlyInputBars = CalendarHourlyInputBarBuilder.Build(row.HourlyInputCount),
-                };
-            })
-            .OrderByDescending(r => r.ConnectionSeconds)
+            .OrderBy(d => d.Day)
+            .ThenBy(d => d.DeviceId)
             .ToList()
             .AsReadOnly();
     }
@@ -647,43 +590,6 @@ public class DailyStatsService : IDisposable
     private static (DateTime From, DateTime To) GetUtcBounds(DateOnly from, DateOnly toInclusive)
     {
         return (TimeFormatter.LocalDayToUtc(from), TimeFormatter.LocalDayToUtc(toInclusive.AddDays(1)));
-    }
-
-    private static CalendarDaySummary ToCalendarDaySummary(
-        DateOnly day,
-        IReadOnlyCollection<DailyDeviceStat>? dayRows,
-        Dictionary<string, Device>? devicesById = null
-    )
-    {
-        if (dayRows == null || dayRows.Count == 0)
-            return new CalendarDaySummary { Day = day, HasData = false };
-
-        var tileDevices = dayRows
-            .Select(r =>
-            {
-                Device? device = null;
-                devicesById?.TryGetValue(r.DeviceId, out device);
-                return new CalendarTileDevice
-                {
-                    DeviceId = r.DeviceId,
-                    DeviceName = device?.DeviceName ?? r.DeviceId,
-                    DeviceType = device?.DeviceType ?? DeviceTypes.Unknown,
-                };
-            })
-            .OrderBy(d =>
-                d.DeviceType == DeviceTypes.Keyboard ? 0
-                : d.DeviceType == DeviceTypes.Mouse ? 1
-                : 2
-            )
-            .ThenBy(d => d.DeviceName)
-            .ToList();
-
-        return new CalendarDaySummary
-        {
-            Day = day,
-            HasData = true,
-            Devices = tileDevices,
-        };
     }
 
     /// <summary>

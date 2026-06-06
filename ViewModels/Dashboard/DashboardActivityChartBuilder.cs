@@ -352,7 +352,7 @@ internal static class DashboardActivityChartBuilder
     /// Picks the finest ladder bucket that keeps the range under <see cref="MaxBucketCount"/> points, so density
     /// stays roughly constant across ranges. The bucket is the data resolution: zoom magnifies, never refines it.
     /// </summary>
-    private static (int BucketMinutes, string YAxisLabel) ResolveBucketSize(TimeSpan rangeSpan)
+    internal static (int BucketMinutes, string YAxisLabel) ResolveBucketSize(TimeSpan rangeSpan)
     {
         var rangeMinutes = Math.Max(rangeSpan.TotalMinutes, 0);
         var bucketMinutes = BucketSizeLadderMinutes[^1];

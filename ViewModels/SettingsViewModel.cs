@@ -3,6 +3,7 @@ using System.Windows.Input;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
 using KeyPulse.Services;
+using KeyPulse.ViewModels.Settings;
 using Serilog;
 
 namespace KeyPulse.ViewModels;
@@ -14,6 +15,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
     private readonly UpdateService _updateService;
     private bool _launchOnLogin;
     private bool _autoInstallUpdates;
+    private RetentionOption _selectedRetentionOption = RetentionOptions.All[0];
     private bool _isCheckingUpdates;
     private bool _isUpdateAvailable;
     private string? _latestUpdateVersion;
@@ -64,6 +66,24 @@ public class SettingsViewModel : StatusMessageViewModelBase
                 return;
 
             _autoInstallUpdates = value;
+            OnPropertyChanged();
+
+            if (!_suppressAutoSave)
+                SaveSettings();
+        }
+    }
+
+    public IReadOnlyList<RetentionOption> RetentionChoices => RetentionOptions.All;
+
+    public RetentionOption SelectedRetentionOption
+    {
+        get => _selectedRetentionOption;
+        set
+        {
+            if (_selectedRetentionOption == value || value is null)
+                return;
+
+            _selectedRetentionOption = value;
             OnPropertyChanged();
 
             if (!_suppressAutoSave)
@@ -147,6 +167,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             var settings = _appSettingsService.GetSettings();
             LaunchOnLogin = settings.LaunchOnLogin;
             AutoInstallUpdates = settings.AutoInstallUpdates;
+            SelectedRetentionOption = RetentionOptions.FromMonths(settings.ActivityRetentionMonths);
 
             // Reflect the actual registration state so the UI matches the machine state.
             if (!_startupRegistrationService.IsEnabled() && LaunchOnLogin)
@@ -164,11 +185,11 @@ public class SettingsViewModel : StatusMessageViewModelBase
     {
         try
         {
-            var settings = new AppUserSettings
-            {
-                LaunchOnLogin = LaunchOnLogin,
-                AutoInstallUpdates = AutoInstallUpdates,
-            };
+            // Read-modify-write so fields not edited on this page are preserved.
+            var settings = _appSettingsService.GetSettings();
+            settings.LaunchOnLogin = LaunchOnLogin;
+            settings.AutoInstallUpdates = AutoInstallUpdates;
+            settings.ActivityRetentionMonths = SelectedRetentionOption.Months;
 
             _appSettingsService.SaveSettings(settings);
 
@@ -179,9 +200,11 @@ public class SettingsViewModel : StatusMessageViewModelBase
 
             StatusMessage = "Settings saved.";
             Log.Debug(
-                "Settings updated: LaunchOnLogin={LaunchOnLogin}, AutoInstallUpdates={AutoInstallUpdates}",
+                "Settings updated: LaunchOnLogin={LaunchOnLogin}, AutoInstallUpdates={AutoInstallUpdates}, "
+                    + "ActivityRetentionMonths={ActivityRetentionMonths}",
                 settings.LaunchOnLogin,
-                settings.AutoInstallUpdates
+                settings.AutoInstallUpdates,
+                settings.ActivityRetentionMonths
             );
         }
         catch (Exception ex)
@@ -198,6 +221,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
         {
             LaunchOnLogin = settings.LaunchOnLogin;
             AutoInstallUpdates = settings.AutoInstallUpdates;
+            SelectedRetentionOption = RetentionOptions.FromMonths(settings.ActivityRetentionMonths);
         }
         finally
         {

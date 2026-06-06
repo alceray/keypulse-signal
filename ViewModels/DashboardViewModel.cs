@@ -18,6 +18,7 @@ namespace KeyPulse.ViewModels;
 public sealed class DashboardViewModel : ObservableObject, IDisposable
 {
     private readonly DataService _dataService;
+    private readonly DailyStatsService _dailyStatsService;
     private readonly UsbMonitorService _usbMonitorService;
     private readonly AppTimerService _appTimerService;
 
@@ -176,11 +177,13 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
 
     public DashboardViewModel(
         DataService dataService,
+        DailyStatsService dailyStatsService,
         UsbMonitorService usbMonitorService,
         AppTimerService appTimerService
     )
     {
         _dataService = dataService;
+        _dailyStatsService = dailyStatsService;
         _usbMonitorService = usbMonitorService;
         _appTimerService = appTimerService;
         PieHoverController = DashboardPieChartBuilder.BuildPieHoverController(HandlePlotClick);
@@ -306,24 +309,61 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         }
     }
 
+    /// <summary>
+    /// Picks the chart's snapshot source by range: hour-aligned bucket tiers read per-day hourly
+    /// aggregates, so cost scales with the displayed range and pruned history still charts fully;
+    /// fine-grained short ranges read the raw minute rows, whose window is naturally bounded.
+    /// </summary>
+    private List<ActivitySnapshot> LoadChartSnapshots(
+        DateTime? from,
+        DateTime to,
+        IReadOnlyList<Device> devices,
+        HashSet<string> visibleDeviceIds,
+        IReadOnlyList<DeviceEvent> appLifecycleEvents
+    )
+    {
+        var spanStart = from ?? appLifecycleEvents.Select(e => (DateTime?)e.EventTime).DefaultIfEmpty().Min();
+        var rangeSpan = spanStart.HasValue && to > spanStart.Value ? to - spanStart.Value : TimeSpan.Zero;
+
+        if (spanStart.HasValue && DashboardHourlyActivityAdapter.CanServeFromHourlyAggregates(rangeSpan))
+        {
+            var stats = _dailyStatsService.GetVisibleDailyDeviceStats(
+                DateOnly.FromDateTime(spanStart.Value),
+                DateOnly.FromDateTime(to)
+            );
+            var deviceTypesById = devices.ToDictionary(
+                d => d.DeviceId,
+                d => d.DeviceType,
+                StringComparer.OrdinalIgnoreCase
+            );
+            return DashboardHourlyActivityAdapter
+                .ToHourlySnapshots(stats, deviceTypesById)
+                .Where(s => visibleDeviceIds.Contains(s.DeviceId))
+                .ToList();
+        }
+
+        return _dataService
+            .GetActivitySnapshots(from: from, to: to)
+            .Where(s => visibleDeviceIds.Contains(s.DeviceId))
+            .ToList();
+    }
+
     private async Task RefreshOnceAsync()
     {
         var now = DateTime.Now;
         var from = DashboardRangeResolver.ResolveRangeStart(SelectedRange, now);
         var to = now;
 
-        // Heavy work off the UI thread.
+        // Heavy work off the UI thread. Events load before snapshots because the all-time range
+        // needs the earliest event to decide which snapshot source serves the chart.
         var dashboardDevices = _dataService.GetDashboardDevices();
         var devices = dashboardDevices.Devices;
         var visibleDeviceIds = devices.Select(d => d.DeviceId).ToHashSet(StringComparer.OrdinalIgnoreCase);
-        var snapshots = _dataService
-            .GetActivitySnapshots(from: from, to: to)
-            .Where(s => visibleDeviceIds.Contains(s.DeviceId))
-            .ToList();
         var dashboardEvents = _dataService.GetDashboardEvents(from, to);
         var visibleDeviceEvents = dashboardEvents
             .DeviceEvents.Where(e => visibleDeviceIds.Contains(e.DeviceId))
             .ToList();
+        var snapshots = LoadChartSnapshots(from, to, devices, visibleDeviceIds, dashboardEvents.AppLifecycleEvents);
 
         var connectionMinutesByDevice = DashboardConnectionTimeCalculator.ComputeConnectionMinutesByDevice(
             visibleDeviceEvents,

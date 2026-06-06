@@ -95,9 +95,11 @@ public partial class App
 
         // Run the daily-stats startup rebuild in the background so the window appears immediately.
         // First run does a one-time full historical backfill; later runs do a cheap drift-recovery pass.
+        // The retention prune is chained after it so a backfill never recomputes already-pruned days.
         _ = Task.Run(() =>
         {
             ServiceProvider.GetRequiredService<DailyStatsService>().RunStartupRebuild();
+            ServiceProvider.GetRequiredService<DataRetentionService>().RunStartupPrune();
         });
 
         // Show window / tray immediately so the UI appears while slow startup runs in the background.
@@ -245,6 +247,7 @@ public partial class App
         services.AddSingleton<UpdateService>();
         services.AddSingleton<TrayIconService>();
         services.AddSingleton<AppTimerService>();
+        services.AddSingleton<DataRetentionService>();
         services.AddTransient<DashboardViewModel>();
         services.AddTransient<DeviceListViewModel>();
         services.AddTransient<EventLogViewModel>();

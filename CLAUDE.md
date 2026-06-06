@@ -33,18 +33,21 @@ dotnet ef database update
 
 All services are **DI singletons** registered in `App.xaml.cs` (`OnStartup`). The key ones:
 
-- **`AppTimerService`** — owns the shared UI-thread timers (1s / 30s / hourly) and broadcasts tick events, so transient view-models don't each spin up timers.
+- **`AppTimerService`** — owns the shared UI-thread timers (1s / 30s / 1min / daily) and broadcasts tick events, so transient view-models don't each spin up timers.
 - **`UsbMonitorService`** — WMI device monitoring, insert-burst deduplication, connection lifecycle; owns the `ObservableCollection`s the UI binds to.
 - **`RawInputService`** — hidden `WM_INPUT` window capturing per-device keystrokes/clicks/movement into in-memory minute buckets, flushed to the DB every minute.
 - **`DataService`** — single source for all DB ops; runs migrations, enables WAL, performs crash recovery and snapshot rebuild on startup.
 - **`DailyStatsService`** — write-through projector maintaining per-day per-device aggregates from `DeviceEvents` + `ActivitySnapshots`.
+- **`DataRetentionService`** — prunes per-minute detail (`ActivitySnapshots` + `ActivityProjections`) older than the user's retention setting. Invariants: never runs before the daily-stats backfill marker exists, drains the projector first, and deletes snapshots **before** their projection checkpoints.
 
-### Data model (four tables)
+### Data model (five tables + `AppMeta`)
 
-- **`DeviceEvents`** — immutable append-only lifecycle log; the source of truth for connection history.
+- **`DeviceEvents`** — immutable append-only lifecycle log; the source of truth for connection history. Never pruned.
 - **`Devices`** — mutable fast-read snapshot for the UI (derived from the event log).
-- **`ActivitySnapshots`** — immutable per-(device, minute) input buckets.
-- **`DailyDeviceStats`** — mutable per-day aggregates derived from the two above.
+- **`ActivitySnapshots`** — immutable per-(device, minute) input buckets. Pruned by retention.
+- **`DailyDeviceStats`** — mutable per-day aggregates derived from the two above; the sole record of days whose raw minutes were pruned.
+- **`ActivityProjections`** — per-(device, minute) checkpoints marking snapshots already projected into `DailyDeviceStats`; pruned together with snapshots.
+- **`AppMeta`** — raw key/value table (outside EF) for markers like the one-time backfill timestamp.
 
 DB lives at `%AppData%\KeyPulse Signal\keypulse-data.db` (Release) or `...\Test\keypulse-data.db` (Debug) — Debug and Release use **separate databases**.
 
@@ -55,7 +58,7 @@ DB lives at `%AppData%\KeyPulse Signal\keypulse-data.db` (Release) or `...\Test\
 - **Dispatcher safety**: services with background callbacks that touch UI-bound collections (`UsbMonitorService`, `RawInputService`) must guard with `ShutdownDispose.IsDispatcherUsable(dispatcher)` before `Invoke`/`BeginInvoke`. Pure services (`DataService`, `DailyStatsService`, helpers) don't need this.
 - **Logging in helpers**: pure helpers (`RelayCommand`, `ObservableObject`) stay log-free; helpers touching FS/PowerShell/SetupAPI/crash-recovery should log failures. `TimeFormatter` is otherwise log-free except `ToRelativeTime`, which logs an error on a future timestamp (a clock-skew/logic bug). **Log messages state the condition in domain terms and must not leak internal code details** (method/class names) — e.g. `ToRelativeTime` logs `"Future timestamp received"`, not its own name.
 - **`ObservableObject`** (in `Helpers/`) auto-marshals `PropertyChanged` to the UI thread.
-- **Transient view-models** (e.g. `DashboardViewModel`, `CalendarViewModel`) subscribe to `AppTimerService` ticks and must unsubscribe on teardown since the view is destroyed/recreated on tab switches.
+- **View-model lifetime**: views are instantiated **once** in `MainWindow.xaml` and survive tab switches, so their DI-transient view-models effectively live for the process. State they expose must be kept live via event subscriptions, not constructor snapshots; `Dispose()` unsubscriptions exist for correctness on shutdown paths.
 
 ## Workflow Orchestration
 

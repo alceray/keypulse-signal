@@ -259,7 +259,10 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         IReadOnlyList<CalendarDaySummary> summaries;
         try
         {
-            summaries = await Task.Run(() => _dailyStatsService.GetCalendarDaySummaries(year, month));
+            var from = new DateOnly(year, month, 1);
+            var to = new DateOnly(year, month, DateTime.DaysInMonth(year, month));
+            var statRows = await Task.Run(() => _dailyStatsService.GetVisibleDailyDeviceStats(from, to));
+            summaries = CalendarSummaryBuilder.BuildMonthSummaries(year, month, statRows, GetDevicesById());
         }
         catch (Exception ex)
         {
@@ -322,7 +325,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         IReadOnlyList<CalendarDeviceDetail> details;
         try
         {
-            details = await Task.Run(() => _dailyStatsService.GetCalendarDayDetail(day));
+            var statRows = await Task.Run(() => _dailyStatsService.GetVisibleDailyDeviceStats(day, day));
+            details = CalendarSummaryBuilder.BuildDayDetails(statRows, GetDevicesById());
         }
         catch (Exception ex)
         {
@@ -568,6 +572,18 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
             CalendarGridItems[i] = CloneSummary(existing, shouldBeSelected);
         }
+    }
+
+    /// <summary>
+    /// Snapshot of the in-memory device list keyed by id, for resolving names/types in builders.
+    /// Must be called on the UI thread (DeviceList is mutated there).
+    /// </summary>
+    private Dictionary<string, Device> GetDevicesById()
+    {
+        var byId = new Dictionary<string, Device>();
+        foreach (var device in _usbMonitorService.DeviceList)
+            byId[device.DeviceId] = device;
+        return byId;
     }
 
     /// <summary>Creates a shallow summary copy with explicit selection state for immutable-style updates.</summary>

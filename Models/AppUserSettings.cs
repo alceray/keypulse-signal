@@ -9,4 +9,7 @@ public class AppUserSettings
 #endif
     public bool IsFirstLaunch { get; set; } = true;
     public bool AutoInstallUpdates { get; set; } = true;
+
+    /// <summary>Months of per-minute activity detail to keep; 0 keeps everything forever.</summary>
+    public int ActivityRetentionMonths { get; set; }
 }

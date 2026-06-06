@@ -278,7 +278,7 @@ public class DailyStatsServiceTests : IDisposable
     // ── Query helpers ───────────────────────────────────────────────────────────
 
     [Fact]
-    public void GetCalendarDayDetail_ResolvesDeviceMetadata_AndExcludesHiddenDevices()
+    public void GetVisibleDailyDeviceStats_ExcludesHiddenDevices()
     {
         Seed(ctx =>
         {
@@ -293,19 +293,19 @@ public class DailyStatsServiceTests : IDisposable
 
         _sut.RecomputeDailyDeviceStatsForRange(Day, Day);
 
-        var row = _sut.GetCalendarDayDetail(Day).ShouldHaveSingleItem(); // DEV2 is hidden => excluded
+        var row = _sut.GetVisibleDailyDeviceStats(Day, Day).ShouldHaveSingleItem(); // DEV2 is hidden => excluded
         row.DeviceId.ShouldBe("DEV1");
-        row.DeviceName.ShouldBe("My Keyboard");
-        row.DeviceType.ShouldBe(DeviceTypes.Keyboard);
         row.ConnectionSeconds.ShouldBe(600);
     }
 
     [Fact]
-    public void GetCalendarDayDetail_EmptyDay_ReturnsEmpty() => _sut.GetCalendarDayDetail(Day).ShouldBeEmpty();
+    public void GetVisibleDailyDeviceStats_EmptyDay_ReturnsEmpty() =>
+        _sut.GetVisibleDailyDeviceStats(Day, Day).ShouldBeEmpty();
 
     [Fact]
-    public void GetCalendarDayDetail_NoDeviceRow_FallsBackToDeviceId()
+    public void GetVisibleDailyDeviceStats_NoDeviceRow_StatStillReturned()
     {
+        // A stat row without a matching Devices row is still data; name fallback is presentation's job.
         Seed(ctx =>
             ctx.DailyDeviceStats.Add(
                 new DailyDeviceStat
@@ -317,9 +317,7 @@ public class DailyStatsServiceTests : IDisposable
             )
         );
 
-        var detail = _sut.GetCalendarDayDetail(Day).ShouldHaveSingleItem();
-        detail.DeviceName.ShouldBe("ORPHAN"); // no Devices row => id fallback
-        detail.DeviceType.ShouldBe(DeviceTypes.Unknown);
+        _sut.GetVisibleDailyDeviceStats(Day, Day).ShouldHaveSingleItem().DeviceId.ShouldBe("ORPHAN");
     }
 
     [Fact]
@@ -337,19 +335,6 @@ public class DailyStatsServiceTests : IDisposable
         });
 
         _sut.GetEarliestDataDay().ShouldBe(new DateOnly(2026, 5, 10)); // hidden device's earlier day ignored
-    }
-
-    [Fact]
-    public void GetCalendarDaySummaries_LeapFebruary_Returns29Entries() =>
-        _sut.GetCalendarDaySummaries(2024, 2).Count.ShouldBe(29);
-
-    [Fact]
-    public void GetCalendarDaySummaries_EmptyMonth_AllDaysPresentWithNoData()
-    {
-        var summaries = _sut.GetCalendarDaySummaries(2026, 5);
-
-        summaries.Count.ShouldBe(31);
-        summaries.ShouldAllBe(s => !s.HasData);
     }
 
     // ── One-time startup backfill (needs AppMeta) ───────────────────────────────
