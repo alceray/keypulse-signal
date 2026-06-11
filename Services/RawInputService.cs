@@ -31,6 +31,12 @@ public class RawInputService : IDisposable
         (long KeystrokeDelta, long MouseClickDelta, long MouseMovementDelta)
     >? InputDeltaIncremented;
 
+    /// <summary>
+    /// Raised when input capture is paused (true) or resumed (false).
+    /// Lets the tray menu and the Settings toggle mirror each other.
+    /// </summary>
+    public event Action<bool>? PauseStateChanged;
+
     #region Win32 constants
 
     private const int WM_INPUT = 0x00FF;
@@ -193,6 +199,7 @@ public class RawInputService : IDisposable
     private readonly DataService _dataService;
     private readonly Timer _flushTimer;
     private static readonly TimeSpan ShutdownFlushTimeout = TimeSpan.FromMilliseconds(250);
+    private volatile bool _isPaused;
     private bool _disposed;
 
     public RawInputService(DataService dataService)
@@ -278,6 +285,10 @@ public class RawInputService : IDisposable
     private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
     {
         if (msg != WM_INPUT)
+            return IntPtr.Zero;
+
+        // Session-only pause gates input capture only. Device connect and disconnect logging continues.
+        if (_isPaused)
             return IntPtr.Zero;
 
         try
@@ -411,6 +422,46 @@ public class RawInputService : IDisposable
         }
 
         ActivityStateChanged?.Invoke(deviceId, false);
+    }
+
+    /// <summary>True while input capture is paused for the current session.</summary>
+    public bool IsPaused => _isPaused;
+
+    /// <summary>
+    /// Pauses or resumes input capture for the current session. The paused state is never persisted,
+    /// so tracking always resumes the next time the app starts. Device connect and disconnect logging
+    /// is unaffected. No-op when the state already matches.
+    /// </summary>
+    public void SetPaused(bool paused)
+    {
+        if (_isPaused == paused)
+            return;
+
+        _isPaused = paused;
+
+        // Release held-key highlighting so no device appears stuck active while paused.
+        if (paused)
+            ClearAllHoldStates();
+
+        Log.Information(paused ? "Input tracking paused" : "Input tracking resumed");
+        PauseStateChanged?.Invoke(paused);
+    }
+
+    /// <summary>Flips the pause state for the current session.</summary>
+    public void TogglePause() => SetPaused(!_isPaused);
+
+    private void ClearAllHoldStates()
+    {
+        List<string> affectedDeviceIds;
+        lock (_lock)
+        {
+            affectedDeviceIds = _pressedKeysByDevice.Keys.Union(_pressedMouseButtonsByDevice.Keys).ToList();
+            _pressedKeysByDevice.Clear();
+            _pressedMouseButtonsByDevice.Clear();
+        }
+
+        foreach (var deviceId in affectedDeviceIds)
+            ActivityStateChanged?.Invoke(deviceId, false);
     }
 
     private HashSet<ushort> GetOrCreatePressedKeys(string deviceId)

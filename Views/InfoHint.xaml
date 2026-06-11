@@ -1,0 +1,28 @@
+<UserControl
+  x:Class="KeyPulse.Views.InfoHint"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+  x:Name="Root"
+>
+  <!--
+    A transparent background makes the whole icon box hit-testable, so the tooltip opens reliably
+    anywhere over the icon rather than only over the painted glyph strokes. The tooltip text is read
+    back from the host border via PlacementTarget so the binding survives the tooltip's own namescope.
+  -->
+  <Border
+    Background="Transparent"
+    Tag="{Binding Text, ElementName=Root}"
+    ToolTipService.ShowDuration="30000"
+  >
+    <Border.ToolTip>
+      <ToolTip MaxWidth="320">
+        <TextBlock
+          TextWrapping="Wrap"
+          Text="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource AncestorType=ToolTip}}"
+        />
+      </ToolTip>
+    </Border.ToolTip>
+    <iconPacks:PackIconPhosphorIcons Kind="Info" Width="14" Height="14" Foreground="#666666" />
+  </Border>
+</UserControl>

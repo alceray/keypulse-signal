@@ -4,8 +4,30 @@ using System.Windows.Data;
 using System.Windows.Media;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
+using MahApps.Metro.IconPacks;
 
 namespace KeyPulse.Views;
+
+public sealed class PauseStateToIconKindConverter : IValueConverter
+{
+    // Paused shows the resume affordance (play); tracking shows the pause affordance.
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        value is true ? PackIconPhosphorIconsKind.Play : PackIconPhosphorIconsKind.Pause;
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}
+
+public sealed class PauseStateToActionTextConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        value is true
+            ? "Resume input tracking for the current session"
+            : "Pause input tracking for the current session";
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}
 
 public sealed class InverseBoolToVisibilityConverter : IValueConverter
 {

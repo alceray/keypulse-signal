@@ -21,8 +21,28 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private readonly DailyStatsService _dailyStatsService;
     private readonly UsbMonitorService _usbMonitorService;
     private readonly AppTimerService _appTimerService;
+    private readonly RawInputService _rawInputService;
 
     public ICommand RefreshCommand { get; }
+
+    public ICommand ToggleTrackingPauseCommand { get; }
+
+    /// <summary>
+    /// Session-only input-capture pause state, mirrored from the shared service so the dashboard control
+    /// and the tray menu stay in sync. Never persisted; capture resumes on the next app start.
+    /// </summary>
+    public bool IsTrackingPaused
+    {
+        get => _isTrackingPaused;
+        private set
+        {
+            if (_isTrackingPaused == value)
+                return;
+
+            _isTrackingPaused = value;
+            OnPropertyChanged();
+        }
+    }
 
     public IPlotController PieHoverController { get; }
 
@@ -150,6 +170,7 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     private string _topMiceSummary = "1. -\n2. -\n3. -";
     private string _lastUpdatedText = "";
     private string _rangeDisplayText = "";
+    private bool _isTrackingPaused;
     private string _selectedRange = DashboardRangeResolver.DefaultRange;
     private readonly DashboardHoverPreview _hoverPreview = new();
     private readonly DashboardDeviceColorPalette _deviceColorPalette = new();
@@ -179,18 +200,23 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
         DataService dataService,
         DailyStatsService dailyStatsService,
         UsbMonitorService usbMonitorService,
-        AppTimerService appTimerService
+        AppTimerService appTimerService,
+        RawInputService rawInputService
     )
     {
         _dataService = dataService;
         _dailyStatsService = dailyStatsService;
         _usbMonitorService = usbMonitorService;
         _appTimerService = appTimerService;
+        _rawInputService = rawInputService;
         PieHoverController = DashboardPieChartBuilder.BuildPieHoverController(HandlePlotClick);
         ActivityChartController = DashboardActivityChartBuilder.BuildActivityChartController(HandlePlotClick);
         _hoverPreview.PropertyChanged += HoverPreview_PropertyChanged;
 
         RefreshCommand = new RelayCommand(_ => Refresh());
+        ToggleTrackingPauseCommand = new RelayCommand(_ => _rawInputService.TogglePause());
+        _isTrackingPaused = _rawInputService.IsPaused;
+        _rawInputService.PauseStateChanged += OnPauseStateChanged;
 
         // Subscribe reactively so ConnectedDevices updates the moment a device connects,
         // even if the timer hasn't fired yet (fixes the 0-on-startup issue).
@@ -534,11 +560,16 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     {
         _appTimerService.ThirtySecondTick -= OnRefreshTick;
         _hoverPreview.PropertyChanged -= HoverPreview_PropertyChanged;
+        _rawInputService.PauseStateChanged -= OnPauseStateChanged;
 
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged -= Device_PropertyChanged;
     }
+
+    // Mirror pause toggles from any source (this control or the tray). ObservableObject marshals the
+    // resulting PropertyChanged to the UI thread, so the icon and tooltip refresh safely.
+    private void OnPauseStateChanged(bool paused) => IsTrackingPaused = paused;
 
     private void OnRefreshTick(object? sender, EventArgs e) => Refresh();
 }

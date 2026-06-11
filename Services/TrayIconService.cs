@@ -3,15 +3,30 @@ using System.IO;
 using System.Windows.Forms;
 using KeyPulse.Configuration;
 using KeyPulse.Helpers;
+using MahApps.Metro.IconPacks;
 using Serilog;
 
 namespace KeyPulse.Services;
 
-public sealed class TrayIconService(UpdateService updateService) : IDisposable
+public sealed class TrayIconService(UpdateService updateService, RawInputService rawInputService) : IDisposable
 {
     private NotifyIcon? _trayIcon;
     private ToolStripMenuItem? _updateMenuItem;
+    private ToolStripMenuItem? _pauseMenuItem;
+    private Bitmap? _pauseImage;
+    private Bitmap? _resumeImage;
     private bool _disposed;
+
+    private const string PauseMenuText = "Pause input tracking";
+    private const string ResumeMenuText = "Resume input tracking";
+
+    // Rendered at 2x the 16px menu slot so it stays crisp when the menu scales the image up for DPI.
+    private const int PauseIconSizePx = 32;
+    private static readonly System.Windows.Media.Color PauseIconColor = System.Windows.Media.Color.FromRgb(
+        0x33,
+        0x33,
+        0x33
+    );
 
     public void Initialize(Action showMainWindow, Action shutdown)
     {
@@ -24,13 +39,22 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
             Icon = new Icon(trayIconPath),
             Visible = true,
             Text = AppConstants.App.DefaultName,
-            ContextMenuStrip = new ContextMenuStrip(),
+            ContextMenuStrip = new ContextMenuStrip { ShowItemToolTips = true },
         };
 
         _updateMenuItem = new ToolStripMenuItem("No updates available") { Enabled = false };
         _updateMenuItem.Click += (_, _) => updateService.InstallUpdate();
         _trayIcon.ContextMenuStrip.Items.Add(_updateMenuItem);
 
+        LoadPauseIcons();
+        _pauseMenuItem = new ToolStripMenuItem(PauseMenuText)
+        {
+            ToolTipText = "Resumes automatically the next time the app starts.",
+        };
+        _pauseMenuItem.Click += (_, _) => rawInputService.TogglePause();
+        _trayIcon.ContextMenuStrip.Items.Add(_pauseMenuItem);
+
+        _trayIcon.ContextMenuStrip.Items.Add(new ToolStripSeparator());
         _trayIcon.ContextMenuStrip.Items.Add("Exit", null, (_, _) => shutdown());
         _trayIcon.MouseClick += (_, args) =>
         {
@@ -40,6 +64,9 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
 
         updateService.UpdateStatusChanged += OnUpdateStatusChanged;
         UpdateUpdateMenuItem(updateService.UpdateAvailable, updateService.LatestVersion);
+
+        rawInputService.PauseStateChanged += ApplyPauseState;
+        ApplyPauseState(rawInputService.IsPaused);
 
         Log.Information("Tray icon initialized");
     }
@@ -81,6 +108,47 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
         dispatcher.BeginInvoke(new Action(Apply));
     }
 
+    // Pause shows while tracking (click pauses); play shows while paused (click resumes).
+    private void LoadPauseIcons()
+    {
+        try
+        {
+            _pauseImage = PhosphorIconRenderer.Render(PackIconPhosphorIconsKind.Pause, PauseIconSizePx, PauseIconColor);
+            _resumeImage = PhosphorIconRenderer.Render(PackIconPhosphorIconsKind.Play, PauseIconSizePx, PauseIconColor);
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Failed to render tray pause icons; the menu item will show text only");
+        }
+    }
+
+    private void ApplyPauseState(bool paused)
+    {
+        void Apply()
+        {
+            if (_pauseMenuItem != null)
+            {
+                _pauseMenuItem.Text = paused ? ResumeMenuText : PauseMenuText;
+                _pauseMenuItem.Image = paused ? _resumeImage : _pauseImage;
+            }
+
+            if (_trayIcon != null)
+                _trayIcon.Text = paused ? $"{AppConstants.App.DefaultName} (paused)" : AppConstants.App.DefaultName;
+        }
+
+        var dispatcher = System.Windows.Application.Current?.Dispatcher;
+        if (!ShutdownDispose.IsDispatcherUsable(dispatcher))
+            return;
+
+        if (dispatcher!.CheckAccess())
+        {
+            Apply();
+            return;
+        }
+
+        dispatcher.BeginInvoke(new Action(Apply));
+    }
+
     public void ShowWarning(string title, string message, int timeoutMs)
     {
         if (_trayIcon == null)
@@ -99,6 +167,12 @@ public sealed class TrayIconService(UpdateService updateService) : IDisposable
 
         _disposed = true;
         updateService.UpdateStatusChanged -= OnUpdateStatusChanged;
+        rawInputService.PauseStateChanged -= ApplyPauseState;
+
+        _pauseImage?.Dispose();
+        _resumeImage?.Dispose();
+        _pauseImage = null;
+        _resumeImage = null;
 
         if (_trayIcon == null)
             return;

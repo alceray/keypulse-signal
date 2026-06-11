@@ -3,7 +3,6 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:local="clr-namespace:KeyPulse.Views"
-  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
   Height="Auto"
   Width="Auto"
 >
@@ -30,24 +29,11 @@
           SelectedItem="{Binding SelectedRetentionOption, Mode=TwoWay}"
           DisplayMemberPath="Label"
         />
-        <iconPacks:PackIconPhosphorIcons
-          Kind="Info"
-          Width="14"
-          Height="14"
-          Foreground="#666666"
+        <local:InfoHint
+          Text="Limits how long a minute-by-minute record of your input activity is stored, for privacy reasons and to keep the database compact. Charts, calendar history, and lifetime totals are unaffected."
           Margin="6,0,0,0"
           VerticalAlignment="Center"
-          ToolTipService.ShowDuration="30000"
-        >
-          <iconPacks:PackIconPhosphorIcons.ToolTip>
-            <ToolTip MaxWidth="320">
-              <TextBlock
-                TextWrapping="Wrap"
-                Text="Limits how long a minute-by-minute record of your input activity is stored, for privacy reasons and to keep the database compact. Charts, calendar history, and lifetime totals are unaffected."
-              />
-            </ToolTip>
-          </iconPacks:PackIconPhosphorIcons.ToolTip>
-        </iconPacks:PackIconPhosphorIcons>
+        />
       </StackPanel>
 
       <Grid Margin="0,0,0,10">
