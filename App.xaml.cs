@@ -272,7 +272,7 @@ public partial class App
 #endif
     }
 
-    private static bool ShouldForceTrayFromArgs(IEnumerable<string> args)
+    internal static bool ShouldForceTrayFromArgs(IEnumerable<string> args)
     {
         return args.Any(arg => string.Equals(arg, AppConstants.App.TrayArgument, StringComparison.OrdinalIgnoreCase));
     }

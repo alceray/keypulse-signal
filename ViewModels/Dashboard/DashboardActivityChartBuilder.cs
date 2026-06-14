@@ -51,7 +51,7 @@ internal static class DashboardActivityChartBuilder
         IReadOnlyList<LineSeries> Series
     );
 
-    /// <summary>Builds a standalone activity model (e.g. for tests); live refresh reuses a persistent model.</summary>
+    /// <summary>Builds a standalone activity model; live refresh reuses a persistent model.</summary>
     public static PlotModel BuildInputActivityPlot(
         IReadOnlyCollection<ActivitySnapshot> snapshots,
         IReadOnlyCollection<Device> devices,
