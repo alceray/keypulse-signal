@@ -12,6 +12,8 @@ public class AppUserSettingsTests
 
         settings.IsFirstLaunch.ShouldBeTrue();
         settings.AutoInstallUpdates.ShouldBeTrue();
+        settings.CloseToTray.ShouldBeTrue();
+        settings.SuppressCloseToTrayHint.ShouldBeFalse(); // reminder shows until the user opts out
         settings.ActivityRetentionMonths.ShouldBe(0); // 0 = keep forever
 
         // LaunchOnLogin default is build-config dependent (off in Debug so dev runs don't register autostart).
@@ -37,6 +39,17 @@ public class AppUserSettingsTests
     }
 
     [Fact]
+    public void Deserialize_JsonWithoutCloseToTrayKey_DefaultsToTrue()
+    {
+        // A settings.json written before CloseToTray existed should keep the run-in-background default.
+        const string legacyJson = """{"LaunchOnLogin":true,"IsFirstLaunch":false,"AutoInstallUpdates":true}""";
+
+        var settings = JsonSerializer.Deserialize<AppUserSettings>(legacyJson)!;
+
+        settings.CloseToTray.ShouldBeTrue();
+    }
+
+    [Fact]
     public void SerializeRoundTrip_PreservesAllFields()
     {
         var settings = new AppUserSettings
@@ -44,6 +57,8 @@ public class AppUserSettingsTests
             LaunchOnLogin = true,
             IsFirstLaunch = false,
             AutoInstallUpdates = false,
+            CloseToTray = false,
+            SuppressCloseToTrayHint = true,
             ActivityRetentionMonths = 6,
         };
 
@@ -52,6 +67,8 @@ public class AppUserSettingsTests
         roundTripped.LaunchOnLogin.ShouldBeTrue();
         roundTripped.IsFirstLaunch.ShouldBeFalse();
         roundTripped.AutoInstallUpdates.ShouldBeFalse();
+        roundTripped.CloseToTray.ShouldBeFalse();
+        roundTripped.SuppressCloseToTrayHint.ShouldBeTrue();
         roundTripped.ActivityRetentionMonths.ShouldBe(6);
     }
 }

@@ -4,8 +4,10 @@ using System.Windows;
 using KeyPulse.Configuration;
 using KeyPulse.Data;
 using KeyPulse.Helpers;
+using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.ViewModels;
+using KeyPulse.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
@@ -28,7 +30,7 @@ public partial class App
     private AppSettingsService? _appSettingsService;
     private StartupRegistrationService? _startupRegistrationService;
     private string? _promptedVersion;
-    private static bool RunInBackground { get; set; }
+    public static bool RunInBackground { get; private set; }
     public static ServiceProvider ServiceProvider { get; private set; } = null!;
 
     protected override async void OnStartup(StartupEventArgs e)
@@ -511,10 +513,42 @@ public partial class App
 
     private void MainWindow_Closing(object? sender, CancelEventArgs e)
     {
-        if (RunInBackground)
+        // Windowed builds always exit on close; the tray only exists in background mode.
+        if (!RunInBackground)
+            return;
+
+        // Default to hiding into the tray. Only a deliberate opt-out exits the process. An explicit
+        // Shutdown keeps that deterministic, since the update prompt can leave a transient owner window
+        // open that would otherwise keep the app alive after the main window closes.
+        var settings = _appSettingsService?.GetSettings();
+        if (settings?.CloseToTray != false)
         {
             e.Cancel = true;
+            // Remind first so the dialog can center over the still-visible window, then hide.
+            ShowCloseToTrayHint(settings);
             MainWindow?.Hide();
+            return;
         }
+
+        Shutdown();
+    }
+
+    // When the window hides into the tray, tell the user the app keeps running so the vanished
+    // window does not read as a silent quit. Shown on every close until the user opts out.
+    private void ShowCloseToTrayHint(AppUserSettings? settings)
+    {
+        if (settings == null || _appSettingsService == null || settings.SuppressCloseToTrayHint)
+            return;
+
+        var dialog = new CloseToTrayHintWindow(_appName ?? AppConstants.App.DefaultName);
+        if (MainWindow is { IsVisible: true })
+            dialog.Owner = MainWindow;
+        dialog.ShowDialog();
+
+        if (!dialog.DontShowAgain)
+            return;
+
+        settings.SuppressCloseToTrayHint = true;
+        _appSettingsService.SaveSettings(settings);
     }
 }

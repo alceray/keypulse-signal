@@ -6,11 +6,22 @@
   Height="Auto"
   Width="Auto"
 >
+  <UserControl.Resources>
+    <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+  </UserControl.Resources>
+
   <Grid Margin="16">
     <StackPanel>
       <CheckBox
         Content="Launch on login"
         IsChecked="{Binding LaunchOnLogin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Margin="0,0,0,10"
+      />
+
+      <CheckBox
+        Content="Keep running in the background when closed"
+        IsChecked="{Binding CloseToTray, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Visibility="{Binding ShowCloseToTrayOption, Converter={StaticResource BoolToVisibility}}"
         Margin="0,0,0,10"
       />
 

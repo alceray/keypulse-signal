@@ -15,6 +15,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
     private readonly UpdateService _updateService;
     private bool _launchOnLogin;
     private bool _autoInstallUpdates;
+    private bool _closeToTray;
     private RetentionOption _selectedRetentionOption = RetentionOptions.All[0];
     private bool _isCheckingUpdates;
     private bool _isUpdateAvailable;
@@ -72,6 +73,26 @@ public class SettingsViewModel : StatusMessageViewModelBase
                 SaveSettings();
         }
     }
+
+    public bool CloseToTray
+    {
+        get => _closeToTray;
+        set
+        {
+            if (_closeToTray == value)
+                return;
+
+            _closeToTray = value;
+            OnPropertyChanged();
+
+            if (!_suppressAutoSave)
+                SaveSettings();
+        }
+    }
+
+    // Close-to-tray only has meaning when a tray exists. Windowed sessions have no tray, so closing
+    // always exits there; hide the option rather than show a control that does nothing.
+    public bool ShowCloseToTrayOption => App.RunInBackground;
 
     public IReadOnlyList<RetentionOption> RetentionChoices => RetentionOptions.All;
 
@@ -167,6 +188,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             var settings = _appSettingsService.GetSettings();
             LaunchOnLogin = settings.LaunchOnLogin;
             AutoInstallUpdates = settings.AutoInstallUpdates;
+            CloseToTray = settings.CloseToTray;
             SelectedRetentionOption = RetentionOptions.FromMonths(settings.ActivityRetentionMonths);
 
             // Reflect the actual registration state so the UI matches the machine state.
@@ -189,6 +211,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             var settings = _appSettingsService.GetSettings();
             settings.LaunchOnLogin = LaunchOnLogin;
             settings.AutoInstallUpdates = AutoInstallUpdates;
+            settings.CloseToTray = CloseToTray;
             settings.ActivityRetentionMonths = SelectedRetentionOption.Months;
 
             _appSettingsService.SaveSettings(settings);
@@ -201,9 +224,10 @@ public class SettingsViewModel : StatusMessageViewModelBase
             StatusMessage = "Settings saved.";
             Log.Debug(
                 "Settings updated: LaunchOnLogin={LaunchOnLogin}, AutoInstallUpdates={AutoInstallUpdates}, "
-                    + "ActivityRetentionMonths={ActivityRetentionMonths}",
+                    + "CloseToTray={CloseToTray}, ActivityRetentionMonths={ActivityRetentionMonths}",
                 settings.LaunchOnLogin,
                 settings.AutoInstallUpdates,
+                settings.CloseToTray,
                 settings.ActivityRetentionMonths
             );
         }
@@ -221,6 +245,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
         {
             LaunchOnLogin = settings.LaunchOnLogin;
             AutoInstallUpdates = settings.AutoInstallUpdates;
+            CloseToTray = settings.CloseToTray;
             SelectedRetentionOption = RetentionOptions.FromMonths(settings.ActivityRetentionMonths);
         }
         finally
