@@ -54,7 +54,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             OnPropertyChanged();
 
             if (!_suppressAutoSave)
-                SaveSettings();
+                SaveSettings(nameof(AppUserSettings.LaunchOnLogin), value);
         }
     }
 
@@ -70,7 +70,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             OnPropertyChanged();
 
             if (!_suppressAutoSave)
-                SaveSettings();
+                SaveSettings(nameof(AppUserSettings.AutoInstallUpdates), value);
         }
     }
 
@@ -86,7 +86,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             OnPropertyChanged();
 
             if (!_suppressAutoSave)
-                SaveSettings();
+                SaveSettings(nameof(AppUserSettings.CloseToTray), value);
         }
     }
 
@@ -108,7 +108,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             OnPropertyChanged();
 
             if (!_suppressAutoSave)
-                SaveSettings();
+                SaveSettings(nameof(AppUserSettings.ActivityRetentionMonths), value.Months);
         }
     }
 
@@ -203,7 +203,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
         }
     }
 
-    private void SaveSettings()
+    private void SaveSettings(string changedSetting, object changedValue)
     {
         try
         {
@@ -222,14 +222,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
                 _startupRegistrationService.Disable();
 
             StatusMessage = "Settings saved.";
-            Log.Debug(
-                "Settings updated: LaunchOnLogin={LaunchOnLogin}, AutoInstallUpdates={AutoInstallUpdates}, "
-                    + "CloseToTray={CloseToTray}, ActivityRetentionMonths={ActivityRetentionMonths}",
-                settings.LaunchOnLogin,
-                settings.AutoInstallUpdates,
-                settings.CloseToTray,
-                settings.ActivityRetentionMonths
-            );
+            Log.Debug("Setting updated: {Setting}={Value}", changedSetting, changedValue);
         }
         catch (Exception ex)
         {
