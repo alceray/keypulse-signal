@@ -12,7 +12,7 @@ public static class AppConstants
 #else
         public static string DefaultName => ProductName;
 #endif
-        public const string StartupArgument = "--startup";
+        public const string TrayArgument = "--tray";
         public const string ActivationEventSuffix = ".ACTIVATE";
         public const string RunKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
         public const string TrayIconRelativePath = @"Assets\keypulse-signal-icon.ico";

@@ -64,6 +64,6 @@ public class StartupRegistrationService
             throw new InvalidOperationException("Unable to determine current executable path for startup registration");
 
         var quotedPath = $"\"{executablePath}\"";
-        return $"{quotedPath} {AppConstants.App.StartupArgument}";
+        return $"{quotedPath} {AppConstants.App.TrayArgument}";
     }
 }

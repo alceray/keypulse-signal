@@ -50,8 +50,8 @@ Name: "{commondesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Tasks: desk
 [Run]
 Filename: "{app}\{#AppExeName}"; Description: "Launch {#AppName}"; Flags: nowait postinstall skipifsilent
 ; Silent auto-update path: the postinstall entry above is skipped under /VERYSILENT, so relaunch the app
-; explicitly in tray mode (--startup) and as the original (non-elevated) user after a silent in-place update.
-Filename: "{app}\{#AppExeName}"; Parameters: "--startup"; Flags: nowait runasoriginaluser; Check: WizardSilent
+; explicitly in tray mode (--tray) and as the original (non-elevated) user after a silent in-place update.
+Filename: "{app}\{#AppExeName}"; Parameters: "--tray"; Flags: nowait runasoriginaluser; Check: WizardSilent
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}"

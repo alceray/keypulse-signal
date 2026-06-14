@@ -27,7 +27,7 @@ dotnet ef database update
 - **Tests** live in `KeyPulse.Tests/` (xUnit + Shouldly). Run them via the solution: `dotnet test "KeyPulse Signal.sln"`. Bare `dotnet test` fails (`MSB1011`) because `KeyPulse.csproj` sits beside the `.sln` at the repo root — always name the `.sln` (or `KeyPulse.Tests`). Beyond unit-testing pure helpers, DB-backed tests use the `SqliteTestDatabase` fixture (throwaway file SQLite, real EF model). Behavior that needs the live WMI/Raw Input/WPF stack is still verified manually by running the app.
 - Migrations run automatically on startup via `DataService`; you usually only `add` a migration, not `database update` by hand.
 - **Build fails if a KeyPulse instance is running** (locked `KeyPulse Signal.exe`/`.dll`) — stop it first. This also blocks `dotnet test`, since it rebuilds the app project.
-- `--startup` launch arg forces tray/background mode.
+- `--tray` launch arg forces tray/background mode.
 
 ## Architecture orientation
 

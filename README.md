@@ -77,7 +77,7 @@ dotnet run -c Release
   - `Debug`: off (avoids polluting Windows startup registry during development)
   - `Release`: on
 - Launch argument override:
-  - `--startup` forces tray/background startup for that launch.
+  - `--tray` forces tray/background startup for that launch.
 
 ## Data Storage
 

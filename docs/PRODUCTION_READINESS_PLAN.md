@@ -13,12 +13,12 @@ Make startup behavior deterministic and aligned with intended product behavior.
 - **Files:** `App.xaml.cs`
 - **Status:** Completed.
 - **Implemented:** Startup mode resolution centralized in `ResolveRunInBackground()` with clear precedence:
-  1. launch argument `--startup` forces tray mode for that process
+  1. launch argument `--tray` forces tray mode for that process
   2. otherwise build default applies: `Debug` => foreground window, `Release` => tray/background
 - **Acceptance criteria:**
   - `Debug` launches foreground by default ✅
   - `Release` launches tray by default ✅
-  - `--startup` consistently forces tray in both build configs ✅
+  - the launch arg consistently forces tray in both build configs ✅
 
 #### 1.2 Define "auto-start launch behavior"
 
@@ -30,7 +30,7 @@ Make startup behavior deterministic and aligned with intended product behavior.
     - initializes tray icon immediately
     - begins startup work in background
     - exposes UI only via tray click/menu
-  - Startup entry argument (`--startup`) forces tray-first behavior
+  - Startup entry argument forces tray-first behavior
 - **Acceptance criteria:**
   - app starts silently in tray after login ✅
   - no disruptive main window popup at boot ✅
@@ -212,7 +212,7 @@ Support reliable auto-start at user logon.
 - **Implementation details:**
   - uses per-user registry key `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`
   - startup command is the quoted current executable path
-  - always includes `--startup` for login launch behavior
+  - always includes `--tray` for login launch behavior
 - **Acceptance criteria:**
   - app can enable/disable launch-on-login for current user ✅
 
@@ -233,8 +233,8 @@ Support reliable auto-start at user logon.
 - **Files:** `App.xaml.cs`
 - **Status:** Completed.
 - **Implemented:** Startup argument support is active in `ResolveRunInBackground()` / `ShouldForceTrayFromArgs()`:
-  - `--startup`
-- **Use:** startup registration always writes `--startup` for login launches.
+  - `--tray`
+- **Use:** startup registration writes it for login launches.
 - **Acceptance criteria:**
   - auto-start can reliably start hidden/tray mode regardless of default app launch behavior ✅
 
@@ -481,7 +481,7 @@ Support long-term maintenance.
 ### Milestone 2 - Auto-start
 
 - startup registration service
-- `--startup` argument support
+- `--tray` argument support
 - UI toggle for Launch on Login
 
 ### Milestone 3 - Packaging

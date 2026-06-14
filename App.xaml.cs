@@ -274,9 +274,7 @@ public partial class App
 
     private static bool ShouldForceTrayFromArgs(IEnumerable<string> args)
     {
-        return args.Any(arg =>
-            string.Equals(arg, AppConstants.App.StartupArgument, StringComparison.OrdinalIgnoreCase)
-        );
+        return args.Any(arg => string.Equals(arg, AppConstants.App.TrayArgument, StringComparison.OrdinalIgnoreCase));
     }
 
     private static string GetActivationEventName(string appName)

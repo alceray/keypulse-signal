@@ -243,14 +243,14 @@ dotnet ef database update SomeOlderMigrationName
 - **AppConstants.App** structure consolidates application-level settings:
   - `ProductName` = "KeyPulse Signal" (from assembly)
   - `DefaultName` = "KeyPulse Signal" or "KeyPulse Signal (Test)" depending on Debug/Release build
-  - `StartupArgument` = `--startup`
+  - `TrayArgument` = `--tray`
   - `ActivationEventSuffix` = `.ACTIVATE`
   - `RunKeyPath` = Windows registry path for startup entries
   - `TrayIconRelativePath` = relative path to the taskbar icon (`Assets\keypulse-signal-icon.ico`)
   - `StartupWarningBalloonTimeoutMs` = 5000 (milliseconds for startup warning balloon)
 - **Build mode default**: Debug launches windowed; Release launches to tray/background
 - **`LaunchOnLogin` default**: `false` in Debug, `true` in Release (controlled via `#if DEBUG` in `AppUserSettings`)
-- **Launch args**: `--startup` forces tray/background startup for that process
+- **Launch args**: `--tray` forces tray/background startup for that process
 - **Application icon**: Set via `<ApplicationIcon>` in `.csproj` for both window and taskbar display; also used for tray icon
 - Tray icon created if background mode enabled; main window created on-demand or at startup
 
