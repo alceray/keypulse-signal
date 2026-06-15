@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
@@ -13,6 +16,8 @@ public class SettingsViewModel : StatusMessageViewModelBase
     private readonly AppSettingsService _appSettingsService;
     private readonly StartupRegistrationService _startupRegistrationService;
     private readonly UpdateService _updateService;
+    private readonly UsbMonitorService _usbMonitorService;
+    private readonly DataService _dataService;
     private bool _launchOnLogin;
     private bool _autoInstallUpdates;
     private bool _closeToTray;
@@ -25,16 +30,29 @@ public class SettingsViewModel : StatusMessageViewModelBase
     public SettingsViewModel(
         AppSettingsService appSettingsService,
         StartupRegistrationService startupRegistrationService,
-        UpdateService updateService
+        UpdateService updateService,
+        UsbMonitorService usbMonitorService,
+        DataService dataService
     )
     {
         _appSettingsService = appSettingsService;
         _startupRegistrationService = startupRegistrationService;
         _updateService = updateService;
+        _usbMonitorService = usbMonitorService;
+        _dataService = dataService;
 
         UpdateActionCommand = new AsyncRelayCommand(_ => RunUpdateActionAsync(), _ => !_isCheckingUpdates);
+        UnhideDeviceCommand = new RelayCommand(ExecuteUnhideDevice, parameter => parameter is Device);
+
         _appSettingsService.SettingsChanged += OnSettingsChanged;
         _updateService.UpdateStatusChanged += OnUpdateStatusChanged;
+
+        // Keep the hidden list live rather than snapshotting it: this view-model lives for the
+        // process, and the device list fills in after startup and changes as devices are hidden.
+        foreach (var device in _usbMonitorService.DeviceList)
+            device.PropertyChanged += Device_PropertyChanged;
+        _usbMonitorService.DeviceList.CollectionChanged += DeviceList_CollectionChanged;
+        RebuildHiddenDevices();
 
         _isUpdateAvailable = _updateService.UpdateAvailable;
         _latestUpdateVersion = _updateService.LatestVersion;
@@ -93,6 +111,13 @@ public class SettingsViewModel : StatusMessageViewModelBase
     // Close-to-tray only has meaning when a tray exists. Windowed sessions have no tray, so closing
     // always exits there; hide the option rather than show a control that does nothing.
     public bool ShowCloseToTrayOption => App.RunInBackground;
+
+    // Devices hidden from the dashboard and calendar, surfaced here so they can be unhidden.
+    public ObservableCollection<Device> HiddenDevices { get; } = new();
+
+    public bool HasHiddenDevices => HiddenDevices.Count > 0;
+
+    public ICommand UnhideDeviceCommand { get; }
 
     public IReadOnlyList<RetentionOption> RetentionChoices => RetentionOptions.All;
 
@@ -247,10 +272,67 @@ public class SettingsViewModel : StatusMessageViewModelBase
         }
     }
 
+    private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(Device.IsHiddenFromDisplay))
+            RunOnUiThread(RebuildHiddenDevices);
+    }
+
+    private void DeviceList_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+    {
+        if (e.NewItems != null)
+            foreach (Device device in e.NewItems)
+                device.PropertyChanged += Device_PropertyChanged;
+
+        if (e.OldItems != null)
+            foreach (Device device in e.OldItems)
+                device.PropertyChanged -= Device_PropertyChanged;
+
+        RunOnUiThread(RebuildHiddenDevices);
+    }
+
+    private void RebuildHiddenDevices()
+    {
+        HiddenDevices.Clear();
+        foreach (var device in _usbMonitorService.DeviceList.Where(d => d.IsHiddenFromDisplay))
+            HiddenDevices.Add(device);
+
+        OnPropertyChanged(nameof(HasHiddenDevices));
+    }
+
+    private void ExecuteUnhideDevice(object? parameter)
+    {
+        if (parameter is not Device device)
+            return;
+
+        // Only flip the shared in-memory Device after the DB write succeeds; that same instance
+        // feeds the dashboard and calendar, so the change propagates there too.
+        if (_dataService.SetDeviceHiddenFromDisplay(device.DeviceId, false))
+            device.IsHiddenFromDisplay = false;
+    }
+
+    // The device list is mutated from UsbMonitorService background callbacks, so marshal onto the
+    // UI thread before touching the bound HiddenDevices collection.
+    private static void RunOnUiThread(Action action)
+    {
+        var dispatcher = Application.Current?.Dispatcher;
+        if (dispatcher == null || dispatcher.CheckAccess())
+        {
+            action();
+            return;
+        }
+
+        dispatcher.BeginInvoke(action);
+    }
+
     public override void Dispose()
     {
         base.Dispose();
         _appSettingsService.SettingsChanged -= OnSettingsChanged;
         _updateService.UpdateStatusChanged -= OnUpdateStatusChanged;
+
+        foreach (var device in _usbMonitorService.DeviceList)
+            device.PropertyChanged -= Device_PropertyChanged;
+        _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
     }
 }

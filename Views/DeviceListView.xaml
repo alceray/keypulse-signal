@@ -170,13 +170,15 @@
             CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
           />
           <MenuItem
-            Header="Hide from Dashboard and Calendar"
+            Header="Hide Device"
+            ToolTip="Hides this device from the dashboard and calendar. Tracking continues."
             Command="{Binding ToggleDeviceDisplayVisibilityCommand}"
             CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
             Visibility="{Binding PlacementTarget.SelectedItem.IsHiddenFromDisplay, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource InverseBoolToVisibilityConverter}}"
           />
           <MenuItem
-            Header="Show in Dashboard and Calendar"
+            Header="Unhide Device"
+            ToolTip="Shows this device on the dashboard and calendar again."
             Command="{Binding ToggleDeviceDisplayVisibilityCommand}"
             CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
             Visibility="{Binding PlacementTarget.SelectedItem.IsHiddenFromDisplay, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource BooleanToVisibilityConverter}}"

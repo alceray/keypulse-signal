@@ -211,6 +211,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 
 - `Device.IsHiddenFromDisplay` (persisted on `Devices`, default `false`, migration `AddDeviceDisplayVisibility`) is a **presentation-only** filter. Hidden devices still capture raw input, still append lifecycle events, and are still projected into `DailyDeviceStats` — only their *display* is suppressed.
 - **Toggle path**: right-clicking a row in `DeviceListView` opens a context menu ("Hide/Show in Dashboard and Calendar"). `DeviceListViewModel.ToggleDeviceDisplayVisibilityCommand` calls `DataService.SetDeviceHiddenFromDisplay(deviceId, ...)`, and only flips the in-memory `Device.IsHiddenFromDisplay` if the DB write succeeds.
+- **Unhide path**: the Settings page lists currently hidden devices (live, via `SettingsViewModel.HiddenDevices`) with an Unhide button. `UnhideDeviceCommand` runs the same `SetDeviceHiddenFromDisplay(deviceId, false)` write-then-flip, so both entry points share one code path and the shared in-memory `Device` propagates the change everywhere.
 - **The device list itself does not hide hidden devices** — it shows a "Hidden" badge instead. Only the dashboard and calendar exclude them.
 - **Where filtering happens**:
     - `DataService.GetDashboardDevices()` excludes hidden devices at the query.
