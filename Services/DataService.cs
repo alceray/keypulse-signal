@@ -15,6 +15,8 @@ public class DataService
     private readonly IDbContextFactory<ApplicationDbContext> _factory;
     private readonly DailyStatsService _dailyStats;
 
+    private readonly object _deviceWriteLock = new();
+
     public sealed class DashboardEventQueryResult
     {
         public required IReadOnlyList<DeviceEvent> DeviceEvents { get; init; }
@@ -158,17 +160,24 @@ public class DataService
     {
         try
         {
-            using var ctx = _factory.CreateDbContext();
-            var existing = ctx.Devices.SingleOrDefault(d => d.DeviceId == device.DeviceId);
-            if (existing != null)
-                ctx.Entry(existing).CurrentValues.SetValues(device);
-            else
-                ctx.Devices.Add(device);
-            ctx.SaveChanges();
+            // SaveDevice runs on several threads (WMI worker threads and the UI thread), and the
+            // existence check and insert are not atomic across separate connections. The lock serializes
+            // them so a later caller sees the earlier committed row and updates it rather than racing to
+            // re-insert the primary key, which would fail with a unique-constraint violation.
+            lock (_deviceWriteLock)
+            {
+                using var ctx = _factory.CreateDbContext();
+                var existing = ctx.Devices.SingleOrDefault(d => d.DeviceId == device.DeviceId);
+                if (existing != null)
+                    ctx.Entry(existing).CurrentValues.SetValues(device);
+                else
+                    ctx.Devices.Add(device);
+                ctx.SaveChanges();
+            }
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Failed to save device snapshot for {DeviceId}", device.DeviceId);
+            Log.Error(ex, "Failed to save device {DeviceId}", device.DeviceId);
         }
     }
 

@@ -1,7 +1,11 @@
+using System.Collections.Concurrent;
 using KeyPulse.Data;
 using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.Tests.Infrastructure;
+using Serilog;
+using Serilog.Core;
+using Serilog.Events;
 
 namespace KeyPulse.Tests.Services;
 
@@ -39,6 +43,82 @@ public class DataServiceTests : IDisposable
         using var ctx = _db.CreateContext();
         seed(ctx);
         ctx.SaveChanges();
+    }
+
+    /// <summary>
+    /// Redirects the static Serilog logger to an in-memory sink for the duration of a test so the
+    /// otherwise-swallowed-and-logged save failure becomes observable. Only the device-snapshot save
+    /// failure template is captured, so logging from test classes running in parallel cannot produce
+    /// false positives.
+    /// </summary>
+    private sealed class ErrorLogCapture : IDisposable
+    {
+        private const string DeviceSaveFailureTemplate = "Failed to save device snapshot for {DeviceId}";
+
+        private readonly ILogger _previous;
+        public ConcurrentQueue<string> Messages { get; } = new();
+
+        private ErrorLogCapture()
+        {
+            _previous = Log.Logger;
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Error()
+                .WriteTo.Sink(new QueueSink(this))
+                .CreateLogger();
+        }
+
+        public static ErrorLogCapture Begin() => new();
+
+        public void Dispose()
+        {
+            (Log.Logger as IDisposable)?.Dispose();
+            Log.Logger = _previous;
+        }
+
+        private sealed class QueueSink(ErrorLogCapture owner) : ILogEventSink
+        {
+            public void Emit(LogEvent logEvent)
+            {
+                if (logEvent.MessageTemplate.Text == DeviceSaveFailureTemplate)
+                    owner.Messages.Enqueue(logEvent.RenderMessage());
+            }
+        }
+    }
+
+    // ── SaveDevice ──────────────────────────────────────────────────────────────
+
+    [Fact]
+    public async Task SaveDevice_ConcurrentFirstConnectOfSameDevice_NoUniqueViolation()
+    {
+        // Reproduces the production race: several threads save the same brand-new device at once. Each
+        // opens its own connection, so without the lock both read "not present" and then race to INSERT
+        // the same primary key, failing the loser with "UNIQUE constraint failed: Devices.DeviceId"
+        // (swallowed and logged). The lock serializes them so every save commits and one row results.
+        using var errors = ErrorLogCapture.Begin();
+
+        const int workers = 16;
+        using var barrier = new Barrier(workers);
+        var tasks = Enumerable
+            .Range(0, workers)
+            .Select(i =>
+                Task.Run(() =>
+                {
+                    barrier.SignalAndWait(); // release all writers simultaneously to widen the race window
+                    _sut.SaveDevice(
+                        new Device
+                        {
+                            DeviceId = "RACE",
+                            DeviceName = $"name-{i}",
+                            TotalInputCount = i,
+                        }
+                    );
+                })
+            )
+            .ToArray();
+        await Task.WhenAll(tasks);
+
+        errors.Messages.ShouldBeEmpty(); // every concurrent save committed; none collided on the key
+        _sut.GetAllDevices().Count(d => d.DeviceId == "RACE").ShouldBe(1);
     }
 
     // ── SaveDeviceEvent ─────────────────────────────────────────────────────────
