@@ -36,6 +36,8 @@ public class DailyStatsService : IDisposable
     // Shared with DataRetentionService, which must never prune before the one-time backfill has run.
     internal const string FULL_BACKFILL_META_KEY = "DailyStatsFullBackfillAt";
 
+    internal const string CONNECTION_SPAN_RECOMPUTE_META_KEY = "DailyStatsConnectionSpanRecomputedAt";
+
     public DailyStatsService(IDbContextFactory<ApplicationDbContext> factory, AppTimerService appTimerService)
     {
         _factory = factory;
@@ -58,7 +60,6 @@ public class DailyStatsService : IDisposable
     {
         try
         {
-            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
             var today = DateOnly.FromDateTime(DateTime.Now);
 
             bool backfillDone;
@@ -67,29 +68,27 @@ public class DailyStatsService : IDisposable
 
             if (!backfillDone)
             {
-                Log.Information("Daily stats one-time full backfill started");
+                // The full historical sweep can take a while, so it is timed.
+                var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+                Log.Information("Daily stats backfill started");
 
                 var earliest = GetEarliestSourceDay();
                 if (earliest.HasValue)
                     RebuildAllHistory(earliest.Value, today);
-                else
-                    Log.Information("Daily stats full backfill found no source data; nothing to build");
 
                 using (var ctx = _factory.CreateDbContext())
+                {
                     AppMetaStore.WriteUtc(ctx, FULL_BACKFILL_META_KEY, DateTime.UtcNow);
+                    // A fresh build already uses the fixed connection-span logic, so the recompute is moot.
+                    AppMetaStore.WriteUtc(ctx, CONNECTION_SPAN_RECOMPUTE_META_KEY, DateTime.UtcNow);
+                }
 
-                stopwatch.Stop();
-                Log.Information(
-                    "Daily stats one-time full backfill completed in {ElapsedMs}ms",
-                    stopwatch.ElapsedMilliseconds
-                );
+                Log.Information("Daily stats backfill completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
                 return; // A fresh full build leaves nothing to reconcile.
             }
 
+            EnsureConnectionSpanRecompute(today);
             ReconcileDriftedDays(today);
-
-            stopwatch.Stop();
-            Log.Debug("Daily stats drift check completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
         }
         catch (Exception ex)
         {
@@ -98,37 +97,69 @@ public class DailyStatsService : IDisposable
     }
 
     /// <summary>
-    /// One-time full rebuild from the earliest source day through today, chunked month-by-month so memory
-    /// stays bounded for long histories (each month uses and disposes its own context). Holds the projection
-    /// gate across the whole sweep so the live projector cannot interleave; the per-month
-    /// RecomputeDailyDeviceStatsForRange re-locks reentrantly on the same thread.
+    /// One-time, idempotent recompute for installs that backfilled before per-day connection attribution was
+    /// fixed for sessions spanning midnight — without it they keep showing 0 sessions / 0 connected time on
+    /// days whose only session crossed a day boundary. Recomputes connection only (from the never-pruned
+    /// DeviceEvents), so aggregated activity for days whose minute snapshots retention has pruned survives.
+    /// </summary>
+    private void EnsureConnectionSpanRecompute(DateOnly today)
+    {
+        using (var ctx = _factory.CreateDbContext())
+            if (AppMetaStore.ReadUtc(ctx, CONNECTION_SPAN_RECOMPUTE_META_KEY).HasValue)
+                return;
+
+        var earliest = GetEarliestSourceDay();
+        if (earliest.HasValue)
+        {
+            ForEachMonth(
+                earliest.Value,
+                today,
+                (from, to) =>
+                {
+                    using var ctx = _factory.CreateDbContext();
+                    RecomputeConnectionStatsForRange(ctx, from, to);
+                }
+            );
+            Log.Information(
+                "Daily stats recomputed connection history from {From} to {To}",
+                earliest.Value.ToString(),
+                today.ToString()
+            );
+        }
+
+        using (var ctx = _factory.CreateDbContext())
+            AppMetaStore.WriteUtc(ctx, CONNECTION_SPAN_RECOMPUTE_META_KEY, DateTime.UtcNow);
+    }
+
+    /// <summary>
+    /// One-time full rebuild (connection plus activity) from the earliest source day through today. It
+    /// recomputes activity from snapshots, so it is only safe before retention prunes them — reserved for a
+    /// fresh install's initial backfill.
     /// </summary>
     private void RebuildAllHistory(DateOnly from, DateOnly today)
     {
         if (from > today)
             return;
 
+        ForEachMonth(from, today, RecomputeDailyDeviceStatsForRange);
+        Log.Information("Daily stats rebuilt full history from {From} to {To}", from.ToString(), today.ToString());
+    }
+
+    /// <summary>
+    /// Runs a recompute over each calendar-month chunk in the range, holding the projection gate across the
+    /// whole sweep so the live projector cannot interleave. Chunking keeps memory bounded for long histories.
+    /// </summary>
+    private void ForEachMonth(DateOnly from, DateOnly today, Action<DateOnly, DateOnly> recompute)
+    {
         lock (_projectionGate)
         {
-            var monthCount = 0;
             var cursor = from;
             while (cursor <= today)
             {
-                var lastOfMonth = new DateOnly(cursor.Year, cursor.Month, 1).AddMonths(1).AddDays(-1);
-                var chunkEnd = lastOfMonth < today ? lastOfMonth : today;
-
-                RecomputeDailyDeviceStatsForRange(cursor, chunkEnd);
-                monthCount++;
-
-                cursor = lastOfMonth.AddDays(1);
+                var monthEnd = new DateOnly(cursor.Year, cursor.Month, 1).AddMonths(1).AddDays(-1);
+                recompute(cursor, monthEnd < today ? monthEnd : today);
+                cursor = monthEnd.AddDays(1);
             }
-
-            Log.Information(
-                "Daily stats backfill rebuilt {MonthCount} month(s) from {From} to {To}",
-                monthCount,
-                from.ToString(),
-                today.ToString()
-            );
         }
     }
 
@@ -181,22 +212,19 @@ public class DailyStatsService : IDisposable
 
         if (driftedKeys.Count == 0)
         {
-            Log.Debug("Daily stats integrity OK for {From}..{To}", monthStart.ToString(), today.ToString());
+            Log.Debug("Daily stats integrity OK from {From} to {To}", monthStart.ToString(), today.ToString());
             return;
         }
 
         var driftedDays = driftedKeys.Select(k => k.Day).Distinct().OrderBy(d => d).ToList();
-        Log.Warning(
-            "Daily stats drift detected: {KeyCount} missing (device, day) row(s) across {DayCount} day(s): {Keys}",
-            driftedKeys.Count,
-            driftedDays.Count,
-            string.Join(", ", driftedKeys.Select(k => $"{k.Day:yyyy-MM-dd}/{k.DeviceId}"))
-        );
-
         foreach (var day in driftedDays)
             RecomputeDailyDeviceStatsForRange(day, day);
 
-        Log.Information("Daily stats drift recovery healed {DayCount} day(s)", driftedDays.Count);
+        Log.Warning(
+            "Daily stats drift healed {DayCount} day(s): {Keys}",
+            driftedDays.Count,
+            string.Join(", ", driftedKeys.Select(k => $"{k.Day:yyyy-MM-dd}/{k.DeviceId}"))
+        );
     }
 
     /// <summary>
@@ -260,7 +288,7 @@ public class DailyStatsService : IDisposable
             // 4. Recompute from ActivitySnapshots.
             RecomputeActivityStatsForRange(ctx, from, to);
 
-            Log.Debug("Recomputed daily stats for {From} to {To}", from.ToString(), to.ToString());
+            Log.Debug("Daily stats recomputed {From} to {To}", from.ToString(), to.ToString());
         }
     }
 
@@ -281,8 +309,21 @@ public class DailyStatsService : IDisposable
         // unique DailyDeviceStats(Day, DeviceId) index when first creating a day's row.
         lock (_projectionGate)
         {
-            var day = TimeFormatter.ToLocalDay(deviceEvent.EventTime);
-            RecomputeDailyConnectionStats(ctx, deviceEvent.DeviceId, day);
+            var closeDay = TimeFormatter.ToLocalDay(deviceEvent.EventTime);
+
+            // The session may have opened on an earlier day; recompute every day it spanned, not just the
+            // close day, so the opening and any fully-spanned interior days get their connection time.
+            var openEvent = ctx
+                .DeviceEvents.Where(e =>
+                    e.DeviceId == deviceEvent.DeviceId
+                    && e.DeviceEventId < deviceEvent.DeviceEventId
+                    && (e.EventType == EventTypes.Connected || e.EventType == EventTypes.ConnectionStarted)
+                )
+                .OrderByDescending(e => e.DeviceEventId)
+                .FirstOrDefault();
+            var openDay = openEvent != null ? TimeFormatter.ToLocalDay(openEvent.EventTime) : closeDay;
+
+            WriteDeviceConnectionDays(ctx, deviceEvent.DeviceId, openDay, closeDay);
             ctx.SaveChanges();
         }
     }
@@ -337,7 +378,7 @@ public class DailyStatsService : IDisposable
             }
             catch (Exception ex)
             {
-                Log.Error(ex, "Activity minute projector failed");
+                Log.Error(ex, "Daily stats activity projection failed");
             }
         }
     }
@@ -362,7 +403,7 @@ public class DailyStatsService : IDisposable
         }
         catch (Exception ex)
         {
-            Log.Warning(ex, "Failed to query earliest data day");
+            Log.Warning(ex, "Daily stats earliest-day query failed");
             return null;
         }
     }
@@ -399,27 +440,24 @@ public class DailyStatsService : IDisposable
     // Private helpers
     // ─────────────────────────────────────────────────────────────────────────
 
-    /// <summary>Recomputes connection stats for all (device, day) pairs that have any lifecycle events in the range.</summary>
+    /// <summary>Recomputes connection stats for every device with a session overlapping the range.</summary>
     private void RecomputeConnectionStatsForRange(ApplicationDbContext ctx, DateOnly from, DateOnly to)
     {
-        var (fromBound, toBound) = GetUtcBounds(from, to);
+        var (_, toBound) = GetUtcBounds(from, to);
 
-        var deviceDayPairs = ctx
+        var deviceIds = ctx
             .DeviceEvents.Where(e =>
-                e.EventTime >= fromBound
+                e.DeviceId != ""
                 && e.EventTime < toBound
                 && e.EventType != EventTypes.AppStarted
                 && e.EventType != EventTypes.AppEnded
-                && e.DeviceId != ""
             )
-            .Select(e => new { e.DeviceId, e.EventTime })
-            .AsEnumerable()
-            .Select(e => (e.DeviceId, Day: TimeFormatter.ToLocalDay(e.EventTime)))
+            .Select(e => e.DeviceId)
             .Distinct()
             .ToList();
 
-        foreach (var (deviceId, day) in deviceDayPairs)
-            RecomputeDailyConnectionStats(ctx, deviceId, day);
+        foreach (var deviceId in deviceIds)
+            WriteDeviceConnectionDays(ctx, deviceId, from, to);
 
         ctx.SaveChanges();
     }
@@ -439,54 +477,100 @@ public class DailyStatsService : IDisposable
     }
 
     /// <summary>
-    /// Overwrites connection stats (SessionCount, ConnectionSeconds, LongestSessionSeconds) for
-    /// a device on a single local day by replaying all its lifecycle events for that day.
-    /// If the first event in the day is a closing event (cross-midnight session), the session
-    /// start is assumed to be local midnight.
+    /// Overwrites a device's per-day session count, connected seconds, and longest session across a
+    /// local-day range. Each session is clipped to each day it overlaps, so a session that opens, spans, or
+    /// closes across midnight credits every day it touches — not only the day its events land on. A
+    /// still-open session is credited through the end of the range or now, whichever is earlier.
     /// </summary>
-    private void RecomputeDailyConnectionStats(ApplicationDbContext ctx, string deviceId, DateOnly day)
+    private static void WriteDeviceConnectionDays(ApplicationDbContext ctx, string deviceId, DateOnly from, DateOnly to)
     {
-        var dayStartLocal = day.ToDateTime(TimeOnly.MinValue);
-        var (dayStartUtc, dayEndUtc) = GetUtcBounds(day, day);
+        var (_, toBound) = GetUtcBounds(from, to);
+        var rangeEndLocal = to.AddDays(1).ToDateTime(TimeOnly.MinValue, DateTimeKind.Local);
 
-        var dayEvents = ctx
-            .DeviceEvents.Where(e => e.DeviceId == deviceId && e.EventTime >= dayStartUtc && e.EventTime < dayEndUtc)
+        var events = ctx
+            .DeviceEvents.Where(e =>
+                e.DeviceId == deviceId
+                && e.EventTime < toBound
+                && e.EventType != EventTypes.AppStarted
+                && e.EventType != EventTypes.AppEnded
+            )
             .OrderBy(e => e.DeviceEventId)
             .ToList();
 
-        var sessionCount = 0;
-        var totalSeconds = 0L;
-        var longestSeconds = 0L;
-        DateTime? currentSessionStartLocal = null;
-
-        foreach (var evt in dayEvents)
+        // Clip each session to every day it overlaps within the range, accumulating per-day totals.
+        var perDay = new Dictionary<DateOnly, (int Count, long Total, long Longest)>();
+        foreach (var (start, end) in ReconstructSessions(events, rangeEndLocal, DateTime.Now))
         {
-            if (evt.EventType.IsOpeningEvent())
+            var firstDay = DateOnly.FromDateTime(start);
+            if (firstDay < from)
+                firstDay = from;
+            var lastDay = DateOnly.FromDateTime(end);
+            if (lastDay > to)
+                lastDay = to;
+
+            for (var day = firstDay; day <= lastDay; day = day.AddDays(1))
             {
-                currentSessionStartLocal = TimeFormatter.ToLocalTime(evt.EventTime);
-            }
-            else if (evt.EventType.IsClosingEvent())
-            {
-                var closeLocal = TimeFormatter.ToLocalTime(evt.EventTime);
-                // No open seen today → cross-midnight session; use midnight as start.
-                var sessionStart = currentSessionStartLocal ?? dayStartLocal;
-                var seconds = (long)(closeLocal - sessionStart).TotalSeconds;
-                if (seconds > 0)
-                {
-                    sessionCount++;
-                    totalSeconds += seconds;
-                    if (seconds > longestSeconds)
-                        longestSeconds = seconds;
-                }
-                currentSessionStartLocal = null;
+                var dayStart = day.ToDateTime(TimeOnly.MinValue, DateTimeKind.Local);
+                var clipStart = start > dayStart ? start : dayStart;
+                var clipEnd = end < dayStart.AddDays(1) ? end : dayStart.AddDays(1);
+                var seconds = (long)(clipEnd - clipStart).TotalSeconds;
+                if (seconds <= 0)
+                    continue;
+
+                perDay.TryGetValue(day, out var agg);
+                perDay[day] = (agg.Count + 1, agg.Total + seconds, Math.Max(agg.Longest, seconds));
             }
         }
 
-        var stat = GetOrCreateDailyStat(ctx, day, deviceId);
-        stat.SessionCount = sessionCount;
-        stat.ConnectionSeconds = totalSeconds;
-        stat.LongestSessionSeconds = longestSeconds;
-        stat.UpdatedAt = DateTime.UtcNow;
+        foreach (var (day, agg) in perDay)
+        {
+            var stat = GetOrCreateDailyStat(ctx, day, deviceId);
+            stat.SessionCount = agg.Count;
+            stat.ConnectionSeconds = agg.Total;
+            stat.LongestSessionSeconds = agg.Longest;
+            stat.UpdatedAt = DateTime.UtcNow;
+        }
+    }
+
+    /// <summary>
+    /// Pairs ordered opening/closing events into local-time session intervals. An opening with no matching
+    /// close (the live session) ends at <paramref name="rangeEndLocal"/> or <paramref name="nowLocal"/>,
+    /// whichever is earlier. A closing with no preceding open (an orphaned close, which the append-only log
+    /// should never produce) is assumed to start at its own local midnight.
+    /// </summary>
+    private static List<(DateTime Start, DateTime End)> ReconstructSessions(
+        IReadOnlyList<DeviceEvent> orderedEvents,
+        DateTime rangeEndLocal,
+        DateTime nowLocal
+    )
+    {
+        var sessions = new List<(DateTime Start, DateTime End)>();
+        DateTime? openLocal = null;
+
+        foreach (var evt in orderedEvents)
+        {
+            var time = TimeFormatter.ToLocalTime(evt.EventTime);
+            if (evt.EventType.IsOpeningEvent())
+            {
+                openLocal ??= time; // keep the earliest open of a redundant run
+            }
+            else if (evt.EventType.IsClosingEvent())
+            {
+                var start = openLocal ?? time.Date;
+                if (time > start)
+                    sessions.Add((start, time));
+                openLocal = null;
+            }
+        }
+
+        if (openLocal != null)
+        {
+            var end = rangeEndLocal < nowLocal ? rangeEndLocal : nowLocal;
+            if (end > openLocal.Value)
+                sessions.Add((openLocal.Value, end));
+        }
+
+        return sessions;
     }
 
     /// <summary>Projects one minute snapshot into daily stats and records its projection checkpoint.</summary>
@@ -654,7 +738,7 @@ public class DailyStatsService : IDisposable
     {
         if (_disposed)
         {
-            Log.Debug("Daily stats dispose skipped — already disposed");
+            Log.Debug("Daily stats already disposed");
             return;
         }
 

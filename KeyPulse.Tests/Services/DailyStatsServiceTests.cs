@@ -119,6 +119,65 @@ public class DailyStatsServiceTests : IDisposable
         stats.Single(s => s.Day == new DateOnly(2026, 5, 22)).ConnectionSeconds.ShouldBe(1800);
     }
 
+    [Fact]
+    public void Recompute_SessionCrossingMidnight_CreditsBothDays()
+    {
+        // Opens 22:00 on day 1, closes 02:00 on day 2: each day gets only its overlapping portion.
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Connected, Local(5, 20, 22)));
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Disconnected, Local(5, 21, 2)));
+        });
+
+        _sut.RecomputeDailyDeviceStatsForRange(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 21));
+
+        var stats = _sut.GetDailyDeviceStats(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 21));
+        stats.Single(s => s.Day == new DateOnly(2026, 5, 20)).ConnectionSeconds.ShouldBe(7200); // 22:00 → midnight
+        stats.Single(s => s.Day == new DateOnly(2026, 5, 21)).ConnectionSeconds.ShouldBe(7200); // midnight → 02:00
+        stats.ShouldAllBe(s => s.SessionCount == 1);
+    }
+
+    [Fact]
+    public void Recompute_SessionSpanningFullDay_CreditsInteriorDayWithNoEvents()
+    {
+        // Opens day 1 10:00, closes day 3 14:00: day 2 is connected all day yet has no events of its own.
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Connected, Local(5, 20, 10)));
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Disconnected, Local(5, 22, 14)));
+        });
+
+        _sut.RecomputeDailyDeviceStatsForRange(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 22));
+
+        var stats = _sut.GetDailyDeviceStats(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 22));
+        stats.Single(s => s.Day == new DateOnly(2026, 5, 20)).ConnectionSeconds.ShouldBe(50400); // 10:00 → midnight
+        var interior = stats.Single(s => s.Day == new DateOnly(2026, 5, 21));
+        interior.ConnectionSeconds.ShouldBe(86400); // full day
+        interior.SessionCount.ShouldBe(1);
+        interior.LongestSessionSeconds.ShouldBe(86400);
+        stats.Single(s => s.Day == new DateOnly(2026, 5, 22)).ConnectionSeconds.ShouldBe(50400); // midnight → 14:00
+    }
+
+    [Fact]
+    public void Recompute_SingleDay_OpenWithoutSameDayClose_CreditsTailNotZero()
+    {
+        // The production bug: a day whose only event is the opening (the close lands on the next day).
+        // Recomputing that day in isolation must still credit open → midnight, not 0.
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Connected, Local(5, 20, 10)));
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Disconnected, Local(5, 21, 2)));
+        });
+
+        _sut.RecomputeDailyDeviceStatsForRange(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 20));
+
+        var stat = _sut.GetDailyDeviceStats(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 20))
+            .ShouldHaveSingleItem();
+        stat.SessionCount.ShouldBe(1);
+        stat.ConnectionSeconds.ShouldBe(50400); // 10:00 → midnight, previously 0
+        stat.LongestSessionSeconds.ShouldBe(50400);
+    }
+
     // ── Activity stats (ActivitySnapshots → DailyDeviceStats) ───────────────────
 
     [Fact]
@@ -186,6 +245,27 @@ public class DailyStatsServiceTests : IDisposable
         var stat = _sut.GetDailyDeviceStats(Day, Day).ShouldHaveSingleItem();
         stat.SessionCount.ShouldBe(1);
         stat.ConnectionSeconds.ShouldBe(3600);
+    }
+
+    [Fact]
+    public void ApplyDeviceEvent_ClosingEventCrossingMidnight_CreditsOpeningDayToo()
+    {
+        // Closing on day 2 must recompute the opening day as well, not only the close day.
+        Seed(ctx =>
+        {
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Connected, Local(5, 20, 22)));
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Disconnected, Local(5, 21, 2)));
+        });
+
+        using (var ctx = _db.CreateContext())
+        {
+            var closing = ctx.DeviceEvents.Single(e => e.EventType == EventTypes.Disconnected);
+            _sut.ApplyDeviceEvent(ctx, closing);
+        }
+
+        var stats = _sut.GetDailyDeviceStats(new DateOnly(2026, 5, 20), new DateOnly(2026, 5, 21));
+        stats.Single(s => s.Day == new DateOnly(2026, 5, 20)).ConnectionSeconds.ShouldBe(7200);
+        stats.Single(s => s.Day == new DateOnly(2026, 5, 21)).ConnectionSeconds.ShouldBe(7200);
     }
 
     [Fact]
@@ -353,6 +433,42 @@ public class DailyStatsServiceTests : IDisposable
 
         _sut.GetDailyDeviceStats(new DateOnly(2026, 5, 18), new DateOnly(2026, 5, 18))
             .ShouldContain(s => s.DeviceId == "D1" && s.ConnectionSeconds == 3600);
+    }
+
+    [Fact]
+    public void RunStartupRebuild_ConnectionSpanRecompute_CreditsCrossMidnightWithoutErasingPrunedActivity()
+    {
+        _db.EnsureAppMetaTable();
+        var openDay = new DateOnly(2026, 5, 20);
+
+        Seed(ctx =>
+        {
+            // Pre-aggregated activity for a day whose minute snapshots retention has already pruned.
+            ctx.DailyDeviceStats.Add(
+                new DailyDeviceStat
+                {
+                    Day = openDay,
+                    DeviceId = "D1",
+                    Keystrokes = 500,
+                    ActiveMinutes = 30,
+                }
+            );
+            // A session crossing midnight: the old logic left the opening day at 0 connected seconds.
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Connected, Local(5, 20, 10)));
+            ctx.DeviceEvents.Add(Event("D1", EventTypes.Disconnected, Local(5, 21, 2)));
+        });
+
+        // The existing-install path: initial backfill already done, connection-span recompute not yet run.
+        using (var ctx = _db.CreateContext())
+            AppMetaStore.WriteUtc(ctx, DailyStatsService.FULL_BACKFILL_META_KEY, DateTime.UtcNow);
+
+        _sut.RunStartupRebuild();
+
+        var stat = _sut.GetDailyDeviceStats(openDay, openDay).ShouldHaveSingleItem();
+        stat.ConnectionSeconds.ShouldBe(50400); // 10:00 → midnight now credited (was 0)
+        stat.SessionCount.ShouldBe(1);
+        stat.Keystrokes.ShouldBe(500); // pruned-day activity preserved, not recomputed to 0
+        stat.ActiveMinutes.ShouldBe(30);
     }
 
     // ── Seeding helpers ─────────────────────────────────────────────────────────
