@@ -67,7 +67,7 @@
                 <TextBlock
                   Text="Hidden devices"
                   VerticalAlignment="Center"
-                  Foreground="{x:Static config:AppColorPalette.PlaceholderTextBrush}"
+                  Foreground="{x:Static config:AppColorPalette.MutedBrush}"
                 />
                 <local:InfoHint
                   Text="Devices you have hidden from the dashboard and calendar. Unhide to show them again. Tracking continues either way."
@@ -136,12 +136,12 @@
       </StackPanel>
     </ScrollViewer>
 
-    <local:StatusMessagePanel
+    <local:ToastMessagePanel
       HorizontalAlignment="Left"
       VerticalAlignment="Bottom"
       Margin="0,0,0,8"
-      StatusMessage="{Binding StatusMessage}"
-      StatusVisibility="{Binding StatusVisibility}"
+      ToastMessage="{Binding ToastMessage}"
+      ToastVisibility="{Binding ToastVisibility}"
     />
   </Grid>
 </UserControl>

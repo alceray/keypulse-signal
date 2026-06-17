@@ -92,7 +92,7 @@
           Text="Loading…"
           HorizontalAlignment="Center"
           VerticalAlignment="Center"
-          Foreground="{x:Static config:AppColorPalette.PlaceholderTextBrush}"
+          Foreground="{x:Static config:AppColorPalette.MutedBrush}"
           Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
         />
 
@@ -234,7 +234,7 @@
             <!-- No day selected -->
             <TextBlock
               Text="Select a day to see details"
-              Foreground="{x:Static config:AppColorPalette.PlaceholderTextBrush}"
+              Foreground="{x:Static config:AppColorPalette.MutedBrush}"
               HorizontalAlignment="Center"
               Margin="0,40,0,0"
               Visibility="{Binding HasSelectedDay, Converter={StaticResource InverseBoolToVisibilityConverter}}"
@@ -279,21 +279,7 @@
                             Style="{StaticResource ActivityProgressBarStyle}"
                             Maximum="86400"
                             Value="{Binding ConnectionSeconds, Mode=OneWay}"
-                            Foreground="{x:Static config:AppColorPalette.AccentBrush}"
-                          />
-                          <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Longest session" Style="{StaticResource DetailLabelStyle}" />
-                            <TextBlock
-                              DockPanel.Dock="Right"
-                              Style="{StaticResource DetailValueStyle}"
-                              Text="{Binding LongestSessionSeconds, Converter={StaticResource DurationSecondsConverter}}"
-                            />
-                          </DockPanel>
-                          <ProgressBar
-                            Style="{StaticResource ActivityProgressBarStyle}"
-                            Maximum="86400"
-                            Value="{Binding LongestSessionSeconds, Mode=OneWay}"
-                            Foreground="{x:Static config:AppColorPalette.LongestSessionBrush}"
+                            Foreground="{x:Static config:AppColorPalette.ConnectedBrush}"
                           />
                           <DockPanel Margin="0,0,0,3">
                             <TextBlock DockPanel.Dock="Left" Text="Active time" Style="{StaticResource DetailLabelStyle}" />
@@ -307,25 +293,7 @@
                             Style="{StaticResource ActivityProgressBarStyle}"
                             Maximum="1440"
                             Value="{Binding ActiveMinutes, Mode=OneWay}"
-                            Foreground="{x:Static config:AppColorPalette.ActiveTimeBrush}"
-                          />
-                          <DockPanel
-                            Margin="0,0,0,3"
-                            Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
-                          >
-                            <TextBlock DockPanel.Dock="Left" Text="Mouse movement time" Style="{StaticResource DetailLabelStyle}" />
-                            <TextBlock
-                              DockPanel.Dock="Right"
-                              Style="{StaticResource DetailValueStyle}"
-                              Text="{Binding MouseMovementSeconds, Converter={StaticResource DurationSecondsConverter}}"
-                            />
-                          </DockPanel>
-                          <ProgressBar
-                            Style="{StaticResource ActivityProgressBarStyle}"
-                            Maximum="86400"
-                            Value="{Binding MouseMovementSeconds, Mode=OneWay}"
-                            Foreground="{x:Static config:AppColorPalette.MouseMovementBrush}"
-                            Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
+                            Foreground="{x:Static config:AppColorPalette.ActiveBrush}"
                           />
                           <DockPanel
                             Margin="0,0,0,8"
@@ -382,12 +350,7 @@
                                       <Rectangle Width="8" Height="{Binding BarHeight}" VerticalAlignment="Bottom">
                                         <Rectangle.Style>
                                           <Style TargetType="Rectangle">
-                                            <Setter Property="Fill" Value="{x:Static config:AppColorPalette.HourlyBarBrush}" />
-                                            <Style.Triggers>
-                                              <DataTrigger Binding="{Binding IsPeak}" Value="True">
-                                                <Setter Property="Fill" Value="{x:Static config:AppColorPalette.AccentBrush}" />
-                                              </DataTrigger>
-                                            </Style.Triggers>
+                                            <Setter Property="Fill" Value="{x:Static config:AppColorPalette.ActiveBrush}" />
                                           </Style>
                                         </Rectangle.Style>
                                       </Rectangle>

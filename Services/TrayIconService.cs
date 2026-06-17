@@ -22,7 +22,6 @@ public sealed class TrayIconService(UpdateService updateService, RawInputService
 
     // Rendered at 2x the 16px menu slot so it stays crisp when the menu scales the image up for DPI.
     private const int PauseIconSizePx = 32;
-    private static readonly System.Windows.Media.Color PauseIconColor = AppColorPalette.PauseIconColor;
 
     public void Initialize(Action showMainWindow, Action shutdown)
     {
@@ -109,8 +108,16 @@ public sealed class TrayIconService(UpdateService updateService, RawInputService
     {
         try
         {
-            _pauseImage = PhosphorIconRenderer.Render(PackIconPhosphorIconsKind.Pause, PauseIconSizePx, PauseIconColor);
-            _resumeImage = PhosphorIconRenderer.Render(PackIconPhosphorIconsKind.Play, PauseIconSizePx, PauseIconColor);
+            _pauseImage = PhosphorIconRenderer.Render(
+                PackIconPhosphorIconsKind.Pause,
+                PauseIconSizePx,
+                AppColorPalette.PauseIconColor
+            );
+            _resumeImage = PhosphorIconRenderer.Render(
+                PackIconPhosphorIconsKind.Play,
+                PauseIconSizePx,
+                AppColorPalette.PauseIconColor
+            );
         }
         catch (Exception ex)
         {

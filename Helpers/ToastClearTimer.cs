@@ -8,7 +8,7 @@ namespace KeyPulse.Helpers;
 /// Calling <see cref="Restart"/> resets the countdown so rapid calls only trigger one clear.
 /// Intended for auto-dismissing transient status messages in view-models.
 /// </summary>
-public sealed class StatusClearTimer : IDisposable
+public sealed class ToastClearTimer : IDisposable
 {
     public const int DefaultIntervalSeconds = 3;
 
@@ -18,7 +18,7 @@ public sealed class StatusClearTimer : IDisposable
     /// <summary>Raised on the UI thread once the countdown completes.</summary>
     public event EventHandler? Elapsed;
 
-    public StatusClearTimer(int seconds = DefaultIntervalSeconds)
+    public ToastClearTimer(int seconds = DefaultIntervalSeconds)
     {
         _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(seconds) };
         _timer.Tick += OnTick;

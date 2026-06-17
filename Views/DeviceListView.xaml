@@ -138,8 +138,8 @@
               <Setter Property="BorderThickness" Value="0" />
               <Setter Property="BorderBrush" Value="Transparent" />
               <!-- Whole-cell color by status; default is disconnected (red). -->
-              <Setter Property="Background" Value="{x:Static config:AppColorPalette.StatusDisconnectedBackgroundBrush}" />
-              <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.StatusDisconnectedForegroundBrush}" />
+              <Setter Property="Background" Value="{x:Static config:AppColorPalette.DisconnectedBackgroundBrush}" />
+              <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.DisconnectedBrush}" />
               <Setter Property="Template">
                 <Setter.Value>
                   <ControlTemplate TargetType="DataGridCell">
@@ -151,12 +151,12 @@
               </Setter>
               <Style.Triggers>
                 <DataTrigger Binding="{Binding StatusText}" Value="Connected">
-                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.StatusConnectedBackgroundBrush}" />
-                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.StatusConnectedForegroundBrush}" />
+                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.ConnectedBackgroundBrush}" />
+                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.ConnectedBrush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding StatusText}" Value="Hidden">
-                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.StatusHiddenBackgroundBrush}" />
-                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.StatusHiddenForegroundBrush}" />
+                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.HiddenBackgroundBrush}" />
+                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.HiddenBrush}" />
                 </DataTrigger>
               </Style.Triggers>
             </Style>

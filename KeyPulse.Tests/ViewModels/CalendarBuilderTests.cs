@@ -103,7 +103,7 @@ public class CalendarDtoTests
     [Fact]
     public void HourlyBar_Tooltip_DistinguishesActivity()
     {
-        new CalendarHourlyInputBar { Hour = 9, Total = 0 }.Tooltip.ShouldContain("No activity");
-        new CalendarHourlyInputBar { Hour = 9, Total = 5 }.Tooltip.ShouldContain("inputs");
+        new CalendarHourlyInputBar { Hour = 9, Total = 0 }.Tooltip.ShouldContain("0 inputs");
+        new CalendarHourlyInputBar { Hour = 9, Total = 5 }.Tooltip.ShouldContain("5 inputs");
     }
 }

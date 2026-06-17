@@ -10,47 +10,33 @@ public static class AppColorPalette
     public static Brush FatalBrush { get; } = Brushes.Crimson;
     public static Brush ErrorBrush { get; } = Brushes.OrangeRed;
     public static Brush WarningBrush { get; } = Brushes.Goldenrod;
-    public static Brush InformationBrush { get; } = Brushes.CornflowerBlue;
-    public static Brush DebugBrush { get; } = Brushes.DimGray;
-    public static Brush DividerBrush { get; } = Brushes.Gray;
+    public static Brush InformationBrush { get; } = Brushes.DarkTurquoise;
+    public static Brush MutedBrush { get; } = Brushes.Gray;
 
     // Text
     public static Brush PrimaryTextBrush { get; } = Brushes.Black;
     public static Brush SecondaryTextBrush { get; } = Brushes.DimGray;
-    public static Brush PlaceholderTextBrush { get; } = Brushes.Gray;
 
     // Neutral greys: fill, border/divider, and a stronger popup edge.
     public static Brush SurfaceBrush { get; } = Brushes.WhiteSmoke;
     public static Brush BorderBrush { get; } = Brushes.Gainsboro;
     public static Brush PopupBorderBrush { get; } = Brushes.DarkGray;
 
-    // Translucent dark status toast.
-    public static Brush StatusBackgroundBrush { get; } = MakeFrozen(0xCC, 0x1B, 0x1B, 0x1B);
+    // Translucent dark toast.
+    public static Brush ToastBackgroundBrush { get; } = MakeFrozen(0xCC, 0x1B, 0x1B, 0x1B);
 
     // Accents and activity metrics.
-    public static Brush AccentBrush { get; } = Brushes.RoyalBlue;
-    public static Brush ActiveInputBrush { get; } = Brushes.RoyalBlue;
-    public static Brush LongestSessionBrush { get; } = Brushes.CornflowerBlue;
-    public static Brush HourlyBarBrush { get; } = Brushes.CornflowerBlue;
-    public static Brush ActiveTimeBrush { get; } = Brushes.MediumSeaGreen;
-    public static Brush MouseMovementBrush { get; } = Brushes.DarkSeaGreen;
+    public static Brush ConnectedBrush { get; } = Brushes.RoyalBlue;
+    public static Brush ConnectedBackgroundBrush { get; } = Brushes.AliceBlue;
+    public static Brush DisconnectedBrush { get; } = Brushes.Firebrick;
+    public static Brush DisconnectedBackgroundBrush { get; } = Brushes.MistyRose;
+    public static Brush HiddenBrush { get; } = Brushes.DarkGoldenrod;
+    public static Brush HiddenBackgroundBrush { get; } = Brushes.LemonChiffon;
+    public static Brush ActiveBrush { get; } = Brushes.MediumSeaGreen;
 
     // Calendar day tiles: data fill, selected-day fill.
     public static Brush CalendarTileBackgroundBrush { get; } = Brushes.OldLace;
     public static Brush CalendarSelectedTileBackgroundBrush { get; } = Brushes.Wheat;
-
-    // Device-list status pills (background + foreground per state).
-    public static Brush StatusConnectedBackgroundBrush { get; } = Brushes.AliceBlue;
-    public static Brush StatusConnectedForegroundBrush { get; } = Brushes.RoyalBlue;
-    public static Brush StatusDisconnectedBackgroundBrush { get; } = Brushes.MistyRose;
-    public static Brush StatusDisconnectedForegroundBrush { get; } = Brushes.Firebrick;
-    public static Brush StatusHiddenBackgroundBrush { get; } = Brushes.LemonChiffon;
-    public static Brush StatusHiddenForegroundBrush { get; } = Brushes.DarkGoldenrod;
-
-    // Pie-chart connection status indicator
-    public static Brush PieConnectedBrush { get; } = Brushes.CornflowerBlue;
-    public static Brush PieDisconnectedBrush { get; } = Brushes.IndianRed;
-    public static Brush PieUnknownBrush { get; } = Brushes.Gray;
 
     // Log search highlight
     public static Brush SearchHighlightBrush { get; } = Brushes.Yellow;
@@ -67,7 +53,7 @@ public static class AppColorPalette
             "Error" => ErrorBrush,
             "Warning" => WarningBrush,
             "Information" => InformationBrush,
-            "Debug" => DebugBrush,
+            "Debug" => MutedBrush,
             _ => Brushes.Transparent,
         };
     }
@@ -80,7 +66,7 @@ public static class AppColorPalette
             AppConstants.Troubleshooting.ErrorToken => ErrorBrush,
             AppConstants.Troubleshooting.WarningToken => WarningBrush,
             AppConstants.Troubleshooting.InformationToken => InformationBrush,
-            AppConstants.Troubleshooting.DebugToken => DebugBrush,
+            AppConstants.Troubleshooting.DebugToken => MutedBrush,
             _ => PrimaryTextBrush,
         };
     }

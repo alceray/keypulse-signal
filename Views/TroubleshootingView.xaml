@@ -134,13 +134,13 @@
       />
     </Border>
 
-    <local:StatusMessagePanel
+    <local:ToastMessagePanel
       Grid.Row="1"
       HorizontalAlignment="Left"
       VerticalAlignment="Bottom"
       Margin="0,0,0,8"
-      StatusMessage="{Binding StatusMessage}"
-      StatusVisibility="{Binding StatusVisibility}"
+      ToastMessage="{Binding ToastMessage}"
+      ToastVisibility="{Binding ToastVisibility}"
     />
   </Grid>
 </UserControl>

@@ -86,7 +86,7 @@
     <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.PrimaryTextBrush}" />
     <Style.Triggers>
       <DataTrigger Binding="{Binding IsConnected}" Value="True">
-        <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.AccentBrush}" />
+        <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.ConnectedBrush}" />
       </DataTrigger>
     </Style.Triggers>
   </Style>

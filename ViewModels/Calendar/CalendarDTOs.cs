@@ -83,8 +83,5 @@ public sealed class CalendarHourlyInputBar
             _ => "",
         };
 
-    public string Tooltip =>
-        Total > 0
-            ? $"{DateTime.Today.AddHours(Hour):h tt} - {Total:N0} inputs"
-            : $"{DateTime.Today.AddHours(Hour):h tt} - No activity";
+    public string Tooltip => $"{DateTime.Today.AddHours(Hour):h tt} - {Total:N0} inputs";
 }

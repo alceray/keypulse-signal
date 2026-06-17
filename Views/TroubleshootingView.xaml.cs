@@ -214,7 +214,7 @@ public partial class TroubleshootingView
         foreach (var entry in entries)
         {
             if (entry.IsAppSessionStart && !first)
-                EmitRuns(paragraph, "\n" + dividerLine, AppColorPalette.DividerBrush, searchQuery);
+                EmitRuns(paragraph, "\n" + dividerLine, AppColorPalette.MutedBrush, searchQuery);
 
             if (!first)
                 EmitRuns(paragraph, "\n", AppColorPalette.PrimaryTextBrush, searchQuery);

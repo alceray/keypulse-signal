@@ -11,7 +11,7 @@ using Serilog;
 
 namespace KeyPulse.ViewModels;
 
-public class SettingsViewModel : StatusMessageViewModelBase
+public class SettingsViewModel : ToastMessageViewModelBase
 {
     private readonly AppSettingsService _appSettingsService;
     private readonly StartupRegistrationService _startupRegistrationService;
@@ -165,11 +165,11 @@ public class SettingsViewModel : StatusMessageViewModelBase
             SyncUpdateStateFromService();
 
             if (!_isUpdateAvailable)
-                StatusMessage = "No new updates available.";
+                ToastMessage = "No new updates available.";
         }
         catch (Exception ex)
         {
-            StatusMessage = "Update check failed. Check logs for details.";
+            ToastMessage = "Update check failed. Check logs for details.";
             Log.Error(ex, "Manual update check failed");
         }
         finally
@@ -220,7 +220,7 @@ public class SettingsViewModel : StatusMessageViewModelBase
             if (!_startupRegistrationService.IsEnabled() && LaunchOnLogin)
                 LaunchOnLogin = false;
 
-            StatusMessage = string.Empty;
+            ToastMessage = string.Empty;
         }
         finally
         {
@@ -246,12 +246,12 @@ public class SettingsViewModel : StatusMessageViewModelBase
             else
                 _startupRegistrationService.Disable();
 
-            StatusMessage = "Settings saved.";
+            ToastMessage = "Settings saved.";
             Log.Debug("Setting updated: {Setting}={Value}", changedSetting, changedValue);
         }
         catch (Exception ex)
         {
-            StatusMessage = "Failed to save settings. Check logs for details.";
+            ToastMessage = "Failed to save settings. Check logs for details.";
             Log.Error(ex, "Failed to save settings");
         }
     }

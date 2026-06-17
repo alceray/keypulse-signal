@@ -13,7 +13,7 @@ using Serilog;
 
 namespace KeyPulse.ViewModels;
 
-public class TroubleshootingViewModel : StatusMessageViewModelBase
+public class TroubleshootingViewModel : ToastMessageViewModelBase
 {
     public event Action? LogsRefreshed;
 
@@ -273,7 +273,7 @@ public class TroubleshootingViewModel : StatusMessageViewModelBase
         }
         catch (Exception ex)
         {
-            StatusMessage = "Failed to open logs folder. Check logs for details.";
+            ToastMessage = "Failed to open logs folder. Check logs for details.";
             Log.Error(ex, "Failed to open logs folder");
         }
     }
@@ -283,11 +283,11 @@ public class TroubleshootingViewModel : StatusMessageViewModelBase
         try
         {
             Clipboard.SetText(LogContent);
-            StatusMessage = "Logs copied to clipboard.";
+            ToastMessage = "Logs copied to clipboard.";
         }
         catch (Exception ex)
         {
-            StatusMessage = "Failed to copy logs.";
+            ToastMessage = "Failed to copy logs.";
             Log.Error(ex, "Failed to copy log content to clipboard");
         }
     }

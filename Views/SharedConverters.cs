@@ -74,7 +74,7 @@ public sealed class ActivityColorConverter : IValueConverter
         if (value is not bool isActive)
             return AppColorPalette.PrimaryTextBrush;
 
-        return isActive ? AppColorPalette.ActiveInputBrush : AppColorPalette.PrimaryTextBrush;
+        return isActive ? AppColorPalette.ActiveBrush : AppColorPalette.PrimaryTextBrush;
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>

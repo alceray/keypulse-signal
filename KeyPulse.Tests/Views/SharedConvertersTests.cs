@@ -52,7 +52,7 @@ public class SharedConvertersTests
     public void ActivityColor()
     {
         var c = new ActivityColorConverter();
-        c.Convert(true, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.ActiveInputBrush);
+        c.Convert(true, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.ActiveBrush);
         c.Convert(false, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.PrimaryTextBrush);
         c.Convert(null, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.PrimaryTextBrush); // non-bool => black
         Should.Throw<NotSupportedException>(() => c.ConvertBack(null, typeof(bool), null, Inv));

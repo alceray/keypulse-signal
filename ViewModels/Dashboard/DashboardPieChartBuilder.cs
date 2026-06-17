@@ -243,7 +243,7 @@ internal sealed class DashboardHoverPreview : ObservableObject
 {
     private string _deviceName = "Hover a slice to inspect device metadata.";
     private string _statusTag = "Unknown";
-    private Brush _statusBrush = AppColorPalette.PieUnknownBrush;
+    private Brush _statusBrush = AppColorPalette.MutedBrush;
     private string _connectedTime = "Connected Time: N/A";
     private string _percentage = "Percentage: N/A";
     private string _lastSeenOrConnected = "Last seen: N/A";
@@ -331,14 +331,14 @@ internal sealed class DashboardHoverPreview : ObservableObject
         if (slice.IsOthers)
         {
             StatusTag = "";
-            StatusBrush = AppColorPalette.PieUnknownBrush;
+            StatusBrush = AppColorPalette.MutedBrush;
             ConnectedTime = $"Connected Time: {slice.ConnectedTime}";
             LastSeenOrConnected = "";
             return;
         }
 
         StatusTag = slice.StatusTag;
-        StatusBrush = slice.IsConnected ? AppColorPalette.PieConnectedBrush : AppColorPalette.PieDisconnectedBrush;
+        StatusBrush = slice.IsConnected ? AppColorPalette.ConnectedBrush : AppColorPalette.DisconnectedBrush;
         ConnectedTime = $"Connected Time: {slice.ConnectedTime}";
         LastSeenOrConnected = $"{slice.LastSeenOrConnectedLabel}: {slice.LastSeenOrConnectedValue}";
     }
