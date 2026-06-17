@@ -77,13 +77,13 @@
           <ColumnDefinition Width="*" />
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Text="Mon" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
-        <TextBlock Grid.Column="1" Text="Tue" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
-        <TextBlock Grid.Column="2" Text="Wed" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
-        <TextBlock Grid.Column="3" Text="Thu" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
-        <TextBlock Grid.Column="4" Text="Fri" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
-        <TextBlock Grid.Column="5" Text="Sat" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
-        <TextBlock Grid.Column="6" Text="Sun" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#666" />
+        <TextBlock Grid.Column="0" Text="Mon" Style="{StaticResource DayOfWeekHeaderStyle}" />
+        <TextBlock Grid.Column="1" Text="Tue" Style="{StaticResource DayOfWeekHeaderStyle}" />
+        <TextBlock Grid.Column="2" Text="Wed" Style="{StaticResource DayOfWeekHeaderStyle}" />
+        <TextBlock Grid.Column="3" Text="Thu" Style="{StaticResource DayOfWeekHeaderStyle}" />
+        <TextBlock Grid.Column="4" Text="Fri" Style="{StaticResource DayOfWeekHeaderStyle}" />
+        <TextBlock Grid.Column="5" Text="Sat" Style="{StaticResource DayOfWeekHeaderStyle}" />
+        <TextBlock Grid.Column="6" Text="Sun" Style="{StaticResource DayOfWeekHeaderStyle}" />
       </Grid>
 
       <!-- Loading overlay / grid -->
@@ -92,7 +92,7 @@
           Text="Loading…"
           HorizontalAlignment="Center"
           VerticalAlignment="Center"
-          Foreground="#888"
+          Foreground="{x:Static config:AppColorPalette.PlaceholderTextBrush}"
           Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
         />
 
@@ -115,32 +115,25 @@
                     <Setter Property="ContentTemplate">
                       <Setter.Value>
                         <DataTemplate DataType="{x:Type vm:CalendarDaySummary}">
-                          <Border Margin="2" VerticalAlignment="Stretch" Padding="6" CornerRadius="4" Cursor="Hand">
+                          <Border Margin="2" VerticalAlignment="Stretch" Padding="6" CornerRadius="4">
                             <Border.Style>
                               <Style TargetType="Border">
-                                <Setter Property="BorderThickness" Value="1" />
-                                <Setter Property="BorderBrush" Value="#DDDDDD" />
-                                <Setter Property="Background" Value="#FAFAFA" />
+                                <!-- Only days with activity are clickable, so only they get the hand cursor. -->
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Cursor" Value="Arrow" />
+                                <Setter Property="Background" Value="{x:Static config:AppColorPalette.SurfaceBrush}" />
                                 <Style.Triggers>
                                   <DataTrigger Binding="{Binding HasData}" Value="True">
                                     <Setter
                                       Property="Background"
-                                      Value="{x:Static config:AppStyles.CalendarDataTileBackgroundBrush}"
+                                      Value="{x:Static config:AppColorPalette.CalendarTileBackgroundBrush}"
                                     />
-                                    <Setter
-                                      Property="BorderBrush"
-                                      Value="{x:Static config:AppStyles.CalendarDataTileBorderBrush}"
-                                    />
-                                  </DataTrigger>
-                                  <DataTrigger Binding="{Binding HasData}" Value="False">
-                                    <Setter Property="Background" Value="#F5F5F5" />
-                                    <Setter Property="BorderBrush" Value="#EEEEEE" />
+                                    <Setter Property="Cursor" Value="Hand" />
                                   </DataTrigger>
                                   <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                    <Setter Property="BorderThickness" Value="3" />
                                     <Setter
-                                      Property="BorderBrush"
-                                      Value="{x:Static config:AppStyles.CalendarSelectedTileBorderBrush}"
+                                      Property="Background"
+                                      Value="{x:Static config:AppColorPalette.CalendarSelectedTileBackgroundBrush}"
                                     />
                                   </DataTrigger>
                                 </Style.Triggers>
@@ -162,7 +155,7 @@
                                   DockPanel.Dock="Right"
                                   Text="today"
                                   FontSize="12"
-                                  Foreground="#222"
+                                  Foreground="{x:Static config:AppColorPalette.PrimaryTextBrush}"
                                   VerticalAlignment="Center"
                                   Visibility="{Binding IsToday, Converter={StaticResource BooleanToVisibilityConverter}}"
                                 />
@@ -195,18 +188,8 @@
                                           FontSize="12"
                                           TextTrimming="CharacterEllipsis"
                                           VerticalAlignment="Center"
-                                        >
-                                          <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                              <Setter Property="Foreground" Value="#222" />
-                                              <Style.Triggers>
-                                                <DataTrigger Binding="{Binding IsConnected}" Value="True">
-                                                  <Setter Property="Foreground" Value="#4A90E2" />
-                                                </DataTrigger>
-                                              </Style.Triggers>
-                                            </Style>
-                                          </TextBlock.Style>
-                                        </TextBlock>
+                                          Style="{StaticResource ConnectedDeviceNameStyle}"
+                                        />
                                       </Grid>
                                     </DataTemplate>
                                   </ItemsControl.ItemTemplate>
@@ -240,13 +223,18 @@
 
     <!-- Right: Day detail panel -->
     <Grid Grid.Column="1">
-      <Border BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4" Padding="12">
+      <Border
+        BorderBrush="{x:Static config:AppColorPalette.BorderBrush}"
+        BorderThickness="1"
+        CornerRadius="4"
+        Padding="12"
+      >
         <ScrollViewer VerticalScrollBarVisibility="Auto">
           <StackPanel>
             <!-- No day selected -->
             <TextBlock
               Text="Select a day to see details"
-              Foreground="#888"
+              Foreground="{x:Static config:AppColorPalette.PlaceholderTextBrush}"
               HorizontalAlignment="Center"
               Margin="0,40,0,0"
               Visibility="{Binding HasSelectedDay, Converter={StaticResource InverseBoolToVisibilityConverter}}"
@@ -265,112 +253,88 @@
               <ItemsControl ItemsSource="{Binding SelectedDayDetails}">
                 <ItemsControl.ItemTemplate>
                   <DataTemplate DataType="{x:Type vm:CalendarDeviceDetail}">
-                    <Border BorderBrush="#E8E8E8" BorderThickness="1" CornerRadius="3" Padding="8" Margin="0,0,0,8">
+                    <Border Style="{StaticResource DayDetailCardStyle}">
                       <StackPanel>
-                        <TextBlock Text="{Binding DeviceName}" FontWeight="SemiBold" TextWrapping="Wrap">
-                          <TextBlock.Style>
-                            <Style TargetType="TextBlock">
-                              <Setter Property="Foreground" Value="#222" />
-                              <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsConnected}" Value="True">
-                                  <Setter Property="Foreground" Value="#4A90E2" />
-                                </DataTrigger>
-                              </Style.Triggers>
-                            </Style>
-                          </TextBlock.Style>
-                        </TextBlock>
-                        <TextBlock Text="{Binding DeviceTypeText}" Foreground="#777" />
+                        <TextBlock
+                          Text="{Binding DeviceName}"
+                          FontWeight="SemiBold"
+                          TextWrapping="Wrap"
+                          Style="{StaticResource ConnectedDeviceNameStyle}"
+                        />
+                        <TextBlock
+                          Text="{Binding DeviceTypeText}"
+                          Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
+                        />
 
                         <StackPanel Margin="0,6,0,0" Orientation="Vertical" TextElement.FontSize="12">
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Connected time" Foreground="#555" />
+                            <TextBlock DockPanel.Dock="Left" Text="Connected time" Style="{StaticResource DetailLabelStyle}" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding ConnectionSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
-                            Height="6"
-                            Margin="0,0,0,6"
-                            Minimum="0"
+                            Style="{StaticResource ActivityProgressBarStyle}"
                             Maximum="86400"
                             Value="{Binding ConnectionSeconds, Mode=OneWay}"
-                            FlowDirection="LeftToRight"
-                            Foreground="#4A90E2"
-                            Background="#EAEAEA"
+                            Foreground="{x:Static config:AppColorPalette.AccentBrush}"
                           />
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Longest session" Foreground="#555" />
+                            <TextBlock DockPanel.Dock="Left" Text="Longest session" Style="{StaticResource DetailLabelStyle}" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding LongestSessionSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
-                            Height="6"
-                            Margin="0,0,0,6"
-                            Minimum="0"
+                            Style="{StaticResource ActivityProgressBarStyle}"
                             Maximum="86400"
                             Value="{Binding LongestSessionSeconds, Mode=OneWay}"
-                            FlowDirection="LeftToRight"
-                            Foreground="#7DA5D8"
-                            Background="#EAEAEA"
+                            Foreground="{x:Static config:AppColorPalette.LongestSessionBrush}"
                           />
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Active time" Foreground="#555" />
+                            <TextBlock DockPanel.Dock="Left" Text="Active time" Style="{StaticResource DetailLabelStyle}" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding ActiveMinutes, Converter={StaticResource MinutesToDisplayConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
-                            Height="6"
-                            Margin="0,0,0,6"
-                            Minimum="0"
+                            Style="{StaticResource ActivityProgressBarStyle}"
                             Maximum="1440"
                             Value="{Binding ActiveMinutes, Mode=OneWay}"
-                            FlowDirection="LeftToRight"
-                            Foreground="#50C878"
-                            Background="#EAEAEA"
+                            Foreground="{x:Static config:AppColorPalette.ActiveTimeBrush}"
                           />
                           <DockPanel
                             Margin="0,0,0,3"
                             Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                           >
-                            <TextBlock DockPanel.Dock="Left" Text="Mouse movement time" Foreground="#555" />
+                            <TextBlock DockPanel.Dock="Left" Text="Mouse movement time" Style="{StaticResource DetailLabelStyle}" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding MouseMovementSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
-                            Height="6"
-                            Margin="0,0,0,6"
-                            Minimum="0"
+                            Style="{StaticResource ActivityProgressBarStyle}"
                             Maximum="86400"
                             Value="{Binding MouseMovementSeconds, Mode=OneWay}"
-                            FlowDirection="LeftToRight"
-                            Foreground="#7FD9A8"
-                            Background="#EAEAEA"
+                            Foreground="{x:Static config:AppColorPalette.MouseMovementBrush}"
                             Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                           />
                           <DockPanel
                             Margin="0,0,0,8"
                             Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Keyboard}"
                           >
-                            <TextBlock DockPanel.Dock="Left" Foreground="#555" Text="Keystrokes" />
+                            <TextBlock DockPanel.Dock="Left" Style="{StaticResource DetailLabelStyle}" Text="Keystrokes" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding Keystrokes}"
                             />
                           </DockPanel>
@@ -378,24 +342,22 @@
                             Margin="0,0,0,8"
                             Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                           >
-                            <TextBlock DockPanel.Dock="Left" Foreground="#555" Text="Mouse clicks" />
+                            <TextBlock DockPanel.Dock="Left" Style="{StaticResource DetailLabelStyle}" Text="Mouse clicks" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding MouseClicks}"
                             />
                           </DockPanel>
                           <DockPanel Margin="0,0,0,3">
-                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Foreground="#555" />
+                            <TextBlock DockPanel.Dock="Left" Text="Sessions" Style="{StaticResource DetailLabelStyle}" />
                             <TextBlock
                               DockPanel.Dock="Right"
-                              Foreground="#222"
-                              TextAlignment="Right"
+                              Style="{StaticResource DetailValueStyle}"
                               Text="{Binding SessionCount}"
                             />
                           </DockPanel>
-                          <TextBlock Text="Input activity" Foreground="#555" Margin="0,4,0,2" />
+                          <TextBlock Text="Input activity" Style="{StaticResource DetailLabelStyle}" Margin="0,4,0,2" />
                           <Border Padding="4,4,4,2" Margin="0,0,0,4">
                             <StackPanel>
                               <ItemsControl ItemsSource="{Binding HourlyInputBars}">
@@ -417,18 +379,13 @@
                                           <TextBlock Text="{Binding Tooltip}" />
                                         </ToolTip>
                                       </Border.ToolTip>
-                                      <Rectangle
-                                        Width="8"
-                                        Height="{Binding BarHeight}"
-                                        VerticalAlignment="Bottom"
-                                        Fill="#8BB3E8"
-                                      >
+                                      <Rectangle Width="8" Height="{Binding BarHeight}" VerticalAlignment="Bottom">
                                         <Rectangle.Style>
                                           <Style TargetType="Rectangle">
-                                            <Setter Property="Fill" Value="#8BB3E8" />
+                                            <Setter Property="Fill" Value="{x:Static config:AppColorPalette.HourlyBarBrush}" />
                                             <Style.Triggers>
                                               <DataTrigger Binding="{Binding IsPeak}" Value="True">
-                                                <Setter Property="Fill" Value="#4A90E2" />
+                                                <Setter Property="Fill" Value="{x:Static config:AppColorPalette.AccentBrush}" />
                                               </DataTrigger>
                                             </Style.Triggers>
                                           </Style>
@@ -459,14 +416,14 @@
                                       <TextBlock
                                         Text="{Binding MajorLabel}"
                                         FontSize="9"
-                                        Foreground="#777"
+                                        Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
                                         HorizontalAlignment="Center"
                                         Margin="-20,0,-20,0"
                                       />
                                       <TextBlock
                                         Text="{Binding MinorLabel}"
                                         FontSize="9"
-                                        Foreground="#777"
+                                        Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
                                         HorizontalAlignment="Center"
                                         Margin="-20,0,-20,0"
                                         Visibility="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}, Path=ActualWidth, Converter={StaticResource MinWidthToVisibilityConverter}, ConverterParameter=200}"

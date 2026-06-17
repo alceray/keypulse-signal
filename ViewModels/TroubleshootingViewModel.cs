@@ -45,7 +45,7 @@ public class TroubleshootingViewModel : StatusMessageViewModelBase
             {
                 Name = name,
                 IsSelected = false,
-                LevelBrush = AppStyles.GetLogLevelBrush(name),
+                LevelBrush = AppColorPalette.GetLogLevelBrush(name),
             })
         );
 

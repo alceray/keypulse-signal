@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Media;
+using KeyPulse.Configuration;
 using KeyPulse.Models;
 using KeyPulse.Views;
 
@@ -51,9 +52,9 @@ public class SharedConvertersTests
     public void ActivityColor()
     {
         var c = new ActivityColorConverter();
-        ((SolidColorBrush)c.Convert(true, typeof(Brush), null, Inv)).Color.ShouldBe(Color.FromRgb(0, 102, 204));
-        ((SolidColorBrush)c.Convert(false, typeof(Brush), null, Inv)).Color.ShouldBe(Colors.Black);
-        ((SolidColorBrush)c.Convert(null, typeof(Brush), null, Inv)).Color.ShouldBe(Colors.Black); // non-bool => Black
+        c.Convert(true, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.ActiveInputBrush);
+        c.Convert(false, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.PrimaryTextBrush);
+        c.Convert(null, typeof(Brush), null, Inv).ShouldBe(AppColorPalette.PrimaryTextBrush); // non-bool => black
         Should.Throw<NotSupportedException>(() => c.ConvertBack(null, typeof(bool), null, Inv));
     }
 

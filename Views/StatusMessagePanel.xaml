@@ -10,7 +10,7 @@
   <Border
     Padding="14,8"
     CornerRadius="6"
-    Background="{x:Static config:AppStyles.StatusBackgroundBrush}"
+    Background="{x:Static config:AppColorPalette.StatusBackgroundBrush}"
     IsHitTestVisible="False"
     Visibility="{Binding StatusVisibility, ElementName=Root}"
   >

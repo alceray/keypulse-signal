@@ -2,6 +2,7 @@
   x:Class="KeyPulse.Views.DeviceListView"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:config="clr-namespace:KeyPulse.Configuration"
   xmlns:local="clr-namespace:KeyPulse.Views"
   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
   Height="Auto"
@@ -60,7 +61,7 @@
           <EventSetter Event="PreviewMouseRightButtonDown" Handler="DataGridRow_PreviewMouseRightButtonDown" />
           <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-              <Setter Property="Background" Value="#11000000" />
+              <Setter Property="Background" Value="{x:Static config:AppColorPalette.SurfaceBrush}" />
             </Trigger>
           </Style.Triggers>
         </Style>
@@ -137,8 +138,8 @@
               <Setter Property="BorderThickness" Value="0" />
               <Setter Property="BorderBrush" Value="Transparent" />
               <!-- Whole-cell color by status; default is disconnected (red). -->
-              <Setter Property="Background" Value="#F8D7DA" />
-              <Setter Property="Foreground" Value="#721C24" />
+              <Setter Property="Background" Value="{x:Static config:AppColorPalette.StatusDisconnectedBackgroundBrush}" />
+              <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.StatusDisconnectedForegroundBrush}" />
               <Setter Property="Template">
                 <Setter.Value>
                   <ControlTemplate TargetType="DataGridCell">
@@ -150,12 +151,12 @@
               </Setter>
               <Style.Triggers>
                 <DataTrigger Binding="{Binding StatusText}" Value="Connected">
-                  <Setter Property="Background" Value="#D4EDDA" />
-                  <Setter Property="Foreground" Value="#155724" />
+                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.StatusConnectedBackgroundBrush}" />
+                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.StatusConnectedForegroundBrush}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding StatusText}" Value="Hidden">
-                  <Setter Property="Background" Value="#FFF3CD" />
-                  <Setter Property="Foreground" Value="#5F4300" />
+                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.StatusHiddenBackgroundBrush}" />
+                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.StatusHiddenForegroundBrush}" />
                 </DataTrigger>
               </Style.Triggers>
             </Style>

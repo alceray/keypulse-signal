@@ -214,10 +214,10 @@ public partial class TroubleshootingView
         foreach (var entry in entries)
         {
             if (entry.IsAppSessionStart && !first)
-                EmitRuns(paragraph, "\n" + dividerLine, AppStyles.DividerBrush, searchQuery);
+                EmitRuns(paragraph, "\n" + dividerLine, AppColorPalette.DividerBrush, searchQuery);
 
             if (!first)
-                EmitRuns(paragraph, "\n", AppStyles.BlackBrush, searchQuery);
+                EmitRuns(paragraph, "\n", AppColorPalette.PrimaryTextBrush, searchQuery);
 
             EmitTokenColoredRuns(paragraph, entry.Text, searchQuery);
             first = false;
@@ -247,14 +247,14 @@ public partial class TroubleshootingView
         foreach (Match match in LevelTokenRegex.Matches(text))
         {
             if (match.Index > cursor)
-                EmitRuns(paragraph, text[cursor..match.Index], AppStyles.BlackBrush, searchQuery);
+                EmitRuns(paragraph, text[cursor..match.Index], AppColorPalette.PrimaryTextBrush, searchQuery);
 
-            EmitRuns(paragraph, match.Value, AppStyles.GetLogTokenBrush(match.Value), searchQuery);
+            EmitRuns(paragraph, match.Value, AppColorPalette.GetLogTokenBrush(match.Value), searchQuery);
             cursor = match.Index + match.Length;
         }
 
         if (cursor < text.Length)
-            EmitRuns(paragraph, text[cursor..], AppStyles.BlackBrush, searchQuery);
+            EmitRuns(paragraph, text[cursor..], AppColorPalette.PrimaryTextBrush, searchQuery);
     }
 
     /// <summary>
@@ -287,7 +287,7 @@ public partial class TroubleshootingView
             var matchRun = new Run(text.Substring(match, searchQuery.Length))
             {
                 Foreground = baseBrush,
-                Background = Brushes.Yellow,
+                Background = AppColorPalette.SearchHighlightBrush,
             };
             paragraph.Inlines.Add(matchRun);
             _matchRuns.Add(matchRun);
@@ -328,7 +328,10 @@ public partial class TroubleshootingView
     private void UpdateActiveMatchHighlight()
     {
         for (var i = 0; i < _matchRuns.Count; i++)
-            _matchRuns[i].Background = i == _currentMatchIndex ? Brushes.Orange : Brushes.Yellow;
+            _matchRuns[i].Background =
+                i == _currentMatchIndex
+                    ? AppColorPalette.SearchHighlightActiveBrush
+                    : AppColorPalette.SearchHighlightBrush;
     }
 
     private void UpdateSearchCounter()

@@ -50,7 +50,7 @@
               HorizontalAlignment="Right"
               VerticalAlignment="Center"
               Margin="0,0,8,0"
-              Foreground="{x:Static config:AppStyles.SearchCounterBrush}"
+              Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
               IsHitTestVisible="False"
               Visibility="Collapsed"
             />
@@ -69,7 +69,7 @@
             >
               <Border
                 Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
-                BorderBrush="#66000000"
+                BorderBrush="{x:Static config:AppColorPalette.PopupBorderBrush}"
                 BorderThickness="1"
                 Padding="4"
               >
@@ -101,19 +101,13 @@
           </Grid>
         </Grid>
 
-        <Button Width="32" Height="32" Margin="4,0,0,0" Command="{Binding RefreshLogsCommand}" ToolTip="Refresh">
+        <Button Style="{StaticResource ToolbarButtonStyle}" Command="{Binding RefreshLogsCommand}" ToolTip="Refresh">
           <iconPacks:PackIconPhosphorIcons Kind="ArrowsClockwise" Width="15" Height="15" />
         </Button>
-        <Button Width="32" Height="32" Margin="4,0,0,0" Command="{Binding CopyLogsCommand}" ToolTip="Copy logs">
+        <Button Style="{StaticResource ToolbarButtonStyle}" Command="{Binding CopyLogsCommand}" ToolTip="Copy logs">
           <iconPacks:PackIconPhosphorIcons Kind="Copy" Width="15" Height="15" />
         </Button>
-        <Button
-          Width="32"
-          Height="32"
-          Margin="4,0,0,0"
-          Command="{Binding OpenLogsFolderCommand}"
-          ToolTip="Open logs folder"
-        >
+        <Button Style="{StaticResource ToolbarButtonStyle}" Command="{Binding OpenLogsFolderCommand}" ToolTip="Open logs folder">
           <iconPacks:PackIconPhosphorIcons Kind="FolderOpen" Width="15" Height="15" />
         </Button>
       </StackPanel>
@@ -121,7 +115,7 @@
 
     <Border
       Grid.Row="1"
-      BorderBrush="{x:Static config:AppStyles.LogBorderBrush}"
+      BorderBrush="{x:Static config:AppColorPalette.BorderBrush}"
       BorderThickness="1"
       CornerRadius="4"
       Padding="8"

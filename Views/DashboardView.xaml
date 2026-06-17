@@ -4,18 +4,14 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:oxy="http://oxyplot.org/wpf"
   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+  xmlns:config="clr-namespace:KeyPulse.Configuration"
   xmlns:local="clr-namespace:KeyPulse.Views"
   Height="Auto"
   Width="Auto"
 >
   <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Styles/RoundHoverIconButtonStyle.xaml" />
-      </ResourceDictionary.MergedDictionaries>
-      <local:PauseStateToIconKindConverter x:Key="PauseStateToIconKindConverter" />
-      <local:PauseStateToActionTextConverter x:Key="PauseStateToActionTextConverter" />
-    </ResourceDictionary>
+    <local:PauseStateToIconKindConverter x:Key="PauseStateToIconKindConverter" />
+    <local:PauseStateToActionTextConverter x:Key="PauseStateToActionTextConverter" />
   </UserControl.Resources>
   <Grid Margin="8">
     <Grid.RowDefinitions>
@@ -25,22 +21,26 @@
 
     <StackPanel Grid.Row="0" Margin="0,0,0,8">
       <UniformGrid Columns="3" Margin="0,0,0,6">
-        <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
+        <Border Style="{StaticResource StatCardStyle}">
           <StackPanel>
             <TextBlock Text="Connected Devices" FontWeight="Bold" />
             <TextBlock Text="{Binding ConnectedDevices}" FontSize="20" />
-            <TextBlock Text="{Binding ConnectedDevicesBreakdown}" Foreground="#666666" Margin="0,4,0,0" />
+            <TextBlock
+              Text="{Binding ConnectedDevicesBreakdown}"
+              Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
+              Margin="0,4,0,0"
+            />
           </StackPanel>
         </Border>
 
-        <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
+        <Border Style="{StaticResource StatCardStyle}">
           <StackPanel>
             <TextBlock Text="Most Connected Keyboards of All Time" FontWeight="Bold" />
             <TextBlock Text="{Binding TopKeyboardsSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
           </StackPanel>
         </Border>
 
-        <Border Margin="4" Padding="10" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
+        <Border Style="{StaticResource StatCardStyle}">
           <StackPanel>
             <TextBlock Text="Most Connected Mice of All Time" FontWeight="Bold" />
             <TextBlock Text="{Binding TopMiceSummary}" TextWrapping="Wrap" Margin="0,4,0,0" />
@@ -69,12 +69,16 @@
           Text="{Binding RangeDisplayText}"
           VerticalAlignment="Center"
           HorizontalAlignment="Center"
-          Foreground="#666666"
+          Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
           FontWeight="SemiBold"
         />
 
         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-          <TextBlock Text="{Binding LastUpdatedText}" VerticalAlignment="Center" Foreground="#666666" />
+          <TextBlock
+            Text="{Binding LastUpdatedText}"
+            VerticalAlignment="Center"
+            Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
+          />
           <Button
             Margin="4,0,0,0"
             Command="{Binding RefreshCommand}"
@@ -82,7 +86,11 @@
             VerticalAlignment="Center"
             Style="{StaticResource RoundHoverIconButtonStyle}"
           >
-            <iconPacks:PackIconPhosphorIcons Kind="ArrowClockwise" VerticalAlignment="Center" Foreground="#666" />
+            <iconPacks:PackIconPhosphorIcons
+              Kind="ArrowClockwise"
+              VerticalAlignment="Center"
+              Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
+            />
           </Button>
         </StackPanel>
       </Grid>
@@ -141,7 +149,7 @@
         <iconPacks:PackIconPhosphorIcons
           Kind="{Binding IsTrackingPaused, Converter={StaticResource PauseStateToIconKindConverter}}"
           VerticalAlignment="Center"
-          Foreground="#666"
+          Foreground="{x:Static config:AppColorPalette.SecondaryTextBrush}"
         />
       </Button>
     </Grid>

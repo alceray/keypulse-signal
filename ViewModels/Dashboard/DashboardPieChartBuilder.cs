@@ -1,4 +1,5 @@
 ﻿using System.Windows.Media;
+using KeyPulse.Configuration;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
 using OxyPlot;
@@ -242,7 +243,7 @@ internal sealed class DashboardHoverPreview : ObservableObject
 {
     private string _deviceName = "Hover a slice to inspect device metadata.";
     private string _statusTag = "Unknown";
-    private Brush _statusBrush = Brushes.Gray;
+    private Brush _statusBrush = AppColorPalette.PieUnknownBrush;
     private string _connectedTime = "Connected Time: N/A";
     private string _percentage = "Percentage: N/A";
     private string _lastSeenOrConnected = "Last seen: N/A";
@@ -330,14 +331,14 @@ internal sealed class DashboardHoverPreview : ObservableObject
         if (slice.IsOthers)
         {
             StatusTag = "";
-            StatusBrush = Brushes.Gray;
+            StatusBrush = AppColorPalette.PieUnknownBrush;
             ConnectedTime = $"Connected Time: {slice.ConnectedTime}";
             LastSeenOrConnected = "";
             return;
         }
 
         StatusTag = slice.StatusTag;
-        StatusBrush = slice.IsConnected ? Brushes.ForestGreen : Brushes.IndianRed;
+        StatusBrush = slice.IsConnected ? AppColorPalette.PieConnectedBrush : AppColorPalette.PieDisconnectedBrush;
         ConnectedTime = $"Connected Time: {slice.ConnectedTime}";
         LastSeenOrConnected = $"{slice.LastSeenOrConnectedLabel}: {slice.LastSeenOrConnectedValue}";
     }

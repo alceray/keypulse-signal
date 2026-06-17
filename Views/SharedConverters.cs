@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
+using KeyPulse.Configuration;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
 using MahApps.Metro.IconPacks;
@@ -71,9 +72,9 @@ public sealed class ActivityColorConverter : IValueConverter
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is not bool isActive)
-            return new SolidColorBrush(Colors.Black);
+            return AppColorPalette.PrimaryTextBrush;
 
-        return isActive ? new SolidColorBrush(Color.FromRgb(0, 102, 204)) : new SolidColorBrush(Colors.Black);
+        return isActive ? AppColorPalette.ActiveInputBrush : AppColorPalette.PrimaryTextBrush;
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>

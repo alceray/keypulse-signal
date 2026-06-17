@@ -272,8 +272,9 @@ dotnet ef database update SomeOlderMigrationName
 | `Services/`   | `UsbMonitorService`, `RawInputService`, `DataService`, `DailyStatsService` — monitoring, activity capture, persistence, daily stats |
 | `Models/`     | `Device`, `DeviceEvent`, `ActivitySnapshot`, `DailyDeviceStat` + enums/extensions                               |
 | `Data/`       | `ApplicationDbContext`, database initialization                                                                  |
+| `Configuration/` | `AppConstants` plus `AppColorPalette` — the single source of UI colors. `AppColorPalette.cs` holds the frozen `Brush`/`Color` palette (consumed from code and from XAML via `{x:Static config:AppColorPalette.X}`); reusable control styles live in `Views/Styles/AppStyles.xaml` (merged globally in `App.xaml`) and reference those brushes. The OxyPlot chart palette (`DashboardDeviceColorPalette`) is intentionally separate |
 | `ViewModels/` | MVVM viewmodels for each UI view; `StatusMessageViewModelBase` provides shared status toast behavior. `Dashboard/` and `Calendar/` subfolders hold the chart/pie/color builders, DTOs, and per-view helpers extracted from the larger view-models |
-| `Views/`      | XAML + code-behind for UI; `StatusMessagePanel` is a reusable status toast control; `SharedConverters.cs` holds shared `IValueConverter`s (e.g. `InverseBoolToVisibilityConverter`, `DurationSecondsConverter`) |
+| `Views/`      | XAML + code-behind for UI; `StatusMessagePanel` is a reusable status toast control; `SharedConverters.cs` holds shared `IValueConverter`s (e.g. `InverseBoolToVisibilityConverter`, `DurationSecondsConverter`); `Styles/AppStyles.xaml` holds the app-wide control styles |
 | `Migrations/` | EF Core snapshot migrations (read-only; auto-generated)                                                          |
 | `docs/`       | release docs, production-readiness plan, and other project documentation                                         |
 

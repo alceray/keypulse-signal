@@ -22,11 +22,7 @@ public sealed class TrayIconService(UpdateService updateService, RawInputService
 
     // Rendered at 2x the 16px menu slot so it stays crisp when the menu scales the image up for DPI.
     private const int PauseIconSizePx = 32;
-    private static readonly System.Windows.Media.Color PauseIconColor = System.Windows.Media.Color.FromRgb(
-        0x33,
-        0x33,
-        0x33
-    );
+    private static readonly System.Windows.Media.Color PauseIconColor = AppColorPalette.PauseIconColor;
 
     public void Initialize(Action showMainWindow, Action shutdown)
     {
