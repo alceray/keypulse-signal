@@ -45,12 +45,10 @@ public sealed class CalendarDeviceDetail
     public bool IsConnected { get; init; }
     public int SessionCount { get; init; }
     public long ConnectionSeconds { get; init; }
-    public long LongestSessionSeconds { get; init; }
 
     // Activity
     public long Keystrokes { get; init; }
     public long MouseClicks { get; init; }
-    public long MouseMovementSeconds { get; init; }
     public int ActiveMinutes { get; init; }
     public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars { get; init; } =
         CalendarHourlyInputBarBuilder.Build(new long[24]);

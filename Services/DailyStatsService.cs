@@ -498,7 +498,7 @@ public class DailyStatsService : IDisposable
             .ToList();
 
         // Clip each session to every day it overlaps within the range, accumulating per-day totals.
-        var perDay = new Dictionary<DateOnly, (int Count, long Total, long Longest)>();
+        var perDay = new Dictionary<DateOnly, (int Count, long Total)>();
         foreach (var (start, end) in ReconstructSessions(events, rangeEndLocal, DateTime.Now))
         {
             var firstDay = DateOnly.FromDateTime(start);
@@ -518,7 +518,7 @@ public class DailyStatsService : IDisposable
                     continue;
 
                 perDay.TryGetValue(day, out var agg);
-                perDay[day] = (agg.Count + 1, agg.Total + seconds, Math.Max(agg.Longest, seconds));
+                perDay[day] = (agg.Count + 1, agg.Total + seconds);
             }
         }
 
@@ -527,7 +527,6 @@ public class DailyStatsService : IDisposable
             var stat = GetOrCreateDailyStat(ctx, day, deviceId);
             stat.SessionCount = agg.Count;
             stat.ConnectionSeconds = agg.Total;
-            stat.LongestSessionSeconds = agg.Longest;
             stat.UpdatedAt = DateTime.UtcNow;
         }
     }

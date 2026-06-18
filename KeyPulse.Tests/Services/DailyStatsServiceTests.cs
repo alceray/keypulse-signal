@@ -51,11 +51,10 @@ public class DailyStatsServiceTests : IDisposable
         stat.DeviceId.ShouldBe("DEV1");
         stat.SessionCount.ShouldBe(1);
         stat.ConnectionSeconds.ShouldBe(5400); // 1h30m
-        stat.LongestSessionSeconds.ShouldBe(5400);
     }
 
     [Fact]
-    public void Recompute_MultipleSessions_SumsSecondsAndTracksLongest()
+    public void Recompute_MultipleSessions_SumsSeconds()
     {
         Seed(ctx =>
         {
@@ -70,7 +69,6 @@ public class DailyStatsServiceTests : IDisposable
         var stat = _sut.GetDailyDeviceStats(Day, Day).ShouldHaveSingleItem();
         stat.SessionCount.ShouldBe(2);
         stat.ConnectionSeconds.ShouldBe(9000);
-        stat.LongestSessionSeconds.ShouldBe(7200);
     }
 
     [Fact]
@@ -154,7 +152,6 @@ public class DailyStatsServiceTests : IDisposable
         var interior = stats.Single(s => s.Day == new DateOnly(2026, 5, 21));
         interior.ConnectionSeconds.ShouldBe(86400); // full day
         interior.SessionCount.ShouldBe(1);
-        interior.LongestSessionSeconds.ShouldBe(86400);
         stats.Single(s => s.Day == new DateOnly(2026, 5, 22)).ConnectionSeconds.ShouldBe(50400); // midnight → 14:00
     }
 
@@ -175,7 +172,6 @@ public class DailyStatsServiceTests : IDisposable
             .ShouldHaveSingleItem();
         stat.SessionCount.ShouldBe(1);
         stat.ConnectionSeconds.ShouldBe(50400); // 10:00 → midnight, previously 0
-        stat.LongestSessionSeconds.ShouldBe(50400);
     }
 
     // ── Activity stats (ActivitySnapshots → DailyDeviceStats) ───────────────────

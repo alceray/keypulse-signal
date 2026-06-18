@@ -31,9 +31,6 @@ public class DailyDeviceStat
     /// <summary>Total seconds the device was connected on this local day, summed across all sessions.</summary>
     public long ConnectionSeconds { get; set; }
 
-    /// <summary>Longest single session overlap on this local day (seconds).</summary>
-    public long LongestSessionSeconds { get; set; }
-
     // Activity metrics (from ActivitySnapshots via minute projector) ──────────
     /// <summary>Total keystrokes across all projected minute snapshots for this day.</summary>
     public long Keystrokes { get; set; }

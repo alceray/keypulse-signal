@@ -53,7 +53,7 @@ Injection
 
 5. **DailyStatsService** (Singleton)
     - Maintains `DailyDeviceStats` table from two write-through sources:
-        - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount`, `ConnectionSeconds`, `LongestSessionSeconds` with a full non-cumulative replay of the day's events
+        - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount` and `ConnectionSeconds` with a full non-cumulative replay of the day's events
         - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
     - `RecomputeDailyDeviceStatsForRange(from, to)` provides an idempotent full rebuild for any date range
     - `RunStartupRebuild()` (called on a background thread from `App.OnStartup`) is the startup entry point:
@@ -193,7 +193,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - **Real-time overlay**: `CalendarViewModel` maintains a live in-memory input delta (`_todayLiveDeltaByDevice`) and connection overlay per device; `ApplyRealtimeTodayOverlay()` merges persisted + live state on every second tick and every `RawInputService.InputDeltaIncremented` event. There is **no** periodic DB-refresh timer — the calendar does not subscribe to `ThirtySecondTick`; the persisted baseline is re-read on month load, day selection, and day rollover only.
 - **`CalendarDaySummary.IsToday`**: computed property (`Day == DateOnly.FromDateTime(DateTime.Now)`), never stale.
 - **`CalendarDaySummary.IsSelected`**: UI-only flag toggled in-place via tile selection; never stored in DB.
-- **Calendar DTOs** (`CalendarDaySummary`, `CalendarTileDevice`, `CalendarDeviceDetail`) use the `DeviceTypes` enum, not raw strings, and report connection time in seconds (`ConnectionSeconds`, `LongestSessionSeconds`).
+- **Calendar DTOs** (`CalendarDaySummary`, `CalendarTileDevice`, `CalendarDeviceDetail`) use the `DeviceTypes` enum, not raw strings, and report connection time in seconds (`ConnectionSeconds`).
 - **Hourly activity bars**: `CalendarDeviceDetail.HourlyInputBars` is a 24-slot bar series built by `CalendarHourlyInputBarBuilder` from the day's `HourlyInputCount`; bar heights are normalized to the day's peak hour (`IsPeak` flags it). The same `IReadOnlyList` reference is cached per device across per-second overlay updates so WPF doesn't recreate the bar elements (keeps tooltips alive).
 - **Arrow-key navigation**: `MoveSelectionByArrowAsync(±1)` moves the selection across data-bearing tiles, crossing month boundaries when needed; serialized through `_arrowNavigationGate` (a `SemaphoreSlim`) so rapid key-repeats don't interleave.
 - Calendar detail panel uses responsive `DockPanel` rows so labels/values stay readable at any panel width.

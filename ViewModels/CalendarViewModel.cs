@@ -632,7 +632,6 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             var sessionCount = (persisted?.SessionCount ?? 0) + (device?.IsConnected == true ? 1 : 0);
 
             var baseConnection = persisted?.ConnectionSeconds ?? 0L;
-            var baseLongest = persisted?.LongestSessionSeconds ?? 0L;
 
             // Same reference kept so WPF ItemsControl doesn't recreate bar elements (tooltip-stable).
             if (!_hourlyBarsCache.TryGetValue(id, out var stableBars))
@@ -648,10 +647,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     IsConnected = device?.IsConnected == true,
                     SessionCount = sessionCount,
                     ConnectionSeconds = baseConnection + connectionOverlay,
-                    LongestSessionSeconds = Math.Max(baseLongest, connectionOverlay),
                     Keystrokes = (persisted?.Keystrokes ?? 0) + liveDelta.KeystrokeDelta,
                     MouseClicks = (persisted?.MouseClicks ?? 0) + liveDelta.MouseClickDelta,
-                    MouseMovementSeconds = (persisted?.MouseMovementSeconds ?? 0) + liveDelta.MouseMovementDelta,
                     ActiveMinutes = persisted?.ActiveMinutes ?? 0,
                     HourlyInputBars = stableBars,
                 }

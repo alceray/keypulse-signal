@@ -49,10 +49,8 @@ public static class CalendarSummaryBuilder
                     IsConnected = false,
                     SessionCount = row.SessionCount,
                     ConnectionSeconds = row.ConnectionSeconds,
-                    LongestSessionSeconds = row.LongestSessionSeconds,
                     Keystrokes = row.Keystrokes,
                     MouseClicks = row.MouseClicks,
-                    MouseMovementSeconds = row.MouseMovementSeconds,
                     ActiveMinutes = row.ActiveMinutes,
                     HourlyInputBars = CalendarHourlyInputBarBuilder.Build(row.HourlyInputCount),
                 };
