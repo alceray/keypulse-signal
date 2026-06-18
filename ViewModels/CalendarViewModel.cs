@@ -31,6 +31,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
     private DateOnly _accumulatedInputDate = DateOnly.FromDateTime(DateTime.Now);
     private readonly Dictionary<string, CalendarDeviceDetail> _todayPersistedDetailByDevice = [];
 
+    // Live second-accurate "active time" for today, seeded from each device's persisted minute total.
+    private readonly ActiveSecondsAccumulator _activeSeconds = new();
+
     // Stable bar references per device; same list instance keeps WPF tooltip elements alive across per-second updates.
     private readonly Dictionary<string, IReadOnlyList<CalendarHourlyInputBar>> _hourlyBarsCache = [];
     private readonly SemaphoreSlim _arrowNavigationGate = new(1, 1);
@@ -348,6 +351,14 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         foreach (var d in details)
             _todayPersistedDetailByDevice[d.DeviceId] = d;
 
+        // Establish today before seeding so a later rollover check can't wipe the baselines.
+        lock (_liveInputLock)
+        {
+            _activeSeconds.ResetIfDayChanged(today);
+            foreach (var d in details)
+                _activeSeconds.Seed(d.DeviceId, d.ActiveSeconds);
+        }
+
         ApplyRealtimeTodayOverlay();
     }
 
@@ -385,6 +396,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     current.MouseMovementDelta + delta.MouseMovementDelta
                 )
                 : delta;
+            _activeSeconds.RecordActivity(deviceId, DateTime.Now);
         }
 
         // Tile connected-state doesn't change on keystrokes; skip the tile rebuild.
@@ -400,6 +412,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 return false;
 
             _todayLiveDeltaByDevice.Clear();
+            _activeSeconds.ResetIfDayChanged(today);
             _accumulatedInputDate = today;
             return true;
         }
@@ -633,6 +646,15 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
             var baseConnection = persisted?.ConnectionSeconds ?? 0L;
 
+            var persistedActiveSeconds = persisted?.ActiveSeconds ?? 0L;
+            long activeSeconds;
+            lock (_liveInputLock)
+            {
+                _activeSeconds.Seed(id, persistedActiveSeconds);
+                // Persisted floor guards against a freshly reset accumulator after a restart or rollover.
+                activeSeconds = Math.Max(persistedActiveSeconds, _activeSeconds.GetActiveSeconds(id));
+            }
+
             // Same reference kept so WPF ItemsControl doesn't recreate bar elements (tooltip-stable).
             if (!_hourlyBarsCache.TryGetValue(id, out var stableBars))
                 _hourlyBarsCache[id] = stableBars =
@@ -649,7 +671,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     ConnectionSeconds = baseConnection + connectionOverlay,
                     Keystrokes = (persisted?.Keystrokes ?? 0) + liveDelta.KeystrokeDelta,
                     MouseClicks = (persisted?.MouseClicks ?? 0) + liveDelta.MouseClickDelta,
-                    ActiveMinutes = persisted?.ActiveMinutes ?? 0,
+                    ActiveSeconds = activeSeconds,
                     HourlyInputBars = stableBars,
                 }
             );

@@ -51,7 +51,7 @@ public static class CalendarSummaryBuilder
                     ConnectionSeconds = row.ConnectionSeconds,
                     Keystrokes = row.Keystrokes,
                     MouseClicks = row.MouseClicks,
-                    ActiveMinutes = row.ActiveMinutes,
+                    ActiveSeconds = row.ActiveMinutes * 60L,
                     HourlyInputBars = CalendarHourlyInputBarBuilder.Build(row.HourlyInputCount),
                 };
             })

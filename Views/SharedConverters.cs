@@ -53,20 +53,6 @@ public sealed class DurationSecondsConverter : IValueConverter
         throw new NotSupportedException();
 }
 
-public sealed class MinutesToDisplayConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is not int minutes)
-            return string.Empty;
-
-        return TimeFormatter.FormatDuration(TimeSpan.FromMinutes(minutes));
-    }
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotSupportedException();
-}
-
 public sealed class ActivityColorConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)

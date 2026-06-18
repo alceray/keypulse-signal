@@ -63,7 +63,7 @@ public class CalendarSummaryBuilderTests
         detail.SessionCount.ShouldBe(2);
         detail.ConnectionSeconds.ShouldBe(600);
         detail.Keystrokes.ShouldBe(42);
-        detail.ActiveMinutes.ShouldBe(7);
+        detail.ActiveSeconds.ShouldBe(420); // 7 persisted active minutes rendered as seconds
         detail.HourlyInputBars.Count.ShouldBe(24);
     }
 

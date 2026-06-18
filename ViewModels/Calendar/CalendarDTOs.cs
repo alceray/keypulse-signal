@@ -49,7 +49,10 @@ public sealed class CalendarDeviceDetail
     // Activity
     public long Keystrokes { get; init; }
     public long MouseClicks { get; init; }
-    public int ActiveMinutes { get; init; }
+
+    // Seconds the device saw input today. Persisted history is minute-granular (ActiveMinutes * 60);
+    // today's row is overlaid with a live second-accurate total while the app runs.
+    public long ActiveSeconds { get; init; }
     public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars { get; init; } =
         CalendarHourlyInputBarBuilder.Build(new long[24]);
 }

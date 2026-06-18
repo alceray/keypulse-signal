@@ -14,7 +14,6 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
     <local:DurationSecondsConverter x:Key="DurationSecondsConverter" />
-    <local:MinutesToDisplayConverter x:Key="MinutesToDisplayConverter" />
     <local:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter" />
     <local:MinWidthToVisibilityConverter x:Key="MinWidthToVisibilityConverter" />
   </UserControl.Resources>
@@ -286,13 +285,13 @@
                             <TextBlock
                               DockPanel.Dock="Right"
                               Style="{StaticResource DetailValueStyle}"
-                              Text="{Binding ActiveMinutes, Converter={StaticResource MinutesToDisplayConverter}}"
+                              Text="{Binding ActiveSeconds, Converter={StaticResource DurationSecondsConverter}}"
                             />
                           </DockPanel>
                           <ProgressBar
                             Style="{StaticResource ActivityProgressBarStyle}"
-                            Maximum="1440"
-                            Value="{Binding ActiveMinutes, Mode=OneWay}"
+                            Maximum="86400"
+                            Value="{Binding ActiveSeconds, Mode=OneWay}"
                             Foreground="{x:Static config:AppColorPalette.ActiveBrush}"
                           />
                           <DockPanel

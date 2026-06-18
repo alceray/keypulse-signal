@@ -9,8 +9,7 @@ namespace KeyPulse.Tests.Views;
 
 /// <summary>
 /// All converters are pure value transforms (no Dispatcher needed). Each ConvertBack throws.
-/// Notable edge: DurationSecondsConverter accepts only long, MinutesToDisplayConverter only int —
-/// passing the wrong integral type silently yields "".
+/// Notable edge: DurationSecondsConverter accepts only long — passing the wrong type silently yields "".
 /// </summary>
 public class SharedConvertersTests
 {
@@ -36,16 +35,6 @@ public class SharedConvertersTests
         c.Convert(5, typeof(string), null, Inv).ShouldBe(""); // int, not long => empty
         c.Convert(null, typeof(string), null, Inv).ShouldBe("");
         Should.Throw<NotSupportedException>(() => c.ConvertBack(null, typeof(long), null, Inv));
-    }
-
-    [Fact]
-    public void MinutesToDisplay()
-    {
-        var c = new MinutesToDisplayConverter();
-        c.Convert(90, typeof(string), null, Inv).ShouldBe("1h 30m");
-        c.Convert(0, typeof(string), null, Inv).ShouldBe("0s");
-        c.Convert(90L, typeof(string), null, Inv).ShouldBe(""); // long, not int => empty
-        Should.Throw<NotSupportedException>(() => c.ConvertBack(null, typeof(int), null, Inv));
     }
 
     [Fact]
