@@ -41,8 +41,11 @@ public class DailyDeviceStat
     /// <summary>Total mouse movement seconds across all projected minute snapshots for this day.</summary>
     public long MouseMovementSeconds { get; set; }
 
-    /// <summary>Number of distinct minutes with any activity on this day.</summary>
-    public int ActiveMinutes { get; set; }
+    /// <summary>
+    /// Total seconds with any input this day (sum of per-minute active-second counts). Days that predate
+    /// per-second tracking were seeded once from the old minute count.
+    /// </summary>
+    public long ActiveSeconds { get; set; }
 
     /// <summary>
     /// Combined input count by local clock-hour (index 0-23).

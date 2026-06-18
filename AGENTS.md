@@ -54,7 +54,7 @@ Injection
 5. **DailyStatsService** (Singleton)
     - Maintains `DailyDeviceStats` table from two write-through sources:
         - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount` and `ConnectionSeconds` with a full non-cumulative replay of the day's events
-        - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveMinutes`, and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
+        - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveSeconds` (distinct seconds with any input), and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
     - `RecomputeDailyDeviceStatsForRange(from, to)` provides an idempotent full rebuild for any date range
     - `RunStartupRebuild()` (called on a background thread from `App.OnStartup`) is the startup entry point:
         - **First run only** (when the `DailyStatsFullBackfillAt` `AppMeta` marker is absent): runs a one-time full historical backfill from the earliest source day through today via `RebuildAllHistory(...)`, chunked month-by-month so memory stays bounded, then writes the marker

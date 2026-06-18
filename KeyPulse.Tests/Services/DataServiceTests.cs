@@ -188,12 +188,15 @@ public class DataServiceTests : IDisposable
                     Keystrokes = 10,
                     MouseClicks = 2,
                     MouseMovementSeconds = 3,
+                    ActiveSeconds = 7,
                 },
             ]
         );
 
-        _sut.GetActivitySnapshots().ShouldHaveSingleItem().Keystrokes.ShouldBe(10);
-        _sut.GetDevice("D1")!.TotalInputCount.ShouldBe(15); // 10 + 2 + 3
+        var snap = _sut.GetActivitySnapshots().ShouldHaveSingleItem();
+        snap.Keystrokes.ShouldBe(10);
+        snap.ActiveSeconds.ShouldBe((byte)7);
+        _sut.GetDevice("D1")!.TotalInputCount.ShouldBe(15); // 10 + 2 + 3, active seconds excluded
     }
 
     [Fact]
@@ -209,6 +212,7 @@ public class DataServiceTests : IDisposable
                     Minute = At(9, 5),
                     Keystrokes = 10,
                     MouseMovementSeconds = 5,
+                    ActiveSeconds = 6,
                 },
             ]
         );
@@ -220,6 +224,7 @@ public class DataServiceTests : IDisposable
                     Minute = At(9, 5),
                     Keystrokes = 4,
                     MouseMovementSeconds = 3,
+                    ActiveSeconds = 9,
                 },
             ]
         );
@@ -227,6 +232,7 @@ public class DataServiceTests : IDisposable
         var snap = _sut.GetActivitySnapshots().ShouldHaveSingleItem();
         snap.Keystrokes.ShouldBe(14); // additive
         snap.MouseMovementSeconds.ShouldBe((byte)5); // Max(5, 3)
+        snap.ActiveSeconds.ShouldBe((byte)9); // Max(6, 9)
     }
 
     [Fact]

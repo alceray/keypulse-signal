@@ -52,7 +52,7 @@ public class CalendarSummaryBuilderTests
         row.SessionCount = 2;
         row.ConnectionSeconds = 600;
         row.Keystrokes = 42;
-        row.ActiveMinutes = 7;
+        row.ActiveSeconds = 420;
 
         var detail = CalendarSummaryBuilder
             .BuildDayDetails([row], Devices(Device("KB", "My Keyboard", DeviceTypes.Keyboard)))
@@ -63,8 +63,20 @@ public class CalendarSummaryBuilderTests
         detail.SessionCount.ShouldBe(2);
         detail.ConnectionSeconds.ShouldBe(600);
         detail.Keystrokes.ShouldBe(42);
-        detail.ActiveSeconds.ShouldBe(420); // 7 persisted active minutes rendered as seconds
+        detail.ActiveSeconds.ShouldBe(420); // within connected time, passed through
         detail.HourlyInputBars.Count.ShouldBe(24);
+    }
+
+    [Fact]
+    public void BuildDayDetails_ClampsActiveTimeToConnectedTime()
+    {
+        var row = Stat("KB", Day);
+        row.ConnectionSeconds = 300;
+        row.ActiveSeconds = 500; // exceeds connected (quantization / edge skew)
+
+        var detail = CalendarSummaryBuilder.BuildDayDetails([row], NoDevices()).ShouldHaveSingleItem();
+
+        detail.ActiveSeconds.ShouldBe(300); // clamped to connected
     }
 
     [Fact]

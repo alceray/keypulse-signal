@@ -181,8 +181,10 @@ public class DailyStatsServiceTests : IDisposable
     {
         Seed(ctx =>
         {
-            ctx.ActivitySnapshots.Add(Snapshot("DEV1", At(9, 5), keys: 10, clicks: 3, moveSeconds: 20));
-            ctx.ActivitySnapshots.Add(Snapshot("DEV1", At(9, 6), keys: 5, clicks: 0, moveSeconds: 0));
+            ctx.ActivitySnapshots.Add(
+                Snapshot("DEV1", At(9, 5), keys: 10, clicks: 3, moveSeconds: 20, activeSeconds: 15)
+            );
+            ctx.ActivitySnapshots.Add(Snapshot("DEV1", At(9, 6), keys: 5, clicks: 0, moveSeconds: 0, activeSeconds: 4));
         });
 
         _sut.RecomputeDailyDeviceStatsForRange(Day, Day);
@@ -191,7 +193,7 @@ public class DailyStatsServiceTests : IDisposable
         stat.Keystrokes.ShouldBe(15);
         stat.MouseClicks.ShouldBe(3);
         stat.MouseMovementSeconds.ShouldBe(20);
-        stat.ActiveMinutes.ShouldBe(2);
+        stat.ActiveSeconds.ShouldBe(19); // 15 + 4, summed across minutes
         stat.HourlyInputCount[9].ShouldBe(38); // (10+3+20) + (5+0+0), bucketed by local hour
     }
 
@@ -204,7 +206,9 @@ public class DailyStatsServiceTests : IDisposable
         {
             ctx.DeviceEvents.Add(Event("DEV1", EventTypes.Connected, At(9, 0)));
             ctx.DeviceEvents.Add(Event("DEV1", EventTypes.Disconnected, At(10, 0)));
-            ctx.ActivitySnapshots.Add(Snapshot("DEV1", At(9, 5), keys: 7, clicks: 2, moveSeconds: 11));
+            ctx.ActivitySnapshots.Add(
+                Snapshot("DEV1", At(9, 5), keys: 7, clicks: 2, moveSeconds: 11, activeSeconds: 9)
+            );
         });
 
         _sut.RecomputeDailyDeviceStatsForRange(Day, Day);
@@ -218,7 +222,7 @@ public class DailyStatsServiceTests : IDisposable
         second.ConnectionSeconds.ShouldBe(first.ConnectionSeconds);
         second.SessionCount.ShouldBe(first.SessionCount);
         second.Keystrokes.ShouldBe(first.Keystrokes);
-        second.ActiveMinutes.ShouldBe(first.ActiveMinutes);
+        second.ActiveSeconds.ShouldBe(first.ActiveSeconds);
     }
 
     // ── Write-through (DataService calls ApplyDeviceEvent after an insert) ───────
@@ -446,7 +450,7 @@ public class DailyStatsServiceTests : IDisposable
                     Day = openDay,
                     DeviceId = "D1",
                     Keystrokes = 500,
-                    ActiveMinutes = 30,
+                    ActiveSeconds = 1800,
                 }
             );
             // A session crossing midnight: the old logic left the opening day at 0 connected seconds.
@@ -464,7 +468,7 @@ public class DailyStatsServiceTests : IDisposable
         stat.ConnectionSeconds.ShouldBe(50400); // 10:00 → midnight now credited (was 0)
         stat.SessionCount.ShouldBe(1);
         stat.Keystrokes.ShouldBe(500); // pruned-day activity preserved, not recomputed to 0
-        stat.ActiveMinutes.ShouldBe(30);
+        stat.ActiveSeconds.ShouldBe(1800);
     }
 
     // ── Seeding helpers ─────────────────────────────────────────────────────────
@@ -497,7 +501,8 @@ public class DailyStatsServiceTests : IDisposable
         DateTime localMinute,
         int keys,
         int clicks,
-        byte moveSeconds
+        byte moveSeconds,
+        byte activeSeconds = 0
     ) =>
         new()
         {
@@ -506,6 +511,7 @@ public class DailyStatsServiceTests : IDisposable
             Keystrokes = keys,
             MouseClicks = clicks,
             MouseMovementSeconds = moveSeconds,
+            ActiveSeconds = activeSeconds,
         };
 
     private static Device Device(string deviceId, string name, DeviceTypes type, bool hidden) =>

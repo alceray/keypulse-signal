@@ -390,6 +390,9 @@ public class DataService
                         existing.MouseMovementSeconds,
                         snapshot.MouseMovementSeconds
                     );
+                    // Active seconds is a derived activity measure, not an input count, so it is not
+                    // folded into TotalInputCount below.
+                    existing.ActiveSeconds = Math.Max(existing.ActiveSeconds, snapshot.ActiveSeconds);
 
                     var movementDelta = existing.MouseMovementSeconds - previousMovementSeconds;
                     var keyDelta = snapshot.Keystrokes + snapshot.MouseClicks;

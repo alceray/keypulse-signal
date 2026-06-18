@@ -53,16 +53,16 @@ public class DatabaseMigrationsTests : IDisposable
         using var ctx = _db.CreateContext();
         MarkUtcMigrationDone(ctx);
 
-        // Same minute after truncation -> merged: Keystrokes/MouseClicks summed, MouseMovementSeconds maxed.
+        // Same minute after truncation -> merged: Keystrokes/MouseClicks summed, movement/active seconds maxed.
         ExecSql(
             ctx,
-            "INSERT INTO ActivitySnapshots (DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds) "
-                + "VALUES ('D1','2026-05-20 09:00:00.100', 3, 1, 10);"
+            "INSERT INTO ActivitySnapshots (DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds, ActiveSeconds) "
+                + "VALUES ('D1','2026-05-20 09:00:00.100', 3, 1, 10, 5);"
         );
         ExecSql(
             ctx,
-            "INSERT INTO ActivitySnapshots (DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds) "
-                + "VALUES ('D1','2026-05-20 09:00:00.900', 4, 2, 20);"
+            "INSERT INTO ActivitySnapshots (DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds, ActiveSeconds) "
+                + "VALUES ('D1','2026-05-20 09:00:00.900', 4, 2, 20, 15);"
         );
 
         DatabaseMigrations.RunAll(ctx);
@@ -71,6 +71,7 @@ public class DatabaseMigrationsTests : IDisposable
         Scalar(ctx, "SELECT Keystrokes FROM ActivitySnapshots;").ShouldBe(7L); // 3 + 4
         Scalar(ctx, "SELECT MouseClicks FROM ActivitySnapshots;").ShouldBe(3L); // 1 + 2
         Scalar(ctx, "SELECT MouseMovementSeconds FROM ActivitySnapshots;").ShouldBe(20L); // max(10, 20)
+        Scalar(ctx, "SELECT ActiveSeconds FROM ActivitySnapshots;").ShouldBe(15L); // max(5, 15)
     }
 
     [Fact]

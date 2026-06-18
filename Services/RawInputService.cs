@@ -182,6 +182,9 @@ public class RawInputService : IDisposable
         /// Count / 60.0 gives the active fraction.
         /// </summary>
         public HashSet<int> ActiveMovementSeconds { get; } = new();
+
+        /// <summary>Seconds-of-minute (0–59) that saw any input. Count is the minute's active-time seconds.</summary>
+        public HashSet<int> ActiveInputSeconds { get; } = new();
     }
 
     #endregion
@@ -327,7 +330,9 @@ public class RawInputService : IDisposable
             if (deviceId == null)
                 return;
 
-            var minute = DateTime.Now.TruncateToMinute();
+            var now = DateTime.Now;
+            var minute = now.TruncateToMinute();
+            var second = now.Second; // 0–59, for the active-time second buckets
 
             if (header.dwType == RIM_TYPEKEYBOARD)
             {
@@ -344,7 +349,9 @@ public class RawInputService : IDisposable
                         // Count only the first key-down while held; ignore auto-repeat key-downs.
                         if (pressedKeys.Add(kb.VKey))
                         {
-                            GetOrCreateBucket(deviceId, minute).Keystrokes++;
+                            var bucket = GetOrCreateBucket(deviceId, minute);
+                            bucket.Keystrokes++;
+                            bucket.ActiveInputSeconds.Add(second);
                             keystrokeDelta = 1;
                         }
                     }
@@ -372,10 +379,11 @@ public class RawInputService : IDisposable
                 {
                     // Pure movement — record which second-of-minute this occurred in.
                     // HashSet.Add is a no-op if this second was already recorded.
-                    var second = DateTime.Now.Second; // 0–59
                     lock (_lock)
                     {
-                        if (GetOrCreateBucket(deviceId, minute).ActiveMovementSeconds.Add(second))
+                        var bucket = GetOrCreateBucket(deviceId, minute);
+                        bucket.ActiveInputSeconds.Add(second);
+                        if (bucket.ActiveMovementSeconds.Add(second))
                         {
                             movementDelta += 1;
                         }
@@ -385,7 +393,9 @@ public class RawInputService : IDisposable
                 if ((mouse.usButtonFlags & MOUSE_BUTTON_DOWN_MASK) != 0)
                     lock (_lock)
                     {
-                        GetOrCreateBucket(deviceId, minute).MouseClicks++;
+                        var bucket = GetOrCreateBucket(deviceId, minute);
+                        bucket.MouseClicks++;
+                        bucket.ActiveInputSeconds.Add(second);
                         var pressedButtons = GetOrCreatePressedMouseButtons(deviceId);
                         AddPressedMouseButtons(pressedButtons, mouse.usButtonFlags);
                         nextActivityState = ComputeHoldState(deviceId);
@@ -642,6 +652,7 @@ public class RawInputService : IDisposable
                     Keystrokes = kvp.Value.Keystrokes,
                     MouseClicks = kvp.Value.MouseClicks,
                     MouseMovementSeconds = (byte)kvp.Value.ActiveMovementSeconds.Count,
+                    ActiveSeconds = (byte)kvp.Value.ActiveInputSeconds.Count,
                 })
                 .ToList();
 

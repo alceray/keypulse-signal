@@ -285,7 +285,7 @@
                             <TextBlock
                               DockPanel.Dock="Right"
                               Style="{StaticResource DetailValueStyle}"
-                              Text="{Binding ActiveSeconds, Converter={StaticResource DurationSecondsConverter}}"
+                              Text="{Binding ActiveTimeText}"
                             />
                           </DockPanel>
                           <ProgressBar

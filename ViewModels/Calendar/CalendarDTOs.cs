@@ -1,4 +1,5 @@
-﻿using KeyPulse.Models;
+﻿using KeyPulse.Helpers;
+using KeyPulse.Models;
 
 namespace KeyPulse.ViewModels.Calendar;
 
@@ -50,9 +51,23 @@ public sealed class CalendarDeviceDetail
     public long Keystrokes { get; init; }
     public long MouseClicks { get; init; }
 
-    // Seconds the device saw input today. Persisted history is minute-granular (ActiveMinutes * 60);
-    // today's row is overlaid with a live second-accurate total while the app runs.
+    // Seconds the device saw input. Built from per-minute active-second counts; today's row is overlaid
+    // with a live total while the app runs.
     public long ActiveSeconds { get; init; }
+
+    /// <summary>Active time with its share of connected time, e.g. "55m 47s · 34%". The share is &lt;= 100%.</summary>
+    public string ActiveTimeText
+    {
+        get
+        {
+            var duration = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(ActiveSeconds));
+            if (ConnectionSeconds <= 0)
+                return duration;
+
+            var share = (int)Math.Round(100.0 * ActiveSeconds / ConnectionSeconds);
+            return $"{duration} · {share}%";
+        }
+    }
     public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars { get; init; } =
         CalendarHourlyInputBarBuilder.Build(new long[24]);
 }

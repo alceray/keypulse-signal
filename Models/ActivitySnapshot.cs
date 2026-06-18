@@ -38,4 +38,10 @@ public class ActivitySnapshot
     /// Divide by 60.0 to get the fraction of the minute the mouse was active.
     /// </summary>
     public byte MouseMovementSeconds { get; set; }
+
+    /// <summary>
+    /// Number of seconds within this minute (0–60) that saw any input (keystroke, click, or movement).
+    /// Summed across the day, this is the device's active time. Zero on rows written before it was tracked.
+    /// </summary>
+    public byte ActiveSeconds { get; set; }
 }

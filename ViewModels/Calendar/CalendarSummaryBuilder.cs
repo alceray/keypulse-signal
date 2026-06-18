@@ -51,7 +51,8 @@ public static class CalendarSummaryBuilder
                     ConnectionSeconds = row.ConnectionSeconds,
                     Keystrokes = row.Keystrokes,
                     MouseClicks = row.MouseClicks,
-                    ActiveSeconds = row.ActiveMinutes * 60L,
+                    // Clamped so active time never exceeds connected time.
+                    ActiveSeconds = Math.Min(row.ActiveSeconds, row.ConnectionSeconds),
                     HourlyInputBars = CalendarHourlyInputBarBuilder.Build(row.HourlyInputCount),
                 };
             })

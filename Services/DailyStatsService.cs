@@ -591,13 +591,11 @@ public class DailyStatsService : IDisposable
         stat.Keystrokes += snapshot.Keystrokes;
         stat.MouseClicks += snapshot.MouseClicks;
         stat.MouseMovementSeconds += snapshot.MouseMovementSeconds;
+        stat.ActiveSeconds += snapshot.ActiveSeconds;
 
         var totalThisMinute = snapshot.Keystrokes + snapshot.MouseClicks + snapshot.MouseMovementSeconds;
         if (totalThisMinute > 0)
-        {
-            stat.ActiveMinutes++;
             stat.HourlyInputCount[hour] += totalThisMinute;
-        }
 
         stat.UpdatedAt = projectedAt;
 

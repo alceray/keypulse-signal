@@ -61,6 +61,7 @@ public class EndToEndScenarioTests : IDisposable
                     DeviceId = "D1",
                     Minute = At(9, 5),
                     Keystrokes = 42,
+                    ActiveSeconds = 30,
                 },
             ]
         );
@@ -82,7 +83,7 @@ public class EndToEndScenarioTests : IDisposable
         stat.SessionCount.ShouldBe(1);
         stat.ConnectionSeconds.ShouldBe(3600); // 09:00 → 10:00
         stat.Keystrokes.ShouldBe(42);
-        stat.ActiveMinutes.ShouldBe(1);
+        stat.ActiveSeconds.ShouldBe(30);
 
         // Calendar detail reflects the same: visible-stats query + presentation mapping.
         var visibleRows = _dailyStats.GetVisibleDailyDeviceStats(day, day);

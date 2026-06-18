@@ -65,7 +65,8 @@ internal static class DatabaseMigrations
                         datetime(Minute, 'utc') AS Minute,
                         SUM(Keystrokes) AS Keystrokes,
                         SUM(MouseClicks) AS MouseClicks,
-                        MAX(MouseMovementSeconds) AS MouseMovementSeconds
+                        MAX(MouseMovementSeconds) AS MouseMovementSeconds,
+                        MAX(ActiveSeconds) AS ActiveSeconds
                     FROM ActivitySnapshots
                     WHERE Minute IS NOT NULL
                     GROUP BY DeviceId, datetime(Minute, 'utc');
@@ -77,14 +78,15 @@ internal static class DatabaseMigrations
                     transaction,
                     """
                     INSERT INTO ActivitySnapshots
-                        (ActivitySnapshotId, DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds)
+                        (ActivitySnapshotId, DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds, ActiveSeconds)
                     SELECT
                         ActivitySnapshotId,
                         DeviceId,
                         Minute,
                         Keystrokes,
                         MouseClicks,
-                        MouseMovementSeconds
+                        MouseMovementSeconds,
+                        ActiveSeconds
                     FROM TempActivitySnapshotsUtc;
                     """
                 );
@@ -157,7 +159,8 @@ internal static class DatabaseMigrations
                         strftime('%Y-%m-%d %H:%M:%S', Minute) AS Minute,
                         SUM(Keystrokes) AS Keystrokes,
                         SUM(MouseClicks) AS MouseClicks,
-                        MAX(MouseMovementSeconds) AS MouseMovementSeconds
+                        MAX(MouseMovementSeconds) AS MouseMovementSeconds,
+                        MAX(ActiveSeconds) AS ActiveSeconds
                     FROM ActivitySnapshots
                     GROUP BY DeviceId, strftime('%Y-%m-%d %H:%M:%S', Minute);
                     """
@@ -168,14 +171,15 @@ internal static class DatabaseMigrations
                     transaction,
                     """
                     INSERT INTO ActivitySnapshots
-                        (ActivitySnapshotId, DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds)
+                        (ActivitySnapshotId, DeviceId, Minute, Keystrokes, MouseClicks, MouseMovementSeconds, ActiveSeconds)
                     SELECT
                         ActivitySnapshotId,
                         DeviceId,
                         Minute,
                         Keystrokes,
                         MouseClicks,
-                        MouseMovementSeconds
+                        MouseMovementSeconds,
+                        ActiveSeconds
                     FROM TempActivitySnapshotsSecond;
                     """
                 );

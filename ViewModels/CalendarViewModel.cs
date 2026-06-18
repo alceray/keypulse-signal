@@ -654,6 +654,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                 // Persisted floor guards against a freshly reset accumulator after a restart or rollover.
                 activeSeconds = Math.Max(persistedActiveSeconds, _activeSeconds.GetActiveSeconds(id));
             }
+            // Active time can never exceed connected time.
+            activeSeconds = Math.Min(activeSeconds, baseConnection + connectionOverlay);
 
             // Same reference kept so WPF ItemsControl doesn't recreate bar elements (tooltip-stable).
             if (!_hourlyBarsCache.TryGetValue(id, out var stableBars))
