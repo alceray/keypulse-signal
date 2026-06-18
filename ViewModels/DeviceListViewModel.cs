@@ -74,15 +74,19 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         DeviceListCollection = CollectionViewSource.GetDefaultView(_usbMonitorService.DeviceList);
         DeviceListCollection.Filter = device => ShowAllDevices || ((Device)device).IsConnected;
 
-        // Sort by status (Connected, Hidden, Disconnected) then Device ID. Guarded because the default
-        // view is shared with the singleton DeviceList and persists across view-model recreations.
+        // Sort by status (Connected, Hidden, Disconnected), then type (keyboards before mice), then name.
+        // Guarded because the default view is shared with the singleton DeviceList and persists across
+        // view-model recreations.
         if (DeviceListCollection.SortDescriptions.Count == 0)
         {
             DeviceListCollection.SortDescriptions.Add(
                 new SortDescription(nameof(Device.StatusSortOrder), ListSortDirection.Ascending)
             );
             DeviceListCollection.SortDescriptions.Add(
-                new SortDescription(nameof(Device.DeviceId), ListSortDirection.Ascending)
+                new SortDescription(nameof(Device.TypeSortOrder), ListSortDirection.Ascending)
+            );
+            DeviceListCollection.SortDescriptions.Add(
+                new SortDescription(nameof(Device.DeviceName), ListSortDirection.Ascending)
             );
         }
 

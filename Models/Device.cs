@@ -90,6 +90,13 @@ public class Device : ObservableObject
         : IsHiddenFromDisplay ? 1
         : 0;
 
+    /// <summary>Sort key for device type: keyboards (0) before mice (1) before anything else (2).</summary>
+    [NotMapped]
+    public int TypeSortOrder =>
+        DeviceType == DeviceTypes.Keyboard ? 0
+        : DeviceType == DeviceTypes.Mouse ? 1
+        : 2;
+
     /// <summary>
     /// Cumulative connection-time snapshot rebuilt from connection event boundaries, stored in seconds.
     /// While active, the getter adds elapsed time since SessionStartedAt for a live display value.

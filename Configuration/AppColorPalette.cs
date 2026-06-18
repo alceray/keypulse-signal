@@ -17,21 +17,18 @@ public static class AppColorPalette
     public static Brush PrimaryTextBrush { get; } = Brushes.Black;
     public static Brush SecondaryTextBrush { get; } = Brushes.DimGray;
 
-    // Neutral greys: fill, border/divider, and a stronger popup edge.
+    // Neutral greys: fill, row hover, border/divider, and a stronger popup edge.
     public static Brush SurfaceBrush { get; } = Brushes.WhiteSmoke;
+    public static Brush HoverBrush { get; } = Brushes.Gainsboro;
     public static Brush BorderBrush { get; } = Brushes.Gainsboro;
-    public static Brush PopupBorderBrush { get; } = Brushes.DarkGray;
 
     // Translucent dark toast.
     public static Brush ToastBackgroundBrush { get; } = MakeFrozen(0xCC, 0x1B, 0x1B, 0x1B);
 
     // Accents and activity metrics.
     public static Brush ConnectedBrush { get; } = Brushes.RoyalBlue;
-    public static Brush ConnectedBackgroundBrush { get; } = Brushes.AliceBlue;
     public static Brush DisconnectedBrush { get; } = Brushes.Firebrick;
-    public static Brush DisconnectedBackgroundBrush { get; } = Brushes.MistyRose;
-    public static Brush HiddenBrush { get; } = Brushes.DarkGoldenrod;
-    public static Brush HiddenBackgroundBrush { get; } = Brushes.LemonChiffon;
+    public static Brush HiddenBrush { get; } = Brushes.DimGray;
     public static Brush ActiveBrush { get; } = Brushes.MediumSeaGreen;
 
     // Calendar day tiles: data fill, selected-day fill.

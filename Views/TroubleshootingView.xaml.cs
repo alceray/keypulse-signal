@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -73,6 +74,7 @@ public partial class TroubleshootingView
     public TroubleshootingView()
     {
         InitializeComponent();
+        FilterPopup.CustomPopupPlacementCallback = PlaceFilterPopupRightAligned;
         DataContext = App.ServiceProvider.GetRequiredService<TroubleshootingViewModel>();
         DataContextChanged += (_, e) =>
         {
@@ -97,6 +99,16 @@ public partial class TroubleshootingView
         SyncViewModel(DataContext as TroubleshootingViewModel);
         UpdateHighlightedLogContent();
     }
+
+    // Opens the level-filter popup right-aligned under the funnel button so a wide list does not run off
+    // the edge. The width is dynamic, so this is computed at open time rather than via a fixed offset.
+    private static CustomPopupPlacement[] PlaceFilterPopupRightAligned(Size popupSize, Size targetSize, Point offset) =>
+        [
+            new CustomPopupPlacement(
+                new Point(targetSize.Width - popupSize.Width, targetSize.Height),
+                PopupPrimaryAxis.Horizontal
+            ),
+        ];
 
     private void SyncViewModel(TroubleshootingViewModel? next)
     {

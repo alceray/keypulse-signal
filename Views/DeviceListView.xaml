@@ -61,7 +61,7 @@
           <EventSetter Event="PreviewMouseRightButtonDown" Handler="DataGridRow_PreviewMouseRightButtonDown" />
           <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-              <Setter Property="Background" Value="{x:Static config:AppColorPalette.SurfaceBrush}" />
+              <Setter Property="Background" Value="{x:Static config:AppColorPalette.HoverBrush}" />
             </Trigger>
           </Style.Triggers>
         </Style>
@@ -88,11 +88,42 @@
         </Style>
       </DataGrid.Resources>
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Device ID" Binding="{Binding DeviceId}" MinWidth="175" Width="Auto" />
-        <DataGridTemplateColumn Header="Device Type" SortMemberPath="DeviceType" Width="80">
+        <!-- Device-type icon then status text in one cell. -->
+        <DataGridTemplateColumn
+          Header="Status"
+          SortMemberPath="StatusSortOrder"
+          SortDirection="Ascending"
+          MinWidth="120"
+          Width="Auto"
+        >
+          <DataGridTemplateColumn.CellStyle>
+            <Style TargetType="DataGridCell">
+              <Setter Property="BorderThickness" Value="0" />
+              <Setter Property="BorderBrush" Value="Transparent" />
+              <Setter Property="Background" Value="Transparent" />
+              <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.DisconnectedBrush}" />
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="DataGridCell">
+                    <Border Background="{TemplateBinding Background}" Padding="6,3,0,3">
+                      <ContentPresenter VerticalAlignment="Center" />
+                    </Border>
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+              <Style.Triggers>
+                <DataTrigger Binding="{Binding StatusText}" Value="Connected">
+                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.ConnectedBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding StatusText}" Value="Hidden">
+                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.HiddenBrush}" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </DataGridTemplateColumn.CellStyle>
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+              <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <iconPacks:PackIconPhosphorIcons
                   Kind="Keyboard"
                   Width="24"
@@ -107,6 +138,7 @@
                   Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Mouse}"
                   Foreground="{Binding IsActive, Converter={StaticResource ActivityColorConverter}}"
                 />
+                <TextBlock Text="{Binding StatusText}" VerticalAlignment="Center" Margin="4,0,0,0" />
               </StackPanel>
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
@@ -125,43 +157,6 @@
           Width="Auto"
         />
         <DataGridTextColumn Header="Total Inputs" Binding="{Binding TotalInputCount}" Width="Auto" />
-        <DataGridTextColumn
-          Header="Status"
-          Binding="{Binding StatusText}"
-          SortMemberPath="StatusSortOrder"
-          SortDirection="Ascending"
-          MinWidth="100"
-          Width="Auto"
-        >
-          <DataGridTextColumn.CellStyle>
-            <Style TargetType="DataGridCell">
-              <Setter Property="BorderThickness" Value="0" />
-              <Setter Property="BorderBrush" Value="Transparent" />
-              <!-- Whole-cell color by status; default is disconnected (red). -->
-              <Setter Property="Background" Value="{x:Static config:AppColorPalette.DisconnectedBackgroundBrush}" />
-              <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.DisconnectedBrush}" />
-              <Setter Property="Template">
-                <Setter.Value>
-                  <ControlTemplate TargetType="DataGridCell">
-                    <Border Background="{TemplateBinding Background}">
-                      <ContentPresenter VerticalAlignment="Center" />
-                    </Border>
-                  </ControlTemplate>
-                </Setter.Value>
-              </Setter>
-              <Style.Triggers>
-                <DataTrigger Binding="{Binding StatusText}" Value="Connected">
-                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.ConnectedBackgroundBrush}" />
-                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.ConnectedBrush}" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding StatusText}" Value="Hidden">
-                  <Setter Property="Background" Value="{x:Static config:AppColorPalette.HiddenBackgroundBrush}" />
-                  <Setter Property="Foreground" Value="{x:Static config:AppColorPalette.HiddenBrush}" />
-                </DataTrigger>
-              </Style.Triggers>
-            </Style>
-          </DataGridTextColumn.CellStyle>
-        </DataGridTextColumn>
       </DataGrid.Columns>
       <DataGrid.ContextMenu>
         <ContextMenu DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">

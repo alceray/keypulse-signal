@@ -62,14 +62,16 @@
               <iconPacks:PackIconPhosphorIcons Kind="Funnel" Width="15" Height="15" />
             </ToggleButton>
             <Popup
+              x:Name="FilterPopup"
+              AllowsTransparency="True"
               IsOpen="{Binding IsChecked, ElementName=FilterToggle, Mode=TwoWay}"
               StaysOpen="False"
               PlacementTarget="{Binding ElementName=FilterToggle}"
-              Placement="Bottom"
+              Placement="Custom"
             >
               <Border
                 Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
-                BorderBrush="{x:Static config:AppColorPalette.PopupBorderBrush}"
+                BorderBrush="{x:Static config:AppColorPalette.BorderBrush}"
                 BorderThickness="1"
                 Padding="4"
               >
