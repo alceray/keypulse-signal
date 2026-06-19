@@ -221,6 +221,23 @@ public class TimeFormatterTests
     public void FormatDuration_FormatsTopThreeUnits(long totalSeconds, string expected) =>
         TimeFormatter.FormatDuration(TimeSpan.FromSeconds(totalSeconds)).ShouldBe(expected);
 
+    [Theory]
+    [InlineData(0, "0m")]
+    [InlineData(-5, "0m")]
+    [InlineData(47, "0m")] // sub-minute floors to 0m, not 0s
+    [InlineData(90, "1m")] // 1m 30s drops the seconds
+    [InlineData(3600, "1h")]
+    [InlineData(3661, "1h 1m")] // 1h 1m 1s drops the seconds
+    [InlineData(86400 * 2 + 3600 * 3 + 60 * 4 + 5, "2d 3h 4m")]
+    public void FormatDuration_WithoutSeconds_FloorsToMinute(long totalSeconds, string expected) =>
+        TimeFormatter.FormatDuration(TimeSpan.FromSeconds(totalSeconds), includeSeconds: false).ShouldBe(expected);
+
+    [Theory]
+    [InlineData(86400 * 2 + 3600 * 3 + 60 * 4 + 5, "2d 3h 4m 5s")] // not capped at 3 units
+    [InlineData(403L * 86400, "1y 1mo 1w 1d")] // keeps the trailing day the top-3 form drops
+    public void FormatDuration_WithoutUnitCap_ShowsEveryUnit(long totalSeconds, string expected) =>
+        TimeFormatter.FormatDuration(TimeSpan.FromSeconds(totalSeconds), maxUnits: int.MaxValue).ShouldBe(expected);
+
     // ── FormatDateRange ─────────────────────────────────────────────────────────
 
     [Fact]

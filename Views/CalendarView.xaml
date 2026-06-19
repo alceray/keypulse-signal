@@ -13,7 +13,6 @@
   <UserControl.Resources>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
-    <local:DurationSecondsConverter x:Key="DurationSecondsConverter" />
     <local:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter" />
     <local:MinWidthToVisibilityConverter x:Key="MinWidthToVisibilityConverter" />
   </UserControl.Resources>
@@ -271,7 +270,7 @@
                             <TextBlock
                               DockPanel.Dock="Right"
                               Style="{StaticResource DetailValueStyle}"
-                              Text="{Binding ConnectionSeconds, Converter={StaticResource DurationSecondsConverter}}"
+                              Text="{Binding ConnectedTimeText}"
                             />
                           </DockPanel>
                           <ProgressBar

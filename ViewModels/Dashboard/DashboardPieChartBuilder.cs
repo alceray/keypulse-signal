@@ -143,7 +143,10 @@ internal static class DashboardPieChartBuilder
         {
             DeviceId = device.DeviceId,
             Fill = color,
-            ConnectedTime = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(connectionMinutes)),
+            ConnectedTime = TimeFormatter.FormatDuration(
+                TimeSpan.FromMinutes(connectionMinutes),
+                includeSeconds: false
+            ),
             IsConnected = device.IsConnected,
             LastSeenOrConnectedLabel = device.IsConnected ? "Last connected" : "Last seen",
             LastSeenOrConnectedValue = device.IsConnected ? device.LastConnectedRelative : device.LastSeenRelative,
@@ -159,7 +162,7 @@ internal static class DashboardPieChartBuilder
         {
             DeviceId = "",
             Fill = DashboardDeviceColorPalette.OthersColor,
-            ConnectedTime = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(otherValue)),
+            ConnectedTime = TimeFormatter.FormatDuration(TimeSpan.FromMinutes(otherValue), includeSeconds: false),
             Percentage = total > 0 ? $"{otherValue / total:P1}" : "N/A",
             GroupedDevices = groupedDevices,
             IsOthers = true,

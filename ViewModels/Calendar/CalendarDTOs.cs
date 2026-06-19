@@ -55,12 +55,20 @@ public sealed class CalendarDeviceDetail
     // with a live total while the app runs.
     public long ActiveSeconds { get; init; }
 
+    /// <summary>True for the current local day, whose connected/active totals still tick. Settled past
+    /// days drop their seconds so a frozen value isn't shown at misleading precision.</summary>
+    public bool IsToday { get; init; }
+
+    /// <summary>Connected time, e.g. "2h 44m 4s" today or "2h 44m" on a settled past day.</summary>
+    public string ConnectedTimeText =>
+        TimeFormatter.FormatDuration(TimeSpan.FromSeconds(ConnectionSeconds), includeSeconds: IsToday);
+
     /// <summary>Active time with its share of connected time, e.g. "55m 47s · 34%". The share is &lt;= 100%.</summary>
     public string ActiveTimeText
     {
         get
         {
-            var duration = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(ActiveSeconds));
+            var duration = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(ActiveSeconds), includeSeconds: IsToday);
             if (ConnectionSeconds <= 0)
                 return duration;
 

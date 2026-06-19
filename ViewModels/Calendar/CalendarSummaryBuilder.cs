@@ -34,7 +34,8 @@ public static class CalendarSummaryBuilder
     /// <summary>Per-device detail rows for a single day, sorted by connection seconds descending.</summary>
     public static IReadOnlyList<CalendarDeviceDetail> BuildDayDetails(
         IReadOnlyList<DailyDeviceStat> dayRows,
-        IReadOnlyDictionary<string, Device> devicesById
+        IReadOnlyDictionary<string, Device> devicesById,
+        bool isToday = false
     )
     {
         return dayRows
@@ -47,6 +48,7 @@ public static class CalendarSummaryBuilder
                     DeviceName = device?.DeviceName ?? row.DeviceId,
                     DeviceType = device?.DeviceType ?? DeviceTypes.Unknown,
                     IsConnected = false,
+                    IsToday = isToday,
                     SessionCount = row.SessionCount,
                     ConnectionSeconds = row.ConnectionSeconds,
                     Keystrokes = row.Keystrokes,

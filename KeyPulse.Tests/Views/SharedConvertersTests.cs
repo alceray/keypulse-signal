@@ -30,6 +30,7 @@ public class SharedConvertersTests
     {
         var c = new DurationSecondsConverter();
         c.Convert(90L, typeof(string), null, Inv).ShouldBe("1m 30s");
+        c.Convert(86400L * 2 + 3600 * 3 + 60 * 4 + 5, typeof(string), null, Inv).ShouldBe("2d 3h 4m 5s"); // full, not capped at 3 units
         c.Convert(0L, typeof(string), null, Inv).ShouldBe("0s");
         c.Convert(-5L, typeof(string), null, Inv).ShouldBe("0s");
         c.Convert(5, typeof(string), null, Inv).ShouldBe(""); // int, not long => empty

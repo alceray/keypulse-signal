@@ -325,11 +325,12 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             return;
 
         var day = _selectedDay.Day;
+        var isToday = day == DateOnly.FromDateTime(DateTime.Now);
         IReadOnlyList<CalendarDeviceDetail> details;
         try
         {
             var statRows = await Task.Run(() => _dailyStatsService.GetVisibleDailyDeviceStats(day, day));
-            details = CalendarSummaryBuilder.BuildDayDetails(statRows, GetDevicesById());
+            details = CalendarSummaryBuilder.BuildDayDetails(statRows, GetDevicesById(), isToday);
         }
         catch (Exception ex)
         {
@@ -669,6 +670,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
                     DeviceName = persisted?.DeviceName ?? device?.DeviceName ?? id,
                     DeviceType = persisted?.DeviceType ?? device?.DeviceType ?? DeviceTypes.Unknown,
                     IsConnected = device?.IsConnected == true,
+                    // This overlay only runs for today's selected row, whose totals tick live.
+                    IsToday = true,
                     SessionCount = sessionCount,
                     ConnectionSeconds = baseConnection + connectionOverlay,
                     Keystrokes = (persisted?.Keystrokes ?? 0) + liveDelta.KeystrokeDelta,

@@ -99,13 +99,15 @@ public static class TimeFormatter
     }
 
     /// <summary>
-    /// Converts a TimeSpan to a compact string showing the top 3 most significant units.
-    /// Supported units: y, mo, w, d, h, m, s.
+    /// Converts a TimeSpan to a compact string showing the top <paramref name="maxUnits"/> most
+    /// significant units (3 by default). Supported units: y, mo, w, d, h, m, s. Pass
+    /// <paramref name="includeSeconds"/> false to floor to the minute, used for settled values that no
+    /// longer tick; pass a larger <paramref name="maxUnits"/> to show the full breakdown.
     /// </summary>
-    public static string FormatDuration(TimeSpan timeSpan)
+    public static string FormatDuration(TimeSpan timeSpan, bool includeSeconds = true, int maxUnits = 3)
     {
         if (timeSpan <= TimeSpan.Zero)
-            return "0s";
+            return includeSeconds ? "0s" : "0m";
 
         var t = (long)timeSpan.TotalSeconds;
         var years = t / (365 * 24 * 3600);
@@ -134,10 +136,14 @@ public static class TimeFormatter
             parts.Add($"{hours}h");
         if (minutes > 0)
             parts.Add($"{minutes}m");
-        if (seconds > 0)
+        if (includeSeconds && seconds > 0)
             parts.Add($"{seconds}s");
 
-        return string.Join(" ", parts.Take(3));
+        // A sub-minute span has nothing left once seconds are dropped; floor it to "0m".
+        if (parts.Count == 0)
+            return includeSeconds ? "0s" : "0m";
+
+        return string.Join(" ", parts.Take(maxUnits));
     }
 
     /// <summary>

@@ -46,7 +46,8 @@ public sealed class DurationSecondsConverter : IValueConverter
         if (value is not long seconds)
             return string.Empty;
 
-        return TimeFormatter.FormatDuration(TimeSpan.FromSeconds(seconds));
+        // Device list connected time shows every unit down to seconds, not just the top three.
+        return TimeFormatter.FormatDuration(TimeSpan.FromSeconds(seconds), maxUnits: int.MaxValue);
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
