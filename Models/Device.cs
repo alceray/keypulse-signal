@@ -37,6 +37,7 @@ public class Device : ObservableObject
     private bool _isActive;
     private bool _isHiddenFromDisplay;
     private long _totalInputCount;
+    private int _daysConnected;
 
     /// <summary>
     /// Unique identifier for the device in format: USB\VID_xxxx&PID_xxxx
@@ -208,6 +209,23 @@ public class Device : ObservableObject
                 return;
 
             _totalInputCount = value;
+            OnPropertyChanged();
+        }
+    }
+
+    /// <summary>
+    /// Number of distinct local days this device was connected (had any connection time).
+    /// Persisted snapshot recomputed from DailyDeviceStats, which is never pruned by retention.
+    /// </summary>
+    public int DaysConnected
+    {
+        get => _daysConnected;
+        set
+        {
+            if (_daysConnected == value)
+                return;
+
+            _daysConnected = value;
             OnPropertyChanged();
         }
     }

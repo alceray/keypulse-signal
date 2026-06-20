@@ -489,6 +489,15 @@ public class DataService
     }
 
     /// <summary>
+    /// Counts the distinct local days this device was connected. DailyDeviceStats holds one row per
+    /// (day, device) and is never pruned, so the count stays exact across the device's whole history.
+    /// </summary>
+    private static int ComputeDaysConnected(ApplicationDbContext ctx, string deviceId)
+    {
+        return ctx.DailyDeviceStats.Count(d => d.DeviceId == deviceId && d.ConnectionSeconds > 0);
+    }
+
+    /// <summary>
     /// Checks if the previous session ended cleanly (AppEnded was written).
     /// If not (e.g., process was killed in the IDE or crashed), retroactively writes
     /// the missing AppEnded and ConnectionEnded events so the log stays consistent.
@@ -593,6 +602,7 @@ public class DataService
             {
                 device.TotalConnectionSeconds = ComputeConnectionSeconds(ctx, device.DeviceId);
                 device.TotalInputCount = ComputeTotalInputCount(ctx, device.DeviceId);
+                device.DaysConnected = ComputeDaysConnected(ctx, device.DeviceId);
                 device.SessionStartedAt = null;
                 device.LastSeenAt ??= GetLastDeviceEvent(device.DeviceId)?.EventTime;
             }

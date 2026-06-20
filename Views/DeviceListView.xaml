@@ -151,11 +151,12 @@
           Width="Auto"
         />
         <DataGridTextColumn
-          Header="Total Connected Time"
+          Header="Total Time Connected"
           Binding="{Binding TotalConnectionSeconds, Converter={StaticResource DurationSecondsConverter}}"
           MinWidth="80"
           Width="Auto"
         />
+        <DataGridTextColumn Header="Days Connected" Binding="{Binding DaysConnected}" Width="Auto" />
         <DataGridTextColumn Header="Total Inputs" Binding="{Binding TotalInputCount}" Width="Auto" />
       </DataGrid.Columns>
       <DataGrid.ContextMenu>

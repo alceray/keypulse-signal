@@ -102,7 +102,7 @@ Injection
     - database migrations run,
     - SQLite WAL mode is enabled,
     - `DataService.RecoverFromCrash()` backfills missing close events if needed,
-    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalConnectionSeconds` and `TotalInputCount` and clears stale `SessionStartedAt`,
+    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalConnectionSeconds`, `TotalInputCount`, and `DaysConnected` and clears stale `SessionStartedAt`,
     - historical `Devices` / `DeviceEvents` are loaded,
     - the heartbeat timer starts.
 6. `DailyStatsService.RunStartupRebuild()` and `DataRetentionService.RunStartupPrune()` run chained on one background
@@ -294,6 +294,7 @@ dotnet ef database update SomeOlderMigrationName
 
 - Recomputes persisted `TotalConnectionSeconds` from the event log (DeviceEvents are never pruned, so the event-pairing replay stays exact)
 - Recomputes persisted `TotalInputCount` from `DailyDeviceStats` sums plus any snapshots without a projection checkpoint — exact in every DB state (pre-backfill, steady-state, and after retention pruned old snapshots)
+- Recomputes persisted `DaysConnected` as the count of `DailyDeviceStats` rows with connection time (one row per local day, never pruned)
 - Clears runtime-only `SessionStartedAt` so devices do not appear connected after an unclean shutdown
 - Called at startup after recovery
 

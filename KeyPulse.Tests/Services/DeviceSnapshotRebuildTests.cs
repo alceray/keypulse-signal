@@ -103,6 +103,22 @@ public class DeviceSnapshotRebuildTests : IDisposable
         GetDevice("D1").TotalInputCount.ShouldBe(39);
     }
 
+    [Fact]
+    public void Rebuild_CountsDistinctConnectedDays()
+    {
+        Seed(ctx =>
+        {
+            ctx.Devices.Add(Device("D1"));
+            ctx.DailyDeviceStats.Add(Stat("D1", new DateOnly(2026, 5, 20), connectionSeconds: 100));
+            ctx.DailyDeviceStats.Add(Stat("D1", new DateOnly(2026, 5, 21), connectionSeconds: 50));
+            ctx.DailyDeviceStats.Add(Stat("D1", new DateOnly(2026, 5, 22), connectionSeconds: 0)); // never connected => excluded
+        });
+
+        _sut.RebuildDeviceSnapshots();
+
+        GetDevice("D1").DaysConnected.ShouldBe(2);
+    }
+
     // ── helpers ─────────────────────────────────────────────────────────────────
 
     private void Seed(Action<ApplicationDbContext> seed)
@@ -126,6 +142,15 @@ public class DeviceSnapshotRebuildTests : IDisposable
             DeviceId = deviceId,
             DeviceName = $"Device {deviceId}",
             DeviceType = DeviceTypes.Keyboard,
+        };
+
+    private static DailyDeviceStat Stat(string deviceId, DateOnly day, long connectionSeconds) =>
+        new()
+        {
+            DeviceId = deviceId,
+            Day = day,
+            ConnectionSeconds = connectionSeconds,
+            UpdatedAt = DateTime.UtcNow,
         };
 
     private static ActivitySnapshot Snapshot(
