@@ -2,6 +2,31 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.3.0] - 2026-06-19
+
+### Added
+
+- "Days Connected" column in the device list showing how many distinct days each device has been connected.
+- Pause and resume input tracking on demand from the dashboard or the tray menu.
+- "Close to tray" setting, with a one-time reminder the first time you close the window.
+- Data retention setting to control how long per-minute activity detail is kept before pruning.
+
+### Changed
+
+- Device list: merged connection status and device type into a single column, removed the internal device ID column, and re-sorted by status, then type, then name.
+- Active time is now measured to the second and shown as a share of connected time, ticking up live for the current day, replacing the previous per-minute "active minutes" metric.
+- Total connected time now shows its full breakdown down to seconds, while other settled times that no longer tick are truncated to the minute.
+- Calendar: restyled day tiles and metric bars, and standardized connection (blue) and activity (green) colors across the app.
+- Hidden devices are now managed from a restructured Settings page.
+- Long activity ranges and lifetime input totals are served from daily aggregates for faster reads.
+- Renamed the `--startup` launch argument to `--tray`.
+
+### Fixed
+
+- Connection spans are now counted correctly across day boundaries, fixing a zero-session count on multi-day connections.
+- Prevented unique-key collisions when distinct devices share an identifier.
+- Corrected first-launch detection.
+
 ## [1.2.1] - 2026-06-05
 
 ### Added
