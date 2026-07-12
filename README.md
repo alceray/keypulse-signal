@@ -13,55 +13,30 @@ KeyPulse Signal is a lightweight Windows desktop app built for keyboard and mous
 - **Daily summaries**: a calendar view showing which devices were active on any given day, with session counts, active time as a share of connected time, and an hour-by-hour activity breakdown that highlights your peak hour.
 - **Live device state**: a device list showing what's connected right now, with real-time input counters ticking up as you type, alongside per-device lifetime totals like time connected and days connected.
 
-![KeyPulse Signal calendar with a day selected, showing per-device connected time, active time, sessions, and hourly input activity](docs/images/calendar-day.png)
-
-## Why It's Useful for Collectors
-
-- Rotate through boards freely. KeyPulse logs every connection automatically, with no manual entries.
-- Compare daily drivers objectively: "Did I actually use the new build more than the old one this week?"
-- Spot usage patterns: see which layouts or switches you gravitate toward by day of week or time of day.
-- Keep a persistent history even across reboots, crashes, or hot-swaps.
-
 ## Features
 
-- Detects connected USB keyboards and mice at startup, then monitors USB plug/unplug events via WMI.
-- Tracks per-device connection duration with crash-recovery-safe lifecycle reconstruction.
-- Captures minute-level activity snapshots of `Keystrokes`, `MouseClicks`, and `MouseMovementSeconds`.
-- Dashboard with connection summaries, distribution charts, and activity timelines across any date range.
-- Calendar view showing per-day and per-device input/connection breakdowns.
-- Hide individual devices from the dashboard and calendar while still tracking them in the background.
-- Pause and resume input tracking on demand from the dashboard or tray.
-- Configurable data retention for per-minute activity detail.
-- Troubleshooting log viewer with severity coloring, search/filter, and auto-scroll.
-- Runs in the system tray for zero UI clutter while you work.
-- Single instance. Activating a second launch restores the existing window.
+- Automatically detects supported USB keyboards and mice as they come and go.
+- Counts keystrokes, mouse clicks, and active mouse-movement seconds per device.
+- Keeps connection history, sessions, daily totals, and lifetime stats in a local SQLite database.
+- Includes a dashboard, day-by-day calendar, and live device list.
+- Runs in the system tray, supports session-only tracking pause, and can hide devices from presentation views without stopping their tracking.
+- Keeps history across restarts and recovers unfinished sessions after an unexpected shutdown.
 
-## Requirements
+![KeyPulse Signal calendar with a day selected, showing per-device connection, activity, sessions, and hourly input](docs/images/calendar-day.png)
 
-### Users
+## Install and run
 
-- Windows 11 recommended, or Windows 10 version 1607 or later.
-- .NET 8 Desktop Runtime for framework-dependent builds.
-- One or more external USB keyboards or mice to track. Built-in laptop keyboards/trackpads are not supported.
+Download the latest installer from the [GitHub Releases page](https://github.com/alceray/keypulse-signal/releases). KeyPulse Signal runs on Windows 10 version 1607 or later. Windows 11 is recommended.
 
-### Developers
+Framework-dependent builds require the [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0). External USB keyboards and mice are supported. Built-in laptop keyboards and trackpads are not tracked.
 
-- Windows 10/11
+## Develop locally
+
+### Prerequisites
+
+- Windows 10 or 11
 - .NET 8 SDK
 - Visual Studio 2022 or JetBrains Rider with WPF support
-
-## Tech Stack
-
-- .NET `net8.0-windows`
-- WPF
-- Entity Framework Core 9
-- SQLite
-- Windows WMI via `System.Management`
-- Windows Raw Input via `WM_INPUT`
-- `Microsoft.Extensions.DependencyInjection`
-- Serilog
-
-## Quick Start for Development
 
 ```powershell
 dotnet restore
@@ -69,53 +44,83 @@ dotnet build -c Debug
 dotnet run -c Debug
 ```
 
-Release-mode run:
+To test release behavior locally:
 
 ```powershell
 dotnet run -c Release
 ```
 
-## Configuration
+Debug builds open a normal window. Release builds start in the system tray. Add `--tray` to force tray mode for any launch.
 
-- Default startup mode:
-  - `Debug`: foreground window
-  - `Release`: tray/background mode
-- Default `LaunchOnLogin`:
-  - `Debug`: off, which avoids polluting the Windows startup registry during development
-  - `Release`: on
-- Launch argument override:
-  - `--tray` forces tray/background startup for that launch.
+## Your data
 
-## Data Storage
+Everything stays on your machine in SQLite.
 
-- `Release`: `%AppData%\KeyPulse Signal\keypulse-data.db`
-- `Debug`: `%AppData%\KeyPulse Signal\Test\keypulse-data.db`
+KeyPulse records activity totals, not the content of your input. It does not record which keys you press, the text you type, mouse coordinates, or mouse paths.
 
-Main persisted tables:
+| Build | Database location |
+| --- | --- |
+| Release | `%AppData%\KeyPulse Signal\keypulse-data.db` |
+| Debug | `%AppData%\KeyPulse Signal\Test\keypulse-data.db` |
 
-- `Devices`: mutable device snapshot
-- `DeviceEvents`: immutable lifecycle log
-- `ActivitySnapshots`: immutable minute buckets
-- `DailyDeviceStats`: per-day per-device aggregates
+The database stores device snapshots, connection events, minute-level activity snapshots, and daily aggregates. Retention settings only prune old minute-level detail. Your daily history and connection totals stay intact.
 
-## High-Level Architecture
+## How it works
 
-- `AppTimerService`: shared 1-second, 30-second, and hourly UI-thread timers.
-- `UsbMonitorService`: WMI monitoring, event deduplication, connection lifecycle management.
-- `RawInputService`: per-device raw input capture and minute-bucket activity aggregation.
-- `DataService`: migrations, persistence, crash recovery, snapshot rebuild.
-- `DailyStatsService`: computes and maintains per-day per-device stats from lifecycle events and activity snapshots.
+KeyPulse uses Windows WMI to watch USB connection changes and Windows Raw Input to attribute typing and mouse activity to individual devices. EF Core and SQLite handle persistence. The WPF interface is backed by a small set of singleton services for monitoring, capture, timing, daily aggregation, retention, and application settings.
+
+The project targets `.NET 8` and uses WPF, EF Core 9, SQLite, Serilog, OxyPlot, and `Microsoft.Extensions.DependencyInjection`.
+
+## Technical architecture
+
+The app keeps device capture, persistence, and presentation separate. Long-lived services are registered as singletons, while tab view-models are created when their views are opened.
+
+| Component | Responsibility |
+| --- | --- |
+| `AppTimerService` | Owns the shared UI-thread timers for live updates, dashboard refreshes, daily work, and minute projections. |
+| `UsbMonitorService` | Watches WMI device arrival and removal events, filters for supported HID devices, combines bursty interface events into one connection, and maintains the UI-bound device snapshot. |
+| `RawInputService` | Runs a hidden `WM_INPUT` listener with `RIDEV_INPUTSINK`, captures input even in tray mode, and collects per-device minute buckets. |
+| `DataService` | Applies migrations, enables SQLite WAL mode, owns database operations, recovers from unclean shutdowns, and rebuilds device snapshots on startup. |
+| `DailyStatsService` | Projects lifecycle events and closed activity minutes into durable per-device, per-day aggregates. It performs a one-time historical backfill, then reconciles missing aggregate rows on later starts. |
+| `DataRetentionService` | Prunes old minute-level snapshots and projection checkpoints only after they have been reflected in daily aggregates. |
+
+### Data flow
+
+1. On startup, the app creates its service container, migrates the database, recovers unfinished sessions, and rebuilds the fast device snapshot.
+2. `UsbMonitorService` scans currently connected devices, writes lifecycle events, then starts WMI watchers for later changes.
+3. `RawInputService` maps Raw Input handles to device IDs and records keys, clicks, and movement-active seconds in one-minute buckets.
+4. Closed buckets are saved as activity snapshots and projected into daily totals. The dashboard and calendar read those totals, while live input deltas keep today's UI current between flushes.
+5. On a normal exit, the app flushes the partial minute and closes device and app sessions. Crash recovery covers the cases where Windows or a process termination prevents that cleanup.
+
+### Persistence model
+
+| Table | Purpose |
+| --- | --- |
+| `Devices` | Mutable device snapshot for fast UI reads, including name, type, visibility preference, and lifetime totals. |
+| `DeviceEvents` | Append-only app and device lifecycle log. This is the source of truth for connection history. |
+| `ActivitySnapshots` | Immutable per-device minute buckets for keystrokes, clicks, and mouse-movement seconds. |
+| `DailyDeviceStats` | Durable per-device daily aggregates for connections and input activity. It keeps calendar history available after minute-level retention pruning. |
+| `ActivityProjections` | Per-minute checkpoints that ensure a snapshot is projected into daily totals exactly once. |
+
+Hidden devices are a presentation setting only. They continue to be monitored, captured, stored, and aggregated, but are filtered out of dashboard and calendar queries.
 
 ## Troubleshooting
 
-- Second launch activates the running instance, which is the expected single-instance behavior.
-- If build output is locked, stop the running app before rebuilding.
-- If a device shows `Unknown Device`, rename it in-app or check Windows device metadata. This is common for laptop touchpads and other single-interface HID devices.
+- A second launch restores the existing app window. This is expected.
+- If a build says the executable is locked, close the running KeyPulse instance and build again.
+- If a device appears as `Unknown Device`, Windows did not provide a usable friendly name. You can rename it in the app.
+- The Troubleshooting page includes searchable logs when you need a closer look.
 
-## Documentation
+## Project docs
 
-- `AGENTS.md`: architecture and implementation conventions.
-- `docs/PRODUCTION_READINESS_PLAN.md`: production hardening checklist.
-- `docs/RELEASE_PROCESS.md`: versioning and release workflow.
-- `docs/RELEASE_CHECKLIST.md`: release validation steps.
-- `CHANGELOG.md`: release-to-release changes.
+| Document | Use it for |
+| --- | --- |
+| [AGENTS.md](AGENTS.md) | Architecture, data flow, and implementation conventions |
+| [Production readiness plan](docs/PRODUCTION_READINESS_PLAN.md) | Hardening work and remaining production tasks |
+| [Release process](docs/RELEASE_PROCESS.md) | Versioning, packaging, and release workflow |
+| [Release checklist](docs/RELEASE_CHECKLIST.md) | Final validation before publishing |
+| [Changelog](CHANGELOG.md) | What changed in each release |
+
+## License
+
+See [LICENSE.txt](LICENSE.txt).
