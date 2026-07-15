@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.3.1] - 2026-07-14
+
+### Added
+
+- Manual device type correction from the Device List context menu.
+- Raw Input suggestion toast for potential device type mismatches, without automatic changes.
+
 ## [1.3.0] - 2026-06-19
 
 ### Added
