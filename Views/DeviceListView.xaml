@@ -13,6 +13,7 @@
     <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
     <local:DurationSecondsConverter x:Key="DurationSecondsConverter" />
     <local:DeviceTypeToVisibilityConverter x:Key="DeviceTypeToVisibilityConverter" />
+    <local:DeviceTypeToBooleanConverter x:Key="DeviceTypeToBooleanConverter" />
     <local:ActivityColorConverter x:Key="ActivityColorConverter" />
   </UserControl.Resources>
 
@@ -166,6 +167,29 @@
             Command="{Binding RenameDeviceCommand}"
             CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
           />
+          <MenuItem Header="Change Device Type">
+            <MenuItem
+              Header="Keyboard"
+              IsCheckable="True"
+              IsChecked="{Binding PlacementTarget.SelectedItem.DeviceType, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource DeviceTypeToBooleanConverter}, ConverterParameter=Keyboard, Mode=OneWay}"
+              Command="{Binding SetKeyboardDeviceTypeCommand}"
+              CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+            />
+            <MenuItem
+              Header="Mouse"
+              IsCheckable="True"
+              IsChecked="{Binding PlacementTarget.SelectedItem.DeviceType, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource DeviceTypeToBooleanConverter}, ConverterParameter=Mouse, Mode=OneWay}"
+              Command="{Binding SetMouseDeviceTypeCommand}"
+              CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+            />
+            <MenuItem
+              Header="Other"
+              IsCheckable="True"
+              IsChecked="{Binding PlacementTarget.SelectedItem.DeviceType, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource DeviceTypeToBooleanConverter}, ConverterParameter=Other, Mode=OneWay}"
+              Command="{Binding SetOtherDeviceTypeCommand}"
+              CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+            />
+          </MenuItem>
           <MenuItem
             Header="Hide Device"
             ToolTip="Hides this device from the dashboard and calendar. Tracking continues."
@@ -183,5 +207,14 @@
         </ContextMenu>
       </DataGrid.ContextMenu>
     </DataGrid>
+    <local:ToastMessagePanel
+      Grid.Row="1"
+      Panel.ZIndex="1"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Bottom"
+      Margin="8"
+      ToastMessage="{Binding ToastMessage}"
+      ToastVisibility="{Binding ToastVisibility}"
+    />
   </Grid>
 </UserControl>

@@ -141,6 +141,17 @@ public class DeviceTests
         names.ShouldContain(nameof(Device.StatusSortOrder));
     }
 
+    [Fact]
+    public void DeviceType_RaisesTypeAndSortNotifications()
+    {
+        var device = NewDevice();
+        var names = CaptureNotifications(device, () => device.DeviceType = DeviceTypes.Mouse);
+
+        names.ShouldContain(nameof(Device.DeviceType));
+        names.ShouldContain(nameof(Device.TypeSortOrder));
+        device.TypeSortOrder.ShouldBe(1);
+    }
+
     // ── UpdateLastConnectedAt ──────────────────────────────────────────────────
 
     [Fact]

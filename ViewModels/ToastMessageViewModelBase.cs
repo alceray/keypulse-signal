@@ -8,9 +8,9 @@ public abstract class ToastMessageViewModelBase : ObservableObject, IDisposable
     private readonly ToastClearTimer _toastClearTimer;
     private string _toastMessage = string.Empty;
 
-    protected ToastMessageViewModelBase()
+    protected ToastMessageViewModelBase(int toastDurationSeconds = ToastClearTimer.DefaultIntervalSeconds)
     {
-        _toastClearTimer = new ToastClearTimer();
+        _toastClearTimer = new ToastClearTimer(toastDurationSeconds);
         _toastClearTimer.Elapsed += (_, _) => ToastMessage = string.Empty;
     }
 

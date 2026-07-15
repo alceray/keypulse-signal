@@ -730,7 +730,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
     private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(Device.IsHiddenFromDisplay))
+        if (e.PropertyName is nameof(Device.IsHiddenFromDisplay) or nameof(Device.DeviceType))
             _ = LoadCurrentMonthAsync();
     }
 

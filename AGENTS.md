@@ -144,6 +144,12 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - **Classification**: `UsbDeviceClassifier.GetInterfaceSignal()` probes WMI for `Service`, `ClassGuid`, `PNPClass`
 - **Type Resolution**: Multiple HID interfaces expected per device; wait for ≥2 signals before determining type (
   keyboard vs. mouse)
+- **Manual Correction**: The Device List context menu lets the user write `Device.DeviceType` directly as Keyboard,
+  Mouse, or Other. The DB write must succeed before the shared in-memory device is updated.
+- **Raw Input Sanity Check**: `RawInputService` counts consecutive packets that oppose a saved Keyboard/Mouse type.
+  After 20 opposing packets it raises one session-only suggestion; `DeviceListViewModel` shows a toast while that tab
+  is open. Matching packets reset the count. This never changes the saved type automatically and does not run for
+  Unknown/Other devices.
 
 ### Property Binding & Threading
 

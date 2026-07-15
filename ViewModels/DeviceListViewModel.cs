@@ -10,8 +10,10 @@ using Microsoft.VisualBasic;
 
 namespace KeyPulse.ViewModels;
 
-public class DeviceListViewModel : ObservableObject, IDisposable
+public class DeviceListViewModel : ToastMessageViewModelBase
 {
+    private const int DeviceTypeToastDurationSeconds = 10;
+
     private readonly UsbMonitorService _usbMonitorService;
     private readonly RawInputService _rawInputService;
     private readonly AppTimerService _appTimerService;
@@ -22,6 +24,9 @@ public class DeviceListViewModel : ObservableObject, IDisposable
     public ICollectionView DeviceListCollection { get; }
     public ICommand RenameDeviceCommand { get; }
     public ICommand ToggleDeviceDisplayVisibilityCommand { get; }
+    public ICommand SetKeyboardDeviceTypeCommand { get; }
+    public ICommand SetMouseDeviceTypeCommand { get; }
+    public ICommand SetOtherDeviceTypeCommand { get; }
 
     public string DeviceTitleWithCount => $"Devices ({DeviceListCollection.Cast<object>().Count()})";
 
@@ -65,6 +70,7 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         AppTimerService appTimerService,
         DataService dataService
     )
+        : base(DeviceTypeToastDurationSeconds)
     {
         _usbMonitorService = usbMonitorService;
         _rawInputService = rawInputService;
@@ -96,11 +102,24 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         _usbMonitorService.DeviceList.CollectionChanged += DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged += OnActivityStateChanged;
         _rawInputService.InputDeltaIncremented += OnInputDeltaIncremented;
+        _rawInputService.DeviceTypeMismatchSuggested += OnDeviceTypeMismatchSuggested;
 
         RenameDeviceCommand = new RelayCommand(ExecuteRenameDevice, CanExecuteRenameDevice);
         ToggleDeviceDisplayVisibilityCommand = new RelayCommand(
             ExecuteToggleDeviceDisplayVisibility,
             CanExecuteToggleDeviceDisplayVisibility
+        );
+        SetKeyboardDeviceTypeCommand = new RelayCommand(
+            parameter => ExecuteSetDeviceType(parameter, DeviceTypes.Keyboard),
+            CanExecuteSetDeviceType
+        );
+        SetMouseDeviceTypeCommand = new RelayCommand(
+            parameter => ExecuteSetDeviceType(parameter, DeviceTypes.Mouse),
+            CanExecuteSetDeviceType
+        );
+        SetOtherDeviceTypeCommand = new RelayCommand(
+            parameter => ExecuteSetDeviceType(parameter, DeviceTypes.Other),
+            CanExecuteSetDeviceType
         );
 
         _appTimerService.SecondTick += OnSecondTick;
@@ -128,7 +147,12 @@ public class DeviceListViewModel : ObservableObject, IDisposable
 
         // A CollectionView re-sorts/filters only on Refresh, not on item property changes — so refresh
         // when a status change affects ordering/visibility (connect/disconnect or hide/unhide).
-        if (e.PropertyName is nameof(Device.IsConnected) or nameof(Device.StatusSortOrder))
+        if (
+            e.PropertyName
+            is nameof(Device.IsConnected)
+                or nameof(Device.StatusSortOrder)
+                or nameof(Device.TypeSortOrder)
+        )
         {
             Application.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -210,12 +234,45 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         return parameter is Device;
     }
 
+    private void ExecuteSetDeviceType(object? parameter, DeviceTypes deviceType)
+    {
+        if (parameter is not Device device || device.DeviceType == deviceType)
+            return;
+
+        if (!_dataService.SetDeviceType(device.DeviceId, deviceType))
+        {
+            ToastMessage = "Failed to update the device type. Check logs for details.";
+            return;
+        }
+
+        device.DeviceType = deviceType;
+        _rawInputService.ResetDeviceTypeEvidence(device.DeviceId, deviceType);
+        ToastMessage = $"{device.DeviceName} is now set as {deviceType}.";
+    }
+
+    private static bool CanExecuteSetDeviceType(object? parameter) => parameter is Device;
+
+    private void OnDeviceTypeMismatchSuggested(string deviceId, DeviceTypes observedType)
+    {
+        var device = _usbMonitorService.DeviceList.FirstOrDefault(d => d.DeviceId == deviceId);
+        if (device == null)
+            return;
+
+        Application.Current.Dispatcher.BeginInvoke(() =>
+        {
+            ToastMessage =
+                $"{observedType} input detected for '{device.DeviceName}', currently set as {device.DeviceType}."
+                + Environment.NewLine
+                + "Right click the device to change its type.";
+        });
+    }
+
     private static string PromptForDeviceName(string currentName)
     {
         return Interaction.InputBox("Enter new name for the device:", "Rename Device", currentName);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged -= Device_PropertyChanged;
@@ -223,8 +280,8 @@ public class DeviceListViewModel : ObservableObject, IDisposable
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         _rawInputService.ActivityStateChanged -= OnActivityStateChanged;
         _rawInputService.InputDeltaIncremented -= OnInputDeltaIncremented;
+        _rawInputService.DeviceTypeMismatchSuggested -= OnDeviceTypeMismatchSuggested;
         _appTimerService.SecondTick -= OnSecondTick;
-
-        GC.SuppressFinalize(this);
+        base.Dispose();
     }
 }

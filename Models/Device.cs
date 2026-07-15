@@ -30,6 +30,7 @@ public enum DeviceTypes
 public class Device : ObservableObject
 {
     private string _deviceName = "";
+    private DeviceTypes _deviceType = DeviceTypes.Unknown;
     private long _storedConnectionSeconds;
     private DateTime? _sessionStartedAt;
     private DateTime? _lastConnectedAt;
@@ -49,7 +50,19 @@ public class Device : ObservableObject
     /// Categorizes the device type (keyboard, mouse, other, etc.).
     /// </summary>
     [Required]
-    public DeviceTypes DeviceType { get; set; } = DeviceTypes.Unknown;
+    public DeviceTypes DeviceType
+    {
+        get => _deviceType;
+        set
+        {
+            if (_deviceType == value)
+                return;
+
+            _deviceType = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(TypeSortOrder));
+        }
+    }
 
     /// <summary>
     /// User-friendly name for the device (e.g., "Logitech MX Master 3").

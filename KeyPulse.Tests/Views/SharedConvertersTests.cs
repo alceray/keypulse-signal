@@ -62,6 +62,18 @@ public class SharedConvertersTests
     }
 
     [Fact]
+    public void DeviceTypeToBoolean()
+    {
+        var c = new DeviceTypeToBooleanConverter();
+        c.Convert(DeviceTypes.Keyboard, typeof(bool), "Keyboard", Inv).ShouldBe(true);
+        c.Convert(DeviceTypes.Mouse, typeof(bool), "Keyboard", Inv).ShouldBe(false);
+        c.Convert(DeviceTypes.Other, typeof(bool), "Other", Inv).ShouldBe(true);
+        c.Convert(DeviceTypes.Keyboard, typeof(bool), "garbage", Inv).ShouldBe(false);
+        c.Convert(null, typeof(bool), "Keyboard", Inv).ShouldBe(false);
+        Should.Throw<NotSupportedException>(() => c.ConvertBack(null, typeof(DeviceTypes), null, Inv));
+    }
+
+    [Fact]
     public void MinWidthToVisibility()
     {
         var c = new MinWidthToVisibilityConverter();

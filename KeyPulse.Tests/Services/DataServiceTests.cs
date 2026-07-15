@@ -573,6 +573,24 @@ public class DataServiceTests : IDisposable
         _sut.GetDevice("D1")!.IsHiddenFromDisplay.ShouldBeTrue();
     }
 
+    [Fact]
+    public void SetDeviceType_MissingDevice_ReturnsFalse() =>
+        _sut.SetDeviceType("GHOST", DeviceTypes.Mouse).ShouldBeFalse();
+
+    [Fact]
+    public void SetDeviceType_Existing_Updates()
+    {
+        Seed(ctx =>
+            ctx.Devices.Add(
+                new Device { DeviceId = "D1", DeviceName = "device", DeviceType = DeviceTypes.Keyboard }
+            )
+        );
+
+        _sut.SetDeviceType("D1", DeviceTypes.Mouse).ShouldBeTrue();
+
+        _sut.GetDevice("D1")!.DeviceType.ShouldBe(DeviceTypes.Mouse);
+    }
+
     // ── GetActivitySnapshots filtering ──────────────────────────────────────────
 
     [Fact]

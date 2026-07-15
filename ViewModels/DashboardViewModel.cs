@@ -263,7 +263,10 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     // Called immediately when any device's IsConnected changes.
     private void Device_PropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(Device.IsConnected) || e.PropertyName == nameof(Device.IsHiddenFromDisplay))
+        if (
+            e.PropertyName
+            is nameof(Device.IsConnected) or nameof(Device.IsHiddenFromDisplay) or nameof(Device.DeviceType)
+        )
             Refresh();
     }
 

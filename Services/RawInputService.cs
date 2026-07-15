@@ -37,6 +37,12 @@ public class RawInputService : IDisposable
     /// </summary>
     public event Action<bool>? PauseStateChanged;
 
+    /// <summary>
+    /// Raised once per device and assigned type when sustained Raw Input packets suggest the
+    /// device is the opposite input type. The assigned type is never changed automatically.
+    /// </summary>
+    public event Action<string, DeviceTypes>? DeviceTypeMismatchSuggested;
+
     #region Win32 constants
 
     private const int WM_INPUT = 0x00FF;
@@ -187,6 +193,13 @@ public class RawInputService : IDisposable
         public HashSet<int> ActiveInputSeconds { get; } = new();
     }
 
+    private sealed class DeviceTypeEvidence
+    {
+        public required DeviceTypes AssignedType { get; init; }
+        public int OpposingPacketCount { get; set; }
+        public bool SuggestionRaised { get; set; }
+    }
+
     #endregion
 
     // Shared state — all access guarded by _lock
@@ -194,6 +207,7 @@ public class RawInputService : IDisposable
     private readonly Dictionary<(string DeviceId, DateTime Minute), ActivityBucket> _buckets = new();
     private readonly Dictionary<string, HashSet<ushort>> _pressedKeysByDevice = new();
     private readonly Dictionary<string, HashSet<int>> _pressedMouseButtonsByDevice = new();
+    private readonly Dictionary<string, DeviceTypeEvidence> _deviceTypeEvidenceByDevice = new();
 
     // hDevice handle → DeviceId cache; only touched on the UI thread (WndProc), no lock needed.
     private readonly Dictionary<IntPtr, string?> _deviceHandleCache = new();
@@ -202,6 +216,7 @@ public class RawInputService : IDisposable
     private readonly DataService _dataService;
     private readonly Timer _flushTimer;
     private static readonly TimeSpan ShutdownFlushTimeout = TimeSpan.FromMilliseconds(250);
+    internal const int DeviceTypeMismatchPacketThreshold = 20;
     private volatile bool _isPaused;
     private bool _disposed;
 
@@ -336,6 +351,7 @@ public class RawInputService : IDisposable
 
             if (header.dwType == RIM_TYPEKEYBOARD)
             {
+                ObserveDeviceType(deviceId, DeviceTypes.Keyboard);
                 var kb = Marshal.PtrToStructure<RawKeyboard>(bodyPtr);
                 var isKeyDown = (kb.Flags & RI_KEY_BREAK) == 0;
                 bool nextActivityState;
@@ -370,6 +386,7 @@ public class RawInputService : IDisposable
             }
             else if (header.dwType == RIM_TYPEMOUSE)
             {
+                ObserveDeviceType(deviceId, DeviceTypes.Mouse);
                 var mouse = Marshal.PtrToStructure<RawMouse>(bodyPtr);
                 bool? nextActivityState = null;
                 var clickDelta = 0;
@@ -421,6 +438,51 @@ public class RawInputService : IDisposable
         {
             Marshal.FreeHGlobal(buffer);
         }
+    }
+
+    internal void ObserveDeviceType(string deviceId, DeviceTypes observedType)
+    {
+        if (observedType is not (DeviceTypes.Keyboard or DeviceTypes.Mouse))
+            return;
+
+        DeviceTypes? suggestion = null;
+        lock (_lock)
+        {
+            if (!_deviceTypeEvidenceByDevice.TryGetValue(deviceId, out var evidence))
+            {
+                var assignedType = _dataService.GetDevice(deviceId)?.DeviceType ?? DeviceTypes.Unknown;
+                evidence = new DeviceTypeEvidence { AssignedType = assignedType };
+                _deviceTypeEvidenceByDevice[deviceId] = evidence;
+            }
+
+            if (evidence.AssignedType is not (DeviceTypes.Keyboard or DeviceTypes.Mouse))
+                return;
+
+            if (observedType == evidence.AssignedType)
+            {
+                evidence.OpposingPacketCount = 0;
+                return;
+            }
+
+            if (evidence.SuggestionRaised)
+                return;
+
+            evidence.OpposingPacketCount++;
+            if (evidence.OpposingPacketCount >= DeviceTypeMismatchPacketThreshold)
+            {
+                evidence.SuggestionRaised = true;
+                suggestion = observedType;
+            }
+        }
+
+        if (suggestion.HasValue)
+            DeviceTypeMismatchSuggested?.Invoke(deviceId, suggestion.Value);
+    }
+
+    public void ResetDeviceTypeEvidence(string deviceId, DeviceTypes assignedType)
+    {
+        lock (_lock)
+            _deviceTypeEvidenceByDevice[deviceId] = new DeviceTypeEvidence { AssignedType = assignedType };
     }
 
     public void ClearDeviceHoldState(string deviceId)

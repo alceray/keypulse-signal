@@ -83,6 +83,20 @@ public sealed class DeviceTypeToVisibilityConverter : IValueConverter
         throw new NotSupportedException();
 }
 
+public sealed class DeviceTypeToBooleanConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is not DeviceTypes deviceType || parameter is not string typeName)
+            return false;
+
+        return Enum.TryParse<DeviceTypes>(typeName, out var targetTypeEnum) && deviceType == targetTypeEnum;
+    }
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}
+
 public sealed class MinWidthToVisibilityConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)

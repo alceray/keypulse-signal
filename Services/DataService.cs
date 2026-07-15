@@ -201,6 +201,29 @@ public class DataService
         }
     }
 
+    public bool SetDeviceType(string deviceId, DeviceTypes deviceType)
+    {
+        try
+        {
+            lock (_deviceWriteLock)
+            {
+                using var ctx = _factory.CreateDbContext();
+                var device = ctx.Devices.SingleOrDefault(d => d.DeviceId == deviceId);
+                if (device == null)
+                    return false;
+
+                device.DeviceType = deviceType;
+                ctx.SaveChanges();
+                return true;
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Failed to update device type for {DeviceId}", deviceId);
+            return false;
+        }
+    }
+
     public IReadOnlyCollection<DeviceEvent> GetAllDeviceEvents()
     {
         using var ctx = _factory.CreateDbContext();
