@@ -89,6 +89,7 @@ public partial class App
 
         // Resolve startup mode with precedence: launch args > build default.
         RunInBackground = ResolveRunInBackground(e.Args);
+        ShutdownMode = ResolveShutdownMode(RunInBackground);
         Log.Information("Startup mode resolved: RunInBackground={RunInBackground}", RunInBackground);
 
         SyncStartupRegistrationFromSettings();
@@ -261,6 +262,13 @@ public partial class App
     private static bool ResolveRunInBackground(IEnumerable<string> args)
     {
         return ShouldForceTrayFromArgs(args) || IsProductionBuild();
+    }
+
+    internal static ShutdownMode ResolveShutdownMode(bool runInBackground)
+    {
+        // A tray app must outlive transient windows such as the update prompt owner.
+        // Foreground mode keeps the conventional behavior of exiting with the main window.
+        return runInBackground ? ShutdownMode.OnExplicitShutdown : ShutdownMode.OnMainWindowClose;
     }
 
     private static bool IsProductionBuild()

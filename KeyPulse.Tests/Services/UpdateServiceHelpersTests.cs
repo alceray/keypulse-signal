@@ -157,4 +157,23 @@ public class UpdateServiceHelpersTests
     [InlineData("1.2.0", "1.2", false)] // shorter latest padded with zeros
     public void IsNewerVersion_ComparesNumerically(string current, string latest, bool expected) =>
         UpdateService.IsNewerVersion(current, latest).ShouldBe(expected);
+
+    // --- ShouldNotifyUpdateStatus ---
+
+    [Theory]
+    [InlineData(false, null, true, "1.3.1", true)]
+    [InlineData(true, "1.3.1", false, "1.3.1", true)]
+    [InlineData(true, "1.3.1", true, "1.3.2", true)]
+    [InlineData(true, "1.3.1", true, "1.3.1", false)]
+    [InlineData(false, "1.3.1", false, "1.3.2", false)]
+    public void ShouldNotifyUpdateStatus_DetectsAvailabilityOrPendingVersionChanges(
+        bool previousAvailable,
+        string? previousLatestVersion,
+        bool updateAvailable,
+        string latestVersion,
+        bool expected
+    ) =>
+        UpdateService
+            .ShouldNotifyUpdateStatus(previousAvailable, previousLatestVersion, updateAvailable, latestVersion)
+            .ShouldBe(expected);
 }

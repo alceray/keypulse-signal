@@ -112,6 +112,13 @@ public class UpdateService : IDisposable
             }
 
             var latestVersion = release.TagName.TrimStart('v');
+            var updateAvailable = IsNewerVersion(CurrentVersion, latestVersion);
+            var shouldNotify = ShouldNotifyUpdateStatus(
+                _updateAvailable,
+                _latestVersion,
+                updateAvailable,
+                latestVersion
+            );
             _latestVersion = latestVersion;
             _latestAssets = release.Assets ?? new List<GitHubAsset>();
             if (_networkFailureLogged)
@@ -120,8 +127,6 @@ public class UpdateService : IDisposable
                 Log.Information("Update check recovered after transient network failure");
             }
 
-            var updateAvailable = IsNewerVersion(CurrentVersion, latestVersion);
-
             Log.Debug(
                 "Update check result: Current=v{Current}, Latest=v{Latest}, UpdateAvailable={Available}",
                 CurrentVersion,
@@ -129,7 +134,7 @@ public class UpdateService : IDisposable
                 updateAvailable
             );
 
-            if (updateAvailable != _updateAvailable)
+            if (shouldNotify)
             {
                 _updateAvailable = updateAvailable;
                 UpdateStatusChanged?.Invoke(
@@ -471,6 +476,18 @@ public class UpdateService : IDisposable
             Log.Error(ex, "Version comparison failed: {Current} vs {Latest}", current, latest);
             return false;
         }
+    }
+
+    internal static bool ShouldNotifyUpdateStatus(
+        bool previousAvailable,
+        string? previousLatestVersion,
+        bool updateAvailable,
+        string latestVersion
+    )
+    {
+        return previousAvailable != updateAvailable
+            || updateAvailable
+                && !string.Equals(previousLatestVersion, latestVersion, StringComparison.OrdinalIgnoreCase);
     }
 
     public void Dispose()

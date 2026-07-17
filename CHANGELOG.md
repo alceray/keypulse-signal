@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.3.2] - 2026-07-16
+
+### Fixed
+
+- Prevented the tray app from shutting down when the update prompt closes.
+- Fixed update notifications not refreshing when a newer update became available.
+
 ## [1.3.1] - 2026-07-14
 
 ### Added
