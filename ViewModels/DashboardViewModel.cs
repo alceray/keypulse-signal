@@ -265,7 +265,9 @@ public sealed class DashboardViewModel : ObservableObject, IDisposable
     {
         if (
             e.PropertyName
-            is nameof(Device.IsConnected) or nameof(Device.IsHiddenFromDisplay) or nameof(Device.DeviceType)
+            is nameof(Device.IsConnected)
+                or nameof(Device.IsHiddenFromDisplay)
+                or nameof(Device.DeviceType)
         )
             Refresh();
     }

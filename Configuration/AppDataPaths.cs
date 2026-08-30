@@ -23,4 +23,15 @@ public static class AppDataPaths
 
         return path;
     }
+
+    public static string GetOtherBuildSettingsPath()
+    {
+        var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        var root = Path.Combine(appData, AppConstants.App.ProductName);
+#if DEBUG
+        return Path.Combine(root, AppConstants.Paths.SettingsFileName);
+#else
+        return Path.Combine(root, AppConstants.Paths.TestDataDirectoryName, AppConstants.Paths.SettingsFileName);
+#endif
+    }
 }

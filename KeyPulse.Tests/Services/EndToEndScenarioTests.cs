@@ -1,4 +1,4 @@
-using KeyPulse.Models;
+﻿using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.Tests.Infrastructure;
 using KeyPulse.ViewModels.Calendar;
@@ -19,7 +19,7 @@ public class EndToEndScenarioTests : IDisposable
     public EndToEndScenarioTests()
     {
         _dailyStats = new DailyStatsService(_db.Factory, _timer);
-        _data = new DataService(_db.Factory, _dailyStats);
+        _data = new DataService(_db.Factory, _dailyStats, new DatabaseInstanceLock());
     }
 
     public void Dispose()

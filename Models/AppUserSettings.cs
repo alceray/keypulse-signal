@@ -18,4 +18,19 @@ public class AppUserSettings
 
     /// <summary>Months of per-minute activity detail to keep; 0 keeps everything forever.</summary>
     public int ActivityRetentionMonths { get; set; }
+
+    /// <summary>The database used by this Debug or Release installation.</summary>
+    public DatabaseProvider DatabaseProvider { get; set; } = DatabaseProvider.Sqlite;
+
+    /// <summary>Non-secret PostgreSQL connection settings. The password is stored in Windows Credential Manager.</summary>
+    public PostgreSqlConnectionSettings PostgreSql { get; set; } = new();
+
+    /// <summary>A provider switch that will be completed before monitoring starts on the next launch.</summary>
+    public DatabaseProvider? PendingDatabaseProvider { get; set; }
+
+    /// <summary>Whether a pending SQLite-to-PostgreSQL switch must copy the current installation's history.</summary>
+    public bool PendingDatabaseImport { get; set; }
+
+    /// <summary>Correlates a committed import with activation if settings persistence is interrupted.</summary>
+    public string? PendingDatabaseSwitchId { get; set; }
 }

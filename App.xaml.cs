@@ -8,6 +8,7 @@ using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.ViewModels;
 using KeyPulse.Views;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
@@ -78,8 +79,84 @@ public partial class App
 
         InitializeActivationSignalListener(instanceId);
 
+        // Database selection must be resolved before any database-dependent singleton is constructed.
+        var preflightSettingsService = new AppSettingsService();
+        IDatabaseCredentialStore preflightCredentialStore = new WindowsDatabaseCredentialStore();
+        var showedInitialDatabaseSetup = false;
+        var preflightSettings = preflightSettingsService.GetSettings();
+        if (preflightSettings.IsFirstLaunch)
+        {
+            var setupWindow = new DatabaseSetupWindow(_appName, preflightSettingsService, preflightCredentialStore);
+            if (setupWindow.ShowDialog() != true)
+            {
+                Shutdown();
+                return;
+            }
+            showedInitialDatabaseSetup = true;
+        }
+
+        var switchService = new DatabaseSwitchService(preflightSettingsService, preflightCredentialStore);
+        while (preflightSettingsService.GetSettings().PendingDatabaseProvider.HasValue)
+        {
+            try
+            {
+                await switchService.ProcessPendingSwitchAsync();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Pending database switch failed");
+                var recoveryWindow = new DatabaseSetupWindow(
+                    _appName,
+                    preflightSettingsService,
+                    preflightCredentialStore,
+                    recoveryMode: true,
+                    failureMessage: ex.Message
+                );
+                if (recoveryWindow.ShowDialog() != true)
+                {
+                    Shutdown();
+                    return;
+                }
+            }
+        }
+
+        var databaseInstanceLock = new DatabaseInstanceLock();
+        while (preflightSettingsService.GetSettings().DatabaseProvider == DatabaseProvider.PostgreSql)
+        {
+            try
+            {
+                var current = preflightSettingsService.GetSettings();
+                var password =
+                    preflightCredentialStore.ReadPostgreSqlPassword()
+                    ?? throw new InvalidOperationException("The saved PostgreSQL password is unavailable");
+                await DatabaseConfigurationService.TestPostgreSqlAsync(current.PostgreSql, password);
+
+                // Claimed here so a second instance is reported in the setup dialog instead of crashing later.
+                databaseInstanceLock.Acquire(
+                    DatabaseConfigurationService.BuildPostgreSqlConnectionString(current.PostgreSql, password)
+                );
+                break;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Configured PostgreSQL database is unavailable");
+                var recoveryWindow = new DatabaseSetupWindow(
+                    _appName,
+                    preflightSettingsService,
+                    preflightCredentialStore,
+                    recoveryMode: true,
+                    failureMessage: ex.Message
+                );
+                if (recoveryWindow.ShowDialog() != true)
+                {
+                    Shutdown();
+                    return;
+                }
+            }
+        }
+
         var services = new ServiceCollection();
-        ConfigureServices(services);
+        ConfigureServices(services, databaseInstanceLock);
         ServiceProvider = services.BuildServiceProvider();
 
         _appSettingsService = ServiceProvider.GetRequiredService<AppSettingsService>();
@@ -109,19 +186,12 @@ public partial class App
         // First launch always shows the window, even in Release/tray mode.
         var settings = _appSettingsService.GetSettings();
 
-        if (!RunInBackground || settings.IsFirstLaunch)
+        if (!RunInBackground || showedInitialDatabaseSetup)
         {
             MainWindow = new MainWindow();
             MainWindow.Title = _appName;
             MainWindow.Closing += MainWindow_Closing;
             MainWindow.Show();
-
-            // Mark first launch as done and save.
-            if (settings.IsFirstLaunch)
-            {
-                settings.IsFirstLaunch = false;
-                _appSettingsService.SaveSettings(settings);
-            }
         }
 
         // Initialize tray if in background mode (either first launch or not).
@@ -237,12 +307,14 @@ public partial class App
         base.OnSessionEnding(e);
     }
 
-    private static void ConfigureServices(IServiceCollection services)
+    private static void ConfigureServices(IServiceCollection services, DatabaseInstanceLock databaseInstanceLock)
     {
-        services.AddDbContextFactory<ApplicationDbContext>();
+        services.AddSingleton<AppSettingsService>();
+        services.AddSingleton<IDatabaseCredentialStore, WindowsDatabaseCredentialStore>();
+        services.AddSingleton<IDbContextFactory<ApplicationDbContext>, ConfiguredDbContextFactory>();
+        services.AddSingleton(databaseInstanceLock);
         services.AddSingleton<DailyStatsService>();
         services.AddSingleton<DataService>();
-        services.AddSingleton<AppSettingsService>();
         services.AddSingleton<LogAccessService>();
         services.AddSingleton<StartupRegistrationService>();
         services.AddSingleton<UsbMonitorService>();

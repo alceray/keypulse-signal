@@ -5,10 +5,7 @@ public class StartupModeTests
     [Theory]
     [InlineData(true, System.Windows.ShutdownMode.OnExplicitShutdown)]
     [InlineData(false, System.Windows.ShutdownMode.OnMainWindowClose)]
-    public void ResolveShutdownMode_MatchesStartupMode(
-        bool runInBackground,
-        System.Windows.ShutdownMode expected
-    )
+    public void ResolveShutdownMode_MatchesStartupMode(bool runInBackground, System.Windows.ShutdownMode expected)
     {
         App.ResolveShutdownMode(runInBackground).ShouldBe(expected);
     }

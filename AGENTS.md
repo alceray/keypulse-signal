@@ -4,10 +4,10 @@
 
 **KeyPulse** is a .NET 8 WPF desktop app for tracking USB keyboard and mouse connections on Windows and recording
 per-device input activity. It uses WMI event watchers for device arrival/removal, Windows Raw Input for per-device
-keyboard/mouse activity, and SQLite+EF Core for persistence. The app is single-instance and supports optional
+keyboard/mouse activity, and EF Core with SQLite (default) or user-managed PostgreSQL for persistence. The app is single-instance and supports optional
 tray/background mode.
 
-**Key Tech Stack**: WPF, EF Core 9, SQLite, System.Management (WMI), Windows Raw Input (`WM_INPUT`), Dependency
+**Key Tech Stack**: WPF, EF Core 9, SQLite/PostgreSQL, System.Management (WMI), Windows Raw Input (`WM_INPUT`), Dependency
 Injection
 
 ---
@@ -45,7 +45,7 @@ Injection
 
 4. **DataService** (Singleton)
     - Single source for all database operations
-    - Runs migrations and enables SQLite WAL mode on startup
+    - Runs the active provider's migration set and enables WAL only for SQLite
     - Crash recovery: detects unclean shutdowns and writes missing `AppEnded`/`ConnectionEnded` events
     - Rebuilds persisted device connection-duration snapshots from the event log on startup
     - Persists and queries minute-level `ActivitySnapshot` rows
@@ -77,6 +77,14 @@ Injection
     - Unique constraint on `ActivitySnapshots(DeviceId, Minute)` prevents duplicate minute buckets
     - See: `Data/ApplicationDbContext.cs`
 
+8. **Database configuration and switching**
+    - SQLite remains the default; first-run setup and Settings can select a dedicated PostgreSQL database
+    - Non-secret PostgreSQL settings are build-isolated in `settings.json`; passwords use build-qualified Windows Credential Manager entries
+    - `PostgreSqlApplicationDbContext` owns a separate PostgreSQL migration set under `Migrations/PostgreSql`
+    - Pending SQLite-to-PostgreSQL switches run before DI/monitoring, import in one target transaction, verify counts and totals, and retain SQLite as a frozen backup
+    - Debug and Release must use separate PostgreSQL databases; a PostgreSQL advisory lock prevents concurrent KeyPulse writers
+    - See: `Services/DatabaseSwitchService.cs`, `Data/ConfiguredDbContextFactory.cs`
+
 ### Data Persistence Model
 
 - **DeviceEvents** = immutable, append-only log of app/device lifecycle transitions (source of truth for connection
@@ -95,9 +103,8 @@ Injection
 
 1. Register unhandled-exception cleanup hooks.
 2. Mutex check (single-instance enforcement). If another instance exists, signal it to restore/focus and exit.
-3. Resolve startup mode from build configuration (Debug foreground, Release tray), with launch args able to force tray
-   mode.
-4. Build the DI container.
+3. Resolve first-run database selection, pending imports, and PostgreSQL connection recovery before capture can start.
+4. Resolve startup mode from build configuration (Debug foreground, Release tray), with launch args able to force tray mode, then build the DI container.
 5. Resolve `UsbMonitorService` (which also resolves `DataService`). During construction:
     - database migrations run,
     - SQLite WAL mode is enabled,

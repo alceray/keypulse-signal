@@ -10,6 +10,11 @@ namespace KeyPulse.Data;
 
 public class ApplicationDbContext : DbContext
 {
+    public ApplicationDbContext() { }
+
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options) { }
+
     public DbSet<Device> Devices { get; set; }
     public DbSet<DeviceEvent> DeviceEvents { get; set; }
     public DbSet<ActivitySnapshot> ActivitySnapshots { get; set; }
@@ -79,7 +84,8 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Data Source={GetDatabasePath()}");
+        if (!optionsBuilder.IsConfigured)
+            optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Data Source={GetDatabasePath()}");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -181,3 +187,7 @@ public class ApplicationDbContext : DbContext
             .IsUnique();
     }
 }
+
+/// <summary>A distinct context type keeps PostgreSQL migrations separate from the existing SQLite migration set.</summary>
+public sealed class PostgreSqlApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    : ApplicationDbContext(options);

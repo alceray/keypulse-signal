@@ -17,6 +17,8 @@ public static class AppConstants
         public const string RunKeyPath = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
         public const string TrayIconRelativePath = @"Assets\keypulse-signal-icon.ico";
         public const int StartupWarningBalloonTimeoutMs = 5000;
+        public const string PostgreSqlCredentialPrefix = "KeyPulse Signal/Database/PostgreSQL";
+        public const long PostgreSqlAdvisoryLockKey = 0x4B50554C53454442;
     }
 
     public static class Paths

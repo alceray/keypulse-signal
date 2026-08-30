@@ -201,6 +201,11 @@ public sealed class DataRetentionService : IDisposable
         {
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
             using var ctx = _factory.CreateDbContext();
+            if (!ctx.Database.IsSqlite())
+            {
+                Log.Debug("Database compaction skipped because PostgreSQL manages reclaimed space automatically");
+                return;
+            }
             ctx.Database.ExecuteSqlRaw("VACUUM;");
             stopwatch.Stop();
             Log.Information(

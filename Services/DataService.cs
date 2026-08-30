@@ -14,6 +14,7 @@ public class DataService
 {
     private readonly IDbContextFactory<ApplicationDbContext> _factory;
     private readonly DailyStatsService _dailyStats;
+    private readonly DatabaseInstanceLock _databaseInstanceLock;
 
     private readonly object _deviceWriteLock = new();
 
@@ -30,10 +31,15 @@ public class DataService
         public required IReadOnlyList<Device> TopMiceByConnectionSeconds { get; init; }
     }
 
-    public DataService(IDbContextFactory<ApplicationDbContext> factory, DailyStatsService dailyStats)
+    public DataService(
+        IDbContextFactory<ApplicationDbContext> factory,
+        DailyStatsService dailyStats,
+        DatabaseInstanceLock databaseInstanceLock
+    )
     {
         _factory = factory;
         _dailyStats = dailyStats;
+        _databaseInstanceLock = databaseInstanceLock;
         InitializeDatabase();
     }
 
@@ -44,6 +50,8 @@ public class DataService
         using var ctx = _factory.CreateDbContext();
         try
         {
+            // Startup normally holds this already, so this only covers a context that gets there first.
+            _databaseInstanceLock.Acquire(ctx);
             var appliedMigrations = ctx.Database.GetAppliedMigrations().ToList();
             var pendingMigrations = ctx.Database.GetPendingMigrations().ToList();
             Log.Information(
@@ -54,15 +62,19 @@ public class DataService
 
             if (pendingMigrations.Count > 0)
             {
-                var backupPath = BackupDatabaseBeforeMigration(ctx);
+                var backupPath = ctx.Database.IsSqlite() ? BackupDatabaseBeforeMigration(ctx) : null;
                 if (!string.IsNullOrWhiteSpace(backupPath))
                     Log.Debug("Created pre-migration backup at {BackupPath}", backupPath);
                 Log.Debug("Applying pending migrations: {PendingMigrations}", string.Join(", ", pendingMigrations));
             }
 
             ctx.Database.Migrate();
-            DatabaseMigrations.RunAll(ctx);
-            ctx.Database.ExecuteSqlRaw("PRAGMA journal_mode=WAL;");
+            AppMetaStore.EnsureTable(ctx);
+            if (ctx.Database.IsSqlite())
+            {
+                DatabaseMigrations.RunAll(ctx);
+                ctx.Database.ExecuteSqlRaw("PRAGMA journal_mode=WAL;");
+            }
             stopwatch.Stop();
             Log.Information("Database initialization completed in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
         }

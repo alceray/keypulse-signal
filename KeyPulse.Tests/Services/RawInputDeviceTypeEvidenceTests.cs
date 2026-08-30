@@ -1,4 +1,4 @@
-using KeyPulse.Data;
+﻿using KeyPulse.Data;
 using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.Tests.Infrastructure;
@@ -16,7 +16,7 @@ public sealed class RawInputDeviceTypeEvidenceTests : IDisposable
     public RawInputDeviceTypeEvidenceTests()
     {
         _dailyStats = new DailyStatsService(_db.Factory, _timer);
-        _dataService = new DataService(_db.Factory, _dailyStats);
+        _dataService = new DataService(_db.Factory, _dailyStats, new DatabaseInstanceLock());
         _sut = new RawInputService(_dataService);
     }
 
@@ -31,7 +31,14 @@ public sealed class RawInputDeviceTypeEvidenceTests : IDisposable
     private void SeedDevice(string id, DeviceTypes type)
     {
         using var ctx = _db.CreateContext();
-        ctx.Devices.Add(new Device { DeviceId = id, DeviceName = id, DeviceType = type });
+        ctx.Devices.Add(
+            new Device
+            {
+                DeviceId = id,
+                DeviceName = id,
+                DeviceType = type,
+            }
+        );
         ctx.SaveChanges();
     }
 

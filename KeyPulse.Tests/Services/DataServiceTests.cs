@@ -1,4 +1,4 @@
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using KeyPulse.Data;
 using KeyPulse.Models;
 using KeyPulse.Services;
@@ -25,7 +25,7 @@ public class DataServiceTests : IDisposable
     public DataServiceTests()
     {
         _dailyStats = new DailyStatsService(_db.Factory, _timer);
-        _sut = new DataService(_db.Factory, _dailyStats);
+        _sut = new DataService(_db.Factory, _dailyStats, new DatabaseInstanceLock());
     }
 
     public void Dispose()
@@ -582,7 +582,12 @@ public class DataServiceTests : IDisposable
     {
         Seed(ctx =>
             ctx.Devices.Add(
-                new Device { DeviceId = "D1", DeviceName = "device", DeviceType = DeviceTypes.Keyboard }
+                new Device
+                {
+                    DeviceId = "D1",
+                    DeviceName = "device",
+                    DeviceType = DeviceTypes.Keyboard,
+                }
             )
         );
 

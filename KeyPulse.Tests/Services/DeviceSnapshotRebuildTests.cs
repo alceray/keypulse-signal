@@ -1,4 +1,4 @@
-using KeyPulse.Data;
+﻿using KeyPulse.Data;
 using KeyPulse.Models;
 using KeyPulse.Services;
 using KeyPulse.Tests.Infrastructure;
@@ -22,7 +22,7 @@ public class DeviceSnapshotRebuildTests : IDisposable
     public DeviceSnapshotRebuildTests()
     {
         _dailyStats = new DailyStatsService(_db.Factory, _timer);
-        _sut = new DataService(_db.Factory, _dailyStats);
+        _sut = new DataService(_db.Factory, _dailyStats, new DatabaseInstanceLock());
     }
 
     public void Dispose()

@@ -15,6 +15,14 @@ public class AppUserSettingsTests
         settings.CloseToTray.ShouldBeTrue();
         settings.SuppressCloseToTrayHint.ShouldBeFalse(); // reminder shows until the user opts out
         settings.ActivityRetentionMonths.ShouldBe(0); // 0 = keep forever
+        settings.DatabaseProvider.ShouldBe(DatabaseProvider.Sqlite);
+        settings.PendingDatabaseProvider.ShouldBeNull();
+        settings.PostgreSql.Port.ShouldBe(5432);
+#if DEBUG
+        settings.PostgreSql.Database.ShouldBe("keypulse_signal_test");
+#else
+        settings.PostgreSql.Database.ShouldBe("keypulse_signal");
+#endif
 
         // LaunchOnLogin default is build-config dependent (off in Debug so dev runs don't register autostart).
 #if DEBUG
@@ -60,6 +68,18 @@ public class AppUserSettingsTests
             CloseToTray = false,
             SuppressCloseToTrayHint = true,
             ActivityRetentionMonths = 6,
+            DatabaseProvider = DatabaseProvider.PostgreSql,
+            PendingDatabaseProvider = DatabaseProvider.Sqlite,
+            PendingDatabaseImport = true,
+            PendingDatabaseSwitchId = "switch-123",
+            PostgreSql = new PostgreSqlConnectionSettings
+            {
+                Host = "db.local",
+                Port = 5544,
+                Database = "keypulse_custom",
+                Username = "keypulse_user",
+                SslMode = PostgreSqlSslMode.VerifyFull,
+            },
         };
 
         var roundTripped = JsonSerializer.Deserialize<AppUserSettings>(JsonSerializer.Serialize(settings))!;
@@ -70,5 +90,14 @@ public class AppUserSettingsTests
         roundTripped.CloseToTray.ShouldBeFalse();
         roundTripped.SuppressCloseToTrayHint.ShouldBeTrue();
         roundTripped.ActivityRetentionMonths.ShouldBe(6);
+        roundTripped.DatabaseProvider.ShouldBe(DatabaseProvider.PostgreSql);
+        roundTripped.PendingDatabaseProvider.ShouldBe(DatabaseProvider.Sqlite);
+        roundTripped.PendingDatabaseImport.ShouldBeTrue();
+        roundTripped.PendingDatabaseSwitchId.ShouldBe("switch-123");
+        roundTripped.PostgreSql.Host.ShouldBe("db.local");
+        roundTripped.PostgreSql.Port.ShouldBe(5544);
+        roundTripped.PostgreSql.Database.ShouldBe("keypulse_custom");
+        roundTripped.PostgreSql.Username.ShouldBe("keypulse_user");
+        roundTripped.PostgreSql.SslMode.ShouldBe(PostgreSqlSslMode.VerifyFull);
     }
 }
