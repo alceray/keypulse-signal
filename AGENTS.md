@@ -64,7 +64,7 @@ Injection
     - See: `Services/DailyStatsService.cs`
 
 6. **DataRetentionService** (Singleton)
-    - Applies the user's `ActivityRetentionMonths` setting (0 = keep forever) by pruning `ActivitySnapshots` and `ActivityProjections` older than the cutoff day; `DailyDeviceStats` and `DeviceEvents` are always kept, so calendar history and connection totals survive pruning
+    - Applies the user's `ActivityRetentionMonths` setting (default 24; 0 = keep forever) by pruning `ActivitySnapshots` and `ActivityProjections` older than the cutoff day; `DailyDeviceStats` and `DeviceEvents` are always kept, so calendar history and connection totals survive pruning
     - Invariants: never prunes before the `DailyStatsFullBackfillAt` marker exists (a later first-run backfill would recompute old days from pruned sources and zero them); drains `ProjectClosedActivityMinutes()` before deleting; within each batch window deletes snapshots **before** their projection checkpoints (orphan checkpoints are harmless, orphan snapshots would be re-projected and double-counted)
     - Deletes in week-sized chunks (short write transactions under WAL); compacts via `VACUUM` only after large prunes
     - Triggers: chained after `RunStartupRebuild()` on the startup background task, on `DailyTick`, and when the retention setting is tightened
@@ -224,7 +224,7 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 
 - `Device.IsHiddenFromDisplay` (persisted on `Devices`, default `false`, migration `AddDeviceDisplayVisibility`) is a **presentation-only** filter. Hidden devices still capture raw input, still append lifecycle events, and are still projected into `DailyDeviceStats` — only their *display* is suppressed.
 - **Toggle path**: right-clicking a row in `DeviceListView` opens a context menu ("Hide/Show in Dashboard and Calendar"). `DeviceListViewModel.ToggleDeviceDisplayVisibilityCommand` calls `DataService.SetDeviceHiddenFromDisplay(deviceId, ...)`, and only flips the in-memory `Device.IsHiddenFromDisplay` if the DB write succeeds.
-- **Unhide path**: the Settings page lists currently hidden devices (live, via `SettingsViewModel.HiddenDevices`) with an Unhide button. `UnhideDeviceCommand` runs the same `SetDeviceHiddenFromDisplay(deviceId, false)` write-then-flip, so both entry points share one code path and the shared in-memory `Device` propagates the change everywhere.
+- **Unhide path**: the same context menu, which reads "Unhide Device" on a hidden row. Because the device list keeps hidden rows visible with a badge, the row is always reachable, so hiding and unhiding share one command and one code path.
 - **The device list itself does not hide hidden devices** — it shows a "Hidden" badge instead. Only the dashboard and calendar exclude them.
 - **Where filtering happens**:
     - `DataService.GetDashboardDevices()` excludes hidden devices at the query.

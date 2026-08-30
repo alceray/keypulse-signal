@@ -16,8 +16,9 @@ public class AppUserSettings
     /// <summary>Set when the user opts out of the close-to-tray reminder via its "don't show again" checkbox.</summary>
     public bool SuppressCloseToTrayHint { get; set; }
 
-    /// <summary>Months of per-minute activity detail to keep; 0 keeps everything forever.</summary>
-    public int ActivityRetentionMonths { get; set; }
+    /// <summary>Months of per-minute activity detail to keep. Zero keeps everything forever.</summary>
+    // Bounded by default. Minute rows dominate the database and nothing reads them past the one-week chart window.
+    public int ActivityRetentionMonths { get; set; } = 24;
 
     /// <summary>The database used by this Debug or Release installation.</summary>
     public DatabaseProvider DatabaseProvider { get; set; } = DatabaseProvider.Sqlite;

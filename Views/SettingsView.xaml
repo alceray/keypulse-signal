@@ -183,41 +183,6 @@
               />
             </StackPanel>
 
-            <StackPanel Visibility="{Binding HasHiddenDevices, Converter={StaticResource BoolToVisibility}}">
-              <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
-                <TextBlock
-                  Text="Hidden devices"
-                  VerticalAlignment="Center"
-                  Foreground="{x:Static config:AppColorPalette.MutedBrush}"
-                />
-                <local:InfoHint
-                  Text="Devices you have hidden from the dashboard and calendar. Unhide to show them again. Tracking continues either way."
-                  Margin="6,0,0,0"
-                  VerticalAlignment="Center"
-                />
-              </StackPanel>
-
-              <ScrollViewer MaxHeight="160" VerticalScrollBarVisibility="Auto">
-                <ItemsControl ItemsSource="{Binding HiddenDevices}">
-                  <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                      <DockPanel Margin="0,0,8,6">
-                        <Button
-                          DockPanel.Dock="Right"
-                          Content="Unhide"
-                          Padding="10,2"
-                          Margin="8,0,0,0"
-                          VerticalAlignment="Center"
-                          Command="{Binding DataContext.UnhideDeviceCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                          CommandParameter="{Binding}"
-                        />
-                        <TextBlock Text="{Binding DeviceName}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
-                      </DockPanel>
-                    </DataTemplate>
-                  </ItemsControl.ItemTemplate>
-                </ItemsControl>
-              </ScrollViewer>
-            </StackPanel>
           </StackPanel>
         </Border>
 

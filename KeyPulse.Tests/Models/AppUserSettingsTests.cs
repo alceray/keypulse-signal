@@ -14,7 +14,7 @@ public class AppUserSettingsTests
         settings.AutoInstallUpdates.ShouldBeTrue();
         settings.CloseToTray.ShouldBeTrue();
         settings.SuppressCloseToTrayHint.ShouldBeFalse(); // reminder shows until the user opts out
-        settings.ActivityRetentionMonths.ShouldBe(0); // 0 = keep forever
+        settings.ActivityRetentionMonths.ShouldBe(24); // bounded by default; 0 would keep forever
         settings.DatabaseProvider.ShouldBe(DatabaseProvider.Sqlite);
         settings.PendingDatabaseProvider.ShouldBeNull();
         settings.PostgreSql.Port.ShouldBe(5432);
@@ -33,7 +33,7 @@ public class AppUserSettingsTests
     }
 
     [Fact]
-    public void Deserialize_LegacyJsonWithoutRetentionKey_KeepsForever()
+    public void Deserialize_LegacyJsonWithoutRetentionKey_UsesDefaultRetention()
     {
         // A settings.json written before ActivityRetentionMonths existed.
         const string legacyJson = """{"LaunchOnLogin":true,"IsFirstLaunch":false,"AutoInstallUpdates":false}""";
@@ -43,7 +43,7 @@ public class AppUserSettingsTests
         settings.LaunchOnLogin.ShouldBeTrue();
         settings.IsFirstLaunch.ShouldBeFalse();
         settings.AutoInstallUpdates.ShouldBeFalse();
-        settings.ActivityRetentionMonths.ShouldBe(0);
+        settings.ActivityRetentionMonths.ShouldBe(24);
     }
 
     [Fact]
