@@ -74,7 +74,24 @@
               Content="Keep running in the background when closed"
               IsChecked="{Binding CloseToTray, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
               Visibility="{Binding ShowCloseToTrayOption, Converter={StaticResource BoolToVisibility}}"
+              Margin="0,0,0,10"
             />
+
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="Keep per-minute activity for:" VerticalAlignment="Center" />
+              <ComboBox
+                Margin="8,0,0,0"
+                Width="120"
+                ItemsSource="{Binding RetentionChoices}"
+                SelectedItem="{Binding SelectedRetentionOption, Mode=TwoWay}"
+                DisplayMemberPath="Label"
+              />
+              <local:InfoHint
+                Text="Limits how long a minute-by-minute record of your input activity is stored, for privacy reasons and to keep the database compact. Charts, calendar history, and lifetime totals are unaffected."
+                Margin="6,0,0,0"
+                VerticalAlignment="Center"
+              />
+            </StackPanel>
           </StackPanel>
         </Border>
 
@@ -86,7 +103,7 @@
             </StackPanel>
             <Border Style="{StaticResource SectionDividerStyle}" />
 
-            <Grid Margin="0,0,0,12">
+            <Grid>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -118,7 +135,7 @@
 
             <Grid
               Visibility="{Binding ShowPostgreSqlSettings, Converter={StaticResource BoolToVisibility}}"
-              Margin="0,0,0,10"
+              Margin="0,12,0,0"
             >
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="90" />
@@ -155,7 +172,7 @@
 
             <StackPanel
               Orientation="Horizontal"
-              Margin="0,0,0,18"
+              Margin="0,12,0,0"
               Visibility="{Binding IsStorageProviderChanged, Converter={StaticResource BoolToVisibility}}"
             >
               <Button
@@ -166,23 +183,6 @@
               />
               <Button Content="Cancel" Padding="12,4" Click="OnCancelDatabaseChangesClick" />
             </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,14">
-              <TextBlock Text="Keep per-minute activity for:" VerticalAlignment="Center" />
-              <ComboBox
-                Margin="8,0,0,0"
-                Width="120"
-                ItemsSource="{Binding RetentionChoices}"
-                SelectedItem="{Binding SelectedRetentionOption, Mode=TwoWay}"
-                DisplayMemberPath="Label"
-              />
-              <local:InfoHint
-                Text="Limits how long a minute-by-minute record of your input activity is stored, for privacy reasons and to keep the database compact. Charts, calendar history, and lifetime totals are unaffected."
-                Margin="6,0,0,0"
-                VerticalAlignment="Center"
-              />
-            </StackPanel>
-
           </StackPanel>
         </Border>
 
