@@ -179,7 +179,6 @@ public class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<ActivityProjection>().ToTable("ActivityProjections");
         modelBuilder.Entity<ActivityProjection>().Property(e => e.Minute).HasConversion(localToUtcConverter);
-        modelBuilder.Entity<ActivityProjection>().Property(e => e.ProjectedAt).HasConversion(localToUtcConverter);
         modelBuilder
             .Entity<ActivityProjection>()
             .HasIndex(e => new { e.DeviceId, e.Minute })

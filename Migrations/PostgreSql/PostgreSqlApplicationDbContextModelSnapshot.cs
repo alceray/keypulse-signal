@@ -40,9 +40,6 @@ namespace KeyPulse.Migrations.PostgreSql
                     b.Property<DateTime>("Minute")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("ProjectedAt")
-                        .HasColumnType("timestamp with time zone");
-
                     b.HasKey("ActivityProjectionId");
 
                     b.HasIndex("DeviceId", "Minute")

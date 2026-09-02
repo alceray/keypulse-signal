@@ -605,7 +605,6 @@ public class DailyStatsService : IDisposable
             {
                 DeviceId = snapshot.DeviceId,
                 Minute = snapshot.Minute,
-                ProjectedAt = projectedAt,
             }
         );
     }

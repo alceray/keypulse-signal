@@ -204,6 +204,5 @@ public class DataRetentionServiceTests : IDisposable
         {
             DeviceId = deviceId,
             Minute = localMinute,
-            ProjectedAt = DateTime.UtcNow,
         };
 }

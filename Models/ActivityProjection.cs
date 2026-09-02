@@ -21,7 +21,4 @@ public class ActivityProjection
     /// <summary>The minute bucket (matches ActivitySnapshot.Minute) that was projected.</summary>
     [Required]
     public DateTime Minute { get; set; }
-
-    /// <summary>When the projection was applied.</summary>
-    public DateTime ProjectedAt { get; set; }
 }

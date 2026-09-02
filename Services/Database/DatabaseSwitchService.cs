@@ -233,7 +233,6 @@ public sealed class DatabaseSwitchService(AppSettingsService settingsService, ID
                     {
                         DeviceId = x.DeviceId,
                         Minute = x.Minute,
-                        ProjectedAt = x.ProjectedAt,
                     })
                 ),
             target,
