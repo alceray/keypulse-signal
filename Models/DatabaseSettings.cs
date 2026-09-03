@@ -22,6 +22,9 @@ public sealed class PostgreSqlConnectionSettings
     public string Username { get; set; } = "keypulse";
     public PostgreSqlSslMode SslMode { get; set; } = PostgreSqlSslMode.Prefer;
 
+    /// <summary>Renders the connection target for display. Carries no secret.</summary>
+    public string Describe() => $"{Username}@{Host}:{Port}/{Database}";
+
     public PostgreSqlConnectionSettings Copy() =>
         new()
         {

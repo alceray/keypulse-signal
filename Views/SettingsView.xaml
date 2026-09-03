@@ -10,6 +10,7 @@
 >
   <UserControl.Resources>
     <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+
     <Style x:Key="StorageOptionStyle" TargetType="RadioButton">
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="Margin" Value="0,0,8,0" />
@@ -24,26 +25,15 @@
               BorderThickness="1"
               CornerRadius="5"
             >
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="18" />
-                  <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid Width="16" Height="16" VerticalAlignment="Top" Margin="0,2,0,0">
-                  <Ellipse x:Name="Ring" Stroke="{x:Static config:AppColorPalette.SecondaryTextBrush}" StrokeThickness="1" />
-                  <Ellipse x:Name="Dot" Width="8" Height="8" Fill="{x:Static config:AppColorPalette.ConnectedBrush}" Visibility="Collapsed" />
-                </Grid>
-                <ContentPresenter Grid.Column="1" Margin="8,0,0,0" />
-              </Grid>
+              <ContentPresenter HorizontalAlignment="Center" />
             </Border>
             <ControlTemplate.Triggers>
               <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="Card" Property="Background" Value="{x:Static config:AppColorPalette.SurfaceBrush}" />
               </Trigger>
+
               <Trigger Property="IsChecked" Value="True">
-                <Setter TargetName="Card" Property="BorderBrush" Value="{x:Static config:AppColorPalette.ConnectedBrush}" />
-                <Setter TargetName="Ring" Property="Stroke" Value="{x:Static config:AppColorPalette.ConnectedBrush}" />
-                <Setter TargetName="Dot" Property="Visibility" Value="Visible" />
+                <Setter TargetName="Card" Property="BorderBrush" Value="{x:Static config:AppColorPalette.PrimaryTextBrush}" />
               </Trigger>
             </ControlTemplate.Triggers>
           </ControlTemplate>
@@ -54,7 +44,7 @@
 
   <Grid Margin="16">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-      <StackPanel MaxWidth="520" HorizontalAlignment="Left" Margin="0,0,0,32">
+      <StackPanel Width="460" HorizontalAlignment="Left" Margin="0,0,0,32">
 
         <Border Style="{StaticResource SectionCardStyle}">
           <StackPanel>
@@ -114,9 +104,17 @@
                 Style="{StaticResource StorageOptionStyle}"
                 IsChecked="{Binding UseSqliteStorage, Mode=TwoWay}"
               >
-                <StackPanel>
-                  <TextBlock Text="SQLite" />
-                  <TextBlock Text="Local file, no setup" Foreground="{x:Static config:AppColorPalette.MutedBrush}" FontSize="11" Margin="0,3,0,0" />
+                <StackPanel Orientation="Horizontal">
+                  <iconPacks:PackIconSimpleIcons Kind="SqLite" Width="20" Height="20" VerticalAlignment="Center" Foreground="#003B57" />
+                  <TextBlock Text="SQLite" Margin="8,0,0,0" VerticalAlignment="Center" />
+                  <TextBlock
+                    Text="In use"
+                    Visibility="{Binding IsSqliteActive, Converter={StaticResource BoolToVisibility}}"
+                    Foreground="{x:Static config:AppColorPalette.MutedBrush}"
+                    FontSize="11"
+                    Margin="8,0,0,0"
+                    VerticalAlignment="Center"
+                  />
                 </StackPanel>
               </RadioButton>
               <RadioButton
@@ -126,62 +124,121 @@
                 Margin="0"
                 IsChecked="{Binding UsePostgreSqlStorage, Mode=TwoWay}"
               >
-                <StackPanel>
-                  <TextBlock Text="PostgreSQL" />
-                  <TextBlock Text="Your database server" Foreground="{x:Static config:AppColorPalette.MutedBrush}" FontSize="11" Margin="0,3,0,0" />
+                <StackPanel Orientation="Horizontal">
+                  <iconPacks:PackIconSimpleIcons Kind="PostgreSql" Width="20" Height="20" VerticalAlignment="Center" Foreground="#336791" />
+                  <TextBlock Text="PostgreSQL" Margin="8,0,0,0" VerticalAlignment="Center" />
+                  <TextBlock
+                    Text="In use"
+                    Visibility="{Binding IsPostgreSqlActive, Converter={StaticResource BoolToVisibility}}"
+                    Foreground="{x:Static config:AppColorPalette.MutedBrush}"
+                    FontSize="11"
+                    Margin="8,0,0,0"
+                    VerticalAlignment="Center"
+                  />
                 </StackPanel>
               </RadioButton>
             </Grid>
 
-            <Grid
-              Visibility="{Binding ShowPostgreSqlSettings, Converter={StaticResource BoolToVisibility}}"
-              Margin="0,12,0,0"
-            >
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="90" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="55" />
-                <ColumnDefinition Width="70" />
-              </Grid.ColumnDefinitions>
-              <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-              </Grid.RowDefinitions>
+            <!-- Sized to the tallest state so switching providers does not resize the card. -->
+            <StackPanel MinHeight="46">
+              <Grid
+                Visibility="{Binding ShowPostgreSqlSummary, Converter={StaticResource BoolToVisibility}}"
+                Margin="0,12,0,0"
+              >
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-              <TextBlock Grid.Row="0" Grid.Column="0" Text="Host" VerticalAlignment="Center" Margin="0,0,6,6" />
-              <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PostgreSqlHost, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,8,6" />
-              <TextBlock Grid.Row="0" Grid.Column="2" Text="Port" VerticalAlignment="Center" Margin="0,0,6,6" />
-              <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding PostgreSqlPort, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,6" />
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                  <TextBlock Text="{Binding PostgreSqlSummary}" TextTrimming="CharacterEllipsis" />
+                  <TextBlock
+                    Text="{Binding PostgreSqlSslSummary}"
+                    Foreground="{x:Static config:AppColorPalette.MutedBrush}"
+                    FontSize="11"
+                    Margin="0,3,0,0"
+                  />
+                </StackPanel>
 
-              <TextBlock Grid.Row="1" Grid.Column="0" Text="Database" VerticalAlignment="Center" Margin="0,0,6,6" />
-              <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding PostgreSqlDatabase, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,6" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                  <Button Content="Test" Command="{Binding TestDatabaseConnectionCommand}" Padding="10,3" Margin="8,0,0,0" />
+                  <Button Content="Edit" Padding="10,3" Margin="8,0,0,0" Click="OnEditDatabaseConnectionClick" />
+                </StackPanel>
+              </Grid>
 
-              <TextBlock Grid.Row="2" Grid.Column="0" Text="Username" VerticalAlignment="Center" Margin="0,0,6,6" />
-              <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding PostgreSqlUsername, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,6" />
+              <StackPanel
+                Visibility="{Binding ShowPostgreSqlForm, Converter={StaticResource BoolToVisibility}}"
+                Margin="0,12,0,0"
+              >
+                <TextBlock
+                  Text="Host, port, and database stay fixed while PostgreSQL is in use. Switch to SQLite first to point KeyPulse at a different database."
+                  Visibility="{Binding IsPostgreSqlActive, Converter={StaticResource BoolToVisibility}}"
+                  Foreground="{x:Static config:AppColorPalette.MutedBrush}"
+                  FontSize="11"
+                  TextWrapping="Wrap"
+                  Margin="0,0,0,10"
+                />
 
-              <TextBlock Grid.Row="3" Grid.Column="0" Text="Password" VerticalAlignment="Center" Margin="0,0,6,6" />
-              <PasswordBox x:Name="PostgreSqlPasswordBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" PasswordChanged="OnPostgreSqlPasswordChanged" Margin="0,0,0,6" />
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="55" />
+                    <ColumnDefinition Width="70" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                  </Grid.RowDefinitions>
 
-              <TextBlock Grid.Row="4" Grid.Column="0" Text="SSL mode" VerticalAlignment="Center" Margin="0,0,6,0" />
-              <ComboBox Grid.Row="4" Grid.Column="1" Width="120" HorizontalAlignment="Left" ItemsSource="{Binding PostgreSqlSslModeChoices}" SelectedItem="{Binding PostgreSqlSslMode}" />
-              <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Content="Test" Command="{Binding TestDatabaseConnectionCommand}" Padding="10,3" HorizontalAlignment="Right" />
-            </Grid>
+                  <TextBlock Grid.Row="0" Grid.Column="0" Text="Host" VerticalAlignment="Center" Margin="0,0,6,6" />
+                  <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="{Binding CanEditConnectionTarget}" Text="{Binding PostgreSqlHost, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,8,6" />
+                  <TextBlock Grid.Row="0" Grid.Column="2" Text="Port" VerticalAlignment="Center" Margin="0,0,6,6" />
+                  <TextBox Grid.Row="0" Grid.Column="3" IsEnabled="{Binding CanEditConnectionTarget}" Text="{Binding PostgreSqlPort, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,6" />
 
-            <StackPanel
-              Orientation="Horizontal"
-              Margin="0,12,0,0"
-              Visibility="{Binding IsStorageProviderChanged, Converter={StaticResource BoolToVisibility}}"
-            >
-              <Button
-                Content="Apply on restart"
-                Command="{Binding ApplyDatabaseCommand}"
-                Padding="12,4"
-                Margin="0,0,8,0"
-              />
-              <Button Content="Cancel" Padding="12,4" Click="OnCancelDatabaseChangesClick" />
+                  <TextBlock Grid.Row="1" Grid.Column="0" Text="Database" VerticalAlignment="Center" Margin="0,0,6,6" />
+                  <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" IsEnabled="{Binding CanEditConnectionTarget}" Text="{Binding PostgreSqlDatabase, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,6" />
+
+                  <TextBlock Grid.Row="2" Grid.Column="0" Text="Username" VerticalAlignment="Center" Margin="0,0,6,6" />
+                  <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding PostgreSqlUsername, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,6" />
+
+                  <TextBlock Grid.Row="3" Grid.Column="0" Text="Password" VerticalAlignment="Center" Margin="0,0,6,6" />
+                  <PasswordBox x:Name="PostgreSqlPasswordBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" PasswordChanged="OnPostgreSqlPasswordChanged" Margin="0,0,0,6" />
+
+                  <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Text="Leave blank to keep the saved password."
+                    Visibility="{Binding IsPostgreSqlActive, Converter={StaticResource BoolToVisibility}}"
+                    Foreground="{x:Static config:AppColorPalette.MutedBrush}"
+                    FontSize="11"
+                    Margin="0,0,0,8"
+                  />
+
+                  <TextBlock Grid.Row="5" Grid.Column="0" Text="SSL mode" VerticalAlignment="Center" Margin="0,0,6,0" />
+                  <ComboBox Grid.Row="5" Grid.Column="1" Width="120" HorizontalAlignment="Left" ItemsSource="{Binding PostgreSqlSslModeChoices}" SelectedItem="{Binding PostgreSqlSslMode}" />
+                  <Button Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Content="Test" Command="{Binding TestDatabaseConnectionCommand}" Padding="10,3" HorizontalAlignment="Right" />
+                </Grid>
+              </StackPanel>
+
+              <StackPanel
+                Orientation="Horizontal"
+                Margin="0,12,0,0"
+                Visibility="{Binding ShowDatabaseActions, Converter={StaticResource BoolToVisibility}}"
+              >
+                <Button
+                  Content="Apply on restart"
+                  Command="{Binding ApplyDatabaseCommand}"
+                  Padding="12,4"
+                  Margin="0,0,8,0"
+                />
+                <Button Content="Cancel" Padding="12,4" Click="OnCancelDatabaseChangesClick" />
+              </StackPanel>
             </StackPanel>
           </StackPanel>
         </Border>

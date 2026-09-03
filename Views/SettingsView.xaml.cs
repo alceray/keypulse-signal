@@ -8,10 +8,7 @@ public partial class SettingsView
     public SettingsView()
     {
         InitializeComponent();
-        var viewModel = App.ServiceProvider.GetRequiredService<SettingsViewModel>();
-        DataContext = viewModel;
-        // A password box cannot be bound, so the saved password is pushed in by hand.
-        PostgreSqlPasswordBox.Password = viewModel.PostgreSqlPassword;
+        DataContext = App.ServiceProvider.GetRequiredService<SettingsViewModel>();
     }
 
     private void OnPostgreSqlPasswordChanged(object sender, System.Windows.RoutedEventArgs e)
@@ -20,11 +17,20 @@ public partial class SettingsView
             viewModel.PostgreSqlPassword = passwordBox.Password;
     }
 
+    private void OnEditDatabaseConnectionClick(object sender, System.Windows.RoutedEventArgs e)
+    {
+        if (DataContext is not SettingsViewModel viewModel)
+            return;
+        viewModel.BeginEditConnection();
+        // A password box cannot be bound, so clearing it is done by hand.
+        PostgreSqlPasswordBox.Clear();
+    }
+
     private void OnCancelDatabaseChangesClick(object sender, System.Windows.RoutedEventArgs e)
     {
         if (DataContext is not SettingsViewModel viewModel)
             return;
         viewModel.CancelDatabaseChanges();
-        PostgreSqlPasswordBox.Password = viewModel.PostgreSqlPassword;
+        PostgreSqlPasswordBox.Clear();
     }
 }

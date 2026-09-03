@@ -32,6 +32,7 @@ public class SettingsViewModel : ToastMessageViewModelBase
     private string _postgreSqlPassword = "";
     private PostgreSqlSslMode _postgreSqlSslMode = PostgreSqlSslMode.Prefer;
     private PostgreSqlConnectionSettings _loadedPostgreSql = new();
+    private bool _isEditingConnection;
 
     public SettingsViewModel(
         AppSettingsService appSettingsService,
@@ -122,11 +123,12 @@ public class SettingsViewModel : ToastMessageViewModelBase
             if (_selectedDatabaseProvider == value)
                 return;
             _selectedDatabaseProvider = value;
+            _isEditingConnection = false;
             OnPropertyChanged();
-            OnPropertyChanged(nameof(ShowPostgreSqlSettings));
             OnPropertyChanged(nameof(UseSqliteStorage));
             OnPropertyChanged(nameof(UsePostgreSqlStorage));
             OnPropertyChanged(nameof(IsStorageProviderChanged));
+            RaiseConnectionStateChanged();
         }
     }
 
@@ -152,7 +154,45 @@ public class SettingsViewModel : ToastMessageViewModelBase
 
     public bool IsStorageProviderChanged => SelectedDatabaseProvider != _activeDatabaseProvider;
 
-    public bool ShowPostgreSqlSettings => SelectedDatabaseProvider == DatabaseProvider.PostgreSql;
+    private bool IsPostgreSqlSelected => SelectedDatabaseProvider == DatabaseProvider.PostgreSql;
+
+    public bool IsPostgreSqlActive => _activeDatabaseProvider == DatabaseProvider.PostgreSql;
+
+    public bool IsSqliteActive => _activeDatabaseProvider == DatabaseProvider.Sqlite;
+
+    public bool ShowPostgreSqlSummary => IsPostgreSqlSelected && IsPostgreSqlActive && !_isEditingConnection;
+
+    public bool ShowPostgreSqlForm => IsPostgreSqlSelected && (!IsPostgreSqlActive || _isEditingConnection);
+
+    public bool ShowDatabaseActions => IsStorageProviderChanged || _isEditingConnection;
+
+    // Repointing a live installation would strand its history, so only the credentials stay editable.
+    public bool CanEditConnectionTarget => !IsPostgreSqlActive;
+
+    public string PostgreSqlSummary => _loadedPostgreSql.Describe();
+
+    public string PostgreSqlSslSummary => $"SSL mode: {_loadedPostgreSql.SslMode}";
+
+    public void BeginEditConnection()
+    {
+        if (_isEditingConnection)
+            return;
+
+        _isEditingConnection = true;
+        RaiseConnectionStateChanged();
+    }
+
+    private void RaiseConnectionStateChanged()
+    {
+        OnPropertyChanged(nameof(ShowPostgreSqlSummary));
+        OnPropertyChanged(nameof(ShowPostgreSqlForm));
+        OnPropertyChanged(nameof(ShowDatabaseActions));
+        OnPropertyChanged(nameof(IsPostgreSqlActive));
+        OnPropertyChanged(nameof(IsSqliteActive));
+        OnPropertyChanged(nameof(CanEditConnectionTarget));
+        OnPropertyChanged(nameof(PostgreSqlSummary));
+        OnPropertyChanged(nameof(PostgreSqlSslSummary));
+    }
 
     public string PostgreSqlHost
     {
@@ -327,12 +367,14 @@ public class SettingsViewModel : ToastMessageViewModelBase
         PostgreSqlDatabase = settings.PostgreSql.Database;
         PostgreSqlUsername = settings.PostgreSql.Username;
         PostgreSqlSslMode = settings.PostgreSql.SslMode;
-        PostgreSqlPassword = _databaseCredentialStore.ReadPostgreSqlPassword() ?? string.Empty;
+        PostgreSqlPassword = string.Empty;
         OnPropertyChanged(nameof(IsStorageProviderChanged));
+        RaiseConnectionStateChanged();
     }
 
     public void CancelDatabaseChanges()
     {
+        _isEditingConnection = false;
         var settings = _appSettingsService.GetSettings();
         if (settings.PendingDatabaseProvider.HasValue)
         {
@@ -345,6 +387,8 @@ public class SettingsViewModel : ToastMessageViewModelBase
         {
             LoadDatabaseSettings(settings);
         }
+
+        RaiseConnectionStateChanged();
     }
 
     private PostgreSqlConnectionSettings ReadPostgreSqlSettings() =>
@@ -357,16 +401,26 @@ public class SettingsViewModel : ToastMessageViewModelBase
             SslMode = PostgreSqlSslMode,
         };
 
-    private string ReadPostgreSqlPassword() =>
-        string.IsNullOrEmpty(PostgreSqlPassword)
+    // A blank box means the user is changing something other than the password, so reuse the saved one.
+    private string ResolvePostgreSqlPassword()
+    {
+        if (!string.IsNullOrEmpty(PostgreSqlPassword))
+            return PostgreSqlPassword;
+
+        var saved = IsPostgreSqlActive ? _databaseCredentialStore.ReadPostgreSqlPassword() : null;
+        return string.IsNullOrEmpty(saved)
             ? throw new InvalidOperationException("Enter the PostgreSQL password")
-            : PostgreSqlPassword;
+            : saved;
+    }
 
     private async Task TestDatabaseConnectionAsync()
     {
         try
         {
-            await DatabaseConfigurationService.TestPostgreSqlAsync(ReadPostgreSqlSettings(), ReadPostgreSqlPassword());
+            await DatabaseConfigurationService.TestPostgreSqlAsync(
+                ReadPostgreSqlSettings(),
+                ResolvePostgreSqlPassword()
+            );
             ToastMessage = "Database connection successful.";
         }
         catch (Exception ex)
@@ -384,7 +438,7 @@ public class SettingsViewModel : ToastMessageViewModelBase
             if (SelectedDatabaseProvider == DatabaseProvider.PostgreSql)
             {
                 var postgreSql = ReadPostgreSqlSettings();
-                var password = ReadPostgreSqlPassword();
+                var password = ResolvePostgreSqlPassword();
                 await DatabaseConfigurationService.TestPostgreSqlAsync(postgreSql, password);
 
                 if (_activeDatabaseProvider == DatabaseProvider.PostgreSql)
@@ -428,6 +482,8 @@ public class SettingsViewModel : ToastMessageViewModelBase
             }
 
             _appSettingsService.SaveSettings(settings);
+            _isEditingConnection = false;
+            RaiseConnectionStateChanged();
             ToastMessage = "Database change saved. Restart KeyPulse to apply it.";
         }
         catch (Exception ex)
