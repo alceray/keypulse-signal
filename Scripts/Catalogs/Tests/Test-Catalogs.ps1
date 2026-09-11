@@ -72,6 +72,12 @@ function Save-TestFetch([string]$Run) {
             if ($source -eq 'kbdfans') {
                 $data.products[0].title = 'Different Set'; $data.products[0].id = 301
                 $data.products[1].title = 'Different Novelties'; $data.products[1].id = 302
+            } elseif ($source -notin @('switchoddities', 'unikeys', 'divinikey')) {
+                # Every other retailer shares the Divinikey fixture, so each needs its own
+                # names or the shared products would read as cross-source duplicates.
+                $offset = 400 + 10 * @($script:CatalogSources.Keys).IndexOf($source)
+                $data.products[0].title = "$source Set"; $data.products[0].id = $offset + 1
+                $data.products[1].title = "$source Novelties"; $data.products[1].id = $offset + 2
             }
             $files = @()
             foreach ($page in 1..2) {
@@ -157,17 +163,33 @@ Test-Case 'Product labels, HTML entities, standalone kits, and retailer attribut
     $table = Get-CatalogText '<table><tr><td><p>Manufacturer</p></td><td><p>JWK</p></td></tr><tr><td>Designer</td><td>Durock</td></tr></table>'
     Assert ((Get-CatalogLabel $table 'Manufacturer(?:[ \t]*:|[ \t]+)') -eq 'JWK') 'Table-cell layout lost metadata.'
 }
-Test-Case 'Keycap add-ons are retained across sources while references and accessories remain excluded' {
+Test-Case 'Keycap add-ons are retained across sources while references, accessories, and artisans remain excluded' {
     $product = (Read-CatalogJson "$PSScriptRoot/Fixtures/products.json").products[1]
     foreach ($source in @('divinikey', 'kbdfans')) {
-        foreach ($name in @('Example Spacebars', 'Example Accent Kit', 'Example International Add-on', 'Example Artisan', 'Example Relegendables', 'Example 40s Kit Collection')) {
+        foreach ($name in @('Example Spacebars', 'Example Accent Kit', 'Example International Add-on', 'Example Relegendables', 'Example Metal Keycaps Set')) {
             $product.title = $name
             $record = Convert-CatalogProduct $product $source
-            Assert (-not $record.excluded -and $record.entry.name -ceq $name) "Keycap add-on lost: $source/$name"
+            $expected = $name -replace ' Keycaps Set$', ''
+            Assert (-not $record.excluded -and $record.entry.name -ceq $expected) "Keycap add-on lost: $source/$name"
         }
         $product.title = 'Example Keycap Puller'
         Assert ((Convert-CatalogProduct $product $source).excluded) 'Non-keycap accessory was accepted.'
     }
+    foreach ($listing in @(
+        @{ title = 'Example Artisan'; vendor = 'Example' }
+        @{ title = 'Example Artisans'; vendor = 'Example' }
+        @{ title = 'Example Machined Keycap'; vendor = 'Example' }
+        @{ title = 'Example Brass Keycap'; vendor = 'Example' }
+        @{ title = 'Example + Salvun keycap'; vendor = 'Example' }
+        @{ title = 'Example Orenji'; vendor = 'Salvun' }
+        @{ title = 'Example Artisan Extras'; vendor = 'Artisan' }
+    )) {
+        $product = [ordered]@{ id = 962; title = $listing.title; handle = 'x'; vendor = $listing.vendor; body_html = ''; options = @(); variants = @() }
+        Assert ((Convert-CatalogProduct $product 'omnitype').excluded -match 'Artisan') "$($listing.title) was accepted as a keycap set."
+    }
+    # A studio that also sells full sets is not an artisan maker.
+    $set = [ordered]@{ id = 963; title = 'PBT Office Beige'; handle = 'x'; vendor = 'HIBI'; body_html = ''; options = @(); variants = @() }
+    Assert (-not (Convert-CatalogProduct $set 'omnitype').excluded) 'A keycap set from an artisan studio was rejected.'
     foreach ($name in @('Example 40s Addon', 'Example Modifiers', 'Example Accent', 'Example Spacebars', 'Example Relegendables')) {
         $record = Convert-CatalogMatrix "title: $name" @{ sourcePath = 'docs/gmk-keycaps/Example.md' } ('a' * 40)
         Assert (-not $record.excluded -and $record.entry.name -ceq "GMK $name") "Matrix add-on lost: $name"
@@ -374,5 +396,121 @@ Test-Case 'Only an explicit exclusion can remove a mistakenly accepted listing' 
     Assert ($next.state.catalogs.keycaps.entries.Count -eq 1 -and $next.report.removals.Count -eq 1) 'Explicit correction was not applied.'
 }
 
+Test-Case 'Each retailer vendor field is read for what that store puts in it' {
+    function New-TestKeycapListing([string]$Title, [string]$Vendor) {
+        [ordered]@{ id = 960; title = $Title; handle = 'example'; vendor = $Vendor; body_html = ''; options = @(); variants = @() }
+    }
+    $stocked = Convert-CatalogProduct (New-TestKeycapListing 'Example Set' 'Stocked') 'cannonkeys'
+    Assert (-not $stocked.entry.Contains('brand') -and -not $stocked.entry.Contains('manufacturer')) 'A stock status became a company.'
+    $made = Convert-CatalogProduct (New-TestKeycapListing 'Example Set' 'Signature Plastics') 'dailyclack'
+    Assert ($made.entry.manufacturer -ceq 'Signature Plastics') 'A retailer maker attribution was lost.'
+    foreach ($vendor in @('Artisan', 'NovelKeys', 'KBDfans')) {
+        $entry = (Convert-CatalogProduct (New-TestKeycapListing 'Example Set' $vendor) 'dailyclack').entry
+        Assert (-not $entry.Contains('manufacturer')) "$vendor was trusted as a maker."
+    }
+    # The four original retailers keep reading their vendor as the selling brand.
+    Assert ((Convert-CatalogProduct (New-TestKeycapListing 'Example Set' 'PBTfans') 'divinikey').entry.brand -ceq 'PBTfans') 'Existing vendor handling changed.'
+}
+Test-Case 'Keycap titles reach the spelling the catalog already uses' {
+    foreach ($pair in @(
+        @{ title = 'GMK Blurple (CYL)'; name = 'GMK CYL Blurple' }
+        @{ title = 'GMK Blurple (CYL) Bundle'; name = 'GMK CYL Blurple' }
+        @{ title = 'CYL Finer Things R2'; name = 'GMK CYL Finer Things R2' }
+        @{ title = 'Keyboard Science - Mio Yogurt'; name = 'Keyboard Science Mio Yogurt' }
+        @{ title = 'GMK Beloved - KA2017 Revival'; name = 'GMK Beloved - KA2017 Revival' }
+        @{ title = 'Qtuo Studio - Magic Bunny'; name = 'Qtuo Studio - Magic Bunny' }
+    )) {
+        Assert ((Get-CatalogKeycapTitle $pair.title) -ceq $pair.name) "$($pair.title) became $(Get-CatalogKeycapTitle $pair.title)"
+    }
+    Assert ((Get-CatalogMatchName (Get-CatalogKeycapTitle 'CYL Finer Things R2')) -ceq (Get-CatalogMatchName 'GMK Finer Things R2')) 'A CYL listing missed its existing set.'
+    foreach ($title in @('GMK Child Kit Mega Listing', 'Example 40s Kit Collection', 'GMK Leftover Sale', 'Example ABS Leftovers')) {
+        $listing = [ordered]@{ id = 961; title = $title; handle = 'x'; vendor = ''; body_html = ''; options = @(); variants = @() }
+        Assert ((Convert-CatalogProduct $listing 'novelkeys').excluded -match 'several products') "$title was accepted as one product."
+    }
+    foreach ($title in @('Example Switches', '[Pre-Order] Example Systems Faceplates')) {
+        $listing = [ordered]@{ id = 961; title = $title; handle = 'x'; vendor = ''; body_html = ''; options = @(); variants = @() }
+        Assert ((Convert-CatalogProduct $listing 'keygem').excluded -match 'Not a keycap') "$title was accepted as keycaps."
+    }
+    foreach ($title in @('Example Keycaps B-Stock', 'Example Keycaps (B-Stock)')) {
+        $listing = [ordered]@{ id = 961; title = $title; handle = 'x'; vendor = ''; body_html = ''; options = @(); variants = @() }
+        $record = Convert-CatalogProduct $listing 'keygem'
+        Assert (-not $record.excluded -and $record.entry.name -ceq 'Example') "$title did not reach its clean name."
+    }
+    Assert ((Get-CatalogSpecimenReason 'CXA Keycaps - Trial Set') -match 'Sample') 'A trial set was accepted.'
+    Assert ((Get-CatalogSpecimenReason 'BOW Keycaps - Display Unit') -match 'display') 'A display unit was accepted.'
+}
+Test-Case 'Labels accept a colon or a dash, and company credits drop trademark styling' {
+    $pattern = 'Manufactured by|Manufacturer(?:[ \t]*:|[ \t]+)'
+    foreach ($line in @('Manufacturer: GMK', 'Manufacturer - GMK', "Manufacturer $([char]0x2014) GMK", "Manufacturer $([char]0x2013) GMK")) {
+        Assert ((Get-CatalogLabel $line $pattern) -ceq 'GMK') "Label separator was kept in: $line"
+    }
+    Assert ((Get-CatalogLabel 'Designer: Jean-Luc' 'Designed by|Designer(?:[ \t]*:|[ \t]+)') -ceq 'Jean-Luc') 'A hyphen inside a value was cut.'
+    Assert ((Get-CatalogCreditName ('PBTfans' + [char]0x2122)) -ceq 'PBTfans') 'A trademark sign survived in a company credit.'
+    Assert ((Get-CatalogLubeFreeName "Example Linear $([char]0x2013) Dry") -ceq 'Example Linear') 'An en dash lube option was not removed.'
+}
+Test-Case 'Spellings of one value agree, and only a real difference conflicts' {
+    $records = New-TestRecords
+    $first = Copy-Value $records[1]; $first.sourceId = 'spelling-a'; $first.entry = [ordered]@{ name = 'Spelling Example'; designer = 'biip' }
+    $state = (New-CatalogCandidate (Read-CatalogState (Join-Path $testRoot 'spelling-empty')) @($records[0], $first)).state
+    $second = Copy-Value $first; $second.sourceId = 'spelling-b'; $second.entry.designer = 'BIIP'
+    $state.overrides.bindings['divinikey:spelling-b'] = 'spelling-example'
+    $result = New-CatalogCandidate $state @($records[0], $first, $second)
+    $entry = @($result.state.catalogs.keycaps.entries | Where-Object { $_.id -ceq 'spelling-example' })[0]
+    Assert ($result.report.conflicts.Count -eq 0 -and $entry.designer -ceq 'biip') 'A case-only variant restyled the accepted credit or reported a conflict.'
+    $second.entry.designer = 'Someone Else'
+    Assert ((New-CatalogCandidate $state @($records[0], $first, $second)).report.conflicts.Count -eq 1) 'A genuine disagreement passed silently.'
+}
+Test-Case 'Keycap names keep their Latin form and drop the translation' {
+    # Built from code points so this file stays ASCII.
+    function Get-TestScript([int[]]$Codes) { -join ($Codes | ForEach-Object { [char]$_ }) }
+    $dracula = Get-TestScript 0x5FB7,0x53E4,0x62C9
+    foreach ($pair in @(
+        @{ name = "GMK Dracula R2 ${dracula}R2"; latin = 'GMK Dracula R2' }
+        @{ name = "GMK Carbon R1 $dracula R1"; latin = 'GMK Carbon R1' }
+        @{ name = "GMK CYL Kaiju CYL$dracula"; latin = 'GMK CYL Kaiju' }
+        @{ name = "PBTfans ${dracula}RUNNER"; latin = 'PBTfans RUNNER' }
+        @{ name = "DMK $dracula (In Former Days$([char]0xFF09)"; latin = 'DMK In Former Days' }
+        @{ name = "DCS $(Get-TestScript 0xD64D,0xAC8C) (Red Crab)"; latin = 'DCS Red Crab' }
+        # Two translated names joined by a slash leave no stray slash behind.
+        @{ name = "GMK Cyrillic WoB Beige $dracula/$dracula"; latin = 'GMK Cyrillic WoB Beige' }
+        @{ name = "GMK Crimson Royal Cadet $dracula / $dracula"; latin = 'GMK Crimson Royal Cadet' }
+        # A repeated word the translation did not introduce is part of the name.
+        @{ name = "GMK Bora Bora $dracula"; latin = 'GMK Bora Bora' }
+    )) {
+        Assert ((Get-CatalogLatinName $pair.name) -ceq $pair.latin) "Translation handling produced '$(Get-CatalogLatinName $pair.name)' for $($pair.latin)."
+    }
+    Assert ((Get-CatalogLatinName $dracula) -ceq $dracula) 'A name with no Latin form was emptied.'
+    $keycap = Get-NormalizedCatalogEntry ([ordered]@{ name = "GMK Dracula R2 ${dracula}R2" }) 'keycaps'
+    Assert ($keycap.name -ceq 'GMK Dracula R2' -and (Get-CatalogSlug $keycap.name) -ceq 'gmk-dracula-r2') 'The translation reached the name or a doubled ID.'
+    $switch = Get-NormalizedCatalogEntry ([ordered]@{ name = "$dracula Studio x JWK Blue Lotus" }) 'switches'
+    Assert ($switch.name -ceq "$dracula Studio x JWK Blue Lotus") 'A switch studio name was stripped.'
+}
+Test-Case 'Rounds, joiners, and accents match however a store writes them' {
+    foreach ($pair in @(@('GMK Dualshot 2', 'GMK CYL Dualshot R2'), @('ePBT Acid House & Sweet Girl', 'ePBT Acid House and Sweet Girl'),
+            @('GMK Beta & JS R2', 'GMK Beta / JS R2'), ("GMK Jam$([char]0xF3)n r2", 'GMK Jamon R2'),
+            @('GMK Dracula V2.0', 'GMK Dracula R2'), @('GMK CYL Taiga 2.0', 'GMK Taiga R2'), @('GMK Oblivion V3.1', 'GMK Oblivion R3.1'),
+            @('GMK DualShot R1', 'GMK Dualshot'), @('KTT Mallo V1', 'KTT Mallo'))) {
+        Assert ((Get-CatalogMatchName $pair[0]) -ceq (Get-CatalogMatchName $pair[1])) "$($pair[0]) and $($pair[1]) did not match."
+    }
+    # Different rounds, and numbers that are not rounds, stay distinct.
+    Assert ((Get-CatalogMatchName 'GMK Dualshot R1') -cne (Get-CatalogMatchName 'GMK Dualshot R2')) 'Different rounds matched.'
+    Assert ((Get-CatalogMatchName 'GMK Oblivion V3.1') -cne (Get-CatalogMatchName 'GMK Oblivion V3.2')) 'Different point versions matched.'
+    Assert ((Get-CatalogMatchName 'GMK Extended 2048') -cne (Get-CatalogMatchName 'GMK Extended R2048')) 'A four-digit number was read as a round.'
+    # Source identities hash the published name, so existing bindings must not move.
+    Assert ((Get-CatalogMatchName 'Switch Example 2' -SourceIdentity) -cne (Get-CatalogMatchName 'Switch Example R2' -SourceIdentity)) 'Round folding reached a source identity.'
+}
+Test-Case 'Catalog scripts stay ASCII so Windows PowerShell reads them as written' {
+    # Without a byte order mark, Windows PowerShell decodes a script in the ANSI code page,
+    # where an em dash contains a closing curly quote that ends a string early.
+    $scripts = @(Get-ChildItem -LiteralPath (Split-Path $PSScriptRoot -Parent) -Recurse -Filter '*.ps1') + @(Get-Item (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'Import-Catalogs.ps1'))
+    foreach ($script in $scripts) {
+        $text = [IO.File]::ReadAllText($script.FullName, [Text.Encoding]::GetEncoding(28591))
+        Assert ($text -notmatch '[^\x00-\x7F]') "$($script.Name) contains a non-ASCII character."
+    }
+}
+
+# A locked file only warns, so cleanup never changes the reported result.
+try { Remove-Item -LiteralPath $testRoot -Recurse -Force }
+catch { Write-Warning "Test files could not be removed from ${testRoot}: $($_.Exception.Message)" }
 Write-Host "$script:Passed test groups passed; $($script:Failures.Count) failed."
 if ($script:Failures.Count) { throw ($script:Failures -join "`n") }

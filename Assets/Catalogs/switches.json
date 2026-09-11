@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 14,
-  "totalCount": 5413,
+  "catalogVersion": 15,
+  "totalCount": 5411,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -20216,10 +20216,6 @@
       "switchType": "clicky"
     },
     {
-      "id": "lcet-blue-b-stock",
-      "name": "LCET Blue B-Stock"
-    },
-    {
       "id": "lcet-blue-grey-orange-stem",
       "name": "LCET Blue/Grey Orange Stem",
       "switchType": "tactile"
@@ -20291,8 +20287,8 @@
       "name": "LCET Frankenswitch Parts"
     },
     {
-      "id": "lcet-glacier-brown-b-stock",
-      "name": "LCET Glacier Brown B-Stock"
+      "id": "lcet-glacier-brown",
+      "name": "LCET Glacier Brown"
     },
     {
       "id": "lcet-glacier-red-d-stock",
@@ -32322,10 +32318,6 @@
       "name": "Zepsody Bluebonnet",
       "manufacturer": "Aflion",
       "switchType": "linear"
-    },
-    {
-      "id": "zepsody-bluebonnet-b-stock",
-      "name": "Zepsody Bluebonnet B-Stock"
     },
     {
       "id": "zepsody-wisteria-v1",

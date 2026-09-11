@@ -87,6 +87,18 @@ function Get-CatalogAliases {
         }
         if ($defaults.Contains('material') -and $defaults.material -cnotin @('ABS', 'PBT', 'POM', 'PC')) { throw "Unsupported keycap material default on ${canonical}: $($defaults.material)" }
     }
+    $makers = @{}
+    foreach ($canonical in $switchManufacturers.Keys) { $makers[$canonical] = $true }
+    foreach ($canonical in $keycapDefaults.Keys) {
+        $defaults = $keycapDefaults[$canonical]
+        if (-not $defaults.Contains('manufacturer') -or -not $defaults.manufacturer) { continue }
+        $maker = if ($defaults.manufacturer -is [bool]) { $canonical } else { $defaults.manufacturer }
+        $makers[$(if ($entities.ContainsKey($maker)) { $entities[$maker] } else { $maker })] = $true
+    }
+    foreach ($defaults in $profileDefaults.Values) {
+        if ($defaults.Contains('manufacturer')) { $makers[$entities[$defaults.manufacturer]] = $true }
+    }
+    foreach ($maker in $manufacturers.Values) { $makers[$maker] = $true }
     # Longest first prevents a short alias from consuming an expanded brand name.
     $regularPattern = (@($entities.Keys | Sort-Object @{ Expression = { $_.Length }; Descending = $true }, { $_ } | ForEach-Object { [regex]::Escape($_) }) -join '|')
     $exactPattern = (@($exact.Keys | Sort-Object | ForEach-Object { [regex]::Escape($_) }) -join '|')
@@ -96,6 +108,7 @@ function Get-CatalogAliases {
         keycapDefaults = $keycapDefaults
         switchManufacturers = $switchManufacturers
         profileDefaults = $profileDefaults
+        makers = $makers
         namePrefixes = $namePrefixes
         manufacturerLabels = $map.manufacturerLabels
         prefix = [regex]::new("^$tokenPattern", [Text.RegularExpressions.RegexOptions]::CultureInvariant)
@@ -111,6 +124,11 @@ function Get-CatalogEntityName([string]$Text) {
     $Text
 }
 
+function Test-CatalogMaker([string]$Name) {
+    $map = Get-CatalogAliases
+    $map.makers.ContainsKey((Get-CatalogEntityName $Name))
+}
+
 function Get-CatalogAliasName([string]$Text, [ValidateSet('', 'switches', 'keycaps')][string]$Kind = '') {
     $map = Get-CatalogAliases
     # Only brand prefixes and explicit x collaborations, never arbitrary model words.
@@ -124,6 +142,8 @@ function Get-CatalogAliasName([string]$Text, [ValidateSet('', 'switches', 'keyca
 }
 
 function Get-CatalogCreditName([string]$Text) {
+    # A trademark sign is styling on a company's name, not part of it.
+    $Text = ($Text -replace '\s*[\u2122\u00AE\u00A9]', '').Trim()
     $whole = Get-CatalogEntityName $Text
     if ($whole -cne $Text) { return $whole }
     # Credits may contain people as well as companies. Match whole credit components only.
@@ -141,7 +161,9 @@ function Get-CatalogProfileName([string]$Text) {
 function Get-NormalizedCatalogEntry($Entry, [string]$Kind) {
     $result = Get-OrderedCatalogEntry $Entry $Kind
     $map = Get-CatalogAliases
-    $result.name = Get-CatalogAliasName $result.name $Kind
+    # The one switch name in another script is a studio's own name, not a translation.
+    $name = if ($Kind -eq 'keycaps') { Get-CatalogLatinName $result.name } else { $result.name }
+    $result.name = Get-CatalogAliasName $name $Kind
     foreach ($field in @('manufacturer', 'brand', 'designer')) {
         if ($result.Contains($field)) { $result[$field] = Get-CatalogCreditName $result[$field] }
     }

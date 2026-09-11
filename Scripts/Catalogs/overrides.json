@@ -36,7 +36,7 @@
     "kbdfans:8335571058827": "pbtfans-song",
     "kbdfans:8363230036107": "gmk-cyl-arcade",
     "kbdfans:8368495001739": "keykobo-cross-impact",
-    "matrix:docs/gmk-keycaps/Classic-Beige.md": "gmk-classic-beige-2022",
+    "matrix:docs/gmk-keycaps/Classic-Beige.md": "gmk-classic-beige-ka1953-revamp",
     "matrix:docs/gmk-keycaps/HammerHead.md": "gmk-hammerhead-2020",
     "matrix:docs/gmk-keycaps/Momo-Yume.md": "gmk-momo-yume",
     "matrix:docs/gmk-keycaps/Noire.md": "gmk-noire-2020",
@@ -1341,7 +1341,7 @@
     "keycaplendar:8ujyX2mIEnmtCU9ujc1G": "dcs-olivetti",
     "keycaplendar:8yAkWyBTnE7EV2ElMc8I": "gmk-cojiro",
     "keycaplendar:915S1iPuJy8GLdh6iaJF": "gmk-cyl-gonzales",
-    "keycaplendar:92lYne8KQWoEckdt4Tuw": "gmk-olive-r2-r2",
+    "keycaplendar:92lYne8KQWoEckdt4Tuw": "gmk-olive-r2",
     "keycaplendar:95DdCfMW83fDhV8OAYhj": "gmk-sunset-surfing",
     "keycaplendar:9CHIzdArtSscRbQyCby5": "gmk-gladiator",
     "keycaplendar:9HCLyOX1tqTd6I3xAb0D": "dcs-ufo",
@@ -1360,11 +1360,11 @@
     "keycaplendar:BhsPnpeSHkmTksc16YQm": "dcs-windbreaker",
     "keycaplendar:ByAk2cvXq6xglBCXkhEm": "dcs-cafe",
     "keycaplendar:CEYhJABd7y6SgQEtuT2r": "gmk-mercury",
-    "keycaplendar:CLiFWttMZjmnD59DD68T": "gmk-nautilus-r2-r2",
-    "keycaplendar:CSeHnBSxXjlWxQxpgRQn": "gmk-shoko-r2-r2",
+    "keycaplendar:CLiFWttMZjmnD59DD68T": "gmk-nautilus-r2",
+    "keycaplendar:CSeHnBSxXjlWxQxpgRQn": "gmk-shoko-r2",
     "keycaplendar:CSycBCh3fB9Y44dkUUHG": "gmk-zen-pond",
-    "keycaplendar:CtrKzyxJFXkZOGkVdchf": "gmk-wasabi-r2-r2",
-    "keycaplendar:CxUZiITdSwwMYuQAkYyQ": "gmk-dracula-r2-r2",
+    "keycaplendar:CtrKzyxJFXkZOGkVdchf": "gmk-wasabi-r2",
+    "keycaplendar:CxUZiITdSwwMYuQAkYyQ": "gmk-dracula-r2",
     "keycaplendar:Cy5Qw3xs3UEHDdlgpyKg": "mtnu-electronic-control",
     "keycaplendar:D5Eynd0aDvZ3fUJESyMt": "gmk-gateway",
     "keycaplendar:DPLLFLggkj5cj4ZRakVD": "dcs-red-alert-r2",
@@ -1398,7 +1398,7 @@
     "keycaplendar:H5MZuBDfKKBzBfT15Nas": "gmk-polybius",
     "keycaplendar:H7sp3t9Rkrrz1jkES4S4": "gmk-mint-dolch",
     "keycaplendar:HAFcSzSJOKjt4s28GvBr": "keykobo-cobalt",
-    "keycaplendar:HBB1eB9twn7CfGtgdh7g": "gmk-bingsu-r2-r2",
+    "keycaplendar:HBB1eB9twn7CfGtgdh7g": "gmk-bingsu-r2",
     "keycaplendar:HYZDXgV7jMLNtk2b31UC": "gmk-mv-t3rminal",
     "keycaplendar:HopL0k2962S4aI2C8WuM": "gmk-taegeukgi",
     "keycaplendar:I1rhDEwuCp8Og1WE2UPP": "gmk-ascii",
@@ -1420,7 +1420,7 @@
     "keycaplendar:JvINKM5wgprgRqQzsQpp": "dsa-vegas-nights-2019",
     "keycaplendar:K0AWH5xJDgSnBLu5cpeB": "gmk-muted",
     "keycaplendar:K0ZmZGHqDfol2z07Wlgp": "gmk-galaxy",
-    "keycaplendar:K3hBM2bkjBm2ZrHLY0wx": "gmk-oblivion-r2-r2",
+    "keycaplendar:K3hBM2bkjBm2ZrHLY0wx": "gmk-oblivion-r2",
     "keycaplendar:K44C7txOgqqU7M4tAAwK": "gmk-thinkcaps",
     "keycaplendar:K5FhdQDdoTivSdoHMzWS": "gmk-n9-ortholinear-add-on",
     "keycaplendar:KFzhYfciIrQU7P03XVOm": "gmk-lunar",
@@ -1428,7 +1428,7 @@
     "keycaplendar:KQv1eRZrlWv24VecEJpu": "tut-black-sugar-bobo",
     "keycaplendar:KSumf0ceZqBIdlTEguJS": "gmk-yeeti",
     "keycaplendar:KgRqwegC3iI3q8y6bKkI": "dcs-delftware",
-    "keycaplendar:Ks2z6IjcuxpE3SWAbNsk": "gmk-firefly-r2-r2",
+    "keycaplendar:Ks2z6IjcuxpE3SWAbNsk": "gmk-firefly-r2",
     "keycaplendar:KsMsNjXongtPpDfEVhGs": "gmk-shark-bait",
     "keycaplendar:KtwCZHhJtmwNPpR5Ydea": "gmk-classic-red",
     "keycaplendar:KzzAb3yKdFUiTJclePpj": "gmk-striker",
@@ -1448,22 +1448,22 @@
     "keycaplendar:MOTL0v3AIXp9fxt8UPWN": "gmk-pretty-in-pink",
     "keycaplendar:MPtwFRIkgUCKlF2R1EZW": "pbtfans-carpenter",
     "keycaplendar:Md0hEVMdb55CjVptgZrq": "gmk-lux",
-    "keycaplendar:Mgay0CaIvwJbs0mpuEDb": "gmk-camping-r2-r2",
+    "keycaplendar:Mgay0CaIvwJbs0mpuEDb": "gmk-camping-r2",
     "keycaplendar:Mr9dlAA6Azu0SYzNll8v": "gmk-cyl-cleopatra",
-    "keycaplendar:Mv7TrMT6WbHRqBivDWCZ": "gmk-vaporwave-r2-r2",
+    "keycaplendar:Mv7TrMT6WbHRqBivDWCZ": "gmk-vaporwave-r2",
     "keycaplendar:N5X1Oq0aYqXMFeaYu3jz": "gmk-modern-dolch-r2",
-    "keycaplendar:N6AlYTaLqxjDtNzzyNzN": "gmk-red-samurai-r2-r2",
+    "keycaplendar:N6AlYTaLqxjDtNzzyNzN": "gmk-red-samurai-r2",
     "keycaplendar:N785RTOchnCDGyfg8wHu": "gmk-a",
     "keycaplendar:N9ldOS0bLGCsaoHAROZW": "gmk-merlin",
-    "keycaplendar:NATVb7i2MyiHj7Mx9oUN": "gmk-camping-r3-r3",
+    "keycaplendar:NATVb7i2MyiHj7Mx9oUN": "gmk-camping-r3",
     "keycaplendar:NJM0n0Ed5QnGhWUSiNXC": "gmk-bordeaux",
     "keycaplendar:NK6nw5asxtP2KmsFmJJc": "dcs-orange-on-beige",
     "keycaplendar:NWgpM9pcEieeAtgVQY2r": "gmk-noire-2020",
     "keycaplendar:NkgtWp8Z33roTb9IgH6C": "dcs-clown",
     "keycaplendar:NsJh0MdL5uysKG6NzCKW": "jtk-illusion",
-    "keycaplendar:O7eCes1lsvY6Hd4yQJNZ": "gmk-crimson-cadet-r2-r2",
+    "keycaplendar:O7eCes1lsvY6Hd4yQJNZ": "gmk-crimson-cadet-r2",
     "keycaplendar:O91EBgh0athhnIoadp6A": "dcs-paperwork",
-    "keycaplendar:OD8SG9rRE1IXYJ0hDS2H": "gmk-laser-r2-r2",
+    "keycaplendar:OD8SG9rRE1IXYJ0hDS2H": "gmk-laser-r2",
     "keycaplendar:ODhD73Fm1FN65Y4v2aOI": "gmk-stonks-2026",
     "keycaplendar:OJOWFelwBsyQ1GTavADV": "gmk-ftro",
     "keycaplendar:OOdAkOjW9CqkrYLFLbJH": "gmk-soyamilk",
@@ -1515,7 +1515,7 @@
     "keycaplendar:TaQUW8I7XxTqcILpyuRi": "gmk-cyl-deathly-queen",
     "keycaplendar:TmBKXVhJyWJuibpab8oA": "dcs-alps-pingmaster",
     "keycaplendar:U0KUsKJEfprnPEbwQAFO": "pbtfans-absolute",
-    "keycaplendar:U0bMLW08JISEHOodPp0d": "gmk-nuclear-data-r2-r2",
+    "keycaplendar:U0bMLW08JISEHOodPp0d": "gmk-nuclear-data-r2",
     "keycaplendar:U6RDZvXwE95hrGm3yDY0": "gmk-retrocast",
     "keycaplendar:UGuA60Vxn5JLnvN7G8Y8": "gmk-hennessey",
     "keycaplendar:UNjpIgBL68IsXxyNUcEN": "dcs-sleeper",
@@ -1533,19 +1533,19 @@
     "keycaplendar:Vgcoopen02XusmirW07H": "gmk-dmg-r3",
     "keycaplendar:VnZMm46ilAxgDGp7V3wH": "gmk-nerve",
     "keycaplendar:VqC41Bwb5ENOA0Dqb84v": "dcs-mudbeam",
-    "keycaplendar:W0qMx46znwUQHNnRaTtk": "gmk-vaporwave-r2-r2",
+    "keycaplendar:W0qMx46znwUQHNnRaTtk": "gmk-vaporwave-r2",
     "keycaplendar:WL6NcaC6JzJlkiD9Las6": "gmk-prussian-blue",
     "keycaplendar:WRYBt9NrgJfohbyXBmT9": "gmk-classic-arabic",
     "keycaplendar:WSgalKFLpggfDiFvvyKy": "gmk-fox",
     "keycaplendar:WdcvZAVKVet2HMCxo5a6": "gmk-purple-uwu",
-    "keycaplendar:Wk8YKGReuXGMlzD7EeEC": "gmk-minimal-r2-r2",
+    "keycaplendar:Wk8YKGReuXGMlzD7EeEC": "gmk-minimal-r2",
     "keycaplendar:WtkQ335W7K8wOc5foO0L": "gmk-cyl-masterpiece-r2",
     "keycaplendar:Wx2suCgPzUvmUR6s7SKM": "dcs-honeywell",
     "keycaplendar:XDwVoywG2vHY6av3TZew": "gmk-wob-shinethrough",
     "keycaplendar:XhckzNTnDGktQkFtmTKL": "dcs-toxic-r2",
     "keycaplendar:XjBUbOpastN3lBHRxVB3": "gmk-pharaoh",
     "keycaplendar:Xnv84pPfadm3i9gVo6td": "gmk-shanshui",
-    "keycaplendar:XwGpYLBiJXIfb4PVfcu5": "gmk-carbon-r2-r2",
+    "keycaplendar:XwGpYLBiJXIfb4PVfcu5": "gmk-carbon-r2",
     "keycaplendar:XzmEf3veYKqIqkvZPsI7": "gmk-watermelon",
     "keycaplendar:Y0snlj8Sof7qFOor4axZ": "gmk-mecha-01",
     "keycaplendar:Y5kLB71FySRAKmKj9Ghn": "dcs-9009-fix-kit",
@@ -1553,17 +1553,17 @@
     "keycaplendar:YBpIrUGrw7I25Ty67x2z": "gmk-cocogoat",
     "keycaplendar:YEPCv5FG0JD7i3dzb9pF": "gmk-chocolatier",
     "keycaplendar:YKShljvt7jkE7w2ciCEO": "gmk-phantom-r2",
-    "keycaplendar:YMXqulOF4x6wggFXoT3Q": "gmk-botanical-r2-r2",
+    "keycaplendar:YMXqulOF4x6wggFXoT3Q": "gmk-botanical-r2",
     "keycaplendar:YPknYpcNsVJeM3RVvFux": "gmk-zhuyin",
     "keycaplendar:YVSz6zeMA2JukxAFuoxy": "sp-dcs-richat",
-    "keycaplendar:YW58FqA5snrrT1Q9aF0f": "gmk-yuri-r2-r2",
-    "keycaplendar:Ybq2EeanF2Cv16Ar2R9T": "gmk-muted-r2-r2",
+    "keycaplendar:YW58FqA5snrrT1Q9aF0f": "gmk-yuri-r2",
+    "keycaplendar:Ybq2EeanF2Cv16Ar2R9T": "gmk-muted-r2",
     "keycaplendar:YgrbuDeSZmi8YCbw0X4h": "gmk-matrix-01",
     "keycaplendar:Yh42c6y4sySQ0hgoAqYT": "gmk-blossom",
     "keycaplendar:YlrMNhkx13bliHze9lMi": "gmk-cream-matcha",
     "keycaplendar:Yq6pJ1YNaGiPftUlVSVH": "pbtfans-simple-katakana",
-    "keycaplendar:YsFqTclfoOXPX6r8dR9A": "gmk-night-runner-r2-r2",
-    "keycaplendar:ZDA1xUjUMVpMLxtkCFTO": "gmk-black-modi",
+    "keycaplendar:YsFqTclfoOXPX6r8dR9A": "gmk-night-runner-r2",
+    "keycaplendar:ZDA1xUjUMVpMLxtkCFTO": "gmk-black-mod-addon",
     "keycaplendar:ZIKt6rNDjjrdxmqjTDMG": "gmk-olive",
     "keycaplendar:ZLnecBm0SJADgE7Wx7MD": "gmk-boulder",
     "keycaplendar:ZVot1DiBMj210jJItHKG": "keykobo-emoji",
@@ -1586,7 +1586,7 @@
     "keycaplendar:bQVAmIgC1ct2EKCdifrl": "gmk-hanami-dango",
     "keycaplendar:bSqGRsSdfwkdrfv68mDK": "gmk-darling",
     "keycaplendar:bWBElJcfWcSV8Wjah9eR": "gmk-monarch",
-    "keycaplendar:bYo3xnfhP2YE5T1M38RI": "gmk-peach-blossom-r2-r2",
+    "keycaplendar:bYo3xnfhP2YE5T1M38RI": "gmk-peach-blossom-r2",
     "keycaplendar:bcdlWggjqNn9tCm8mG0L": "gmk-gegenschlag-add-on",
     "keycaplendar:bj5YP4w7g4x7YJhEF2cv": "gmk-zooted",
     "keycaplendar:bjBg7xJcBJEB3RNK54Ha": "gmk-9009-r3",
@@ -1629,7 +1629,7 @@
     "keycaplendar:g7FOGZeEDcKcXsTkO9x4": "gmk-terror-below",
     "keycaplendar:gMnzPvkOVEgnlkJoVaEM": "gmk-dragon-witch",
     "keycaplendar:gaUywmylquhh71bLpVZL": "gmk-devoted",
-    "keycaplendar:gfcbzcqAk6MWYbHWsfeZ": "gmk-serika-r2-r2",
+    "keycaplendar:gfcbzcqAk6MWYbHWsfeZ": "gmk-serika-r2",
     "keycaplendar:gqQsKjnS305kj1SAbcNu": "gmk-dune",
     "keycaplendar:gstAZ75faO1xiETH4l70": "gmk-rainy-day-r2",
     "keycaplendar:gtpLA1Jo3Plfyh4un5nA": "gmk-olivia-r3",
@@ -1654,7 +1654,7 @@
     "keycaplendar:jZTaaLuZT6zfil9qdMOX": "keykobo-beige",
     "keycaplendar:jkWdKx3YBoZW3OYN8XP5": "gmk-8008",
     "keycaplendar:jsJczQzUL5dq0tRJp9GQ": "gmk-botanical",
-    "keycaplendar:jx7fiCJHfVYiZnetqKD2": "gmk-metropolis-r2-r2",
+    "keycaplendar:jx7fiCJHfVYiZnetqKD2": "gmk-metropolis-r2",
     "keycaplendar:kFm4g9H17XmFgRAjUXAW": "gmk-houhai",
     "keycaplendar:kG4YVCEo4RwE4sXF6NjY": "dsa-vegas-nights-2022",
     "keycaplendar:kKvmPqUQeDt1AIiq2qJK": "gmk-cyl-just-beachy",
@@ -1677,7 +1677,7 @@
     "keycaplendar:mZyQjyVTfJW1EFZzkYo7": "pbtfans-antelope-canyon",
     "keycaplendar:mfrmdhyYvpPAUv79XRma": "gmk-cyl-thunder-god",
     "keycaplendar:mlGmQ4GMiS3mYlr9mII3": "gmk-thai-tea",
-    "keycaplendar:ms8gxSP1yZUaXbYoCvfv": "gmk-analog-dreams-r2-r2",
+    "keycaplendar:ms8gxSP1yZUaXbYoCvfv": "gmk-analog-dreams-r2",
     "keycaplendar:nHZCqoWWWjvoqdtPSXK2": "gmk-cyl-taiga-r2",
     "keycaplendar:nHZYktAYEd3qENk3ynxI": "dcs-red-alert-r3",
     "keycaplendar:nOxsc5shnYucVpcwnX97": "gmk-cyl-salamander",
@@ -1692,9 +1692,9 @@
     "keycaplendar:oBki3DnL48LJawH0rdr7": "gmk-alpine",
     "keycaplendar:oMkJ5dBa9BBdw7lWqH7G": "pbtfans-keystone",
     "keycaplendar:oRWUuQJUeNcOH50MwOb1": "gmk-agent-01",
-    "keycaplendar:ofnc7AFYWKulIyTx92oq": "gmk-space-cadet-r2-r2",
-    "keycaplendar:oiPwWLtMw7TR9Hbvnz1P": "gmk-taro-r2-r2",
-    "keycaplendar:okTdiJtn5HlcPuO876VC": "gmk-coral-r2-r2",
+    "keycaplendar:ofnc7AFYWKulIyTx92oq": "gmk-space-cadet-r2",
+    "keycaplendar:oiPwWLtMw7TR9Hbvnz1P": "gmk-taro-r2",
+    "keycaplendar:okTdiJtn5HlcPuO876VC": "gmk-coral-r2",
     "keycaplendar:on6fPePJ5sEVHLzWXaWX": "gmk-red-alert",
     "keycaplendar:ongMbysUa5SWB9KP11Ch": "gmk-infernal",
     "keycaplendar:oq6F9hEh1PWziLaWgJH2": "gmk-tiramisu",
@@ -1714,12 +1714,12 @@
     "keycaplendar:pycgquyAyZhQX0HVWOkf": "gmk-earth-tones",
     "keycaplendar:q6sPP87QNUJy2Z63ZCdL": "gmk-9009-40s-addon",
     "keycaplendar:qCq5n0DIHJcRsz6Y5eUH": "gmk-olivetti",
-    "keycaplendar:qRxBq9DXpAvdU0vGIvYT": "gmk-originative-cyrillic",
+    "keycaplendar:qRxBq9DXpAvdU0vGIvYT": "gmk-originative-cyrillic-r2",
     "keycaplendar:qtUNorthDE7YncTB4bwO": "gmk-stonks-2021",
-    "keycaplendar:qu979FOpdY5FBfVohwnD": "gmk-lime-r2-r2",
+    "keycaplendar:qu979FOpdY5FBfVohwnD": "gmk-lime-r2",
     "keycaplendar:qyhx3nxAdT0z0130RwD2": "epbt-travelling",
     "keycaplendar:r2d6pgMmdiGsc23l7AVm": "gmk-cyl-unobtanium-blue",
-    "keycaplendar:r9ItRz5P3hvXfWwJvn9S": "gmk-striker-r2-r2",
+    "keycaplendar:r9ItRz5P3hvXfWwJvn9S": "gmk-striker-r2",
     "keycaplendar:rCVE7U6YfxuAJiH5Lv8v": "gmk-iceberg",
     "keycaplendar:rF5J7mXY8yj4VDZt9DlZ": "gmk-grand-prix",
     "keycaplendar:rImipCl5RM9dxoPOjHkz": "gmk-tenshi",
@@ -1755,10 +1755,10 @@
     "keycaplendar:v6oHrJUWCA2pIqQgfK8C": "dcs-dream-alert",
     "keycaplendar:vMooyd4ByiDuOxhpii9o": "gmk-cyl-daifuku-r2",
     "keycaplendar:vN1kcw0a9D3ipslNSzkh": "dcs-skull-squadron",
-    "keycaplendar:vQOY14cH9bFlpCwZYsqZ": "gmk-monochrome-r2-r2",
+    "keycaplendar:vQOY14cH9bFlpCwZYsqZ": "gmk-monochrome-r2",
     "keycaplendar:vUKSUXlFD4woz4ZOEbNp": "pbtfans-voyager",
     "keycaplendar:va6xTpTpwc3dFtyIcXgF": "gmk-nightshade",
-    "keycaplendar:veSuxtR65B8RkWsEwHk2": "gmk-terminal-r2-r2",
+    "keycaplendar:veSuxtR65B8RkWsEwHk2": "gmk-terminal-r2",
     "keycaplendar:vg7t6feIzE3tAsvrzGbz": "pbtfans-luna",
     "keycaplendar:vvvUvfTknUX1poWM2BiQ": "gmk-mika",
     "keycaplendar:w1dgnpwf7ZuDjwRyQLTA": "gmk-fundamentals",
@@ -2332,7 +2332,429 @@
     "theremingoat:2130": "ws-aurora-pink",
     "switchoddities:10750165713180": "cherry-mx-dark-blue",
     "switchoddities:10750167384348": "cherry-mx-hirose-clear",
-    "theremingoatscores:113e91ef7fb6": "cherry-mx-jailhouse-blue"
+    "theremingoatscores:113e91ef7fb6": "cherry-mx-jailhouse-blue",
+    "cannonkeys:14909685301359": "kap-capo-soda",
+    "cannonkeys:4347749957743": "gmk-rudy-r2",
+    "cannonkeys:4475266138223": "kat-explosion",
+    "cannonkeys:4537851969647": "kat-mizu",
+    "cannonkeys:4608517865583": "kat-crusader",
+    "cannonkeys:4633102155887": "gmk-birch",
+    "cannonkeys:6708166688879": "gmk-shanshui",
+    "cannonkeys:6709327200367": "gmk-fuji",
+    "cannonkeys:6727773257839": "gmk-peaches-n-cream-lite",
+    "cannonkeys:6875300200559": "dcs-9009",
+    "cannonkeys:6902167142511": "gmk-moomin",
+    "cannonkeys:6942232477807": "gmk-jags",
+    "cannonkeys:6955410096239": "gmk-orange-boi",
+    "cannonkeys:6963391889519": "mw-voynich",
+    "cannonkeys:6970854604911": "gmk-houhai",
+    "cannonkeys:7036261695599": "dsa-nineteen-thirty",
+    "cannonkeys:7039951011951": "kat-atlantis",
+    "cannonkeys:7122305745007": "gmk-terror-below",
+    "cannonkeys:7309192691823": "nicepbt-nigiri",
+    "cannonkeys:7451233583215": "nicepbt-purple-chonkers",
+    "cannonkeys:7474700353647": "nicepbt-whale",
+    "cannonkeys:7548337160303": "pbs-galaxy",
+    "cannonkeys:7564779651183": "nicepbt-spookey",
+    "cannonkeys:7584095764591": "ws-mizu",
+    "cannonkeys:7645630726255": "nicepbt-reverie",
+    "cannonkeys:7656703098991": "nicepbt-moomin-80",
+    "cannonkeys:7677115236463": "pbs-black-on-black",
+    "cannonkeys:7745908637807": "kap-generation",
+    "cannonkeys:7818899325039": "pbs-granite",
+    "cannonkeys:7857005428847": "gmk-mizu-r2",
+    "cannonkeys:7874641330287": "nicepbt-bee-cute",
+    "cannonkeys:7904441532527": "gmk-phoenix",
+    "cannonkeys:7961000247407": "kap-grey-alert",
+    "dailyclack:4406568615991": "gmk-b",
+    "dailyclack:4441762168887": "kat-oasis",
+    "dailyclack:4444481191991": "kat-lucky-jade",
+    "dailyclack:4465606230071": "sa-sail",
+    "dailyclack:4465608851511": "kat-atlantis",
+    "dailyclack:4477094985783": "kat-space-cadet",
+    "dailyclack:4504339611703": "kat-arctic",
+    "dailyclack:4526858534967": "jtk-zen",
+    "dailyclack:4539430764599": "kat-explosion",
+    "dailyclack:4550927286327": "kam-ghost",
+    "dailyclack:4557056180279": "gmk-nord",
+    "dailyclack:4592544710711": "kat-cyberspace",
+    "dailyclack:4592550871095": "kat-iron",
+    "dailyclack:4604206252087": "gmk-posh",
+    "dailyclack:4604284141623": "kat-mizu",
+    "dailyclack:4607092195383": "sa-jadeite",
+    "dailyclack:4609612087351": "sa-nightlight",
+    "dailyclack:4614433046583": "gmk-demon-sword",
+    "dailyclack:4614442942519": "gmk-taegeukgi",
+    "dailyclack:4617132507191": "gmk-red-dragon",
+    "dailyclack:4617165963319": "kat-refined",
+    "dailyclack:4622720892983": "jtk-azure",
+    "dailyclack:4623243771959": "gmk-red-line",
+    "dailyclack:4634018414647": "gmk-yuri-r2",
+    "dailyclack:4637250977847": "sa-silent-assassin",
+    "dailyclack:4642304327735": "gmk-8008-r2",
+    "dailyclack:4659142787127": "gmk-awaken",
+    "dailyclack:4659200229431": "gmk-cojiro",
+    "dailyclack:4659668254775": "kat-crusader",
+    "dailyclack:4660253753399": "kam-80s-after-dark",
+    "dailyclack:4660729970743": "gmk-baltic",
+    "dailyclack:4660748288055": "geekark-lancelot",
+    "dailyclack:4670407671863": "kam-superuser",
+    "dailyclack:4671223988279": "epbt-soju",
+    "dailyclack:4673007845431": "gmk-dots-r2",
+    "dailyclack:6535188447287": "geekark-triangle",
+    "dailyclack:6537673310263": "gmk-colorchrome",
+    "dailyclack:6539335761975": "epbt-aesthetic",
+    "dailyclack:6541292929079": "gmk-fuji",
+    "dailyclack:6549555871799": "gmk-agent-01",
+    "dailyclack:6550883762231": "epbt-6085",
+    "dailyclack:6551426826295": "gmk-peaches-n-cream-lite",
+    "dailyclack:6551833772087": "sa-ramses",
+    "dailyclack:6554626719799": "gmk-arch",
+    "dailyclack:6556933193783": "epbt-sniper",
+    "dailyclack:6560188629047": "kat-space-dust",
+    "dailyclack:6561041088567": "dss-sencillo",
+    "dailyclack:6566992412727": "sa-spectra",
+    "dailyclack:6568020017207": "kam-ocean-front",
+    "dailyclack:6569522593847": "epbt-solaria",
+    "dailyclack:6570998169655": "epbt-scandi",
+    "dailyclack:6573082181687": "kat-great-wave",
+    "dailyclack:6575733211191": "gmk-monochrome-r2",
+    "dailyclack:6576789487671": "gmk-stargaze",
+    "dailyclack:6577266229303": "gmk-bingsu-r2",
+    "dailyclack:6578744066103": "epbt-axolotls",
+    "dailyclack:6579357646903": "gmk-moomin",
+    "dailyclack:6583079764023": "gmk-truffelschwein",
+    "dailyclack:6585374507063": "epbt-bow-hangul",
+    "dailyclack:6585925173303": "gmk-pharaoh",
+    "dailyclack:6586397392951": "epbt-duo",
+    "dailyclack:6586796539959": "sa-fledgling",
+    "dailyclack:6588003975223": "sa-bubble-r2",
+    "dailyclack:6590040342583": "kam-bouquet",
+    "dailyclack:6591535579191": "gmk-tako",
+    "dailyclack:6598191513655": "epbt-kavala",
+    "dailyclack:6598615171127": "gmk-zen-pond",
+    "dailyclack:6600016724023": "epbt-timeless",
+    "dailyclack:6600022622263": "mw-demon-girl",
+    "dailyclack:6603573264439": "epbt-simpleja-r2",
+    "dailyclack:6608219013175": "epbt-winter-breath",
+    "dailyclack:6614653730871": "epbt-ping",
+    "dailyclack:6615043735607": "mw-alfheim",
+    "dailyclack:6616030937143": "epbt-hellas",
+    "dailyclack:6618087161911": "epbt-brutalist",
+    "dailyclack:6618398687287": "gmk-camping-r3",
+    "dailyclack:6624369147959": "epbt-3000sat",
+    "dailyclack:6628403347511": "gmk-arctic",
+    "dailyclack:6631130595383": "gmk-teradrive",
+    "dailyclack:6634988994615": "gmk-ntd",
+    "dailyclack:6643752665143": "epbt-rin",
+    "dailyclack:6645791916087": "mw-voynich",
+    "dailyclack:6645800075319": "gmk-marmoreal",
+    "dailyclack:6653726818359": "gmk-fenglisu",
+    "dailyclack:6665726296119": "gmk-bordeaux",
+    "dailyclack:6666347151415": "pbtfans-basin",
+    "dailyclack:6666533077047": "gmk-mictlan",
+    "dailyclack:6667929747511": "mw-cultured",
+    "dailyclack:6680126193719": "mw-aschente",
+    "dailyclack:6723221782583": "kds-chainsaw",
+    "dailyclack:6820570759223": "sa-ascii",
+    "dailyclack:6911648464951": "jtk-brown-bear",
+    "dailyclack:6911650758711": "jtk-flight",
+    "dailyclack:7122359091255": "nicepbt-growth-auxo",
+    "dailyclack:7146847240247": "kat-milkshake-double-shot",
+    "dailyclack:7148196397111": "gmk-tribal",
+    "dailyclack:7208650080311": "kam-playground",
+    "dailyclack:7330129870903": "nicepbt-sleepytime",
+    "dangkeebs:6853927764140": "gmk-daifuku",
+    "dangkeebs:7436044075229": "epbt-hellas",
+    "dangkeebs:7599407333597": "gmk-cluck",
+    "dangkeebs:8196987257053": "alohakb-road-trip",
+    "dangkeebs:8925130555613": "kam-soda-squid",
+    "keygem:11442628231436": "keykobo-bloom",
+    "keygem:11503883354380": "mw-sogurt-r2",
+    "keygem:11535301509388": "kam-soda-squid",
+    "keygem:11579451146508": "pbtfans-rim-r2",
+    "keygem:11681452720396": "nicepbt-reverie",
+    "keygem:6792157495462": "kat-space-dust",
+    "keygem:7459684057341": "epbt-hellas",
+    "keygem:7557634556157": "mw-velvet",
+    "keygem:8007460913420": "mw-half-blade",
+    "keygem:8230870876428": "ws-orchid-strings",
+    "keygem:8324355457292": "pbtfans-spark-light",
+    "keygem:8327573897484": "ws-stellar",
+    "keygem:8332715688204": "pbtfans-umbra",
+    "keygem:8332721553676": "pbtfans-frontier",
+    "keygem:8416628015372": "pbtfans-spark-r2",
+    "keygem:8416804667660": "kkb-retro-mixed-lights-r2",
+    "keygem:8457382068492": "kat-floofy-boi",
+    "keygem:8590457536780": "kkb-moon-rabbit",
+    "keygem:8623830368524": "kkb-outer-bounds",
+    "keygem:8716933497100": "epbt-creative-studio",
+    "keygem:8729864634636": "kkb-instant",
+    "keygem:8729882034444": "kkb-vibrato",
+    "keygem:8779484332300": "gmk-rainy-day-r2",
+    "keygem:9676023628044": "ws-poker",
+    "keygem:9679007678732": "gmk-delta-r2",
+    "keygem:9722034553100": "kkb-nama-chocolate",
+    "novelkeys:10107053572263": "gmk-cyl-prussian-alert",
+    "novelkeys:10925673414823": "gmk-cyl-masterpiece-r2",
+    "novelkeys:11042579873959": "dcs-mudbeam",
+    "novelkeys:11050243293351": "gmk-2-pack",
+    "novelkeys:11054574534823": "gmk-analog-dreams-r3",
+    "novelkeys:11055348908199": "gmk-finer-things-r2",
+    "novelkeys:11066181517479": "gmk-noire-r2",
+    "novelkeys:11070064132263": "gmk-hyperfuse-origins-r3",
+    "novelkeys:11074764210343": "gmk-mini-orange-accent-pack",
+    "novelkeys:11102270128295": "gmk-cyl-solarized-reborn",
+    "novelkeys:11167600836775": "gmk-varenye",
+    "novelkeys:11167604244647": "gmk-cyl-mothman",
+    "novelkeys:5272340791463": "kam-ghost",
+    "novelkeys:5555819970727": "gmk-bento-r2",
+    "novelkeys:5688838357159": "gmk-monokai-material",
+    "novelkeys:5893298585767": "gmk-mudbeam",
+    "novelkeys:5896627814567": "gmk-honor",
+    "novelkeys:6026168205479": "jtk-griseann-royal-alpha",
+    "novelkeys:6037593325735": "gmk-yuri-r2",
+    "novelkeys:6162569134247": "gmk-awaken",
+    "novelkeys:6205139353767": "kam-superuser",
+    "novelkeys:6237725065383": "gmk-mr-sleeves-r2",
+    "novelkeys:6237742465191": "gmk-dots-r2",
+    "novelkeys:6607716712615": "gmk-metropolis-r2",
+    "novelkeys:6645322547367": "gmk-zooted",
+    "novelkeys:6666355376295": "gmk-parcel",
+    "novelkeys:6694633111719": "gmk-analog-dreams-r2",
+    "novelkeys:6694639206567": "kam-li-l-dragon",
+    "novelkeys:6840877842599": "gmk-oblivion-v3-1",
+    "novelkeys:6973554098343": "gmk-panels",
+    "novelkeys:6973566550183": "dsa-milkshake",
+    "novelkeys:7007208177831": "cherry-milkshake",
+    "novelkeys:7184627335335": "gmk-trackday",
+    "novelkeys:7219183878311": "dcs-deadbeats",
+    "novelkeys:7287929471143": "cherry-raw",
+    "novelkeys:7406646231207": "dcs-dark-sky",
+    "novelkeys:7509546467495": "gmk-hineybeige",
+    "novelkeys:7665426989223": "mtnu-wob",
+    "novelkeys:7686165627047": "gmk-royal-cadet",
+    "novelkeys:7686165856423": "sa-ascii",
+    "novelkeys:7688894808231": "gmk-kaiju-part-deux",
+    "novelkeys:7695412330663": "gmk-ntd",
+    "novelkeys:7695417606311": "gmk-wob-essentials",
+    "novelkeys:7695567814823": "gmk-art",
+    "novelkeys:7695572631719": "gmk-tako",
+    "novelkeys:7701890564263": "gmk-cyl-gegenschlag",
+    "novelkeys:7757374718119": "gmk-black-snail",
+    "novelkeys:7766070624423": "gmk-truffelschwein",
+    "novelkeys:7766079701159": "mw-heresy",
+    "novelkeys:7766314778791": "gmk-modern-materials",
+    "novelkeys:7784299102375": "gmk-phantom-r2",
+    "novelkeys:7874824110247": "gmk-extended-2048",
+    "novelkeys:7986121834663": "kat-milkshake",
+    "novelkeys:7999818825895": "gmk-ftro",
+    "novelkeys:8029767991463": "gmk-hi-viz",
+    "novelkeys:8157930258599": "gmk-nord",
+    "novelkeys:8240121544871": "mtnu-granite",
+    "novelkeys:8240135995559": "gmk-og-extensions",
+    "novelkeys:8299095326887": "gmk-carbon-r3",
+    "novelkeys:8312488001703": "gmk-tribal",
+    "novelkeys:8319672025255": "gmk-blue-alert-r2",
+    "novelkeys:8364939870375": "gmk-darling-r2",
+    "novelkeys:8364940001447": "mtnu-darling",
+    "novelkeys:8381809459367": "gmk-mars-cadet",
+    "novelkeys:8389218074791": "mtnu-rascals",
+    "novelkeys:8393674981543": "sa-grand-budapest-r2",
+    "novelkeys:8401922424999": "gmk-nightshade",
+    "novelkeys:8402058215591": "gmk-shinseiki",
+    "novelkeys:8402138038439": "kam-playground",
+    "novelkeys:8403510558887": "gmk-boneyard-r2",
+    "novelkeys:8417187299495": "mtnu-space-cadet",
+    "novelkeys:8434758975655": "gmk-copper-r2",
+    "novelkeys:8434762121383": "mtnu-copper",
+    "novelkeys:8455271481511": "sa-macrodata-refinement",
+    "novelkeys:8455279706279": "gmk-motif",
+    "novelkeys:8474265616551": "mtnu-skyriter",
+    "novelkeys:8504942526631": "gmk-cyl-hyperbeige",
+    "novelkeys:8521213477031": "gmk-beta-js-r2",
+    "novelkeys:8529107648679": "gmk-sloth-r2",
+    "novelkeys:8550381191335": "gmk-cyl-dolch-r5x",
+    "novelkeys:8550381682855": "mtnu-800-os2-0",
+    "novelkeys:8565762719911": "gmk-cyl-gurokawa",
+    "novelkeys:8575656984743": "gmk-mutagen",
+    "novelkeys:8600893849767": "gmk-kaiju-r3",
+    "novelkeys:8605230399655": "gmk-windbreaker",
+    "novelkeys:8616471756967": "gmk-mono",
+    "novelkeys:8625946820775": "gmk-mictlan-rebirth",
+    "novelkeys:8649702441127": "gmk-cyl-unobtanium-blue",
+    "novelkeys:8664419434663": "gmk-blot-r2",
+    "novelkeys:8676324409511": "dcs-superweld",
+    "novelkeys:8717989937319": "gmk-hi-viz-r2",
+    "novelkeys:8730431160487": "gmk-cyl-bow",
+    "novelkeys:8730431324327": "gmk-cyl-classic-beige",
+    "novelkeys:8730434568359": "gmk-fabrik",
+    "novelkeys:8730434633895": "gmk-cyl-wob",
+    "novelkeys:8730914357415": "dcs-cream-cheese-and-green-r3",
+    "novelkeys:8735579865255": "gmk-hammerhead-r2",
+    "novelkeys:8762434158759": "gmk-chocolatier-r2",
+    "novelkeys:8824341299367": "gmk-cyl-power-2048",
+    "novelkeys:8894634328231": "gmk-cyl-zooted-r2",
+    "novelkeys:9502262198439": "gmk-cyl-greg-2",
+    "omnitype:4578677162058": "gmk-redacted",
+    "omnitype:4688397402186": "gmk-pono",
+    "omnitype:5956061003945": "gmk-red-line",
+    "omnitype:6107990261929": "gmk-8008-r2",
+    "omnitype:6430360371369": "gmk-tuzi",
+    "omnitype:6646032793769": "gmk-blurple",
+    "omnitype:7020177227945": "gmk-symbiote",
+    "omnitype:7075590013097": "gmk-botanical-r2",
+    "omnitype:7233553203369": "gmk-dmg-r3",
+    "omnitype:7275224268969": "gmk-klassiker",
+    "omnitype:7298900918441": "gmk-dracula-r2",
+    "omnitype:7855594700969": "gmk-ascii-r2",
+    "omnitype:7879528939689": "gmk-mv-expo",
+    "omnitype:7946915119273": "pbtfans-x-ray",
+    "omnitype:8218225115305": "mw-lilith-r3",
+    "omnitype:8269095633065": "mtnu-modern-dolch",
+    "omnitype:8310298378409": "gmk-relegendables-plus",
+    "omnitype:8310300180649": "mw-retro-lights",
+    "omnitype:8359122206889": "pbtfans-atomic-purple-r2",
+    "omnitype:8418223358121": "gmk-cyl-classic-beige",
+    "omnitype:8454306758825": "gmk-red-devils",
+    "omnitype:8454341361833": "gmk-gorp",
+    "omnitype:8498901057705": "gmk-orenji",
+    "omnitype:8608849526953": "gmk-burgundy-r4",
+    "omnitype:8735203852457": "gmk-modern-dolch",
+    "omnitype:8943034564777": "pbtfans-thermal",
+    "omnitype:8943510913193": "gmk-mtnu-classic-beige",
+    "omnitype:8963723198633": "pbtfans-g3",
+    "omnitype:9002057695401": "gmk-dmg-r3",
+    "omnitype:9007103443113": "gmk-blurple",
+    "omnitype:9019302641833": "gmk-botanical-r2",
+    "omnitype:9021964189865": "gmk-red-line",
+    "omnitype:9026315649193": "gmk-dualshot",
+    "swagkeys:8849893458173": "lelelab-hokkaido-white",
+    "swagkeys:9125479973117": "swg-rubber",
+    "swagkeys:9168306602237": "swg-euler",
+    "swagkeys:9168322920701": "kap-mv-classic",
+    "swagkeys:9313246183677": "swg-bolch",
+    "swagkeys:9313246675197": "swg-classic-red",
+    "swagkeys:9313248149757": "swg-ferrofluid",
+    "swagkeys:9313250869501": "swg-classic-blue",
+    "swagkeys:9313251328253": "swg-skeletoon",
+    "swagkeys:9313255555325": "swg-rainbow-alert",
+    "swagkeys:9358662074621": "swg-prepress",
+    "dailyclack:6578066227255": "gmk-botanical-r2",
+    "dailyclack:6597225414711": "gmk-dmg-r3",
+    "dailyclack:4664420958263": "gmk-muted-r2",
+    "dailyclack:4636378103863": "gmk-serika-r2",
+    "dailyclack:6582836658231": "epbt-acid-house-sweet-girl",
+    "dailyclack:6885791105079": "gmk-ascii-r2",
+    "kbdfans:8106471850123": "gmk-chocolatier-r2",
+    "matrix:docs/gmk-keycaps/80082.md": "gmk-8008-r2",
+    "matrix:docs/gmk-keycaps/Analog-Dreams-R2.md": "gmk-analog-dreams-r2",
+    "matrix:docs/gmk-keycaps/Bento-R1.md": "gmk-bento",
+    "matrix:docs/gmk-keycaps/Bento-R2.md": "gmk-bento-r2",
+    "matrix:docs/gmk-keycaps/Bingsu-R1.md": "gmk-bingsu",
+    "matrix:docs/gmk-keycaps/Bingsu-R2.md": "gmk-bingsu-r2",
+    "matrix:docs/gmk-keycaps/Botanical-R2.md": "gmk-botanical-r2",
+    "matrix:docs/gmk-keycaps/CYL-Kaiju.md": "gmk-kaiju-part-deux",
+    "matrix:docs/gmk-keycaps/Camping-R2.md": "gmk-camping-r2",
+    "matrix:docs/gmk-keycaps/Camping-R3.md": "gmk-camping-r3",
+    "matrix:docs/gmk-keycaps/Carbon-R1.md": "gmk-carbon",
+    "matrix:docs/gmk-keycaps/Carbon-R2.md": "gmk-carbon-r2",
+    "matrix:docs/gmk-keycaps/Coral-R2.md": "gmk-coral-r2",
+    "matrix:docs/gmk-keycaps/Crimson-Cadet-R2.md": "gmk-crimson-cadet-r2",
+    "matrix:docs/gmk-keycaps/Dracula-R2.md": "gmk-dracula-r2",
+    "matrix:docs/gmk-keycaps/Firefly-R2.md": "gmk-firefly-r2",
+    "matrix:docs/gmk-keycaps/Frost-Witch-2.md": "gmk-frost-witch-r2",
+    "matrix:docs/gmk-keycaps/Jamon-R2.md": "gmk-jamon-r2",
+    "matrix:docs/gmk-keycaps/KA-2019-Valentine.md": "gmk-ka-2019-valentine",
+    "matrix:docs/gmk-keycaps/Laser-R2.md": "gmk-laser-r2",
+    "matrix:docs/gmk-keycaps/Lime-R2.md": "gmk-lime-r2",
+    "matrix:docs/gmk-keycaps/Metropolis-R1.md": "gmk-metropolis",
+    "matrix:docs/gmk-keycaps/Metropolis-R2.md": "gmk-metropolis-r2",
+    "matrix:docs/gmk-keycaps/Minimal-R1.md": "gmk-minimal",
+    "matrix:docs/gmk-keycaps/Minimal-R2.md": "gmk-minimal-r2",
+    "matrix:docs/gmk-keycaps/Monochrome-R2.md": "gmk-monochrome-r2",
+    "matrix:docs/gmk-keycaps/Muted-R2.md": "gmk-muted-r2",
+    "matrix:docs/gmk-keycaps/Nautilus-R1.md": "gmk-nautilus",
+    "matrix:docs/gmk-keycaps/Nautilus-R2.md": "gmk-nautilus-r2",
+    "matrix:docs/gmk-keycaps/Night-Runner-R2.md": "gmk-night-runner-r2",
+    "matrix:docs/gmk-keycaps/Nines-R2.md": "gmk-nines-r2",
+    "matrix:docs/gmk-keycaps/Nuclear-Data-R2.md": "gmk-nuclear-data-r2",
+    "matrix:docs/gmk-keycaps/Oblivion-R1.md": "gmk-oblivion",
+    "matrix:docs/gmk-keycaps/Oblivion-R2.md": "gmk-oblivion-r2",
+    "matrix:docs/gmk-keycaps/Oblivion-R3.1.md": "gmk-oblivion-v3-1",
+    "matrix:docs/gmk-keycaps/Olive-R2.md": "gmk-olive-r2",
+    "matrix:docs/gmk-keycaps/Originative-Cyrillic-R2.md": "gmk-originative-cyrillic-r2",
+    "matrix:docs/gmk-keycaps/Peach-Blossom-R2.md": "gmk-peach-blossom-r2",
+    "matrix:docs/gmk-keycaps/RGBY-Addon.md": "gmk-rgbyk-2022",
+    "matrix:docs/gmk-keycaps/Red-Samurai-MD.md": "gmk-red-samurai-md",
+    "matrix:docs/gmk-keycaps/Red-Samurai-R1.md": "gmk-red-samurai",
+    "matrix:docs/gmk-keycaps/Red-Samurai-R2.md": "gmk-red-samurai-r2",
+    "matrix:docs/gmk-keycaps/Serika-R2.md": "gmk-serika-r2",
+    "matrix:docs/gmk-keycaps/Shoko-R1.md": "gmk-shoko-r1",
+    "matrix:docs/gmk-keycaps/Shoko-R2.md": "gmk-shoko-r2",
+    "matrix:docs/gmk-keycaps/Skeletor-R1.md": "gmk-skeletor-r1",
+    "matrix:docs/gmk-keycaps/Skeletor-R2.md": "gmk-skeletor-r2",
+    "matrix:docs/gmk-keycaps/Space-Cadet-R1.md": "gmk-space-cadet",
+    "matrix:docs/gmk-keycaps/Space-Cadet-R2.md": "gmk-space-cadet-r2",
+    "matrix:docs/gmk-keycaps/Striker-R2.md": "gmk-striker-r2",
+    "matrix:docs/gmk-keycaps/TA-Royal-Alpha-610-Typewriter-R1.md": "gmk-ta-royal-alpha-610-typewriter-r1",
+    "matrix:docs/gmk-keycaps/TA-Royal-Alpha-610-Typewriter-R2.md": "gmk-ta-royal-alpha-610-typewriter-r2",
+    "matrix:docs/gmk-keycaps/Taro-R1.md": "gmk-taro",
+    "matrix:docs/gmk-keycaps/Taro-R2.md": "gmk-taro-r2",
+    "matrix:docs/gmk-keycaps/Terminal-R1.md": "gmk-terminal",
+    "matrix:docs/gmk-keycaps/Terminal-R2.md": "gmk-terminal-r2",
+    "matrix:docs/gmk-keycaps/Valentine-2017.md": "gmk-pink-valentine-cherry-ka-2017",
+    "matrix:docs/gmk-keycaps/Vaporwave-R2.md": "gmk-vaporwave-r2",
+    "matrix:docs/gmk-keycaps/Wasabi-R2.md": "gmk-wasabi-r2",
+    "matrix:docs/gmk-keycaps/Wasabi.md": "gmk-wasabi",
+    "matrix:docs/gmk-keycaps/Yuri-R2.md": "gmk-yuri-r2",
+    "novelkeys:8029928980647": "gmk-griseann-r2",
+    "omnitype:6975344443561": "gmk-dualshot-r2",
+    "matrix:docs/gmk-keycaps/Burgundy-R1.md": "gmk-burgundy",
+    "matrix:docs/gmk-keycaps/DualShot-R1.md": "gmk-dualshot",
+    "matrix:docs/gmk-keycaps/Yuri-R1.md": "gmk-yuri",
+    "dcswiki:47": "dcs-toxic",
+    "matrix:docs/gmk-keycaps/Oblivion-V3.1-Hagoromo.md": "gmk-oblivion-v3-1-hagoromo-alphas",
+    "dailyclack:6609918623799": "gmk-dracula-r2",
+    "novelkeys:8742669418663": "gmk-cyl-taiga-r2",
+    "omnitype:4708709466186": "gmk-minimal-r2",
+    "kbdfans:8081088086155": "gmk-hammerhead-r2",
+    "kbdfans:8347403059339": "gmk-noire-r2",
+    "novelkeys:8629883732135": "gmk-ada-2025",
+    "novelkeys:8154095124647": "gmk-creme",
+    "matrix:docs/gmk-keycaps/3.md": "gmk-cubed",
+    "matrix:docs/gmk-keycaps/Beige-WoB-uwu-Add-on.md": "gmk-beige-wob-uwu-macro-addon",
+    "matrix:docs/gmk-keycaps/CYL-Beloved.md": "gmk-beloved-ka2017-revival",
+    "matrix:docs/gmk-keycaps/Beta.md": "gmk-beta-js",
+    "matrix:docs/gmk-keycaps/Blueple.md": "gmk-blurple",
+    "matrix:docs/gmk-keycaps/Classic-Black-on-White.md": "gmk-classic-bow",
+    "matrix:docs/gmk-keycaps/CYL-Extended.md": "gmk-extended-2048",
+    "matrix:docs/gmk-keycaps/Cyrillic-WoB-Beige.md": "gmk-cyrillic-wob-and-beige",
+    "matrix:docs/gmk-keycaps/Randy-R2.md": "gmk-dandy-r2",
+    "matrix:docs/gmk-keycaps/Fright-Club-Volume-1.md": "gmk-fright-club-volume-1-hell-week",
+    "matrix:docs/gmk-keycaps/Handarbeige.md": "gmk-handarbeige-plus",
+    "matrix:docs/gmk-keycaps/Handarbeit.md": "gmk-handarbeit-plus",
+    "matrix:docs/gmk-keycaps/Handarbeit-R2-&-Nachtarbeit.md": "gmk-handarbeit-plus-r2",
+    "matrix:docs/gmk-keycaps/JIS.md": "gmk-jis-wob",
+    "matrix:docs/gmk-keycaps/Korean-Beige-Add-on.md": "gmk-korean-beige",
+    "matrix:docs/gmk-keycaps/Metaverse.md": "gmk-metaverse",
+    "matrix:docs/gmk-keycaps/Relegendables.md": "gmk-relegendables-plus",
+    "matrix:docs/gmk-keycaps/RGBYK-Add-On-R2.md": "gmk-rgbyk-addon",
+    "matrix:docs/gmk-keycaps/WoB-40s---Colevrak---R0-R5-Extensions.md": "gmk-wob-40s-colevrak-plus-r0-r5",
+    "matrix:docs/gmk-keycaps/WoBBoW-Hangul-Add-On.md": "gmk-wob-bow-hangul-addons",
+    "matrix:docs/gmk-keycaps/WoBBoW-Hangul.md": "gmk-wob-bow-hangul-r2",
+    "matrix:docs/gmk-keycaps/Ascii-CYL.md": "gmk-ascii-r2",
+    "matrix:docs/gmk-keycaps/Crimson-Royal-Cadet.md": "gmk-royal-cadet",
+    "dailyclack:6820322836535": "gmk-royal-cadet",
+    "matrix:docs/gmk-keycaps/Peach-n-Cream.md": "gmk-peaches-n-cream",
+    "matrix:docs/gmk-keycaps/Peaches-n-Create-Lite.md": "gmk-peaches-n-cream-lite",
+    "matrix:docs/gmk-keycaps/Triumph-Adler.md": "gmk-triumph-adler",
+    "matrix:docs/gmk-keycaps/Triumph-Adler-90.md": "gmk-triumph-adler-90",
+    "kbdfans:8150761373835": "kkb-shirasagi-r2",
+    "dailyclack:4617611149367": "gmk-noire-2020",
+    "switchoddities:8119098278172": "zepsody-bluebonnet",
+    "switchoddities:9100467142940": "lcet-blue",
+    "switchoddities:9100475924764": "lcet-glacier-brown"
   },
   "entries": {
     "keycaps/dcs-dolch": {
@@ -2357,15 +2779,9 @@
       "name": "DCS Richat",
       "designer": "mori"
     },
-    "keycaps/gmk-classic-beige-2022": {
-      "name": "GMK Classic Beige (2022)"
-    },
     "keycaps/gmk-hammerhead-2020": {
       "name": "GMK Hammerhead (2020)",
       "designer": "KEYLABSKEYCAPS"
-    },
-    "keycaps/gmk-cyl-hammerhead": {
-      "name": "GMK CYL Hammerhead (2026)"
     },
     "keycaps/gmk-momo-yume": {
       "name": "GMK Momo Yume"
@@ -2373,9 +2789,6 @@
     "keycaps/gmk-noire-2020": {
       "name": "GMK Noire (2020)",
       "designer": "gasp"
-    },
-    "keycaps/gmk-cyl-noire": {
-      "name": "GMK CYL Noire (2026)"
     },
     "keycaps/keykobo-cross-impact": {
       "manufacturer": "Keykobo",
@@ -3977,10 +4390,10 @@
       "manufacturer": null
     },
     "keycaps/gmk-panda": {
-      "name": "GMK Panda 熊猫"
+      "name": "GMK Panda"
     },
     "keycaps/gmk-storm": {
-      "name": "GMK Storm 风暴",
+      "name": "GMK Storm",
       "designer": "sp.people"
     },
     "keycaps/gmk-cyl-nightowl": {
@@ -3992,19 +4405,20 @@
     },
     "keycaps/keykobo-bloom": {
       "name": "Keykobo Bloom",
-      "designer": "SenSitive Works"
+      "designer": "SenSitive Works",
+      "manufacturer": "KeyKobo"
     },
     "keycaps/gmk-honeywell": {
       "designer": "Micro Switch & Honeywell"
     },
     "keycaps/gmk-coral": {
-      "name": "GMK Coral 珊瑚"
+      "name": "GMK Coral"
     },
     "keycaps/gmk-wob-katakana": {
-      "name": "GMK WoB KATAKANA 黑白日文"
+      "name": "GMK WoB KATAKANA"
     },
     "keycaps/gmk-bread": {
-      "name": "GMK Bread 面包"
+      "name": "GMK Bread"
     },
     "keycaps/gmk-cyl-wob": {
       "name": "GMK CYL WoB"
@@ -4022,14 +4436,14 @@
       "designer": "Sunnyd, Kyle"
     },
     "keycaps/gmk-bleached": {
-      "name": "GMK Bleached 漂白",
+      "name": "GMK Bleached",
       "designer": "botallu"
     },
     "keycaps/gmk-black-lotus": {
-      "name": "GMK Black Lotus 黑莲花"
+      "name": "GMK Black Lotus"
     },
     "keycaps/gmk-godspeed": {
-      "name": "GMK GodSpeed 神佑",
+      "name": "GMK GodSpeed",
       "designer": "Mito"
     },
     "keycaps/gmk-cyl-monokai-light": {
@@ -4040,7 +4454,7 @@
       "designer": "Jr Mars"
     },
     "keycaps/gmk-blue-samurai": {
-      "name": "GMK Blue Samurai 蓝武士"
+      "name": "GMK Blue Samurai"
     },
     "keycaps/gmk-pono": {
       "designer": "sourmk"
@@ -4062,7 +4476,7 @@
       "name": "GMK CYL Kitty"
     },
     "keycaps/gmk-apollo": {
-      "name": "GMK Apollo 阿波罗",
+      "name": "GMK Apollo",
       "designer": "octix"
     },
     "keycaps/gmk-cyl-evil-lime": {
@@ -4082,23 +4496,24 @@
       "name": "GMK Beige Addon Extension"
     },
     "keycaps/gmk-lilac-on-black": {
-      "name": "GMK Lilac on Black 黑紫",
+      "name": "GMK Lilac on Black",
       "designer": "Sax_______"
     },
     "keycaps/gmk-cyl-ishtar-r2": {
       "name": "GMK CYL Ishtar R2"
     },
     "keycaps/gmk-nautilus-nightmares": {
-      "name": "GMK Nautilus Nightmares 噩梦鹦鹉螺"
+      "name": "GMK Nautilus Nightmares"
     },
     "keycaps/gmk-civilizations": {
-      "name": "GMK Civilizations 文明"
+      "name": "GMK Civilizations"
     },
     "keycaps/gmk-violet-on-cream": {
-      "name": "GMK Violet on Cream 奶紫"
+      "name": "GMK Violet on Cream"
     },
     "keycaps/gmk-fuji": {
-      "name": "GMK Fuji 富士山"
+      "name": "GMK Fuji",
+      "designer": "ttom"
     },
     "keycaps/gmk-cyl-prussian-alert": {
       "name": "GMK CYL Prussian Alert"
@@ -4107,12 +4522,8 @@
       "name": "GMK CYL Gonzales",
       "designer": "Balance"
     },
-    "keycaps/gmk-olive-r2-r2": {
-      "name": "GMK Olive R2 橄榄R2",
-      "designer": "olivia"
-    },
     "keycaps/gmk-wob-hiragana": {
-      "name": "GMK WoB Hiragana 黑白日文"
+      "name": "GMK WoB Hiragana"
     },
     "keycaps/pbtfans-lucy-r2": {
       "designer": "Soya",
@@ -4129,7 +4540,7 @@
       "name": "DCS Pink Alert (2022)"
     },
     "keycaps/gmk-art": {
-      "name": "GMK Art 艺术"
+      "name": "GMK Art"
     },
     "keycaps/gmk-cyl-draco": {
       "name": "GMK CYL Draco"
@@ -4141,20 +4552,7 @@
       "designer": "yuukou_ / Langelandia"
     },
     "keycaps/gmk-mercury": {
-      "name": "GMK Mercury 汞"
-    },
-    "keycaps/gmk-nautilus-r2-r2": {
-      "name": "GMK Nautilus R2 鹦鹉螺R2"
-    },
-    "keycaps/gmk-shoko-r2-r2": {
-      "name": "GMK Shoko R2 硝子R2"
-    },
-    "keycaps/gmk-wasabi-r2-r2": {
-      "name": "GMK Wasabi R2 芥末R2",
-      "designer": "sourmk"
-    },
-    "keycaps/gmk-dracula-r2-r2": {
-      "name": "GMK Dracula R2 德古拉R2"
+      "name": "GMK Mercury"
     },
     "keycaps/mtnu-electronic-control": {
       "designer": "Madmax13"
@@ -4173,13 +4571,13 @@
       "name": "GMK Mictlan NorDeUK Addon"
     },
     "keycaps/gmk-lime": {
-      "name": "GMK Lime 青柠"
+      "name": "GMK Lime"
     },
     "keycaps/dcs-gg": {
       "designer": "kaptainmike"
     },
     "keycaps/gmk-monochrome": {
-      "name": "GMK Monochrome 黑白",
+      "name": "GMK Monochrome",
       "designer": "JSaintS & duckboi"
     },
     "keycaps/gmk-perestroika": {
@@ -4196,33 +4594,29 @@
       "designer": "HungHingDaiLo"
     },
     "keycaps/gmk-peach-blossom": {
-      "name": "GMK Peach Blossom 桃花"
+      "name": "GMK Peach Blossom"
     },
     "keycaps/gmk-camping": {
-      "name": "GMK Camping 野营",
+      "name": "GMK Camping",
       "designer": "kingnestea"
     },
     "keycaps/gmk-mint-dolch": {
-      "name": "GMK Mint Dolch 薄荷豆",
+      "name": "GMK Mint Dolch",
       "designer": "Livingspeedbump"
     },
     "keycaps/keykobo-cobalt": {
       "name": "Keykobo Cobalt"
     },
-    "keycaps/gmk-bingsu-r2-r2": {
-      "name": "GMK Bingsu R2 红豆刨冰R2",
-      "designer": "Rise"
-    },
     "keycaps/gmk-coniferous": {
-      "name": "GMK Coniferous 松柏",
+      "name": "GMK Coniferous",
       "designer": "DonutCat"
     },
     "keycaps/gmk-modern-dolch": {
-      "name": "GMK Modern Dolch 摩登豆",
+      "name": "GMK Modern Dolch",
       "designer": "janglad"
     },
     "keycaps/gmk-phantom": {
-      "name": "GMK Phantom 幻影"
+      "name": "GMK Phantom"
     },
     "keycaps/gmk-dualshot-r2": {
       "designer": "GarrettSucks",
@@ -4236,20 +4630,17 @@
       "name": "DSA Vegas Nights (2019)"
     },
     "keycaps/gmk-muted": {
-      "name": "GMK Muted 缄默"
+      "name": "GMK Muted"
     },
     "keycaps/gmk-galaxy": {
-      "name": "GMK Galaxy 银河"
-    },
-    "keycaps/gmk-oblivion-r2-r2": {
-      "name": "GMK Oblivion R2 码农R2"
+      "name": "GMK Galaxy"
     },
     "keycaps/gmk-n9-ortholinear-add-on": {
       "name": "GMK N9 Ortholinear Add-on",
       "designer": "tvaro"
     },
     "keycaps/gmk-lunar": {
-      "name": "GMK Lunar 追月"
+      "name": "GMK Lunar"
     },
     "keycaps/tut-black-sugar-bobo": {
       "designer": "Soya Design"
@@ -4257,25 +4648,22 @@
     "keycaps/gmk-yeeti": {
       "designer": "Fannie_w"
     },
-    "keycaps/gmk-firefly-r2-r2": {
-      "name": "GMK Firefly R2 萤火虫R2"
-    },
     "keycaps/gmk-shark-bait": {
-      "name": "GMK Shark Bait 鲨鱼诱饵",
+      "name": "GMK Shark Bait",
       "designer": "WAVES_D0NT_DIE"
     },
     "keycaps/gmk-classic-red": {
-      "name": "GMK Classic Red 经典红"
+      "name": "GMK Classic Red"
     },
     "keycaps/gmk-striker": {
-      "name": "GMK Striker 前锋"
+      "name": "GMK Striker"
     },
     "keycaps/gmk-cyl-distortion": {
       "name": "GMK CYL Distortion",
       "designer": "Madmax13"
     },
     "keycaps/gmk-arctic": {
-      "name": "GMK Arctic 北极圈"
+      "name": "GMK Arctic"
     },
     "keycaps/gmk-dolch-reborn": {
       "name": "GMK Dolch Reborn"
@@ -4287,34 +4675,20 @@
       "designer": "Scucka and DontStealMyLollipop"
     },
     "keycaps/gmk-dots": {
-      "name": "GMK Dots 点点点"
+      "name": "GMK Dots"
     },
     "keycaps/gmk-hydro": {
-      "name": "GMK Hydro 水箭龟"
+      "name": "GMK Hydro"
     },
     "keycaps/gmk-rainy-day": {
-      "name": "GMK Rainy Day 雨天"
+      "name": "GMK Rainy Day"
     },
     "keycaps/gmk-pretty-in-pink": {
-      "name": "GMK Pretty in Pink 粉红佳人公益增补",
+      "name": "GMK Pretty in Pink",
       "designer": "upas"
-    },
-    "keycaps/gmk-camping-r2-r2": {
-      "name": "GMK Camping R2 野营R2",
-      "designer": "kingnestea"
     },
     "keycaps/gmk-cyl-cleopatra": {
       "name": "GMK CYL Cleopatra"
-    },
-    "keycaps/gmk-vaporwave-r2-r2": {
-      "name": "GMK Vaporwave R2 蒸汽波R2",
-      "designer": "NaturalPack / biip"
-    },
-    "keycaps/gmk-red-samurai-r2-r2": {
-      "name": "GMK Red Samurai R2 红武士R2"
-    },
-    "keycaps/gmk-camping-r3-r3": {
-      "name": "GMK Camping R3 野营R3"
     },
     "keycaps/dcs-orange-on-beige": {
       "designer": "Bowl, Manu"
@@ -4322,42 +4696,35 @@
     "keycaps/dcs-clown": {
       "designer": "Bowl Keyboards"
     },
-    "keycaps/gmk-crimson-cadet-r2-r2": {
-      "name": "GMK Crimson Cadet R2 猩红学员R2"
-    },
     "keycaps/dcs-paperwork": {
       "designer": "davisthegreat"
-    },
-    "keycaps/gmk-laser-r2-r2": {
-      "name": "GMK Laser R2 激光R2",
-      "designer": "Mito"
     },
     "keycaps/gmk-stonks-2026": {
       "name": "GMK Stonks (2026)"
     },
     "keycaps/gmk-soyamilk": {
-      "name": "GMK Soyamilk 豆奶"
+      "name": "GMK Soyamilk"
     },
     "keycaps/gmk-denim": {
-      "name": "GMK Denim 牛仔裤"
+      "name": "GMK Denim"
     },
     "keycaps/gmk-honey": {
-      "name": "GMK Honey 蜂蜜"
+      "name": "GMK Honey"
     },
     "keycaps/gmk-electric": {
-      "name": "GMK Electric 电工"
+      "name": "GMK Electric"
     },
     "keycaps/gmk-cyl-zooted-r2": {
       "name": "GMK CYL Zooted R2"
     },
     "keycaps/gmk-lychee": {
-      "name": "GMK Lychee 荔枝"
+      "name": "GMK Lychee"
     },
     "keycaps/gmk-sumi": {
-      "name": "GMK Sumi 墨绘"
+      "name": "GMK Sumi"
     },
     "keycaps/gmk-greek-beige-add-on": {
-      "name": "GMK Greek Beige Add-on 米色希腊文增补",
+      "name": "GMK Greek Beige Add-on",
       "designer": "LightiningXI"
     },
     "keycaps/gmk-cyl-ta-neo": {
@@ -4375,7 +4742,7 @@
       "designer": "Django."
     },
     "keycaps/gmk-midnight-rainbow": {
-      "name": "GMK Midnight Rainbow 午夜彩虹",
+      "name": "GMK Midnight Rainbow",
       "designer": "Jae-3soteric"
     },
     "keycaps/gmk-cyl-green-alert": {
@@ -4411,7 +4778,7 @@
       "name": "GMK 9009 R2"
     },
     "keycaps/gmk-moonlight": {
-      "name": "GMK Moonlight 月光",
+      "name": "GMK Moonlight",
       "designer": "mkljfox44"
     },
     "keycaps/pbtfans-maguro": {
@@ -4421,16 +4788,12 @@
     "keycaps/gmk-cyl-deathly-queen": {
       "name": "GMK CYL Deathly Queen"
     },
-    "keycaps/gmk-nuclear-data-r2-r2": {
-      "name": "GMK Nuclear Data R2 核子R2",
-      "designer": "hineybush"
-    },
     "keycaps/gmk-mecha-00": {
       "name": "GMK Mecha 00",
       "designer": "Fu11.Meta1"
     },
     "keycaps/gmk-tuzi": {
-      "name": "GMK Tuzi 兔子"
+      "name": "GMK Tuzi"
     },
     "keycaps/pbtfans-calkis": {
       "designer": "Soya",
@@ -4447,14 +4810,10 @@
       "designer": "Bobatype"
     },
     "keycaps/gmk-classic-arabic": {
-      "name": "GMK Classic Arabic 经典阿拉伯文"
+      "name": "GMK Classic Arabic"
     },
     "keycaps/gmk-fox": {
-      "name": "GMK Fox 狐狸"
-    },
-    "keycaps/gmk-minimal-r2-r2": {
-      "name": "GMK Minimal R2 极简白R2",
-      "designer": "janglad"
+      "name": "GMK Fox"
     },
     "keycaps/gmk-cyl-masterpiece-r2": {
       "name": "GMK CYL Masterpiece R2"
@@ -4463,63 +4822,48 @@
       "designer": "mcmcmc"
     },
     "keycaps/gmk-pharaoh": {
-      "name": "GMK Pharaoh 法老王"
+      "name": "GMK Pharaoh",
+      "designer": "SxM Designs"
     },
     "keycaps/gmk-shanshui": {
-      "name": "GMK Shanshui 山水"
-    },
-    "keycaps/gmk-carbon-r2-r2": {
-      "name": "GMK Carbon R2 大碳R2"
+      "name": "GMK Shanshui"
     },
     "keycaps/gmk-watermelon": {
-      "name": "GMK Watermelon 西瓜",
+      "name": "GMK Watermelon",
       "designer": "ogWalker"
     },
     "keycaps/gmk-mecha-01": {
       "designer": "FU11.META1"
     },
     "keycaps/gmk-pulse": {
-      "name": "GMK Pulse 脉冲"
+      "name": "GMK Pulse"
     },
     "keycaps/gmk-cocogoat": {
       "designer": "MSA"
     },
     "keycaps/gmk-chocolatier": {
-      "name": "GMK Chocolatier 巧克力"
+      "name": "GMK Chocolatier"
     },
     "keycaps/gmk-phantom-r2": {
       "designer": "briano1905 / vheissu",
       "name": "GMK Phantom R2"
     },
-    "keycaps/gmk-botanical-r2-r2": {
-      "name": "GMK Botanical R2 植物园R2"
-    },
     "keycaps/gmk-zhuyin": {
-      "name": "GMK Zhuyin 注音",
+      "name": "GMK Zhuyin",
       "designer": "HoodrowThrillson"
-    },
-    "keycaps/gmk-yuri-r2-r2": {
-      "name": "GMK Yuri R2 尤里R2"
-    },
-    "keycaps/gmk-muted-r2-r2": {
-      "name": "GMK Muted R2 缄默R2",
-      "designer": "jchan94"
     },
     "keycaps/gmk-matrix-01": {
       "designer": "Matrix Lab"
-    },
-    "keycaps/gmk-night-runner-r2-r2": {
-      "name": "GMK Night Runner R2 夜跑R2"
     },
     "keycaps/gmk-black-modi": {
       "designer": "LifeZ"
     },
     "keycaps/gmk-olive": {
-      "name": "GMK Olive 橄榄",
+      "name": "GMK Olive",
       "designer": "olivia"
     },
     "keycaps/gmk-boulder": {
-      "name": "GMK Boulder 巨石"
+      "name": "GMK Boulder"
     },
     "keycaps/gmk-wob-essentials": {
       "designer": "ankit"
@@ -4531,7 +4875,7 @@
       "name": "GMK CYL King of the Seas"
     },
     "keycaps/gmk-laser": {
-      "name": "GMK Laser 激光",
+      "name": "GMK Laser",
       "designer": "Mito"
     },
     "keycaps/dcs-solarized-dark": {
@@ -4541,33 +4885,31 @@
       "name": "GMK Monokai Material NorDeUK Addon"
     },
     "keycaps/gmk-red-devils": {
-      "name": "GMK Red Devils 红魔鬼"
+      "name": "GMK Red Devils"
     },
     "keycaps/gmk-pixel": {
-      "name": "GMK Pixel 像素",
+      "name": "GMK Pixel",
       "designer": "MitTo"
     },
     "keycaps/gmk-underworld": {
-      "name": "GMK Underworld 地下世界"
+      "name": "GMK Underworld"
     },
     "keycaps/gmk-dandy": {
       "designer": "sourmk"
     },
     "keycaps/gmk-darling": {
-      "name": "GMK Darling 亲爱哒"
-    },
-    "keycaps/gmk-peach-blossom-r2-r2": {
-      "name": "GMK Peach Blossom R2 桃花R2"
+      "name": "GMK Darling"
     },
     "keycaps/gmk-9009-r3": {
       "designer": "justnits",
       "name": "GMK 9009 R3"
     },
     "keycaps/gmk-red-line": {
-      "name": "GMK Red Line 仪表盘"
+      "name": "GMK Red Line",
+      "designer": "G Bur"
     },
     "keycaps/gmk-nines": {
-      "name": "GMK Nines 九"
+      "name": "GMK Nines"
     },
     "keycaps/gmk-lazurite": {
       "designer": "jaekid"
@@ -4576,20 +4918,20 @@
       "designer": "Warrenified"
     },
     "keycaps/gmk-vaporwave": {
-      "name": "GMK Vaporwave 蒸汽波"
+      "name": "GMK Vaporwave"
     },
     "keycaps/gmk-eclipse": {
-      "name": "GMK Eclipse 日蚀"
+      "name": "GMK Eclipse"
     },
     "keycaps/gmk-cyl-dolch-r5x": {
       "name": "GMK CYL Dolch R5X",
       "designer": "Lightning"
     },
     "keycaps/gmk-red-dragon": {
-      "name": "GMK Red Dragon 西方龙"
+      "name": "GMK Red Dragon"
     },
     "keycaps/gmk-first-love": {
-      "name": "GMK First Love 初恋",
+      "name": "GMK First Love",
       "designer": "otanishock"
     },
     "keycaps/gmk-cyl-spectre": {
@@ -4622,11 +4964,11 @@
       "name": "GMK CYL Selene"
     },
     "keycaps/gmk-necro": {
-      "name": "GMK Necro 死灵",
+      "name": "GMK Necro",
       "designer": "jessica"
     },
     "keycaps/gmk-serika": {
-      "name": "GMK Serika 芹夏"
+      "name": "GMK Serika"
     },
     "keycaps/dcs-alps-wob": {
       "designer": "PigeonsLikeBread"
@@ -4634,11 +4976,8 @@
     "keycaps/gmk-devoted": {
       "designer": "ItszBrian"
     },
-    "keycaps/gmk-serika-r2-r2": {
-      "name": "GMK Serika R2 芹夏R2"
-    },
     "keycaps/gmk-dune": {
-      "name": "GMK Dune 沙丘",
+      "name": "GMK Dune",
       "designer": "lelelab"
     },
     "keycaps/gmk-cyl-mothman": {
@@ -4653,11 +4992,11 @@
       "designer": "Jaraed and Malisha"
     },
     "keycaps/gmk-hero": {
-      "name": "GMK Hero 英雄",
+      "name": "GMK Hero",
       "designer": "mklfox44"
     },
     "keycaps/gmk-skidata-plus-r1": {
-      "name": "GMK SKIDATA+ 黑橙R1"
+      "name": "GMK SKIDATA+ R1"
     },
     "keycaps/gmk-yugo": {
       "designer": "constexpr"
@@ -4666,17 +5005,14 @@
       "name": "GMK TA Neo (paulgali)"
     },
     "keycaps/gmk-toxic": {
-      "name": "GMK Toxic 毒药",
+      "name": "GMK Toxic",
       "designer": "T0mb3ry"
     },
     "keycaps/keykobo-beige": {
       "name": "Keykobo Beige"
     },
     "keycaps/gmk-botanical": {
-      "name": "GMK Botanical 植物园"
-    },
-    "keycaps/gmk-metropolis-r2-r2": {
-      "name": "GMK Metropolis R2 大都会R2"
+      "name": "GMK Botanical"
     },
     "keycaps/dsa-vegas-nights-2022": {
       "name": "DSA Vegas Nights (2022)"
@@ -4685,7 +5021,7 @@
       "name": "GMK CYL Just Beachy"
     },
     "keycaps/gmk-firefly": {
-      "name": "GMK Firefly 萤火虫"
+      "name": "GMK Firefly"
     },
     "keycaps/keykobo-retro-rc-759": {
       "name": "Keykobo Retro RC 759",
@@ -4698,11 +5034,11 @@
       "name": "GMK CYL Spark"
     },
     "keycaps/gmk-spirit": {
-      "name": "GMK Spirit 陆军",
+      "name": "GMK Spirit",
       "designer": "Kingnestea"
     },
     "keycaps/gmk-moon-dust": {
-      "name": "GMK Moon Dust 月球尘埃"
+      "name": "GMK Moon Dust"
     },
     "keycaps/gmk-cyl-desert-nights": {
       "name": "GMK CYL Desert Nights",
@@ -4716,11 +5052,8 @@
       "designer": "Rayhhdailo"
     },
     "keycaps/gmk-thai-tea": {
-      "name": "GMK Thai Tea 泰茶",
+      "name": "GMK Thai Tea",
       "designer": "pyade3"
-    },
-    "keycaps/gmk-analog-dreams-r2-r2": {
-      "name": "GMK Analog Dreams R2 模拟梦境R2"
     },
     "keycaps/gmk-cyl-taiga-r2": {
       "name": "GMK CYL Taiga R2"
@@ -4732,29 +5065,20 @@
       "designer": "GarrettSucks"
     },
     "keycaps/gmk-skiidata-r2": {
-      "name": "GMK SkIIdata 黑橙R2"
+      "name": "GMK SkIIdata R2"
     },
     "keycaps/gmk-cyl-orange-alert": {
       "name": "GMK CYL Orange Alert"
     },
     "keycaps/gmk-night-runner": {
-      "name": "GMK Night Runner 夜跑"
+      "name": "GMK Night Runner"
     },
     "keycaps/gmk-alpine": {
-      "name": "GMK Alpine 阿尔卑斯山",
+      "name": "GMK Alpine",
       "designer": "Gregoli"
     },
-    "keycaps/gmk-space-cadet-r2-r2": {
-      "name": "GMK Space Cadet R2 太空学员R2"
-    },
-    "keycaps/gmk-taro-r2-r2": {
-      "name": "GMK Taro R2 香芋奶茶R2"
-    },
-    "keycaps/gmk-coral-r2-r2": {
-      "name": "GMK Coral R2 珊瑚R2"
-    },
     "keycaps/gmk-tiramisu": {
-      "name": "GMK Tiramisu 提拉米苏"
+      "name": "GMK Tiramisu"
     },
     "keycaps/gmk-hooty": {
       "designer": "sourmk"
@@ -4771,80 +5095,74 @@
       "designer": "bord.design"
     },
     "keycaps/gmk-sparta": {
-      "name": "GMK Sparta 斯巴达",
+      "name": "GMK Sparta",
       "designer": "crusader_alex"
     },
     "keycaps/gmk-originative-cyrillic": {
-      "name": "GMK Originative Cyrillic 黑俄文"
+      "name": "GMK Originative Cyrillic"
     },
     "keycaps/gmk-stonks-2021": {
       "name": "GMK Stonks (2021)"
     },
-    "keycaps/gmk-lime-r2-r2": {
-      "name": "GMK Lime R2 青柠R2"
-    },
     "keycaps/gmk-cyl-unobtanium-blue": {
       "name": "GMK CYL Unobtanium Blue"
     },
-    "keycaps/gmk-striker-r2-r2": {
-      "name": "GMK Striker R2 前锋R2"
-    },
     "keycaps/gmk-grand-prix": {
-      "name": "GMK Grand Prix 大奖赛",
+      "name": "GMK Grand Prix",
       "designer": "zekth"
     },
     "keycaps/gmk-crimson-cadet": {
-      "name": "GMK Crimson Cadet 猩红学员"
+      "name": "GMK Crimson Cadet"
     },
     "keycaps/gmk-mr-sleeves-r2": {
       "name": "GMK Mr. Sleeves R2",
       "designer": "TAEHA"
     },
     "keycaps/gmk-aurora-polaris": {
-      "name": "GMK Aurora Polaris 北极光",
+      "name": "GMK Aurora Polaris",
       "designer": "S3LQ"
     },
     "keycaps/pbtfans-blood-night": {
       "designer": "Mars"
     },
     "keycaps/gmk-dracula": {
-      "name": "GMK Dracula 德古拉"
+      "name": "GMK Dracula"
     },
     "keycaps/gmk-solarized-dark": {
       "designer": "rainb1ood"
     },
     "keycaps/gmk-harvest": {
-      "name": "GMK Harvest 丰收"
+      "name": "GMK Harvest"
     },
     "keycaps/gmk-cyl-dino-jungle": {
       "name": "GMK CYL Dino Jungle",
       "designer": "Captain Sterling"
     },
     "keycaps/gmk-amethyst": {
-      "name": "GMK Amethyst 紫水晶"
+      "name": "GMK Amethyst"
     },
     "keycaps/gmk-phosphorous": {
-      "name": "GMK Phosphorous 磷光"
+      "name": "GMK Phosphorous"
     },
     "keycaps/gmk-masterpiece": {
-      "name": "GMK Masterpiece 工匠"
+      "name": "GMK Masterpiece"
     },
     "keycaps/gmk-nuclear-data": {
-      "name": "GMK Nuclear Data 核子",
+      "name": "GMK Nuclear Data",
       "designer": "hineybush"
     },
     "keycaps/gmk-sixes": {
-      "name": "GMK Sixes 六",
+      "name": "GMK Sixes",
       "designer": "Emir"
     },
     "keycaps/gmk-wavez": {
-      "name": "GMK Wavez 声波"
+      "name": "GMK Wavez"
     },
     "keycaps/gmk-voyage": {
-      "name": "GMK Voyage 旅行"
+      "name": "GMK Voyage"
     },
     "keycaps/gmk-nightlife": {
-      "name": "GMK Nightlife 夜生活"
+      "name": "GMK Nightlife"
     },
     "keycaps/dcs-dream-alert": {
       "designer": "Valkurize"
@@ -4852,16 +5170,9 @@
     "keycaps/gmk-cyl-daifuku-r2": {
       "name": "GMK CYL Daifuku R2"
     },
-    "keycaps/gmk-monochrome-r2-r2": {
-      "name": "GMK Monochrome R2 黑白R2",
-      "designer": "Full"
-    },
     "keycaps/pbtfans-voyager": {
       "designer": "Sxmdesigns",
       "name": "PBTFans Voyager"
-    },
-    "keycaps/gmk-terminal-r2-r2": {
-      "name": "GMK Terminal R2 终端机R2"
     },
     "keycaps/gmk-teradrive": {
       "designer": "Kingk22/Yuzu"
@@ -4870,7 +5181,7 @@
       "designer": "TheKeyCompany"
     },
     "keycaps/gmk-kaiju": {
-      "name": "GMK Kaiju 怪兽",
+      "name": "GMK Kaiju",
       "designer": "nephlock"
     },
     "keycaps/keykobo-sacred-timeline": {
@@ -4884,10 +5195,10 @@
       "name": "DCS SoWaRe Revival"
     },
     "keycaps/gmk-sandstorm": {
-      "name": "GMK SandStorm 沙暴"
+      "name": "GMK SandStorm"
     },
     "keycaps/gmk-ledzep": {
-      "name": "GMK LedZep 齐柏林飞艇"
+      "name": "GMK LedZep"
     },
     "keycaps/gmk-modern-dolch-light": {
       "designer": "janglad"
@@ -4912,7 +5223,7 @@
       "designer": "WoobEC"
     },
     "keycaps/gmk-wob-red-cyrillic": {
-      "name": "GMK WoB Red Cyrillic 黑白红俄文"
+      "name": "GMK WoB Red Cyrillic"
     },
     "keycaps/gmk-cyl-zx": {
       "name": "GMK CYL ZX",
@@ -4965,7 +5276,7 @@
       "brand": null
     },
     "keycaps/pbtfans-runner": {
-      "name": "PBTfans 电气RUNNER"
+      "name": "PBTfans RUNNER"
     },
     "keycaps/pbtfans-g3": {
       "name": "PBTfans G3"
@@ -4996,34 +5307,35 @@
       "brand": null
     },
     "keycaps/gmk-cafe": {
-      "name": "GMK Cafe 咖啡"
+      "name": "GMK Cafe"
     },
     "keycaps/jtk-shuten-doji": {
       "name": "JTK Shuten-Doji"
     },
     "keycaps/gmk-bushido": {
-      "name": "GMK Bushido 武士道"
+      "name": "GMK Bushido"
     },
     "keycaps/gmk-yutousu": {
-      "name": "GMK Yutousu 芋头酥"
+      "name": "GMK Yutousu"
     },
     "keycaps/gmk-hanok": {
       "name": "GMK Hanok"
     },
     "keycaps/gmk-truffelschwein": {
-      "name": "GMK Truffelschwein"
+      "name": "GMK Truffelschwein",
+      "designer": "jmsp0511"
     },
     "keycaps/gmk-patisserie": {
       "name": "GMK Patisserie"
     },
     "keycaps/gmk-zimo": {
-      "name": "GMK Zimo 自摸"
+      "name": "GMK Zimo"
     },
     "keycaps/gmk-jamon": {
-      "name": "GMK Jamon 火腿"
+      "name": "GMK Jamon"
     },
     "keycaps/gmk-fenglisu": {
-      "name": "GMK FengLiSu 凤梨酥"
+      "name": "GMK FengLiSu"
     },
     "keycaps/mw-virtual": {
       "name": "MW Virtual",
@@ -5451,6 +5763,376 @@
     "keycaps/hammerworks-crp-r7-beige": {
       "manufacturer": "Hammerworks",
       "brand": "CRP"
+    },
+    "keycaps/alohakb-road-trip": {
+      "designer": "AlohaKB Studio"
+    },
+    "keycaps/dss-sencillo": {
+      "designer": "arq1999 & Chamoy"
+    },
+    "keycaps/epbt-kavala": {
+      "designer": "cylentshadows"
+    },
+    "keycaps/epbt-ping": {
+      "designer": "Plopmk"
+    },
+    "keycaps/epbt-rin": {
+      "designer": "Jennisaurus"
+    },
+    "keycaps/epbt-solaria": {
+      "designer": "pupper125"
+    },
+    "keycaps/epbt-timeless": {
+      "designer": "imivanh"
+    },
+    "keycaps/geekark-lancelot": {
+      "designer": "Hongoo & Wuque Studio"
+    },
+    "keycaps/geekark-triangle": {
+      "designer": "ZLightningZAP"
+    },
+    "keycaps/gmk-agent-01": {
+      "designer": "SxM Designs"
+    },
+    "keycaps/gmk-b": {
+      "designer": "shota_irl"
+    },
+    "keycaps/gmk-blot-r2": {
+      "designer": "Eloquentclicks"
+    },
+    "keycaps/gmk-bordeaux": {
+      "designer": "aerospice"
+    },
+    "keycaps/gmk-cluck": {
+      "designer": "MIGHTY CHICKEN"
+    },
+    "keycaps/gmk-delta-r2": {
+      "designer": "Emil"
+    },
+    "keycaps/gmk-hineybeige": {
+      "designer": "hineybush"
+    },
+    "keycaps/gmk-monokai-material": {
+      "designer": "Oblotzky"
+    },
+    "keycaps/gmk-mudbeam": {
+      "designer": "scud80"
+    },
+    "keycaps/gmk-terror-below": {
+      "designer": "Afresh"
+    },
+    "keycaps/gmk-zen-pond": {
+      "designer": "SxM Designs"
+    },
+    "keycaps/jtk-zen": {
+      "designer": "Buger"
+    },
+    "keycaps/kam-ghost": {
+      "designer": "fireworm"
+    },
+    "keycaps/kat-great-wave": {
+      "designer": "bobasweatandtears & dudeship"
+    },
+    "keycaps/kat-space-cadet": {
+      "designer": "tominabox1 & Alas"
+    },
+    "keycaps/kat-space-dust": {
+      "designer": "PseudoLlama & bobasweatandtears"
+    },
+    "keycaps/kds-chainsaw": {
+      "designer": "actionwagon"
+    },
+    "keycaps/kkb-moon-rabbit": {
+      "designer": "tomkatsuuu"
+    },
+    "keycaps/mw-alfheim": {
+      "designer": "DontStealMyLolipop"
+    },
+    "keycaps/mw-aschente": {
+      "designer": "DontStealMyLolipop"
+    },
+    "keycaps/mw-demon-girl": {
+      "designer": "littletokyokeebs"
+    },
+    "keycaps/pbtfans-basin": {
+      "designer": "Aiden & Synthereal & Nqrwhql"
+    },
+    "keycaps/pbtfans-umbra": {
+      "designer": "Pachriksu"
+    },
+    "keycaps/sa-bubble-r2": {
+      "designer": "Yayoi"
+    },
+    "keycaps/sa-jadeite": {
+      "designer": "HoodrowThrillson & OneCreativeMind"
+    },
+    "keycaps/sa-nightlight": {
+      "designer": "thatkoaladoe"
+    },
+    "keycaps/sa-ramses": {
+      "designer": "atlanticise"
+    },
+    "keycaps/sa-silent-assassin": {
+      "designer": "Triple Studio"
+    },
+    "keycaps/sa-spectra": {
+      "designer": "OneCreativeMind & nasp"
+    },
+    "keycaps/ws-mizu": {
+      "designer": "Rensuya"
+    },
+    "keycaps/ws-stellar": {
+      "manufacturer": "Wuque Studio"
+    },
+    "keycaps/gmk-analog-dreams-r2": {
+      "name": "GMK Analog Dreams R2"
+    },
+    "keycaps/gmk-serika-r2": {
+      "name": "GMK Serika R2"
+    },
+    "keycaps/gmk-botanical-r2": {
+      "name": "GMK Botanical R2"
+    },
+    "keycaps/gmk-lime-r2": {
+      "name": "GMK Lime R2"
+    },
+    "keycaps/gmk-bingsu-r2": {
+      "name": "GMK Bingsu R2",
+      "designer": "Rise"
+    },
+    "keycaps/gmk-camping-r3": {
+      "name": "GMK Camping R3",
+      "designer": "Monkey Six"
+    },
+    "keycaps/gmk-firefly-r2": {
+      "name": "GMK Firefly R2"
+    },
+    "keycaps/gmk-yuri-r2": {
+      "name": "GMK Yuri R2"
+    },
+    "keycaps/gmk-nuclear-data-r2": {
+      "name": "GMK Nuclear Data R2",
+      "designer": "hineybush"
+    },
+    "keycaps/gmk-striker-r2": {
+      "name": "GMK Striker R2"
+    },
+    "keycaps/gmk-oblivion-r2": {
+      "name": "GMK Oblivion R2"
+    },
+    "keycaps/gmk-shoko-r2": {
+      "name": "GMK Shoko R2"
+    },
+    "keycaps/gmk-peach-blossom-r2": {
+      "name": "GMK Peach Blossom R2"
+    },
+    "keycaps/gmk-carbon-r2": {
+      "name": "GMK Carbon R2"
+    },
+    "keycaps/gmk-wasabi-r2": {
+      "name": "GMK Wasabi R2",
+      "designer": "sourmk"
+    },
+    "keycaps/gmk-muted-r2": {
+      "name": "GMK Muted R2",
+      "designer": "jchan94"
+    },
+    "keycaps/gmk-camping-r2": {
+      "name": "GMK Camping R2",
+      "designer": "kingnestea"
+    },
+    "keycaps/gmk-night-runner-r2": {
+      "name": "GMK Night Runner R2"
+    },
+    "keycaps/gmk-vaporwave-r2": {
+      "name": "GMK Vaporwave R2",
+      "designer": "NaturalPack / biip"
+    },
+    "keycaps/gmk-taro-r2": {
+      "name": "GMK Taro R2"
+    },
+    "keycaps/gmk-crimson-cadet-r2": {
+      "name": "GMK Crimson Cadet R2"
+    },
+    "keycaps/gmk-dracula-r2": {
+      "name": "GMK Dracula R2"
+    },
+    "keycaps/gmk-space-cadet-r2": {
+      "name": "GMK Space Cadet R2"
+    },
+    "keycaps/gmk-laser-r2": {
+      "name": "GMK Laser R2",
+      "designer": "Mito"
+    },
+    "keycaps/gmk-terminal-r2": {
+      "name": "GMK Terminal R2"
+    },
+    "keycaps/gmk-coral-r2": {
+      "name": "GMK Coral R2"
+    },
+    "keycaps/gmk-olive-r2": {
+      "name": "GMK Olive R2",
+      "designer": "olivia"
+    },
+    "keycaps/gmk-metropolis-r2": {
+      "name": "GMK Metropolis R2",
+      "designer": "Nephlock"
+    },
+    "keycaps/gmk-minimal-r2": {
+      "name": "GMK Minimal R2",
+      "designer": "janglad"
+    },
+    "keycaps/gmk-monochrome-r2": {
+      "name": "GMK Monochrome R2",
+      "designer": "Full"
+    },
+    "keycaps/gmk-nautilus-r2": {
+      "name": "GMK Nautilus R2"
+    },
+    "keycaps/gmk-red-samurai-r2": {
+      "name": "GMK Red Samurai R2"
+    },
+    "keycaps/gmk-8008-r2": {
+      "name": "GMK 8008 r2",
+      "designer": "G Bur"
+    },
+    "keycaps/gmk-frost-witch-r2": {
+      "designer": "Adam"
+    },
+    "keycaps/gmk-ascii-r2": {
+      "name": "GMK ASCII r2"
+    },
+    "keycaps/gmk-beige-wob-uwu-macro-addon": {
+      "name": "GMK Beige/WoB uwu Macro Addon"
+    },
+    "keycaps/gmk-beloved-ka2017-revival": {
+      "name": "GMK Beloved - KA2017 Revival"
+    },
+    "keycaps/gmk-beta-js": {
+      "name": "GMK Beta & JS"
+    },
+    "keycaps/gmk-bingsu": {
+      "designer": "onefiftynine"
+    },
+    "keycaps/gmk-black-mod-addon": {
+      "name": "GMK Black Mod Addon"
+    },
+    "keycaps/gmk-blurple": {
+      "name": "GMK Blurple"
+    },
+    "keycaps/gmk-boneyard-r2": {
+      "name": "GMK Boneyard r2"
+    },
+    "keycaps/gmk-burgundy-r4": {
+      "name": "GMK Burgundy R4"
+    },
+    "keycaps/gmk-classic-beige-ka1953-revamp": {
+      "name": "GMK Classic Beige - KA1953 Revamp"
+    },
+    "keycaps/gmk-classic-bow": {
+      "name": "GMK Classic BoW"
+    },
+    "keycaps/gmk-cubed": {
+      "name": "GMK ³ (Cubed)"
+    },
+    "keycaps/gmk-dandy-r2": {
+      "name": "GMK Dandy r2"
+    },
+    "keycaps/gmk-darling-r2": {
+      "name": "GMK Darling r2"
+    },
+    "keycaps/gmk-extended-2048": {
+      "name": "GMK Extended 2048"
+    },
+    "keycaps/gmk-fright-club-volume-1-hell-week": {
+      "name": "GMK Fright Club Volume 1: Hell Week"
+    },
+    "keycaps/gmk-hammerhead-r2": {
+      "name": "GMK Hammerhead R2",
+      "designer": "KeylabsKeycaps"
+    },
+    "keycaps/gmk-handarbeige-plus": {
+      "name": "GMK Handarbeige+"
+    },
+    "keycaps/gmk-handarbeit-plus": {
+      "name": "GMK Handarbeit+"
+    },
+    "keycaps/gmk-handarbeit-plus-r2": {
+      "name": "GMK Handarbeit+ r2"
+    },
+    "keycaps/gmk-jis-wob": {
+      "name": "GMK JIS WoB"
+    },
+    "keycaps/gmk-kaiju-part-deux": {
+      "name": "GMK Kaiju Part Deux"
+    },
+    "keycaps/gmk-korean-beige": {
+      "name": "GMK Korean Beige"
+    },
+    "keycaps/gmk-metaverse": {
+      "name": "GMK Metaverse"
+    },
+    "keycaps/gmk-minimal": {
+      "designer": "Janglad & Quadeppo"
+    },
+    "keycaps/gmk-noire-r2": {
+      "name": "GMK Noire R2",
+      "designer": "apiarykeyboards"
+    },
+    "keycaps/gmk-oblivion-v3-1-hagoromo-alphas": {
+      "name": "GMK Oblivion V3.1 Hagoromo Alphas"
+    },
+    "keycaps/gmk-originative-cyrillic-r2": {
+      "name": "GMK Originative Cyrillic R2"
+    },
+    "keycaps/gmk-peaches-n-cream": {
+      "name": "GMK Peaches n Cream"
+    },
+    "keycaps/gmk-peaches-n-cream-lite": {
+      "name": "GMK Peaches n Cream Lite"
+    },
+    "keycaps/gmk-relegendables-plus": {
+      "name": "GMK Relegendables+"
+    },
+    "keycaps/gmk-rgbyk-2022": {
+      "name": "GMK RGBYK 2022"
+    },
+    "keycaps/gmk-rgbyk-addon": {
+      "name": "GMK RGBYK Addon",
+      "designer": "adxlk & hineybush"
+    },
+    "keycaps/gmk-royal-cadet": {
+      "name": "GMK Royal Cadet"
+    },
+    "keycaps/gmk-sloth-r2": {
+      "name": "GMK Sloth R2"
+    },
+    "keycaps/gmk-triumph-adler": {
+      "name": "GMK Triumph Adler"
+    },
+    "keycaps/gmk-triumph-adler-90": {
+      "name": "GMK Triumph Adler 90"
+    },
+    "keycaps/gmk-wasabi": {
+      "designer": "Sour"
+    },
+    "keycaps/gmk-wob-40s-colevrak-plus-r0-r5": {
+      "name": "GMK WoB 40s, Colevrak+, R0/R5"
+    },
+    "keycaps/gmk-wob-bow-hangul-addons": {
+      "name": "GMK WoB & BoW Hangul Addons",
+      "designer": "UndercoverBrother"
+    },
+    "keycaps/gmk-wob-bow-hangul-r2": {
+      "name": "GMK WoB & BoW Hangul r2",
+      "designer": "UndercoverBrother"
+    },
+    "keycaps/kkb-shirasagi-r2": {
+      "name": "KKB Shirasagi R2",
+      "designer": "sososoya"
+    },
+    "keycaps/sa-grand-budapest-r2": {
+      "name": "SA Grand Budapest r2"
     }
   },
   "excluded": {
@@ -5821,6 +6503,65 @@
     "switchoddities:8322776269084": "Pin count not stated; covered by the pin-specific entries",
     "switchoddities:8237802783004": "Pin count not stated; covered by the pin-specific entries",
     "theremingoat:359": "Pin count not stated; covered by the pin-specific entries",
-    "switchoddities:9596035006748": "Pin count not stated; covered by the pin-specific entries"
+    "switchoddities:9596035006748": "Pin count not stated; covered by the pin-specific entries",
+    "cannonkeys:15337876521071": "Artisan keycap, not a keycap set",
+    "cannonkeys:15339107254383": "Artisan keycap, not a keycap set",
+    "cannonkeys:15481052266607": "Artisan keycap, not a keycap set",
+    "cannonkeys:7199338889327": "Artisan keycap, not a keycap set",
+    "dangkeebs:7545498992861": "Artisan keycap, not a keycap set",
+    "dangkeebs:8021259124957": "Artisan keycap, not a keycap set",
+    "divinikey:6930219860033": "Artisan keycap, not a keycap set",
+    "divinikey:7917673807937": "Artisan keycap, not a keycap set",
+    "divinikey:8055514333249": "Artisan keycap, not a keycap set",
+    "kbdfans:7156342521995": "Artisan keycap, not a keycap set",
+    "kbdfans:7655912439947": "Artisan keycap, not a keycap set",
+    "kbdfans:7986025005195": "Artisan keycap, not a keycap set",
+    "kbdfans:8314969358475": "Artisan keycap, not a keycap set",
+    "kbdfans:8347186397323": "Artisan keycap, not a keycap set",
+    "keygem:5766688178342": "Artisan keycap, not a keycap set",
+    "keygem:6792250294438": "Artisan keycap, not a keycap set",
+    "keygem:8331138990348": "Artisan keycap, not a keycap set",
+    "keygem:8476061729036": "Artisan keycap, not a keycap set",
+    "keygem:8476066677004": "Artisan keycap, not a keycap set",
+    "keygem:8476073492748": "Artisan keycap, not a keycap set",
+    "novelkeys:11057479450791": "Artisan keycap, not a keycap set",
+    "novelkeys:7971977232551": "Artisan keycap, not a keycap set",
+    "novelkeys:8047089909927": "Artisan keycap, not a keycap set",
+    "novelkeys:8047098527911": "Artisan keycap, not a keycap set",
+    "novelkeys:8340239712423": "Artisan keycap, not a keycap set",
+    "novelkeys:8461239255207": "Artisan keycap, not a keycap set",
+    "novelkeys:8461242826919": "Artisan keycap, not a keycap set",
+    "novelkeys:8717990101159": "Artisan keycap, not a keycap set",
+    "novelkeys:8825412911271": "Artisan keycap, not a keycap set",
+    "omnitype:7855608856745": "Artisan keycap, not a keycap set",
+    "omnitype:7946939465897": "Artisan keycap, not a keycap set",
+    "omnitype:8269159563433": "Artisan keycap, not a keycap set",
+    "omnitype:8805269799081": "Artisan keycap, not a keycap set",
+    "cannonkeys:7106282324079": "Artisan keycap cast or machined for the Chimera65 keyboard, not a keycap set",
+    "kbdfans:7956616741003": "Three machined metal accent keycaps, an artisan piece rather than a set",
+    "dailyclack:6635177639991": "Artisan knob and tray collectibles, not keycaps",
+    "kbdfans:8358826573963": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7048936587403": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7048937996427": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7048939110539": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7058774294667": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7048932327563": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7048939929739": "Kits from several sets under one listing, not one keycap set",
+    "kbdfans:7142304350347": "Kits from several sets under one listing, not one keycap set",
+    "novelkeys:8533204861095": "Leftover units from several sets, not one keycap set",
+    "keygem:11817361080588": "Leftover units from several sets, not one keycap set",
+    "keygem:11609011290380": "Leftover units from several sets, not one keycap set",
+    "keygem:8489183478028": "Switches, not keycaps",
+    "dangkeebs:8361139011805": "Keyboard faceplates, not keycaps",
+    "kbdfans:8098796241035": "Keyboard blockers, not keycaps",
+    "kbdfans:8098757378187": "Camera hot shoe cover, not keycaps",
+    "keygem:8333915586828": "Assembled keyboard bundle, not a keycap set",
+    "dangkeebs:8799940640989": "Single novelty keycap, not a keycap set",
+    "omnitype:7624815214761": "Single novelty keycap, not a keycap set",
+    "omnitype:7589171396777": "Single novelty keycap, not a keycap set",
+    "omnitype:8828423307433": "Single novelty keycap, not a keycap set",
+    "keygem:11609163825420": "Single spare spacebar, not a keycap set",
+    "keygem:7970346828044": "Pack of ten loose blank keys, not a keycap set",
+    "keygem:8630271770892": "B-stock units of SL PBT Habitat, which already has its own entry"
   }
 }

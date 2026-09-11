@@ -117,13 +117,55 @@ function Get-CatalogName([string]$Text) {
     ([regex]::Replace([Net.WebUtility]::HtmlDecode($Text), '\s+', ' ')).Trim()
 }
 
+# Chinese, Japanese, and Korean script. Fullwidth brackets are punctuation, not script.
+$script:CatalogNonLatin = '[\u1100-\u11FF\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uAC00-\uD7AF\uF900-\uFAFF]'
+
+# Keeps the Latin name that Matrix and some stores follow with a translation.
+function Get-CatalogLatinName([string]$Name) {
+    if ($Name -notmatch $script:CatalogNonLatin) { return $Name }
+    $kept = [Collections.Generic.List[string]]::new()
+    $inTranslation = $false
+    foreach ($token in ($Name -split '[\s\u00B7\u30FB]+')) {
+        if (-not $token) { continue }
+        $repeat = @($kept | Where-Object { $_ -ieq ($token -replace $script:CatalogNonLatin, '') }).Count -gt 0
+        if ($token -match $script:CatalogNonLatin) {
+            # A translation can repeat the round it translates, glued on or one token later.
+            $inTranslation = $true
+            # A slash between two translated names is all that is left of them.
+            $rest = (($token -replace $script:CatalogNonLatin, '') -replace '^/+|/+$', '').Trim()
+            if (-not $rest -or $repeat) { continue }
+            $token = $rest
+        } elseif ($inTranslation -and ($repeat -or $token -notmatch '[\p{L}\p{N}]')) {
+            continue
+        } else {
+            $inTranslation = $false
+        }
+        $kept.Add($token)
+    }
+    $latin = (($kept -join ' ') -replace '\uFF08', '(' -replace '\uFF09', ')' -replace '\s*\(\s*\)', '')
+    $latin = $latin -replace '\s+[-\u2013\u2014]\s*$', ''
+    # A Latin gloss in brackets becomes the name once the native name is gone.
+    if ($latin -match '^(\S+)\s+\((.+)\)$') { $latin = "$($Matches[1]) $($Matches[2])" }
+    $latin = Get-CatalogName $latin
+    if ($latin -notmatch '[A-Za-z]') { return $Name }
+    $latin
+}
+
 function Get-CatalogMatchName([string]$Text, [switch]$SourceIdentity) {
     $text = Get-CatalogName $Text
     # Upstream identity digests retain their original rules even when display aliases change.
-    if (-not $SourceIdentity) { $text = Get-CatalogAliasName $text }
+    if (-not $SourceIdentity) { $text = Get-CatalogAliasName (Get-CatalogLatinName $text) }
     $text = $text.Normalize([Text.NormalizationForm]::FormKC).ToLowerInvariant()
     if ($SourceIdentity) { $text = $text -replace '^kkb\b', 'keykobo' }
     $text = $text -replace '^gmk cyl\b', 'gmk'
+    if (-not $SourceIdentity) {
+        # IDs already drop accents, so an accented and a plain spelling are one set here too.
+        $text = $text.Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
+        # Stores write rounds as R2, V2, 2.0, or a bare 2, and usually leave a first round
+        # unnumbered. Folding these flags a new listing as a duplicate of its set.
+        $text = $text -replace '\s+(?:&|and)\s+', ' ' -replace '\s+[rv](\d+(?:\.\d+)?)$', ' round$1' -replace '\s+([2-9](?:\.0)?)$', ' round$1'
+        $text = $text -replace '(round\d+)\.0$', '$1' -replace '\s+round1$', ''
+    }
     $text = $text.Replace('+', ' plus ')
     # Matrix appends translations after the Latin set name. A colorway beginning
     # in CJK (e.g. ePBT names) is the identity itself, not a trailing translation.
@@ -136,7 +178,8 @@ $script:CatalogLubeModelName = '(?:NK|NovelKeys)\s+Dry\b'
 
 function Get-CatalogSpecimenReason([string]$Name) {
     if ($Name -match '(?i)\b(?:prototypes?|proto)\b') { return 'Prototype specimen, not a listed product' }
-    if ($Name -match '(?i)\bsamples?\b') { return 'Sample specimen, not a distinct product' }
+    if ($Name -match '(?i)\bsamples?\b|\btrial set\b') { return 'Sample specimen, not a distinct product' }
+    if ($Name -match '(?i)\bdisplay unit\b') { return 'Open-box display unit, not a distinct product' }
     $null
 }
 
@@ -157,7 +200,7 @@ function Get-CatalogLubeFreeName([string]$Name) {
     $name = $Name -replace '(?i),\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s*\)', ')'
     $name = $name -replace '(?i)\s*\((?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry),?\s*', ' ('
     $name = $name -replace '\s*\(\s*\)', ''
-    $name = $name -replace '(?i)\s*[-–]\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s*$', ''
+    $name = $name -replace '(?i)\s*[-\u2013]\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s*$', ''
     $name = $name -replace '(?i)\s+(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\b', ' '
     $name = $name -replace '(?i)^\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s+', ''
     $name = Get-CatalogName ($name -replace '\s+\)', ')')

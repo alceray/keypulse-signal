@@ -192,11 +192,15 @@ function New-CatalogCandidate($State, [array]$Records) {
                 else { $entry[$field] = $fieldsOverride[$field] }
                 continue
             }
-            $values = @($recordsForEntry | Where-Object { $_.entry.Contains($field) } | ForEach-Object { $_.entry[$field] } | Sort-Object -Unique)
+            # Case-insensitive sorting would collapse a case variant and restyle the accepted value.
+            $values = @($recordsForEntry | Where-Object { $_.entry.Contains($field) } | ForEach-Object { $_.entry[$field] } | Sort-Object -Unique -CaseSensitive)
             if ($values.Count -gt 1) {
-                # Alternate spellings can share an identity; preserve the accepted display name.
+                # Spellings of one value agree, so the accepted spelling stays.
                 $matchedNames = @($values | ForEach-Object { Get-CatalogMatchName $_ } | Sort-Object -Unique)
-                if ($field -eq 'name' -and $matchedNames.Count -eq 1) { continue }
+                if ($matchedNames.Count -eq 1) {
+                    if (-not $entry.Contains($field)) { $entry[$field] = $values[0] }
+                    continue
+                }
                 $report.conflicts += [ordered]@{ entry = $key; field = $field; values = $values }
             } elseif ($values.Count -eq 1) { $entry[$field] = $values[0] }
         }

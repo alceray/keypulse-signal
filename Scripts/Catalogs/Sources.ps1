@@ -8,6 +8,15 @@ $script:CatalogSources = [ordered]@{
     kbdfans = @{ kind = 'keycaps'; endpoint = 'https://kbdfans.com/collections/keycaps/products.json'; host = 'https://kbdfans.com' }
     dcswiki = @{ kind = 'keycaps'; endpoint = 'https://dcs.wiki/keycaps' }
     keycaplendar = @{ kind = 'keycaps'; endpoint = 'https://firestore.googleapis.com/v1/projects/keycaplendar/databases/(default)/documents/keysets' }
+    # Daily Clack files each set under its maker. The other stores put their own name or
+    # stock status in the vendor field.
+    novelkeys = @{ kind = 'keycaps'; endpoint = 'https://novelkeys.com/collections/keycaps/products.json'; host = 'https://novelkeys.com'; vendor = 'none' }
+    cannonkeys = @{ kind = 'keycaps'; endpoint = 'https://cannonkeys.com/collections/keycaps/products.json'; host = 'https://cannonkeys.com'; vendor = 'none' }
+    dailyclack = @{ kind = 'keycaps'; endpoint = 'https://dailyclack.com/collections/keycaps/products.json'; host = 'https://dailyclack.com'; vendor = 'manufacturer' }
+    omnitype = @{ kind = 'keycaps'; endpoint = 'https://omnitype.com/collections/keycaps/products.json'; host = 'https://omnitype.com'; vendor = 'none' }
+    keygem = @{ kind = 'keycaps'; endpoint = 'https://keygem.com/collections/keycaps/products.json'; host = 'https://keygem.com'; vendor = 'none' }
+    dangkeebs = @{ kind = 'keycaps'; endpoint = 'https://dangkeebs.com/collections/keycaps/products.json'; host = 'https://dangkeebs.com'; vendor = 'none' }
+    swagkeys = @{ kind = 'keycaps'; endpoint = 'https://swagkeys.com/collections/keycaps/products.json'; host = 'https://swagkeys.com'; vendor = 'none' }
 }
 . "$PSScriptRoot/DcsWiki.ps1"
 . "$PSScriptRoot/ThereminGoat.ps1"
@@ -169,11 +178,28 @@ function Save-CatalogFetch([string]$Run, [string]$Reuse = '') {
 }
 
 function Get-CatalogLabel([string]$Body, [string]$Pattern) {
-    $values = @([regex]::Matches($Body, "(?im)^[ \t]*(?:[-*][ \t]*)?(?:$Pattern)[ \t]*:?[ \t]*(\S[^\r\n]*?)[ \t]*$") | ForEach-Object {
+    # Stores separate a label from its value with a colon, a dash, or nothing at all.
+    $values = @([regex]::Matches($Body, "(?im)^[ \t]*(?:[-*][ \t]*)?(?:$Pattern)[ \t]*(?:[:\-\u2013\u2014][ \t]*)?(\S[^\r\n]*?)[ \t]*$") | ForEach-Object {
         Get-CatalogName ($_.Groups[1].Value -replace '\[([^\]]+)\]\([^)]+\)', '$1')
     } | Where-Object { $_ -and $_ -notmatch '^(unknown|n/?a|tbd|\?+)$|^https?://|^\+\s*Designer\b' } | Sort-Object -Unique)
     if ($values.Count -eq 1 -and $values[0].Length -le 100) { return $values[0] }
     return $null
+}
+
+# Rewrites a store's title to the catalog's spelling, so the listing lands on its existing entry.
+function Get-CatalogKeycapTitle([string]$Name) {
+    $map = Get-CatalogAliases
+    # A bundle is every kit of a set sold together, not a separate set.
+    $name = $Name -replace '(?i)\s+bundle\s*$', ''
+    # Stores write GMK CYL X as GMK X (CYL) or as CYL X alone.
+    $name = $name -replace '(?i)^GMK\s+(.+?)\s*\(CYL\)$', 'GMK CYL $1'
+    $name = $name -replace '(?i)^CYL\s+', 'GMK CYL '
+    # Only a dash after a known company separates brand from set. Otherwise it belongs to the
+    # name, as in GMK Beloved - KA2017 Revival.
+    if ($name -match '^(.+?)\s+-\s+(.+)$' -and ($map.entities.ContainsKey($Matches[1]) -or $map.exact.ContainsKey($Matches[1]))) {
+        $name = "$($Matches[1]) $($Matches[2])"
+    }
+    $name.Trim()
 }
 
 function Convert-CatalogProduct($Product, [string]$Source) {
@@ -181,6 +207,8 @@ function Convert-CatalogProduct($Product, [string]$Source) {
     $name = Get-CatalogName $Product.title
     $name = $name -replace '(?i)^\s*\[(?:group buy|gb|pre-?order|in.stock|restock|extras)\]\s*', ''
     $name = $name -replace '(?i)\s*\(\d+\s*(?:pcs|pieces|pack)\)\s*$', ''
+    # B-stock units are the same product with cosmetic flaws, so they share its name.
+    $name = $name -replace '(?i)\s*[-(]?\s*\bB-Stock\b\s*\)?\s*$', ''
     $name = $name -replace '(?i)\s+keycaps?(?:\s+set)?(?:\s+(?:dye[ -]?sub|double(?:/triple)?shot|double[ -]?shot)\s+(?:ABS|PBT))?\s*$', ''
     $name = $name.Trim()
     $reason = $null
@@ -189,18 +217,34 @@ function Convert-CatalogProduct($Product, [string]$Source) {
     if ($kind -eq 'switches') {
         $reason = Get-CatalogModificationReason $name
         if (-not $reason) { $name = Get-CatalogLubeFreeName $name }
+    } else {
+        $name = Get-CatalogKeycapTitle $name
     }
     $entry = [ordered]@{ name = $name }
     if (-not $reason) { $reason = Get-CatalogSpecimenReason $name }
     if ($name -match '(?i)^Configurator\b') { $reason = 'Configuration placeholder, not a named product' }
     if ($name -match '(?i)\b(tester|sampler|sample pack|switch pack|mystery|random|grab bag|puller|opener|keychain|deskmat|storage|display case|stabilizer)\b') { $reason = 'Accessory or assorted pack' }
+    if ($name -match '(?i)\bmega listing\b|\bkit collection\b|\bleftovers?\b') { $reason = 'Listing of several products, not one named product' }
+    if ($kind -eq 'keycaps' -and $name -match '(?i)\b(?:switches|faceplates?)\b') { $reason = 'Not a keycap product' }
+    # The raw title still has the singular keycap that marks an artisan. Salvun makes only
+    # artisans and does not always say so.
+    $title = [string]$Product.title
+    if ($kind -eq 'keycaps' -and ($title -match '(?i)\bartisans?\b' -or "$title $($Product.vendor)" -match '(?i)\bsalvun\b' -or $title -match '(?i)\b(?:metal|machined|brass)\s+keycap\s*$')) {
+        $reason = 'Artisan keycap, not a keycap set'
+    }
     $body = Get-CatalogText ([string]$Product.body_html)
     $manufacturer = Get-CatalogLabel $body 'Manufactured by|Manufacturer(?:[ \t]*:|[ \t]+)'
     $designer = Get-CatalogLabel $body 'Designed by|(?:Keycaps? set )?Designer(?:[ \t]*:|[ \t]+)'
     if ($manufacturer) { $entry.manufacturer = $manufacturer }
     if ($designer) { $entry.designer = $designer }
     $vendor = Get-CatalogName ([string]$Product.vendor)
-    if ($vendor -and $vendor -notmatch '^(SwitchOddities|Divinikey|KBDfans|Unikeys|Default|Unknown|Third Party)$' -and $vendor -ine $manufacturer) { $entry.brand = $vendor }
+    $vendorRole = if ($script:CatalogSources[$Source].ContainsKey('vendor')) { $script:CatalogSources[$Source].vendor } else { 'brand' }
+    if ($vendorRole -eq 'brand') {
+        if ($vendor -and $vendor -notmatch '^(SwitchOddities|Divinikey|KBDfans|Unikeys|Default|Unknown|Third Party)$' -and $vendor -ine $manufacturer) { $entry.brand = $vendor }
+    } elseif ($vendorRole -eq 'manufacturer' -and $vendor -and -not $entry.Contains('manufacturer') -and (Test-CatalogMaker $vendor)) {
+        # Vendor also holds categories and sellers, so only a known maker counts.
+        $entry.manufacturer = Get-CatalogEntityName $vendor
+    }
     if ($kind -eq 'switches') {
         $types = @([regex]::Matches($name, '(?i)\b(linear|tactile|clicky)\b') | ForEach-Object { $_.Value.ToLowerInvariant() } | Sort-Object -Unique)
         if ($types.Count -eq 1) { $entry.switchType = $types[0] }
