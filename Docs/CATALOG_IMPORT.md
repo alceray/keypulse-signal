@@ -10,6 +10,7 @@ The catalogs are offline JSON data maintained through a manual import and review
 | `Assets/Catalogs/keycaps.json` | Accepted keycap set and add-on names with optional metadata |
 | `Scripts/Catalogs/sources.json` | Fetch dates, Matrix commit, stable upstream identities, canonical IDs, source links, last observed fields, and collection variant notes |
 | `Scripts/Catalogs/overrides.json` | Reviewed duplicate decisions, metadata corrections, and exclusions |
+| `Scripts/Catalogs/keycap-enrichment.json` | Field-level source links and rationale for reviewed keycap metadata |
 | `Scripts/Catalogs/aliases.json` | Company spellings, abbreviations, profiles, and the inference rules below |
 | `Scripts/Catalogs/Aliases.ps1` | Applies those rules to display fields and duplicate comparisons while preserving IDs and source observations |
 | `Scripts/Import-Catalogs.ps1` | Fetch, replay, validate, and promote entry point |
@@ -23,15 +24,15 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 
 | Optional field | Catalog | Meaning |
 |---|---|---|
-| `manufacturer` | Both | Explicitly identified or reliably inferred manufacturer |
-| `brand` | Both | Selling or commissioning brand. Recorded even when it matches the manufacturer, so a missing brand always means the seller is unknown |
+| `manufacturer` | Both | Production credit. For keycaps, the community-known production name is sufficient; it need not identify the legal factory operator. Switches retain their separately attributed manufacturer |
+| `brand` | Both | Product or commissioning brand, recorded even when it matches the manufacturer. This is not a retailer/vendor field |
 | `designer` | Both | Credited designer or collaboration |
 | `switchType` | Switches | `linear`, `tactile`, or `clicky` |
 | `profile` | Keycaps | Keycap profile |
-| `material` | Keycaps | Keycap plastic |
+| `material` | Keycaps | Keycap material; `ABS/PBT` records both plastics, whether a blend or different keys within the set |
 
-- Unknown values are omitted. A store's own name is never recorded as a manufacturer.
-- Metadata comes from explicit source labels and the reviewed inference rules below. Comparisons and marketing prose are never read for specifications.
+- Unknown values are omitted. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
+- Metadata comes from explicit labels, reviewed product/project specifications, and the inference rules below. Comparisons, packaging, optional artisans, and tentative production options do not supply specifications for the set.
 - Names keep meaningful revisions, rounds, and switch weights and colors. Add-on kits for a named set have their own entries, and kit options inside a parent product stay attached to it.
 - Keycap names show only their Latin form. Switch names and designer credits are kept as written.
 - Accepted IDs stay fixed through name changes. Alternate names stay traceable in source observations and reviewed bindings. The only exception was a one-time cleanup on 2026-09-11 that renamed 57 IDs doubled by translated names, made before anything consumed catalog IDs.
@@ -106,7 +107,8 @@ Keycaps:
 - A shape made by one company names it. DCS and DSS name Signature Plastics, KAT and KAM name Keyreative, MTNU names GMK, HSA names JTK, and CRP-X names Hammerworks. MTNU and CRP-X are PBT, and HSA is ABS. SA and DSA name nobody, because other factories make them too.
 - A company declares what its sets share through `keycapDefaults`. `manufacturer` is `true` when it makes what it sells, or names the company that does. `profile` and `material` give its usual shape and plastic, and `unlessProfile` names a line that differs.
 - GMK sets are Cherry and ABS, except MTNU sets, which record MTNU and PBT. KeyKobo sets are ABS. JTK sets are Cherry and ABS. XMI sets are Cherry and PBT. CRP sets are Cherry and PBT, made by Hammerworks.
-- CreateKeebs, Domikey, EnjoyPBT, Gateron, GoMaster, Keyboard Science, Keyreative, Milkyway Keys, PBTfans, SoulCat, Swagkeys, TutKeys, Vividkey, and Wuque Studio make what they sell. NovelKeys and RAMA Works only sell, so they declare nothing. `PBTfans Thermal` keeps a reviewed omission of its disputed maker.
+- CreateKeebs, Domikey, EnjoyPBT, Gateron, GoMaster, Keyboard Science, Keyreative, Milkyway Keys, PBTfans, SoulCat, Swagkeys, TutKeys, Vividkey, and Wuque Studio provide recognized production names for their lines. NovelKeys and RAMA Works have no blanket manufacturer defaults. `PBTfans Thermal` uses PBTfans as its community production name.
+- CRP products use brand CRP and manufacturer Hammerworks, including Hammerworks-prefixed titles. NicePBT and CannonCaps use CannonKeys as the brand and their production-line names as manufacturer. Entry overrides preserve these distinctions; designer credits remain independent.
 
 Switches:
 
@@ -115,7 +117,7 @@ Switches:
 
 Both catalogs:
 
-- The company a name begins with is the selling brand. When it also makes the product, both fields record it, so a Domikey set shows Domikey twice.
+- The recognized company a name begins with supplies its product brand unless overridden. Brand and manufacturer may match, so a Domikey set can show Domikey twice.
 - A declared profile or material must already be recognized, and a declared manufacturer must be canonical, or the alias map fails to load.
 
 ## Listing rules
@@ -180,6 +182,8 @@ The override document has three maps:
 - Keep ambiguous variants separate. A collection-number suffix can distinguish specimens, but it is an import label rather than an official revision.
 - A listing that disappears, or a new automatic filter, never deletes accepted history. Existing metadata stays when a source stops supplying it. A drop below half a source's prior bindings, for sources with at least 20, aborts the import for investigation.
 - Unrecognized multi-option switch listings stop for review rather than discarding variants. Add an adapter rule with a fixture test when a source introduces a new option format.
+
+Reviewed keycap enrichment and corrections are pinned in `overrides.json`, with source links and rationale in `keycap-enrichment.json`. These are entry-specific decisions, not new global inference rules; unresolved fields remain omitted.
 
 ## Sources
 

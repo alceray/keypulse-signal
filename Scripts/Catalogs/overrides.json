@@ -2762,22 +2762,26 @@
       "designer": "Carter"
     },
     "keycaps/dcs-dolch-2024": {
-      "name": "DCS Dolch (2024)"
+      "name": "DCS Dolch (2024)",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-mudbeam": {
       "manufacturer": "Signature Plastics",
-      "designer": "Shark"
+      "designer": "Shark",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-polch": {
       "manufacturer": "Signature Plastics",
       "designer": "jaraed"
     },
     "keycaps/dcs-row-4-accent-kits": {
-      "name": "DCS Row 4 Accent Kits"
+      "name": "DCS Row 4 Accent Kits",
+      "brand": "Signature Plastics"
     },
     "keycaps/sp-dcs-richat": {
       "name": "DCS Richat",
-      "designer": "mori"
+      "designer": "mori",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-hammerhead-2020": {
       "name": "GMK Hammerhead (2020)",
@@ -2804,7 +2808,7 @@
       "designer": "Brain Aha!"
     },
     "keycaps/pbtfans-thermal": {
-      "manufacturer": null,
+      "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "name": "PBTfans Thermal"
     },
@@ -4424,16 +4428,19 @@
       "name": "GMK CYL WoB"
     },
     "keycaps/dcs-input": {
-      "designer": "MechVault (Cain)"
+      "designer": "MechVault (Cain)",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-greengul": {
-      "designer": "DNWorks"
+      "designer": "DNWorks",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-pacific": {
       "designer": "yoniwolf1202"
     },
     "keycaps/dcs-hangul-pbt": {
-      "designer": "Sunnyd, Kyle"
+      "designer": "Sunnyd, Kyle",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-bleached": {
       "name": "GMK Bleached",
@@ -4467,10 +4474,12 @@
       "designer": "Soya design"
     },
     "keycaps/dcs-superweld": {
-      "designer": "Laur"
+      "designer": "Laur",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-deadbeats": {
-      "designer": "Hello? X Rubrehose"
+      "designer": "Hello? X Rubrehose",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-cyl-kitty": {
       "name": "GMK CYL Kitty"
@@ -4528,7 +4537,7 @@
     "keycaps/pbtfans-lucy-r2": {
       "designer": "Soya",
       "name": "PBTfans Lucy R2",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/mw-gesha": {
       "designer": "orange stone"
@@ -4537,7 +4546,9 @@
       "designer": "Monkey Six"
     },
     "keycaps/dcs-pink-alert-2022": {
-      "name": "DCS Pink Alert (2022)"
+      "name": "DCS Pink Alert (2022)",
+      "material": "ABS",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-art": {
       "name": "GMK Art"
@@ -4549,17 +4560,20 @@
       "designer": "scott_mk"
     },
     "keycaps/dcs-cafe": {
-      "designer": "yuukou_ / Langelandia"
+      "designer": "yuukou_ / Langelandia",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-mercury": {
       "name": "GMK Mercury"
     },
     "keycaps/mtnu-electronic-control": {
-      "designer": "Madmax13"
+      "designer": "Madmax13",
+      "brand": "GMK"
     },
     "keycaps/dcs-red-alert-r2": {
       "designer": "Ragnarok",
-      "name": "DCS Red Alert R2"
+      "name": "DCS Red Alert R2",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-orange-boi": {
       "designer": "andromache"
@@ -4574,7 +4588,8 @@
       "name": "GMK Lime"
     },
     "keycaps/dcs-gg": {
-      "designer": "kaptainmike"
+      "designer": "kaptainmike",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-monochrome": {
       "name": "GMK Monochrome",
@@ -4584,7 +4599,8 @@
       "designer": "koenoe"
     },
     "keycaps/dcs-guardian": {
-      "designer": "Sax_______"
+      "designer": "Sax_______",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-cyl-combobreaker": {
       "name": "GMK CYL Combobreaker",
@@ -4691,13 +4707,16 @@
       "name": "GMK CYL Cleopatra"
     },
     "keycaps/dcs-orange-on-beige": {
-      "designer": "Bowl, Manu"
+      "designer": "Bowl, Manu",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-clown": {
-      "designer": "Bowl Keyboards"
+      "designer": "Bowl Keyboards",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-paperwork": {
-      "designer": "davisthegreat"
+      "designer": "davisthegreat",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-stonks-2026": {
       "name": "GMK Stonks (2026)"
@@ -4783,7 +4802,7 @@
     },
     "keycaps/pbtfans-maguro": {
       "designer": "Soya Design",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/gmk-cyl-deathly-queen": {
       "name": "GMK CYL Deathly Queen"
@@ -4797,7 +4816,7 @@
     },
     "keycaps/pbtfans-calkis": {
       "designer": "Soya",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/gmk-retrowave": {
       "designer": "SwitchKeys"
@@ -4819,7 +4838,8 @@
       "name": "GMK CYL Masterpiece R2"
     },
     "keycaps/dcs-honeywell": {
-      "designer": "mcmcmc"
+      "designer": "mcmcmc",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-pharaoh": {
       "name": "GMK Pharaoh",
@@ -4879,7 +4899,8 @@
       "designer": "Mito"
     },
     "keycaps/dcs-solarized-dark": {
-      "designer": "Aiwanei"
+      "designer": "Aiwanei",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-monokai-material-nordeuk-addon": {
       "name": "GMK Monokai Material NorDeUK Addon"
@@ -4971,7 +4992,8 @@
       "name": "GMK Serika"
     },
     "keycaps/dcs-alps-wob": {
-      "designer": "PigeonsLikeBread"
+      "designer": "PigeonsLikeBread",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-devoted": {
       "designer": "ItszBrian"
@@ -4989,7 +5011,8 @@
       "designer": "Valkurize & boba.types"
     },
     "keycaps/dcs-molch": {
-      "designer": "Jaraed and Malisha"
+      "designer": "Jaraed and Malisha",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-hero": {
       "name": "GMK Hero",
@@ -5015,7 +5038,9 @@
       "name": "GMK Botanical"
     },
     "keycaps/dsa-vegas-nights-2022": {
-      "name": "DSA Vegas Nights (2022)"
+      "name": "DSA Vegas Nights (2022)",
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
     },
     "keycaps/gmk-cyl-just-beachy": {
       "name": "GMK CYL Just Beachy"
@@ -5165,7 +5190,8 @@
       "name": "GMK Nightlife"
     },
     "keycaps/dcs-dream-alert": {
-      "designer": "Valkurize"
+      "designer": "Valkurize",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-cyl-daifuku-r2": {
       "name": "GMK CYL Daifuku R2"
@@ -5192,7 +5218,8 @@
     },
     "keycaps/dcs-soware-revival": {
       "designer": "Ankit",
-      "name": "DCS SoWaRe Revival"
+      "name": "DCS SoWaRe Revival",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-sandstorm": {
       "name": "GMK SandStorm"
@@ -5209,7 +5236,8 @@
     },
     "keycaps/dcs-intro-wob": {
       "designer": "VTX_ENGINE",
-      "name": "DCS Intro WoB"
+      "name": "DCS Intro WoB",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-cyl-alter-redux": {
       "name": "GMK CYL Alter Redux",
@@ -5217,7 +5245,8 @@
     },
     "keycaps/dcs-intro-beige": {
       "designer": "VTX_ENGINE",
-      "name": "DCS Intro Beige"
+      "name": "DCS Intro Beige",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-blot": {
       "designer": "WoobEC"
@@ -5239,7 +5268,7 @@
     "keycaps/pbtfans-x-ray": {
       "name": "PBTfans X-Ray",
       "designer": "Matthew Encina",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-sugar-rush": {
       "name": "PBTfans Sugar Rush"
@@ -5273,7 +5302,7 @@
     },
     "keycaps/pbtfans-song": {
       "name": "PBTfans Song",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-runner": {
       "name": "PBTfans RUNNER"
@@ -5284,7 +5313,7 @@
     "keycaps/pbtfans-atomic-purple-r2": {
       "name": "PBTfans atomic purple R2",
       "designer": "Bobasweatandtears",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-charoite": {
       "name": "PBTfans Charoite"
@@ -5294,7 +5323,7 @@
     },
     "keycaps/pbtfans-klein-blue-r3": {
       "name": "PBTfans Klein Blue R3",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/enjoypbt-doll": {
       "name": "EnjoyPBT Doll"
@@ -5304,7 +5333,7 @@
     },
     "keycaps/pbtfans-poco-r2": {
       "name": "PBTfans Poco R2",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/gmk-cafe": {
       "name": "GMK Cafe"
@@ -5347,14 +5376,15 @@
     "keycaps/kch-war-maiden": {
       "manufacturer": "Keyreative",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "brand": "Keyreative"
     },
     "keycaps/gmk-burgundy-r2": {
       "name": "GMK Burgundy R2"
     },
     "keycaps/pbtfans-astraeus": {
       "designer": "Balance",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/gmk-evil-dolch": {
       "designer": "S3LQ"
@@ -5378,13 +5408,15 @@
       "name": "GMK Red Alert R2"
     },
     "keycaps/dcs-good-morning": {
-      "designer": "Basilkeys"
+      "designer": "Basilkeys",
+      "brand": "Signature Plastics"
     },
     "keycaps/pbtfans-nano": {
       "designer": "BIIP"
     },
     "keycaps/dcs-ufo": {
-      "designer": "Basilkeys"
+      "designer": "Basilkeys",
+      "brand": "Signature Plastics"
     },
     "keycaps/pbtfans-cool-kids": {
       "designer": "Biip"
@@ -5411,7 +5443,8 @@
       "designer": "S3LQ"
     },
     "keycaps/dcs-wob-40-monokit": {
-      "designer": "MIKETHETIGER"
+      "designer": "MIKETHETIGER",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-olivia-plus-plus": {
       "designer": "olivia"
@@ -5443,7 +5476,7 @@
     },
     "keycaps/pbtfans-virtuoso": {
       "designer": "BIIP",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-spark-light-r2": {
       "designer": "BIIP"
@@ -5456,13 +5489,14 @@
     },
     "keycaps/pbtfans-absolute": {
       "designer": "Biip",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/gmk-hennessey": {
       "designer": "Mito"
     },
     "keycaps/dcs-sleeper": {
-      "designer": "Mito"
+      "designer": "Mito",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-og-spacekeys-r2": {
       "name": "GMK OG Spacekeys R2"
@@ -5474,7 +5508,8 @@
       "name": "GMK WOB Shinethrough"
     },
     "keycaps/dcs-toxic-r2": {
-      "name": "DCS Toxic R2"
+      "name": "DCS Toxic R2",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-belafonte": {
       "designer": "Mito"
@@ -5495,23 +5530,26 @@
     },
     "keycaps/pbtfans-spark-r3": {
       "designer": "BIIP",
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/gmk-rouge": {
       "designer": "EMIR"
     },
     "keycaps/dcs-sanctuary": {
-      "designer": "Hazeluff"
+      "designer": "Hazeluff",
+      "brand": "Signature Plastics"
     },
     "keycaps/pbtfans-roll-the-dice": {
       "name": "PBTfans Roll The Dice",
       "designer": "Biip"
     },
     "keycaps/dcs-red-alert-r3": {
-      "name": "DCS Red Alert R3"
+      "name": "DCS Red Alert R3",
+      "brand": "Signature Plastics"
     },
     "keycaps/dcs-pink-alert": {
-      "designer": "masje"
+      "designer": "masje",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-serenity": {
       "designer": "Mito"
@@ -5524,46 +5562,47 @@
       "name": "GMK 9009 R1"
     },
     "keycaps/dcs-dark-sky": {
-      "designer": "Puddsy"
+      "designer": "Puddsy",
+      "brand": "Signature Plastics"
     },
     "keycaps/gmk-dolch-r5": {
       "name": "GMK Dolch R5"
     },
     "keycaps/pbtfans-1984": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-1984-dark": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-9009": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-beluga-whale-blank": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-bow": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-clarvoy": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-classic-blank": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-fair-isle": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-lyla-blank": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-modern-japanese-desko": {
       "brand": "PBTfans"
     },
     "keycaps/pbtfans-purpolch-r4": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "keycaps/pbtfans-salt-lakes": {
-      "brand": null
+      "brand": "PBTfans"
     },
     "switches/owlab-tungsten": {
       "manufacturer": "JWK"
@@ -5765,31 +5804,45 @@
       "brand": "CRP"
     },
     "keycaps/alohakb-road-trip": {
-      "designer": "AlohaKB Studio"
+      "designer": "AlohaKB Studio",
+      "brand": "AlohaKB"
     },
     "keycaps/dss-sencillo": {
-      "designer": "arq1999 & Chamoy"
+      "designer": "arq1999 & Chamoy",
+      "brand": "Signature Plastics",
+      "material": "ABS"
     },
     "keycaps/epbt-kavala": {
-      "designer": "cylentshadows"
+      "designer": "cylentshadows",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     "keycaps/epbt-ping": {
-      "designer": "Plopmk"
+      "designer": "Plopmk",
+      "material": "PBT"
     },
     "keycaps/epbt-rin": {
       "designer": "Jennisaurus"
     },
     "keycaps/epbt-solaria": {
-      "designer": "pupper125"
+      "designer": "pupper125",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     "keycaps/epbt-timeless": {
-      "designer": "imivanh"
+      "designer": "imivanh",
+      "material": "PBT",
+      "profile": "Cherry"
     },
     "keycaps/geekark-lancelot": {
-      "designer": "Hongoo & Wuque Studio"
+      "designer": "Hongoo & Wuque Studio",
+      "brand": "Geekark",
+      "material": "PBT"
     },
     "keycaps/geekark-triangle": {
-      "designer": "ZLightningZAP"
+      "designer": "ZLightningZAP",
+      "brand": "Geekark",
+      "material": "PBT"
     },
     "keycaps/gmk-agent-01": {
       "designer": "SxM Designs"
@@ -5828,61 +5881,91 @@
       "designer": "Buger"
     },
     "keycaps/kam-ghost": {
-      "designer": "fireworm"
+      "designer": "fireworm",
+      "material": "PBT",
+      "brand": "Keyreative"
     },
     "keycaps/kat-great-wave": {
-      "designer": "bobasweatandtears & dudeship"
+      "designer": "bobasweatandtears & dudeship",
+      "material": "PBT",
+      "brand": "Keyreative"
     },
     "keycaps/kat-space-cadet": {
-      "designer": "tominabox1 & Alas"
+      "designer": "tominabox1 & Alas",
+      "brand": "Keyreative",
+      "material": "PBT"
     },
     "keycaps/kat-space-dust": {
-      "designer": "PseudoLlama & bobasweatandtears"
+      "designer": "PseudoLlama & bobasweatandtears",
+      "brand": "Keyreative",
+      "material": "PBT"
     },
     "keycaps/kds-chainsaw": {
-      "designer": "actionwagon"
+      "designer": "actionwagon",
+      "manufacturer": "Kono",
+      "brand": "Kono",
+      "material": "PBT"
     },
     "keycaps/kkb-moon-rabbit": {
       "designer": "tomkatsuuu"
     },
     "keycaps/mw-alfheim": {
-      "designer": "DontStealMyLolipop"
+      "designer": "DontStealMyLolipop",
+      "material": "PBT"
     },
     "keycaps/mw-aschente": {
-      "designer": "DontStealMyLolipop"
+      "designer": "DontStealMyLolipop",
+      "material": "PBT"
     },
     "keycaps/mw-demon-girl": {
-      "designer": "littletokyokeebs"
+      "designer": "littletokyokeebs",
+      "material": "PBT"
     },
     "keycaps/pbtfans-basin": {
-      "designer": "Aiden & Synthereal & Nqrwhql"
+      "designer": "Aiden & Synthereal & Nqrwhql",
+      "material": "PBT"
     },
     "keycaps/pbtfans-umbra": {
       "designer": "Pachriksu"
     },
     "keycaps/sa-bubble-r2": {
-      "designer": "Yayoi"
+      "designer": "Yayoi",
+      "material": "ABS",
+      "brand": "Signature Plastics"
     },
     "keycaps/sa-jadeite": {
-      "designer": "HoodrowThrillson & OneCreativeMind"
+      "designer": "HoodrowThrillson & OneCreativeMind",
+      "material": "ABS",
+      "brand": "Signature Plastics"
     },
     "keycaps/sa-nightlight": {
-      "designer": "thatkoaladoe"
+      "designer": "thatkoaladoe",
+      "brand": "Signature Plastics",
+      "material": "ABS"
     },
     "keycaps/sa-ramses": {
-      "designer": "atlanticise"
+      "designer": "atlanticise",
+      "brand": "Signature Plastics",
+      "material": "ABS"
     },
     "keycaps/sa-silent-assassin": {
-      "designer": "Triple Studio"
+      "designer": "Triple Studio",
+      "brand": "Signature Plastics",
+      "material": "ABS"
     },
     "keycaps/sa-spectra": {
-      "designer": "OneCreativeMind & nasp"
+      "designer": "OneCreativeMind & nasp",
+      "material": "ABS",
+      "brand": "Signature Plastics"
     },
     "keycaps/ws-mizu": {
-      "designer": "Rensuya"
+      "designer": "Rensuya",
+      "profile": "Cherry"
     },
     "keycaps/ws-stellar": {
-      "manufacturer": "Wuque Studio"
+      "manufacturer": "Wuque Studio",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     "keycaps/gmk-analog-dreams-r2": {
       "name": "GMK Analog Dreams R2"
@@ -6132,7 +6215,3893 @@
       "designer": "sososoya"
     },
     "keycaps/sa-grand-budapest-r2": {
-      "name": "SA Grand Budapest r2"
+      "name": "SA Grand Budapest r2",
+      "material": "ABS"
+    },
+    "keycaps/dcd-lunar-new-year-r2": {
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "material": "PBT",
+      "profile": "DCD"
+    },
+    "keycaps/pbtfans-abs-pyga": {
+      "profile": "Cherry"
+    },
+    "keycaps/mw-alhambra": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/nicepbt-galaxy": {
+      "designer": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT"
+    },
+    "keycaps/kap-uranus": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-rouge-alerte": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/sa-recall": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/mt3-abs-solarized-dark": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/nicepbt-korean-sublegend-classic-beige": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-strawberry-milk": {
+      "manufacturer": "NicePBT",
+      "designer": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/dcd-space-whale-tkl": {
+      "manufacturer": "Drop",
+      "profile": "DCD",
+      "brand": "Drop",
+      "material": "PBT"
+    },
+    "keycaps/dsa-north": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/kat-napoleonic": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dsa-otaku-kiibodo": {
+      "material": "PBT"
+    },
+    "keycaps/finalkey-dark-mulled": {
+      "brand": "FinalKey",
+      "manufacturer": "FinalKey",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-november-fog": {
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT",
+      "designer": "krugerlive",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/dcd-bird-jungle": {
+      "manufacturer": "Drop",
+      "material": "PBT",
+      "brand": "Drop",
+      "profile": "DCD"
+    },
+    "keycaps/dcx-cyanlet": {
+      "brand": "Drop",
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dss-4x4": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/shurikey-matrix-01": {
+      "material": "ABS",
+      "brand": "Shurikey",
+      "manufacturer": "Shurikey"
+    },
+    "keycaps/dcl-shadow": {
+      "profile": "DCL",
+      "brand": "Drop",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/pbs-wob-plus-accents": {
+      "material": "PBT",
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative"
+    },
+    "keycaps/kap-retro-cat": {
+      "brand": "Keyreative",
+      "profile": "Cherry",
+      "manufacturer": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/swg-heartbreaker": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/wda-suika": {
+      "profile": "WDA",
+      "material": "PBT",
+      "brand": "Glove Studio"
+    },
+    "keycaps/dcs-bowlpit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-bakeneko-kit": {
+      "designer": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/ws-aka-haiiro": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-dog": {
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "designer": "CannonKeys",
+      "material": "PBT"
+    },
+    "keycaps/cherry-keyboard-science-dasheng": {
+      "material": "PBT"
+    },
+    "keycaps/dcx-genesis": {
+      "material": "ABS",
+      "brand": "Drop",
+      "profile": "DCX",
+      "manufacturer": "Drop"
+    },
+    "keycaps/bolo-loveless": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "manufacturer": "BOLO Keys"
+    },
+    "keycaps/kch-dx7": {
+      "profile": "Cherry",
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative"
+    },
+    "keycaps/dcx-bim": {
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "material": "ABS",
+      "profile": "DCX"
+    },
+    "keycaps/ifk-strawberry-lemonade": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-sugarplum": {
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT",
+      "designer": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-arctic": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/kds-led-zep": {
+      "manufacturer": "Kono",
+      "brand": "Kono"
+    },
+    "keycaps/akaps-surge": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dcd-lotr-rohan": {
+      "profile": "DCD",
+      "material": "PBT",
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/mw-retro-lights": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-autumn": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/dcs-islander": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kam-starry-night": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/nicepbt-cyrillic-sublegend-classic-beige": {
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT",
+      "material": "PBT"
+    },
+    "keycaps/ws-entwined-flowers": {
+      "material": "PBT"
+    },
+    "keycaps/sl-pbt-prestige": {
+      "profile": "Cherry"
+    },
+    "keycaps/cannoncaps-cxa-bow-wob": {
+      "profile": "CXA",
+      "material": "ABS/PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "CannonCaps",
+      "designer": "CannonKeys"
+    },
+    "keycaps/dcs-midnight-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kch-pure-player-xy": {
+      "material": "PBT",
+      "brand": "Keyreative",
+      "profile": "Cherry",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/mg-master": {
+      "manufacturer": "MelGeek",
+      "brand": "MelGeek"
+    },
+    "keycaps/nicepbt-black-on-grey": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT",
+      "designer": "CannonKeys"
+    },
+    "keycaps/mtnu-dolch": {
+      "brand": "GMK"
+    },
+    "keycaps/nicepbt-morse-code": {
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry",
+      "designer": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/pbs-granite": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/dcx-dolch": {
+      "brand": "Drop",
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dcx-permafrost": {
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/dcs-classic": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-lunar-new-year": {
+      "material": "ABS",
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mg-salon": {
+      "brand": "MelGeek",
+      "manufacturer": "MelGeek",
+      "profile": "MG",
+      "material": "ABS"
+    },
+    "keycaps/kap-jailbirds": {
+      "manufacturer": "Keyreative",
+      "profile": "Cherry",
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kap-kind-of-blue": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/mw-journey": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/mt3-pbt-9009": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/kap-mv-classic": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "material": "ABS/PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/awekeys-the-copper-eagle": {
+      "brand": "Awekeys",
+      "profile": "Cherry",
+      "manufacturer": "Awekeys"
+    },
+    "keycaps/dcs-alps-yuri": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-garnet": {
+      "brand": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/cannoncaps-winter-tundra": {
+      "material": "PBT",
+      "profile": "Cherry",
+      "manufacturer": "CannonCaps",
+      "designer": "CannonKeys",
+      "brand": "CannonKeys"
+    },
+    "keycaps/osume-tsukimi": {
+      "manufacturer": "osume"
+    },
+    "keycaps/pbtfans-purpolch-r2": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-red-crab-sublimination": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-mtg-phyrexia-all-will-be-one": {
+      "profile": "Cherry",
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/mw-norse": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-toxic": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/awekeys-moon-landing": {
+      "manufacturer": "Awekeys",
+      "profile": "Cherry",
+      "brand": "Awekeys"
+    },
+    "keycaps/deadline-air-hutt": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/tut-shape": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/senmei-ick-la-vie-en-rose": {
+      "profile": "Cherry"
+    },
+    "keycaps/sa-bliss-r2-sculpted": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-808-boom": {
+      "profile": "Cherry",
+      "manufacturer": "Infinikey",
+      "material": "PBT",
+      "brand": "Infinikey"
+    },
+    "keycaps/mw-rubber-xmas": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-fantasy-land": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/cannoncaps-earl-grey-lavender": {
+      "manufacturer": "CannonCaps",
+      "designer": "CannonKeys",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-gift": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/kam-soda-squid": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/nicepbt-purple-chonkers": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/nicepbt-grey-burgundy": {
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "designer": "CannonKeys",
+      "profile": "Cherry",
+      "brand": "CannonKeys"
+    },
+    "keycaps/cherry-have-pride": {
+      "material": "PBT"
+    },
+    "keycaps/dmk-midnight": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/dss-hail-satan": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-korean-beige-alps-plus-mx": {
+      "brand": "Signature Plastics",
+      "material": "PBT"
+    },
+    "keycaps/ifk-neon-dynasty": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey",
+      "profile": "Cherry"
+    },
+    "keycaps/dcd-banana": {
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCD",
+      "material": "PBT"
+    },
+    "keycaps/mg-wahtsy": {
+      "brand": "MelGeek",
+      "manufacturer": "MelGeek"
+    },
+    "keycaps/kat-milkshake-double-shot": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-zx": {
+      "brand": "GMK"
+    },
+    "keycaps/aluve": {
+      "designer": "Olivia",
+      "material": "Aluminum",
+      "brand": "NovelKeys"
+    },
+    "keycaps/dcd-cozy-bakery": {
+      "manufacturer": "Drop",
+      "profile": "DCD",
+      "material": "PBT",
+      "brand": "Drop"
+    },
+    "keycaps/dcs-panels": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-retro-mizu": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/swg-hypermix": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/kap-bad-rabbit": {
+      "profile": "Cherry",
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/kat-monochrome": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kap-deez-nuts": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative"
+    },
+    "keycaps/ifk-aether": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/kbm-pbeater": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/slk-dessau": {
+      "material": "PBT"
+    },
+    "keycaps/kat-mizu": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-thief-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/pbs-strawberry-milk": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/geekark-bow": {
+      "manufacturer": "Geekark",
+      "brand": "Geekark"
+    },
+    "keycaps/kbm-nekoccino": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing"
+    },
+    "keycaps/cannoncaps-minty": {
+      "manufacturer": "CannonCaps",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "material": "PBT"
+    },
+    "keycaps/alohakb-chess-game": {
+      "manufacturer": "AlohaKB",
+      "brand": "AlohaKB"
+    },
+    "keycaps/kat-shogoki": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/kat-milkshake": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kat-lucky-jade": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/deadline-air-mallche": {
+      "manufacturer": "Deadline Studio",
+      "brand": "Deadline Studio"
+    },
+    "keycaps/wda-white-dew": {
+      "profile": "WDA",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-beach-day": {
+      "material": "PBT",
+      "designer": "CannonKeys",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/geekark-deity-egypt": {
+      "profile": "Cherry",
+      "manufacturer": "Geekark",
+      "material": "PBT",
+      "brand": "Geekark"
+    },
+    "keycaps/dcd-wlk-mn": {
+      "material": "PBT",
+      "manufacturer": "Drop",
+      "profile": "DCD",
+      "brand": "Drop"
+    },
+    "keycaps/ifk-islander": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/dcx-amethyst": {
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "profile": "DCX"
+    },
+    "keycaps/nicepbt-sleepytime": {
+      "material": "PBT",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys"
+    },
+    "keycaps/alohakb-auspicious-snow": {
+      "manufacturer": "AlohaKB",
+      "brand": "AlohaKB"
+    },
+    "keycaps/xda-deity-egypt": {
+      "material": "PBT",
+      "manufacturer": "Geekark"
+    },
+    "keycaps/kap-wob": {
+      "manufacturer": "Keyreative",
+      "material": "PBT",
+      "brand": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/epbt-soju": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/qx-carmine-cloud": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/ifk-modern-hangul": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey",
+      "material": "PBT"
+    },
+    "keycaps/cannoncaps-esper": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "CannonCaps"
+    },
+    "keycaps/awekeys-metal-10u-spacebars": {
+      "brand": "Awekeys",
+      "manufacturer": "Awekeys",
+      "profile": "Cherry"
+    },
+    "keycaps/dcx-solarized": {
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/kam-iridescent": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/epbt-wuyinzhuyin": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dcx-rocky-bird": {
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dss-wob-40s-ortho": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/gomaster-kon-momo": {
+      "material": "PBT"
+    },
+    "keycaps/kat-mintos": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/ifk-marshmallow": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dcx-powertool": {
+      "material": "ABS",
+      "profile": "DCX",
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcs-9009": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/pbs-retro-s-m-ag": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcd-harry-potter-slytherin": {
+      "brand": "Drop",
+      "profile": "DCD",
+      "manufacturer": "Drop",
+      "material": "PBT"
+    },
+    "keycaps/pbs-black-on-black": {
+      "manufacturer": "Keyreative",
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/deadline-air-pitaya": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/iv-kanketsu": {
+      "profile": "Cherry",
+      "manufacturer": "IV Works",
+      "material": "PBT",
+      "brand": "IV Works"
+    },
+    "keycaps/kam-illusion": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/kbm-starlight-dreams": {
+      "manufacturer": "KeyBee Manufacturing",
+      "profile": "Cherry",
+      "brand": "KeyBee Manufacturing",
+      "material": "PBT"
+    },
+    "keycaps/dmk-relic": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-fbasic": {
+      "profile": "Cherry",
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/pkaps-rgbenglish": {
+      "material": "PBT"
+    },
+    "keycaps/kat-retrobytes": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/pbtfans-retro-100": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epbt-bow-hangul": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-soyamilk": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/mw-anushirvan": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/dcs-blue-pbt-dyesubs": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-thai-tea": {
+      "material": "PBT",
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/pbtfans-abs-resonance-r2": {
+      "profile": "Cherry"
+    },
+    "keycaps/deadline-studio-x-hammer-works-hmc-pbt": {
+      "material": "PBT",
+      "manufacturer": "Deadline Studio",
+      "brand": "Deadline Studio"
+    },
+    "keycaps/sa-symbiosis-r2": {
+      "brand": "Signature Plastics",
+      "material": "ABS",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/cherry-geometry": {
+      "material": "PBT",
+      "manufacturer": "WUkds"
+    },
+    "keycaps/ws-sugarplum-dark": {
+      "material": "PBT",
+      "designer": "CannonKeys"
+    },
+    "keycaps/dcd-harry-potter-gryffindor": {
+      "profile": "DCD",
+      "material": "PBT",
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/kat-refined": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/kap-ghost": {
+      "manufacturer": "Keyreative",
+      "material": "PBT",
+      "brand": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-overgrown": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/keymaze-geometric-fairytale": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/mw-aristocrat": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-6u-spacebars": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mg-voodoo": {
+      "brand": "MelGeek",
+      "manufacturer": "MelGeek",
+      "material": "ABS",
+      "profile": "MG"
+    },
+    "keycaps/deadline-pc-airr": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/deadline-airg-pc": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/pbtfans-shakudo": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/hsa-hyperfuse": {
+      "material": "ABS",
+      "brand": "JTK"
+    },
+    "keycaps/80retros-1990s-blush": {
+      "material": "ABS/PBT"
+    },
+    "keycaps/dcs-lil-lav-ic-v1": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mg-ghost": {
+      "brand": "MelGeek",
+      "profile": "MG",
+      "material": "ABS",
+      "manufacturer": "MelGeek"
+    },
+    "keycaps/kam-little-pilot": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/mt3-abs-dusk": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/nicepbt-classic-beige": {
+      "designer": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-drifter": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/mt3-abs-noveltycats": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/dcd-yolk": {
+      "material": "PBT",
+      "brand": "Drop",
+      "profile": "DCD",
+      "manufacturer": "Drop"
+    },
+    "keycaps/pbs-black-on-white": {
+      "material": "PBT",
+      "manufacturer": "Keyreative",
+      "profile": "PBS",
+      "brand": "Keyreative"
+    },
+    "keycaps/kbm-war-maiden": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/deadline-pc-airg": {
+      "manufacturer": "Deadline Studio",
+      "brand": "Deadline Studio"
+    },
+    "keycaps/kat-slurp": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/nicepbt-cat": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "designer": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/nicepbt-bonkers": {
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/sa-fledgling": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/cherry-wisteria": {
+      "manufacturer": "Huo Yan Seng Mei",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-honeywell": {
+      "brand": "GMK"
+    },
+    "keycaps/nicepbt-sailor": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "designer": "CannonKeys",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/sa-copper": {
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dss-distortion-40s-monokit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-moomin-summertime": {
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT"
+    },
+    "keycaps/mw-datenshi": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-silent-forest": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-bee-cute": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/kam-aquanaut": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/mt3-abs-jukebox": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/mtnu-orenji": {
+      "brand": "GMK"
+    },
+    "keycaps/dcs-graphite": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-british-racing-green-brg": {
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "designer": "Hand Engineering"
+    },
+    "keycaps/sa-magic-city": {
+      "material": "ABS"
+    },
+    "keycaps/sa-biso": {
+      "manufacturer": "Signature Plastics",
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/awekeys-retro-80s": {
+      "brand": "Awekeys",
+      "profile": "Cherry",
+      "manufacturer": "Awekeys"
+    },
+    "keycaps/tmt-story": {
+      "manufacturer": "TomatoCaps",
+      "brand": "TomatoCaps",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-r-r": {
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/kam-80s-after-dark": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/mt3-pbt-dev-tty3": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/pbs-modern-abacus": {
+      "brand": "Keyreative",
+      "material": "PBT",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/dcs-yellowed": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-v1-bow": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/nicepbt-moomin-springtime": {
+      "manufacturer": "NicePBT",
+      "designer": "CannonKeys",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/ws-whale": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-whale": {
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/mw-focalors": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dss-sad-girl": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-bow": {
+      "profile": "Cherry",
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/kbm-mv-synth": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing"
+    },
+    "keycaps/dcs-blanks": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-terrazzo": {
+      "brand": "Keyreative",
+      "profile": "Cherry",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/dcx-jasmine": {
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/kam-kamistry": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/awekeys-viking-antiques-metal": {
+      "manufacturer": "Awekeys",
+      "brand": "Awekeys"
+    },
+    "keycaps/kch-nekoccino": {
+      "profile": "Cherry",
+      "designer": "CaptainSterling",
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative"
+    },
+    "keycaps/kds-squidkid": {
+      "manufacturer": "Kono",
+      "brand": "Kono"
+    },
+    "keycaps/dcd-harry-potter-ravenclaw": {
+      "profile": "DCD",
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "material": "PBT"
+    },
+    "keycaps/kkb-ohm": {
+      "profile": "Cherry"
+    },
+    "keycaps/kch-blue-screen": {
+      "manufacturer": "Keyreative",
+      "profile": "Cherry",
+      "brand": "Keyreative"
+    },
+    "keycaps/dcd-lunar-new-year": {
+      "material": "PBT",
+      "profile": "DCD",
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/kbm-civilizations": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing"
+    },
+    "keycaps/dcx-300-apm": {
+      "material": "ABS",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/basics-by-nicepbt": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/mw-eyeball-collector": {
+      "profile": "Cherry",
+      "material": "PC"
+    },
+    "keycaps/epbt-simpleja-r2": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-otd-dolch-replica": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-hangul-bow-wob": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-deep-north": {
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys"
+    },
+    "keycaps/kat-quantum": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/pbtfans-resonance": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-third-space": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/kbm-love-detective": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing",
+      "material": "PBT"
+    },
+    "keycaps/gomaster-salmon-reborn-r2": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/kbm-red-floof": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/gsa-trail-shadow": {
+      "material": "PC"
+    },
+    "keycaps/hammerworks-crp-r5": {
+      "material": "PBT",
+      "brand": "CRP"
+    },
+    "keycaps/alohakb-jxm-keycaps": {
+      "manufacturer": "AlohaKB",
+      "brand": "AlohaKB"
+    },
+    "keycaps/ifk-sanctuary-rebirth": {
+      "profile": "Cherry",
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/dcs-midnight": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/epbt-modernja": {
+      "material": "PBT"
+    },
+    "keycaps/kam-ocean-front": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kds-solarized-dark": {
+      "brand": "Kono",
+      "manufacturer": "Kono"
+    },
+    "keycaps/kat-goddess": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-lifebeats-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kat-lich": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-lily": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-deep-space": {
+      "material": "ABS",
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "brand": "Drop"
+    },
+    "keycaps/mw-2dgf": {
+      "material": "PBT"
+    },
+    "keycaps/kat-cat-s-eye": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/zero-g-studio-x-dmk-abs-keycaps-third-space": {
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-cyber": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/dcs-bow": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/hammer-crp-mint-rgby": {
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "CRP",
+      "manufacturer": "Hammerworks"
+    },
+    "keycaps/dcs-handarbeit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-musubi": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/epbt-kon-momo": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kap-disconnected-dark": {
+      "profile": "Cherry",
+      "brand": "Keyreative",
+      "material": "ABS/PBT",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/teapbt-brown-sugar-boba": {
+      "manufacturer": "Teacaps",
+      "brand": "Teacaps"
+    },
+    "keycaps/dss-cmypwade": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/pbs-black-on-black-r2": {
+      "brand": "Keyreative",
+      "material": "PBT",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/nicepbt-growth-auxo": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/dcs-mermaid": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/epbt-flower": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/gomaster-koi": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kbm-fairy": {
+      "manufacturer": "KeyBee Manufacturing",
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/dss-after-school-1992": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-dusk": {
+      "material": "ABS",
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/dcs-reaper": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dsa-windbreaker": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/mtnu-space-cadet": {
+      "brand": "GMK"
+    },
+    "keycaps/sa-pbt-glow": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/kat-eternal": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dss-honeywell-40-fix-kit": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kds-deku": {
+      "profile": "Cherry",
+      "brand": "Kono",
+      "manufacturer": "Kono",
+      "material": "PBT"
+    },
+    "keycaps/ifk-delight": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dcx-711-stawbogurt": {
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "brand": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/nicepbt-spookey": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/sa-apes": {
+      "brand": "Domikey",
+      "manufacturer": "Domikey",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-aurora": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-baja-nights": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-sapphire": {
+      "profile": "DCX",
+      "brand": "Drop",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/tomocaps-hangwa": {
+      "manufacturer": "TomoCaps",
+      "brand": "TomoCaps",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-pbt-dev-tty0": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcx-sleeper": {
+      "material": "ABS",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/dcx-bow": {
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "profile": "DCX",
+      "brand": "Drop"
+    },
+    "keycaps/sa-magica": {
+      "manufacturer": "MAXKEY",
+      "material": "ABS",
+      "brand": "MAXKEY"
+    },
+    "keycaps/dcs-bae-addon": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-pbt-serika": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/ws-purquoise": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/sa-tiger": {
+      "material": "ABS",
+      "brand": "Domikey",
+      "manufacturer": "Domikey"
+    },
+    "keycaps/dss-late-harvest": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/epbt-real": {
+      "profile": "Cherry"
+    },
+    "keycaps/mw-voynich": {
+      "material": "PBT"
+    },
+    "keycaps/kat-blanks": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/nicepbt-reverie": {
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dcs-alchemy": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/awekeys-viking-antique": {
+      "brand": "Awekeys",
+      "manufacturer": "Awekeys"
+    },
+    "keycaps/dcs-wob-w-rgb": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mw-cmm-bow": {
+      "material": "PBT"
+    },
+    "keycaps/nicepbt-moomin-80": {
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys"
+    },
+    "keycaps/sa-afk": {
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-arcade": {
+      "brand": "Drop",
+      "material": "ABS",
+      "profile": "DCX",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dmk-pbt-retro-evolution": {
+      "profile": "Cherry"
+    },
+    "keycaps/dss-420": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-violet-on-cream": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/kat-space-cadet-r2": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/gmk-cyl-hatsune-miku": {
+      "designer": "Xerpocalypse"
+    },
+    "keycaps/pbtfans-akuma": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dss-99-40s-monokit": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-9009-polish-addon": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mda-ember-dawn": {
+      "material": "PBT"
+    },
+    "keycaps/zoom-ws": {
+      "material": "PBT"
+    },
+    "keycaps/dmk-the-king": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-dasher": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/kat-cyberspace": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-a-history-of-violets": {
+      "brand": "GMK"
+    },
+    "keycaps/jda-the-moon": {
+      "manufacturer": "Drunken Ink",
+      "brand": "Drunken Ink",
+      "profile": "JDA",
+      "material": "PBT"
+    },
+    "keycaps/dcs-alps-smrtaleck": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/epbt-cool-kids": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kam-li-l-dragon": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kbm-golden-locket": {
+      "manufacturer": "KeyBee Manufacturing",
+      "material": "PBT",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/dcl-snow": {
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "brand": "Drop",
+      "profile": "DCL"
+    },
+    "keycaps/dcx-skiidata": {
+      "brand": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/pbtfans-flash-laser-engrave": {
+      "material": "ABS"
+    },
+    "keycaps/ifk-blacklight": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dcd-akatsuki-indigo": {
+      "material": "PBT",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCD"
+    },
+    "keycaps/kam-blanks-r2": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/pbtfans-abs-retro-dark-lights-r2": {
+      "profile": "Cherry"
+    },
+    "keycaps/ifk-futureware": {
+      "brand": "Infinikey",
+      "profile": "Cherry",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/kap-glyph-edius": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/mw-lancaster": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-otd-soware": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-port": {
+      "brand": "Infinikey",
+      "profile": "Cherry",
+      "material": "PBT",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dcx-green-marble": {
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/mg-fishing": {
+      "material": "ABS",
+      "brand": "MelGeek",
+      "manufacturer": "MelGeek",
+      "profile": "MG"
+    },
+    "keycaps/cannoncaps-407": {
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "manufacturer": "CannonCaps"
+    },
+    "keycaps/cannoncaps-cxa-iara": {
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "profile": "CXA",
+      "manufacturer": "CannonCaps",
+      "material": "ABS/PBT"
+    },
+    "keycaps/mt3-abs-darkness": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/pbtfans-abs-red-panda": {
+      "profile": "Cherry"
+    },
+    "keycaps/alohakb-red-fox": {
+      "material": "PBT",
+      "brand": "AlohaKB",
+      "manufacturer": "AlohaKB",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-pbt-fallout-nuka-cola": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/bolo-unicorn": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dss-microcomputer": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ws-camping": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-astrolokeys": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-skyriter": {
+      "manufacturer": "Signature Plastics",
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-industrial-keys": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/mtnu-mystic-candy": {
+      "brand": "GMK"
+    },
+    "keycaps/hsa-white-on-black-hsa-beige-on-brown": {
+      "material": "ABS",
+      "brand": "JTK"
+    },
+    "keycaps/dcs-root-beer": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-abs-jasmine": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/dcx-violac": {
+      "brand": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcx-dragon-darts": {
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "brand": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/cannoncaps-city-sunset": {
+      "manufacturer": "CannonCaps",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/kbm-pizza-rat": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing"
+    },
+    "keycaps/pbs-goblin-mode": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/ifk-bow-wob": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/nicepbt-greyscale": {
+      "manufacturer": "NicePBT",
+      "designer": "CannonKeys",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-graphite": {
+      "brand": "GMK"
+    },
+    "keycaps/sa-ocean-dolch": {
+      "material": "ABS"
+    },
+    "keycaps/kch-remember": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/ckey-blue-on-blueish": {
+      "manufacturer": "Contrakey",
+      "brand": "Contrakey"
+    },
+    "keycaps/kam-playground": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/pbs-blanks": {
+      "brand": "Keyreative",
+      "designer": "Matt3o",
+      "material": "PBT",
+      "profile": "PBS",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/dcx-peggy": {
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/dcd-hundred-acres": {
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCD",
+      "material": "PBT"
+    },
+    "keycaps/pbs-galaxy": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/epbt-creative-studio": {
+      "material": "PBT"
+    },
+    "keycaps/dsa-scientific": {
+      "material": "ABS"
+    },
+    "keycaps/dsa-gotham": {
+      "brand": "Signature Plastics",
+      "material": "ABS",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/mt3-pbt-godspeed-r2": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcs-skull-squadron": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-doggie": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/nicepbt-vasilisa": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/nicepbt-r-beige": {
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "designer": "AKB",
+      "material": "PBT"
+    },
+    "keycaps/ifk-faeries-of-eldraine": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey",
+      "profile": "Cherry"
+    },
+    "keycaps/dcx-topaz": {
+      "profile": "DCX",
+      "material": "ABS",
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/awekeys-hello-silver": {
+      "profile": "Cherry",
+      "brand": "Awekeys",
+      "manufacturer": "Awekeys"
+    },
+    "keycaps/mw-lord": {
+      "profile": "Cherry"
+    },
+    "keycaps/mw-dim-sum": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/ifk-classic-magic": {
+      "manufacturer": "Infinikey",
+      "profile": "Cherry",
+      "brand": "Infinikey"
+    },
+    "keycaps/dcx-9009": {
+      "material": "ABS",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/nicepbt-sweater-weather": {
+      "profile": "Cherry",
+      "designer": "boneandbee",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "material": "PBT"
+    },
+    "keycaps/dcd-cozy-boba": {
+      "manufacturer": "Drop",
+      "material": "PBT",
+      "profile": "DCD",
+      "brand": "Drop"
+    },
+    "keycaps/sw-bow-accents": {
+      "profile": "Cherry"
+    },
+    "keycaps/epbt-basic-standard": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/momoka-focus": {
+      "brand": "Momoka",
+      "manufacturer": "Momoka"
+    },
+    "keycaps/dcs-ccng-r2-geekhack": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kch-prism": {
+      "material": "PBT",
+      "manufacturer": "Keyreative",
+      "profile": "Cherry",
+      "brand": "Keyreative"
+    },
+    "keycaps/kbs-space-odyssey": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/cannoncaps-zero": {
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT",
+      "designer": "Rensuya",
+      "manufacturer": "CannonCaps"
+    },
+    "keycaps/cannoncaps-denim-nouveau": {
+      "material": "PBT",
+      "manufacturer": "CannonCaps",
+      "designer": "CannonKeys",
+      "brand": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/ifk-comfy": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/ifk-gr-n": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/osume-sakura": {
+      "manufacturer": "osume"
+    },
+    "keycaps/mg-ember-r2": {
+      "manufacturer": "MelGeek",
+      "brand": "MelGeek"
+    },
+    "keycaps/fbb-s9000": {
+      "profile": "Cherry"
+    },
+    "keycaps/mw-cultured": {
+      "material": "PBT"
+    },
+    "keycaps/epbt-fruit-chew": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-lae-addon-little-enter": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dsa-petrikeys": {
+      "material": "ABS"
+    },
+    "keycaps/sw-calm-beige-pbt": {
+      "profile": "Cherry"
+    },
+    "keycaps/sa-r3-uniform-bliss": {
+      "material": "ABS"
+    },
+    "keycaps/dcx-camillo": {
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/sa-avostar": {
+      "material": "ABS",
+      "brand": "Domikey",
+      "manufacturer": "Domikey"
+    },
+    "keycaps/dcl-silver": {
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCL",
+      "material": "ABS"
+    },
+    "keycaps/swg-retro-red-light": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-cream-cheese-and-green-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-peaches-n-cream-lite": {
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "profile": "Cherry",
+      "designer": "Rensuya",
+      "brand": "CannonKeys"
+    },
+    "keycaps/cannoncaps-big-blue": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "CannonCaps",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-dancer": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/mtnu-dashboard": {
+      "brand": "GMK"
+    },
+    "keycaps/dcs-classic-orange": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kkb-norrsken": {
+      "profile": "Cherry"
+    },
+    "keycaps/kbm-caramel": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/kat-pbj": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-faye-things": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mw-barista": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/sa-maestro": {
+      "material": "ABS",
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/gsa-ping-master": {
+      "manufacturer": "WINMIX",
+      "material": "ABS"
+    },
+    "keycaps/dcd-mythos-pegaso": {
+      "manufacturer": "Drop",
+      "profile": "DCD",
+      "brand": "Drop",
+      "material": "PBT"
+    },
+    "keycaps/mw-jade-dragon": {
+      "material": "ABS"
+    },
+    "keycaps/mg-ember": {
+      "brand": "MelGeek",
+      "manufacturer": "MelGeek",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-blanks": {
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/mtnu-selectresque": {
+      "brand": "GMK"
+    },
+    "keycaps/sa-128k-ps-ai": {
+      "material": "ABS"
+    },
+    "keycaps/pbtfans-abs-casual": {
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-black-panther": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/mg-salmon": {
+      "profile": "MG",
+      "brand": "MelGeek",
+      "material": "ABS",
+      "manufacturer": "MelGeek"
+    },
+    "keycaps/dcs-raindrop-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-keycap-accent-kits": {
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/sa-dreameater": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/oem-tai-hao-abs": {
+      "material": "ABS"
+    },
+    "keycaps/kat-hyperfuse": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcx-hyperfuse": {
+      "profile": "DCX",
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dcd-harry-potter-hufflepuff": {
+      "material": "PBT",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCD"
+    },
+    "keycaps/dcs-battleship-addon-kits": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-sommelier": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-hyperfuse": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-abs-iron-man": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/geekark-slash": {
+      "material": "PBT",
+      "brand": "Geekark",
+      "manufacturer": "Geekark"
+    },
+    "keycaps/dmk-adventurer-r2": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/dcx-latte": {
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "material": "ABS"
+    },
+    "keycaps/mt3-abs-bow": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcd-lotr-gondor": {
+      "material": "PBT",
+      "profile": "DCD",
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/ifk-vanir": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dsa-dn": {
+      "manufacturer": "Signature Plastics",
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-retro-lights-r2": {
+      "brand": "Keyreative"
+    },
+    "keycaps/dcs-delftware": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-choco-donuts": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/epbt-winter-breath": {
+      "material": "PBT"
+    },
+    "keycaps/ifk-og": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/nicepbt-shinbun": {
+      "designer": "Hhdailo",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/mw-dreamdrifter": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcd-white-devil": {
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCD",
+      "material": "PBT"
+    },
+    "keycaps/mt3-abs-camillo": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/hammerworks-crp-c64-round-2": {
+      "material": "PBT",
+      "brand": "CRP"
+    },
+    "keycaps/nicepbt-nigiri": {
+      "manufacturer": "NicePBT",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry"
+    },
+    "keycaps/mtnu-oblivion": {
+      "brand": "GMK"
+    },
+    "keycaps/dcx-confectionery": {
+      "profile": "DCX",
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dmk-silent-forest-r2": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-noel": {
+      "designer": "Agilr",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/dcs-otd-red-alert-rebel-2-0-plus-2-1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ws-cafe": {
+      "material": "PBT",
+      "designer": "Langelandia"
+    },
+    "keycaps/nicepbt-type-6": {
+      "material": "PBT",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys"
+    },
+    "keycaps/dcs-soju-blue": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-pbt-extended-2048-dark": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcs-yuri-alps": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-abs-snes": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/mt3-abs-skiidata": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcd-cozy-summer": {
+      "material": "PBT",
+      "manufacturer": "Drop",
+      "profile": "DCD",
+      "brand": "Drop"
+    },
+    "keycaps/dcs-ccng": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-amore-red": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/dcs-bowl-blanks": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-sweet-tart": {
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "profile": "DCX",
+      "material": "ABS"
+    },
+    "keycaps/nicepbt-elderberry": {
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry",
+      "designer": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/epbt-scandi": {
+      "material": "PBT"
+    },
+    "keycaps/dss-after-school-1992-40s-ortho": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-after-school-1992-40s-monokit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-the-amazing-chocolatier": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/mw-buzzz": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/kap-santa-llum": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-quack": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-green-tea-r3": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcl-shadow-international": {
+      "profile": "DCL",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dmk-pbt-fading": {
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-fairlane": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/sa-prism": {
+      "material": "ABS",
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/dcs-hacked": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/gomaster-winter-breath-ireland-r2": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/keyboard-science-highlight-black": {
+      "material": "PBT"
+    },
+    "keycaps/ifk-ez-mode": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/pbtfans-tape-and-radio-35": {
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-adventurer": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-holy-caster": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/pbs-mv-classic": {
+      "material": "PBT",
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/hsa-toxic": {
+      "brand": "JTK"
+    },
+    "keycaps/ifk-monochrome": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/kch-hipparcos": {
+      "brand": "Keyreative",
+      "material": "PBT",
+      "profile": "Cherry",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/mt3-abs-captain-america": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/osa-afternoon-soiree": {
+      "manufacturer": "WINMIX",
+      "profile": "OSA",
+      "material": "PBT"
+    },
+    "keycaps/dcs-percent": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kat-oasis": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/chilkey-unicorn": {
+      "profile": "DDA"
+    },
+    "keycaps/cherry-mystic-dao": {
+      "material": "PBT"
+    },
+    "keycaps/dmk-pbt-unicorn": {
+      "profile": "Cherry"
+    },
+    "keycaps/dcx-magnolia": {
+      "profile": "DCX",
+      "brand": "Drop",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/mt3-pbt-godspeed": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/kbm-pink-poodle": {
+      "profile": "Cherry",
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing",
+      "material": "PBT"
+    },
+    "keycaps/kam-astha": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/epbt-brutalist": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-explosion": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/ifk-peach-tea": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dmk-inazuma": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/dmk-red-bean": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-windbreaker": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kam-wraith": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-foundation": {
+      "brand": "GMK"
+    },
+    "keycaps/sa-motorsport-selectric": {
+      "material": "ABS"
+    },
+    "keycaps/cannoncaps-9009-dark": {
+      "profile": "Cherry",
+      "manufacturer": "CannonCaps",
+      "designer": "CannonKeys",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/sa-r3-teletype-60-homing-addon": {
+      "material": "ABS"
+    },
+    "keycaps/kbm-demon-sword": {
+      "manufacturer": "KeyBee Manufacturing",
+      "material": "PBT",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/kat-neapolitan": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/dcs-yogurt": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-sail": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-otd-rebel-rgb-1-2-1-5": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-tot-theatrum-orbis-terrarum": {
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-lala": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/hsa-wob": {
+      "brand": "JTK"
+    },
+    "keycaps/kkb-cherries": {
+      "profile": "Cherry"
+    },
+    "keycaps/kat-mumei": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/kbm-odin": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing"
+    },
+    "keycaps/dcs-rebel-red-alert": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/epbt-6085": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kat-comet": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/nicepbt-cadet-sublegend-classic-beige": {
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/deadline-studio-doys": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/dmk-pbt-ocr-receipt": {
+      "profile": "Cherry"
+    },
+    "keycaps/dcx-wob": {
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "profile": "DCX",
+      "brand": "Drop"
+    },
+    "keycaps/nicepbt-youmu": {
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT"
+    },
+    "keycaps/ws-kraken": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-pbt-dwarvish": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/dcd-cozy-camp": {
+      "material": "PBT",
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCD"
+    },
+    "keycaps/kat-raspberry": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/deadline-air-wave": {
+      "manufacturer": "Deadline Studio",
+      "brand": "Deadline Studio"
+    },
+    "keycaps/mtnu-800-os2-0": {
+      "brand": "GMK"
+    },
+    "keycaps/dcs-smrt-colemak-vim-addons": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-link-fire": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/nicepbt-accent-kits": {
+      "manufacturer": "NicePBT",
+      "designer": "CannonKeys",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dcs-lifebeats-r1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mtnu-skyriter": {
+      "brand": "GMK"
+    },
+    "keycaps/dcs-sport-walker": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-metro-system": {
+      "manufacturer": "Keyreative",
+      "profile": "Cherry",
+      "brand": "Keyreative"
+    },
+    "keycaps/mt3-abs-3277": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcx-solarized-dark": {
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "brand": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/dss-lights-out-r2": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/pbtfans-bauhaus": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/finalkey-ick-dark-mulled": {
+      "brand": "FinalKey",
+      "material": "ABS",
+      "manufacturer": "FinalKey"
+    },
+    "keycaps/epbt-cool-kids-r2": {
+      "material": "PBT"
+    },
+    "keycaps/mt3-pbt-dev-tty1": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/nicepbt-green-hangul": {
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/kat-mori": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-6u-bars": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-generation": {
+      "material": "ABS/PBT",
+      "profile": "Cherry",
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/dcs-9009-fix-kit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-vella": {
+      "brand": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/tkf-against-the-tides": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/pbs-crispin": {
+      "brand": "Keyreative",
+      "material": "PBT",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/pbs-dashboard": {
+      "material": "PBT",
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/nicepbt-japanese-sublegend-classic-beige": {
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dss-all-hallows-eve": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-nebula": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/awekeys-full-metal-wild-ice": {
+      "manufacturer": "Awekeys",
+      "profile": "Cherry",
+      "brand": "Awekeys"
+    },
+    "keycaps/mg-mortal": {
+      "manufacturer": "MelGeek",
+      "brand": "MelGeek"
+    },
+    "keycaps/dcx-cyber": {
+      "profile": "DCX",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "material": "ABS"
+    },
+    "keycaps/mt3-abs-wob": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/tut-ick-the-holiday": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/sa-geoma": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-bowl-pit-tkl": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-pbt-retro-steam-age": {
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-pbt-retro-no-redraw-r2": {
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-rubber": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-cream-cheese-and-green-r3": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/deadline-pc-airc": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/kat-extended-apl": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/ifk-stem": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/dcs-purple-rain": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-abs-garnet": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/cherry-magical-candy": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-alps-9009": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kds-splatter": {
+      "brand": "Kono",
+      "manufacturer": "Kono"
+    },
+    "keycaps/sa-ectoplasm": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/ws-shirasagi": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/mw-unnamed": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dcs-nerve": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-ascii": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/deadline-air-anchor": {
+      "manufacturer": "Deadline Studio",
+      "brand": "Deadline Studio"
+    },
+    "keycaps/dcs-america": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/nicepbt-a": {
+      "profile": "Cherry",
+      "manufacturer": "NicePBT",
+      "designer": "agilr",
+      "material": "PBT",
+      "brand": "CannonKeys"
+    },
+    "keycaps/sa-2600-r2": {
+      "material": "ABS",
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-silent-sea": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/geekark-dolch": {
+      "manufacturer": "Geekark",
+      "brand": "Geekark"
+    },
+    "keycaps/dcs-miami-twice-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-alps-pingmaster": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-sculpted-bliss": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-vert": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-jewel-of-the-jungle-40s": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/epbt-project-67": {
+      "profile": "Cherry"
+    },
+    "keycaps/cannoncaps-hydrangea": {
+      "designer": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "CannonCaps",
+      "profile": "Cherry",
+      "brand": "CannonKeys"
+    },
+    "keycaps/pbs-kids-typewriter": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-alps-rectifier": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-coffee-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kat-miami-nights": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/gomaster-fossils": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/klk-luna": {
+      "material": "PBT"
+    },
+    "keycaps/shurikey-hanzo": {
+      "brand": "Shurikey",
+      "manufacturer": "Shurikey",
+      "material": "ABS"
+    },
+    "keycaps/mt3-pbt-lotr-black-speech": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/kbm-shinrin": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/kat-miami": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/mt3-pbt-elvish": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/mtnu-mictlan-rebirth": {
+      "brand": "GMK"
+    },
+    "keycaps/dcl-snow-international": {
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCL",
+      "material": "ABS"
+    },
+    "keycaps/ifk-dark-cyrillic": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/cannoncaps-cxa-sugarplum": {
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "manufacturer": "CannonCaps",
+      "profile": "CXA",
+      "material": "ABS/PBT"
+    },
+    "keycaps/cap-bauhaus": {
+      "material": "PBT"
+    },
+    "keycaps/kbs-acid-house-ver-seishin-osen": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/kat-oblique": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/dmk-pbt-deicide": {
+      "profile": "Cherry"
+    },
+    "keycaps/mtnu-analog-dreams": {
+      "brand": "GMK"
+    },
+    "keycaps/dsa-skull-squadron": {
+      "material": "ABS"
+    },
+    "keycaps/dcx-key-man": {
+      "manufacturer": "Drop",
+      "material": "ABS",
+      "brand": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/dcs-9009-caps-lock-kit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/epbt-3000sat": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/mtnu-granite": {
+      "brand": "GMK"
+    },
+    "keycaps/epbt-abs-vermilion-on-oil": {
+      "profile": "Cherry"
+    },
+    "keycaps/epbt-warrior-mkii-r2": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dmk-die-for-me": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/finalkey-ick-ultramarine": {
+      "brand": "FinalKey",
+      "material": "ABS",
+      "manufacturer": "FinalKey"
+    },
+    "keycaps/nicepbt-enchanted-forest": {
+      "designer": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/nicepbt-1928": {
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/mtnu-beige": {
+      "brand": "GMK"
+    },
+    "keycaps/kam-sewing-tin": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/osume-sakura-r2": {
+      "manufacturer": "osume"
+    },
+    "keycaps/dsa-white-on-lilac": {
+      "material": "ABS",
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/kat-tattoo": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/dss-drank-40s-ortho": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-bumblebee": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/geekark-frost": {
+      "manufacturer": "Geekark",
+      "brand": "Geekark"
+    },
+    "keycaps/dss-bounty-hunter-40s-monokit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-silent-desert": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/mtnu-graphite-tkl": {
+      "brand": "GMK"
+    },
+    "keycaps/sa-2600": {
+      "material": "ABS"
+    },
+    "keycaps/kkb-wob-bow-rgb": {
+      "profile": "Cherry"
+    },
+    "keycaps/ifk-pastel": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/nicepbt-fuji": {
+      "designer": "Tom",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/epbt-sniper": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcd-starfield-constellation": {
+      "profile": "DCD",
+      "manufacturer": "Drop",
+      "brand": "Drop",
+      "material": "PBT"
+    },
+    "keycaps/pbtfans-pink-lemonade": {
+      "material": "PBT"
+    },
+    "keycaps/mw-tidal-arcana": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/geekark-9009": {
+      "brand": "Geekark",
+      "manufacturer": "Geekark"
+    },
+    "keycaps/dcs-green-bean": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mw-fyrefly": {
+      "profile": "Cherry"
+    },
+    "keycaps/kbm-vibrant-nights": {
+      "brand": "KeyBee Manufacturing",
+      "material": "PBT",
+      "manufacturer": "KeyBee Manufacturing",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-thief-r1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-a-history-of-violets": {
+      "material": "ABS"
+    },
+    "keycaps/dcx-citrine": {
+      "material": "ABS",
+      "brand": "Drop",
+      "manufacturer": "Drop",
+      "profile": "DCX"
+    },
+    "keycaps/dss-solarized-dark-40s-monokit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/pbtfans-abs-vior": {
+      "profile": "Cherry"
+    },
+    "keycaps/geekark-selenites": {
+      "manufacturer": "Geekark",
+      "brand": "Geekark"
+    },
+    "keycaps/osume-dusk": {
+      "manufacturer": "osume"
+    },
+    "keycaps/dcs-cardio": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kds-transmutation": {
+      "manufacturer": "Kono",
+      "profile": "Cherry",
+      "brand": "Kono",
+      "material": "PBT"
+    },
+    "keycaps/nicepbt-pelo": {
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "material": "PBT",
+      "profile": "Cherry",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/epbt-duo": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kap-capo-soda": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/ifk-team-liquid": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dcs-otd-turquoise-soulfree": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kam-bouquet": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/createkeebs-the-great-wall": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/kkb-helleborus": {
+      "profile": "Cherry"
+    },
+    "keycaps/kat-floofy-boi": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-wyse-moogle-kit-kbdmania": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-emerald": {
+      "profile": "DCX",
+      "brand": "Drop",
+      "material": "ABS",
+      "manufacturer": "Drop"
+    },
+    "keycaps/kbm-bioluminescent": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/dcs-wyse-compatibility-2024": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-reverse-sanctuary": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-abs-monomanukai": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/sa-simplicity": {
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/alohakb-trailblazer": {
+      "brand": "AlohaKB",
+      "manufacturer": "AlohaKB"
+    },
+    "keycaps/tomocaps-hanabi": {
+      "profile": "Cherry",
+      "brand": "TomoCaps",
+      "manufacturer": "TomoCaps",
+      "material": "PBT"
+    },
+    "keycaps/dcs-smrt": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-rainbow": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/cannoncaps-moon": {
+      "designer": "CannonKeys",
+      "profile": "Cherry",
+      "brand": "CannonKeys",
+      "material": "PBT",
+      "manufacturer": "CannonCaps"
+    },
+    "keycaps/sa-well-honey": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-delta-blues": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kat-phantasmagoria": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-klaxon": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-red-velvet": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/kkb-outer-bounds": {
+      "profile": "Cherry"
+    },
+    "keycaps/dmk-deicide": {
+      "material": "PBT"
+    },
+    "keycaps/sa-ti-914": {
+      "material": "ABS"
+    },
+    "keycaps/ws-bow": {
+      "material": "PBT"
+    },
+    "keycaps/dmk-pbt-retro-no-redraw-cadver": {
+      "profile": "Cherry"
+    },
+    "keycaps/kat-iron": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/dss-lightcycle": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-grass-valley": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-alps-hangul-pbt": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/hsa-pink-powder": {
+      "brand": "JTK",
+      "material": "ABS"
+    },
+    "keycaps/epbt-axolotls": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-kinesis-pbt-blanks": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kat-mint-chip": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/pbtfans-less-but-better": {
+      "profile": "Cherry"
+    },
+    "keycaps/thok-lab-dark": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-cherry-replica": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-miami": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-pbt-operator": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/mw-satellite": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-pbt-extended-2048": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/tomocaps-tsubaki": {
+      "manufacturer": "TomoCaps",
+      "brand": "TomoCaps"
+    },
+    "keycaps/hammerworks-crp-r3": {
+      "material": "PBT",
+      "brand": "CRP"
+    },
+    "keycaps/nicepbt-transformers": {
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/kam-soaring-skies": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kat-subtitles": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-the-bro-set": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/deadline-air-ratio": {
+      "brand": "Deadline Studio",
+      "manufacturer": "Deadline Studio"
+    },
+    "keycaps/kat-atlantis": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/kat-anaglyph": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcd-flower-journal": {
+      "material": "PBT",
+      "profile": "DCD",
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/epbt-acid-house-sweet-girl": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/ifk-amalfi": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/kbs-heyball": {
+      "material": "PBT"
+    },
+    "keycaps/mw-unmanned-playground": {
+      "profile": "Cherry"
+    },
+    "keycaps/mw-a-c": {
+      "material": "PBT"
+    },
+    "keycaps/cherry-forensic": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-nightfall": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kbm-abcdefu": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-wob": {
+      "brand": "GMK"
+    },
+    "keycaps/geekark-comic-sans-ms-beige-wob": {
+      "manufacturer": "Geekark",
+      "brand": "Geekark"
+    },
+    "keycaps/sa-window-view": {
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/pbt-cherry-milkshake": {
+      "material": "PBT"
+    },
+    "keycaps/dmk-pbt-arrogant-cat": {
+      "profile": "Cherry"
+    },
+    "keycaps/deadline-hmc": {
+      "brand": "Deadline Studio",
+      "profile": "Cherry",
+      "manufacturer": "Hammerworks"
+    },
+    "keycaps/tmt-taho": {
+      "profile": "Cherry",
+      "brand": "TomatoCaps"
+    },
+    "keycaps/mt3-pbt-serika-r2": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/kap-grey-alert": {
+      "brand": "Keyreative"
+    },
+    "keycaps/alohakb-stitch-monster": {
+      "brand": "AlohaKB",
+      "manufacturer": "AlohaKB"
+    },
+    "keycaps/kbs-dirty-coffee": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/ifk-cabernet": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/kap-buff-bride": {
+      "brand": "Keyreative",
+      "manufacturer": "Keyreative",
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-noctua": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/kat-specimen": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/createkeebs-stamp": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/kat-love": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/sa-hack-d-by-geeks": {
+      "material": "ABS"
+    },
+    "keycaps/mw-sogurt-r2": {
+      "profile": "Cherry"
+    },
+    "keycaps/pbs-aperture-priority": {
+      "material": "PBT",
+      "manufacturer": "Keyreative",
+      "brand": "Keyreative"
+    },
+    "keycaps/kat-crusader": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-ulivi": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kap-konpeito": {
+      "brand": "Keyreative",
+      "profile": "Cherry",
+      "manufacturer": "Keyreative"
+    },
+    "keycaps/kam-command": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-after-school-1992-40s-kit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-seven-elements-slime": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/dsa-mayora": {
+      "material": "PBT"
+    },
+    "keycaps/kbm-sky-pastry": {
+      "manufacturer": "KeyBee Manufacturing",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/dss-green-gambit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-hive": {
+      "manufacturer": "Infinikey",
+      "brand": "Infinikey"
+    },
+    "keycaps/dsa-bluebird-r2": {
+      "material": "PBT"
+    },
+    "keycaps/nicepbt-gray-on-white": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "brand": "CannonKeys",
+      "manufacturer": "NicePBT"
+    },
+    "keycaps/dcs-ccng-r1-geekhack": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-flex-kits": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mt3-abs-susuwatari": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/sa-r3-maestro": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-turtle-power": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ikg-greyscale-hangul": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-unwyse": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-fhm-final-heart-monster": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-round-1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/pbtfans-flash": {
+      "material": "ABS"
+    },
+    "keycaps/tomocaps-barn-owl": {
+      "brand": "TomoCaps",
+      "manufacturer": "TomoCaps"
+    },
+    "keycaps/tmt-pink-lightning": {
+      "manufacturer": "TomatoCaps",
+      "brand": "TomatoCaps"
+    },
+    "keycaps/tut-game-1989": {
+      "material": "ABS"
+    },
+    "keycaps/ifk-morse": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/dcs-peppabeit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mtnu-sage": {
+      "brand": "GMK"
+    },
+    "keycaps/osume-year-of-the-tiger": {
+      "manufacturer": "osume"
+    },
+    "keycaps/dss-carpinteria": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/maclab": {
+      "material": "PBT"
+    },
+    "keycaps/ws-orchid-strings": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/mtnu-darling": {
+      "brand": "GMK"
+    },
+    "keycaps/mtnu-divinapapaya": {
+      "brand": "GMK"
+    },
+    "keycaps/dmk-silent-plateau": {
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/mw-jirai": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-alpine-winter": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kds-dangerzone": {
+      "manufacturer": "Kono",
+      "brand": "Kono"
+    },
+    "keycaps/dss-6104": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-arcane": {
+      "brand": "Signature Plastics",
+      "manufacturer": "Signature Plastics"
+    },
+    "keycaps/sl-pbt-habitat": {
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-blue-moon": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ifk-splash": {
+      "brand": "Infinikey",
+      "manufacturer": "Infinikey"
+    },
+    "keycaps/mtnu-r-and-d-1973": {
+      "brand": "GMK"
+    },
+    "keycaps/kkb-infinity": {
+      "profile": "Cherry"
+    },
+    "keycaps/dss-hand-work": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-solar-green": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/cherry-drama": {
+      "material": "PBT"
+    },
+    "keycaps/dss-sumo-40s-monokit": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-wob": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/iv-ashes": {
+      "manufacturer": "IV Works",
+      "brand": "IV Works"
+    },
+    "keycaps/kat-ice-dragon": {
+      "brand": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/dcs-modified-dolch": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/ws-poker": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-sports-walker": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kbm-purseidon": {
+      "manufacturer": "KeyBee Manufacturing",
+      "profile": "Cherry",
+      "brand": "KeyBee Manufacturing"
+    },
+    "keycaps/epbt-aesthetic": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/uniform-retro-no-redraw": {
+      "manufacturer": "Domikey"
+    },
+    "keycaps/mtnu-susu": {
+      "brand": "GMK"
+    },
+    "keycaps/dmk-hx-20": {
+      "material": "ABS",
+      "profile": "Cherry"
+    },
+    "keycaps/osume-matcha": {
+      "manufacturer": "osume"
+    },
+    "keycaps/kam-lucid": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/cherry-halloween-party": {
+      "material": "PBT"
+    },
+    "keycaps/pbtfans-abs-kissaten": {
+      "profile": "Cherry"
+    },
+    "keycaps/dss-mischief": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/doodlecaps-nakseo-black": {
+      "material": "PBT"
+    },
+    "keycaps/dss-420-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-hhkblanks": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dsa-abyss-hunter": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-round-3-and-4": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/hammerworks-crp-r4": {
+      "material": "PBT",
+      "brand": "CRP"
+    },
+    "keycaps/dcs-coffee-r1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mg-monster": {
+      "material": "ABS",
+      "manufacturer": "MelGeek",
+      "brand": "MelGeek",
+      "profile": "MG"
+    },
+    "keycaps/mw-kiss-of-death": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/pbtfans-stargazing": {
+      "material": "PBT"
+    },
+    "keycaps/epbt-less-but-better": {
+      "profile": "Cherry"
+    },
+    "keycaps/kam-superuser": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/pbtfans-abs-emma": {
+      "profile": "Cherry"
+    },
+    "keycaps/cherry-wolf-warrior": {
+      "material": "PBT"
+    },
+    "keycaps/mt3-abs-infinity-war": {
+      "brand": "Drop",
+      "manufacturer": "Drop"
+    },
+    "keycaps/dcs-green-tea-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dmk-pbt-game-master": {
+      "profile": "Cherry"
+    },
+    "keycaps/mda-future-suzuri": {
+      "material": "PBT"
+    },
+    "keycaps/mtnu-rascals": {
+      "brand": "GMK"
+    },
+    "keycaps/dcs-polch-molch": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-klaxxon-red-alert-r2-5": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcx-seedless": {
+      "manufacturer": "Drop",
+      "profile": "DCX",
+      "material": "ABS",
+      "brand": "Drop"
+    },
+    "keycaps/hsa-beige-on-brown": {
+      "brand": "JTK"
+    },
+    "keycaps/dcs-yue-lao": {
+      "material": "ABS",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dss-cipher": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-ragnarok": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-nights": {
+      "brand": "Signature Plastics",
+      "material": "ABS"
+    },
+    "keycaps/dcs-raindrop-r1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kbm-blanks": {
+      "brand": "KeyBee Manufacturing",
+      "manufacturer": "KeyBee Manufacturing"
+    },
+    "keycaps/sw-antarctic": {
+      "profile": "Cherry"
+    },
+    "keycaps/mt3-abs-pulse": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/dcs-wyse-moogle-kit-gh": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-olivetti": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sl-pbt-melon-milk": {
+      "profile": "Cherry"
+    },
+    "keycaps/kam-outline": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/cherry-space-crisis": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-soware-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-pbt-pastel-cadet": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/cherry-tyche-one": {
+      "material": "PBT"
+    },
+    "keycaps/ws-senkou": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/dmk-terrazzo": {
+      "material": "ABS"
+    },
+    "keycaps/mw-coloradas": {
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-valentine-r2": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-otd-pink-dolch": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-r3-teletype": {
+      "material": "ABS"
+    },
+    "keycaps/mt3-pbt-dev-tty2": {
+      "manufacturer": "Drop",
+      "brand": "Drop"
+    },
+    "keycaps/kds-airborne": {
+      "brand": "Kono",
+      "manufacturer": "Kono"
+    },
+    "keycaps/dcs-nostalgia-gh60": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/sa-handarbeit-plus": {
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dsa-granite": {
+      "material": "PBT"
+    },
+    "keycaps/mw-alpenglow": {
+      "profile": "Cherry"
+    },
+    "keycaps/cherry-maharaja": {
+      "material": "PBT"
+    },
+    "keycaps/kkb-khonsu": {
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-10u-spacebars": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-unicorn": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mw-shark-tail": {
+      "profile": "Cherry"
+    },
+    "keycaps/jcs-arabic": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-valentine-r1": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kfapbt-forest-watcher": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-doraemon": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-ccng-r3": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mw-night-tare": {
+      "material": "ABS"
+    },
+    "keycaps/birthday-celebration-moa-profile": {
+      "profile": "MOA"
+    },
+    "keycaps/mw-calico": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-lam-alert": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mtnu-800": {
+      "brand": "GMK"
+    },
+    "keycaps/kkb-retro-mixed-lights": {
+      "profile": "Cherry"
+    },
+    "keycaps/gsa-game-1989-classic": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-lil-lav-ic-v2-0": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/wda-maya": {
+      "material": "ABS"
+    },
+    "keycaps/mw-berries-chocolate": {
+      "material": "ABS"
+    },
+    "keycaps/pbtfans-abs-atomic-purple": {
+      "profile": "Cherry"
+    },
+    "keycaps/kkb-poltergeist": {
+      "profile": "Cherry"
+    },
+    "keycaps/dcs-cyan-alert": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mtnu-dasher": {
+      "brand": "GMK"
+    },
+    "keycaps/epbt-pink-on-black": {
+      "material": "ABS"
+    },
+    "keycaps/dcs-r4-accent-kits": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/mw-heresy": {
+      "profile": "Cherry"
+    },
+    "keycaps/centinela-extension-kit": {
+      "material": "ABS"
+    },
+    "keycaps/dsa-discovery": {
+      "material": "PBT"
+    },
+    "keycaps/zero-g-fantasy-land": {
+      "profile": "Cherry"
+    },
+    "keycaps/dss-who-s-afraid": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-soju": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/kam-popelka": {
+      "material": "PBT",
+      "brand": "Keyreative"
+    },
+    "keycaps/sw-transparent-black": {
+      "profile": "Cherry"
+    },
+    "keycaps/mtnu-welles": {
+      "brand": "GMK"
+    },
+    "keycaps/pbtfans-x-ray-r3": {
+      "designer": "Matthew Encina from Mod Musings"
+    },
+    "keycaps/mtnu-just": {
+      "brand": "GMK"
+    },
+    "keycaps/cherry-viking": {
+      "material": "PBT"
+    },
+    "keycaps/melon-milk": {
+      "material": "PBT"
+    },
+    "keycaps/dcs-led-keys": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-color-accent-kits": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dcs-red-alert-r4": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/dss-lightcycle-r3vival": {
+      "brand": "Signature Plastics"
+    },
+    "keycaps/oem-tai-hao-ti-wob-alps": {
+      "material": "ABS"
+    },
+    "keycaps/alohakb-jxm": {
+      "brand": "AlohaKB"
+    },
+    "keycaps/mda-plastic": {
+      "material": "PBT"
+    },
+    "keycaps/sa-crimson-wither": {
+      "material": "PBT"
+    },
+    "keycaps/mtnu-copper": {
+      "brand": "GMK"
+    },
+    "keycaps/mtnu-modern-dolch": {
+      "brand": "GMK"
+    },
+    "keycaps/pbtfans-abs-pelican": {
+      "profile": "Cherry"
     }
   },
   "excluded": {
