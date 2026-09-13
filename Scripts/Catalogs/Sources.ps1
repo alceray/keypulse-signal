@@ -25,6 +25,10 @@ $script:CatalogSources = [ordered]@{
     keychron = @{ kind = 'keycaps'; endpoint = 'https://www.keychron.com/collections/all-keycaps/products.json'; host = 'https://www.keychron.com'; vendor = 'none'; brand = 'Keychron'; titleSpecs = $true }
     glorious = @{ kind = 'keycaps'; endpoint = 'https://www.gloriousgaming.com/collections/keycaps/products.json'; host = 'https://www.gloriousgaming.com'; vendor = 'none'; brand = 'Glorious'; titleSpecs = $true }
     lumekeebs = @{ kind = 'keycaps'; endpoint = 'https://lumekeebs.com/collections/jkdk/products.json'; host = 'https://lumekeebs.com'; vendor = 'none'; brand = 'JKDK'; titleSpecs = $true }
+    osume = @{ kind = 'keycaps'; endpoint = 'https://osume.com/collections/all-keycaps/products.json'; host = 'https://osume.com'; vendor = 'none'; brand = 'osume' }
+    keebsforall = @{ kind = 'keycaps'; endpoint = 'https://keebsforall.com/collections/keycap-sets-for-mechanical-keyboards/products.json'; host = 'https://keebsforall.com'; vendor = 'none' }
+    prototypist = @{ kind = 'keycaps'; endpoint = 'https://prototypist.net/collections/in-stock-keycap-sets/products.json'; host = 'https://prototypist.net'; vendor = 'none' }
+    mode = @{ kind = 'keycaps'; endpoint = 'https://modedesigns.com/collections/keycaps/products.json'; host = 'https://modedesigns.com'; vendor = 'none'; brand = 'Mode' }
 }
 . "$PSScriptRoot/DcsWiki.ps1"
 . "$PSScriptRoot/ThereminGoat.ps1"
@@ -266,6 +270,11 @@ function Convert-CatalogProduct($Product, [string]$Source) {
     $kind = $info.kind
     $type = if ($Product.Contains('product_type')) { [string]$Product.product_type } else { '' }
     $name = Get-CatalogName $Product.title
+    if ($Source -eq 'prototypist') {
+        $name = $name -replace '(?i)^\s*\((?:in stock|protozoa)\)\s*', ''
+        $name = $name -replace '(?i)\s+keysets?\s*-?\s*$', ''
+        $name = $name -replace '(?i)\s+&\s+deskmats\s*$', ''
+    }
     $name = $name -replace '(?i)^\s*\[(?:group buy|gb|pre-?order|in.stock|restock|extras)\]\s*', ''
     $name = $name -replace '(?i)\s*\(\d+\s*(?:pcs|pieces|pack)\)\s*$', ''
     # B-stock units are the same product with cosmetic flaws, so they share its name.
@@ -277,6 +286,7 @@ function Convert-CatalogProduct($Product, [string]$Source) {
         if ($info.ContainsKey('brand') -and $name -notmatch ('(?i)\b' + [regex]::Escape($info.brand) + '\b')) { $name = "$($info.brand) $name" }
     } else {
         $name = $name -replace '(?i)\s+keycaps?(?:\s+set)?(?:\s+(?:dye[ -]?sub|double(?:/triple)?shot|double[ -]?shot)\s+(?:ABS|PBT))?\s*$', ''
+        if ($info.ContainsKey('brand') -and $name -notmatch ('(?i)^' + [regex]::Escape($info.brand) + '\b')) { $name = "$($info.brand) $name" }
     }
     $name = $name.Trim()
     $reason = $null
@@ -296,6 +306,7 @@ function Convert-CatalogProduct($Product, [string]$Source) {
         if ($specs.rubber) { $reason = 'Rubber gaming keys, not a keycap set' }
     }
     if ($name -match '(?i)^Configurator\b') { $reason = 'Configuration placeholder, not a named product' }
+    if ($Source -eq 'prototypist' -and $name -match '(?i)\bdeskmats\s*$') { $reason = 'Deskmat, not a keycap product' }
     if ($name -match '(?i)\b(tester|sampler|sample pack|switch pack|mystery|random|grab bag|puller|opener|keychain|deskmat|storage|display case|stabilizer)\b') { $reason = 'Accessory or assorted pack' }
     if ($name -match '(?i)\bmega listing\b|\bkit collection\b|\bleftovers?\b') { $reason = 'Listing of several products, not one named product' }
     if ($kind -eq 'keycaps' -and $name -match '(?i)\b(?:switches|faceplates?)\b') { $reason = 'Not a keycap product' }
@@ -307,6 +318,20 @@ function Convert-CatalogProduct($Product, [string]$Source) {
     }
     $body = Get-CatalogText ([string]$Product.body_html)
     $manufacturer = Get-CatalogLabel $body 'Manufactured by|Manufacturer(?:[ \t]*:|[ \t]+)'
+    if ($Source -eq 'prototypist' -and $manufacturer) {
+        # Shipping/MOQ prose is not a production credit; country and legal suffixes
+        # are incidental to this store's maker labels.
+        if ($manufacturer -match '(?i)^minimums\b') { $manufacturer = $null }
+        else {
+            $manufacturer = $manufacturer -replace '(?i)\s+in (?:the )?(?:USA|United States of America|China)\.?$', ''
+            $manufacturer = $manufacturer.TrimEnd('.')
+            switch -Regex ($manufacturer) {
+                '(?i)^Signature Plastic$' { $manufacturer = 'Signature Plastics' }
+                '(?i)^GMK electronic design GmbH$' { $manufacturer = 'GMK' }
+                '(?i)^Key Kobob$' { $manufacturer = 'KeyKobo' }
+            }
+        }
+    }
     $designer = Get-CatalogLabel $body 'Designed by|(?:Keycaps? set )?Designer(?:[ \t]*:|[ \t]+)'
     if ($manufacturer) { $entry.manufacturer = $manufacturer }
     # Store copy can run on from the credit into the story behind the set.
@@ -337,11 +362,18 @@ function Convert-CatalogProduct($Product, [string]$Source) {
             if ($_.Groups[1].Success) { $_.Groups[1].Value.ToUpperInvariant() } else { $_.Groups[2].Value.ToUpperInvariant() }
         } | Sort-Object -Unique)
         if ($materials.Count -eq 1) { $entry.material = $materials[0] }
+        if ($Source -eq 'mode' -and $body -match '(?im)^\s*ABS\s*&\s*PBT material blend\b') { $entry.material = 'ABS/PBT' }
+        if ($Source -eq 'osume' -and $name -match '(?i)\bmarshmallow\b') { $entry.profile = 'Marshmallow' }
         if ($specs -and $specs.profile -and -not $entry.Contains('profile')) { $entry.profile = $specs.profile }
         if ($specs -and $specs.material -and -not $entry.Contains('material')) { $entry.material = $specs.material }
     }
     $variantNames = @($Product.variants | ForEach-Object { [string]$_.title })
-    [ordered]@{ source = $Source; sourceId = [string]$Product.id; kind = $kind; url = "$($script:CatalogSources[$Source].host)/products/$($Product.handle)"; entry = $entry; excluded = $reason; variants = $variantNames }
+    $record = [ordered]@{ source = $Source; sourceId = [string]$Product.id; kind = $kind; url = "$($script:CatalogSources[$Source].host)/products/$($Product.handle)"; entry = $entry; excluded = $reason; variants = $variantNames }
+    if ($Source -in @('osume', 'keebsforall', 'prototypist', 'mode')) {
+        $options = @($variantNames | Where-Object { $_ -and $_ -ne 'Default Title' })
+        if ($options.Count) { $record.notes = 'Kit options: ' + ($options -join '; ') }
+    }
+    $record
 }
 
 function Convert-CatalogMatrix([string]$Content, $File, [string]$Commit) {

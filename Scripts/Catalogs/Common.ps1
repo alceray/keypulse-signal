@@ -161,6 +161,11 @@ function Get-CatalogMatchName([string]$Text, [switch]$SourceIdentity) {
     if (-not $SourceIdentity) {
         # IDs already drop accents, so an accented and a plain spelling are one set here too.
         $text = $text.Normalize([Text.NormalizationForm]::FormD) -replace '\p{Mn}', ''
+        # Colorway abbreviations affect duplicate comparison, never upstream IDs or
+        # display names. Whole words keep RainBoW and similar model names intact.
+        $text = $text -replace '\bwhite[\s\u2010-\u2014-]+on[\s\u2010-\u2014-]+black\b', 'wob'
+        $text = $text -replace '\bblack[\s\u2010-\u2014-]+on[\s\u2010-\u2014-]+white\b', 'bow'
+        $text = $text -replace '\b(wob|bow)\s*\(\s*\1\s*\)', '$1' -replace '\b(wob|bow)\s*[-:]\s*\1\b', '$1'
         # Stores write rounds as R2, V2, 2.0, or a bare 2, and usually leave a first round
         # unnumbered. Folding these flags a new listing as a duplicate of its set.
         $text = $text -replace '\s+(?:&|and)\s+', ' ' -replace '\s+[rv](\d+(?:\.\d+)?)$', ' round$1' -replace '\s+([2-9](?:\.0)?)$', ' round$1'

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-11",
+  "reviewedAt": "2026-09-12",
   "catalog": "keycaps",
-  "baselineCatalogVersion": 20,
+  "baselineCatalogVersion": 25,
   "manufacturerMeaning": "Community-recognized production name; does not assert legal ownership or operation of the molding factory.",
   "decisions": [
     {
@@ -4451,21 +4451,21 @@
       "basis": "Community production name in product name"
     },
     {
-      "id": "deadline-studio-x-hammer-works-hmc-pbt",
+      "id": "deadline-hmc",
       "field": "brand",
       "value": "Deadline Studio",
       "sourceUrl": "https://keygem.com/products/group-buy-group-buy-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
       "basis": "Community production name in product name"
     },
     {
-      "id": "deadline-studio-x-hammer-works-hmc-pbt",
+      "id": "deadline-hmc",
       "field": "manufacturer",
       "value": "Deadline Studio",
       "sourceUrl": "https://keygem.com/products/group-buy-group-buy-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
       "basis": "Community production name in product name"
     },
     {
-      "id": "deadline-studio-x-hammer-works-hmc-pbt",
+      "id": "deadline-hmc",
       "field": "material",
       "value": "PBT",
       "sourceUrl": "https://keygem.com/products/group-buy-group-buy-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
@@ -14781,6 +14781,2463 @@
       "value": "PBT",
       "sourceUrl": "https://cannonkeys.com/products/zoom75-ws-keycaps",
       "basis": "Explicit material specification"
+    },
+    {
+      "id": "osume-bloom",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/bloom-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-bloom",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/bloom-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-bloom",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/bloom-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-bloom-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/bloom-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-bloom-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/bloom-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-bloom-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/bloom-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-extras-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-extras-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-extras-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-extras-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-extras-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/cafe-extras-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/cafe-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-marshmallow-extras-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-extras-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-marshmallow-extras-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-extras-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-marshmallow-extras-kit",
+      "field": "profile",
+      "value": null,
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-extras-kit",
+      "basis": "Marshmallow product title conflicts with Cherry in the technical section; omit pending clarification."
+    },
+    {
+      "id": "osume-cafe-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/cafe-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-extras-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-rose-extras-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-rose-extras-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-rose-extras-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-extras-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/cafe-rose-extras-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-rose-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-rose",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-rose-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/cafe-rose-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-extras-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-extras-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-extras-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-extras-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-extras-kit",
+      "field": "profile",
+      "value": null,
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-extras-kit",
+      "basis": "Marshmallow product title conflicts with Cherry in the technical section; omit pending clarification."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/cafe-rose-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-rose-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-rose-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-rose-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-rose-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/cafe-rose-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/dalgona-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-dalgona",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/dalgona-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/dalgona-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/dalgona-keycaps-marshmallow",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-dalgona-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/dalgona-keycaps-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/dalgona-keycaps-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/dalgona-novelty-kit-marshmallow",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-dalgona-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/dalgona-novelty-kit-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/dalgona-novelty-kit-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/dalgona-novelty-kit-new",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-dalgona-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/dalgona-novelty-kit-new",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dalgona-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/dalgona-novelty-kit-new",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dusk",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/dusk-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-dusk",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/dusk-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dusk",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/dusk-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dusk-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/dusk-twilight-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-dusk-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/dusk-twilight-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-dusk-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/dusk-twilight-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-horoscope-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/horoscope-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-horoscope-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/horoscope-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-horoscope-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/horoscope-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-kanagawa-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/kanagawa-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-kanagawa-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/kanagawa-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-kanagawa-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/kanagawa-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-green",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/konbini-green-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-konbini-green",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/konbini-green-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-green",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/konbini-green-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-lilac-dreams",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-marshmallow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-novelty-kit-marshmallow",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-novelty-kit-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-novelty-kit-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-lilac-dreams-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-lilac-dreams-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/lilac-dreams-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-little-ghost",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/little-ghost-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-little-ghost",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/little-ghost-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-little-ghost",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/little-ghost-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-little-ghost-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/little-ghost-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-little-ghost-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/little-ghost-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-little-ghost-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/little-ghost-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/matcha-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-matcha",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/matcha-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/matcha-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/matcha-keycaps-marshmallow",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-matcha-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/matcha-keycaps-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/matcha-keycaps-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/matcha-novelty-kit-marshmallow",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-matcha-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/matcha-novelty-kit-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/matcha-novelty-kit-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/matcha-novelty-kit-new",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-matcha-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/matcha-novelty-kit-new",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-matcha-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/matcha-novelty-kit-new",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mocha-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mocha",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mocha-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/mocha-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mocha-marshmallow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mocha-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mocha-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/mocha-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mocha-marshmallow-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mocha-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mocha-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/mocha-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mocha-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mocha-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mocha-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mocha-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/mocha-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mochi-accent-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mochi-accent-kit-new",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mochi-accent-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mochi-accent-kit-new",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mochi-accent-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/mochi-accent-kit-new",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mochi",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mochi-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mochi",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mochi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mochi",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/mochi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mori",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mori-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mori",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mori-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mori",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/mori-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mori-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/mori-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-mori-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/mori-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-mori-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/mori-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-night-market",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/night-market-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-night-market",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/night-market-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-night-market",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/night-market-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-night-market-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/night-market-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-night-market-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/night-market-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-night-market-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/night-market-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-rainy-day",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/rainy-day-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-rainy-day",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/rainy-day-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-rainy-day",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/rainy-day-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-rainy-day-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/rainy-day-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-rainy-day-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/rainy-day-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-rainy-day-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/rainy-day-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-sakura",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/sakura-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-sakura",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/sakura-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-sakura",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/sakura-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-sakura-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/sakura-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-sakura-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/sakura-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-sakura-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/sakura-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-strawberry-milk",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-marshmallow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-marshmallow-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-strawberry-milk-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-strawberry-milk-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/strawberry-milk-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-tsukimi",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/tsukimi-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-tsukimi",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/tsukimi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-tsukimi",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/tsukimi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-tsukimi-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/tsukimi-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-tsukimi-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/tsukimi-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-tsukimi-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/tsukimi-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-winterglow-eve-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/winterglow-eve-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-winterglow-eve-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/winterglow-eve-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-winterglow-eve-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/winterglow-eve-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-winterglow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/winterglow-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-winterglow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/winterglow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-winterglow-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/winterglow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-year-of-the-horse",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/year-of-the-horse-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-year-of-the-horse",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/year-of-the-horse-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-year-of-the-horse",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/year-of-the-horse-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-year-of-the-horse-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/year-of-the-horse-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-year-of-the-horse-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/year-of-the-horse-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-year-of-the-horse-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/year-of-the-horse-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-year-of-the-snake-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/year-of-the-snake-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-year-of-the-snake-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/year-of-the-snake-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-year-of-the-snake-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/year-of-the-snake-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/zen-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-zen-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/zen-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/zen-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-cafe-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-cafe-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/cafe-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-horoscope",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/horoscope-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-horoscope",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/horoscope-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-horoscope",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/horoscope-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-kanagawa",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/kanagawa-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-kanagawa",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/kanagawa-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-kanagawa",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/kanagawa-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-blue",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/konbini-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-konbini-blue",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/konbini-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-blue",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/konbini-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-blue-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/konbini-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-konbini-blue-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/konbini-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-blue-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/konbini-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-green-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/konbini-green-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-konbini-green-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/konbini-green-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-konbini-green-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/konbini-green-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-momo-neko-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/momo-neko-marshmallow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-momo-neko-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/momo-neko-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-momo-neko-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/momo-neko-marshmallow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-momo-neko-marshmallow-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/momo-neko-marshmallow-novelty-kit",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-momo-neko-marshmallow-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/momo-neko-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-momo-neko-marshmallow-novelty-kit",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/momo-neko-marshmallow-novelty-kit",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-winterglow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/winterglow-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-winterglow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/winterglow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-winterglow",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/winterglow-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/zen-keycaps",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-zen",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/zen-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/zen-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen-marshmallow",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/zen-keycaps-marshmallow",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-zen-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/zen-keycaps-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen-marshmallow",
+      "field": "profile",
+      "value": "Marshmallow",
+      "sourceUrl": "https://osume.com/products/zen-keycaps-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen-novelty-kit",
+      "field": "manufacturer",
+      "value": "osume",
+      "sourceUrl": "https://osume.com/products/zen-novelty-kit-1",
+      "basis": "Osume own keycap line; community production credit, not a factory ownership claim."
+    },
+    {
+      "id": "osume-zen-novelty-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://osume.com/products/zen-novelty-kit-1",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "osume-zen-novelty-kit",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://osume.com/products/zen-novelty-kit-1",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-cardinal",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-cardinal-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-cherry-blank",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfa-cherry-blank-pbt-keysets",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-doggie",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/pbt-doggie-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-doggie",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/pbt-doggie-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-pink-robin",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-pink-robin-keycaps-1",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-cosmic-diving",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/mw-cosmic-diving-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-cosmic-diving",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/mw-cosmic-diving-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-cherry-1953",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-cherry-1953-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-cherry-1953",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-cherry-1953-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-cherry-1953",
+      "field": "manufacturer",
+      "value": "JC Studio",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-cherry-1953-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-desko-color",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-desko-color-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-desko-color",
+      "field": "manufacturer",
+      "value": "JC Studio",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-desko-color-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-runes",
+      "field": "manufacturer",
+      "value": "JC Studio",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-runes-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-mint-extension-kit",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-mint-extension-kit-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-mint-extension-kit",
+      "field": "manufacturer",
+      "value": "JC Studio",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-mint-extension-kit-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "maxkey-sa-foundation",
+      "field": "material",
+      "value": "ABS",
+      "sourceUrl": "https://keebsforall.com/products/sa-foundation-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "maxkey-sa-foundation",
+      "field": "profile",
+      "value": "SA",
+      "sourceUrl": "https://keebsforall.com/products/sa-foundation-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "maxkey-sa-foundation",
+      "field": "brand",
+      "value": "MAXKEY",
+      "sourceUrl": "https://keebsforall.com/products/sa-foundation-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "maxkey-sa-foundation",
+      "field": "manufacturer",
+      "value": "MAXKEY",
+      "sourceUrl": "https://keebsforall.com/products/sa-foundation-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "sikakeyb-two-tone-green-and-white",
+      "field": "brand",
+      "value": "Sikakeyb",
+      "sourceUrl": "https://keebsforall.com/products/sikakeyb-doubleshot-pbt-keycaps-two-tone-green-and-white",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "sikakeyb-two-tone-green-and-white",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/sikakeyb-doubleshot-pbt-keycaps-two-tone-green-and-white",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "sikakeyb-two-tone-green-and-white",
+      "field": "profile",
+      "value": null,
+      "sourceUrl": "https://keebsforall.com/products/sikakeyb-doubleshot-pbt-keycaps-two-tone-green-and-white",
+      "basis": "Described as a mix of shapes; comparisons do not establish one profile."
+    },
+    {
+      "id": "winmix-sa-chalk",
+      "field": "brand",
+      "value": "WINMIX",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-sa-chalk-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "winmix-sa-chalk",
+      "field": "manufacturer",
+      "value": "WINMIX",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-sa-chalk-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "winmix-sa-chalk",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-sa-chalk-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "winmix-sa-chalk",
+      "field": "profile",
+      "value": "SA",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-sa-chalk-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-white-on-navy",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-white-on-navy-keycaps-1",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-steamboat-throwback",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-steamboat-throwback-keycaps-1",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-dolch-ansi",
+      "field": "brand",
+      "value": "EnjoyPBT",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-epbt-dolch-ansi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-dolch-ansi",
+      "field": "manufacturer",
+      "value": "EnjoyPBT",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-epbt-dolch-ansi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-dolch-ansi",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-epbt-dolch-ansi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kbdfans-osa-elegant-gray",
+      "field": "profile",
+      "value": "OSA",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-osa-profile-elegant-gray-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kbdfans-osa-elegant-gray",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-osa-profile-elegant-gray-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kbdfans-ma-black",
+      "field": "profile",
+      "value": "MA",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-ma-black-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kbdfans-ma-black",
+      "field": "material",
+      "value": null,
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-ma-black-pbt-keycaps",
+      "basis": "PBT in product title conflicts with ABS in specifications; omit pending clarification."
+    },
+    {
+      "id": "kbdfans-cherry-green-and-white-blank",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-green-white-blank-cherry-profile-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "cerakey-fullset-v2",
+      "field": "brand",
+      "value": "Cerakey",
+      "sourceUrl": "https://keebsforall.com/products/cerakey-fullset-v2-ceramic-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "cerakey-fullset-v2",
+      "field": "manufacturer",
+      "value": "Cerakey",
+      "sourceUrl": "https://keebsforall.com/products/cerakey-fullset-v2-ceramic-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "cerakey-fullset-v2",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/cerakey-fullset-v2-ceramic-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "cerakey-fullset-v2",
+      "field": "material",
+      "value": "Ceramic",
+      "sourceUrl": "https://keebsforall.com/products/cerakey-fullset-v2-ceramic-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-hmc",
+      "field": "brand",
+      "value": "Deadline Studio",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-hmc",
+      "field": "designer",
+      "value": "Deadline Studio",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-hmc",
+      "field": "manufacturer",
+      "value": "Hammerworks",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-hmc",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-hmc",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-deadline-studio-x-hammer-works-hmc-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-moss",
+      "field": "brand",
+      "value": "KeebsForAll",
+      "sourceUrl": "https://keebsforall.com/products/kfa-x-studio-bubby-moss-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-moss",
+      "field": "designer",
+      "value": "KeebsForAll & Studio Bubby",
+      "sourceUrl": "https://keebsforall.com/products/kfa-x-studio-bubby-moss-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "creation",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-creation-pbt-dye-sublimation-cherry-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "creation",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-creation-pbt-dye-sublimation-cherry-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-autumn-leaves",
+      "field": "brand",
+      "value": "KeebsForAll",
+      "sourceUrl": "https://keebsforall.com/products/autumn-leaves-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-autumn-leaves",
+      "field": "designer",
+      "value": "CaptainSterling & KeebsForAll",
+      "sourceUrl": "https://keebsforall.com/products/autumn-leaves-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-autumn-leaves",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/autumn-leaves-pbt-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-white-on-black",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-white-on-black-keycap-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-sunny-side-up",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-sunny-side-up-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-sunny-side-up",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-sunny-side-up-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-bow-english-japanese",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-bow-english-japanese-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kfapbt-black-on-white",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kfapbt-black-on-white-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-desko-black",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-desko-black-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-desko-black",
+      "field": "manufacturer",
+      "value": "JC Studio",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-desko-black-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-ansi-en-us",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-ansi-en-us-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-ansi-en-us",
+      "field": "manufacturer",
+      "value": "JC Studio",
+      "sourceUrl": "https://keebsforall.com/products/jc-studio-ansi-en-us-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "alohakb-k-o-ii-ep-133",
+      "field": "brand",
+      "value": "AlohaKB",
+      "sourceUrl": "https://keebsforall.com/products/alohakb-k-o-ii-ep-133-braun-style-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "alohakb-k-o-ii-ep-133",
+      "field": "manufacturer",
+      "value": "AlohaKB",
+      "sourceUrl": "https://keebsforall.com/products/alohakb-k-o-ii-ep-133-braun-style-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "alohakb-k-o-ii-ep-133",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/alohakb-k-o-ii-ep-133-braun-style-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "alohakb-k-o-ii-ep-133",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/alohakb-k-o-ii-ep-133-braun-style-keycaps-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "maxkey-sa-black",
+      "field": "brand",
+      "value": "MAXKEY",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-maxkey-black-doubleshot-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "maxkey-sa-black",
+      "field": "manufacturer",
+      "value": "MAXKEY",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-maxkey-black-doubleshot-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kat-alpha",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://keebsforall.com/products/kat-alpha-keycap-set-dye-sub-pbt",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kbdfans-extended-2048-ec",
+      "field": "brand",
+      "value": "KBDfans",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-x-biip-extended-2048-ec-keycap-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kbdfans-extended-2048-ec",
+      "field": "designer",
+      "value": "biip",
+      "sourceUrl": "https://keebsforall.com/products/kbdfans-x-biip-extended-2048-ec-keycap-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-blue",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://keebsforall.com/products/epbt-blue-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-blue",
+      "field": "material",
+      "value": "ABS",
+      "sourceUrl": "https://keebsforall.com/products/epbt-blue-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "gmk-british-racing-green-r2-5",
+      "field": "designer",
+      "value": "Lewis Flude",
+      "sourceUrl": "https://prototypist.net/products/in-stock-gmk-cyl-british-racing-green-brg-r2-5",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "dcs-after-school-1992-40s-monokit",
+      "field": "material",
+      "value": "ABS",
+      "sourceUrl": "https://prototypist.net/products/in-stock-dcs-after-school-1992-40s-keycap-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "dcs-10u-spacebars",
+      "field": "material",
+      "value": "ABS",
+      "sourceUrl": "https://prototypist.net/products/in-stock-dcs-abs-10u-spacebars",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kap-midas-r2",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-kap-midas-r2-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kap-midas-r2",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-kap-midas-r2-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-wild",
+      "field": "brand",
+      "value": "Swagkeys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wild",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-wild",
+      "field": "manufacturer",
+      "value": "Swagkeys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wild",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-wild",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wild",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-wild",
+      "field": "material",
+      "value": "ABS/PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wild",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kap-wob",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-kap-white-on-black-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kap-wob",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-kap-white-on-black-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "kap-wob",
+      "field": "designer",
+      "value": "kapowaz",
+      "sourceUrl": "https://prototypist.net/products/in-stock-kap-white-on-black-keyset",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-alhambra-r2",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mw-alhambra-r2-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-white-on-black-abs",
+      "field": "brand",
+      "value": "Swagkeys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wob-abs-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-white-on-black-abs",
+      "field": "manufacturer",
+      "value": "Swagkeys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wob-abs-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "swg-white-on-black-abs",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-sw-wob-abs-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-x-prototypist-white-on-black",
+      "field": "brand",
+      "value": "Milkyway Keys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mw-x-pt-white-on-black-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-x-prototypist-white-on-black",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mw-x-pt-white-on-black-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-x-prototypist-black-on-white",
+      "field": "brand",
+      "value": "Milkyway Keys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mw-x-pt-black-on-white-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-x-prototypist-black-on-white",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mw-x-pt-black-on-white-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "geekark-frost",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/protozoa-pbt-frost-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "member-81",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-member-81-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-j-og",
+      "field": "brand",
+      "value": "JC Studio",
+      "sourceUrl": "https://prototypist.net/products/in-stock-j-og-pbt-keycap-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "jcs-j-og",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-j-og-pbt-keycap-set",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "mw-kaworu",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mw-kaworu",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "tut-lofi",
+      "field": "brand",
+      "value": "TutKeys",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mecha-x-tut-lofi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "tut-lofi",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mecha-x-tut-lofi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "tut-lofi",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-mecha-x-tut-lofi-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "pbtfans-klein-blue-r2",
+      "field": "material",
+      "value": "ABS",
+      "sourceUrl": "https://prototypist.net/products/in-stock-pbtfans-klein-blue-r2",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "dmk-pbt-game-master",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-zero-g-studio-x-dmk-game-master-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "dmk-pbt-game-master",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-zero-g-studio-x-dmk-game-master-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "pbtfans-bank-account",
+      "field": "manufacturer",
+      "value": "PBTfans",
+      "sourceUrl": "https://prototypist.net/products/in-stock-pbtfans-bank-account",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "nicepbt-growth-auxo",
+      "field": "designer",
+      "value": "Izeri & Keebaad",
+      "sourceUrl": "https://prototypist.net/products/in-stock-nicepbt-growth-auxo",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-pc-airr",
+      "field": "material",
+      "value": "PC",
+      "sourceUrl": "https://prototypist.net/products/in-stock-deadline-airr-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-pc-airc",
+      "field": "material",
+      "value": "PC",
+      "sourceUrl": "https://prototypist.net/products/in-stock-deadline-airc-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "deadline-pc-airg",
+      "field": "material",
+      "value": "PC",
+      "sourceUrl": "https://prototypist.net/products/in-stock-deadline-airg-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-spectrum",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-epbt-spectrum",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "epbt-spectrum",
+      "field": "designer",
+      "value": "Enjoy",
+      "sourceUrl": "https://prototypist.net/products/in-stock-epbt-spectrum",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "cannoncaps-cxa-sugarplum",
+      "field": "material",
+      "value": "ABS/PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-cxa-sugarplum",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "angry-miao-glacier",
+      "field": "brand",
+      "value": "Angry Miao",
+      "sourceUrl": "https://prototypist.net/products/in-stock-angry-miao-glacier-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "angry-miao-glacier",
+      "field": "manufacturer",
+      "value": "Angry Miao",
+      "sourceUrl": "https://prototypist.net/products/in-stock-angry-miao-glacier-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "angry-miao-glacier",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-angry-miao-glacier-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "angry-miao-glacier",
+      "field": "material",
+      "value": "PC",
+      "sourceUrl": "https://prototypist.net/products/in-stock-angry-miao-glacier-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ws-gr-irish",
+      "field": "manufacturer",
+      "value": "Wuque Studio",
+      "sourceUrl": "https://prototypist.net/products/in-stock-ws-gr-irish-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ws-gr-irish",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-ws-gr-irish-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ws-gr-irish",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-ws-gr-irish-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ws-gr-irish",
+      "field": "designer",
+      "value": "Shipkie",
+      "sourceUrl": "https://prototypist.net/products/in-stock-ws-gr-irish-keycaps",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-marshmallow",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-marshmallow",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-marshmallow",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-cabernet",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-cabernet",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-cabernet",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-cabernet",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-og",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-og",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-og",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-og",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-amalfi",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-amalfi",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-amalfi",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-amalfi",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-strawberry-lemonade",
+      "field": "profile",
+      "value": "Cherry",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-strawberry-lemonade",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "ifk-strawberry-lemonade",
+      "field": "material",
+      "value": "PBT",
+      "sourceUrl": "https://prototypist.net/products/in-stock-infinikey-strawberry-lemonade",
+      "basis": "Reviewed product title and specifications; community production names remain separate from the hosting store."
+    },
+    {
+      "id": "dcs-white-on-black-kfa",
+      "field": "brand",
+      "value": "KeebsForAll",
+      "sourceUrl": "https://keebsforall.com/products/dcs-white-on-black-keycaps",
+      "basis": "KFA describes its in-stock DCS offering as doubleshot ABS by Signature Plastics. Published in October 2021, before the separate 2022 DCS WoB group buy; KFA suffix distinguishes the listing, not an official revision."
+    },
+    {
+      "id": "dcs-white-on-black-kfa",
+      "field": "manufacturer",
+      "value": "Signature Plastics",
+      "sourceUrl": "https://keebsforall.com/products/dcs-white-on-black-keycaps",
+      "basis": "KFA describes its in-stock DCS offering as doubleshot ABS by Signature Plastics. Published in October 2021, before the separate 2022 DCS WoB group buy; KFA suffix distinguishes the listing, not an official revision."
+    },
+    {
+      "id": "dcs-white-on-black-kfa",
+      "field": "profile",
+      "value": "DCS",
+      "sourceUrl": "https://keebsforall.com/products/dcs-white-on-black-keycaps",
+      "basis": "KFA describes its in-stock DCS offering as doubleshot ABS by Signature Plastics. Published in October 2021, before the separate 2022 DCS WoB group buy; KFA suffix distinguishes the listing, not an official revision."
+    },
+    {
+      "id": "dcs-white-on-black-kfa",
+      "field": "material",
+      "value": "ABS",
+      "sourceUrl": "https://keebsforall.com/products/dcs-white-on-black-keycaps",
+      "basis": "KFA describes its in-stock DCS offering as doubleshot ABS by Signature Plastics. Published in October 2021, before the separate 2022 DCS WoB group buy; KFA suffix distinguishes the listing, not an official revision."
+    },
+    {
+      "id": "hsa-pink-powder",
+      "field": "profile",
+      "value": "HSA",
+      "sourceUrl": "https://prototypist.net/products/in-stock-jtk-hsa-pink-powder-keyset",
+      "basis": "Product title and specification explicitly state HSA, correcting the earlier Cherry value."
+    },
+    {
+      "id": "deadline-air-mallche",
+      "field": "material",
+      "value": "PC",
+      "sourceUrl": "https://keebsforall.com/products/pre-order-deadline-air-mallche-pc-keycaps",
+      "basis": "Specification identifies Bayer special PC."
+    },
+    {
+      "id": "deadline-hmc",
+      "field": "designer",
+      "value": "Deadline Studio & Hammerworks",
+      "sourceUrl": "https://keycaplendar.firebaseapp.com/?keysetAlias=6mUM537vCx",
+      "basis": "Merged the longer HMC listing into Deadline HMC; retain the existing collaboration credit and carry over the retailer material specification."
+    },
+    {
+      "id": "gmk-cyl-bow",
+      "field": "name",
+      "value": "GMK CYL BoW",
+      "sourceUrl": "https://mechanicalkeyboards.com/products/gmk-black-on-white-cherry-profile-double-shot-abs-keycaps",
+      "basis": "Merged gmk-black-on-white after checking the abbreviated colorway, maker, profile, material, and current product listing; preserve the existing canonical name and source mappings."
+    },
+    {
+      "id": "keykobo-wob",
+      "field": "name",
+      "value": "KKB WoB",
+      "sourceUrl": "https://novelkeys.com/products/key-kobo-white-on-black",
+      "basis": "Merged kkb-white-on-black after checking the abbreviated colorway, maker, profile, material, and current product listing; preserve the existing canonical name and source mappings."
+    },
+    {
+      "id": "pbtfans-wob",
+      "field": "name",
+      "value": "PBTfans WOB",
+      "sourceUrl": "https://dangkeebs.com/products/pbtfans-white-on-black-wob",
+      "basis": "Merged pbtfans-white-on-black-wob after checking the abbreviated colorway, maker, profile, material, and current product listing; preserve the existing canonical name and source mappings."
+    },
+    {
+      "id": "pbtfans-bow",
+      "field": "name",
+      "value": "PBTfans BOW",
+      "sourceUrl": "https://dangkeebs.com/products/pbtfans-black-on-white-bow",
+      "basis": "Merged pbtfans-black-on-white-bow after checking the abbreviated colorway, maker, profile, material, and current product listing; preserve the existing canonical name and source mappings."
+    },
+    {
+      "id": "gmk-mtnu-wob",
+      "field": "name",
+      "value": "GMK MTNU WoB",
+      "sourceUrl": "https://omnitype.com/products/mtnu-wob",
+      "basis": "Merged gmk-mtnu-wob-white-on-black after checking the abbreviated colorway, maker, profile, material, and current product listing; preserve the existing canonical name and source mappings."
     }
   ],
   "deferred": [

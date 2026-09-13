@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 23,
-  "totalCount": 3231,
+  "catalogVersion": 26,
+  "totalCount": 3349,
   "entries": [
     {
       "id": "80retros-1990s-blush",
@@ -342,6 +342,14 @@
       "designer": "Ovie Grant"
     },
     {
+      "id": "alohakb-k-o-ii-ep-133",
+      "name": "AlohaKB K.O. II EP-133",
+      "manufacturer": "AlohaKB",
+      "brand": "AlohaKB",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "alohakb-red-fox",
       "name": "AlohaKB Red Fox",
       "manufacturer": "AlohaKB",
@@ -379,6 +387,14 @@
       "brand": "NovelKeys",
       "designer": "Olivia",
       "material": "Aluminum"
+    },
+    {
+      "id": "angry-miao-glacier",
+      "name": "Angry Miao Glacier",
+      "manufacturer": "Angry Miao",
+      "brand": "Angry Miao",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "asa-piifox-cyber",
@@ -654,6 +670,14 @@
       "manufacturer": "GMK",
       "designer": "Vheissu",
       "material": "ABS"
+    },
+    {
+      "id": "cerakey-fullset-v2",
+      "name": "Cerakey Fullset V2",
+      "manufacturer": "Cerakey",
+      "brand": "Cerakey",
+      "profile": "Cherry",
+      "material": "Ceramic"
     },
     {
       "id": "cherry-alert-ekg",
@@ -1234,6 +1258,12 @@
       "material": "PBT"
     },
     {
+      "id": "creation",
+      "name": "Creation",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "crp-c64",
       "name": "CRP C64",
       "manufacturer": "Hammerworks",
@@ -1664,7 +1694,8 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "Norbauer & nebulazy",
-      "profile": "DCS"
+      "profile": "DCS",
+      "material": "ABS"
     },
     {
       "id": "dcs-alchemy",
@@ -3070,6 +3101,14 @@
       "material": "ABS"
     },
     {
+      "id": "dcs-white-on-black-kfa",
+      "name": "DCS White on Black (KFA)",
+      "manufacturer": "Signature Plastics",
+      "brand": "KeebsForAll",
+      "profile": "DCS",
+      "material": "ABS"
+    },
+    {
       "id": "dcs-windbreaker",
       "name": "DCS Windbreaker",
       "manufacturer": "Signature Plastics",
@@ -3544,7 +3583,9 @@
       "name": "Deadline Air-Mallche",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "deadline-air-pitaya",
@@ -3580,42 +3621,41 @@
       "manufacturer": "Hammerworks",
       "brand": "Deadline Studio",
       "designer": "Deadline Studio & Hammerworks",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "deadline-pc-airc",
       "name": "Deadline PC AirC",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "deadline-pc-airg",
       "name": "Deadline PC AirG",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "deadline-pc-airr",
       "name": "Deadline PC AirR",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "deadline-studio-doys",
       "name": "Deadline Studio - Doys",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio"
-    },
-    {
-      "id": "deadline-studio-x-hammer-works-hmc-pbt",
-      "name": "Deadline Studio X Hammer Works - HMC PBT",
-      "manufacturer": "Deadline Studio",
-      "brand": "Deadline Studio",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "dimensional",
@@ -3702,7 +3742,9 @@
       "name": "DMK Ghost",
       "manufacturer": "Domikey",
       "brand": "Domikey",
-      "designer": "Sailer & Protozoa"
+      "designer": "Sailer & Protozoa",
+      "profile": "Cherry",
+      "material": "ABS"
     },
     {
       "id": "dmk-gift",
@@ -4066,6 +4108,7 @@
     {
       "id": "dsa-berry-yogurt",
       "name": "DSA Berry Yogurt",
+      "manufacturer": "Signature Plastics",
       "designer": "misononyan",
       "profile": "DSA"
     },
@@ -4659,7 +4702,10 @@
     {
       "id": "dsyk-lumberjacks",
       "name": "DSYK Lumberjacks",
-      "designer": "kakasa"
+      "manufacturer": "KBDfans",
+      "designer": "kakasa",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "ducky-black-backlit",
@@ -4981,7 +5027,8 @@
       "name": "ePBT Acadia",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "vishydesigns"
+      "designer": "vishydesigns",
+      "profile": "Cherry"
     },
     {
       "id": "epbt-acid-house-sweet-girl",
@@ -5092,6 +5139,14 @@
       "designer": "CaptainVinceO2"
     },
     {
+      "id": "epbt-blue",
+      "name": "ePBT Blue",
+      "manufacturer": "EnjoyPBT",
+      "brand": "EnjoyPBT",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
       "id": "epbt-blue-russian",
       "name": "ePBT Blue Russian",
       "manufacturer": "EnjoyPBT",
@@ -5181,6 +5236,7 @@
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "biip",
+      "profile": "Cherry",
       "material": "PBT"
     },
     {
@@ -5205,6 +5261,13 @@
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "York Chan"
+    },
+    {
+      "id": "epbt-dolch-ansi",
+      "name": "ePBT Dolch ANSI",
+      "manufacturer": "EnjoyPBT",
+      "brand": "EnjoyPBT",
+      "material": "PBT"
     },
     {
       "id": "epbt-dolch-teal",
@@ -5256,7 +5319,8 @@
       "name": "ePBT Fall",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Tweec"
+      "designer": "Tweec",
+      "profile": "Cherry"
     },
     {
       "id": "epbt-firearm",
@@ -5642,6 +5706,14 @@
       "designer": "ertisan"
     },
     {
+      "id": "epbt-spectrum",
+      "name": "ePBT Spectrum",
+      "manufacturer": "EnjoyPBT",
+      "brand": "EnjoyPBT",
+      "designer": "Enjoy",
+      "material": "PBT"
+    },
+    {
       "id": "epbt-submerged",
       "name": "ePBT Submerged",
       "manufacturer": "EnjoyPBT",
@@ -5653,7 +5725,8 @@
       "name": "ePBT Superstar",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "marshmellohs"
+      "designer": "marshmellohs",
+      "profile": "Cherry"
     },
     {
       "id": "epbt-ta-origins",
@@ -5732,7 +5805,8 @@
       "name": "ePBT Witch",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Coquelox18"
+      "designer": "Coquelox18",
+      "profile": "Cherry"
     },
     {
       "id": "epbt-wraith-dark",
@@ -5764,7 +5838,8 @@
       "name": "ePBT Yukihana",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Chuttau"
+      "designer": "Chuttau",
+      "profile": "Cherry"
     },
     {
       "id": "epomaker-aegissil",
@@ -6079,7 +6154,9 @@
       "name": "Geekark Frost",
       "manufacturer": "Geekark",
       "brand": "Geekark",
-      "designer": "Protozoa"
+      "designer": "Protozoa",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "geekark-lancelot",
@@ -6989,14 +7066,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-black-on-white",
-      "name": "GMK Black on White",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-black-snail",
       "name": "GMK Black Snail",
       "manufacturer": "GMK",
@@ -7271,6 +7340,15 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "lewisflude",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
+      "id": "gmk-british-racing-green-r2-5",
+      "name": "GMK British Racing Green R2.5",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "Lewis Flude",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8140,6 +8218,14 @@
       "material": "ABS"
     },
     {
+      "id": "gmk-cyl-hammerhead-small-batch",
+      "name": "GMK CYL Hammerhead Small Batch",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
       "id": "gmk-cyl-hatsune-miku",
       "name": "GMK CYL Hatsune Miku",
       "manufacturer": "GMK",
@@ -8950,6 +9036,15 @@
       "material": "ABS"
     },
     {
+      "id": "gmk-dualshot-r2-accent-kit",
+      "name": "GMK Dualshot R2 Accent Kit",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "Omnitype",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
       "id": "gmk-dune",
       "name": "GMK Dune",
       "manufacturer": "GMK",
@@ -9071,6 +9166,14 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "S3Lq",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
+      "id": "gmk-evil-dolch-the-split",
+      "name": "GMK Evil Dolch The Split",
+      "manufacturer": "GMK",
+      "brand": "GMK",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11200,14 +11303,6 @@
     {
       "id": "gmk-mtnu-wob",
       "name": "GMK MTNU WoB",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "gmk-mtnu-wob-white-on-black",
-      "name": "GMK MTNU WoB (White on Black)",
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "MTNU",
@@ -14763,7 +14858,8 @@
       "name": "HSA Pink Powder",
       "manufacturer": "JTK",
       "brand": "JTK",
-      "profile": "Cherry",
+      "designer": "Buger",
+      "profile": "HSA",
       "material": "ABS"
     },
     {
@@ -14833,7 +14929,9 @@
       "name": "IFK Amalfi",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "NathanAlphaMan & Stef"
+      "designer": "NathanAlphaMan & Stef",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "ifk-blacklight",
@@ -14854,7 +14952,9 @@
       "name": "IFK Cabernet",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "TokyoExpress"
+      "designer": "TokyoExpress",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "ifk-classic-magic",
@@ -14890,7 +14990,9 @@
       "name": "IFK Doggie",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Nhils"
+      "designer": "Nhils",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "ifk-ez-mode",
@@ -14941,7 +15043,9 @@
       "name": "IFK Marshmallow",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "PRJKT_"
+      "designer": "PRJKT_",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "ifk-modern-hangul",
@@ -14993,7 +15097,9 @@
       "name": "IFK OG",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "The Key Company"
+      "designer": "The Key Company",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "ifk-pastel",
@@ -15095,12 +15201,62 @@
       "material": "PBT"
     },
     {
+      "id": "jcs-ansi-en-us",
+      "name": "JCS ANSI-EN/US",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio",
+      "material": "PBT"
+    },
+    {
       "id": "jcs-arabic",
       "name": "JCS Arabic",
       "brand": "JC Studio",
       "designer": "Masje & TheBloodyez",
       "profile": "Cherry",
       "material": "PBT"
+    },
+    {
+      "id": "jcs-cherry-1953",
+      "name": "JCS Cherry 1953",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "jcs-desko-black",
+      "name": "JCS Desko Black",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio",
+      "material": "PBT"
+    },
+    {
+      "id": "jcs-desko-color",
+      "name": "JCS Desko Color",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio",
+      "material": "PBT"
+    },
+    {
+      "id": "jcs-j-og",
+      "name": "JCS J-OG",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "jcs-mint-extension-kit",
+      "name": "JCS Mint Extension Kit",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio",
+      "material": "PBT"
+    },
+    {
+      "id": "jcs-runes",
+      "name": "JCS Runes",
+      "manufacturer": "JC Studio",
+      "brand": "JC Studio"
     },
     {
       "id": "jda-the-moon",
@@ -15927,6 +16083,14 @@
       "profile": "Cherry"
     },
     {
+      "id": "kap-midas-r2",
+      "name": "KAP Midas R2",
+      "manufacturer": "Keyreative",
+      "designer": "ManuKBs",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "kap-mv-classic",
       "name": "KAP MV Classic",
       "manufacturer": "Keyreative",
@@ -16000,7 +16164,15 @@
       "name": "KAP WoB",
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
+      "designer": "kapowaz",
       "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kat-alpha",
+      "name": "KAT Alpha",
+      "manufacturer": "Keyreative",
+      "profile": "KAT",
       "material": "PBT"
     },
     {
@@ -16519,6 +16691,12 @@
       "material": "PBT"
     },
     {
+      "id": "kbdfans-cherry-green-and-white-blank",
+      "name": "KBDfans Cherry Green and White Blank",
+      "brand": "KBDfans",
+      "profile": "Cherry"
+    },
+    {
       "id": "kbdfans-clear-2048-translucent-purple-polycarbonate",
       "name": "KBDfans Clear 2048 Translucent Purple Polycarbonate",
       "brand": "KBDfans",
@@ -16551,9 +16729,28 @@
       "profile": "DSA"
     },
     {
+      "id": "kbdfans-extended-2048-ec",
+      "name": "KBDfans Extended 2048 EC",
+      "brand": "KBDfans",
+      "designer": "biip"
+    },
+    {
+      "id": "kbdfans-ma-black",
+      "name": "KBDfans MA Black",
+      "brand": "KBDfans",
+      "profile": "MA"
+    },
+    {
       "id": "kbdfans-ma-white-cat",
       "name": "KBDfans MA White CAT",
       "brand": "KBDfans",
+      "material": "PBT"
+    },
+    {
+      "id": "kbdfans-osa-elegant-gray",
+      "name": "KBDfans OSA Elegant Gray",
+      "brand": "KBDfans",
+      "profile": "OSA",
       "material": "PBT"
     },
     {
@@ -18211,10 +18408,86 @@
       "designer": "NKay"
     },
     {
+      "id": "kfapbt-autumn-leaves",
+      "name": "kfaPBT Autumn Leaves",
+      "brand": "KeebsForAll",
+      "designer": "CaptainSterling & KeebsForAll",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-black-on-white",
+      "name": "kfaPBT Black on White",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-bow-english-japanese",
+      "name": "kfaPBT BoW English-Japanese",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-cardinal",
+      "name": "kfaPBT Cardinal",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-cherry-blank",
+      "name": "kfaPBT Cherry Blank",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "kfapbt-forest-watcher",
       "name": "kfaPBT Forest Watcher",
       "brand": "KeebsForAll",
       "designer": "CaptainSterling",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-moss",
+      "name": "kfaPBT Moss",
+      "brand": "KeebsForAll",
+      "designer": "KeebsForAll & Studio Bubby",
+      "profile": "Cherry"
+    },
+    {
+      "id": "kfapbt-pink-robin",
+      "name": "kfaPBT Pink Robin",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-steamboat-throwback",
+      "name": "kfaPBT Steamboat Throwback",
+      "brand": "KeebsForAll",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-sunny-side-up",
+      "name": "kfaPBT Sunny Side Up",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-white-on-black",
+      "name": "kfaPBT White on Black",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "kfapbt-white-on-navy",
+      "name": "kfaPBT White on Navy",
+      "brand": "KeebsForAll",
+      "profile": "Cherry",
       "material": "PBT"
     },
     {
@@ -18298,6 +18571,7 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "ankit & Geon",
+      "profile": "Cherry",
       "material": "ABS"
     },
     {
@@ -18374,6 +18648,7 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "Rassles",
+      "profile": "Cherry",
       "material": "ABS"
     },
     {
@@ -18504,6 +18779,13 @@
       "material": "ABS"
     },
     {
+      "id": "kkb-rainwob",
+      "name": "KKB RainWoB",
+      "manufacturer": "KeyKobo",
+      "brand": "KeyKobo",
+      "material": "ABS"
+    },
+    {
       "id": "kkb-retro-mixed-lights",
       "name": "KKB Retro Mixed Lights",
       "manufacturer": "KeyKobo",
@@ -18596,13 +18878,6 @@
       "material": "ABS"
     },
     {
-      "id": "kkb-white-on-black",
-      "name": "KKB White on Black",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "material": "ABS"
-    },
-    {
       "id": "kkb-wob-bow-rgb",
       "name": "KKB WoB/BoW/RGB",
       "manufacturer": "KeyKobo",
@@ -18670,6 +18945,22 @@
       "id": "maxkey-deep-blue",
       "name": "Maxkey Deep Blue",
       "brand": "Maxkey",
+      "profile": "SA",
+      "material": "ABS"
+    },
+    {
+      "id": "maxkey-sa-black",
+      "name": "MAXKEY SA Black",
+      "manufacturer": "MAXKEY",
+      "brand": "MAXKEY",
+      "profile": "SA",
+      "material": "ABS"
+    },
+    {
+      "id": "maxkey-sa-foundation",
+      "name": "MAXKEY SA Foundation",
+      "manufacturer": "MAXKEY",
+      "brand": "MAXKEY",
       "profile": "SA",
       "material": "ABS"
     },
@@ -18780,6 +19071,13 @@
     {
       "id": "melon-milk",
       "name": "Melon Milk",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "member-81",
+      "name": "Member 81",
+      "designer": "Elephant Studio",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -18938,6 +19236,41 @@
       "id": "mm-glazed-beige",
       "name": "MM Glazed Beige",
       "designer": "Totoro"
+    },
+    {
+      "id": "mode-anthracite",
+      "name": "Mode Anthracite",
+      "brand": "Mode",
+      "profile": "Cherry",
+      "material": "ABS/PBT"
+    },
+    {
+      "id": "mode-cacao",
+      "name": "Mode Cacao",
+      "brand": "Mode",
+      "profile": "Cherry",
+      "material": "ABS/PBT"
+    },
+    {
+      "id": "mode-lotus",
+      "name": "Mode Lotus",
+      "brand": "Mode",
+      "profile": "Cherry",
+      "material": "ABS/PBT"
+    },
+    {
+      "id": "mode-monterey",
+      "name": "Mode Monterey",
+      "brand": "Mode",
+      "profile": "Cherry",
+      "material": "ABS/PBT"
+    },
+    {
+      "id": "mode-obscura",
+      "name": "Mode Obscura",
+      "brand": "Mode",
+      "profile": "Cherry",
+      "material": "ABS/PBT"
     },
     {
       "id": "momoka-focus",
@@ -19622,7 +19955,9 @@
     {
       "id": "mv-synth",
       "name": "MV Synth",
-      "manufacturer": "KBM"
+      "manufacturer": "KBM",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "mw-02-015",
@@ -19688,6 +20023,14 @@
       "material": "PBT"
     },
     {
+      "id": "mw-alhambra-r2",
+      "name": "MW Alhambra R2",
+      "manufacturer": "Milkyway Keys",
+      "brand": "Milkyway Keys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "mw-alpenglow",
       "name": "MW Alpenglow",
       "manufacturer": "Milkyway Keys",
@@ -19718,7 +20061,8 @@
       "name": "MW Art Nouveau",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
-      "designer": "spikedsynapse"
+      "designer": "spikedsynapse",
+      "profile": "Cherry"
     },
     {
       "id": "mw-aschente",
@@ -19808,6 +20152,14 @@
       "designer": "acitrin & stellaidoscope & Mechs & Co"
     },
     {
+      "id": "mw-cosmic-diving",
+      "name": "MW Cosmic Diving",
+      "manufacturer": "Milkyway Keys",
+      "brand": "Milkyway Keys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "mw-cryptid",
       "name": "MW Cryptid",
       "manufacturer": "Milkyway Keys",
@@ -19871,7 +20223,8 @@
       "name": "MW Endpoint",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
-      "designer": "Minisofu"
+      "designer": "Minisofu",
+      "profile": "Cherry"
     },
     {
       "id": "mw-enka",
@@ -20001,6 +20354,7 @@
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Boba.Types",
+      "profile": "Cherry",
       "material": "ABS"
     },
     {
@@ -20017,6 +20371,15 @@
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Milkyway Keys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "mw-kaworu",
+      "name": "MW Kaworu",
+      "manufacturer": "Milkyway Keys",
+      "brand": "Milkyway Keys",
+      "designer": "Lazy Cat",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -20063,7 +20426,8 @@
       "name": "MW Lilith r3",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
-      "designer": "Milkyway Keys"
+      "designer": "Milkyway Keys",
+      "profile": "Cherry"
     },
     {
       "id": "mw-lord",
@@ -20117,14 +20481,16 @@
       "name": "MW Pancoon",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
-      "designer": "Fannie Wong"
+      "designer": "Fannie Wong",
+      "profile": "Cherry"
     },
     {
       "id": "mw-pavilion",
       "name": "MW Pavilion",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
-      "designer": "Cylent"
+      "designer": "Cylent",
+      "profile": "Cherry"
     },
     {
       "id": "mw-paws",
@@ -20219,7 +20585,8 @@
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Right So Works",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "mw-sogurt",
@@ -20344,6 +20711,24 @@
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "DontStealMyLolipop"
+    },
+    {
+      "id": "mw-x-prototypist-black-on-white",
+      "name": "MW x Prototypist Black on White",
+      "manufacturer": "Milkyway Keys",
+      "brand": "Milkyway Keys",
+      "designer": "Jae and Milkyway Keys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "mw-x-prototypist-white-on-black",
+      "name": "MW x Prototypist White on Black",
+      "manufacturer": "Milkyway Keys",
+      "brand": "Milkyway Keys",
+      "designer": "Jae and Milkyway Keys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "mw-zero-two-r2",
@@ -20599,7 +20984,7 @@
       "name": "NicePBT Growth (Auxo)",
       "manufacturer": "NicePBT",
       "brand": "CannonKeys",
-      "designer": "Izeri and Keebaad, this set consists of Cherry Profile, dye-sub and reverse dye-sub keycaps.",
+      "designer": "Izeri & Keebaad",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -20977,25 +21362,437 @@
       "material": "PBT"
     },
     {
+      "id": "osume-bloom",
+      "name": "osume bloom",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-bloom-novelty-kit",
+      "name": "osume bloom novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe",
+      "name": "osume café",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-extras-kit",
+      "name": "osume café extras kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-marshmallow",
+      "name": "osume café marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-marshmallow-extras-kit",
+      "name": "osume café marshmallow extras kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-marshmallow-novelty-kit",
+      "name": "osume café marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-novelty-kit",
+      "name": "osume café novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-rose",
+      "name": "osume café rose",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-rose-extras-kit",
+      "name": "osume café rose extras kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow",
+      "name": "osume café rose marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-extras-kit",
+      "name": "osume café rose marshmallow extras kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-rose-marshmallow-novelty-kit",
+      "name": "osume café rose marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-cafe-rose-novelty-kit",
+      "name": "osume café rose novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-dalgona",
+      "name": "osume dalgona",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-dalgona-marshmallow",
+      "name": "osume dalgona marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-dalgona-marshmallow-novelty-kit",
+      "name": "osume dalgona marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-dalgona-novelty-kit",
+      "name": "osume dalgona novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "osume-dusk",
       "name": "osume Dusk",
       "manufacturer": "osume",
       "brand": "osume",
-      "designer": "osume"
+      "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-dusk-novelty-kit",
+      "name": "osume dusk novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-horoscope",
+      "name": "osume horoscope",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-horoscope-novelty-kit",
+      "name": "osume horoscope novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-kanagawa",
+      "name": "osume kanagawa",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-kanagawa-novelty-kit",
+      "name": "osume kanagawa novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-konbini-blue",
+      "name": "osume konbini blue",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-konbini-blue-novelty-kit",
+      "name": "osume konbini blue novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-konbini-green",
+      "name": "osume konbini green",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-konbini-green-novelty-kit",
+      "name": "osume konbini green novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-lilac-dreams",
+      "name": "osume lilac dreams",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow",
+      "name": "osume lilac dreams marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-lilac-dreams-marshmallow-novelty-kit",
+      "name": "osume lilac dreams marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-lilac-dreams-novelty-kit",
+      "name": "osume lilac dreams novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-little-ghost",
+      "name": "osume little ghost",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-little-ghost-novelty-kit",
+      "name": "osume little ghost novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "osume-matcha",
       "name": "osume matcha",
       "manufacturer": "osume",
       "brand": "osume",
-      "designer": "osume"
+      "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-matcha-marshmallow",
+      "name": "osume matcha marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-matcha-marshmallow-novelty-kit",
+      "name": "osume matcha marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-matcha-novelty-kit",
+      "name": "osume matcha novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mocha",
+      "name": "osume mocha",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mocha-marshmallow",
+      "name": "osume mocha marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mocha-marshmallow-novelty-kit",
+      "name": "osume mocha marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mocha-novelty-kit",
+      "name": "osume mocha novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mochi",
+      "name": "osume mochi",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mochi-accent-kit",
+      "name": "osume mochi accent kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-momo-neko-marshmallow",
+      "name": "osume momo neko marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-momo-neko-marshmallow-novelty-kit",
+      "name": "osume momo neko marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mori",
+      "name": "osume mori",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-mori-novelty-kit",
+      "name": "osume mori novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-night-market",
+      "name": "osume night market",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-night-market-novelty-kit",
+      "name": "osume night market novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-rainy-day",
+      "name": "osume rainy day",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-rainy-day-novelty-kit",
+      "name": "osume rainy day novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "osume-sakura",
       "name": "osume sakura",
       "manufacturer": "osume",
       "brand": "osume",
-      "designer": "osume"
+      "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-sakura-novelty-kit",
+      "name": "osume sakura novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "osume-sakura-r2",
@@ -21005,11 +21802,101 @@
       "designer": "osume"
     },
     {
+      "id": "osume-strawberry-milk",
+      "name": "osume strawberry milk",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow",
+      "name": "osume strawberry milk marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-strawberry-milk-marshmallow-novelty-kit",
+      "name": "osume strawberry milk marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-strawberry-milk-novelty-kit",
+      "name": "osume strawberry milk novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "osume-tsukimi",
       "name": "osume tsukimi",
       "manufacturer": "osume",
       "brand": "osume",
-      "designer": "osume"
+      "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-tsukimi-novelty-kit",
+      "name": "osume tsukimi novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-winterglow",
+      "name": "osume winterglow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-winterglow-eve-novelty-kit",
+      "name": "osume winterglow eve novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-winterglow-novelty-kit",
+      "name": "osume winterglow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-year-of-the-horse",
+      "name": "osume year of the horse",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-year-of-the-horse-novelty-kit",
+      "name": "osume year of the horse novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-year-of-the-snake-novelty-kit",
+      "name": "osume year of the snake novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "osume-year-of-the-tiger",
@@ -21017,6 +21904,38 @@
       "manufacturer": "osume",
       "brand": "osume",
       "designer": "osume"
+    },
+    {
+      "id": "osume-zen",
+      "name": "osume zen",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-zen-marshmallow",
+      "name": "osume zen marshmallow",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-zen-marshmallow-novelty-kit",
+      "name": "osume zen marshmallow novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Marshmallow",
+      "material": "PBT"
+    },
+    {
+      "id": "osume-zen-novelty-kit",
+      "name": "osume zen novelty kit",
+      "manufacturer": "osume",
+      "brand": "osume",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "otc-9009",
@@ -21364,6 +22283,7 @@
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "Afresh",
+      "profile": "Cherry",
       "material": "ABS"
     },
     {
@@ -21506,6 +22426,15 @@
       "material": "ABS"
     },
     {
+      "id": "pbtfans-bank-account",
+      "name": "PBTfans Bank Account",
+      "manufacturer": "PBTfans",
+      "brand": "PBTfans",
+      "designer": "Slattt",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "pbtfans-basic-weeb",
       "name": "PBTfans Basic Weeb",
       "manufacturer": "PBTfans",
@@ -21557,15 +22486,6 @@
       "material": "PBT"
     },
     {
-      "id": "pbtfans-black-on-white-bow",
-      "name": "PBTfans Black on White (BoW)",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "KBDfans",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "pbtfans-block-game",
       "name": "PBTfans Block Game",
       "manufacturer": "PBTfans",
@@ -21593,6 +22513,7 @@
       "name": "PBTfans BOW",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
+      "designer": "KBDfans",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -21695,7 +22616,9 @@
       "name": "PBTfans Classic Gray",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "balance & Blamby"
+      "designer": "balance & Blamby",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "pbtfans-confettis",
@@ -22008,6 +22931,14 @@
       "material": "ABS"
     },
     {
+      "id": "pbtfans-klein-blue-r2",
+      "name": "PBTfans Klein Blue R2",
+      "manufacturer": "PBTfans",
+      "brand": "PBTfans",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
       "id": "pbtfans-klein-blue-r3",
       "name": "PBTfans Klein Blue R3",
       "manufacturer": "PBTfans",
@@ -22079,7 +23010,9 @@
       "name": "PBTfans Memphis98",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "H3llc4t"
+      "designer": "H3llc4t",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "pbtfans-mischief",
@@ -22615,7 +23548,9 @@
       "name": "PBTfans Subarashī",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "balance"
+      "designer": "balance",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "pbtfans-sugar-rush",
@@ -22797,15 +23732,6 @@
       "material": "PBT"
     },
     {
-      "id": "pbtfans-white-on-black-wob",
-      "name": "PBTfans White on Black (WoB)",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "KBDfans",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "pbtfans-window-view",
       "name": "PBTfans Window View",
       "manufacturer": "PBTfans",
@@ -22819,6 +23745,7 @@
       "name": "PBTfans WOB",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
+      "designer": "KBDfans",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -23020,6 +23947,7 @@
     {
       "id": "sa-a-history-of-violets",
       "name": "SA A History of Violets",
+      "manufacturer": "Signature Plastics",
       "designer": "Piperaceae",
       "profile": "SA",
       "material": "ABS"
@@ -23118,6 +24046,7 @@
     {
       "id": "sa-bubble",
       "name": "SA Bubble",
+      "manufacturer": "Signature Plastics",
       "designer": "Yayoi",
       "profile": "SA"
     },
@@ -23992,6 +24921,12 @@
       "material": "ABS"
     },
     {
+      "id": "sikakeyb-two-tone-green-and-white",
+      "name": "Sikakeyb Two-Tone Green and White",
+      "brand": "Sikakeyb",
+      "material": "PBT"
+    },
+    {
       "id": "sl-pbt-cipher",
       "name": "SL PBT Cipher",
       "designer": "switchlab",
@@ -24317,6 +25252,22 @@
       "manufacturer": "Swagkeys",
       "brand": "Swagkeys",
       "designer": "Mugen"
+    },
+    {
+      "id": "swg-white-on-black-abs",
+      "name": "SWG White on Black ABS",
+      "manufacturer": "Swagkeys",
+      "brand": "Swagkeys",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
+      "id": "swg-wild",
+      "name": "SWG Wild",
+      "manufacturer": "Swagkeys",
+      "brand": "Swagkeys",
+      "profile": "Cherry",
+      "material": "ABS/PBT"
     },
     {
       "id": "tai-hao-alps-white-on-black",
@@ -25166,6 +26117,15 @@
       "material": "PBT"
     },
     {
+      "id": "tut-lofi",
+      "name": "TUT Lofi",
+      "manufacturer": "TutKeys",
+      "brand": "TutKeys",
+      "designer": "Mecha",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    {
       "id": "tut-montage",
       "name": "TUT Montage",
       "manufacturer": "TutKeys",
@@ -25435,6 +26395,14 @@
       "material": "ABS"
     },
     {
+      "id": "winmix-sa-chalk",
+      "name": "WINMIX SA Chalk",
+      "manufacturer": "WINMIX",
+      "brand": "WINMIX",
+      "profile": "SA",
+      "material": "PBT"
+    },
+    {
       "id": "work-louder-wrk",
       "name": "Work Louder Wrk.",
       "designer": "Biip"
@@ -25548,6 +26516,15 @@
       "manufacturer": "Wuque Studio",
       "brand": "Wuque Studio",
       "designer": "CaptainSterling",
+      "material": "PBT"
+    },
+    {
+      "id": "ws-gr-irish",
+      "name": "WS GR Irish",
+      "manufacturer": "Wuque Studio",
+      "brand": "Wuque Studio",
+      "designer": "Shipkie",
+      "profile": "Cherry",
       "material": "PBT"
     },
     {

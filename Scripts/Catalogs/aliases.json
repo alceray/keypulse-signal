@@ -467,7 +467,8 @@
     {
       "canonical": "Mode",
       "aliases": [
-        "MODE"
+        "MODE",
+        "Mode Designs"
       ]
     },
     {
@@ -874,6 +875,10 @@
     },
     {
       "canonical": "ADA",
+      "aliases": []
+    },
+    {
+      "canonical": "Marshmallow",
       "aliases": []
     }
   ],

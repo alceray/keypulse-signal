@@ -531,6 +531,56 @@ Test-Case 'Rounds, joiners, and accents match however a store writes them' {
     # Source identities hash the published name, so existing bindings must not move.
     Assert ((Get-CatalogMatchName 'Switch Example 2' -SourceIdentity) -cne (Get-CatalogMatchName 'Switch Example R2' -SourceIdentity)) 'Round folding reached a source identity.'
 }
+Test-Case 'Colorway abbreviations match whole names without changing identities' {
+    foreach ($pair in @(@('KKB WoB', 'KeyKobo White on Black'), @('PBTfans BoW', 'PBTfans Black on White (BoW)'),
+            @('GMK MTNU WoB', 'GMK MTNU WoB (White on Black)'), @('Keychron BoW', 'Keychron Black-on-White - BoW'),
+            @('GMK WoB R2', 'GMK White on Black (WoB) R2'))) {
+        Assert ((Get-CatalogMatchName $pair[0]) -ceq (Get-CatalogMatchName $pair[1])) 'Expanded colorway failed to match.'
+    }
+    foreach ($pair in @(@('GMK WoB', 'GMK BoW'), @('GMK WoB', 'KKB WoB'), @('GMK WoB', 'GMK MTNU WoB'),
+            @('GMK WoB R2', 'GMK White on Black R3'), @('GMK WoB', 'GMK WoB Addon'), @('KKB RainBoW', 'KKB RainWoB'))) {
+        Assert ((Get-CatalogMatchName $pair[0]) -cne (Get-CatalogMatchName $pair[1])) 'A meaningful product distinction was lost.'
+    }
+    Assert ((Get-CatalogMatchName 'RainBoW') -ceq 'rainbow') 'An abbreviation inside a model name was expanded.'
+    Assert ((Get-CatalogMatchName 'GMK WoB' -SourceIdentity) -cne (Get-CatalogMatchName 'GMK White on Black' -SourceIdentity)) 'Colorway folding reached source identities.'
+}
+Test-Case 'New stores preserve kit identities, profiles, and production roles' {
+    $product = [ordered]@{ id = 1; title = 'matcha marshmallow keycaps'; handle = 'matcha-marshmallow'; vendor = 'osume'; body_html = ''; product_type = 'marshmallow keycaps'; variants = @() }
+    $record = Convert-CatalogProduct $product 'osume'
+    Assert ($record.entry.name -ceq 'osume matcha marshmallow' -and $record.entry.profile -ceq 'Marshmallow') 'Osume lost its brand or distinct profile.'
+    $product.title = 'matcha novelty kit'
+    $record = Convert-CatalogProduct $product 'osume'
+    Assert ($record.entry.name -ceq 'osume matcha novelty kit' -and -not $record.excluded) 'A named add-on was collapsed or excluded.'
+    $product.title = '(In Stock) GMK CYL Example R2 Keyset'
+    $product.vendor = 'proto[Typist] Keyboards'
+    $record = Convert-CatalogProduct $product 'prototypist'
+    Assert ($record.entry.name -ceq 'GMK CYL Example R2' -and -not $record.entry.Contains('brand')) 'Stock wording or retailer became product identity.'
+    $product.title = '(In Stock) KAM Soda Squid Deskmats'
+    $record = Convert-CatalogProduct $product 'prototypist'
+    Assert ($record.excluded) 'A deskmat-only listing entered the keycap catalog.'
+    $product.title = '(In Stock) Infinikey Marshmallow & Deskmats'
+    $product.body_html = '<p>Manufactured by Infinikey.</p>'
+    $product.variants = @([ordered]@{ title = 'Base Kit' }, [ordered]@{ title = 'Deskmat' })
+    $record = Convert-CatalogProduct $product 'prototypist'
+    Assert ($record.entry.name -ceq 'Infinikey Marshmallow' -and -not $record.excluded) 'A keyset with optional deskmat was lost.'
+    Assert ($record.entry.manufacturer -ceq 'Infinikey' -and $record.notes -match 'Base Kit; Deskmat') 'Maker spelling or kit options were lost.'
+    $product.title = '(In Stock) KAM Sewing Tin'
+    $product.body_html = '<p>Manufacturer minimums are based on key counts.</p>'
+    $record = Convert-CatalogProduct $product 'prototypist'
+    Assert (-not $record.entry.Contains('manufacturer')) 'MOQ prose became a manufacturer.'
+    $product.body_html = '<p>Manufactured by Signature Plastics in the USA.</p>'
+    $record = Convert-CatalogProduct $product 'prototypist'
+    Assert ($record.entry.manufacturer -ceq 'Signature Plastics') 'Country suffix became part of the maker name.'
+    $product.title = 'Anthracite Keycaps'
+    $product.body_html = '<ul><li>Cherry Profile</li><li>ABS &amp; PBT material blend tuned for sound.</li></ul>'
+    $record = Convert-CatalogProduct $product 'mode'
+    Assert ($record.entry.name -ceq 'Mode Anthracite' -and $record.entry.material -ceq 'ABS/PBT' -and $record.entry.profile -ceq 'Cherry') 'Mode blend specifications were lost.'
+    Assert (-not $record.entry.Contains('manufacturer')) 'Mode was assigned an unverified manufacturer.'
+    $product.title = 'KAM Soda Squid'
+    $product.vendor = 'KeebsForAll'
+    $record = Convert-CatalogProduct $product 'keebsforall'
+    Assert (-not $record.entry.Contains('brand')) 'A multibrand store became the product brand.'
+}
 Test-Case 'Catalog scripts stay ASCII so Windows PowerShell reads them as written' {
     # Without a byte order mark, Windows PowerShell decodes a script in the ANSI code page,
     # where an em dash contains a closing curly quote that ends a string early.
