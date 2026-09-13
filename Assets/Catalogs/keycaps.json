@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 26,
-  "totalCount": 3349,
+  "catalogVersion": 29,
+  "totalCount": 2745,
   "entries": [
     {
       "id": "80retros-1990s-blush",
@@ -63,13 +63,6 @@
     {
       "id": "after-the-rain-r2-cherry-profile",
       "name": "After the Rain R2 Cherry profile",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "akaps-surge",
-      "name": "AKAPS Surge",
-      "designer": "aKirop",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -491,13 +484,6 @@
       "material": "PBT"
     },
     {
-      "id": "bolo-unicorn",
-      "name": "BOLO Unicorn",
-      "designer": "Fannie Wong",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "cannoncaps-407",
       "name": "CannonCaps 407",
       "manufacturer": "CannonCaps",
@@ -643,21 +629,10 @@
       "brand": "CannonKeys"
     },
     {
-      "id": "cap-bauhaus",
-      "name": "CAP Bauhaus",
-      "designer": "CaptusKeys",
-      "material": "PBT"
-    },
-    {
       "id": "capybaras-daily-lifer-cherry-profile",
       "name": "Capybaras daily lifer Cherry Profile",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "cc-r-r",
-      "name": "CC R&R",
-      "designer": "Rensuya"
     },
     {
       "id": "cc-zero",
@@ -680,27 +655,9 @@
       "material": "Ceramic"
     },
     {
-      "id": "cherry-alert-ekg",
-      "name": "Cherry Alert EKG",
-      "designer": "spingo",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-aluvia",
       "name": "Cherry Aluvia",
       "designer": "Olivia",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-aperture-laboratories",
-      "name": "Cherry Aperture Laboratories",
-      "designer": "LOTA",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-art-deco",
-      "name": "Cherry Art Deco",
-      "designer": "Beesley",
       "profile": "Cherry"
     },
     {
@@ -710,38 +667,14 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-blue-velvet",
-      "name": "Cherry Blue Velvet",
-      "designer": "actionwagon",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-bow-pbt",
       "name": "Cherry BoW PBT",
       "designer": "Latenpow",
       "profile": "Cherry"
     },
     {
-      "id": "cherry-bubble-tea",
-      "name": "Cherry Bubble Tea",
-      "designer": "Hongoo",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-c64-remake",
-      "name": "Cherry C64 Remake",
-      "designer": "ELE.WORKS",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-charcoal",
       "name": "Cherry Charcoal",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-cities-steet",
-      "name": "Cherry Cities Steet",
-      "designer": "Tim.TheNeonFrog",
       "profile": "Cherry"
     },
     {
@@ -757,34 +690,9 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-code-keycaps",
-      "name": "Cherry code.keycaps",
-      "designer": "hackr",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-dark-convenant",
       "name": "Cherry Dark Convenant",
       "designer": "01NEM",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-drama",
-      "name": "Cherry Drama",
-      "designer": "Click Clack",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "cherry-ee119",
-      "name": "Cherry EE119",
-      "designer": "P.P",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-eye-of-horus",
-      "name": "Cherry Eye of Horus",
-      "designer": "CHAOSERA",
       "profile": "Cherry"
     },
     {
@@ -811,19 +719,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-forensic",
-      "name": "Cherry Forensic",
-      "designer": "CraftingKeyboards",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "cherry-frostbite",
-      "name": "Cherry Frostbite",
-      "designer": "Potatoo",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-game-1989-candy",
       "name": "Cherry Game 1989 Candy",
       "designer": "80Retros",
@@ -838,22 +733,9 @@
       "material": "PBT"
     },
     {
-      "id": "cherry-graydient",
-      "name": "Cherry Graydient",
-      "designer": "bobasweatandtears",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-halloween-party",
       "name": "Cherry Halloween Party",
       "designer": "NingWang",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "cherry-have-pride",
-      "name": "Cherry Have Pride",
-      "designer": "Amelia",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -875,13 +757,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-keyboard-science-dasheng",
-      "name": "Cherry Keyboard Science Dasheng",
-      "designer": "Lazy Cat Studio",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "cherry-keysterine",
       "name": "Cherry Keysterine",
       "designer": "MiTo",
@@ -894,30 +769,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-klee",
-      "name": "Cherry Klee",
-      "designer": "Kiki & AiheyStudio",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-layout",
-      "name": "Cherry Layout",
-      "designer": "ADCO_CO",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-light-dark-alchemist",
-      "name": "Cherry Light & Dark Alchemist",
-      "designer": "muyu",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-longest-night",
-      "name": "Cherry Longest Night",
-      "designer": "Poaetce",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-magical-candy",
       "name": "Cherry Magical Candy",
       "designer": "NingWang",
@@ -925,28 +776,9 @@
       "material": "PBT"
     },
     {
-      "id": "cherry-magindara",
-      "name": "Cherry Magindara",
-      "designer": "adobau",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-maharaja",
-      "name": "Cherry Maharaja",
-      "designer": "Fredington",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "cherry-milkshake",
       "name": "Cherry Milkshake",
       "designer": "biip",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-mv-eraser",
-      "name": "Cherry MV Eraser",
-      "designer": "maxvoltar",
       "profile": "Cherry"
     },
     {
@@ -962,19 +794,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-mv-turbo",
-      "name": "Cherry MV Turbo",
-      "designer": "maxvoltar",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-mystic-dao",
-      "name": "Cherry Mystic Dao",
-      "designer": "AiheyStudio",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "cherry-no-one",
       "name": "Cherry No One",
       "designer": "TECSEE",
@@ -987,12 +806,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-o-k-ii",
-      "name": "Cherry O.K. II",
-      "designer": "hangoo",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-olivia",
       "name": "Cherry Olivia",
       "profile": "Cherry"
@@ -1000,18 +813,6 @@
     {
       "id": "cherry-pbow",
       "name": "Cherry PBoW",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-pbt-rex",
-      "name": "Cherry PBT Rex",
-      "designer": "bobasweatandtears",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-pbt-sun-warrior",
-      "name": "Cherry PBT Sun Warrior",
-      "designer": "littletokyokeebs",
       "profile": "Cherry"
     },
     {
@@ -1045,32 +846,14 @@
       "profile": "Cherry"
     },
     {
-      "id": "cherry-sacrosanct",
-      "name": "Cherry Sacrosanct",
-      "designer": "en_tr0P",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-sage",
       "name": "Cherry Sage",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-scannable",
-      "name": "Cherry Scannable",
-      "designer": "its.ae",
       "profile": "Cherry"
     },
     {
       "id": "cherry-series-00",
       "name": "Cherry Series 00",
       "designer": "loop & Cubic & Isshin",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-silence-death",
-      "name": "Cherry Silence = Death",
-      "designer": "Mark The Weeb",
       "profile": "Cherry"
     },
     {
@@ -1081,39 +864,15 @@
       "material": "PBT"
     },
     {
-      "id": "cherry-starlight-dream",
-      "name": "Cherry Starlight Dream",
-      "designer": "Spritu",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-starwalk-pbt",
       "name": "Cherry Starwalk PBT",
       "designer": "Latenpow",
       "profile": "Cherry"
     },
     {
-      "id": "cherry-straya",
-      "name": "Cherry Straya",
-      "designer": "bobasweatandtears",
-      "profile": "Cherry"
-    },
-    {
       "id": "cherry-taro",
       "name": "Cherry Taro",
       "designer": "PWade3.",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-the-silmarillion",
-      "name": "Cherry The Silmarillion",
-      "designer": "CHAOSERA",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-thunder-neon-girl",
-      "name": "Cherry Thunder Neon Girl",
-      "designer": "E-ONE",
       "profile": "Cherry"
     },
     {
@@ -1126,19 +885,6 @@
       "id": "cherry-tyche-one",
       "name": "Cherry Tyche One",
       "designer": "Chaucer",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "cherry-venombite",
-      "name": "Cherry VenomBite",
-      "designer": "c0smo225",
-      "profile": "Cherry"
-    },
-    {
-      "id": "cherry-viking",
-      "name": "Cherry Viking",
-      "designer": "ALAMI LAB & WUkds",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -1161,13 +907,6 @@
       "name": "Cherry WoB PBT",
       "designer": "Latenpow",
       "profile": "Cherry"
-    },
-    {
-      "id": "cherry-wolf-warrior",
-      "name": "Cherry Wolf Warrior",
-      "designer": "Berserkeys",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "chilkey-dark-blush",
@@ -1278,15 +1017,6 @@
       "manufacturer": "Hammerworks",
       "brand": "CRP",
       "designer": "BUGER.WORK",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "crp-classic-hangul",
-      "name": "CRP Classic Hangul",
-      "manufacturer": "Hammerworks",
-      "brand": "CRP",
-      "designer": "reeeyouuuuu",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -1637,14 +1367,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-6u-spacebars",
-      "name": "DCS 6u Spacebars",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "ankit",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-9009",
       "name": "DCS 9009",
       "manufacturer": "Signature Plastics",
@@ -1741,22 +1463,6 @@
       "material": "PBT"
     },
     {
-      "id": "dcs-alps-rectifier",
-      "name": "DCS Alps Rectifier",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Tyson",
-      "profile": "DCS"
-    },
-    {
-      "id": "dcs-alps-smrtaleck",
-      "name": "DCS Alps SMRTAleck",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Piperaceae",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-alps-wob",
       "name": "DCS Alps WoB",
       "manufacturer": "Signature Plastics",
@@ -1806,14 +1512,6 @@
       "designer": "Boku, DN",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-battleship-addon-kits",
-      "name": "DCS Battleship Addon Kits",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "BOWL",
-      "profile": "DCS"
     },
     {
       "id": "dcs-blanks",
@@ -1896,14 +1594,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-cardio",
-      "name": "DCS Cardio",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Tanghus",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-ccng",
       "name": "DCS CCNG",
       "manufacturer": "Signature Plastics",
@@ -1957,14 +1647,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-classic-orange",
-      "name": "DCS Classic Orange",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "arq1999",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-clown",
       "name": "DCS Clown",
       "manufacturer": "Signature Plastics",
@@ -2016,14 +1698,6 @@
       "designer": "Gupgup & YoonELEC",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-cyan-alert",
-      "name": "DCS Cyan Alert",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "cartersrush",
-      "profile": "DCS"
     },
     {
       "id": "dcs-dark-sky",
@@ -2178,14 +1852,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-green-tea-r3",
-      "name": "DCS Green Tea r3",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "numiru & Aiwanei",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-greengul",
       "name": "DCS Greengul",
       "manufacturer": "Signature Plastics",
@@ -2202,14 +1868,6 @@
       "designer": "Sax_______",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-hacked",
-      "name": "DCS Hacked",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Rheinfo",
-      "profile": "DCS"
     },
     {
       "id": "dcs-handarbeit",
@@ -2300,22 +1958,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-islander",
-      "name": "DCS Islander",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "zhol",
-      "profile": "DCS"
-    },
-    {
-      "id": "dcs-jewel-of-the-jungle-40s",
-      "name": "DCS Jewel of the Jungle 40s",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Swear_Wolf",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-kinesis-pbt-blanks",
       "name": "DCS Kinesis PBT Blanks",
       "manufacturer": "Signature Plastics",
@@ -2342,15 +1984,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-korean-beige-alps-plus-mx",
-      "name": "DCS Korean Beige (Alps + MX)",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "khai",
-      "profile": "DCS",
-      "material": "PBT"
-    },
-    {
       "id": "dcs-lae-addon-little-enter",
       "name": "DCS LAE Addon (Little Enter)",
       "manufacturer": "Signature Plastics",
@@ -2367,14 +2000,6 @@
       "designer": "Laminar",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-led-keys",
-      "name": "DCS LED Keys",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "mul7i",
-      "profile": "DCS"
     },
     {
       "id": "dcs-lifebeats-r1",
@@ -2395,23 +2020,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-lil-lav-ic-v1",
-      "name": "DCS Lil' Lav (ic v1)",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Piperaceae",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
-      "id": "dcs-lil-lav-ic-v2-0",
-      "name": "DCS Lil' Lav (ic v2.0)",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Piperaceae",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-lily",
       "name": "DCS Lily",
       "manufacturer": "Signature Plastics",
@@ -2419,14 +2027,6 @@
       "designer": "techkeys",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-mermaid",
-      "name": "DCS Mermaid",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "nebulazy",
-      "profile": "DCS"
     },
     {
       "id": "dcs-miami",
@@ -2506,15 +2106,6 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "Aiwanei",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
-      "id": "dcs-nights",
-      "name": "DCS Nights",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Kaptain Mike",
       "profile": "DCS",
       "material": "ABS"
     },
@@ -2617,15 +2208,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-pbt-pastel-cadet",
-      "name": "DCS PBT Pastel Cadet",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Piperaceae",
-      "profile": "DCS",
-      "material": "PBT"
-    },
-    {
       "id": "dcs-peppabeit",
       "name": "DCS Peppabeit",
       "manufacturer": "Signature Plastics",
@@ -2652,15 +2234,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-pink-alert-2022",
-      "name": "DCS Pink Alert (2022)",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Alessio01",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
       "id": "dcs-polch",
       "name": "DCS Polch",
       "manufacturer": "Signature Plastics",
@@ -2670,14 +2243,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-polch-molch",
-      "name": "DCS Polch & Molch",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Toro Studios",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-purple-rain",
       "name": "DCS Purple Rain",
       "manufacturer": "Signature Plastics",
@@ -2685,14 +2250,6 @@
       "designer": "Trashman",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-quack",
-      "name": "DCS Quack",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "JJ48_24 & logo4poop",
-      "profile": "DCS"
     },
     {
       "id": "dcs-r4-accent-kits",
@@ -2809,15 +2366,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-rouge-alerte",
-      "name": "DCS Rouge Alerte",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "azhdar",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
       "id": "dcs-round-1",
       "name": "DCS Round 1",
       "manufacturer": "Signature Plastics",
@@ -2879,14 +2427,6 @@
       "designer": "Piperaceae",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-smrt-colemak-vim-addons",
-      "name": "DCS SMRT Colemak & Vim Addons",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "BodyOrgan",
-      "profile": "DCS"
     },
     {
       "id": "dcs-soju",
@@ -3040,14 +2580,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-ulivi",
-      "name": "DCS Ulivi",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Piperaceae",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-unicorn",
       "name": "DCS Unicorn",
       "manufacturer": "Signature Plastics",
@@ -3055,14 +2587,6 @@
       "designer": "Faye",
       "profile": "DCS",
       "material": "ABS"
-    },
-    {
-      "id": "dcs-unwyse",
-      "name": "DCS UnWyse",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Rhadamanthus",
-      "profile": "DCS"
     },
     {
       "id": "dcs-valentine-r1",
@@ -3088,15 +2612,6 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "mcmcmc",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
-      "id": "dcs-violet-on-cream",
-      "name": "DCS Violet on Cream",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "paulgali & mcmcmc",
       "profile": "DCS",
       "material": "ABS"
     },
@@ -3144,14 +2659,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-wyse-compatibility-2024",
-      "name": "DCS WYSE Compatibility 2024",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Jampot_298",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-wyse-moogle-kit-gh",
       "name": "DCS Wyse Moogle Kit GH",
       "manufacturer": "Signature Plastics",
@@ -3169,29 +2676,11 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-yellowed",
-      "name": "DCS Yellowed",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Preston Walz",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
       "id": "dcs-yogurt",
       "name": "DCS Yogurt",
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "pogurtwogurt",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
-      "id": "dcs-yue-lao",
-      "name": "DCS Yue Lao",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "revethewolf",
       "profile": "DCS",
       "material": "ABS"
     },
@@ -3202,24 +2691,6 @@
       "brand": "Signature Plastics",
       "designer": "T0mb3ry",
       "profile": "DCS",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-300-apm",
-      "name": "DCX 300 APM",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-711-stawbogurt",
-      "name": "DCX 711 Stawbogurt",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
       "material": "ABS"
     },
     {
@@ -3234,15 +2705,6 @@
     {
       "id": "dcx-amethyst",
       "name": "DCX Amethyst",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-arcade",
-      "name": "DCX Arcade",
       "manufacturer": "Drop",
       "brand": "Drop",
       "designer": "Drop",
@@ -3279,15 +2741,6 @@
     {
       "id": "dcx-citrine",
       "name": "DCX Citrine",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-confectionery",
-      "name": "DCX Confectionery",
       "manufacturer": "Drop",
       "brand": "Drop",
       "designer": "Drop",
@@ -3439,26 +2892,8 @@
       "material": "ABS"
     },
     {
-      "id": "dcx-peggy",
-      "name": "DCX Peggy",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
       "id": "dcx-permafrost",
       "name": "DCX Permafrost",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-powertool",
-      "name": "DCX Powertool",
       "manufacturer": "Drop",
       "brand": "Drop",
       "designer": "Drop",
@@ -3477,15 +2912,6 @@
     {
       "id": "dcx-sapphire",
       "name": "DCX Sapphire",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-seedless",
-      "name": "DCX Seedless",
       "manufacturer": "Drop",
       "brand": "Drop",
       "designer": "Drop",
@@ -3525,15 +2951,6 @@
       "manufacturer": "Drop",
       "brand": "Drop",
       "designer": "Ethan Schoonover",
-      "profile": "DCX",
-      "material": "ABS"
-    },
-    {
-      "id": "dcx-sweet-tart",
-      "name": "DCX Sweet Tart",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Drop",
       "profile": "DCX",
       "material": "ABS"
     },
@@ -3795,13 +3212,6 @@
       "designer": "fullstop studio"
     },
     {
-      "id": "dmk-kuriyama",
-      "name": "DMK Kuriyama",
-      "manufacturer": "Domikey",
-      "brand": "Domikey",
-      "designer": "PhantomKyubii"
-    },
-    {
       "id": "dmk-link-fire",
       "name": "DMK Link Fire",
       "manufacturer": "Domikey",
@@ -3816,15 +3226,6 @@
       "manufacturer": "Domikey",
       "brand": "Domikey",
       "designer": "Zero-G Studio",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "dmk-nebula",
-      "name": "DMK Nebula",
-      "manufacturer": "Domikey",
-      "brand": "Domikey",
-      "designer": "MOYUKEY",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -3888,15 +3289,6 @@
       "manufacturer": "Domikey",
       "brand": "Domikey",
       "designer": "iNKY",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "dmk-pbt-retro-no-redraw-r2",
-      "name": "DMK PBT Retro No Redraw r2",
-      "manufacturer": "Domikey",
-      "brand": "Domikey",
-      "designer": "HifiFox",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -4042,13 +3434,6 @@
       "material": "ABS"
     },
     {
-      "id": "dmk-whale-fall",
-      "name": "DMK Whale Fall",
-      "manufacturer": "Domikey",
-      "brand": "Domikey",
-      "designer": "Fancy-Chance"
-    },
-    {
       "id": "dmk-white-on-translucent-black",
       "name": "DMK White on Translucent Black",
       "manufacturer": "Domikey",
@@ -4087,19 +3472,6 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-abyss-hunter",
-      "name": "DSA Abyss Hunter",
-      "designer": "Exembe",
-      "profile": "DSA",
-      "material": "ABS"
-    },
-    {
-      "id": "dsa-alps",
-      "name": "DSA Alps",
-      "designer": "OhKeycaps",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-astrolokeys",
       "name": "DSA Astrolokeys",
       "designer": "sailorhg & cassidoo",
@@ -4120,12 +3492,6 @@
       "material": "PBT"
     },
     {
-      "id": "dsa-custard",
-      "name": "DSA Custard",
-      "designer": "GG-Bond",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-dark-magic-girl",
       "name": "DSA Dark Magic Girl",
       "designer": "Mintlodica",
@@ -4138,13 +3504,6 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-discovery",
-      "name": "DSA Discovery",
-      "designer": "japanitrat",
-      "profile": "DSA",
-      "material": "PBT"
-    },
-    {
       "id": "dsa-dn",
       "name": "DSA DN",
       "manufacturer": "Signature Plastics",
@@ -4154,37 +3513,10 @@
       "material": "ABS"
     },
     {
-      "id": "dsa-dr-yellow-40s",
-      "name": "DSA Dr Yellow 40s",
-      "designer": "madmax13",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-electronic-chaos",
-      "name": "DSA Electronic Chaos",
-      "designer": "Piperaceae",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-funky-duck",
-      "name": "DSA Funky Duck",
-      "designer": "vaaalbara",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-galaxy-class",
       "name": "DSA Galaxy Class",
       "designer": "Norbauer",
       "profile": "DSA"
-    },
-    {
-      "id": "dsa-gotham",
-      "name": "DSA Gotham",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "kapowaz",
-      "profile": "DSA",
-      "material": "ABS"
     },
     {
       "id": "dsa-granite",
@@ -4218,27 +3550,9 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-lantern",
-      "name": "DSA Lantern",
-      "designer": "Tamaki",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-latte",
-      "name": "DSA Latte",
-      "designer": "cafekeys",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-legacy",
       "name": "DSA Legacy",
       "designer": "MiTo",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-leviathan",
-      "name": "DSA Leviathan",
-      "designer": "OneCreativeMind & DrHigsby",
       "profile": "DSA"
     },
     {
@@ -4273,12 +3587,6 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-miami-dolch-r2",
-      "name": "DSA Miami Dolch r2",
-      "designer": "KBares",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-milkshake",
       "name": "DSA Milkshake",
       "designer": "biip",
@@ -4294,14 +3602,6 @@
       "id": "dsa-nineteen-thirty",
       "name": "DSA Nineteen Thirty",
       "designer": "Ulliam & Prkns",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-north",
-      "name": "DSA North",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "alexbarb",
       "profile": "DSA"
     },
     {
@@ -4343,12 +3643,6 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-saturn",
-      "name": "DSA Saturn",
-      "designer": "kapowaz",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-scientific",
       "name": "DSA Scientific",
       "designer": "voodoo6k",
@@ -4374,12 +3668,6 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-season-of-the-witch",
-      "name": "DSA Season of the Witch",
-      "designer": "ctrl",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-skull-squadron",
       "name": "DSA Skull Squadron",
       "designer": "Matt3o",
@@ -4393,52 +3681,11 @@
       "profile": "DSA"
     },
     {
-      "id": "dsa-supergraphics",
-      "name": "DSA Supergraphics",
-      "designer": "BullRage",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-take-out",
-      "name": "DSA Take Out",
-      "designer": "meatsmoothies",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-the-midnight-channel",
-      "name": "DSA The Midnight Channel",
-      "designer": "dcanogi",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-vegas-nights-2019",
-      "name": "DSA Vegas Nights (2019)",
-      "designer": "Hedgey",
-      "profile": "DSA"
-    },
-    {
-      "id": "dsa-vegas-nights-2022",
-      "name": "DSA Vegas Nights (2022)",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Kokaloo",
-      "profile": "DSA"
-    },
-    {
       "id": "dsa-white-on-lilac",
       "name": "DSA White on Lilac",
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "halocantkb",
-      "profile": "DSA",
-      "material": "ABS"
-    },
-    {
-      "id": "dsa-windbreaker",
-      "name": "DSA Windbreaker",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "monkeysontoast",
       "profile": "DSA",
       "material": "ABS"
     },
@@ -4463,23 +3710,6 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "MikeTheTiger",
-      "profile": "DSS"
-    },
-    {
-      "id": "dss-4x4",
-      "name": "DSS 4x4",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Fredington",
-      "profile": "DSS",
-      "material": "ABS"
-    },
-    {
-      "id": "dss-6104",
-      "name": "DSS 6104",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Piperaceae",
       "profile": "DSS"
     },
     {
@@ -4529,23 +3759,6 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "acitrin",
-      "profile": "DSS"
-    },
-    {
-      "id": "dss-cipher",
-      "name": "DSS Cipher",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Ram",
-      "profile": "DSS",
-      "material": "ABS"
-    },
-    {
-      "id": "dss-cmypwade",
-      "name": "DSS CMYPWade",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "pwade3",
       "profile": "DSS"
     },
     {
@@ -4617,14 +3830,6 @@
       "profile": "DSS"
     },
     {
-      "id": "dss-lightcycle-r3vival",
-      "name": "DSS LightCycle R3VIVAL",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "evangs & Dingo_Seven",
-      "profile": "DSS"
-    },
-    {
       "id": "dss-lights-out-r2",
       "name": "DSS Lights-Out R2",
       "manufacturer": "Signature Plastics",
@@ -4639,14 +3844,6 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "SP_Will",
-      "profile": "DSS"
-    },
-    {
-      "id": "dss-mischief",
-      "name": "DSS Mischief",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "OJtheTiny",
       "profile": "DSS"
     },
     {
@@ -5049,20 +4246,6 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-antarctic-emperor",
-      "name": "ePBT Antarctic Emperor",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "AlternisDim42"
-    },
-    {
-      "id": "epbt-artificial",
-      "name": "ePBT Artificial",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "FaKe_VirTual"
-    },
-    {
       "id": "epbt-avilo",
       "name": "ePBT Avilo",
       "manufacturer": "EnjoyPBT",
@@ -5079,27 +4262,11 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-basic-standard",
-      "name": "ePBT Basic Standard",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Langelandia",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "epbt-be-the-one",
       "name": "ePBT Be The One",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "Zekth"
-    },
-    {
-      "id": "epbt-because-of-love",
-      "name": "ePBT Because of Love",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "DOGGGG"
     },
     {
       "id": "epbt-beige",
@@ -5155,20 +4322,6 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-blue-wisteria",
-      "name": "ePBT Blue Wisteria",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "PRJKT_"
-    },
-    {
-      "id": "epbt-bow-cyrillic",
-      "name": "ePBT BoW Cyrillic",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "nu_types"
-    },
-    {
       "id": "epbt-bow-hangul",
       "name": "ePBT BoW Hangul",
       "manufacturer": "EnjoyPBT",
@@ -5194,32 +4347,11 @@
       "designer": "MVKB"
     },
     {
-      "id": "epbt-chocomint",
-      "name": "ePBT Chocomint",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "shenshendei"
-    },
-    {
-      "id": "epbt-chromatica",
-      "name": "ePBT Chromatica",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "misononyan"
-    },
-    {
       "id": "epbt-classic-retro-cyrillic",
       "name": "ePBT Classic Retro Cyrillic",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "Eniigma"
-    },
-    {
-      "id": "epbt-cold-weapon",
-      "name": "ePBT Cold Weapon",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Bartley"
     },
     {
       "id": "epbt-cool-kids",
@@ -5249,13 +4381,6 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-deep-north",
-      "name": "ePBT Deep North",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "OJtheTiny"
-    },
-    {
       "id": "epbt-divine-plan",
       "name": "ePBT Divine Plan",
       "manufacturer": "EnjoyPBT",
@@ -5278,25 +4403,11 @@
       "material": "ABS"
     },
     {
-      "id": "epbt-dreamer",
-      "name": "ePBT Dreamer",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "vndytran"
-    },
-    {
       "id": "epbt-dreamscape",
       "name": "ePBT Dreamscape",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "tsoiab10"
-    },
-    {
-      "id": "epbt-ducklight",
-      "name": "ePBT DuckLight",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "JJ48_24 & logo4poop"
     },
     {
       "id": "epbt-duo",
@@ -5337,22 +4448,6 @@
       "designer": "SJC"
     },
     {
-      "id": "epbt-floe",
-      "name": "ePBT Floe",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "charli3b"
-    },
-    {
-      "id": "epbt-flower",
-      "name": "ePBT Flower",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "FamousKBD",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "epbt-fruit-chew",
       "name": "ePBT Fruit Chew",
       "manufacturer": "EnjoyPBT",
@@ -5376,20 +4471,6 @@
       "designer": "Biscuit",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "epbt-hemkund",
-      "name": "ePBT Hemkund",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Avijit"
-    },
-    {
-      "id": "epbt-inconceivable",
-      "name": "ePBT Inconceivable!",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "RosesAreRed7964"
     },
     {
       "id": "epbt-ivory",
@@ -5417,13 +4498,6 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-kon-momo-r2",
-      "name": "ePBT KON MOMO r2",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "York Chan"
-    },
-    {
       "id": "epbt-kuro-shiro-r2",
       "name": "ePBT Kuro/Shiro r2",
       "manufacturer": "EnjoyPBT",
@@ -5438,13 +4512,6 @@
       "designer": "gok"
     },
     {
-      "id": "epbt-langley",
-      "name": "ePBT Langley",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "keebibi"
-    },
-    {
       "id": "epbt-less-but-better",
       "name": "ePBT Less But Better",
       "manufacturer": "EnjoyPBT",
@@ -5453,68 +4520,12 @@
       "profile": "Cherry"
     },
     {
-      "id": "epbt-little-panda",
-      "name": "ePBT Little Panda",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "key_nes"
-    },
-    {
-      "id": "epbt-lucky-cat",
-      "name": "ePBT Lucky Cat",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "tomkatsuuu"
-    },
-    {
-      "id": "epbt-maras",
-      "name": "ePBT Maras",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "JSaintS"
-    },
-    {
-      "id": "epbt-mint",
-      "name": "ePBT Mint",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "NovaKB"
-    },
-    {
-      "id": "epbt-mirage",
-      "name": "ePBT Mirage",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Scott"
-    },
-    {
-      "id": "epbt-mochi",
-      "name": "ePBT Mochi",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Emiko Mochi"
-    },
-    {
       "id": "epbt-modernja",
       "name": "ePBT ModernJA",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "ai03",
       "material": "PBT"
-    },
-    {
-      "id": "epbt-musician",
-      "name": "ePBT Musician",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Scucka"
-    },
-    {
-      "id": "epbt-night-market",
-      "name": "ePBT Night Market",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "halocantkb"
     },
     {
       "id": "epbt-orange-russian",
@@ -5549,14 +4560,6 @@
       "material": "ABS"
     },
     {
-      "id": "epbt-project-67",
-      "name": "ePBT Project 67",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "SuperIO",
-      "profile": "Cherry"
-    },
-    {
       "id": "epbt-ps-mac",
       "name": "ePBT PS MAC",
       "manufacturer": "EnjoyPBT",
@@ -5588,14 +4591,6 @@
       "designer": "Plopmk"
     },
     {
-      "id": "epbt-real",
-      "name": "ePBT Real",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "vishydesigns",
-      "profile": "Cherry"
-    },
-    {
       "id": "epbt-rin",
       "name": "ePBT Rin",
       "manufacturer": "EnjoyPBT",
@@ -5619,20 +4614,6 @@
       "designer": "Fredington",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "epbt-secret-agent",
-      "name": "ePBT Secret Agent",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "syntx"
-    },
-    {
-      "id": "epbt-sidewalk-chalk",
-      "name": "ePBT Sidewalk Chalk",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "louie_"
     },
     {
       "id": "epbt-simple-baybayin",
@@ -5699,13 +4680,6 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-somber",
-      "name": "ePBT Somber",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "ertisan"
-    },
-    {
       "id": "epbt-spectrum",
       "name": "ePBT Spectrum",
       "manufacturer": "EnjoyPBT",
@@ -5714,33 +4688,12 @@
       "material": "PBT"
     },
     {
-      "id": "epbt-submerged",
-      "name": "ePBT Submerged",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Alva_Works"
-    },
-    {
       "id": "epbt-superstar",
       "name": "ePBT Superstar",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "marshmellohs",
       "profile": "Cherry"
-    },
-    {
-      "id": "epbt-ta-origins",
-      "name": "ePBT TA Origins",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "dr_derivative & Quaddepo"
-    },
-    {
-      "id": "epbt-tea-biscuits",
-      "name": "ePBT Tea & Biscuits",
-      "manufacturer": "EnjoyPBT",
-      "brand": "EnjoyPBT",
-      "designer": "Khaine"
     },
     {
       "id": "epbt-timeless",
@@ -6127,22 +5080,6 @@
       "designer": "kumori"
     },
     {
-      "id": "geekark-comic-sans-ms-beige-wob",
-      "name": "Geekark Comic Sans MS Beige/WoB",
-      "manufacturer": "Geekark",
-      "brand": "Geekark",
-      "designer": "Shiba1337"
-    },
-    {
-      "id": "geekark-deity-egypt",
-      "name": "Geekark Deity: Egypt",
-      "manufacturer": "Geekark",
-      "brand": "Geekark",
-      "designer": "Southheart & Linnanxue & Gezijun",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "geekark-dolch",
       "name": "Geekark Dolch",
       "manufacturer": "Geekark",
@@ -6166,13 +5103,6 @@
       "designer": "Hongoo & Wuque Studio",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "geekark-selenites",
-      "name": "Geekark Selenites",
-      "manufacturer": "Geekark",
-      "brand": "Geekark",
-      "designer": "min_K"
     },
     {
       "id": "geekark-slash",
@@ -6384,15 +5314,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-1965",
-      "name": "GMK 1965",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "thesiscamper",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-2-pack",
       "name": "GMK 2 Pack",
       "manufacturer": "GMK",
@@ -6402,29 +5323,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-2002",
-      "name": "GMK 2002",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "pngu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-2pack-add-on",
       "name": "GMK 2Pack Add-on",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "DONKEY",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-3077",
-      "name": "GMK 3077",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "thicthacthok",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -6510,15 +5413,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-95neon",
-      "name": "GMK 95Neon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "edwyn",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-a",
       "name": "GMK a",
       "manufacturer": "GMK",
@@ -6549,24 +5443,6 @@
       "name": "GMK Accent Keys Two",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-achromatic",
-      "name": "GMK Achromatic",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "glubazoid",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-ada-2020",
-      "name": "GMK ADA (2020)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Dafraz117",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -6603,24 +5479,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "SxM Designs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-alexandria",
-      "name": "GMK Alexandria",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KeylabsKeycaps",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-alphabet",
-      "name": "GMK Alphabet",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Laur",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -6706,24 +5564,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-arabian-dusk",
-      "name": "GMK Arabian Dusk",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "saymeow",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-arabian-sea",
-      "name": "GMK Arabian Sea",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KucherenkoZZZ",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-arch",
       "name": "GMK Arch",
       "manufacturer": "GMK",
@@ -6778,38 +5618,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-astral-dark",
-      "name": "GMK Astral Dark",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "NaturalPack",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-astral-light",
       "name": "GMK Astral Light",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "NatualPack",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-astro-arcade-addon",
-      "name": "GMK Astro Arcade Addon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "HungHingDaiLo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-aubergine",
-      "name": "GMK Aubergine",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "bobasweatandtears",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -6850,38 +5663,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-backcountry",
-      "name": "GMK Backcountry",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "jrfhoutx",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-bae-addons",
       "name": "GMK BAE Addons",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "cartersrush",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-bae-x-bae-key",
-      "name": "GMK BAE x BAE Key",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Boba.Types",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-baikal",
-      "name": "GMK Baikal",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "mamaybabay",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -6913,15 +5699,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-beige-mini-extensions",
-      "name": "GMK Beige Mini Extensions",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Upas",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-beige-wob-uwu-macro-addon",
       "name": "GMK Beige/WoB uwu Macro Addon",
       "manufacturer": "GMK",
@@ -6945,15 +5722,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "mcmcmc",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-benjamin",
-      "name": "GMK BENJAMIN$",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "zionsped",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7093,56 +5861,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-blanks",
-      "name": "GMK Blanks",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "mcmcmc",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-blaugrau",
-      "name": "GMK BlauGrau",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "ABrotherThatIsUndercover",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-bleached",
       "name": "GMK Bleached",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "botallu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-blocks",
-      "name": "GMK Blocks",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "bobasweatandtears",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-blood-moon",
-      "name": "GMK Blood Moon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Litomymu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-blood-ninja",
-      "name": "GMK Blood Ninja",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Jr.Mars",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7210,44 +5933,8 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-blush",
-      "name": "GMK Blush",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Sleepdealr",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-bly",
-      "name": "GMK BLY",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "JKKEEBS",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-bogos-binted",
-      "name": "GMK Bogos Binted",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Agilr",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-boho",
       "name": "GMK Boho",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Flazion",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-boho-r2",
-      "name": "GMK Boho R2",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Flazion",
@@ -7358,15 +6045,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "lewisflude",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-broker",
-      "name": "GMK Broker",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "5urmount",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7488,15 +6166,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cascadia",
-      "name": "GMK Cascadia",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "twgecko02",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-centinela-extension-kit",
       "name": "GMK Centinela Extension Kit",
       "manufacturer": "GMK",
@@ -7539,15 +6208,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-checkmate",
-      "name": "GMK Checkmate",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bachoo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cherry-logo",
       "name": "GMK Cherry Logo",
       "manufacturer": "GMK",
@@ -7569,15 +6229,6 @@
       "name": "GMK Child Kits",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-chili-crab",
-      "name": "GMK Chili Crab",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Lyfe",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7609,29 +6260,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-city-pop-neue",
-      "name": "GMK City Pop Neue",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "madmax13",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-civilizations",
       "name": "GMK Civilizations",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "twgecko02",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-clasico",
-      "name": "GMK Clásico",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "WoobEC",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7672,15 +6305,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-classic-green",
-      "name": "GMK Classic Green",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "archerypro459",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-classic-red",
       "name": "GMK Classic Red",
       "manufacturer": "GMK",
@@ -7702,15 +6326,6 @@
       "name": "GMK Classic Retro Cyrillic",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-classic-retro-katakana",
-      "name": "GMK Classic Retro Katakana",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Lil",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7786,33 +6401,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-colors",
-      "name": "GMK Colors",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "aethernet",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-comic",
-      "name": "GMK Comic",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "WorryRock",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-confetti-cake",
-      "name": "GMK Confetti Cake",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "lyman",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-coniferous",
       "name": "GMK Coniferous",
       "manufacturer": "GMK",
@@ -7876,38 +6464,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cosmos-2019",
-      "name": "GMK Cosmos (2019)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "dasdc",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cosmos-2024",
       "name": "GMK Cosmos (2024)",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Kaptain Mike",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cpl",
-      "name": "GMK CPL",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "balance",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-crayons",
-      "name": "GMK Crayons",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oblotzky",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -7991,15 +6552,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyan-reloaded",
-      "name": "GMK Cyan Reloaded",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "feng",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-accent",
       "name": "GMK CYL Accent",
       "manufacturer": "GMK",
@@ -8042,15 +6594,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-black-cherry",
-      "name": "GMK CYL Black Cherry",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Django.",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-bow",
       "name": "GMK CYL BoW",
       "manufacturer": "GMK",
@@ -8067,65 +6610,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-cleopatra",
-      "name": "GMK CYL Cleopatra",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SxM Designs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-combobreaker",
       "name": "GMK CYL Combobreaker",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "OrinNYC",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-daifuku-r2",
-      "name": "GMK CYL Daifuku R2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "coolbeannghi",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-deathly-queen",
-      "name": "GMK CYL Deathly Queen",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Tyson",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-desert-nights",
-      "name": "GMK CYL Desert Nights",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "iinko",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-dino-jungle",
-      "name": "GMK CYL Dino Jungle",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Captain Sterling",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-dinokidz",
-      "name": "GMK CYL Dinokidz",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "mcmcmc",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8144,15 +6633,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Lightning",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-draco",
-      "name": "GMK CYL Draco",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KBDfans",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8244,15 +6724,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-icon-beige",
-      "name": "GMK CYL Icon Beige",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Sumjoy",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-ishtar-r2",
       "name": "GMK CYL Ishtar R2",
       "manufacturer": "GMK",
@@ -8280,15 +6751,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-kitty",
-      "name": "GMK CYL Kitty",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Scucka",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-masterpiece-r2",
       "name": "GMK CYL Masterpiece R2",
       "manufacturer": "GMK",
@@ -8307,15 +6769,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-monokai-light",
-      "name": "GMK CYL Monokai Light",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Gtour and ScoopedBar",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-monokai-material-v2",
       "name": "GMK CYL Monokai Material V2",
       "manufacturer": "GMK",
@@ -8329,15 +6782,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "CoachChuck59",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-nightowl",
-      "name": "GMK CYL Nightowl",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SxM Designs",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8395,37 +6839,10 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-purple",
-      "name": "GMK CYL Purple",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Khor",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-rainbow-6-siege-winner-s-circle",
       "name": "GMK CYL Rainbow 6 Siege - Winner's Circle",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-rainy-day-r3",
-      "name": "GMK CYL Rainy Day R3",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Owl",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-ramu-fan",
-      "name": "GMK CYL Ramu Fan",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "bord.design",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8435,15 +6852,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Hatoworks",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-salamander",
-      "name": "GMK CYL Salamander",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "NyxKeys & Glen",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8471,15 +6879,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Kaptain Mike",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-cyl-spectre",
-      "name": "GMK CYL Spectre",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Nad",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8571,15 +6970,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-zombie",
-      "name": "GMK CYL Zombie",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bobatype",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cyl-zooted-r2",
       "name": "GMK CYL Zooted R2",
       "manufacturer": "GMK",
@@ -8651,15 +7041,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-darklord",
-      "name": "GMK DarkLord",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Blamby",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-darling",
       "name": "GMK Darling",
       "manufacturer": "GMK",
@@ -8682,24 +7063,6 @@
       "name": "GMK Darskel",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-davy-jones-locker",
-      "name": "GMK Davy Jones' Locker",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SxM Designs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-death-knight",
-      "name": "GMK Death Knight",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "HungHingDaiLo",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8784,24 +7147,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-densus",
-      "name": "GMK Densus",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "densus designs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-depths",
-      "name": "GMK Depths",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "ThiccWicc",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-devoted",
       "name": "GMK Devoted",
       "manufacturer": "GMK",
@@ -8811,56 +7156,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-diet-soda-md",
-      "name": "GMK Diet Soda, MD",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Keyset Crimes",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-dimensional",
-      "name": "GMK Dimensional",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "LittleAad",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-dimple-addon",
-      "name": "GMK Dimple Addon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Chippy",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-diner",
       "name": "GMK Diner",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "mvkb",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-disco-rasputin",
-      "name": "GMK Disco Rasputin",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ella",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-diva",
-      "name": "GMK DIVA",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Nixytheria",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -8982,38 +7282,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-dragon-s-sin",
-      "name": "GMK Dragon's Sin",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "balance",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-dragon-witch",
       "name": "GMK Dragon Witch",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Kiririn",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-dream-bird",
-      "name": "GMK Dream Bird",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "arq1999",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-drift-legend",
-      "name": "GMK Drift Legend",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Blamby",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9054,15 +7327,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-dusty-rose",
-      "name": "GMK Dusty Rose",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "NaturalPack",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-earth-tones",
       "name": "GMK Earth Tones",
       "manufacturer": "GMK",
@@ -9077,15 +7341,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "T0mb3ry",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-edc-every-day-carry",
-      "name": "GMK EDC Every Day Carry",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "OmNomNitty",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9108,28 +7363,10 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-enchanter",
-      "name": "GMK Enchanter",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "DIFFER",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-escape-pack",
       "name": "GMK Escape Pack",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-eucalyptus",
-      "name": "GMK Eucalyptus",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "CraftonosKeyboards",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9139,15 +7376,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "iamtienng",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-every-day-carry",
-      "name": "GMK Every Day Carry",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "OmNomNitty",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9187,15 +7415,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-excelsior",
-      "name": "GMK Excelsior",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "FamDK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-exent",
       "name": "GMK Exent",
       "manufacturer": "GMK",
@@ -9214,15 +7433,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-f-ckclones",
-      "name": "GMK F*ckclones",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Influenced",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-fabrik",
       "name": "GMK Fabrik",
       "manufacturer": "GMK",
@@ -9232,38 +7442,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-faceless",
-      "name": "GMK Faceless",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "pancake",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-fallen",
-      "name": "GMK Fallen",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "nagi",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-fenglisu",
       "name": "GMK FengLiSu",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "YXXX",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-film",
-      "name": "GMK Film",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "aying",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9358,15 +7541,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-freeport",
-      "name": "GMK Freeport",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "DALExSNAIL",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-fright-club",
       "name": "GMK Fright Club",
       "manufacturer": "GMK",
@@ -9456,15 +7630,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-future-nights",
-      "name": "GMK Future Nights",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Skok",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-fuyu",
       "name": "GMK Fuyu",
       "manufacturer": "GMK",
@@ -9479,33 +7644,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "edwyn",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-gambit",
-      "name": "GMK Gambit",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "HungHingDaiLo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-gametime",
-      "name": "GMK GameTime",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "BlueDesign",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-gamma",
-      "name": "GMK Gamma",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ntrsh",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9546,24 +7684,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-gold-rush",
-      "name": "GMK Gold Rush",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "MechMerlin",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-good-kid",
-      "name": "GMK Good Kid",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "THRILLHOIAF",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-gorp",
       "name": "GMK Gorp",
       "manufacturer": "GMK",
@@ -9582,29 +7702,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-grape-soda",
-      "name": "GMK Grape Soda",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "YackamoJack",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-greek-beige-add-on",
       "name": "GMK Greek Beige Add-on",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "LightiningXI",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-green-tea",
-      "name": "GMK Green Tea",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "numiru",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9636,15 +7738,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-grid",
-      "name": "GMK Grid",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "cartersrush",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-griseann-gp",
       "name": "GMK Griseann GP",
       "manufacturer": "GMK",
@@ -9659,33 +7752,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "byhfforever & Qarmaa",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-gruvbox",
-      "name": "GMK Gruvbox",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "synmuffin",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-gunfight",
-      "name": "GMK Gunfight",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kaysoo1337",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-hackathon",
-      "name": "GMK Hackathon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Kelly87",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9789,29 +7855,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-hater",
-      "name": "GMK Hater",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "MiTo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-hazakura",
       "name": "GMK Hazakura",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "BapoDonu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-heartland",
-      "name": "GMK Heartland",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "eforb13",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9861,24 +7909,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-high-voltage",
-      "name": "GMK High Voltage",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "TokyoExpress",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-highlight",
-      "name": "GMK Highlight",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Boba.Types",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-hineybeige",
       "name": "GMK Hineybeige",
       "manufacturer": "GMK",
@@ -9893,15 +7923,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "GingGing",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-holo",
-      "name": "GMK Holo",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Upas",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9928,15 +7949,6 @@
       "name": "GMK Honeywell & Co.",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-honk",
-      "name": "GMK HONK",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Zambumon",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -9973,15 +7985,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "jchan94",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-hype-abused",
-      "name": "GMK Hype Abused",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Wilba",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10058,42 +8061,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-iced-orange-soda",
-      "name": "GMK Iced Orange Soda",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kelabo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-icon-modi-wob-bow",
-      "name": "GMK Icon Modi (WoB & BoW)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "ankit-sachdeva",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-iconographic-r2",
-      "name": "GMK Iconographic r2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Lil",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-imperator",
-      "name": "GMK Imperator",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ephem_eral",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-indigo",
       "name": "GMK Indigo",
       "manufacturer": "GMK",
@@ -10129,15 +8096,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-inverted",
-      "name": "GMK Inverted",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "FerPL",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-iris",
       "name": "GMK Iris",
       "manufacturer": "GMK",
@@ -10152,15 +8110,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Bachoo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-jacque",
-      "name": "GMK Jacque$",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "packman86",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10192,24 +8141,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-jay",
-      "name": "GMK Jay",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "iinko_mk",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-jelly-delights",
-      "name": "GMK Jelly Delights",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kaysoo1337",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-jis-wob",
       "name": "GMK JIS WoB",
       "manufacturer": "GMK",
@@ -10235,15 +8166,6 @@
       "designer": "Nephlock",
       "profile": "MTNU",
       "material": "PBT"
-    },
-    {
-      "id": "gmk-juvenile-galant",
-      "name": "GMK Juvenile Galant",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Buburoo & Nathan_",
-      "profile": "Cherry",
-      "material": "ABS"
     },
     {
       "id": "gmk-ka-2019-valentine",
@@ -10281,56 +8203,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-kambaba",
-      "name": "GMK KAMBABA",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KBDfans",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-kanbara",
-      "name": "GMK Kanbara",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Krelbit",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-kantharos",
-      "name": "GMK Kantharos",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "mixistor",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-katakana-bow",
-      "name": "GMK Katakana BoW",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bregoli",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-keyboard-co",
       "name": "GMK Keyboard & Co.",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Switchnollie",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-kintsugi",
-      "name": "GMK Kintsugi",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Boba.Types",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10353,15 +8230,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-knight",
-      "name": "GMK Knight",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ephem",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-korean-beige",
       "name": "GMK Korean Beige",
       "manufacturer": "GMK",
@@ -10376,51 +8244,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Bachoo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-kura",
-      "name": "GMK Kura",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "logaboga",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-kuroge-wagyu",
-      "name": "GMK Kuroge Wagyū",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Syper",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-kybersio",
-      "name": "GMK Kybersio",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Strym",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-lasagna",
-      "name": "GMK Lasagna",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SlipperyPeteED",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-lasaka",
-      "name": "GMK Lasaka",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Lanes",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10488,33 +8311,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-liftoff",
-      "name": "GMK Liftoff",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Mandabanker007",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-lilac",
-      "name": "GMK Lilac",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Lil",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-lilac-girl",
-      "name": "GMK Lilac Girl",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KucherenkoZZZ",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-lilac-on-black",
       "name": "GMK Lilac on Black",
       "manufacturer": "GMK",
@@ -10569,47 +8365,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-ma-1",
-      "name": "GMK MA-1",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "OrcaBuilds",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-mac-addons",
-      "name": "GMK Mac Addons",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Kaisar & Mark The Weeb",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-macros",
-      "name": "GMK Macros",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "mcmcmc",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-maestro",
       "name": "GMK Maestro",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "HungHingDaiLo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-maga",
-      "name": "GMK MAGA",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Jae-3soteric",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10639,38 +8399,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-maneki-neko",
-      "name": "GMK Maneki Neko",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "biip",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-mango",
-      "name": "GMK Mango",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Alpane",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-manta",
       "name": "GMK Manta",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "wynects",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-marina",
-      "name": "GMK Marina",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "PseudoLlama",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10729,15 +8462,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-max-neon",
-      "name": "GMK Max Neon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "edwyn",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-mecha-00",
       "name": "GMK Mecha 00",
       "manufacturer": "GMK",
@@ -10761,33 +8485,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "FU11.META1 & MiTo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-media-keys-wob-minimal",
-      "name": "GMK Media Keys (WoB & Minimal)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "lukelex",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-medusa",
-      "name": "GMK Medusa",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SxM Designs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-melon-cream",
-      "name": "GMK Melon Cream",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Shark",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -10904,15 +8601,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "vheissu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-midas",
-      "name": "GMK Midas",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Manu",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11043,15 +8731,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-modern-dolch-r3",
-      "name": "GMK Modern Dolch R3",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Janglad & G Bur",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-modern-ink",
       "name": "GMK Modern Ink",
       "manufacturer": "GMK",
@@ -11088,26 +8767,8 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-modern-sono",
-      "name": "GMK Modern Sono",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Gtour",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-momo-yume",
       "name": "GMK Momo Yume",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "key_nes",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-momo-yume-r2",
-      "name": "GMK Momo Yume r2",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "key_nes",
@@ -11187,15 +8848,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-monorange",
-      "name": "GMK Monorange",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "redamankey & Boba.Types",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-moomin",
       "name": "GMK Moomin",
       "manufacturer": "GMK",
@@ -11223,29 +8875,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-moscow-nights",
-      "name": "GMK Moscow Nights",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "xeon",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-motif",
       "name": "GMK Motif",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "AkukoLabs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-motorsport",
-      "name": "GMK Motorsport",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Masje",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11314,24 +8948,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "scud80",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-mudkap",
-      "name": "GMK Mudkap",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ren_Kaos",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-murasaki",
-      "name": "GMK Murasaki",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KucherenkoZZZ",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11461,15 +9077,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-neon-city",
-      "name": "GMK Neon City",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SoraNoTenshi",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-neon-rgby-modifiers",
       "name": "GMK Neon RGBY Modifiers",
       "manufacturer": "GMK",
@@ -11496,24 +9103,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-nice",
-      "name": "GMK NICE",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Chuuu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-nichirin",
-      "name": "GMK Nichirin",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "FLFrostBite",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-night-runner",
       "name": "GMK Night Runner",
       "manufacturer": "GMK",
@@ -11528,15 +9117,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "BlindAssassin111",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-night-tare",
-      "name": "GMK Night Tare",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "sGhost",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11631,15 +9211,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-noku",
-      "name": "GMK NOKU",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kure_",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-nord",
       "name": "GMK Nord",
       "manufacturer": "GMK",
@@ -11654,15 +9225,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Skok",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-nova",
-      "name": "GMK Nova",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Samwello",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11685,15 +9247,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-nuclear-burger",
-      "name": "GMK Nuclear Burger",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SimpFan89",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-nuclear-data",
       "name": "GMK Nuclear Data",
       "manufacturer": "GMK",
@@ -11708,15 +9261,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "hineybush",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-nude",
-      "name": "GMK Nude",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "onefiftynine",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11757,24 +9301,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-oblivion-v3-2",
-      "name": "GMK Oblivion V3.2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oblotzky",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-obon",
-      "name": "GMK Obon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "balance",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-ocean-dolch",
       "name": "GMK Ocean Dolch",
       "manufacturer": "GMK",
@@ -11807,15 +9333,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "hineybush",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-ogre",
-      "name": "GMK Ogre",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "ctrlshiftba",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -11892,24 +9409,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-orange-juice",
-      "name": "GMK Orange Juice",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "pan",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-orchid",
-      "name": "GMK Orchid",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "SaltRockLamp",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-orenji",
       "name": "GMK Orenji",
       "manufacturer": "GMK",
@@ -11949,24 +9448,6 @@
       "name": "GMK Originative Japanese",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-oritsu",
-      "name": "GMK Ōritsu",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Edovin",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-orochi",
-      "name": "GMK Orochi",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Snotburger",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12025,24 +9506,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-pastel",
-      "name": "GMK Pastel",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "tinymakesthings",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pastelbeit",
-      "name": "GMK Pastelbeit",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Shiba1337",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-patisserie",
       "name": "GMK Patisserie",
       "manufacturer": "GMK",
@@ -12088,37 +9551,10 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-pedestrian",
-      "name": "GMK Pedestrian",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bregoli",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-penumbra-pb",
       "name": "GMK Penumbra PB",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pepe",
-      "name": "GMK Pepe",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "cru.works",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pepperoni",
-      "name": "GMK Pepperoni",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "hoychaa",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12177,51 +9613,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-photosphere",
-      "name": "GMK Photosphere",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "videozane",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pickle",
-      "name": "GMK Pickle",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "saam",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pina-colada",
-      "name": "GMK Piña Colada",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "diipstiick",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pink-demon",
-      "name": "GMK Pink Demon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Slimey",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-pink-on-black",
-      "name": "GMK Pink on Black",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "JonoColwell",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-pink-on-navy",
       "name": "GMK Pink on Navy",
       "manufacturer": "GMK",
@@ -12254,33 +9645,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Jessica",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-poke",
-      "name": "GMK Poke",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kekaiyo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-poker",
-      "name": "GMK Poker",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "KID",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-polar",
-      "name": "GMK Polar",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Jermane",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12357,15 +9721,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-protostar",
-      "name": "GMK Protostar",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "NaturalPack",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-prussian-blue",
       "name": "GMK Prussian Blue",
       "manufacturer": "GMK",
@@ -12375,38 +9730,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-psyche",
-      "name": "GMK Psyche",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "senryo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-psychosis",
-      "name": "GMK Psychosis",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "fifty4hun",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-pulse",
       "name": "GMK Pulse",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "MiTo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-punktarbait",
-      "name": "GMK Punktarbait",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Zambumon",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12437,15 +9765,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-purple-on-pink",
-      "name": "GMK Purple on Pink",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Milfarn",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-purple-uwu",
       "name": "GMK Purple UWU",
       "manufacturer": "GMK",
@@ -12455,37 +9774,10 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-pyro",
-      "name": "GMK Pyro",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "jchan94",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-q-01",
       "name": "GMK Q:01",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-r0-wob-dolch",
-      "name": "GMK R0 WoB & Dolch",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Tanghus",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-r4-r5-accent-kits",
-      "name": "GMK R4/R5 Accent Kits",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "cartersrush",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12553,15 +9845,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-red-devils-r2",
-      "name": "GMK Red Devils R2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Fredington",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-red-dragon",
       "name": "GMK Red Dragon",
       "manufacturer": "GMK",
@@ -12583,15 +9866,6 @@
       "name": "GMK Red Honey Cyrillic",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-red-lantern",
-      "name": "GMK Red Lantern",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "themasterphi",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12641,24 +9915,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-redacted-r2",
-      "name": "GMK Redacted R2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "G Bur",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-redderish-alert",
-      "name": "GMK Redderish Alert",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "frostykoala",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-reforged",
       "name": "GMK ReForged",
       "manufacturer": "GMK",
@@ -12686,38 +9942,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-retro-runic",
-      "name": "GMK Retro Runic",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Laur",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-retrobot",
-      "name": "GMK Retrobot",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "deathwalker113",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-retrocast",
       "name": "GMK Retrocast",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Plopmk",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-retrotrip",
-      "name": "GMK Retrotrip",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Zakar1ya",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12801,15 +10030,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-rub-out",
-      "name": "GMK Rub Out",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "hali",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-rubrehose",
       "name": "GMK Rubrehose",
       "manufacturer": "GMK",
@@ -12837,24 +10057,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-s-mores",
-      "name": "GMK S'Mores",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "turkishmeow",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-saa",
-      "name": "GMK SAA",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "7h3of7",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-sandstorm",
       "name": "GMK SandStorm",
       "manufacturer": "GMK",
@@ -12864,47 +10066,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-scathach",
-      "name": "GMK Scáthach",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "willyumi",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-scitex",
-      "name": "GMK Scitex",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Emir",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-seafarer",
       "name": "GMK Seafarer",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "iinko_mk",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-seiso",
-      "name": "GMK Seiso",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Skiji",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-senpai",
-      "name": "GMK Senpai",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ephem",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -12963,15 +10129,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-shanshui-r2",
-      "name": "GMK Shanshui r2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "grundlemere",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-shark-bait",
       "name": "GMK Shark Bait",
       "manufacturer": "GMK",
@@ -12990,38 +10147,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-shellshocked",
-      "name": "GMK Shellshocked",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "bluntkrayon",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-shibe",
-      "name": "GMK Shibe",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Pachriksu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-shinseiki",
       "name": "GMK Shinseiki",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Nephlock",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-shiryo",
-      "name": "GMK Shiryō",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "fatboycarney",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13044,47 +10174,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-shorebound",
-      "name": "GMK Shorebound",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "pupper125",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-sialia",
-      "name": "GMK Sialia",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "eforb13",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-siberia",
-      "name": "GMK Siberia",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Full",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-signal",
       "name": "GMK Signal",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "cocobrais",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-singularity",
-      "name": "GMK Singularity",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Spingo",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13193,65 +10287,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-snom",
-      "name": "GMK Snom",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "shortdog6",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-snowdrift",
-      "name": "GMK Snowdrift",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "marshmellohs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-softtouch",
-      "name": "GMK SoftTouch",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "athp2121",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-solar-red",
-      "name": "GMK Solar Red",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Upas",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-solarized-dark",
       "name": "GMK Solarized Dark",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "rainb1ood",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-sophie",
-      "name": "GMK Sophie",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "juju___mk",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-sorcerelle",
-      "name": "GMK Sorcerelle",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bachoo",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13292,29 +10332,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-spark-knight",
-      "name": "GMK Spark Knight",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "7h3of7",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-sparta",
       "name": "GMK Sparta",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "crusader_alex",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-specter",
-      "name": "GMK Specter [Призрак]",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "nagi",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13372,38 +10394,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-stonks-2021",
-      "name": "GMK Stonks (2021)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "pancake",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-stonks-2026",
-      "name": "GMK Stonks (2026)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "nebulazy",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-storm",
       "name": "GMK Storm",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "sp.people",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-strawberry",
-      "name": "GMK Strawberry",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "midnightride",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13422,15 +10417,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Zambumon",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-succulent-garden",
-      "name": "GMK Succulent Garden",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "digi.rei",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13507,15 +10493,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-taho",
-      "name": "GMK Taho",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "zionsped",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-taiga",
       "name": "GMK Taiga",
       "manufacturer": "GMK",
@@ -13534,15 +10511,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-tamago",
-      "name": "GMK Tamago",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Chuuu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-taro",
       "name": "GMK Taro",
       "manufacturer": "GMK",
@@ -13557,33 +10525,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "pwade3",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-taschenrechner",
-      "name": "GMK Taschenrechner",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kapowaz",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-tea-witch",
-      "name": "GMK Tea Witch",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "BapoDonu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-telex-viet-addon",
-      "name": "GMK TELEX/Việt Addon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "spoonr00t",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13660,15 +10601,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-the-child",
-      "name": "GMK The Child",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "fabijolo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-the-mandalorian",
       "name": "GMK The Mandalorian",
       "manufacturer": "GMK",
@@ -13682,15 +10614,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "voodoo6k",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-tiel",
-      "name": "GMK Tiel",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "hashbrown565",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13792,15 +10715,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-trump",
-      "name": "GMK Trump",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Chuuu",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-tuzi",
       "name": "GMK Tuzi",
       "manufacturer": "GMK",
@@ -13873,15 +10787,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-usagi",
-      "name": "GMK Usagi",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Jartiel",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-valentine",
       "name": "GMK Valentine",
       "manufacturer": "GMK",
@@ -13931,15 +10836,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Mugen & Omegaswitch",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-velo",
-      "name": "GMK Vélo",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oggi",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -13998,56 +10894,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-viper-squad",
-      "name": "GMK Viper Squad",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Visual_MK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-vision",
-      "name": "GMK Vision",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "ocean.setups",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-void",
-      "name": "GMK Void",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Tyson",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-voyage",
       "name": "GMK Voyage",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "nasp",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-vpe",
-      "name": "GMK VPE",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "cartersrush",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wapuro",
-      "name": "GMK Wapuro",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "MacGruber117",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -14070,15 +10921,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-washbuckle",
-      "name": "GMK Washbuckle",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "ebomb2",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-watermelon",
       "name": "GMK Watermelon",
       "manufacturer": "GMK",
@@ -14097,15 +10939,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-western",
-      "name": "GMK Western",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "kaysoo1337",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-white-blue",
       "name": "GMK White Blue",
       "manufacturer": "GMK",
@@ -14115,65 +10948,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-white-dark-grey",
-      "name": "GMK White Dark-Grey",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "IvanIvanovich",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-white-knight",
-      "name": "GMK White Knight",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "shinz0",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-white-on-black",
       "name": "GMK White on Black",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "zennasyndroxx",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-white-on-grey",
-      "name": "GMK White on Grey",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "AxolStudio",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-white-rabbit",
-      "name": "GMK White Rabbit",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Ulliam & MiTo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-white-wolf",
-      "name": "GMK White Wolf",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Moridin",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-why",
-      "name": "GMK Why?",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "vishydesigns",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -14196,65 +10975,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-windowed",
-      "name": "GMK Windowed",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bachoo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wisp",
-      "name": "GMK Wisp",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "sub0001",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-wob-40s-colevrak-plus-r0-r5",
       "name": "GMK WoB 40s, Colevrak+, R0/R5",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "ttom",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wob-40s-ortho-micons-addon",
-      "name": "GMK WoB 40s/Ortho Micons Addon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "harlekein",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wob-addon",
-      "name": "GMK WoB Addon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "paulgali",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wob-alpha-addons",
-      "name": "GMK WoB Alpha Addons",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "illusixn",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wob-arabic",
-      "name": "GMK WoB Arabic",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "paulgali",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -14313,24 +11038,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-wob-monokata",
-      "name": "GMK WoB MonoKata",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Bachoo",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-wob-nordeuk-plus-plus-r2",
-      "name": "GMK WoB NorDeUK++ r2",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "RETURNISO",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-wob-red-cyrillic",
       "name": "GMK WoB Red Cyrillic",
       "manufacturer": "GMK",
@@ -14358,47 +11065,11 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-ws1-ergo-ortho-blanks",
-      "name": "GMK WS1 Ergo & Ortho Blanks",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "NoPunIn10Did",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-x",
-      "name": "GMK X",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "DepletedVespene",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-yami",
-      "name": "GMK Yami",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "acidseven",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-yeeti",
       "name": "GMK Yeeti",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Fannie_w",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-yellowjacket",
-      "name": "GMK Yellowjacket",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Gtrx",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -14457,15 +11128,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-zero-sugar",
-      "name": "GMK Zero Sugar",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Keyboard_Dad",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-zhuyin",
       "name": "GMK Zhuyin",
       "manufacturer": "GMK",
@@ -14516,15 +11178,6 @@
       "manufacturer": "GoMaster",
       "brand": "GoMaster",
       "designer": "SenSitive Works",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "gomaster-koi",
-      "name": "GOM Koi",
-      "manufacturer": "GoMaster",
-      "brand": "GoMaster",
-      "designer": "KLXH",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -14587,12 +11240,6 @@
       "manufacturer": "WINMIX",
       "designer": "York Chan",
       "material": "ABS"
-    },
-    {
-      "id": "gsa-trail-shadow",
-      "name": "GSA Trail Shadow",
-      "designer": "oitsso",
-      "material": "PC"
     },
     {
       "id": "hammer-crp-mint-rgby",
@@ -14897,18 +11544,6 @@
       "material": "PBT"
     },
     {
-      "id": "idk-koala",
-      "name": "IDK Koala",
-      "brand": "IDK",
-      "designer": "Idkeyboard"
-    },
-    {
-      "id": "idk-poseidon",
-      "name": "IDK Poseidon",
-      "brand": "IDK",
-      "designer": "XIAMU"
-    },
-    {
       "id": "ifk-808-boom",
       "name": "IFK 808-Boom",
       "manufacturer": "Infinikey",
@@ -14995,26 +11630,11 @@
       "material": "PBT"
     },
     {
-      "id": "ifk-ez-mode",
-      "name": "IFK EZ Mode",
-      "manufacturer": "Infinikey",
-      "brand": "Infinikey",
-      "designer": "Jebbra"
-    },
-    {
       "id": "ifk-faeries-of-eldraine",
       "name": "IFK Faeries of Eldraine",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
       "designer": "spikedsynapse",
-      "profile": "Cherry"
-    },
-    {
-      "id": "ifk-futureware",
-      "name": "IFK Futureware",
-      "manufacturer": "Infinikey",
-      "brand": "Infinikey",
-      "designer": "kema",
       "profile": "Cherry"
     },
     {
@@ -15045,14 +11665,6 @@
       "brand": "Infinikey",
       "designer": "PRJKT_",
       "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "ifk-modern-hangul",
-      "name": "IFK Modern Hangul",
-      "manufacturer": "Infinikey",
-      "brand": "Infinikey",
-      "designer": "MalvixStudio",
       "material": "PBT"
     },
     {
@@ -15133,20 +11745,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "ifk-splash",
-      "name": "IFK Splash",
-      "manufacturer": "Infinikey",
-      "brand": "Infinikey",
-      "designer": "Wongstongs"
-    },
-    {
-      "id": "ifk-stem",
-      "name": "IFK STEM",
-      "manufacturer": "Infinikey",
-      "brand": "Infinikey",
-      "designer": "Gtrx"
-    },
-    {
       "id": "ifk-strawberry-lemonade",
       "name": "IFK Strawberry Lemonade",
       "manufacturer": "Infinikey",
@@ -15168,13 +11766,6 @@
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
       "designer": "Sentry"
-    },
-    {
-      "id": "ikg-greyscale-hangul",
-      "name": "IKG Greyscale Hangul",
-      "designer": "reeeyouuuuu",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "iv-ashes",
@@ -15405,15 +11996,6 @@
       "material": "PBT"
     },
     {
-      "id": "jtk-3600",
-      "name": "JTK 3600",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "quad_h",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "jtk-404",
       "name": "JTK 404",
       "manufacturer": "JTK",
@@ -15476,15 +12058,6 @@
       "material": "ABS"
     },
     {
-      "id": "jtk-classic-retro-cyrillic",
-      "name": "JTK Classic Retro Cyrillic",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "HoodrowThrillson",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "jtk-dreaming-girl",
       "name": "JTK Dreaming Girl",
       "manufacturer": "JTK",
@@ -15508,15 +12081,6 @@
       "manufacturer": "JTK",
       "brand": "JTK",
       "designer": "Icon Labs",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "jtk-exit-plan",
-      "name": "JTK Exit Plan",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "Neptune Keys",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -15607,24 +12171,6 @@
       "material": "ABS"
     },
     {
-      "id": "jtk-monke",
-      "name": "JTK Monke",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "aleeex",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "jtk-natural-selection",
-      "name": "JTK Natural Selection",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "Ray",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "jtk-nightsakura",
       "name": "JTK NightSakura",
       "manufacturer": "JTK",
@@ -15639,15 +12185,6 @@
       "manufacturer": "JTK",
       "brand": "JTK",
       "designer": "Buger",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "jtk-packet-loss",
-      "name": "JTK Packet Loss",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "puddsy",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -15678,15 +12215,6 @@
       "material": "ABS"
     },
     {
-      "id": "jtk-sin-nen",
-      "name": "JTK Sin nen",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "JTK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "jtk-sora",
       "name": "JTK Sora",
       "manufacturer": "JTK",
@@ -15701,15 +12229,6 @@
       "manufacturer": "JTK",
       "brand": "JTK",
       "designer": "Rifen",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "jtk-tanjun",
-      "name": "JTK Tanjun",
-      "manufacturer": "JTK",
-      "brand": "JTK",
-      "designer": "nagi",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -15767,15 +12286,6 @@
       "material": "PBT"
     },
     {
-      "id": "kam-aquanaut",
-      "name": "KAM Aquanaut",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "ThomRM",
-      "profile": "KAM",
-      "material": "PBT"
-    },
-    {
       "id": "kam-astha",
       "name": "KAM Astha",
       "manufacturer": "Keyreative",
@@ -15817,15 +12327,6 @@
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "fireworm",
-      "profile": "KAM",
-      "material": "PBT"
-    },
-    {
-      "id": "kam-illusion",
-      "name": "KAM Illusion",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Scucka & Lollipop",
       "profile": "KAM",
       "material": "PBT"
     },
@@ -15902,15 +12403,6 @@
       "material": "PBT"
     },
     {
-      "id": "kam-popelka",
-      "name": "KAM Popelka",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Michabc",
-      "profile": "KAM",
-      "material": "PBT"
-    },
-    {
       "id": "kam-sewing-tin",
       "name": "KAM Sewing Tin",
       "manufacturer": "Keyreative",
@@ -15965,14 +12457,6 @@
       "material": "PBT"
     },
     {
-      "id": "kap-bad-rabbit",
-      "name": "KAP Bad Rabbit",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "ZiRed",
-      "profile": "Cherry"
-    },
-    {
       "id": "kap-buff-bride",
       "name": "KAP Buff Bride",
       "manufacturer": "Keyreative",
@@ -15987,15 +12471,6 @@
       "brand": "Keyreative",
       "designer": "sososoya",
       "profile": "Cherry"
-    },
-    {
-      "id": "kap-deez-nuts",
-      "name": "KAP Deez Nuts",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "roffelsaur",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "kap-disconnected-dark",
@@ -16024,15 +12499,6 @@
       "material": "PBT"
     },
     {
-      "id": "kap-glyph-edius",
-      "name": "KAP Glyph EDIUS",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "SenSitive Works",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "kap-grey-alert",
       "name": "KAP Grey Alert",
       "manufacturer": "Keyreative",
@@ -16040,47 +12506,6 @@
       "designer": "MonacoKeys",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "kap-industrial-keys",
-      "name": "KAP Industrial Keys",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "biip",
-      "profile": "Cherry"
-    },
-    {
-      "id": "kap-jailbirds",
-      "name": "KAP Jailbirds",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "konkonkitsune",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "kap-kind-of-blue",
-      "name": "KAP Kind of Blue",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "madmax13",
-      "profile": "Cherry"
-    },
-    {
-      "id": "kap-konpeito",
-      "name": "KAP Konpeito",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Sharkeys",
-      "profile": "Cherry"
-    },
-    {
-      "id": "kap-metro-system",
-      "name": "KAP Metro System",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "biip",
-      "profile": "Cherry"
     },
     {
       "id": "kap-midas-r2",
@@ -16100,15 +12525,6 @@
       "material": "ABS/PBT"
     },
     {
-      "id": "kap-retro-cat",
-      "name": "KAP Retro: CAT",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "York Chan",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "kap-retro-lights-r2",
       "name": "KAP Retro Lights R2",
       "manufacturer": "Keyreative",
@@ -16126,14 +12542,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "kap-terrazzo",
-      "name": "KAP Terrazzo",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Beesley",
-      "profile": "Cherry"
-    },
-    {
       "id": "kap-tot-theatrum-orbis-terrarum",
       "name": "KAP TOT Theatrum Orbis Terrarum",
       "manufacturer": "Keyreative",
@@ -16141,14 +12549,6 @@
       "designer": "keepoto",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "kap-uranus",
-      "name": "KAP Uranus",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Boba.Types",
-      "profile": "Cherry"
     },
     {
       "id": "kap-vella",
@@ -16176,15 +12576,6 @@
       "material": "PBT"
     },
     {
-      "id": "kat-anaglyph",
-      "name": "KAT Anaglyph",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "brunosan",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-arctic",
       "name": "KAT Arctic",
       "manufacturer": "Keyreative",
@@ -16199,15 +12590,6 @@
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "Rensuya",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-autumn",
-      "name": "KAT Autumn",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "GergWorst",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16284,29 +12666,11 @@
       "material": "PBT"
     },
     {
-      "id": "kat-extended-apl",
-      "name": "KAT Extended APL",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Fredington",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-floofy-boi",
       "name": "KAT Floofy Boi",
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "andromache & TyPo.mk",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-goddess",
-      "name": "KAT Goddess",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Rensuya",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16325,15 +12689,6 @@
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "JSaintS",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-ice-dragon",
-      "name": "KAT Ice Dragon",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "driftingbunnies",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16365,38 +12720,11 @@
       "material": "PBT"
     },
     {
-      "id": "kat-love",
-      "name": "KAT Love",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Avijit",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-lucky-jade",
       "name": "KAT Lucky Jade",
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "Hisui",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-miami",
-      "name": "KAT Miami",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "NovaRMK",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-miami-nights",
-      "name": "KAT Miami Nights",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "NovaRMK",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16419,24 +12747,6 @@
       "material": "PBT"
     },
     {
-      "id": "kat-mint-chip",
-      "name": "KAT Mint Chip",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "jakk",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-mintos",
-      "name": "KAT Mintos",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Minterly & Alexotos",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-mizu",
       "name": "KAT Mizu",
       "manufacturer": "Keyreative",
@@ -16455,38 +12765,11 @@
       "material": "PBT"
     },
     {
-      "id": "kat-mori",
-      "name": "KAT Mori",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "yh",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-mumei",
-      "name": "KAT MUMEI",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "slxdegrees",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-napoleonic",
       "name": "KAT Napoleonic",
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "NoPunIn10Did",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-neapolitan",
-      "name": "KAT Neapolitan",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "nolsia",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16500,56 +12783,11 @@
       "material": "PBT"
     },
     {
-      "id": "kat-oblique",
-      "name": "KAT Oblique",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "dr_derivative",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-overgrown",
       "name": "KAT Overgrown",
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "ThickJimmy",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-pbj",
-      "name": "KAT PBJ",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Lizcuits",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-phantasmagoria",
-      "name": "KAT Phantasmagoria",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "AllieBlairThomas",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-quantum",
-      "name": "KAT Quantum",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "bobasweatandtears",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-raspberry",
-      "name": "KAT Raspberry",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "JSaintS",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16572,15 +12810,6 @@
       "material": "PBT"
     },
     {
-      "id": "kat-shogoki",
-      "name": "KAT Shogōki",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Kyosurai",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-slurp",
       "name": "KAT Slurp",
       "manufacturer": "Keyreative",
@@ -16599,15 +12828,6 @@
       "material": "PBT"
     },
     {
-      "id": "kat-space-cadet-r2",
-      "name": "KAT Space Cadet r2",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Alas",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
       "id": "kat-space-dust",
       "name": "KAT Space Dust",
       "manufacturer": "Keyreative",
@@ -16622,24 +12842,6 @@
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "QQMBR",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-subtitles",
-      "name": "KAT Subtitles",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "dandruff",
-      "profile": "KAT",
-      "material": "PBT"
-    },
-    {
-      "id": "kat-tattoo",
-      "name": "KAT Tattoo",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Beesley",
       "profile": "KAT",
       "material": "PBT"
     },
@@ -16804,50 +13006,6 @@
       "material": "PBT"
     },
     {
-      "id": "kbm-abcdefu",
-      "name": "KBM ABCDEFU",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "bobasweatandtears",
-      "material": "PBT"
-    },
-    {
-      "id": "kbm-bioluminescent",
-      "name": "KBM Bioluminescent",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "Beesley"
-    },
-    {
-      "id": "kbm-blanks",
-      "name": "KBM Blanks",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "NovaRMK"
-    },
-    {
-      "id": "kbm-caramel",
-      "name": "KBM Caramel",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "arr1"
-    },
-    {
-      "id": "kbm-civilizations",
-      "name": "KBM Civilizations",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "twgecko02"
-    },
-    {
-      "id": "kbm-demon-sword",
-      "name": "KBM Demon Sword",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "Raravin",
-      "material": "PBT"
-    },
-    {
       "id": "kbm-fairy",
       "name": "KBM Fairy",
       "manufacturer": "KeyBee Manufacturing",
@@ -16885,90 +13043,6 @@
       "manufacturer": "KeyBee Manufacturing",
       "brand": "KeyBee Manufacturing",
       "designer": "CaptainSterling"
-    },
-    {
-      "id": "kbm-odin",
-      "name": "KBM Odin",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "pasta"
-    },
-    {
-      "id": "kbm-pbeater",
-      "name": "KBM PBeater",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "Raravin"
-    },
-    {
-      "id": "kbm-pink-poodle",
-      "name": "KBM Pink Poodle",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "keebibi",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "kbm-pizza-rat",
-      "name": "KBM Pizza Rat",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "keebnewb"
-    },
-    {
-      "id": "kbm-purseidon",
-      "name": "KBM Purseidon",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "switchlab",
-      "profile": "Cherry"
-    },
-    {
-      "id": "kbm-red-floof",
-      "name": "KBM Red Floof",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "Otakeebs"
-    },
-    {
-      "id": "kbm-shinrin",
-      "name": "KBM Shinrin",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "balance"
-    },
-    {
-      "id": "kbm-sky-pastry",
-      "name": "KBM Sky Pastry",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "Merinie"
-    },
-    {
-      "id": "kbm-starlight-dreams",
-      "name": "KBM Starlight Dreams",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "Spritu",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "kbm-vibrant-nights",
-      "name": "KBM Vibrant Nights",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "adi",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "kbm-war-maiden",
-      "name": "KBM War Maiden",
-      "manufacturer": "KeyBee Manufacturing",
-      "brand": "KeyBee Manufacturing",
-      "designer": "keebhoarder."
     },
     {
       "id": "kbparadise-alps-v60-vintage-blank",
@@ -17159,15 +13233,6 @@
       "material": "PBT"
     },
     {
-      "id": "kbs-dirty-coffee",
-      "name": "KBS Dirty Coffee",
-      "manufacturer": "Keyboard Science",
-      "brand": "Keyboard Science",
-      "designer": "York Chan",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "kbs-heyball",
       "name": "KBS Heyball",
       "manufacturer": "Keyboard Science",
@@ -17234,31 +13299,6 @@
       "material": "ABS"
     },
     {
-      "id": "kbs-space-odyssey",
-      "name": "KBS Space Odyssey",
-      "manufacturer": "Keyboard Science",
-      "brand": "Keyboard Science",
-      "designer": "York Chan",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "kch-blue-screen",
-      "name": "KCH Blue Screen",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Afresh",
-      "profile": "Cherry"
-    },
-    {
-      "id": "kch-dx7",
-      "name": "KCH DX7",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Mark The Weeb",
-      "profile": "Cherry"
-    },
-    {
       "id": "kch-hipparcos",
       "name": "KCH Hipparcos",
       "manufacturer": "Keyreative",
@@ -17281,24 +13321,6 @@
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "biip",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "kch-pure-player-xy",
-      "name": "KCH Pure Player: XY",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "Jr.Mars",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "kch-remember",
-      "name": "KCH REMember",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "PaulGalatia & keepoto",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -17333,15 +13355,6 @@
       "manufacturer": "Kono",
       "brand": "Kono",
       "designer": "gatix & rainb1ood & thesiscamper"
-    },
-    {
-      "id": "kds-deku",
-      "name": "KDS Deku",
-      "manufacturer": "Kono",
-      "brand": "Kono",
-      "designer": "Scucka",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "kds-led-zep",
@@ -18401,13 +14414,6 @@
       "material": "PBT"
     },
     {
-      "id": "keyreative-autumn-and-spring",
-      "name": "Keyreative Autumn and Spring",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "NKay"
-    },
-    {
       "id": "kfapbt-autumn-leaves",
       "name": "kfaPBT Autumn Leaves",
       "brand": "KeebsForAll",
@@ -18498,27 +14504,11 @@
       "material": "ABS"
     },
     {
-      "id": "kkb-ai",
-      "name": "KKB Ai",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "goju2506",
-      "material": "ABS"
-    },
-    {
       "id": "kkb-alhambra",
       "name": "KKB Alhambra",
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "keepoto",
-      "material": "ABS"
-    },
-    {
-      "id": "kkb-ashen",
-      "name": "KKB Ashen",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "kahlilnc",
       "material": "ABS"
     },
     {
@@ -18546,14 +14536,6 @@
       "brand": "KeyKobo",
       "designer": "KEI",
       "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "kkb-dolch-neo",
-      "name": "KKB Dolch Neo",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "Masje",
       "material": "ABS"
     },
     {
@@ -18591,15 +14573,6 @@
       "material": "ABS"
     },
     {
-      "id": "kkb-infinity",
-      "name": "KKB Infinity",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "SenSitive Works",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "kkb-instant",
       "name": "KKB Instant",
       "manufacturer": "KeyKobo",
@@ -18618,28 +14591,12 @@
       "material": "ABS"
     },
     {
-      "id": "kkb-keris",
-      "name": "KKB Keris",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "Nasikluban",
-      "material": "ABS"
-    },
-    {
       "id": "kkb-khonsu",
       "name": "KKB Khonsu",
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "mori",
       "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "kkb-korean-delights",
-      "name": "KKB Korean Delights",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "Rassles",
       "material": "ABS"
     },
     {
@@ -18715,15 +14672,6 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "kahlilnc",
-      "material": "ABS"
-    },
-    {
-      "id": "kkb-norrsken",
-      "name": "KKB Norrsken",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "orange_stone",
-      "profile": "Cherry",
       "material": "ABS"
     },
     {
@@ -18846,22 +14794,6 @@
       "material": "ABS"
     },
     {
-      "id": "kkb-stubborn-charm",
-      "name": "KKB Stubborn Charm",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "BossKeebs",
-      "material": "ABS"
-    },
-    {
-      "id": "kkb-triumph-adler-neo",
-      "name": "KKB Triumph Adler Neo",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "Masje & paulgali",
-      "material": "ABS"
-    },
-    {
       "id": "kkb-vibrato",
       "name": "KKB Vibrato",
       "manufacturer": "KeyKobo",
@@ -18885,12 +14817,6 @@
       "designer": "Geon",
       "profile": "Cherry",
       "material": "ABS"
-    },
-    {
-      "id": "klk-luna",
-      "name": "KLK Luna",
-      "designer": "Fannie Wong",
-      "material": "PBT"
     },
     {
       "id": "lelelab-good-night-cocoa",
@@ -18967,13 +14893,6 @@
     {
       "id": "mbk-pbt-legend",
       "name": "MBK PBT Legend‡",
-      "designer": "tectonicplate",
-      "profile": "MBK",
-      "material": "PBT"
-    },
-    {
-      "id": "mbk-pbt-legend-extended",
-      "name": "MBK PBT Legend‡ Extended",
       "designer": "tectonicplate",
       "profile": "MBK",
       "material": "PBT"
@@ -19228,11 +15147,6 @@
       "brand": "MK"
     },
     {
-      "id": "mlds-low-profile",
-      "name": "MLDS Low Profile",
-      "designer": "ice9js"
-    },
-    {
       "id": "mm-glazed-beige",
       "name": "MM Glazed Beige",
       "designer": "Totoro"
@@ -19434,15 +15348,6 @@
       "material": "ABS"
     },
     {
-      "id": "mt3-abs-monomanukai",
-      "name": "MT3 ABS Monomanukai",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "Manu",
-      "profile": "MT3",
-      "material": "ABS"
-    },
-    {
       "id": "mt3-abs-noctua",
       "name": "MT3 ABS Noctua",
       "manufacturer": "Drop",
@@ -19475,15 +15380,6 @@
       "manufacturer": "Drop",
       "brand": "Drop",
       "designer": "Drop",
-      "profile": "MT3",
-      "material": "ABS"
-    },
-    {
-      "id": "mt3-abs-snes",
-      "name": "MT3 ABS SNES",
-      "manufacturer": "Drop",
-      "brand": "Drop",
-      "designer": "voodoo6k",
       "profile": "MT3",
       "material": "ABS"
     },
@@ -19677,15 +15573,6 @@
       "material": "PBT"
     },
     {
-      "id": "mtnu-a-history-of-violets",
-      "name": "MTNU A History of Violets",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Piperaceae",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
       "id": "mtnu-analog-dreams",
       "name": "MTNU Analog Dreams",
       "manufacturer": "GMK",
@@ -19722,24 +15609,6 @@
       "material": "PBT"
     },
     {
-      "id": "mtnu-dashboard",
-      "name": "MTNU Dashboard",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "madmax13",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "mtnu-dasher",
-      "name": "MTNU Dasher",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "nilslorand",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
       "id": "mtnu-divinapapaya",
       "name": "MTNU Divinapapaya",
       "manufacturer": "GMK",
@@ -19753,15 +15622,6 @@
       "name": "MTNU Dolch",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "mtnu-electronic-control",
-      "name": "MTNU Electronic Control",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Madmax13",
       "profile": "MTNU",
       "material": "PBT"
     },
@@ -19801,15 +15661,6 @@
       "material": "PBT"
     },
     {
-      "id": "mtnu-honeywell",
-      "name": "MTNU Honeywell",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Gtour",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
       "id": "mtnu-just",
       "name": "MTNU JUST",
       "manufacturer": "GMK",
@@ -19837,33 +15688,6 @@
       "material": "PBT"
     },
     {
-      "id": "mtnu-mystic-candy",
-      "name": "MTNU Mystic Candy",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "CaptainSterling",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "mtnu-oblivion",
-      "name": "MTNU Oblivion",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oblotzky",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "mtnu-orenji",
-      "name": "MTNU Orenji",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "CaptainSterling",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
       "id": "mtnu-r-and-d-1973",
       "name": "MTNU R and D 1973",
       "manufacturer": "GMK",
@@ -19877,24 +15701,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Afresh",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "mtnu-sage",
-      "name": "MTNU Sage",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "BeesKeys",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
-      "id": "mtnu-selectresque",
-      "name": "MTNU Selectresque",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Piperaceae",
       "profile": "MTNU",
       "material": "PBT"
     },
@@ -19983,26 +15789,11 @@
       "material": "PBT"
     },
     {
-      "id": "mw-a-c",
-      "name": "MW A/C",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "打倒哈密瓜",
-      "material": "PBT"
-    },
-    {
       "id": "mw-abyssal",
       "name": "MW Abyssal",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Xanira"
-    },
-    {
-      "id": "mw-aegis",
-      "name": "MW Aegis",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Nescaffier"
     },
     {
       "id": "mw-alfheim",
@@ -20039,24 +15830,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "mw-anushirvan",
-      "name": "MW Anushirvan",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "keepoto",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "mw-aristocrat",
-      "name": "MW Aristocrat",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Vynzn Aetherwynd",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "mw-art-nouveau",
       "name": "MW Art Nouveau",
       "manufacturer": "Milkyway Keys",
@@ -20081,35 +15854,11 @@
       "designer": "Milkyway Keys"
     },
     {
-      "id": "mw-avant-guarde",
-      "name": "MW Avant-guarde",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Tweec"
-    },
-    {
       "id": "mw-barista",
       "name": "MW Barista",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "blcklvs",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "mw-berries-chocolate",
-      "name": "MW Berries & Chocolate",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Shark",
-      "material": "ABS"
-    },
-    {
-      "id": "mw-buzzz",
-      "name": "MW Buzzz",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "SxM Designs",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -20120,13 +15869,6 @@
       "brand": "Milkyway Keys",
       "designer": "stellaidoscope",
       "material": "PBT"
-    },
-    {
-      "id": "mw-classified",
-      "name": "MW Classified",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Milkyway Keys"
     },
     {
       "id": "mw-cmm-bow",
@@ -20160,13 +15902,6 @@
       "material": "PBT"
     },
     {
-      "id": "mw-cryptid",
-      "name": "MW Cryptid",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Dotnick"
-    },
-    {
       "id": "mw-cultured",
       "name": "MW Cultured",
       "manufacturer": "Milkyway Keys",
@@ -20174,22 +15909,6 @@
       "designer": "JohnYYZ",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "mw-datenshi",
-      "name": "MW Datenshi",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Minisofu",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "mw-deathly-queen",
-      "name": "MW Deathly Queen",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Tyson"
     },
     {
       "id": "mw-demon-girl",
@@ -20210,28 +15929,12 @@
       "material": "PBT"
     },
     {
-      "id": "mw-dreamdrifter",
-      "name": "MW Dreamdrifter",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Scucka",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "mw-endpoint",
       "name": "MW Endpoint",
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Minisofu",
       "profile": "Cherry"
-    },
-    {
-      "id": "mw-enka",
-      "name": "MW Enka",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "balance"
     },
     {
       "id": "mw-evil-ai",
@@ -20250,22 +15953,6 @@
       "material": "PC"
     },
     {
-      "id": "mw-ffiti",
-      "name": "MW FFITI",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Blamby"
-    },
-    {
-      "id": "mw-focalors",
-      "name": "MW Focalors",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "SenSitive Works",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "mw-fright-night",
       "name": "MW Fright Night",
       "manufacturer": "Milkyway Keys",
@@ -20278,14 +15965,6 @@
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Mcnos"
-    },
-    {
-      "id": "mw-fyrefly",
-      "name": "MW Fyrefly",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "keepoto",
-      "profile": "Cherry"
     },
     {
       "id": "mw-gelato",
@@ -20335,20 +16014,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "mw-indigo-dyeing",
-      "name": "MW Indigo Dyeing",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Wutong"
-    },
-    {
-      "id": "mw-invasion",
-      "name": "MW Invasion",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "SxM Designs"
-    },
-    {
       "id": "mw-jade-dragon",
       "name": "MW Jade Dragon",
       "manufacturer": "Milkyway Keys",
@@ -20366,15 +16031,6 @@
       "material": "ABS"
     },
     {
-      "id": "mw-journey",
-      "name": "MW Journey",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Milkyway Keys",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "mw-kaworu",
       "name": "MW Kaworu",
       "manufacturer": "Milkyway Keys",
@@ -20382,37 +16038,6 @@
       "designer": "Lazy Cat",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "mw-kiss-of-death",
-      "name": "MW Kiss of Death",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Novaris Studio",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "mw-lancaster",
-      "name": "MW Lancaster",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Owl",
-      "material": "PBT"
-    },
-    {
-      "id": "mw-laser-310",
-      "name": "MW Laser 310",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "XIAMU"
-    },
-    {
-      "id": "mw-legless-marshal",
-      "name": "MW Legless Marshal",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "York Chan"
     },
     {
       "id": "mw-lilith-r2",
@@ -20438,13 +16063,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "mw-luna",
-      "name": "MW Luna",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "yolk"
-    },
-    {
       "id": "mw-mango-keylime",
       "name": "MW Mango Keylime",
       "manufacturer": "Milkyway Keys",
@@ -20458,14 +16076,6 @@
       "brand": "Milkyway Keys",
       "designer": "bobatype",
       "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "mw-night-tare",
-      "name": "MW Night Tare",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "sGhost",
       "material": "ABS"
     },
     {
@@ -20621,29 +16231,6 @@
       "designer": "Jr.Mars"
     },
     {
-      "id": "mw-sunset-seoul",
-      "name": "MW Sunset Seoul",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "KapianK"
-    },
-    {
-      "id": "mw-templar",
-      "name": "MW Templar",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Rifen"
-    },
-    {
-      "id": "mw-tidal-arcana",
-      "name": "MW Tidal Arcana",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "AAAAA.",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "mw-tosh",
       "name": "MW Tosh",
       "manufacturer": "Milkyway Keys",
@@ -20668,15 +16255,6 @@
       "brand": "Milkyway Keys",
       "designer": "York Chan",
       "profile": "Cherry"
-    },
-    {
-      "id": "mw-unnamed",
-      "name": "MW Unnamed",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "AAAAA.",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "mw-velvet",
@@ -20729,13 +16307,6 @@
       "designer": "Jae and Milkyway Keys",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "mw-zero-two-r2",
-      "name": "MW Zero Two r2",
-      "manufacturer": "Milkyway Keys",
-      "brand": "Milkyway Keys",
-      "designer": "Milkyway Keys"
     },
     {
       "id": "ncc-baja",
@@ -21310,12 +16881,6 @@
       "profile": "OEM"
     },
     {
-      "id": "oem-piifox-canvas-side-legend",
-      "name": "OEM Piifox Canvas Side-Legend",
-      "designer": "Piifox",
-      "profile": "OEM"
-    },
-    {
       "id": "oem-stainless-steel",
       "name": "OEM Stainless Steel",
       "designer": "Teamwolf",
@@ -21328,24 +16893,11 @@
       "profile": "OEM"
     },
     {
-      "id": "oem-tai-hao-abs",
-      "name": "OEM Tai-Hao ABS",
-      "designer": "TooCool",
-      "profile": "OEM",
-      "material": "ABS"
-    },
-    {
       "id": "oem-tai-hao-ti-wob-alps",
       "name": "OEM Tai-Hao TI WoB Alps",
       "designer": "TheInverseKey",
       "profile": "OEM",
       "material": "ABS"
-    },
-    {
-      "id": "oem-winter-angler",
-      "name": "OEM Winter Angler",
-      "designer": "YourKBD",
-      "profile": "OEM"
     },
     {
       "id": "oem-xy-dip-dye-doubleshot",
@@ -22011,15 +17563,6 @@
       "material": "PBT"
     },
     {
-      "id": "pbs-dashboard",
-      "name": "PBS Dashboard",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "madmax13",
-      "profile": "PBS",
-      "material": "PBT"
-    },
-    {
       "id": "pbs-galaxy",
       "name": "PBS Galaxy",
       "manufacturer": "Keyreative",
@@ -22043,15 +17586,6 @@
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
       "designer": "Matt3o",
-      "profile": "PBS",
-      "material": "PBT"
-    },
-    {
-      "id": "pbs-kids-typewriter",
-      "name": "PBS Kids Typewriter",
-      "manufacturer": "Keyreative",
-      "brand": "Keyreative",
-      "designer": "York Chan",
       "profile": "PBS",
       "material": "PBT"
     },
@@ -22178,15 +17712,6 @@
       "material": "ABS"
     },
     {
-      "id": "pbtfans-abs-casual",
-      "name": "PBTfans ABS Casual",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "AAAAA.",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "pbtfans-abs-count-dracula",
       "name": "PBTfans ABS Count Dracula",
       "manufacturer": "PBTfans",
@@ -22204,27 +17729,11 @@
       "material": "ABS"
     },
     {
-      "id": "pbtfans-abs-eyeshadow-palette",
-      "name": "PBTfans ABS Eyeshadow Palette",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "oay",
-      "material": "ABS"
-    },
-    {
       "id": "pbtfans-abs-fairy",
       "name": "PBTfans ABS Fairy",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "KBDfans",
-      "material": "ABS"
-    },
-    {
-      "id": "pbtfans-abs-golden-age",
-      "name": "PBTfans ABS Golden Age",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "Kokaloo",
       "material": "ABS"
     },
     {
@@ -22236,28 +17745,11 @@
       "material": "ABS"
     },
     {
-      "id": "pbtfans-abs-kissaten",
-      "name": "PBTfans ABS Kissaten",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "SenSitive Works",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "pbtfans-abs-loki",
       "name": "PBTfans ABS Loki",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "LoobedSwitches",
-      "material": "ABS"
-    },
-    {
-      "id": "pbtfans-abs-mystic-mauve",
-      "name": "PBTfans ABS Mystic Mauve",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "matthew-",
       "material": "ABS"
     },
     {
@@ -22308,15 +17800,6 @@
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "Aiglatson Studio",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "pbtfans-abs-red-panda",
-      "name": "PBTfans ABS Red Panda",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "racconcrack",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -22448,15 +17931,6 @@
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "Aiden & Synthereal & Nqrwhql",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "pbtfans-bauhaus",
-      "name": "PBTfans Bauhaus",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "TokyoExpress",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -22834,22 +18308,6 @@
       "material": "ABS"
     },
     {
-      "id": "pbtfans-guide-line",
-      "name": "PBTfans Guide Line",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "PBTfans",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "pbtfans-hard-court",
-      "name": "PBTfans Hard Court",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "Nil"
-    },
-    {
       "id": "pbtfans-inkdrop",
       "name": "PBTfans Inkdrop",
       "manufacturer": "PBTfans",
@@ -23100,13 +18558,6 @@
       "material": "PBT"
     },
     {
-      "id": "pbtfans-oracle",
-      "name": "PBTfans Oracle",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "DontStealMyLolipop & Blamby"
-    },
-    {
       "id": "pbtfans-origami",
       "name": "PBTfans Origami",
       "manufacturer": "PBTfans",
@@ -23146,14 +18597,6 @@
       "material": "ABS"
     },
     {
-      "id": "pbtfans-pink-lemonade",
-      "name": "PBTfans Pink Lemonade",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "Aiden & Nqrwhql & Chuwy",
-      "material": "PBT"
-    },
-    {
       "id": "pbtfans-pixsprite",
       "name": "PBTfans Pixsprite",
       "manufacturer": "PBTfans",
@@ -23161,13 +18604,6 @@
       "designer": "PBTfans",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "pbtfans-plastic-bits",
-      "name": "PBTfans Plastic Bits",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "percent studio"
     },
     {
       "id": "pbtfans-poco-r2",
@@ -23439,15 +18875,6 @@
       "material": "ABS"
     },
     {
-      "id": "pbtfans-shakudo",
-      "name": "PBTfans Shakudō",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "Fuku",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "pbtfans-simple-katakana",
       "name": "PBTfans Simple Katakana",
       "manufacturer": "PBTfans",
@@ -23533,14 +18960,6 @@
       "brand": "PBTfans",
       "designer": "KEI",
       "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "pbtfans-stargazing",
-      "name": "PBTfans Stargazing",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "oay",
       "material": "PBT"
     },
     {
@@ -23689,13 +19108,6 @@
       "designer": "Pachriksu",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "pbtfans-unglazed",
-      "name": "PBTfans Unglazed",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "vndytran"
     },
     {
       "id": "pbtfans-valhalla",
@@ -23953,14 +19365,6 @@
       "material": "ABS"
     },
     {
-      "id": "sa-afk",
-      "name": "SA .AFK",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "SadTeRrA",
-      "profile": "SA"
-    },
-    {
       "id": "sa-angel-devil-daisy",
       "name": "SA Angel/Devil Daisy",
       "designer": "Jack Studio",
@@ -23991,12 +19395,6 @@
       "designer": "Oblotzky",
       "profile": "SA",
       "material": "ABS"
-    },
-    {
-      "id": "sa-astro",
-      "name": "SA Astro",
-      "designer": "Gatsby",
-      "profile": "SA"
     },
     {
       "id": "sa-avostar",
@@ -24090,30 +19488,11 @@
       "profile": "SA"
     },
     {
-      "id": "sa-choco-r2",
-      "name": "SA Choco r2",
-      "designer": "York Chan",
-      "profile": "SA"
-    },
-    {
       "id": "sa-copper",
       "name": "SA Copper",
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "fatboycarney",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-crimson-wither",
-      "name": "SA Crimson Wither",
-      "designer": "CaptusKeys",
-      "profile": "SA",
-      "material": "PBT"
-    },
-    {
-      "id": "sa-crystal",
-      "name": "SA Crystal",
-      "designer": "Dazon",
       "profile": "SA"
     },
     {
@@ -24146,14 +19525,6 @@
       "id": "sa-dualshot",
       "name": "SA Dualshot",
       "designer": "G Bur",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-ectoplasm",
-      "name": "SA Ectoplasm",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Zanduby",
       "profile": "SA"
     },
     {
@@ -24237,12 +19608,6 @@
       "material": "ABS"
     },
     {
-      "id": "sa-hacker",
-      "name": "SA Hacker",
-      "designer": "Jiezhou",
-      "profile": "SA"
-    },
-    {
       "id": "sa-handarbeit-plus",
       "name": "SA Handarbeit+",
       "manufacturer": "Signature Plastics",
@@ -24278,12 +19643,6 @@
       "profile": "SA"
     },
     {
-      "id": "sa-jukebox-r3",
-      "name": "SA Jukebox R3",
-      "designer": "LivingSpeedBump",
-      "profile": "SA"
-    },
-    {
       "id": "sa-kobayashi",
       "name": "SA Kobayashi",
       "designer": "Matt3o",
@@ -24314,24 +19673,9 @@
       "profile": "SA"
     },
     {
-      "id": "sa-lunar-new-year",
-      "name": "SA Lunar New Year",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "NoxNoxNox",
-      "profile": "SA",
-      "material": "ABS"
-    },
-    {
       "id": "sa-macrodata-refinement",
       "name": "SA Macrodata Refinement",
       "designer": "zslane",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-macrodata-refinement-int-addon",
-      "name": "SA Macrodata Refinement Int Addon",
-      "designer": "SP_Will",
       "profile": "SA"
     },
     {
@@ -24378,12 +19722,6 @@
       "profile": "SA"
     },
     {
-      "id": "sa-midcentury-modern",
-      "name": "SA Midcentury Modern",
-      "designer": "edwyn",
-      "profile": "SA"
-    },
-    {
       "id": "sa-ming",
       "name": "SA Ming",
       "designer": "hoq",
@@ -24395,12 +19733,6 @@
       "designer": "madmax13",
       "profile": "SA",
       "material": "ABS"
-    },
-    {
-      "id": "sa-mv-for-the-roses",
-      "name": "SA MV For the Roses",
-      "designer": "maxvoltar",
-      "profile": "SA"
     },
     {
       "id": "sa-nantucket-selectric",
@@ -24449,24 +19781,10 @@
       "profile": "SA"
     },
     {
-      "id": "sa-outlander",
-      "name": "SA Outlander",
-      "designer": "nasp",
-      "profile": "SA"
-    },
-    {
       "id": "sa-p-stratus",
       "name": "SA-P Stratus",
       "designer": "RGBKB",
       "profile": "SA-P"
-    },
-    {
-      "id": "sa-pbt-glow",
-      "name": "SA PBT Glow",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "emenelopee",
-      "profile": "SA"
     },
     {
       "id": "sa-phantom",
@@ -24560,13 +19878,6 @@
       "material": "ABS"
     },
     {
-      "id": "sa-r3-teletype-60-homing-addon",
-      "name": "SA-R3 Teletype 60% & Homing Addon",
-      "designer": "Piperaceae",
-      "profile": "SA-R3",
-      "material": "ABS"
-    },
-    {
       "id": "sa-r3-uniform-bliss",
       "name": "SA-R3 Uniform Bliss",
       "designer": "Minterly",
@@ -24581,12 +19892,6 @@
       "designer": "atlanticise",
       "profile": "SA",
       "material": "ABS"
-    },
-    {
-      "id": "sa-rebel",
-      "name": "SA Rebel",
-      "designer": "Pwner",
-      "profile": "SA"
     },
     {
       "id": "sa-recall",
@@ -24616,12 +19921,6 @@
       "profile": "SA"
     },
     {
-      "id": "sa-rose-librarian",
-      "name": "SA Rose Librarian",
-      "designer": "misononyan",
-      "profile": "SA"
-    },
-    {
       "id": "sa-royal-navy",
       "name": "SA Royal Navy",
       "designer": "Mechsupply",
@@ -24631,12 +19930,6 @@
       "id": "sa-royalty",
       "name": "SA Royalty",
       "designer": "ye_cole",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-sadboi",
-      "name": "SA sadboi",
-      "designer": "Ireris",
       "profile": "SA"
     },
     {
@@ -24671,14 +19964,6 @@
       "material": "ABS"
     },
     {
-      "id": "sa-simplicity",
-      "name": "SA Simplicity",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "romeo",
-      "profile": "SA"
-    },
-    {
       "id": "sa-skyriter",
       "name": "SA Skyriter",
       "manufacturer": "Signature Plastics",
@@ -24688,12 +19973,6 @@
       "material": "ABS"
     },
     {
-      "id": "sa-snes",
-      "name": "SA SNES",
-      "designer": "voodoo6k",
-      "profile": "SA"
-    },
-    {
       "id": "sa-spectra",
       "name": "SA Spectra",
       "manufacturer": "Signature Plastics",
@@ -24701,12 +19980,6 @@
       "designer": "OneCreativeMind & nasp",
       "profile": "SA",
       "material": "ABS"
-    },
-    {
-      "id": "sa-squeeze",
-      "name": "SA Squeeze",
-      "designer": "Dalailemma",
-      "profile": "SA"
     },
     {
       "id": "sa-strong-spirit",
@@ -24751,13 +20024,6 @@
       "material": "ABS"
     },
     {
-      "id": "sa-ti-914",
-      "name": "SA TI-914",
-      "designer": "mcmcmc",
-      "profile": "SA",
-      "material": "ABS"
-    },
-    {
       "id": "sa-tiger",
       "name": "SA Tiger",
       "manufacturer": "Domikey",
@@ -24776,12 +20042,6 @@
       "id": "sa-troubled-minds-r2",
       "name": "SA Troubled Minds r2",
       "designer": "thesiscamper",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-tundra-fade",
-      "name": "SA Tundra Fade",
-      "designer": "CaptusKeys",
       "profile": "SA"
     },
     {
@@ -24813,34 +20073,6 @@
       "name": "SA Virtual War r2",
       "designer": "Buger",
       "profile": "SA"
-    },
-    {
-      "id": "sa-virtual-war-season-2",
-      "name": "SA Virtual War Season 2",
-      "designer": "Buger",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-well-honey",
-      "name": "SA Well, Honey!",
-      "designer": "Piperaceae",
-      "profile": "SA",
-      "material": "ABS"
-    },
-    {
-      "id": "sa-welles",
-      "name": "SA Welles",
-      "designer": "madmax13",
-      "profile": "SA"
-    },
-    {
-      "id": "sa-window-view",
-      "name": "SA Window View",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "KIGA",
-      "profile": "SA",
-      "material": "ABS"
     },
     {
       "id": "sa-x-mas-gift",
@@ -24947,13 +20179,6 @@
       "material": "PBT"
     },
     {
-      "id": "sl-pbt-prestige",
-      "name": "SL PBT Prestige",
-      "designer": "switchlab",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "slk-dessau",
       "name": "SLK Dessau",
       "designer": "kema",
@@ -25016,13 +20241,6 @@
       "material": "PC"
     },
     {
-      "id": "swg-9o-o9",
-      "name": "SWG 9o_o9",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "Gtour"
-    },
-    {
       "id": "swg-art",
       "name": "SWG Art",
       "manufacturer": "Swagkeys",
@@ -25077,13 +20295,6 @@
       "designer": "ManoliVisuals"
     },
     {
-      "id": "swg-fan-u-c",
-      "name": "SWG FAN U.C",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "Mars"
-    },
-    {
       "id": "swg-feralis",
       "name": "SWG Feralis",
       "manufacturer": "Swagkeys",
@@ -25123,20 +20334,6 @@
       "material": "ABS"
     },
     {
-      "id": "swg-kids-typewriter",
-      "name": "SWG Kids Typewriter",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "York Chan"
-    },
-    {
-      "id": "swg-koyo",
-      "name": "SWG Koyo",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "L'Ortiz & BOWL"
-    },
-    {
       "id": "swg-lavender",
       "name": "SWG Lavender",
       "manufacturer": "Swagkeys",
@@ -25144,13 +20341,6 @@
       "designer": "Dotnick",
       "profile": "Cherry",
       "material": "ABS"
-    },
-    {
-      "id": "swg-meadow",
-      "name": "SWG Meadow",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "Divinapapaya"
     },
     {
       "id": "swg-midnight-rainbow",
@@ -25176,13 +20366,6 @@
       "designer": "Manu"
     },
     {
-      "id": "swg-nightshift",
-      "name": "SWG Nightshift",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "Shark"
-    },
-    {
       "id": "swg-nimbus",
       "name": "SWG Nimbus",
       "manufacturer": "Swagkeys",
@@ -25204,22 +20387,6 @@
       "manufacturer": "Swagkeys",
       "brand": "Swagkeys",
       "designer": "Haldus"
-    },
-    {
-      "id": "swg-retro-red-light",
-      "name": "SWG Retro Red Light",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "Jr.Mars",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "swg-retroguardia",
-      "name": "SWG Retroguardia",
-      "manufacturer": "Swagkeys",
-      "brand": "Swagkeys",
-      "designer": "raz"
     },
     {
       "id": "swg-rubber",
@@ -25884,13 +21051,6 @@
       "designer": "TerraKeycaps"
     },
     {
-      "id": "tkf-against-the-tides",
-      "name": "TKF Against the Tides",
-      "designer": "Marrowss",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "tmt-pink-lightning",
       "name": "TMT Pink Lightning",
       "manufacturer": "TomatoCaps",
@@ -25921,22 +21081,6 @@
       "material": "PBT"
     },
     {
-      "id": "tomocaps-barn-owl",
-      "name": "Tomocaps Barn Owl",
-      "manufacturer": "TomoCaps",
-      "brand": "TomoCaps",
-      "designer": "ocean.setups"
-    },
-    {
-      "id": "tomocaps-hanabi",
-      "name": "Tomocaps Hanabi",
-      "manufacturer": "TomoCaps",
-      "brand": "TomoCaps",
-      "designer": "silentlitwick",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "tomocaps-hangwa",
       "name": "Tomocaps Hangwa",
       "manufacturer": "TomoCaps",
@@ -25944,13 +21088,6 @@
       "designer": "dokkaebi",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "tomocaps-tsubaki",
-      "name": "Tomocaps Tsubaki",
-      "manufacturer": "TomoCaps",
-      "brand": "TomoCaps",
-      "designer": "YXXX & summerqm"
     },
     {
       "id": "topre-realforce-r3",
@@ -26101,13 +21238,6 @@
       "material": "ABS"
     },
     {
-      "id": "tut-h-s-o-s-6",
-      "name": "TUT H.S.O.S.6",
-      "manufacturer": "TutKeys",
-      "brand": "TutKeys",
-      "designer": "sososoya"
-    },
-    {
       "id": "tut-ick-the-holiday",
       "name": "TUT ICK The Holiday",
       "manufacturer": "TutKeys",
@@ -26124,13 +21254,6 @@
       "designer": "Mecha",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "tut-montage",
-      "name": "TUT Montage",
-      "manufacturer": "TutKeys",
-      "brand": "TutKeys",
-      "designer": "sososoya"
     },
     {
       "id": "tut-shape",
@@ -26154,12 +21277,6 @@
       "manufacturer": "TutKeys",
       "brand": "TutKeys",
       "designer": "sososoya"
-    },
-    {
-      "id": "uniform-retro-no-redraw",
-      "name": "Uniform Retro No Redraw",
-      "manufacturer": "Domikey",
-      "designer": "HifiFox"
     },
     {
       "id": "ursa-black-blue-red",
@@ -26374,12 +21491,6 @@
       "profile": "Cherry"
     },
     {
-      "id": "wda-maya",
-      "name": "WDA Maya",
-      "designer": "Fancy-Chance",
-      "material": "ABS"
-    },
-    {
       "id": "wda-suika",
       "name": "WDA Suika",
       "brand": "Glove Studio",
@@ -26408,11 +21519,6 @@
       "designer": "Biip"
     },
     {
-      "id": "wp-r1-2012",
-      "name": "WP R1 2012",
-      "designer": "Ovie Grant"
-    },
-    {
       "id": "wrk-cartridge",
       "name": "WRK Cartridge",
       "designer": "biip"
@@ -26435,27 +21541,11 @@
       "material": "PBT"
     },
     {
-      "id": "ws-aluminum-chroma-zen",
-      "name": "WS Aluminum Chroma Zen",
-      "manufacturer": "Wuque Studio",
-      "brand": "Wuque Studio",
-      "designer": "Ckeeb",
-      "material": "Aluminum"
-    },
-    {
       "id": "ws-aluminum-mizu",
       "name": "WS Aluminum Mizu",
       "manufacturer": "Wuque Studio",
       "brand": "Wuque Studio",
       "designer": "Rensuya",
-      "material": "Aluminum"
-    },
-    {
-      "id": "ws-aluminum-mystical-cosmos",
-      "name": "WS Aluminum Mystical Cosmos",
-      "manufacturer": "Wuque Studio",
-      "brand": "Wuque Studio",
-      "designer": "Ckeeb",
       "material": "Aluminum"
     },
     {
@@ -26502,13 +21592,6 @@
       "manufacturer": "Wuque Studio",
       "brand": "Wuque Studio",
       "designer": "SxM Designs"
-    },
-    {
-      "id": "ws-dream-skyliner",
-      "name": "WS Dream Skyliner",
-      "manufacturer": "Wuque Studio",
-      "brand": "Wuque Studio",
-      "designer": "Amamiya Kana"
     },
     {
       "id": "ws-entwined-flowers",
@@ -26572,24 +21655,6 @@
       "material": "PBT"
     },
     {
-      "id": "ws-senkou",
-      "name": "WS Senkou",
-      "manufacturer": "Wuque Studio",
-      "brand": "Wuque Studio",
-      "designer": "keepoto",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "ws-shirasagi",
-      "name": "WS Shirasagi",
-      "manufacturer": "Wuque Studio",
-      "brand": "Wuque Studio",
-      "designer": "sososoya",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "ws-stellar",
       "name": "WS Stellar",
       "manufacturer": "Wuque Studio",
@@ -26644,14 +21709,6 @@
       "name": "XDA Canvas r4",
       "designer": "MiTo",
       "profile": "XDA"
-    },
-    {
-      "id": "xda-deity-egypt",
-      "name": "XDA Deity: Egypt",
-      "manufacturer": "Geekark",
-      "designer": "Southheart & Linnanxue & Gezijun",
-      "profile": "XDA",
-      "material": "PBT"
     },
     {
       "id": "xda-godspeed",

@@ -11,6 +11,7 @@ The catalogs are offline JSON data maintained through a manual import and review
 | `Scripts/Catalogs/sources.json` | Fetch dates, Matrix commit, stable upstream identities, canonical IDs, source links, last observed fields, and collection variant notes |
 | `Scripts/Catalogs/overrides.json` | Reviewed duplicate decisions, metadata corrections, and exclusions |
 | `Scripts/Catalogs/keycap-enrichment.json` | Field-level source links and rationale for reviewed keycap metadata |
+| `Scripts/Catalogs/keycap-release-review.json` | Release eligibility decisions, evidence links, excluded source identities, and unresolved cases |
 | `Scripts/Catalogs/aliases.json` | Company spellings, abbreviations, profiles, and the inference rules below |
 | `Scripts/Catalogs/Aliases.ps1` | Applies those rules to display fields and duplicate comparisons while preserving IDs and source observations |
 | `Scripts/Import-Catalogs.ps1` | Fetch, replay, validate, and promote entry point |
@@ -34,6 +35,7 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 - Unknown values are omitted. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
 - Metadata comes from explicit labels, reviewed product/project specifications, and the inference rules below. Comparisons, packaging, optional artisans, and tentative production options do not supply specifications for the set.
 - Names keep meaningful revisions, rounds, and switch weights and colors. Add-on kits for a named set have their own entries, and kit options inside a parent product stay attached to it.
+- Keycap releases qualify once GB or in-stock orders open. Exclude IC-only proposals, future openings, cancelled releases, and failed-MOQ attempts. Verify the specific maker, profile, round, and kit: a cancelled add-on does not disqualify a produced base set, and a later successful sale may qualify after an earlier failed attempt.
 - Keycap names show only their Latin form. Switch names and designer credits are kept as written.
 - Accepted IDs stay fixed through name changes. Alternate names stay traceable in source observations and reviewed bindings. The only exception was a one-time cleanup on 2026-09-11 that renamed 57 IDs doubled by translated names, made before anything consumed catalog IDs.
 - Catalog versions increase only when accepted entry content changes. Fetch timestamps and formatting never change a version.
@@ -185,12 +187,14 @@ The override document has three maps:
 
 - `bindings` maps an upstream identity to a canonical ID. Confirm matching rounds and variants before merging, and assign distinct IDs when similar names differ. Moving every binding away from an entry retires it, and the report records the removal. Move or remove any overrides for the retired ID.
 - `entries` pins reviewed metadata. Set a field to `null` to omit a value that cannot be established. Never change `id` here. When merged listings disagree on a name or credit, pin the accepted value.
-- `excluded` rejects a source listing with a reason. Its entry is removed only when no other binding remains. Remove any entry override for that ID too. Stock availability is never a reason.
+- `excluded` rejects a source listing with a reason. Its entry is removed only when no other binding remains. Remove any entry override for that ID too. A sold-out eligible release remains in the catalog; a release whose orders never opened does not qualify.
 - Keep ambiguous variants separate. A collection-number suffix can distinguish specimens, but it is an import label rather than an official revision.
 - A listing that disappears, or a new automatic filter, never deletes accepted history. Existing metadata stays when a source stops supplying it. A drop below half a source's prior bindings, for sources with at least 20, aborts the import for investigation.
 - Unrecognized multi-option switch listings stop for review rather than discarding variants. Add an adapter rule with a fixture test when a source introduces a new option format.
 
 Reviewed keycap enrichment and corrections are pinned in `overrides.json`, with source links and rationale in `keycap-enrichment.json`. These are entry-specific decisions, not new global inference rules; unresolved fields remain omitted.
+
+Release exclusions are also pinned in `overrides.json`, with evidence in `keycap-release-review.json`. Future openings require a new review confirming that orders actually opened before lifting the exclusions; a calendar date alone does not restore them. Unavailable or unrelated links remain unresolved, and non-GMK entries without usable IC/GB details are left unchanged.
 
 ## Sources
 
@@ -225,7 +229,7 @@ Shopify links start at page 1. Increment `page` until an empty `products` array 
 | [Prototypist JSON](https://prototypist.net/collections/in-stock-keycap-sets/products.json?limit=250&page=1) | In-stock collection, including sold-out listings, newer rounds, and smaller makers | Shopify product JSON |
 | [Mode Designs JSON](https://modedesigns.com/collections/keycaps/products.json?limit=250&page=1) | Mode sets | Shopify product JSON |
 
-Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK index ends at 2024, and DCS Wiki omits some private runs. KeycapLendar includes interest checks, so a listing does not prove a product shipped. Canceled KeycapLendar sets are excluded by review. Blank metadata is intentional.
+Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK index ends at 2024, and DCS Wiki omits some private runs. KeycapLendar and retailer collections include interest checks; a listing or dated GB does not establish an eligible release. Reviewed IC-only, unopened, cancelled, and failed-MOQ releases are excluded across their source bindings. Blank metadata is intentional.
 
 ### Adapter notes
 
@@ -286,7 +290,7 @@ Small gaps worth filling manually:
 
 ## History
 
-The switch catalog holds 5,411 entries at version 16, and the keycap catalog 3,349 at version 26. Switch coverage is 69 percent manufacturer, 43 percent brand, and 82 percent type. Keycap coverage is 74 percent manufacturer, 89 percent brand, 84 percent profile, and 78 percent material.
+The switch catalog holds 5,411 entries at version 16, and the keycap catalog 2,745 at version 29. Switch coverage is 69 percent manufacturer, 43 percent brand, and 82 percent type. Keycap coverage is 71 percent manufacturer, 90 percent brand, 85 percent profile, and 80 percent material.
 
 **Sources.** Early imports used SwitchOddities, Matrix, Divinikey, KBDfans, and DCS Wiki. ThereminGoat's workbook and UniKeys expanded switches, KeycapLendar expanded keycaps, the score sheet followed, and seven retailer keycap feeds made sixteen adapters on 2026-09-10. Six more stores on 2026-09-12 added 573 keycap entries, mostly Keychron, Tai-Hao, Akko, Ducky, PBTfans, and Glorious sets. Osume, KeebsForAll, Prototypist, and Mode bring the adapter count to 26, adding 124 sets and kits and enriching 44 entries.
 
@@ -294,6 +298,7 @@ The switch catalog holds 5,411 entries at version 16, and the keycap catalog 3,3
 
 - 122 prototypes that no retailer ever listed, 95 samples, and 23 aftermarket modifications.
 - 82 canceled keycap sets, 15 switches whose names carried question marks about their identity, and one emoji-named GMK entry.
+- Release review removed 604 keycap entries that never reached an opened order round: 508 IC-only or superseded proposals, 41 unopened releases, 34 cancelled or failed-MOQ releases, and 21 with no evidence either way after a 2026-09-13 follow-up confirmed 23 other entries had actually opened for orders and kept them instead.
 - Cherry listings with no pin count where a pin-specific entry exists, including `Cherry Brown`, and nameplate specimens that duplicated a plain entry. MX1A listings are Hyperglide.
 - 36 artisans and 23 other listings that are not keycap sets, such as kit collections, leftover sales, faceplates, a keyboard, and single novelty keys.
 
