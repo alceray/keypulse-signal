@@ -43,7 +43,7 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 
 Run commands from the repository root, with a new run directory for each live fetch.
 
-1. Fetch all sixteen sources and generate staged candidates:
+1. Fetch all twenty-two sources and generate staged candidates:
 
    ```powershell
    .\Scripts\Import-Catalogs.ps1 -Action Fetch -Run artifacts/catalog-import/2026-10-01
@@ -77,7 +77,7 @@ Run commands from the repository root, with a new run directory for each live fe
 When only an adapter was added, seed the new run from the latest one instead of downloading everything again:
 
 ```powershell
-.\Scripts\Import-Catalogs.ps1 -Action Fetch -Run artifacts/catalog-import/2026-10-01 -Reuse artifacts/catalog-import/shopify-2026-09-10
+.\Scripts\Import-Catalogs.ps1 -Action Fetch -Run artifacts/catalog-import/2026-10-01 -Reuse artifacts/catalog-import/retail-2026-09-12
 ```
 
 `-Reuse` verifies every checksum in the older run, copies those files, verifies them again, and downloads only the sources the older run lacks. Each carried source keeps its original `fetchedAt` and records a `reusedFrom` folder name. Sources no longer registered are dropped and named. `-Reuse` still refuses to write into an existing run directory.
@@ -103,7 +103,7 @@ These rules fill a missing field and nothing else. They run once on the merged e
 
 Keycaps:
 
-- A name beginning with a recognized shape supplies that profile. The shapes are Cherry, CYL, MTNU, SA, DSA, DSS, DCS, KAT, KAM, KSA, XDA, MDA, MT3, OEM, HSA, and CRP-X, and CYL resolves to Cherry. A leading shape word names the profile, not the seller, so a Cherry-profile set is never recorded as sold by Cherry.
+- A name beginning with a recognized shape supplies that profile. The shapes are Cherry, CYL, MTNU, SA, DSA, DSS, DCS, KAT, KAM, KSA, XDA, MDA, MT3, OEM, HSA, CRP-X, OSA, LSA, ASA, MOA, MOG, Cubic, DDA, and ADA, and CYL resolves to Cherry. A leading shape word names the profile, not the seller, so a Cherry-profile set is never recorded as sold by Cherry.
 - A shape made by one company names it. DCS and DSS name Signature Plastics, KAT and KAM name Keyreative, MTNU names GMK, HSA names JTK, and CRP-X names Hammerworks. MTNU and CRP-X are PBT, and HSA is ABS. SA and DSA name nobody, because other factories make them too.
 - A company declares what its sets share through `keycapDefaults`. `manufacturer` is `true` when it makes what it sells, or names the company that does. `profile` and `material` give its usual shape and plastic, and `unlessProfile` names a line that differs.
 - GMK sets are Cherry and ABS, except MTNU sets, which record MTNU and PBT. KeyKobo sets are ABS. JTK sets are Cherry and ABS. XMI sets are Cherry and PBT. CRP sets are Cherry and PBT, made by Hammerworks.
@@ -130,8 +130,9 @@ Rejected:
 - Aftermarket switch work, meaning broken-in, hand-lubed, modded, spring-swapped, and lubed-and-filmed listings. Factory-lubed and pre-lubed switches ship that way and stay.
 - Accessories and assorted packs such as testers, pullers, deskmats, and stabilizers, plus configurator placeholders.
 - Listings of several products, meaning mega listings, kit collections that gather one kind of kit from many sets, and leftovers from several sets.
-- Artisans. A keycap listing is an artisan when its title says so, when its title or vendor names Salvun, or when its title ends in a single metal, machined, or brass keycap. HIBI also sells full sets, so its name alone rejects nothing. Keygem's `Artisan` tag is ignored because it marks ordinary sets too.
+- Artisans. A keycap listing is an artisan when its title or product type says so, when its title or vendor names Salvun, or when its title ends in a single metal, machined, or brass keycap. HIBI also sells full sets, so its name alone rejects nothing. Keygem's `Artisan` tag is ignored because it marks ordinary sets too.
 - Switches and faceplates listed in a keycap feed.
+- From the stores that write specifications into titles, packs of fewer than 20 keys, a single keycap or spacebar, rubber gaming keys, and listings whose title names no set once the specifications are gone. The last kind sells several colorways under one generic title.
 
 Renamed instead of rejected:
 
@@ -139,10 +140,13 @@ Renamed instead of rejected:
 - A trailing `B-Stock` is dropped, because B-stock units are the product with cosmetic flaws.
 - Keycap titles take the catalog's spelling. `GMK X (CYL)` and a leading `CYL X` become `GMK CYL X`, and a trailing `Bundle` is dropped. A dash after a known company separates brand from set, while any other dash is part of the name, as in `GMK Beloved - KA2017 Revival`.
 - Keycap names drop Chinese, Japanese, or Korean text wherever a Latin form remains, along with a round the translation repeats. A Latin gloss in brackets becomes the name, as in `DMK In Former Days`.
+- MechanicalKeyboards, Akko EU, Epomaker, Keychron, Glorious, and LumeKeebs write the key count, profile, printing process, plastic, and words like `Keycap Set` into their titles. These leave the name, and a stated profile and plastic fill those fields. A shape word or `PC` counts only beside other specifications, so `SA Solarized` and `Glorious PC` keep them. A trailing `Base` or `Base Kit` is dropped because a base kit is the set itself, and a leading layout moves behind the name, as in `Keychron Developer ISO`.
+- The single-brand stores leave their name out of most titles, so their brand is added to the name and the brand field. A `KBDfans` prefix before `PBTfans` is dropped because PBTfans is its line.
+- A designer credit ends before store copy that runs on into the story behind the set, as in `Wynects and inspired by manta rays`.
 
 Order matters in `Convert-CatalogProduct`. Modification wording is read before lube wording is removed, and the artisan check reads the raw title because cleanup drops the singular keycap that marks one. The switch rules run again on composed variant names, because stores put that wording in option labels.
 
-Each Shopify store fills `vendor` differently. SwitchOddities, UniKeys, Divinikey, and KBDfans read it as the selling brand. Daily Clack files each set under its maker, so its vendor supplies the manufacturer when that is a known maker. NovelKeys, CannonKeys, Omnitype, Keygem, Dangkeebs, and Swagkeys hold the store's name, stock status, or a mix, so theirs is ignored.
+Each Shopify store fills `vendor` differently. SwitchOddities, UniKeys, Divinikey, KBDfans, and MechanicalKeyboards read it as the selling brand. Daily Clack files each set under its maker, so its vendor supplies the manufacturer when that is a known maker. NovelKeys, CannonKeys, Omnitype, Keygem, Dangkeebs, and Swagkeys hold the store's name, stock status, or a mix, so theirs is ignored. Akko EU, Epomaker, Keychron, Glorious, and the LumeKeebs JKDK collection sell only their own brand, which the adapter records instead of the vendor.
 
 ## Matching and duplicates
 
@@ -207,6 +211,12 @@ Shopify links start at page 1. Increment `page` until an empty `products` array 
 | [Keygem JSON](https://keygem.com/collections/keycaps/products.json?limit=250&page=1) | KAT, MW, PBTfans, and studio sets | Shopify product JSON |
 | [Dangkeebs JSON](https://dangkeebs.com/collections/keycaps/products.json?limit=250&page=1) | KAM, Keyboard Science, and Qtuo Studio sets | Shopify product JSON |
 | [Swagkeys JSON](https://swagkeys.com/collections/keycaps/products.json?limit=250&page=1) | SW and CRP sets | Shopify product JSON |
+| [MechanicalKeyboards JSON](https://mechanicalkeyboards.com/collections/keycaps/products.json?limit=250&page=1) | Tai-Hao, Ducky, Varmilo, Traitors, KBParadise, GMK, PBTfans, and other brands | Shopify product JSON. Its product type names the profile and marks artisans. |
+| [Akko EU JSON](https://akkogear.eu/collections/keycap/products.json?limit=250&page=1) | Akko sets and layout kits | Shopify product JSON |
+| [Epomaker JSON](https://epomaker.com/collections/keycaps/products.json?limit=250&page=1) | Epomaker sets | Shopify product JSON |
+| [Keychron JSON](https://www.keychron.com/collections/all-keycaps/products.json?limit=250&page=1) | Keychron sets | Shopify product JSON |
+| [Glorious JSON](https://www.gloriousgaming.com/collections/keycaps/products.json?limit=250&page=1) | GPBT sets | Shopify product JSON |
+| [LumeKeebs JKDK JSON](https://lumekeebs.com/collections/jkdk/products.json?limit=250&page=1) | JKDK sets | Shopify product JSON |
 
 Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK index ends at 2024, and DCS Wiki omits some private runs. KeycapLendar includes interest checks, so a listing does not prove a product shipped. Canceled KeycapLendar sets are excluded by review. Blank metadata is intentional.
 
@@ -218,6 +228,7 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 - The score sheet repeats its composite table five more times by switch type, so only the first table is read, and it ends at `AVERAGE OF ALL`. Ranks change between publications, so identities are a digest of the name. Repeated rows that agree collapse with a warning, and rows that disagree stop for review. `Silent Linear` and `Silent Tactile` map to linear and tactile.
 - UniKeys packaging-only options share one identity, while weight and modification options keep their own upstream variant IDs.
 - The workbook and score sheet omit and report unknown and question-marked manufacturers.
+- MechanicalKeyboards and Akko EU throttle quick repeated requests. A fetch that stops on a long retry delay succeeds when retried a few minutes later.
 
 ### Candidate sources
 
@@ -234,6 +245,47 @@ Checked on 2026-09-09. None is an adapter yet.
 
 A 2026-09-09 comparison of name matches found no source redundant. XMI has only one entry, because KeycapLendar lists one XMI set and no other active source carries the line. XMI sells through Chinese platforms without reachable feeds, and keycapsets.com loads its data client side, so closing that gap needs a new feed or a manual list.
 
+#### Additional keycap sources
+
+Comparing the supplied maker list with catalog version 22 found 36 names absent from entry names, brands, and manufacturers after alias matching. These are coverage leads, not verified factory identities or counts of new sets. Existing uncredited entries still need product-level deduplication.
+
+The 16 working feeds were paginated to an empty/short final page (one product endpoint for Shenpo). **Listings** are measured product records, not accepted sets; indexed/identified counts below have narrower scope. **New** ranges are planning estimates against catalog version 22 that allow for accessory filtering, equivalent layouts, and existing entries. They are not a completed deduplication audit, include additions beyond the original missing-maker list, and must not be summed across overlapping sources. Distinct named colorways can produce more entries than product records.
+
+| Source | Missing names covered | Listings → estimated new | Worth it / remaining work |
+|---|---|---|---|
+| [Mode Designs](https://modedesigns.com/collections/keycaps) | Mode Designs | 5 → 5 | **Worth it; small.** Five named sets; easy source, separate manufacturing credits still needed. |
+| [HK Gaming](https://hkgaming.com/collections/keycaps) | HK Gaming | 2; 25 colorways → 15–25 | **Worth it; curated.** One full-set product has 25 named colorways; the other is a rubberized kit. Review identities before splitting variants. |
+| [Keebmonkey](https://www.keebmonkey.com/collections/keycaps) | Keebmonkey | 10 → 2–5 | **Low.** Mixed brands/accessories and existing-catalog overlap. Keytok with vendor `KeebMonkey` is not evidence of a Keebmonkey brand. |
+| [KPrepublic](https://kprepublic.com/collections/keycaps) | KPrepublic | 511 → 120–220 | **Conditional; second wave.** Large potential, low-confidence yield. 510 listings use the store vendor; many artisans, generic titles, and existing Domikey/Tai-Hao sets. |
+| [YMDK](https://ymdkey.com/collections/mass-custom-keycaps) | YMDK | 6 → 1 | **Skip this collection as an adapter.** Mostly partial keys/customization links. One gradient-set lead; broader collection discovery failed. |
+| [AIFEI storefront](https://aifeikeycap.com/collections/all) | AIFEI | 198 → 100–160 | **Defer despite volume.** Duplicate titles, accessories, unverified store ownership, and titles implying GMK/designer collaborations need substantial identity review. |
+| [Yong Qiu](https://www.yong-qiu.com/) | YONG-QIU | 168 → 70–110 | **Conditional; later.** 118 products typed as keycaps; mixed makers, bundled colorways, and possible AIFEI overlap require attribution review. |
+| [MechKeys IDOBAO](https://mechkeys.com/collections/idobao) | Idobao | 22 → 8–11 | **Worth it.** 11 titles identify keycap products; exclude keyboards, switches, and pullers. Vendor `mechkeysshop` is the seller. |
+| [Pantheonkeys Shenpo Terminal](https://pantheonkeys.com/products/shenpo-terminal-pbt-dye-sub-keycap-set) | Shenpo | 1 → 1 | **Worth a manual addition.** Explicit manufacturer credit; a dedicated one-product adapter is unnecessary. |
+| [Angry Miao Glacier](https://store.angrymiao.com/collections/angry-miao-glacier-keycap-set) | Angry Miao | 2 → 1–2 | **Worth a manual addition.** Clear/Dark Glacier; decide colorway identity. Use the [official archive](https://www.angrymiao.com/en/products/) for other families. |
+
+Other gaps need page extraction, manual research, or existing-source coverage review:
+
+| Missing name | Potential source | Evidence → estimated new | Worth it / remaining work |
+|---|---|---|---|
+| NuPhy | [Official keycaps collection](https://nuphy.com/collections/keycaps?page=1) | 38 indexed → 25–35 | **Worth it once accessible.** Indexed collection count only; live HTML/feed requests returned 403/429. |
+| Kinetic Labs | [Official keycaps catalog](https://kineticlabs.com/keycaps) | 41 sets; 21 own → 20–35 | **Worth it.** Page contains 21 Kinetic Labs/PolyCaps sets plus other makers; HTML extraction and third-party deduplication needed. |
+| Max Keyboard | [Official store](https://www.maxkeyboard.com/) | 8 base listings → 2–8 | **Low; manual.** Custom ANSI/ISO top/side-print families, not every configurator combination. Distinct from MAXKEY. |
+| Monstargear | [Official store](https://www.monstargears.com/) | 1 identified family → 1–3 | **Low; manual.** Macaron is indexed; variants/category coverage uncounted. Full-site yield remains unknown. |
+| Tecsee | [Official keycap catalog](https://www.tecseekeys.com/product/mechanical-keyboard/keycap.html) | 12 on page 1; 3 set leads → 0–3 | **Low.** Mostly artisans/generic wholesale offerings. Page 2 unavailable; estimate covers page 1 only. Establish set identities. |
+| VENIT KEYS | [BargainFox product listing](https://bargainfox.com/en/skus/side-printed-pbt-double-shot-shine-through-keycaps-133-key-cherry-profile/offer) | 1 identified listing → 0–1 | **Low; manual only.** Retail brand attribution, no reliable complete feed. |
+| PG | [KBDfans NP/PG/DA collection](https://kbdfans.com/collections/np-pg-da-profile) | Uncounted → unknown | **Worth checking the existing source.** NP/PG/DA collection may close a scope gap; PG can denote profile rather than manufacturer. |
+| Quality PBT / qPBT | [Terminal designer's source and vendor links](https://buttondown.com/MVKB/archive/qpbt-terminal-in-stock-this-week-many-other/) | 1 identified set → 1 | **Worth a manual addition.** Designer identifies qPBT as **EqualPBT**, not Quality PBT; revisit Daily Clack/Keygem coverage. |
+| ALL.CAPS | [Charue Design's Starter Type announcement](https://www.reddit.com/r/mechmarket/comments/toogw0) | 3 announced sets → 0–3 | **Conditional; manual.** Grass, Fire, Water; verify released status. Unrelated to the Australian Allcaps retailer. |
+| BSP Europe | [Deskthority maker discussion](https://deskthority.net/viewtopic.php?t=5088), [Originative American specimen](https://dangwang.wordpress.com/2013/06/16/originative-american/) | 1 specimen lead → 0–1 | **Defer.** Historical photos/records need identity research; do not alias BSP to CRP. |
+| Cherry (original keycaps) | [Cherry Corp MX Keycap History](https://deskthority.net/viewtopic.php?t=78) | Uncounted → unknown | **Defer.** Donor-model, material, and legend research; no bounded set catalog. Cherry profile does not establish Cherry manufacture. |
+| RAMA Works | [Official KATE archive](https://rama.works/blog/tag/KATE) | 0 verified released sets → 0 now | **Defer.** Archive documents projects; establish released sets and exclude prototypes/artisans. |
+| WASD | [Official keycap support archive](https://support.wasdkeyboards.com/hc/en-us/sections/115002234948-Keycaps) | Uncounted → unknown | **Defer.** Store unavailable; support pages cannot establish named-set coverage. |
+| SUMGSN | [Amazon seller discovery](https://www.sellerratings.com/amazon/usa/sumgsn), [store lead](https://sumgsn.store/) | 0 verified primary listings → unknown | **Defer.** Secondary seller index and inaccessible storefront; obtain primary product records first. |
+| GLIGING | [Amazon-link discovery](https://minipcreviewer.com/gliging-keycaps-set-review/) | 0 verified primary listings → unknown | **Defer.** Inconsistent affiliate descriptions only; do not import their specifications. |
+
+The six sources rated high became adapters on 2026-09-12. Mode Designs, MechKeys IDOBAO, and Kinetic Labs are the next focused additions. Shenpo, Angry Miao Glacier, and qPBT are better added by hand. KPrepublic has more listings but costs more review, and AIFEI and Yong Qiu should wait for reliable identity rules. The counts estimate the linked collections, not each maker's whole history.
+
 ### Source notices
 
 - [Matrix's license](https://github.com/matrixzj/matrixzj.github.io/blob/master/LICENSE.txt) is CC BY-NC-ND 4.0, not an unrestricted redistribution license. The import extracts factual names and credits, not pictures or prose. Preserve attribution and assess permission before distributing an adapted compilation.
@@ -243,9 +295,9 @@ A 2026-09-09 comparison of name matches found no source redundant. XMI has only 
 
 ## History
 
-The switch catalog holds 5,411 entries at version 15, and the keycap catalog 2,658 at version 20. Switch coverage is 69 percent manufacturer, 43 percent brand, and 82 percent type. Keycap coverage is 71 percent manufacturer, 58 percent brand, 71 percent profile, and 55 percent material.
+The switch catalog holds 5,411 entries at version 16, and the keycap catalog 3,231 at version 23. Switch coverage is 69 percent manufacturer, 43 percent brand, and 82 percent type. Keycap coverage is 73 percent manufacturer, 89 percent brand, 83 percent profile, and 76 percent material.
 
-**Sources.** Early imports used SwitchOddities, Matrix, Divinikey, KBDfans, and DCS Wiki. ThereminGoat's workbook and UniKeys expanded switches, KeycapLendar expanded keycaps, the score sheet followed, and seven retailer keycap feeds made sixteen adapters on 2026-09-10.
+**Sources.** Early imports used SwitchOddities, Matrix, Divinikey, KBDfans, and DCS Wiki. ThereminGoat's workbook and UniKeys expanded switches, KeycapLendar expanded keycaps, the score sheet followed, and seven retailer keycap feeds made sixteen adapters on 2026-09-10. Six more stores on 2026-09-12 added 573 keycap entries, mostly Keychron, Tai-Hao, Akko, Ducky, PBTfans, and Glorious sets.
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
 
@@ -259,6 +311,7 @@ The switch catalog holds 5,411 entries at version 15, and the keycap catalog 2,6
 - 24 spelling-error pairs revealed by alias standardization and the score sheet.
 - 91 lube-marked switch listings into 60 clean products. Three switches known only as modified specimens kept one clean entry.
 - 65 same-release keycap pairs. Most were a KeycapLendar first round and Matrix's `R1`, a version or year standing for a round as in `GMK Dracula V2.0` and `R2`, or a Matrix title worded differently. Twelve retailer listings moved to the round that was on sale when their page opened.
+- 71 MechanicalKeyboards listings joined existing entries, and layout or regional listings of one set joined it. Keychron and Ducky colorways sold in several shapes stay separate and carry the shape in their names, as in `Keychron OSA Retro`.
 
 **Kept apart on purpose.**
 

@@ -471,6 +471,19 @@
       ]
     },
     {
+      "canonical": "Epomaker",
+      "aliases": [
+        "EPOMAKER"
+      ]
+    },
+    {
+      "canonical": "Glorious",
+      "aliases": [
+        "Glorious PC",
+        "Glorious Gaming"
+      ]
+    },
+    {
       "canonical": "osume",
       "aliases": [
         "Osume"
@@ -830,6 +843,38 @@
       "aliases": [],
       "material": "PBT",
       "manufacturer": "Hammerworks"
+    },
+    {
+      "canonical": "OSA",
+      "aliases": []
+    },
+    {
+      "canonical": "LSA",
+      "aliases": []
+    },
+    {
+      "canonical": "ASA",
+      "aliases": []
+    },
+    {
+      "canonical": "MOA",
+      "aliases": []
+    },
+    {
+      "canonical": "MOG",
+      "aliases": []
+    },
+    {
+      "canonical": "Cubic",
+      "aliases": []
+    },
+    {
+      "canonical": "DDA",
+      "aliases": []
+    },
+    {
+      "canonical": "ADA",
+      "aliases": []
     }
   ],
   "manufacturerLabels": [

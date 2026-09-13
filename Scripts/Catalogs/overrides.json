@@ -2754,7 +2754,169 @@
     "dailyclack:4617611149367": "gmk-noire-2020",
     "switchoddities:8119098278172": "zepsody-bluebonnet",
     "switchoddities:9100467142940": "lcet-blue",
-    "switchoddities:9100475924764": "lcet-glacier-brown"
+    "switchoddities:9100475924764": "lcet-glacier-brown",
+    "akkogear:8604808282311": "akko-black-gold-cyrillic",
+    "akkogear:8605019635911": "akko-blue-on-white-cyrillic",
+    "akkogear:8605787226311": "akko-blue-on-white-cyrillic",
+    "akkogear:8605789257927": "akko-blue-on-white-cyrillic",
+    "akkogear:8605793353927": "akko-black-pink-cyrillic",
+    "mechanicalkeyboards:10061283688748": "pbtfans-no-signal-r2",
+    "mechanicalkeyboards:10061399163180": "gmk-gladiator",
+    "mechanicalkeyboards:10061407748396": "gmk-fuji",
+    "mechanicalkeyboards:10061411352876": "gmk-astral-light",
+    "mechanicalkeyboards:10061417808172": "gmk-moonlight",
+    "mechanicalkeyboards:10061423182124": "gmk-shadow",
+    "mechanicalkeyboards:10061767278892": "gmk-moomin",
+    "mechanicalkeyboards:10061768950060": "gmk-truffelschwein",
+    "mechanicalkeyboards:10061769900332": "gmk-higanbana",
+    "mechanicalkeyboards:10061779829036": "gmk-reforged",
+    "mechanicalkeyboards:10061785891116": "gmk-zen-pond",
+    "mechanicalkeyboards:10061787169068": "gmk-chaos-theory",
+    "mechanicalkeyboards:10061817020716": "gmk-infernal",
+    "mechanicalkeyboards:10061829407020": "gmk-ntd",
+    "mechanicalkeyboards:10061832093996": "gmk-arctic",
+    "mechanicalkeyboards:10061834944812": "gmk-marmoreal",
+    "mechanicalkeyboards:10061836615980": "gmk-tenshi",
+    "mechanicalkeyboards:10061837893932": "gmk-rouge-r2",
+    "mechanicalkeyboards:10153057747244": "kkb-soju-blue",
+    "mechanicalkeyboards:10153069674796": "kkb-dolch-cadet",
+    "mechanicalkeyboards:10231407182124": "hammerworks-crp-r7-beige",
+    "mechanicalkeyboards:10295042408748": "gmk-cyl-selene",
+    "mechanicalkeyboards:10300276506924": "gmk-monochrome-r2",
+    "mechanicalkeyboards:10302579114284": "gmk-fleuriste",
+    "mechanicalkeyboards:10302590583084": "gmk-seafarer",
+    "mechanicalkeyboards:10302615388460": "gmk-terror",
+    "mechanicalkeyboards:10304227901740": "keykobo-monet-s-psychedelic",
+    "mechanicalkeyboards:10357111816492": "kkb-shirasagi-r2",
+    "mechanicalkeyboards:10399049482540": "pbtfans-twist-r3",
+    "mechanicalkeyboards:8855843045676": "vortex-white-backlit",
+    "mechanicalkeyboards:8874562257196": "gmk-honeywell",
+    "mechanicalkeyboards:8874602692908": "glorious-gpbt-pastel",
+    "mechanicalkeyboards:8874634674476": "pbtfans-wob",
+    "mechanicalkeyboards:8874635329836": "pbtfans-bow",
+    "mechanicalkeyboards:8874641948972": "keychron-dolch-pink",
+    "mechanicalkeyboards:8926768038188": "tai-hao-aurora-wave-purple-backlit",
+    "mechanicalkeyboards:8926768103724": "tai-hao-aurora-wave-purple-backlit",
+    "mechanicalkeyboards:9032503296300": "pbtfans-retro-100",
+    "mechanicalkeyboards:9032653799724": "keychron-iceberg",
+    "mechanicalkeyboards:9034097525036": "pbtfans-dolch",
+    "mechanicalkeyboards:9036196577580": "pbtfans-kabuki-cho",
+    "mechanicalkeyboards:9040987390252": "keychron-oem-developer",
+    "mechanicalkeyboards:9329179033900": "keychron-morse-code",
+    "mechanicalkeyboards:9329180934444": "keychron-pixel-universe",
+    "mechanicalkeyboards:9329192010028": "keychron-ocean",
+    "mechanicalkeyboards:9329193648428": "keychron-beach",
+    "mechanicalkeyboards:9329198268716": "keychron-wheat-grey",
+    "mechanicalkeyboards:9656034951468": "varmilo-monet",
+    "mechanicalkeyboards:9667008463148": "akko-watermelon",
+    "mechanicalkeyboards:9667010625836": "akko-good-luck-charm",
+    "mechanicalkeyboards:9726696096044": "chilkey-summer-picnic",
+    "mechanicalkeyboards:9726697406764": "chilkey-unicorn",
+    "mechanicalkeyboards:9740116558124": "keychron-cyber-developer",
+    "mechanicalkeyboards:9740119146796": "keychron-neon-night",
+    "mechanicalkeyboards:9740136612140": "keychron-cosmic-galaxy",
+    "mechanicalkeyboards:9740152439084": "keychron-treasure-hunter",
+    "mechanicalkeyboards:9740153127212": "keychron-green-pulsation",
+    "mechanicalkeyboards:9740156404012": "keychron-pixel-sunset",
+    "mechanicalkeyboards:9758506385708": "keykobo-machinist",
+    "mechanicalkeyboards:9758708990252": "kkb-moon-rabbit",
+    "mechanicalkeyboards:9758721311020": "kkb-c-o-l",
+    "mechanicalkeyboards:9760505987372": "kkb-cherries",
+    "mechanicalkeyboards:9760604553516": "kkb-izakaya",
+    "mechanicalkeyboards:9840290300204": "kkb-helleborus",
+    "mechanicalkeyboards:9895275430188": "gmk-hazakura",
+    "mechanicalkeyboards:9895276904748": "gmk-hooty",
+    "mechanicalkeyboards:9895292666156": "gmk-arch",
+    "mechanicalkeyboards:9895294796076": "gmk-bingsu-r2",
+    "mechanicalkeyboards:9895296500012": "gmk-earth-tones",
+    "mechanicalkeyboards:9895300792620": "gmk-pharaoh",
+    "mechanicalkeyboards:9895302005036": "gmk-tiramisu",
+    "mechanicalkeyboards:9942719758636": "gmk-cinder",
+    "mechanicalkeyboards:9963003805996": "gmk-dandy-r2",
+    "mechanicalkeyboards:9963052695852": "gmk-fabrik",
+    "mechanicalkeyboards:9977270108460": "gmk-tako",
+    "mechanicalkeyboards:9977289736492": "gmk-camping-r3",
+    "mechanicalkeyboards:9978351190316": "gmk-harvest",
+    "mechanicalkeyboards:9978391036204": "gmk-nightlight",
+    "mechanicalkeyboards:9978404962604": "gmk-villanelle",
+    "mechanicalkeyboards:9978446381356": "gmk-manta",
+    "mechanicalkeyboards:9978464698668": "gmk-galaxy",
+    "mechanicalkeyboards:9978479280428": "gmk-kitsune",
+    "mechanicalkeyboards:9978507264300": "gmk-stargaze",
+    "mechanicalkeyboards:9978588791084": "gmk-terror-below",
+    "mechanicalkeyboards:9978614087980": "gmk-cyl-classic-beige",
+    "mechanicalkeyboards:9978622083372": "gmk-white-on-black",
+    "keychron:4777350955097": "keychron-xda-retro",
+    "keychron:4777357869145": "keychron-oem-retro",
+    "mechanicalkeyboards:9329125032236": "keychron-osa-retro",
+    "keychron:6730023239769": "keychron-oem-grey-white-blue",
+    "keychron:7033127010393": "keychron-cherry-grey-white-and-blue",
+    "keychron:7191926636633": "keychron-osa-black-transparent",
+    "keychron:7440594436185": "keychron-lsa-black-transparent",
+    "keychron:7310826242137": "keychron-mda-new-york",
+    "keychron:7486353703001": "keychron-lsa-new-york",
+    "keychron:7505973936217": "keychron-osa-new-york",
+    "keychron:7312687235161": "keychron-oem-gray-white-mint-iso",
+    "keychron:7775820447833": "keychron-cherry-gray-white-mint-iso",
+    "mechanicalkeyboards:8874547478828": "tai-hao-oem-white-on-black",
+    "mechanicalkeyboards:8874584932652": "tai-hao-cubic-white-on-black",
+    "mechanicalkeyboards:8874634346796": "ducky-cherry-ochi-seamless",
+    "mechanicalkeyboards:8874645094700": "ducky-oem-ochi-seamless",
+    "mechanicalkeyboards:8874548429100": "ducky-oem-skyline",
+    "mechanicalkeyboards:8933249286444": "ducky-cherry-skyline",
+    "mechanicalkeyboards:8933252530476": "ducky-mda-black-blank",
+    "mechanicalkeyboards:8933252596012": "ducky-cherry-black-blank",
+    "mechanicalkeyboards:8933252694316": "ducky-mda-white-blank",
+    "mechanicalkeyboards:8933253939500": "ducky-cherry-white-blank",
+    "keychron:6729620783193": "keychron-oem-hacker",
+    "mechanicalkeyboards:9222639386924": "keychron-lsa-hacker",
+    "keychron:7159068459097": "keychron-oem-developer",
+    "mechanicalkeyboards:9276886876460": "keychron-lsa-developer",
+    "mechanicalkeyboards:9283372745004": "keychron-lsa-black-translucent",
+    "mechanicalkeyboards:9283469836588": "keychron-osa-black-translucent",
+    "mechanicalkeyboards:9310702666028": "keychron-ksa-white-on-black",
+    "mechanicalkeyboards:9327986606380": "keychron-lsa-white-on-black",
+    "mechanicalkeyboards:9329168318764": "keychron-osa-white-on-black",
+    "mechanicalkeyboards:9327983395116": "keychron-ksa-black-on-white",
+    "mechanicalkeyboards:9328016163116": "keychron-lsa-black-on-white",
+    "mechanicalkeyboards:9329173102892": "keychron-osa-black-on-white",
+    "keychron:7079810662489": "keychron-cherry-royal",
+    "mechanicalkeyboards:9328045818156": "keychron-lsa-royal",
+    "mechanicalkeyboards:9283838083372": "keychron-lsa-light-grey-white",
+    "mechanicalkeyboards:9329120182572": "keychron-ksa-light-grey-white",
+    "keychron:6731795890265": "keychron-oem-dolch-red",
+    "mechanicalkeyboards:9329174544684": "keychron-cherry-dolch-red",
+    "mechanicalkeyboards:8874633756972": "ducky-oem-tuxedo",
+    "mechanicalkeyboards:9659310309676": "ducky-cherry-tuxedo",
+    "mechanicalkeyboards:10148190748972": "gmk-cyl-pob",
+    "mechanicalkeyboards:10061414072620": "gmk-peaches-n-cream-lite",
+    "mechanicalkeyboards:9712696230188": "pbtfans-abs-retro-dark-lights-r2",
+    "mechanicalkeyboards:8874632511788": "gmk-muted-retro",
+    "mechanicalkeyboards:9040995352876": "gmk-hyperfuse",
+    "mechanicalkeyboards:8874671374636": "gmk-originative",
+    "keychron:6975678447705": "keychron-oem-retro",
+    "keychron:6732533694553": "keychron-blue",
+    "keychron:6975681822809": "keychron-blue",
+    "keychron:6740977418329": "keychron-carbon",
+    "keychron:6975682052185": "keychron-carbon",
+    "mechanicalkeyboards:8874608296236": "glorious-black",
+    "mechanicalkeyboards:8874608886060": "glorious-black",
+    "mechanicalkeyboards:8874608951596": "glorious-black",
+    "mechanicalkeyboards:8874609017132": "glorious-black",
+    "mechanicalkeyboards:8874609082668": "glorious-black",
+    "mechanicalkeyboards:8874609901868": "glorious-black",
+    "mechanicalkeyboards:8874609967404": "glorious-black",
+    "mechanicalkeyboards:8874621075756": "tai-hao-hygge",
+    "mechanicalkeyboards:8874621141292": "tai-hao-hygge",
+    "mechanicalkeyboards:8874626875692": "tai-hao-pine-green-gradient",
+    "mechanicalkeyboards:8874631266604": "tai-hao-pine-green-gradient",
+    "mechanicalkeyboards:8874631561516": "tai-hao-pine-green-gradient",
+    "mechanicalkeyboards:8874631627052": "tai-hao-pine-green-gradient",
+    "mechanicalkeyboards:10207006359852": "mkl-classic-black-wob",
+    "mechanicalkeyboards:10085795856684": "epbt-x-gok-black-on-white",
+    "glorious:8116229210287": "glorious-gpbt-national-parks-collection",
+    "mechanicalkeyboards:9120271696172": "tai-hao-love-in-paris-backlit",
+    "mechanicalkeyboards:9034333618476": "tai-hao-hygge"
   },
   "entries": {
     "keycaps/dcs-dolch": {
@@ -5431,7 +5593,8 @@
       "designer": "Kight"
     },
     "keycaps/pbtfans-twist-r3": {
-      "designer": "Biip"
+      "designer": "Biip",
+      "name": "PBTfans Twist R3"
     },
     "keycaps/gmk-mv-t3rminal": {
       "name": "GMK MV T3rminal"
@@ -6119,7 +6282,8 @@
       "name": "GMK ³ (Cubed)"
     },
     "keycaps/gmk-dandy-r2": {
-      "name": "GMK Dandy r2"
+      "name": "GMK Dandy r2",
+      "designer": "Sour"
     },
     "keycaps/gmk-darling-r2": {
       "name": "GMK Darling r2"
@@ -7779,7 +7943,9 @@
       "material": "PBT"
     },
     "keycaps/pbtfans-abs-retro-dark-lights-r2": {
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "name": "PBTfans ABS Retro Dark Lights r2",
+      "designer": "Jr.Mars"
     },
     "keycaps/ifk-futureware": {
       "brand": "Infinikey",
@@ -10102,6 +10268,244 @@
     },
     "keycaps/pbtfans-abs-pelican": {
       "profile": "Cherry"
+    },
+    "keycaps/keychron-xda-retro": {
+      "name": "Keychron XDA Retro"
+    },
+    "keycaps/keychron-oem-retro": {
+      "name": "Keychron OEM Retro"
+    },
+    "keycaps/keychron-osa-retro": {
+      "name": "Keychron OSA Retro"
+    },
+    "keycaps/keychron-oem-grey-white-blue": {
+      "name": "Keychron OEM Grey White Blue"
+    },
+    "keycaps/keychron-cherry-grey-white-and-blue": {
+      "name": "Keychron Cherry Grey, White, and Blue"
+    },
+    "keycaps/keychron-osa-black-transparent": {
+      "name": "Keychron OSA Black Transparent"
+    },
+    "keycaps/keychron-lsa-black-transparent": {
+      "name": "Keychron LSA Black Transparent"
+    },
+    "keycaps/keychron-mda-new-york": {
+      "name": "Keychron MDA New York"
+    },
+    "keycaps/keychron-lsa-new-york": {
+      "name": "Keychron LSA New York"
+    },
+    "keycaps/keychron-osa-new-york": {
+      "name": "Keychron OSA New York"
+    },
+    "keycaps/keychron-oem-gray-white-mint-iso": {
+      "name": "Keychron OEM Gray White Mint ISO"
+    },
+    "keycaps/keychron-cherry-gray-white-mint-iso": {
+      "name": "Keychron Cherry Gray White Mint ISO"
+    },
+    "keycaps/tai-hao-oem-white-on-black": {
+      "name": "Tai-Hao OEM White on Black"
+    },
+    "keycaps/tai-hao-cubic-white-on-black": {
+      "name": "Tai-Hao Cubic White on Black"
+    },
+    "keycaps/ducky-cherry-ochi-seamless": {
+      "name": "Ducky Cherry Ochi Seamless"
+    },
+    "keycaps/ducky-oem-ochi-seamless": {
+      "name": "Ducky OEM Ochi Seamless"
+    },
+    "keycaps/ducky-oem-skyline": {
+      "name": "Ducky OEM Skyline"
+    },
+    "keycaps/ducky-cherry-skyline": {
+      "name": "Ducky Cherry Skyline"
+    },
+    "keycaps/ducky-mda-black-blank": {
+      "name": "Ducky MDA Black Blank"
+    },
+    "keycaps/ducky-cherry-black-blank": {
+      "name": "Ducky Cherry Black Blank"
+    },
+    "keycaps/ducky-mda-white-blank": {
+      "name": "Ducky MDA White Blank"
+    },
+    "keycaps/ducky-cherry-white-blank": {
+      "name": "Ducky Cherry White Blank"
+    },
+    "keycaps/keychron-oem-hacker": {
+      "name": "Keychron OEM Hacker"
+    },
+    "keycaps/keychron-lsa-hacker": {
+      "name": "Keychron LSA Hacker"
+    },
+    "keycaps/keychron-oem-developer": {
+      "name": "Keychron OEM Developer"
+    },
+    "keycaps/keychron-lsa-developer": {
+      "name": "Keychron LSA Developer"
+    },
+    "keycaps/keychron-lsa-black-translucent": {
+      "name": "Keychron LSA Black Translucent"
+    },
+    "keycaps/keychron-osa-black-translucent": {
+      "name": "Keychron OSA Black Translucent"
+    },
+    "keycaps/keychron-ksa-white-on-black": {
+      "name": "Keychron KSA White on Black"
+    },
+    "keycaps/keychron-lsa-white-on-black": {
+      "name": "Keychron LSA White on Black"
+    },
+    "keycaps/keychron-osa-white-on-black": {
+      "name": "Keychron OSA White on Black"
+    },
+    "keycaps/keychron-ksa-black-on-white": {
+      "name": "Keychron KSA Black on White"
+    },
+    "keycaps/keychron-lsa-black-on-white": {
+      "name": "Keychron LSA Black on White"
+    },
+    "keycaps/keychron-osa-black-on-white": {
+      "name": "Keychron OSA Black on White"
+    },
+    "keycaps/keychron-cherry-royal": {
+      "name": "Keychron Cherry Royal"
+    },
+    "keycaps/keychron-lsa-royal": {
+      "name": "Keychron LSA Royal"
+    },
+    "keycaps/keychron-lsa-light-grey-white": {
+      "name": "Keychron LSA Light Grey / White"
+    },
+    "keycaps/keychron-ksa-light-grey-white": {
+      "name": "Keychron KSA Light Grey / White"
+    },
+    "keycaps/keychron-oem-dolch-red": {
+      "name": "Keychron OEM Dolch Red"
+    },
+    "keycaps/keychron-cherry-dolch-red": {
+      "name": "Keychron Cherry Dolch Red"
+    },
+    "keycaps/ducky-oem-tuxedo": {
+      "name": "Ducky OEM Tuxedo"
+    },
+    "keycaps/ducky-cherry-tuxedo": {
+      "name": "Ducky Cherry Tuxedo"
+    },
+    "keycaps/keychron-blue": {
+      "name": "Keychron Blue"
+    },
+    "keycaps/keychron-carbon": {
+      "name": "Keychron Carbon"
+    },
+    "keycaps/tai-hao-pine-green-gradient": {
+      "name": "Tai-Hao Pine Green Gradient"
+    },
+    "keycaps/mkl-classic-black-wob": {
+      "name": "MKL Classic Black (WoB)"
+    },
+    "keycaps/epbt-x-gok-black-on-white": {
+      "name": "ePBT x GOK Black on White"
+    },
+    "keycaps/glorious-gpbt-national-parks-collection": {
+      "name": "Glorious GPBT National Parks Collection"
+    },
+    "keycaps/tai-hao-love-in-paris-backlit": {
+      "name": "Tai-Hao Love in Paris Backlit"
+    },
+    "keycaps/glorious-black": {
+      "name": "Glorious Black"
+    },
+    "keycaps/gmk-cyl-pob": {
+      "name": "GMK CYL PoB"
+    },
+    "keycaps/gmk-gladiator": {
+      "designer": "SxM Designs"
+    },
+    "keycaps/gmk-muted-retro": {
+      "name": "GMK Muted Retro"
+    },
+    "keycaps/gmk-originative": {
+      "name": "GMK Originative"
+    },
+    "keycaps/gmk-seafarer": {
+      "designer": "iinko_mk"
+    },
+    "keycaps/tai-hao-hygge": {
+      "name": "Tai-Hao Hygge"
+    },
+    "keycaps/hammerworks-crp-40s-mods": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-all-in-mods": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-all-red": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-ansi-english-alpha": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-colorful-fonts-beige": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-colorful-fonts-white": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-desko-black": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-desko-color": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-irish-alphas": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-modern-beige": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-numpad-beige": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-peacock-alphas": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-purple": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
+    },
+    "keycaps/hammerworks-crp-runes-alphas": {
+      "brand": "CRP",
+      "manufacturer": "Hammerworks",
+      "material": "PBT"
     }
   },
   "excluded": {
@@ -10531,6 +10935,8 @@
     "omnitype:8828423307433": "Single novelty keycap, not a keycap set",
     "keygem:11609163825420": "Single spare spacebar, not a keycap set",
     "keygem:7970346828044": "Pack of ten loose blank keys, not a keycap set",
-    "keygem:8630271770892": "B-stock units of SL PBT Habitat, which already has its own entry"
+    "keygem:8630271770892": "B-stock units of SL PBT Habitat, which already has its own entry",
+    "mechanicalkeyboards:9630762369324": "Spacebar kit sold for any set, not a named set",
+    "keychron:6698821976153keychron:6980001693785": "Colorways under one generic listing, not a named set"
   }
 }

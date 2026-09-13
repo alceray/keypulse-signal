@@ -198,6 +198,38 @@ Test-Case 'Keycap add-ons are retained across sources while references, accessor
         Assert ((Convert-CatalogMatrix "title: $name" @{ sourcePath = 'docs/gmk-keycaps/reference.md' } ('a' * 40)).excluded) 'Reference page was accepted.'
     }
 }
+Test-Case 'Titles full of specifications yield the set name, its shape, and its plastic' {
+    function New-Listing([string]$Title, [string]$Type = '', [string]$Body = '') {
+        [ordered]@{ id = 970; title = $Title; handle = 'x'; vendor = 'Example'; product_type = $Type; body_html = $Body; options = @(); variants = @() }
+    }
+    $record = Convert-CatalogProduct (New-Listing 'Tai-Hao Midnight Sun 114 Key Cubic Double Shot ABS Keycap Set' 'Cubic Profile Keycaps') 'mechanicalkeyboards'
+    Assert ($record.entry.name -ceq 'Tai-Hao Midnight Sun' -and $record.entry.profile -ceq 'Cubic' -and $record.entry.material -ceq 'ABS') 'Title specifications were not separated.'
+    $record = Convert-CatalogProduct (New-Listing 'Signature Plastics SA Solarized 152 Key SA Profile Double Shot ABS Keycap Set') 'mechanicalkeyboards'
+    Assert ($record.entry.name -ceq 'Signature Plastics SA Solarized' -and $record.entry.profile -ceq 'SA') 'A shape word inside the name was removed.'
+    $record = Convert-CatalogProduct (New-Listing 'Glorious PC GPBT Pastel 114 Key Cherry Profile Dye Sub PBT Keycap Set') 'mechanicalkeyboards'
+    Assert ($record.entry.name -ceq 'Glorious PC GPBT Pastel' -and $record.entry.material -ceq 'PBT') 'PC in a company name was read as a plastic.'
+    Assert ((Convert-CatalogProduct (New-Listing 'Chilkey Wild Rose 170 Key DDA Profile Dye Sub PC Keycap Set') 'mechanicalkeyboards').entry.material -ceq 'PC') 'PC beside other specifications was not read.'
+    Assert ((Convert-CatalogProduct (New-Listing 'GMK Arctic Base Kit Cherry Profile Double Shot ABS Keycap Set') 'mechanicalkeyboards').entry.name -ceq 'GMK Arctic') 'A base kit was not read as its set.'
+    $record = Convert-CatalogProduct (New-Listing 'KBDFans PBTfans Twist 40s Kit 36 Key Cherry Profile Double Shot PBT Add-on Keycap Set') 'mechanicalkeyboards'
+    Assert ($record.entry.name -ceq 'PBTfans Twist 40s Kit' -and -not $record.excluded) 'An add-on kit was lost.'
+    $record = Convert-CatalogProduct (New-Listing 'ISO Cherry Profile Dye-Sub PBT Full Set Keycap Set - Developer') 'keychron'
+    Assert ($record.entry.name -ceq 'Keychron Developer ISO' -and $record.entry.brand -ceq 'Keychron') 'A single-brand store listing lost its brand or layout.'
+    $record = Convert-CatalogProduct (New-Listing 'Quantum Horizon Keycap Set (126-Key)') 'akkogear'
+    Assert ($record.entry.name -ceq 'Akko Quantum Horizon' -and -not $record.excluded) 'A bracketed key count stayed in the name.'
+    foreach ($case in @(
+        @{ title = 'Traitors Sakura Kuro 6 Key OEM Profile Dye Sub Keycap Set'; reason = 'Individual keys' }
+        @{ title = 'Leopold Red Escape Cherry Profile Dye Sub PBT Keycap'; reason = 'Individual keys' }
+        @{ title = 'Ji Zun Blue Camo OEM Profile Dye Sub PBT Spacebar'; reason = 'Individual keys' }
+        @{ title = 'Tai-Hao Neon Blue Backlit 22 Key OEM Profile Double Shot ABS TPR Keycap Set'; reason = 'Rubber' }
+        @{ title = 'Double Shot KSA PBT Keycap Full Keycap Set'; reason = 'generic' }
+        @{ title = 'Dwarf Factory Happy Hippo Kaba'; type = 'Artisan Keycaps'; reason = 'Artisan' }
+    )) {
+        $type = if ($case.Contains('type')) { $case.type } else { '' }
+        Assert ((Convert-CatalogProduct (New-Listing $case.title $type) 'mechanicalkeyboards').excluded -match $case.reason) "$($case.title) was accepted as a keycap set."
+    }
+    $record = Convert-CatalogProduct (New-Listing 'GMK Example Cherry Profile Double Shot ABS Keycap Set' '' 'Designed by Wynects and inspired by manta rays') 'mechanicalkeyboards'
+    Assert ($record.entry.designer -ceq 'Wynects') 'Store prose stayed in the designer credit.'
+}
 Test-Case 'Unicode names and meaningful rounds survive parsing' {
     $p = (New-TestRecords)[2]
     $expected = 'GMK Example R2 ' + [char]0x793A + [char]0x4F8B

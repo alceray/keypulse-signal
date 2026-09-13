@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 15,
+  "catalogVersion": 16,
   "totalCount": 5411,
   "entries": [
     {
@@ -6669,81 +6669,96 @@
       "id": "epomaker-bluebird",
       "name": "Epomaker Bluebird",
       "manufacturer": "Haimu",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-budgerigar",
-      "name": "Epomaker Budgerigar"
+      "name": "Epomaker Budgerigar",
+      "brand": "Epomaker"
     },
     {
       "id": "epomaker-budgerigar-v1-1",
-      "name": "Epomaker Budgerigar V1.1"
+      "name": "Epomaker Budgerigar V1.1",
+      "brand": "Epomaker"
     },
     {
       "id": "epomaker-budgreigar",
       "name": "Epomaker Budgreigar",
       "manufacturer": "Haimu",
+      "brand": "Epomaker",
       "switchType": "tactile"
     },
     {
       "id": "epomaker-budgreigar-mold-v2",
       "name": "Epomaker Budgreigar (Mold V2)",
       "manufacturer": "Haimu",
+      "brand": "Epomaker",
       "switchType": "tactile"
     },
     {
       "id": "epomaker-comte",
       "name": "Epomaker Comte",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-dawn-pink",
       "name": "Epomaker Dawn Pink",
       "manufacturer": "BSUN",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-flamingo",
       "name": "Epomaker Flamingo",
       "manufacturer": "Haimu",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-nude-rosa",
       "name": "Epomaker Nude Rosa",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-peace-lily",
-      "name": "Epomaker Peace Lily"
+      "name": "Epomaker Peace Lily",
+      "brand": "Epomaker"
     },
     {
       "id": "epomaker-shadow-black",
       "name": "Epomaker Shadow Black",
       "manufacturer": "BSUN",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-wisteria-linear",
       "name": "Epomaker Wisteria Linear",
       "manufacturer": "BSUN",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-wisteria-linear-v2",
       "name": "Epomaker Wisteria Linear V2",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
       "id": "epomaker-wisteria-tactile",
       "name": "Epomaker Wisteria Tactile",
       "manufacturer": "BSUN",
+      "brand": "Epomaker",
       "switchType": "tactile"
     },
     {
       "id": "epomaker-wisteria-v2",
       "name": "Epomaker Wisteria V2",
       "manufacturer": "BSUN",
+      "brand": "Epomaker",
       "switchType": "linear"
     },
     {
@@ -10622,129 +10637,153 @@
       "id": "glorious-fox",
       "name": "Glorious Fox",
       "manufacturer": "Tecsee",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-fox-he",
       "name": "Glorious Fox HE",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-fox-heavy",
       "name": "Glorious Fox Heavy",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-fox-light",
-      "name": "Glorious Fox Light"
+      "name": "Glorious Fox Light",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-fox-standard",
       "name": "Glorious Fox Standard",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-fox-ultralight",
       "name": "Glorious Fox Ultralight",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-lynx",
       "name": "Glorious Lynx",
       "manufacturer": "Tecsee",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-lynx-he",
-      "name": "Glorious Lynx HE"
+      "name": "Glorious Lynx HE",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-lynx-he-silent",
-      "name": "Glorious Lynx HE Silent"
+      "name": "Glorious Lynx HE Silent",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-lynx-silent",
       "name": "Glorious Lynx Silent",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-lynx-silent-he",
       "name": "Glorious Lynx Silent HE",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-lynx-standard-he",
       "name": "Glorious Lynx Standard HE",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "linear"
     },
     {
       "id": "glorious-mako",
       "name": "Glorious Mako",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "tactile"
     },
     {
       "id": "glorious-mako-standard",
-      "name": "Glorious Mako Standard"
+      "name": "Glorious Mako Standard",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-mako-ultralight",
       "name": "Glorious Mako Ultralight",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "tactile"
     },
     {
       "id": "glorious-panda",
       "name": "Glorious Panda",
       "manufacturer": "Tecsee",
+      "brand": "Glorious",
       "switchType": "tactile"
     },
     {
       "id": "glorious-panda-he",
-      "name": "Glorious Panda HE"
+      "name": "Glorious Panda HE",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-panda-he-silent",
-      "name": "Glorious Panda HE Silent"
+      "name": "Glorious Panda HE Silent",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-panda-silent",
       "name": "Glorious Panda Silent",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "tactile"
     },
     {
       "id": "glorious-panda-silent-he",
       "name": "Glorious Panda Silent HE",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "tactile"
     },
     {
       "id": "glorious-panda-standard-he",
       "name": "Glorious Panda Standard HE",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "tactile"
     },
     {
       "id": "glorious-pandas",
-      "name": "Glorious Pandas"
+      "name": "Glorious Pandas",
+      "brand": "Glorious"
     },
     {
       "id": "glorious-raptor",
       "name": "Glorious Raptor",
+      "brand": "Glorious",
       "switchType": "clicky"
     },
     {
       "id": "glorious-raptor-he",
       "name": "Glorious Raptor HE",
       "manufacturer": "Outemu",
+      "brand": "Glorious",
       "switchType": "clicky"
     },
     {
