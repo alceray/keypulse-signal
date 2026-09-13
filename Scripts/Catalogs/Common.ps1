@@ -188,6 +188,22 @@ function Get-CatalogSpecimenReason([string]$Name) {
     $null
 }
 
+# Drops the generic "Switch(es)" word and a pack size these stores add to a name that
+# SwitchOddities and UniKeys already write without either.
+function Get-CatalogSwitchSuffixName([string]$Name) {
+    $name = $Name -replace [char]0xFF08, '(' -replace [char]0xFF09, ')'
+    # A parenthetical can pair a type with a pack size; keep the type as a plain word.
+    $name = $name -replace '(?i)\s+switch(?:es)?\s*\(\s*([^,()]+?)\s*,\s*\d+\s*(?:pcs|pieces|pack)\s*\)\s*$', ' $1'
+    $name = $name -replace '(?i)\(\s*([^,()]+?)\s*,\s*\d+\s*(?:pcs|pieces|pack)\s*\)\s*$', ' $1'
+    # A bare pack count must go before "Switch(es)" is stripped, since it can sit right after it.
+    $name = $name -replace '(?i)\s*\(\d+\s*(?:pcs|pieces|pack)?\)\s*$', ''
+    $name = $name -replace '(?i)\s*[-\u2013]\s*\d+\s*(?:pcs|pieces|pack)\s*$', ''
+    # A weight value can carry how it ships tacked on, as in "50g Bottom-out in Film Packaging".
+    $name = $name -replace '(?i)\s+in\s+\w+\s+packaging\b', ''
+    $name = $name -replace '(?i)\bswitch(?:es)?\b\s*(?:set\b)?', ''
+    ($name -replace '\s+', ' ').Trim()
+}
+
 # Aftermarket work on another switch is not its own product. Factory and pre-lubed
 # options are how a switch ships, so they stay.
 function Get-CatalogModificationReason([string]$Name) {
@@ -202,10 +218,12 @@ function Get-CatalogModificationReason([string]$Name) {
 # lube wording does not belong in its name.
 function Get-CatalogLubeFreeName([string]$Name) {
     if ($Name -match "(?i)\b$script:CatalogLubeModelName") { return Get-CatalogName $Name }
-    $name = $Name -replace '(?i),\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s*\)', ')'
+    # A composed variant suffix reads first, or the rule below would match its opening
+    # parenthesis alone and leave "Stock" stranded.
+    $name = $Name -replace '(?i)\s*[-\u2013]\s*(?:stock\s*)?\(?(?:no\s+|light\s+|medium\s+|heavy\s+|factory\s+|pre-?|hand\s+)?(?:lubed?|unlubed|dry)\)?\s*$', ''
+    $name = $name -replace '(?i),\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s*\)', ')'
     $name = $name -replace '(?i)\s*\((?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry),?\s*', ' ('
     $name = $name -replace '\s*\(\s*\)', ''
-    $name = $name -replace '(?i)\s*[-\u2013]\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s*$', ''
     $name = $name -replace '(?i)\s+(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\b', ' '
     $name = $name -replace '(?i)^\s*(?:factory\s+|pre-?|hand\s+)?(?:lubed|unlubed|dry)\s+', ''
     $name = Get-CatalogName ($name -replace '\s+\)', ')')

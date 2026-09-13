@@ -78,6 +78,10 @@ function Save-TestFetch([string]$Run) {
                 $offset = 400 + 10 * @($script:CatalogSources.Keys).IndexOf($source)
                 $data.products[0].title = "$source Set"; $data.products[0].id = $offset + 1
                 $data.products[1].title = "$source Novelties"; $data.products[1].id = $offset + 2
+                if ($script:CatalogSources[$source].kind -eq 'switches') {
+                    # The shared fixture's "Kit" option is a keycap concept a switch source never sees.
+                    $data.products[0].variants = @($data.products[0].variants[0]); $data.products[0].options = @()
+                }
             }
             $files = @()
             foreach ($page in 1..2) {
@@ -257,6 +261,67 @@ Test-Case 'Replay requires a complete checksummed fetch and expands switch weigh
     [IO.File]::AppendAllText((Join-Path $run 'raw/switchoddities/page-1.json'), ' ')
     Assert-Throws { Read-CatalogFetch $run } 'checksum mismatch'
     Assert-Throws { Read-CatalogFetch (Join-Path $testRoot 'missing') } 'fetch.json'
+}
+Test-Case 'Stores that write a generic Switch(es) word clean titles the same way SwitchOddities already writes them' {
+    function New-Switch([string]$Title) {
+        [ordered]@{ id = 971; title = $Title; handle = 'x'; vendor = 'Example'; body_html = ''; options = @(); variants = @() }
+    }
+    Assert ((Convert-CatalogProduct (New-Switch 'AEBoards Blaeck Linear Switch (40)') 'gateron').entry.name -ceq 'AEBoards Blaeck Linear') 'A bare pack count in parentheses was not dropped.'
+    Assert ((Convert-CatalogProduct (New-Switch 'Akko Bittersweet Switch (Tactile, 45pcs)') 'gateron').entry.name -ceq 'Akko Bittersweet Tactile') 'A type paired with a pack size lost the type or kept the word Switch.'
+    Assert ((Convert-CatalogProduct (New-Switch 'Anubis Tactile Switch by Mechs on Deck') 'gateron').entry.name -ceq 'Anubis Tactile') 'A trailing designer credit or the word Switch survived.'
+    Assert ((Convert-CatalogProduct (New-Switch 'AEBoards Naevy Tactile Switch R1.5') 'gateron').entry.name -ceq 'AEBoards Naevy Tactile R1.5') 'The word Switch ahead of a revision was not dropped.'
+    Assert ((Convert-CatalogProduct (New-Switch 'Gateron X Linear Switch') 'switchoddities').entry.name -ceq 'Gateron X Linear Switch') 'A source without the switchSuffix rule had its own wording changed.'
+}
+Test-Case 'A pack-size axis collapses while a real distinguishing axis composes into the name' {
+    $run = Join-Path $testRoot 'switch-suffix-fetch'
+    Save-TestFetch $run
+    function Set-TestSwitchPage([string]$Run, [string]$Source, $Products) {
+        $relative = "raw/$Source/page-1.json"
+        $path = Join-Path $Run $relative
+        Write-CatalogJson $path ([ordered]@{ products = $Products })
+        $manifest = Read-CatalogJson (Join-Path $Run 'fetch.json')
+        $manifest.sources[$Source].files[0].sha256 = Get-CatalogHash $path
+        Write-CatalogJson (Join-Path $Run 'fetch.json') $manifest
+    }
+    $products = @(
+        [ordered]@{
+            id = 981; title = 'Aurora Fog Switch'; handle = 'aurora-fog'; vendor = 'Gateron'; body_html = ''
+            options = @([ordered]@{ name = 'Quantity'; position = 1; values = @('36', '70') })
+            variants = @([ordered]@{ id = 9811; title = '36'; option1 = '36' }, [ordered]@{ id = 9812; title = '70'; option1 = '70' })
+        },
+        [ordered]@{
+            id = 982; title = 'Version Test Switch'; handle = 'version-test'; vendor = 'Gateron'; body_html = ''
+            options = @([ordered]@{ name = 'Version'; position = 1; values = @('Alpha', 'Beta') })
+            variants = @([ordered]@{ id = 9821; title = 'Alpha'; option1 = 'Alpha' }, [ordered]@{ id = 9822; title = 'Beta'; option1 = 'Beta' })
+        },
+        [ordered]@{
+            id = 983; title = 'Lube Test Switch'; handle = 'lube-test'; vendor = 'Gateron'; body_html = ''
+            options = @([ordered]@{ name = 'Factory Lube'; position = 1; values = @('No Lube', 'Hand Lubed') })
+            variants = @([ordered]@{ id = 9831; title = 'No Lube'; option1 = 'No Lube' }, [ordered]@{ id = 9832; title = 'Hand Lubed'; option1 = 'Hand Lubed' })
+        },
+        [ordered]@{
+            id = 984; title = 'Redundant Test Tactile Switch'; handle = 'redundant-test'; vendor = 'Gateron'; body_html = ''
+            options = @([ordered]@{ name = 'Type'; position = 1; values = @('Tactile') }, [ordered]@{ name = 'Warehouse'; position = 2; values = @('CN', 'DE') })
+            variants = @([ordered]@{ id = 9841; title = 'Tactile / CN'; option1 = 'Tactile'; option2 = 'CN' }, [ordered]@{ id = 9842; title = 'Tactile / DE'; option1 = 'Tactile'; option2 = 'DE' })
+        }
+    )
+    Set-TestSwitchPage $run 'gateron' $products
+    $allRecords = Read-CatalogFetch $run
+    $records = @($allRecords | Where-Object { $_.source -eq 'gateron' })
+    Assert ($records.Count -eq 6) 'Expected one pack-size product, two version variants, two lube variants (one excluded), and one redundant-axis product.'
+    $aurora = @($records | Where-Object { $_.sourceId -match '^981' })
+    Assert ($aurora.Count -eq 1 -and $aurora[0].entry.name -ceq 'Aurora Fog') 'A pack-size-only axis was not collapsed to one record.'
+    $version = @($records | Where-Object { $_.sourceId -match '^982' })
+    $alpha = @($version | Where-Object { $_.entry.name -ceq 'Version Test - Alpha' })
+    $beta = @($version | Where-Object { $_.entry.name -ceq 'Version Test - Beta' })
+    Assert ($version.Count -eq 2 -and $alpha.Count -eq 1 -and $beta.Count -eq 1) 'A real distinguishing axis did not compose into the name.'
+    $lube = @($records | Where-Object { $_.sourceId -match '^983' })
+    $lubeKept = @($lube | Where-Object { -not $_.excluded })
+    $lubeExcluded = @($lube | Where-Object { $_.excluded })
+    Assert ($lubeKept.Count -eq 1 -and $lubeKept[0].entry.name -ceq 'Lube Test') 'A factory lube option was not collapsed and stripped from the name.'
+    Assert ($lubeExcluded.Count -eq 1 -and $lubeExcluded[0].excluded -match 'modification') 'A hand-lubed option was not excluded as an aftermarket modification.'
+    $redundant = @($records | Where-Object { $_.sourceId -match '^984' })
+    Assert ($redundant.Count -eq 1 -and $redundant[0].entry.name -ceq 'Redundant Test Tactile') 'A value already present in the base name was appended a second time.'
 }
 Test-Case 'No-op refresh is byte stable and does not bump versions' {
     $state = New-TestState

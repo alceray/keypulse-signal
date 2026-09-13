@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 29,
+  "catalogVersion": 30,
   "totalCount": 2745,
   "entries": [
     {
@@ -796,7 +796,7 @@
     {
       "id": "cherry-no-one",
       "name": "Cherry No One",
-      "designer": "TECSEE",
+      "designer": "Tecsee",
       "profile": "Cherry"
     },
     {
@@ -824,7 +824,7 @@
     {
       "id": "cherry-purple-cloud",
       "name": "Cherry Purple Cloud",
-      "designer": "TECSEE",
+      "designer": "Tecsee",
       "profile": "Cherry"
     },
     {

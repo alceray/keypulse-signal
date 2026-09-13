@@ -3,6 +3,14 @@ $script:CatalogSources = [ordered]@{
     theremingoat = @{ kind = 'switches'; endpoint = 'https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv' }
     theremingoatscores = @{ kind = 'switches'; endpoint = 'https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv' }
     unikeys = @{ kind = 'switches'; endpoint = 'https://unikeyboards.com/collections/keyboard-switches/products.json'; host = 'https://unikeyboards.com' }
+    # These stores write a generic "Switch(es)" word into titles SwitchOddities and UniKeys already write without it.
+    cannonkeysswitches = @{ kind = 'switches'; endpoint = 'https://cannonkeys.com/collections/switches/products.json'; host = 'https://cannonkeys.com'; vendor = 'none'; switchSuffix = $true }
+    divinikeyswitches = @{ kind = 'switches'; endpoint = 'https://divinikey.com/collections/switches/products.json'; host = 'https://divinikey.com'; switchSuffix = $true }
+    keebsforallswitches = @{ kind = 'switches'; endpoint = 'https://keebsforall.com/collections/keyboard-switches/products.json'; host = 'https://keebsforall.com'; switchSuffix = $true }
+    lumekeebsswitches = @{ kind = 'switches'; endpoint = 'https://lumekeebs.com/collections/switches/products.json'; host = 'https://lumekeebs.com'; switchSuffix = $true }
+    gateron = @{ kind = 'switches'; endpoint = 'https://www.gateron.co/collections/gateron-switches/products.json'; host = 'https://www.gateron.co'; switchSuffix = $true }
+    keychronswitches = @{ kind = 'switches'; endpoint = 'https://www.keychron.com/collections/all-switches/products.json'; host = 'https://www.keychron.com'; vendor = 'none'; switchSuffix = $true }
+    akkogearswitches = @{ kind = 'switches'; endpoint = 'https://akkogear.eu/collections/switch/products.json'; host = 'https://akkogear.eu'; switchSuffix = $true }
     matrix = @{ kind = 'keycaps'; repository = 'matrixzj/matrixzj.github.io' }
     divinikey = @{ kind = 'keycaps'; endpoint = 'https://divinikey.com/collections/keycap-sets/products.json'; host = 'https://divinikey.com' }
     kbdfans = @{ kind = 'keycaps'; endpoint = 'https://kbdfans.com/collections/keycaps/products.json'; host = 'https://kbdfans.com' }
@@ -88,7 +96,14 @@ function Read-CatalogProductPage([string]$Path) {
         foreach ($field in @('id', 'title', 'handle', 'body_html', 'vendor', 'product_type', 'options')) {
             if ($p.PSObject.Properties[$field]) { $values[$field] = ConvertTo-CatalogMap $p.$field }
         }
-        $values.variants = @($p.variants | ForEach-Object { [ordered]@{ id = $_.id; title = $_.title } })
+        $values.variants = @($p.variants | ForEach-Object {
+            $variant = $_
+            $entry = [ordered]@{ id = $variant.id; title = $variant.title }
+            foreach ($field in @('option1', 'option2', 'option3')) {
+                $entry[$field] = if ($variant.PSObject.Properties[$field]) { $variant.$field } else { $null }
+            }
+            $entry
+        })
         $values
     })
     [ordered]@{ products = $products }
@@ -279,6 +294,11 @@ function Convert-CatalogProduct($Product, [string]$Source) {
     $name = $name -replace '(?i)\s*\(\d+\s*(?:pcs|pieces|pack)\)\s*$', ''
     # B-stock units are the same product with cosmetic flaws, so they share its name.
     $name = $name -replace '(?i)\s*[-(]?\s*\bB-Stock\b\s*\)?\s*$', ''
+    if ($info.ContainsKey('switchSuffix')) {
+        # CannonKeys credits an independent designer at the end of a switch's own title.
+        $name = ($name -replace '(?i)\s+by\s+[\p{L}\p{N} .]+$', '').Trim()
+        $name = Get-CatalogSwitchSuffixName $name
+    }
     $specs = $null
     if ($info.ContainsKey('titleSpecs')) {
         $specs = Get-CatalogTitleSpecs $name $type
@@ -305,14 +325,16 @@ function Convert-CatalogProduct($Product, [string]$Source) {
         if ($specs.single -or ($null -ne $specs.keys -and $specs.keys -lt 20)) { $reason = 'Individual keys, not a keycap set' }
         if ($specs.rubber) { $reason = 'Rubber gaming keys, not a keycap set' }
     }
+    $title = [string]$Product.title
     if ($name -match '(?i)^Configurator\b') { $reason = 'Configuration placeholder, not a named product' }
     if ($Source -eq 'prototypist' -and $name -match '(?i)\bdeskmats\s*$') { $reason = 'Deskmat, not a keycap product' }
-    if ($name -match '(?i)\b(tester|sampler|sample pack|switch pack|mystery|random|grab bag|puller|opener|keychain|deskmat|storage|display case|stabilizer)\b') { $reason = 'Accessory or assorted pack' }
+    if ($name -match '(?i)\b(tester|sampler|sample packs?|mystery|random|grab bag|puller|opener|keychain|deskmat|storage|display case|stabilizer|stem holders?)\b') { $reason = 'Accessory or assorted pack' }
+    # These name the word "Switch(es)" itself, which a switchSuffix source's cleanup already dropped from $name.
+    if ($title -match '(?i)\b(switch packs?|switch films?|switch pads?|switch foams?|top housings?|bottom housings?|switch stems?)\b') { $reason = 'Accessory or assorted pack' }
     if ($name -match '(?i)\bmega listing\b|\bkit collection\b|\bleftovers?\b') { $reason = 'Listing of several products, not one named product' }
     if ($kind -eq 'keycaps' -and $name -match '(?i)\b(?:switches|faceplates?)\b') { $reason = 'Not a keycap product' }
     # The raw title still has the singular keycap that marks an artisan. Salvun makes only
     # artisans and does not always say so.
-    $title = [string]$Product.title
     if ($kind -eq 'keycaps' -and ("$title $type" -match '(?i)\bartisans?\b' -or "$title $($Product.vendor)" -match '(?i)\bsalvun\b' -or $title -match '(?i)\b(?:metal|machined|brass)\s+keycap\s*$')) {
         $reason = 'Artisan keycap, not a keycap set'
     }
@@ -341,7 +363,7 @@ function Convert-CatalogProduct($Product, [string]$Source) {
     $vendorRole = if ($info.ContainsKey('vendor')) { $info.vendor } else { 'brand' }
     if ($info.ContainsKey('brand')) { $entry.brand = $info.brand }
     if ($vendorRole -eq 'brand') {
-        if ($vendor -and $vendor -notmatch '^(SwitchOddities|Divinikey|KBDfans|Unikeys|Default|Unknown|Third Party)$' -and $vendor -ine $manufacturer) { $entry.brand = $vendor }
+        if ($vendor -and $vendor -notmatch '^(SwitchOddities|Divinikey|KBDfans|Unikeys|LumeKeebs|KeebsForAll|Default|Unknown|Third Party)$' -and $vendor -ine $manufacturer) { $entry.brand = $vendor }
     } elseif ($vendorRole -eq 'manufacturer' -and $vendor -and -not $entry.Contains('manufacturer') -and (Test-CatalogMaker $vendor)) {
         # Vendor also holds categories and sellers, so only a known maker counts.
         $entry.manufacturer = Get-CatalogEntityName $vendor
@@ -434,14 +456,36 @@ function Read-CatalogFetch([string]$Run) {
                     }
                     $record = Convert-CatalogProduct $product $source
                     if ($record.kind -eq 'switches' -and -not $record.excluded -and @($product.variants).Count -gt 1) {
-                        $options = @($product.options | ForEach-Object { $_.name })
-                        if (@($options | Where-Object { $_ -notmatch '^(?i)(stem color|colou?r|spring weight|weight)$' }).Count) {
+                        # A store's option name can carry stray whitespace, as LumeKeebs' "Style " does.
+                        $optionNames = @($product.options | ForEach-Object { ([string]$_.name).Trim() })
+                        # A pack size never distinguishes a product. A lube choice still composes into the
+                        # name, so a hand-lubed option gets caught and excluded below, and a factory or dry
+                        # option has its own wording stripped back out.
+                        $packagingPattern = '^(?i)(quantity(?:\s+(?:of|for)\s+one\s+set)?|quanlity|pack|size|warehouse|status)$'
+                        $distinguishingPattern = '^(?i)(stem color|colou?r|spring weight|weight|version|bottom-?out(?:\s+(?:weight|force))?|actuation force|operation force|spring type|stem|type|switch type|housing color|material|switch pin|factory lube|lubrication|finish|options?|switch options?|l-series|style|stock|switch weight)$'
+                        if (@($optionNames | Where-Object { $_ -notmatch $packagingPattern -and $_ -notmatch $distinguishingPattern }).Count) {
                             throw "Unrecognized switch variant options for $($product.title); add an explicit parsing rule."
                         }
+                        $distinguishingIndexes = @(0..($optionNames.Count - 1) | Where-Object { $optionNames[$_] -notmatch $packagingPattern })
+                        $seenCombinations = @{}
                         foreach ($variant in $product.variants) {
+                            $optionValues = @($variant.option1, $variant.option2, $variant.option3)
+                            $distinguishingValues = @($distinguishingIndexes | ForEach-Object { $optionValues[$_] })
+                            $combination = $distinguishingValues -join '/'
+                            if ($seenCombinations.ContainsKey($combination)) { continue }
+                            $seenCombinations[$combination] = $true
                             $variantRecord = Convert-CatalogProduct $product $source
                             $variantRecord.sourceId += "/variant/$($variant.id)"
-                            $variantRecord.entry.name += ' - ' + (Get-CatalogName $variant.title)
+                            # "Stock" adds no name wording but stays in the combination key. CannonKeys
+                            # packs a pack size and a lube choice into one value with a pipe, and a value
+                            # can restate "Switch(es)" or spell out the default lube as "Stock(Factory
+                            # Lubed)", which reads the same as bare "Stock" and must not survive as one.
+                            $nameValues = @($distinguishingValues | ForEach-Object {
+                                $value = $_ -replace '\s*\|\s*', ' '
+                                if ($script:CatalogSources[$source].ContainsKey('switchSuffix')) { $value = Get-CatalogSwitchSuffixName $value }
+                                $value -replace '(?i)^stock\s*\(\s*(?:no\s+|light\s+|medium\s+|heavy\s+|factory\s+|pre-?)?(?:lubed?|unlubed|dry)\s*\)\s*$', 'stock'
+                            } | Where-Object { $_ -and $_ -notmatch '^(?i)stock$' -and $variantRecord.entry.name -notmatch ('(?i)\b' + [regex]::Escape($_) + '\b') })
+                            if ($nameValues.Count) { $variantRecord.entry.name += ' - ' + (Get-CatalogName ($nameValues -join ' ')) }
                             # The option title carries the lube or modification wording.
                             Set-CatalogSwitchProduct $variantRecord
                             $records.Add($variantRecord)

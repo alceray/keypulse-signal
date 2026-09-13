@@ -6,7 +6,7 @@
       "handle": "example-linear-v2",
       "body_html": "<p>A comparison to tactile switches.</p>",
       "vendor": "SwitchOddities",
-      "variants": [{ "id": 2001, "title": "38g" }, { "id": 2002, "title": "53g" }],
+      "variants": [{ "id": 2001, "title": "38g", "option1": "38g" }, { "id": 2002, "title": "53g", "option1": "53g" }],
       "options": [{ "name": "Weight", "values": ["38g", "53g"] }]
     }
   ]

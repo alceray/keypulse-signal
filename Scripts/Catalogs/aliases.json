@@ -166,6 +166,12 @@
       ]
     },
     {
+      "canonical": "Akko",
+      "aliases": [
+        "AKKO"
+      ]
+    },
+    {
       "canonical": "80Retros",
       "aliases": [
         "80 Retros",
@@ -360,6 +366,13 @@
       ]
     },
     {
+      "canonical": "Tecsee",
+      "aliases": [
+        "TECSEE",
+        "Tescee"
+      ]
+    },
+    {
       "canonical": "Everglide",
       "aliases": [
         "EverGlide"
@@ -405,7 +418,9 @@
     },
     {
       "canonical": "Durock",
-      "aliases": [],
+      "aliases": [
+        "JWK Durock"
+      ],
       "manufacturer": "JWK"
     },
     {

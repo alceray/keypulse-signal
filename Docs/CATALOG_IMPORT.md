@@ -45,7 +45,7 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 
 Run commands from the repository root, with a new run directory for each live fetch.
 
-1. Fetch all twenty-six sources and generate staged candidates:
+1. Fetch all thirty-three sources and generate staged candidates:
 
    ```powershell
    .\Scripts\Import-Catalogs.ps1 -Action Fetch -Run artifacts/catalog-import/2026-10-01
@@ -138,17 +138,19 @@ Rejected:
 
 Renamed instead of rejected:
 
-- Dry, lubed, unlubed, factory-lubed, and pre-lubed wording is dropped from a switch name, so both purchase options land on one entry. NovelKeys' Dry line keeps the word, because it is the model there.
+- Dry, lubed, unlubed, factory-lubed, and pre-lubed wording is dropped from a switch name, so both purchase options land on one entry. NovelKeys' Dry line keeps the word, because it is the model there. A store that offers this as its own variant axis, such as a `No Lube`/`Light Lube` or `Stock`/`Hand Lubed` choice, composes the same way a weight or color does and is stripped or excluded by the same rule.
 - A trailing `B-Stock` is dropped, because B-stock units are the product with cosmetic flaws.
 - Keycap titles take the catalog's spelling. `GMK X (CYL)` and a leading `CYL X` become `GMK CYL X`, and a trailing `Bundle` is dropped. A dash after a known company separates brand from set, while any other dash is part of the name, as in `GMK Beloved - KA2017 Revival`.
 - Keycap names drop Chinese, Japanese, or Korean text wherever a Latin form remains, along with a round the translation repeats. A Latin gloss in brackets becomes the name, as in `DMK In Former Days`.
 - MechanicalKeyboards, Akko EU, Epomaker, Keychron, Glorious, and LumeKeebs write the key count, profile, printing process, plastic, and words like `Keycap Set` into their titles. These leave the name, and a stated profile and plastic fill those fields. A shape word or `PC` counts only beside other specifications, so `SA Solarized` and `Glorious PC` keep them. A trailing `Base` or `Base Kit` is dropped because a base kit is the set itself, and a leading layout moves behind the name, as in `Keychron Developer ISO`.
 - The single-brand stores leave their name out of most titles, so their brand is added to the name and the brand field. A `KBDfans` prefix before `PBTfans` is dropped because PBTfans is its line.
 - A designer credit ends before store copy that runs on into the story behind the set, as in `Wynects and inspired by manta rays`.
+- CannonKeys, Divinikey, KeebsForAll, LumeKeebs, Gateron's own store, and the switch collections at Keychron and Akko EU write a generic `Switch` or `Switches` word into a name that SwitchOddities and UniKeys already write without it, wherever it sits, so it is dropped along with a paired `Set`. A parenthetical pairing a type with a pack size, such as `(Tactile, 45pcs)`, keeps the type as a plain word. A bare pack count in parentheses, such as `(40)`, is dropped outright. CannonKeys also credits an independent designer at the end of a switch's own title, such as `by Mechs on Deck`, which is dropped the same way.
+- A variant option composes into these same switch names only when it varies within the product and is not already a word the name has; a pack-size or warehouse axis never composes, because it never describes a different switch.
 
 Order matters in `Convert-CatalogProduct`. Modification wording is read before lube wording is removed, and the artisan check reads the raw title because cleanup drops the singular keycap that marks one. The switch rules run again on composed variant names, because stores put that wording in option labels.
 
-Each Shopify store fills `vendor` differently. SwitchOddities, UniKeys, Divinikey, KBDfans, and MechanicalKeyboards read it as the selling brand. Daily Clack files each set under its maker, so its vendor supplies the manufacturer when that is a known maker. NovelKeys, CannonKeys, Omnitype, Keygem, Dangkeebs, and Swagkeys hold the store's name, stock status, or a mix, so theirs is ignored. Akko EU, Epomaker, Keychron, Glorious, and the LumeKeebs JKDK collection sell only their own brand, which the adapter records instead of the vendor.
+Each Shopify store fills `vendor` differently. SwitchOddities, UniKeys, Divinikey, KBDfans, MechanicalKeyboards, KeebsForAll, LumeKeebs, Gateron's own store, and Akko EU's switch collection read it as the selling brand. Daily Clack files each set under its maker, so its vendor supplies the manufacturer when that is a known maker. NovelKeys, CannonKeys, Omnitype, Keygem, Dangkeebs, Swagkeys, CannonKeys' switch collection, and Keychron's switch collection hold the store's name, stock status, or a mix, so theirs is ignored. Akko EU, Epomaker, Keychron, Glorious, and the LumeKeebs JKDK collection sell only their own keycaps brand, which the adapter records instead of the vendor.
 
 ## Matching and duplicates
 
@@ -228,6 +230,13 @@ Shopify links start at page 1. Increment `page` until an empty `products` array 
 | [KeebsForAll JSON](https://keebsforall.com/collections/keycap-sets-for-mechanical-keyboards/products.json?limit=250&page=1) | kfaPBT, JC Studio, and third-party sets | Shopify product JSON |
 | [Prototypist JSON](https://prototypist.net/collections/in-stock-keycap-sets/products.json?limit=250&page=1) | In-stock collection, including sold-out listings, newer rounds, and smaller makers | Shopify product JSON |
 | [Mode Designs JSON](https://modedesigns.com/collections/keycaps/products.json?limit=250&page=1) | Mode sets | Shopify product JSON |
+| [CannonKeys switches JSON](https://cannonkeys.com/collections/switches/products.json?limit=250&page=1) | Exclusives and the newest Gateron lines | Shopify product JSON |
+| [Divinikey switches JSON](https://divinikey.com/collections/switches/products.json?limit=250&page=1) | Broad named catalog, several house and collaboration lines | Shopify product JSON |
+| [KeebsForAll switches JSON](https://keebsforall.com/collections/keyboard-switches/products.json?limit=250&page=1) | KFA house line plus broad named stock | Shopify product JSON |
+| [LumeKeebs switches JSON](https://lumekeebs.com/collections/switches/products.json?limit=250&page=1) | Broad named catalog, several house colorways | Shopify product JSON |
+| [Gateron's own store JSON](https://www.gateron.co/collections/gateron-switches/products.json?limit=250&page=1) | The manufacturer's own newest lines | Shopify product JSON |
+| [Keychron switches JSON](https://www.keychron.com/collections/all-switches/products.json?limit=250&page=1) | Keychron's own switches, plus Gateron, Cherry, and Kailh switches it sells | Shopify product JSON |
+| [Akko EU switches JSON](https://akkogear.eu/collections/switch/products.json?limit=250&page=1) | Akko's own switches | Shopify product JSON |
 
 Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK index ends at 2024, and DCS Wiki omits some private runs. KeycapLendar and retailer collections include interest checks; a listing or dated GB does not establish an eligible release. Reviewed IC-only, unopened, cancelled, and failed-MOQ releases are excluded across their source bindings. Blank metadata is intentional.
 
@@ -243,22 +252,30 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 - Osume and Mode supply their own product brand; KeebsForAll and Prototypist vendor fields do not. Named add-ons stay separate, and kit options remain in source notes. Prototypist stock prefixes and optional deskmat wording are removed; deskmat-only and mixed-set collections are excluded.
 - Osume profile and material enrichment comes from individual product pages because the feed omits technical sections. Marshmallow stays distinct from Cherry. Two Marshmallow extras kits have conflicting profile labels and retain no profile. Mode's five sets specify Cherry and an ABS/PBT blend, with no separate manufacturer established.
 
-### Candidate sources
+### Candidate switch sources
 
-Checked on 2026-09-09. None is an adapter yet.
+The switch catalog's 5,411 entries come almost entirely from ThereminGoat's workbook; SwitchOddities and UniKeys are its only live retailers. A 2026-09-13 sweep found switch collections at every Shopify store already known to the importer, plus Gateron's own site. None is an adapter yet. **Listings → estimated new** is a ceiling from simple name matching after stripping a trailing "Switch(es)" and pack sizes, not the catalog's real alias-based matching, so it overstates novelty; some stores measured well below this bar and are left out; even a kept row's real yield is smaller than its ceiling once alias work folds in spelling variants of switches ThereminGoat already carries.
 
-| Source | Data | Remaining work |
-|---|---|---|
-| [Cherry XTRFY](https://cherryxtrfy.com/keyboard-switches) | JSON split across hidden page inputs for 89 switches | Decode the inputs without running page scripts. Do not assign Cherry to the whole collection. |
-| [Gateron store JSON](https://www.gateron.co/products.json?limit=250&page=1) | 35 Shopify products | Some specification tables exist only on product pages |
-| [Milktooth](https://milktooth.com/) | Embedded page data with switch brands and types | Homepage arrays are partial, and brand must stay separate from manufacturer |
-| [KeebFinder](https://keeb-finder.com/switches) | Embedded page data for 48 switches | Verify pagination and follow specification links |
-| [KBD.news](https://kbd.news/switch/) | HTML table of 500 switches | Useful for type cross-checks, no JSON feed |
-| [Keygeek](https://www.keygeek.cn/products_16/) | Manufacturer listing | No feed. UniKeys already carries much of it. |
+| Source | Coverage benefit | Listings → estimated new | Priority / remaining work |
+|---|---|---|---|
+| [LumeKeebs](https://lumekeebs.com/collections/switches) | Broad named catalog, house colorways | 297 → up to 273 | **High.** Clean named switches; decent house lines (Wingtree, Sarokeys). |
+| [CannonKeys](https://cannonkeys.com/collections/switches) | Exclusives (Raeds HE, Naevies EC), newer Gateron KS-33 low-profile line | 140 → up to 134 | **High.** Includes switches newer than the ThereminGoat snapshot. |
+| [KeebsForAll](https://keebsforall.com/collections/keyboard-switches) | KFA house line plus broad named stock | 173 → up to 145 | **High.** |
+| [Divinikey](https://divinikey.com/collections/switches) | Broad named catalog, HMX/Wingtree/Gateron magnetic lines | 133 → up to 119 | **High.** |
+| [Gateron's own store](https://www.gateron.co/collections/gateron-switches) | Manufacturer's own newest lines (KS-9, KS-33, Cap V2) | 26 → up to 24 | **Worth it despite the small count**, since it is the manufacturer describing its own newest lines. |
+| [Keychron](https://www.keychron.com/collections/all-switches) | Keychron's own K Pro/Silk/magnetic switches, otherwise unattributed | 72 → up to 64 | **Worth it, small.** |
+| [Akko EU](https://akkogear.eu/collections/switch) | Akko's own U1 creamy series, otherwise unattributed | 30 → up to 24 | **Worth it, small.** |
+| [DailyClack](https://dailyclack.com/collections/switches) | Already a keycap source; switches are an incremental add | 74 → up to 62 | **Moderate.** |
+| [KeyGem](https://keygem.com/collections/switches) | Same reasoning | 50 → up to 44 | **Moderate.** |
+| [DangKeebs](https://dangkeebs.com/collections/switches) | Same reasoning | 50 → up to 30 | **Moderate.** |
+| [SwagKeys](https://swagkeys.com/collections/switches) | Same reasoning | 40 → up to 27 | **Moderate.** |
+| [Omnitype](https://omnitype.com/collections/switches) | Small named catalog | 17 → up to 16 | **Small.** |
 
-A 2026-09-09 comparison of name matches found no source redundant. XMI has only one entry, because KeycapLendar lists one XMI set and no other active source carries the line. XMI sells through Chinese platforms without reachable feeds, and keycapsets.com loads its data client side, so closing that gap needs a new feed or a manual list.
+**Priority:** LumeKeebs, CannonKeys, KeebsForAll, and Divinikey for the first pass, since they mix real volume with real exclusives; Gateron's own store next, since it is the manufacturer describing its own newest lines; then the cheap incremental adds (Keychron, Akko EU, DailyClack, KeyGem, DangKeebs, SwagKeys) since those domains are already wired up for keycaps. All of them need a small extension to the switch adapter: strip a trailing "Switch(es)" word and a few more accessory keywords (film, pad, foam, stem holder), not a new adapter shape.
 
-#### Additional keycap sources
+A 2026-09-09 comparison of keycap name matches found no source redundant. XMI has only one entry, because KeycapLendar lists one XMI set and no other active source carries the line. XMI sells through Chinese platforms without reachable feeds, and keycapsets.com loads its data client side, so closing that gap needs a new feed or a manual list.
+
+### Candidate keycap sources
 
 Shortlist of remaining sources worth adding or reviewing. Estimates were made against keycap catalog version 23 (3,231 entries). Integrated sources are listed above. **Listings** are observed product records; **new** ranges are planning estimates after allowing for accessories, equivalent layouts, and existing entries. They are not an import audit and must not be summed across overlapping sources.
 
@@ -290,9 +307,9 @@ Small gaps worth filling manually:
 
 ## History
 
-The switch catalog holds 5,411 entries at version 16, and the keycap catalog 2,745 at version 29. Switch coverage is 69 percent manufacturer, 43 percent brand, and 82 percent type. Keycap coverage is 71 percent manufacturer, 90 percent brand, 85 percent profile, and 80 percent material.
+The switch catalog holds 6,308 entries at version 21, and the keycap catalog 2,745 at version 30. Switch coverage is 69 percent manufacturer, 53 percent brand, and 80 percent type. Keycap coverage is 71 percent manufacturer, 90 percent brand, 85 percent profile, and 80 percent material.
 
-**Sources.** Early imports used SwitchOddities, Matrix, Divinikey, KBDfans, and DCS Wiki. ThereminGoat's workbook and UniKeys expanded switches, KeycapLendar expanded keycaps, the score sheet followed, and seven retailer keycap feeds made sixteen adapters on 2026-09-10. Six more stores on 2026-09-12 added 573 keycap entries, mostly Keychron, Tai-Hao, Akko, Ducky, PBTfans, and Glorious sets. Osume, KeebsForAll, Prototypist, and Mode bring the adapter count to 26, adding 124 sets and kits and enriching 44 entries.
+**Sources.** Early imports used SwitchOddities, Matrix, Divinikey, KBDfans, and DCS Wiki. ThereminGoat's workbook and UniKeys expanded switches, KeycapLendar expanded keycaps, the score sheet followed, and seven retailer keycap feeds made sixteen adapters on 2026-09-10. Six more stores on 2026-09-12 added 573 keycap entries, mostly Keychron, Tai-Hao, Akko, Ducky, PBTfans, and Glorious sets. Osume, KeebsForAll, Prototypist, and Mode brought the adapter count to 26, adding 124 sets and kits and enriching 44 entries. CannonKeys, Divinikey, KeebsForAll, LumeKeebs, Gateron's own store, and the switch collections at Keychron and Akko EU brought it to 33 on 2026-09-13, adding 897 switches and filling a field on 214 existing ones; SwitchOddities and UniKeys had been the only live switch retailers before this.
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
 
@@ -309,6 +326,7 @@ The switch catalog holds 5,411 entries at version 16, and the keycap catalog 2,7
 - 65 same-release keycap pairs. Most were a KeycapLendar first round and Matrix's `R1`, a version or year standing for a round as in `GMK Dracula V2.0` and `R2`, or a Matrix title worded differently. Twelve retailer listings moved to the round that was on sale when their page opened.
 - 71 MechanicalKeyboards listings joined existing entries, and layout or regional listings of one set joined it. Keychron and Ducky colorways sold in several shapes stay separate and carry the shape in their names, as in `Keychron OSA Retro`.
 - Five expanded WoB/BoW names joined the matching KKB, PBTfans, GMK CYL, and current GMK MTNU entries.
+- 142 new switch listings joined existing entries, mostly spelling variants of switches ThereminGoat's workbook already carried. A pack size or lube-shipping choice that composed to the same name as another of a listing's own combinations joined that combination instead of creating a second entry. Seven more surfaced only once a default-lube option's wording was cleaned up enough to reveal the match, all from LumeKeebs.
 
 **Kept apart on purpose.**
 
@@ -325,6 +343,10 @@ The switch catalog holds 5,411 entries at version 16, and the keycap catalog 2,7
 - XCJZ Jerrzi Lotus Stem, two Akko models, UniKeys' `MDD` labels, and `PBTfans Thermal` keep no manufacturer, because their sources disagree or only speculate.
 - `Gateron Nightingale` keeps no type, because its two specimens disagree.
 - `HMX Snow Crash (Overlubed Batch)` stays, because an over-lubed factory batch is a production note.
+- `EverFree Grayish Tactile` keeps manufacturer Gateron, matching ThereminGoat and the score sheet; CannonKeys' own "Manufacturer" label named EverFree, the brand.
+- `BSUN Pine Tactile` keeps brand BSUN. KeebsForAll's own vendor field named Geon, but its product page's "Manufacturer" label named BSUN directly.
+- `Tescee`, a transposed-letter misspelling, and the plain-case `TECSEE` both resolve to `Tecsee` now, correcting two existing keycap designer credits that had kept the all-caps spelling.
+- `JWK Durock` resolves to `Durock`, the same brand its reversed word order already named.
 
 **Open for review.**
 
