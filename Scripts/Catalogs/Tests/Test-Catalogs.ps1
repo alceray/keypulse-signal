@@ -343,6 +343,44 @@ Test-Case 'Renames retain IDs, overrides persist, and missing sources retain his
     $missing = New-CatalogCandidate $next.state @($records | Where-Object { $_.source -ne 'switchoddities' })
     Assert ($missing.state.catalogs.switches.entries[0].manufacturer -eq 'Verified Factory' -and $missing.report.missingSources.Count -eq 1) 'Retired entry lost.'
 }
+Test-Case 'Reviewed ID changes preserve absent and filtered source history' {
+    foreach ($filtered in @($false, $true)) {
+        $state = New-TestState
+        $binding = @($state.bindings | Where-Object { $_.kind -eq 'switches' })[0]
+        $sourceKey = "$($binding.source):$($binding.sourceId)"
+        $oldId = $binding.id
+        $state.catalogs.switches.entries[0].manufacturer = 'Reviewed Factory'
+        $binding.notes = 'Historical variant detail'
+        $originalBinding = ConvertTo-CatalogJson $binding
+        $state.overrides.bindings[$sourceKey] = 'clean-switch'
+        $state.overrides.entries['switches/clean-switch'] = [ordered]@{ name = 'Clean Switch' }
+        $records = @(New-TestRecords)
+        if ($filtered) { $records[0].excluded = 'New automatic filter' }
+        else { $records = @($records | Where-Object { $_.kind -ne 'switches' }) }
+        $next = New-CatalogCandidate $state $records
+        $entry = $next.state.catalogs.switches.entries[0]
+        $updated = @($next.state.bindings | Where-Object { $_.kind -eq 'switches' })[0]
+        Assert ($entry.id -ceq 'clean-switch' -and $entry.name -ceq 'Clean Switch' -and $entry.manufacturer -ceq 'Reviewed Factory') 'Historical ID change lost the name or reviewed metadata.'
+        Assert ($updated.id -ceq 'clean-switch' -and $updated.url -ceq $binding.url -and $updated.notes -ceq $binding.notes) 'Historical provenance lost during redirect.'
+        Assert ((ConvertTo-CatalogJson $updated.observed) -ceq (ConvertTo-CatalogJson $binding.observed)) 'Historical observation was rewritten.'
+        Assert ((ConvertTo-CatalogJson $binding) -ceq $originalBinding) 'Redirect mutated the input state.'
+        Assert ($next.report.removals.Count -eq 1 -and $next.report.removals[0].entry -ceq "switches/$oldId") 'Old ID was not retired.'
+        $again = New-CatalogCandidate $next.state $records
+        Assert ((ConvertTo-CatalogJson $again.state) -ceq (ConvertTo-CatalogJson $next.state)) 'Repeated historical redirect was not stable.'
+    }
+}
+Test-Case 'A historical redirect keeps an old entry while another source still references it' {
+    $state = New-TestState
+    $binding = @($state.bindings | Where-Object { $_.kind -eq 'switches' })[0]
+    $second = Copy-Value $binding
+    $second.sourceId = 'historical-second'
+    $state.bindings += $second
+    $state.overrides.bindings["$($binding.source):$($binding.sourceId)"] = 'clean-switch'
+    $state.overrides.entries['switches/clean-switch'] = [ordered]@{ name = 'Clean Switch' }
+    $next = New-CatalogCandidate $state @((New-TestRecords) | Where-Object { $_.kind -ne 'switches' })
+    Assert ($next.state.catalogs.switches.entries.Count -eq 2 -and $next.report.removals.Count -eq 0) 'A still-referenced variant was retired.'
+    Assert (@($next.state.bindings | Where-Object { $_.id -ceq $binding.id }).Count -eq 1) 'Unreviewed source was redirected.'
+}
 Test-Case 'Cross-source matches need explicit decisions and metadata conflicts block' {
     $state = New-TestState
     $records = @(New-TestRecords)

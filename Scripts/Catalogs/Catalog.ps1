@@ -165,6 +165,28 @@ function New-CatalogCandidate($State, [array]$Records) {
         $bindings[$sourceKey] = [ordered]@{ source = $record.source; sourceId = $record.sourceId; kind = $record.kind; id = $id; url = $record.url; observed = $sourceEntry }
         if ($record.Contains('notes') -and $record.notes) { $bindings[$sourceKey].notes = $record.notes }
     }
+    # Reviewed redirects also apply to retained listings absent from the snapshot or
+    # rejected by a newer automatic filter. Their last observation remains provenance.
+    foreach ($sourceKey in (Get-CatalogSortedStrings $bindings.Keys)) {
+        if (-not $override.bindings.Contains($sourceKey)) { continue }
+        $binding = $bindings[$sourceKey]
+        $id = $override.bindings[$sourceKey]
+        if ($id -ceq $binding.id) { continue }
+        if ($id -isnot [string] -or $id -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$') { throw "Invalid binding ID: $sourceKey" }
+        $oldKey = "$($binding.kind)/$($binding.id)"
+        $key = "$($binding.kind)/$id"
+        if (-not $entries.ContainsKey($key)) {
+            $entry = Get-OrderedCatalogEntry $entries[$oldKey] $binding.kind
+            $entry.id = $id
+            $entries[$key] = $entry
+            $newKeys[$key] = $true
+        }
+        $redirected = [ordered]@{}
+        foreach ($field in $binding.Keys) { $redirected[$field] = $binding[$field] }
+        $redirected.id = $id
+        $bindings[$sourceKey] = $redirected
+        $reassigned[$oldKey] = $key
+    }
     # A reviewed binding change may retire an exact duplicate, but never a still-referenced variant.
     $referenced = @{}
     foreach ($binding in $bindings.Values) { $referenced["$($binding.kind)/$($binding.id)"] = $true }
