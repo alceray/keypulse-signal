@@ -2270,21 +2270,21 @@
     "theremingoat:4079": "typeplus-peacock",
     "unikeys:8213224358206/variant/44931598418238": "vertex-v1",
     "theremingoat:2242": "vertex-v1",
-    "unikeys:12290671706430/variant/53528116396350": "wingtree-camellia-48g-bottom-out",
-    "unikeys:12290671706430/variant/53113609126206": "wingtree-camellia-48g-bottom-out",
-    "unikeys:12290671706430/variant/53113609093438": "wingtree-camellia-52g-bottom-out",
-    "unikeys:12290671706430/variant/53113609158974": "wingtree-camellia-52g-bottom-out",
-    "unikeys:12290671706430/variant/53380836131134": "wingtree-camellia-58g-bottom-out",
-    "unikeys:12290671706430/variant/53113609191742": "wingtree-camellia-58g-bottom-out",
-    "unikeys:12290671706430/variant/53743462154558": "wingtree-camellia-63g-bottom-out",
+    "unikeys:12290671706430/variant/53528116396350": "wingtree-camellia-48g",
+    "unikeys:12290671706430/variant/53113609126206": "wingtree-camellia-48g",
+    "unikeys:12290671706430/variant/53113609093438": "wingtree-camellia-52g",
+    "unikeys:12290671706430/variant/53113609158974": "wingtree-camellia-52g",
+    "unikeys:12290671706430/variant/53380836131134": "wingtree-camellia-58g",
+    "unikeys:12290671706430/variant/53113609191742": "wingtree-camellia-58g",
+    "unikeys:12290671706430/variant/53743462154558": "wingtree-camellia-63g",
     "theremingoat:4240": "wingtree-nezuko-55g",
     "theremingoat:4238": "wingtree-nezuko-55g",
     "theremingoat:4239": "wingtree-nezuko-60g",
     "theremingoat:4237": "wingtree-nezuko-60g",
-    "unikeys:12454174196030/variant/53723726315838": "wingtree-nezuko-55g-bottom-out",
-    "unikeys:12454174196030/variant/53723726348606": "wingtree-nezuko-55g-bottom-out",
-    "unikeys:12454174196030/variant/53723726381374": "wingtree-nezuko-60g-bottom-out",
-    "unikeys:12454174196030/variant/53723769078078": "wingtree-nezuko-60g-bottom-out",
+    "unikeys:12454174196030/variant/53723726315838": "wingtree-nezuko-55g",
+    "unikeys:12454174196030/variant/53723726348606": "wingtree-nezuko-55g",
+    "unikeys:12454174196030/variant/53723726381374": "wingtree-nezuko-60g",
+    "unikeys:12454174196030/variant/53723769078078": "wingtree-nezuko-60g",
     "unikeys:12554464264510/variant/54038839132478": "wingtree-lichicx-orange-silent-light",
     "unikeys:12554464330046/variant/54038839198014": "wingtree-lichicx-pumpkin-silent-hp",
     "unikeys:12554464198974/variant/54038839066942": "wingtree-lichicx-spinach-silent",
@@ -3430,12 +3430,12 @@
     "lumekeebsswitches:9399291642069/variant/53982443733205": "gateron-oil-king-silent-linear",
     "lumekeebsswitches:9416402206933/variant/54046060085461": "keygeek-keylin-v2",
     "lumekeebsswitches:9457565991125/variant/54194300420309": "hmx-dirty-pink",
-    "lumekeebsswitches:8084787298517": "kailh-box-summer-clicky",
+    "lumekeebsswitches:8084787298517": "kailh-box-summer",
     "lumekeebsswitches:8272551608533/variant/45809909924053": "durock-ice-king-linear",
     "lumekeebsswitches:8272551608533/variant/47360316014805": "durock-ice-king-tactile",
     "lumekeebsswitches:8676352131285/variant/48743081509077": "hmx-xinhai-45g",
     "lumekeebsswitches:8676352131285/variant/48743081607381": "hmx-xinhai-62-5g",
-    "lumekeebsswitches:9176037130453/variant/52371476840661": "keygeek-butterfly-60g-bottom-out",
+    "lumekeebsswitches:9176037130453/variant/52371476840661": "keygeek-butterfly-60g",
     "lumekeebsswitches:8958254448853/variant/51431466664149": "owlab-ti-he-magnetic-40g",
     "lumekeebsswitches:8958254448853/variant/51520915931349": "owlab-ti-he-magnetic-50g",
     "divinikeyswitches:7076260872257": "43-studio-jing",
@@ -3972,8 +3972,8 @@
     "lumekeebsswitches:9120518471893/variant/52157677371605": "gateron-magnetic-spark-hall-effect",
     "lumekeebsswitches:9120518471893/variant/52157684908245": "gateron-magnetic-spark-hall-effect-magnetic-spark-pink",
     "lumekeebsswitches:9120522338517/variant/52157691953365": "gateron-magnetic-orchid-hall-effect",
-    "lumekeebsswitches:9120532037845/variant/52157712793813": "hmx-taro-ball-53g-bottom-out-force",
-    "lumekeebsswitches:9120532037845/variant/52157735665877": "hmx-taro-ball-63g-bottom-out-force",
+    "lumekeebsswitches:9120532037845/variant/52157712793813": "hmx-taro-ball-53g",
+    "lumekeebsswitches:9120532037845/variant/52157735665877": "hmx-taro-ball-63g",
     "lumekeebsswitches:9120543965397/variant/52157740941525": "hmx-fuyao",
     "lumekeebsswitches:9143934681301/variant/52244388610261": "sillyworks-x-hmx-sonja",
     "lumekeebsswitches:9143964205269/variant/52244530757845": "bsun-flower-shadow-v2",
@@ -3989,14 +3989,14 @@
     "lumekeebsswitches:9175864017109/variant/52369951359189": "outemu-kitty-silent",
     "lumekeebsswitches:9175910875349/variant/52370470371541": "hmx-dune-42g",
     "lumekeebsswitches:9175910875349/variant/52370584502485": "hmx-dune-50g",
-    "lumekeebsswitches:9176037130453/variant/52371500073173": "keygeek-butterfly-48g-bottom-out",
+    "lumekeebsswitches:9176037130453/variant/52371500073173": "keygeek-butterfly-48g",
     "lumekeebsswitches:9182353260757/variant/52406806610133": "hmx-mango-pudding",
     "lumekeebsswitches:9224385102037/variant/52889314033877": "outemu-x-fl-cmmk-snow-gray-silent",
     "lumekeebsswitches:9224387821781/variant/52889327501525": "outemu-strawberry-silent",
     "lumekeebsswitches:9240337350869/variant/52992670859477": "haimu-industrial-orange-v2",
     "lumekeebsswitches:9244388589781/variant/53013083783381": "bsun-bumblebee",
-    "lumekeebsswitches:9244389605589/variant/53013100298453": "keygeek-y3x-53g-bottom-out",
-    "lumekeebsswitches:9244389605589/variant/53013122318549": "keygeek-y3x-63-5g-bottom-out",
+    "lumekeebsswitches:9244389605589/variant/53013100298453": "keygeek-y3x-53g",
+    "lumekeebsswitches:9244389605589/variant/53013122318549": "keygeek-y3x-63-5g",
     "lumekeebsswitches:9244391243989/variant/53013123530965": "bsun-l2",
     "lumekeebsswitches:9244392685781/variant/53013142110421": "bsun-timely-snow",
     "lumekeebsswitches:9244393832661/variant/53013153054933": "hmx-cola-red",
@@ -4006,8 +4006,8 @@
     "lumekeebsswitches:9299805896917/variant/53380924244181": "outemu-great-sage",
     "lumekeebsswitches:9303063724245/variant/53397548105941": "ktt-bad-sweetheart-silent",
     "lumekeebsswitches:9303071621333/variant/53397540405461": "hmx-longjing-tea-s-light",
-    "lumekeebsswitches:9303899668693/variant/53410912108757": "hmx-baobaolong-42g-bottom-out-force",
-    "lumekeebsswitches:9303899668693/variant/53461765718229": "hmx-baobaolong-50g-bottom-out-force",
+    "lumekeebsswitches:9303899668693/variant/53410912108757": "hmx-baobaolong-42g",
+    "lumekeebsswitches:9303899668693/variant/53461765718229": "hmx-baobaolong-50g",
     "lumekeebsswitches:9303926603989/variant/53414883066069": "hmx-lulu",
     "lumekeebsswitches:9303949312213/variant/53417182167253": "bsun-rgy-traffic-light-red",
     "lumekeebsswitches:9303949312213/variant/53461904949461": "bsun-rgy-traffic-light-yellow",
@@ -4017,9 +4017,9 @@
     "lumekeebsswitches:9306226327765/variant/53465858474197": "gateron-full-pom-smoothie-strawberry",
     "lumekeebsswitches:9306265944277/variant/53465918734549": "gateron-full-pom-banana-smoothie",
     "lumekeebsswitches:9307442413781/variant/53468761981141": "gateron-full-pom-smoothie-mint-silent",
-    "lumekeebsswitches:9307495629013/variant/53480855732437": "hmx-kd400-50g-bottom-out",
-    "lumekeebsswitches:9307495629013/variant/53480855797973": "hmx-kd400-56g-bottom-out",
-    "lumekeebsswitches:9307495629013/variant/53480855863509": "hmx-kd400-63g-bottom-out",
+    "lumekeebsswitches:9307495629013/variant/53480855732437": "hmx-kd400-50g",
+    "lumekeebsswitches:9307495629013/variant/53480855797973": "hmx-kd400-56g",
+    "lumekeebsswitches:9307495629013/variant/53480855863509": "hmx-kd400-63g",
     "lumekeebsswitches:9307737456853/variant/53470760370389": "gateron-magnetic-jade-ultra-hall-effect",
     "lumekeebsswitches:9317605966037/variant/53567694373077": "keygeek-peachy",
     "lumekeebsswitches:9333025046741/variant/53685172175061": "outemu-jingjing-silent",
@@ -4195,16 +4195,16 @@
     "unikeys:11065617514814": "kailh-bcp-black-cherry-pie",
     "unikeys:11246709113150": "hmx-3-9mm-sunset-gleam-v2",
     "unikeys:11307359207742": "hmx-game-1989-classic",
-    "unikeys:11311398519102/variant/52005124374846": "keygeek-y3-37g-bottom-out",
-    "unikeys:11311398519102/variant/52005124407614": "keygeek-y3-45g-bottom-out",
-    "unikeys:11311398519102/variant/52005124440382": "keygeek-y3-53g-bottom-out",
-    "unikeys:11311398519102/variant/52005124473150": "keygeek-y3-63-5g-bottom-out",
+    "unikeys:11311398519102/variant/52005124374846": "keygeek-y3-37g",
+    "unikeys:11311398519102/variant/52005124407614": "keygeek-y3-45g",
+    "unikeys:11311398519102/variant/52005124440382": "keygeek-y3-53g",
+    "unikeys:11311398519102/variant/52005124473150": "keygeek-y3-63-5g",
     "unikeys:11319166599486": "keygeek-x-unikeys-purple-dawn",
     "unikeys:11344406380862": "bsun-snow-diane",
     "unikeys:11369245180222": "outemu-butterfly-silent",
     "unikeys:11417530007870": "bsun-sea-fog",
     "unikeys:11424302694718": "unikeys-x-bsun-udon",
-    "unikeys:11424306102590": "unikeys-x-bsun-waves-rail-bottom-out",
+    "unikeys:11424306102590": "unikeys-x-bsun-waves",
     "unikeys:11682545140030": "hmx-swift-v2",
     "unikeys:11725351780670": "neo-x-keygeek-oat",
     "unikeys:11732066664766": "unikeys-x-keygeek-uni",
@@ -4216,79 +4216,79 @@
     "unikeys:11876255564094": "ktt-x-80-retros-game-1989-silent",
     "unikeys:11876260479294": "ktt-x-80-retros-game-1989-orange",
     "unikeys:11880526250302": "ktt-x-80-retros-game-1989-red",
-    "unikeys:11928627478846/variant/51818676879678": "keygeek-y2-22mm-37g-bottom-out",
-    "unikeys:11928743543102/variant/51818846486846": "keygeek-sunflower-57g-bottom-out",
-    "unikeys:11928743543102/variant/51818846519614": "keygeek-sunflower-63-5g-bottom-out",
-    "unikeys:11951279341886/variant/51994062356798": "keygeek-butterfly-60g-bottom-out",
-    "unikeys:11951279341886/variant/51994062389566": "keygeek-butterfly-50g-bottom-out",
-    "unikeys:11957902737726/variant/52191772934462": "keygeek-orange-boi-48g-bottom-out",
-    "unikeys:11957902737726/variant/52191772967230": "keygeek-orange-boi-53g-bottom-out",
-    "unikeys:11957902737726/variant/52191772999998": "keygeek-orange-boi-57g-bottom-out",
-    "unikeys:11974150586686/variant/52045548421438": "hmx-cloud-v2-22mm-43g-bottom-out",
-    "unikeys:11974150586686/variant/52045548454206": "hmx-cloud-v2-22mm-53g-bottom-out",
-    "unikeys:11974150586686/variant/52045548486974": "hmx-cloud-v2-18mm-63g-bottom-out",
+    "unikeys:11928627478846/variant/51818676879678": "keygeek-y2-22mm-37g",
+    "unikeys:11928743543102/variant/51818846486846": "keygeek-sunflower-57g",
+    "unikeys:11928743543102/variant/51818846519614": "keygeek-sunflower-63-5g",
+    "unikeys:11951279341886/variant/51994062356798": "keygeek-butterfly-60g",
+    "unikeys:11951279341886/variant/51994062389566": "keygeek-butterfly-50g",
+    "unikeys:11957902737726/variant/52191772934462": "keygeek-orange-boi-48g",
+    "unikeys:11957902737726/variant/52191772967230": "keygeek-orange-boi-53g",
+    "unikeys:11957902737726/variant/52191772999998": "keygeek-orange-boi-57g",
+    "unikeys:11974150586686/variant/52045548421438": "hmx-cloud-v2-22mm-43g",
+    "unikeys:11974150586686/variant/52045548454206": "hmx-cloud-v2-22mm-53g",
+    "unikeys:11974150586686/variant/52045548486974": "hmx-cloud-v2-18mm-63g",
     "unikeys:12030781391166": "wekt-lucy-r5-silent",
     "unikeys:12033126039870": "hmx-volume-0-t-silent",
     "unikeys:12155027620158": "kailh-calligraphy-r2",
-    "unikeys:12162408087870/variant/52532696547646": "hmx-hydra-22mm-50g-bottom-out",
-    "unikeys:12162408087870/variant/52532696580414": "hmx-hydra-22mm-58g-bottom-out",
-    "unikeys:12208024224062/variant/52924547531070": "hmx-toast-45g-bottom-out",
-    "unikeys:12208024224062/variant/52924547563838": "hmx-toast-53g-bottom-out",
-    "unikeys:12237829538110/variant/52927773901118": "wingtree-x-lichicx-pink-pink-silent-45g-bottom-out",
-    "unikeys:12237829538110/variant/52927773933886": "wingtree-x-lichicx-pink-pink-silent-40g-bottom-out",
-    "unikeys:12241796464958/variant/52951244603710": "keygeek-su-color-v2-45g-bottom-out",
-    "unikeys:12241796464958/variant/52951244636478": "keygeek-su-color-v2-50g-bottom-out",
-    "unikeys:12241796661566/variant/52951258825022": "hmx-x-80-retros-kd400-46g-bottom-out",
-    "unikeys:12241796661566/variant/52951258857790": "hmx-x-80-retros-kd400-50g-bottom-out",
-    "unikeys:12241796661566/variant/52951258890558": "hmx-x-80-retros-kd400-55g-bottom-out",
-    "unikeys:12241796661566/variant/52951258923326": "hmx-x-80-retros-kd400-63g-bottom-out",
+    "unikeys:12162408087870/variant/52532696547646": "hmx-hydra-22mm-50g",
+    "unikeys:12162408087870/variant/52532696580414": "hmx-hydra-22mm-58g",
+    "unikeys:12208024224062/variant/52924547531070": "hmx-toast-45g",
+    "unikeys:12208024224062/variant/52924547563838": "hmx-toast-53g",
+    "unikeys:12237829538110/variant/52927773901118": "wingtree-x-lichicx-pink-pink-silent-45g",
+    "unikeys:12237829538110/variant/52927773933886": "wingtree-x-lichicx-pink-pink-silent-40g",
+    "unikeys:12241796464958/variant/52951244603710": "keygeek-su-color-v2-45g",
+    "unikeys:12241796464958/variant/52951244636478": "keygeek-su-color-v2-50g",
+    "unikeys:12241796661566/variant/52951258825022": "hmx-x-80-retros-kd400-46g",
+    "unikeys:12241796661566/variant/52951258857790": "hmx-x-80-retros-kd400-50g",
+    "unikeys:12241796661566/variant/52951258890558": "hmx-x-80-retros-kd400-55g",
+    "unikeys:12241796661566/variant/52951258923326": "hmx-x-80-retros-kd400-63g",
     "unikeys:12288395968830": "keygeek-peach-cheesecake",
-    "unikeys:12289357971774/variant/53113546473790": "lichicx-silent-yogurt-42g-bottom-out",
-    "unikeys:12289357971774/variant/53113546506558": "lichicx-silent-yogurt-53g-bottom-out",
-    "unikeys:12289358070078/variant/53113588744510": "wingtree-g-one-55g-bottom-out",
-    "unikeys:12289367507262/variant/53113567969598": "lichicx-yamatake-silent-42g-bottom-out",
-    "unikeys:12289367507262/variant/53113568002366": "lichicx-yamatake-silent-53g-bottom-out",
+    "unikeys:12289357971774/variant/53113546473790": "lichicx-silent-yogurt-42g",
+    "unikeys:12289357971774/variant/53113546506558": "lichicx-silent-yogurt-53g",
+    "unikeys:12289358070078/variant/53113588744510": "wingtree-g-one-55g",
+    "unikeys:12289367507262/variant/53113567969598": "lichicx-yamatake-silent-42g",
+    "unikeys:12289367507262/variant/53113568002366": "lichicx-yamatake-silent-53g",
     "unikeys:12327567589694/variant/53294711243070": "hmx-yogurt-s-45-53g",
     "unikeys:12327567589694/variant/53294711275838": "hmx-yogurt-s-37-43g",
-    "unikeys:12328943452478/variant/53298381357374": "hmx-aster-43g-bottom-out",
-    "unikeys:12328943452478/variant/53298381390142": "hmx-aster-48g-bottom-out",
-    "unikeys:12355368845630/variant/53724273115454": "hmx-caramel-pudding-v2-53g-bottom-out",
-    "unikeys:12355368845630/variant/53724273148222": "hmx-caramel-pudding-v2-45g-bottom-out",
-    "unikeys:12378785513790/variant/53466112131390": "keygeek-crepe-40g-bottom-out",
-    "unikeys:12378785513790/variant/53466112164158": "keygeek-crepe-53-bottom-out",
-    "unikeys:12378807370046/variant/53466348945726": "hmx-macchiato-v2-42g-bottom-out",
-    "unikeys:12378807370046/variant/53466348978494": "hmx-macchiato-v2-50g-bottom-out",
-    "unikeys:12378807370046/variant/53466349011262": "hmx-macchiato-v2-57g-bottom-out",
-    "unikeys:12378822410558/variant/53466380304702": "hmx-dirty-pink-42g-bottom-out",
-    "unikeys:12443299053886/variant/53699580821822": "hmx-moonlight-silent-43g-bottom-out",
-    "unikeys:12443299053886/variant/53699580854590": "hmx-moonlight-silent-52g-bottom-out",
-    "unikeys:12454124519742/variant/53898618208574": "hmx-egg-yolk-53g-bottom-out",
-    "unikeys:12454124519742/variant/53898618241342": "hmx-egg-yolk-45g-bottom-out",
+    "unikeys:12328943452478/variant/53298381357374": "hmx-aster-43g",
+    "unikeys:12328943452478/variant/53298381390142": "hmx-aster-48g",
+    "unikeys:12355368845630/variant/53724273115454": "hmx-caramel-pudding-v2-53g",
+    "unikeys:12355368845630/variant/53724273148222": "hmx-caramel-pudding-v2-45g",
+    "unikeys:12378785513790/variant/53466112131390": "keygeek-crepe-40g",
+    "unikeys:12378785513790/variant/53466112164158": "keygeek-crepe-53g",
+    "unikeys:12378807370046/variant/53466348945726": "hmx-macchiato-v2-42g",
+    "unikeys:12378807370046/variant/53466348978494": "hmx-macchiato-v2-50g",
+    "unikeys:12378807370046/variant/53466349011262": "hmx-macchiato-v2-57g",
+    "unikeys:12378822410558/variant/53466380304702": "hmx-dirty-pink-42g",
+    "unikeys:12443299053886/variant/53699580821822": "hmx-moonlight-silent-43g",
+    "unikeys:12443299053886/variant/53699580854590": "hmx-moonlight-silent-52g",
+    "unikeys:12454124519742/variant/53898618208574": "hmx-egg-yolk-53g",
+    "unikeys:12454124519742/variant/53898618241342": "hmx-egg-yolk-45g",
     "unikeys:12454133727550": "hmx-sogurt-v2",
-    "unikeys:12454146375998/variant/53723709473086": "hmx-reze-42g-bottom-out",
-    "unikeys:12454146375998/variant/53723709505854": "hmx-reze-50g-bottom-out",
-    "unikeys:12454146375998/variant/53723709538622": "hmx-reze-55g-bottom-out",
+    "unikeys:12454146375998/variant/53723709473086": "hmx-reze-42g",
+    "unikeys:12454146375998/variant/53723709505854": "hmx-reze-50g",
+    "unikeys:12454146375998/variant/53723709538622": "hmx-reze-55g",
     "unikeys:12472003395902": "hmx-meteor",
-    "unikeys:12486873481534/variant/53802374201662": "hmx-azalea-50g-bottom-out",
-    "unikeys:12486873481534/variant/53802374234430": "hmx-azalea-55g-bottom-out",
-    "unikeys:12486892290366/variant/53802399400254": "lichicx-berry-cheesecake-silent-45g-bottom-out",
-    "unikeys:12486892290366/variant/53802399433022": "lichicx-berry-cheesecake-silent-53g-bottom-out",
+    "unikeys:12486873481534/variant/53802374201662": "hmx-azalea-50g",
+    "unikeys:12486873481534/variant/53802374234430": "hmx-azalea-55g",
+    "unikeys:12486892290366/variant/53802399400254": "lichicx-berry-cheesecake-silent-45g",
+    "unikeys:12486892290366/variant/53802399433022": "lichicx-berry-cheesecake-silent-53g",
     "unikeys:12515492954430": "keygeek-keylin-v2",
     "unikeys:12517911494974": "wingtree-x-lichicx-taro-silent",
-    "unikeys:12518293373246/variant/53901870858558": "hmx-blush-charm-45g-bottom-out",
-    "unikeys:12518293373246/variant/53901870891326": "hmx-blush-charm-53g-bottom-out",
-    "unikeys:12585274507582/variant/54243031122238": "hmx-rain-rail-bottom-out-53g",
-    "unikeys:12585274507582/variant/54243031155006": "hmx-rain-rail-bottom-out-57g",
-    "unikeys:12594912100670/variant/54359574315326": "hmx-meme-37g-bottom-out",
-    "unikeys:12594912100670/variant/54359574348094": "hmx-meme-45g-bottom-out",
-    "unikeys:12594912100670/variant/54359574380862": "hmx-meme-53g-bottom-out",
-    "unikeys:12599719231806/variant/54390355558718": "hmx-cinnamon-semi-silent-37g-bottom-out",
-    "unikeys:12599719231806/variant/54390355591486": "hmx-cinnamon-semi-silent-45g-bottom-out",
-    "unikeys:12599719231806/variant/54390355624254": "hmx-cinnamon-semi-silent-53g-bottom-out",
-    "unikeys:12602938917182/variant/54417483268414": "keygeek-y2x-37g-bottom-out",
-    "unikeys:12602938917182/variant/54417483301182": "keygeek-y2x-45g-bottom-out",
-    "unikeys:12602938917182/variant/54417483333950": "keygeek-y2x-53g-bottom-out",
-    "unikeys:12602938917182/variant/54417483366718": "keygeek-y2x-63-5g-bottom-out",
+    "unikeys:12518293373246/variant/53901870858558": "hmx-blush-charm-45g",
+    "unikeys:12518293373246/variant/53901870891326": "hmx-blush-charm-53g",
+    "unikeys:12585274507582/variant/54243031122238": "hmx-rain-rail-53g",
+    "unikeys:12585274507582/variant/54243031155006": "hmx-rain-rail-57g",
+    "unikeys:12594912100670/variant/54359574315326": "hmx-meme-37g",
+    "unikeys:12594912100670/variant/54359574348094": "hmx-meme-45g",
+    "unikeys:12594912100670/variant/54359574380862": "hmx-meme-53g",
+    "unikeys:12599719231806/variant/54390355558718": "hmx-cinnamon-semi-silent-37g",
+    "unikeys:12599719231806/variant/54390355591486": "hmx-cinnamon-semi-silent-45g",
+    "unikeys:12599719231806/variant/54390355624254": "hmx-cinnamon-semi-silent-53g",
+    "unikeys:12602938917182/variant/54417483268414": "keygeek-y2x-37g",
+    "unikeys:12602938917182/variant/54417483301182": "keygeek-y2x-45g",
+    "unikeys:12602938917182/variant/54417483333950": "keygeek-y2x-53g",
+    "unikeys:12602938917182/variant/54417483366718": "keygeek-y2x-63-5g",
     "unikeys:8158876500286": "cherry-mx2a-brown",
     "unikeys:8162239447358": "gateron-ks-3-milky-pro-yellow",
     "unikeys:8192222069054": "outemu-silent-honey-peach-v3-pro",
@@ -4687,7 +4687,26 @@
     "theremingoat:75": "gateron-aliaz-silent-60-gf",
     "theremingoat:76": "gateron-aliaz-silent-70-gf",
     "theremingoat:77": "gateron-aliaz-silent-80-gf",
-    "theremingoat:78": "gateron-aliaz-silent-100-gf"
+    "theremingoat:78": "gateron-aliaz-silent-100-gf",
+    "lumekeebsswitches:8257984168149/variant/45657486360789": "gateron-melodic",
+    "switchoddities:9131325686044": "gateron-melodic",
+    "switchoddities:8994409742620": "kailh-box-spring",
+    "theremingoat:3923": "kailh-box-spring",
+    "keychronswitches:7186835308633": "kailh-box-summer",
+    "theremingoat:3936": "kailh-box-summer",
+    "lumekeebsswitches:8242834342101": "kailh-box-white",
+    "switchoddities:8994405286172": "kailh-box-winter",
+    "theremingoat:3933": "kailh-box-winter",
+    "theremingoat:4120": "keygeek-crepe-53g",
+    "theremingoat:3966": "keygeek-y3x-53g",
+    "theremingoat:3965": "keygeek-y3x-63-5g",
+    "lumekeebsswitches:7725026312405/variant/43198553325781": "ktt-strawberry-v2",
+    "theremingoat:4063": "wingtree-camellia-52g",
+    "theremingoat:4062": "wingtree-camellia-58g",
+    "unikeys:11987627376958/variant/52188744384830": "wingtree-yunie-linear-40g-operating-force-50g",
+    "unikeys:11987627376958/variant/52188744417598": "wingtree-yunie-linear-45g-operating-force-60g",
+    "unikeys:11987623149886/variant/52188752838974": "wingtree-yunie-tactile-50g-operating-force-60g",
+    "unikeys:11987623149886/variant/52188752871742": "wingtree-yunie-tactile-57g-operating-force-63-5g"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -4754,12 +4773,14 @@
       "switchType": "tactile"
     },
     "switches/ktt-phalaenopsis-long-stem": {
-      "name": "KTT Phalaenopsis (long stem)"
+      "name": "KTT Phalaenopsis (long stem)",
+      "switchType": "tactile"
     },
     "switches/skyloong-chocolate-rose-original": {
       "name": "Skyloong Chocolate Rose (original)",
       "manufacturer": "LCET",
-      "brand": "Skyloong"
+      "brand": "Skyloong",
+      "switchType": "tactile"
     },
     "switches/prime-keyboards-cobalt": {
       "manufacturer": "JWK"
@@ -5225,7 +5246,8 @@
       "manufacturer": "JWK"
     },
     "switches/wuque-mm-switches": {
-      "manufacturer": "JWK"
+      "manufacturer": "JWK",
+      "switchType": "linear"
     },
     "switches/jwk-pointworks-purple": {
       "manufacturer": "JWK"
@@ -6007,20 +6029,6 @@
     },
     "switches/keygeek-y3x-45g": {
       "name": "Keygeek Y3X (45g)",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3x-53g": {
-      "name": "Keygeek Y3X (53g)",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3x-63-5g": {
-      "name": "Keygeek Y3X (63.5g)",
       "manufacturer": "Keygeek",
       "brand": "Keygeek",
       "designer": "MZ Studio",
@@ -7381,7 +7389,8 @@
       "manufacturer": "JWK"
     },
     "switches/novelkeys-nk-dry-black": {
-      "name": "NK Dry Black"
+      "name": "NK Dry Black",
+      "switchType": "linear"
     },
     "switches/keebz-n-cables-x-hmx-ice-cendol": {
       "name": "Keebz N Cables x HMX Ice Cendol"
@@ -7407,13 +7416,16 @@
       "switchType": null
     },
     "switches/gateron-tangerine": {
-      "name": "Gateron Tangerine"
+      "name": "Gateron Tangerine",
+      "switchType": "linear"
     },
     "switches/geon-hg-clear-3-5mm": {
-      "name": "Geon HG Clear 3.5mm"
+      "name": "Geon HG Clear 3.5mm",
+      "switchType": "linear"
     },
     "switches/geon-hg-clear-4mm": {
-      "name": "Geon HG Clear 4mm"
+      "name": "Geon HG Clear 4mm",
+      "switchType": "linear"
     },
     "switches/glorious-lynx": {
       "name": "Glorious Lynx"
@@ -7422,19 +7434,22 @@
       "name": "HMX Xinhai"
     },
     "switches/ice-kachang-final": {
-      "name": "Ice Kachang Final"
+      "name": "Ice Kachang Final",
+      "switchType": "tactile"
     },
     "switches/ice-kachang": {
       "name": "Ice Kachang"
     },
     "switches/ice-kachang-r2": {
-      "name": "Ice Kachang R2"
+      "name": "Ice Kachang R2",
+      "switchType": "tactile"
     },
     "switches/invokeys-black-sesame": {
       "name": "Invokeys Black Sesame"
     },
     "switches/invokeys-blueberry-chiffon-v1": {
-      "name": "Invokeys Blueberry Chiffon V1"
+      "name": "Invokeys Blueberry Chiffon V1",
+      "switchType": "tactile"
     },
     "switches/keygeek-avalon-3-5mm": {
       "name": "Keygeek Avalon 3.5mm"
@@ -7449,7 +7464,8 @@
       "switchType": "linear"
     },
     "switches/kinetic-labs-penguin-v2": {
-      "name": "Kinetic Labs Penguin V2"
+      "name": "Kinetic Labs Penguin V2",
+      "switchType": "tactile"
     },
     "switches/black-geon-switch": {
       "name": "Black Geon Switch"
@@ -7464,7 +7480,8 @@
       "name": "Clear Geon Switch"
     },
     "switches/cherry-mx2a-purple": {
-      "name": "Cherry MX2A Purple"
+      "name": "Cherry MX2A Purple",
+      "switchType": "tactile"
     },
     "switches/invokeys-blueberry-chiffon": {
       "name": "Invokeys Blueberry Chiffon"
@@ -7476,7 +7493,8 @@
       "name": "Pink Robin"
     },
     "switches/matcha-latte": {
-      "name": "Matcha Latte"
+      "name": "Matcha Latte",
+      "switchType": "linear"
     },
     "switches/outemu-white": {
       "name": "Outemu White"
@@ -7485,7 +7503,8 @@
       "name": "SW Flow Black"
     },
     "switches/swg-x-tecsee-flow-black": {
-      "name": "SWG x Tecsee Flow Black"
+      "name": "SWG x Tecsee Flow Black",
+      "switchType": "linear"
     },
     "switches/tecsee-x-swg-flow": {
       "name": "Tecsee x SWG Flow"
@@ -7494,12 +7513,6 @@
       "name": "Typeplus Peacock",
       "brand": "Typeplus",
       "switchType": "linear"
-    },
-    "switches/wingtree-nezuko-55g": {
-      "name": "Wingtree Nezuko (55g)"
-    },
-    "switches/wingtree-nezuko-60g": {
-      "name": "Wingtree Nezuko (60g)"
     },
     "switches/cherry-mx-hyperglide-black-3-pin": {
       "name": "Cherry MX Hyperglide Black (3 Pin)"
@@ -12666,12 +12679,6 @@
       "brand": "Invokeys",
       "switchType": "linear"
     },
-    "switches/kailh-box-winter": {
-      "name": "Kailh Box Winter",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "tactile"
-    },
     "switches/kailh-calligraphy": {
       "name": "Kailh Calligraphy",
       "manufacturer": "Kailh",
@@ -14260,52 +14267,6 @@
       "designer": "Knock Knock Studio",
       "switchType": "linear"
     },
-    "switches/hmx-aster-43g-bottom-out": {
-      "name": "HMX Aster - 43g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "WY Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-aster-48g-bottom-out": {
-      "name": "HMX Aster - 48g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "WY Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-azalea-50g": {
-      "name": "HMX Azalea - 50g",
-      "manufacturer": "HMX",
-      "designer": "WY Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-azalea-50g-bottom-out": {
-      "name": "HMX Azalea - 50g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "WY Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-azalea-55g": {
-      "name": "HMX Azalea - 55g",
-      "manufacturer": "HMX",
-      "designer": "WY Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-azalea-55g-bottom-out": {
-      "name": "HMX Azalea - 55g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "WY Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-baobaolong-42g-bottom-out-force": {
-      "name": "HMX Baobaolong - 42g Bottom‑out Force",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-baobaolong-50g-bottom-out-force": {
-      "name": "HMX Baobaolong - 50g Bottom‑out Force",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
     "switches/hmx-blackberry-silent": {
       "name": "HMX Blackberry Silent",
       "brand": "HMX",
@@ -14315,18 +14276,6 @@
       "name": "HMX Blue Star Silent",
       "brand": "HMX",
       "switchType": "tactile"
-    },
-    "switches/hmx-blush-charm-45g-bottom-out": {
-      "name": "HMX Blush Charm - 45g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "80Retros",
-      "switchType": "linear"
-    },
-    "switches/hmx-blush-charm-53g-bottom-out": {
-      "name": "HMX Blush Charm - 53g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "80Retros",
-      "switchType": "linear"
     },
     "switches/hmx-butter-silent": {
       "name": "HMX Butter Silent",
@@ -14343,63 +14292,6 @@
     "switches/hmx-caramel-pudding-v2": {
       "name": "HMX Caramel Pudding V2",
       "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-caramel-pudding-v2-45g": {
-      "name": "HMX Caramel Pudding V2 - 45g",
-      "manufacturer": "HMX",
-      "designer": "Lucky Pudding Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-caramel-pudding-v2-45g-bottom-out": {
-      "name": "HMX Caramel Pudding V2 - 45g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "Lucky Pudding Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-caramel-pudding-v2-53g": {
-      "name": "HMX Caramel Pudding V2 - 53g",
-      "manufacturer": "HMX",
-      "designer": "Lucky Pudding Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-caramel-pudding-v2-53g-bottom-out": {
-      "name": "HMX Caramel Pudding V2 - 53g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "Lucky Pudding Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-cinnamon-semi-silent-37g-bottom-out": {
-      "name": "HMX Cinnamon Semi Silent - 37g Bottom-out",
-      "manufacturer": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-cinnamon-semi-silent-45g-bottom-out": {
-      "name": "HMX Cinnamon Semi Silent - 45g Bottom-out",
-      "manufacturer": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-cinnamon-semi-silent-53g-bottom-out": {
-      "name": "HMX Cinnamon Semi Silent - 53g Bottom-out",
-      "manufacturer": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-cloud-v2-18mm-63g-bottom-out": {
-      "name": "HMX Cloud V2 - 18mm 63g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "XLLAB",
-      "switchType": "linear"
-    },
-    "switches/hmx-cloud-v2-22mm-43g-bottom-out": {
-      "name": "HMX Cloud V2 - 22mm 43g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "XLLAB",
-      "switchType": "linear"
-    },
-    "switches/hmx-cloud-v2-22mm-53g-bottom-out": {
-      "name": "HMX Cloud V2 - 22mm 53g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "XLLAB",
       "switchType": "linear"
     },
     "switches/hmx-cloud-v2-53g": {
@@ -14469,12 +14361,6 @@
       "designer": "YG Studio",
       "switchType": "linear"
     },
-    "switches/hmx-dirty-pink-42g-bottom-out": {
-      "name": "HMX Dirty Pink - 42g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "YG",
-      "switchType": "linear"
-    },
     "switches/hmx-dune-42g": {
       "name": "HMX Dune - 42g",
       "brand": "HMX",
@@ -14484,18 +14370,6 @@
       "name": "HMX Dune - 50g",
       "brand": "HMX",
       "switchType": "tactile"
-    },
-    "switches/hmx-egg-yolk-45g-bottom-out": {
-      "name": "HMX Egg Yolk - 45g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "KK Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-egg-yolk-53g-bottom-out": {
-      "name": "HMX Egg Yolk - 53g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "KK Lab",
-      "switchType": "linear"
     },
     "switches/hmx-fuyao": {
       "name": "HMX Fuyao",
@@ -14525,33 +14399,6 @@
       "designer": "Moyu Studio",
       "switchType": "linear"
     },
-    "switches/hmx-hydra-22mm-50g-bottom-out": {
-      "name": "HMX Hydra - 22mm 50g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "HMX",
-      "switchType": "tactile"
-    },
-    "switches/hmx-hydra-22mm-58g-bottom-out": {
-      "name": "HMX Hydra - 22mm 58g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "HMX",
-      "switchType": "tactile"
-    },
-    "switches/hmx-kd400-50g-bottom-out": {
-      "name": "HMX KD400 - 50g Bottom-out",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-kd400-56g-bottom-out": {
-      "name": "HMX KD400 - 56g Bottom-out",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-kd400-63g-bottom-out": {
-      "name": "HMX KD400 - 63g Bottom-out",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
     "switches/hmx-longjing-tea-s-light": {
       "name": "HMX LongJing Tea S Light",
       "brand": "HMX",
@@ -14567,45 +14414,9 @@
       "brand": "HMX",
       "switchType": "linear"
     },
-    "switches/hmx-macchiato-v2-42g-bottom-out": {
-      "name": "HMX Macchiato V2 - 42g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "YG",
-      "switchType": "linear"
-    },
-    "switches/hmx-macchiato-v2-50g-bottom-out": {
-      "name": "HMX Macchiato V2 - 50g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "YG",
-      "switchType": "linear"
-    },
-    "switches/hmx-macchiato-v2-57g-bottom-out": {
-      "name": "HMX Macchiato V2 - 57g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "YG",
-      "switchType": "linear"
-    },
     "switches/hmx-mango-pudding": {
       "name": "HMX Mango Pudding",
       "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-meme-37g-bottom-out": {
-      "name": "HMX Meme - 37g Bottom-out",
-      "manufacturer": "HMX",
-      "designer": "Rena Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-meme-45g-bottom-out": {
-      "name": "HMX Meme - 45g Bottom-out",
-      "manufacturer": "HMX",
-      "designer": "Rena Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-meme-53g-bottom-out": {
-      "name": "HMX Meme - 53g Bottom-out",
-      "manufacturer": "HMX",
-      "designer": "Rena Lab",
       "switchType": "linear"
     },
     "switches/hmx-meteor": {
@@ -14617,18 +14428,6 @@
     "switches/hmx-moonlight-silent": {
       "name": "HMX Moonlight Silent",
       "brand": "HMX",
-      "switchType": "tactile"
-    },
-    "switches/hmx-moonlight-silent-43g-bottom-out": {
-      "name": "HMX Moonlight Silent - 43g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "SU LAB",
-      "switchType": "tactile"
-    },
-    "switches/hmx-moonlight-silent-52g-bottom-out": {
-      "name": "HMX Moonlight Silent - 52g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "SU LAB",
       "switchType": "tactile"
     },
     "switches/hmx-peach-pink-silent": {
@@ -14650,36 +14449,6 @@
       "name": "HMX Radio Wave",
       "brand": "HMX",
       "switchType": "linear"
-    },
-    "switches/hmx-rain-rail-bottom-out-53g": {
-      "name": "HMX Rain Rail Bottom-Out - 53g",
-      "manufacturer": "HMX",
-      "designer": "Youth Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-rain-rail-bottom-out-57g": {
-      "name": "HMX Rain Rail Bottom-Out - 57g",
-      "manufacturer": "HMX",
-      "designer": "Youth Studio",
-      "switchType": "linear"
-    },
-    "switches/hmx-reze-42g-bottom-out": {
-      "name": "HMX Reze - 42g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "XIda",
-      "switchType": "tactile"
-    },
-    "switches/hmx-reze-50g-bottom-out": {
-      "name": "HMX Reze - 50g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "XIda",
-      "switchType": "tactile"
-    },
-    "switches/hmx-reze-55g-bottom-out": {
-      "name": "HMX Reze - 55g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "XIda",
-      "switchType": "tactile"
     },
     "switches/hmx-rosa-centifolia": {
       "name": "HMX Rosa Centifolia",
@@ -14729,28 +14498,6 @@
       "manufacturer": "HMX",
       "switchType": "linear"
     },
-    "switches/hmx-taro-ball-53g-bottom-out-force": {
-      "name": "HMX Taro Ball - 53g Bottom-out Force",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-taro-ball-63g-bottom-out-force": {
-      "name": "HMX Taro Ball - 63g Bottom-out Force",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-toast-45g-bottom-out": {
-      "name": "HMX Toast - 45g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "Rena Lab",
-      "switchType": "linear"
-    },
-    "switches/hmx-toast-53g-bottom-out": {
-      "name": "HMX Toast - 53g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "Rena Lab",
-      "switchType": "linear"
-    },
     "switches/hmx-tt-red": {
       "name": "HMX TT Red",
       "brand": "HMX",
@@ -14773,30 +14520,6 @@
       "brand": "HMX",
       "designer": "Sillyworks",
       "switchType": "tactile"
-    },
-    "switches/hmx-x-80-retros-kd400-46g-bottom-out": {
-      "name": "HMX X 80Retros KD400 - 46g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "80Retros",
-      "switchType": "linear"
-    },
-    "switches/hmx-x-80-retros-kd400-50g-bottom-out": {
-      "name": "HMX X 80Retros KD400 - 50g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "80Retros",
-      "switchType": "linear"
-    },
-    "switches/hmx-x-80-retros-kd400-55g-bottom-out": {
-      "name": "HMX X 80Retros KD400 - 55g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "80Retros",
-      "switchType": "linear"
-    },
-    "switches/hmx-x-80-retros-kd400-63g-bottom-out": {
-      "name": "HMX X 80Retros KD400 - 63g Bottom Out",
-      "manufacturer": "HMX",
-      "designer": "80Retros",
-      "switchType": "linear"
     },
     "switches/hmx-x-80retro-volume-0-silent": {
       "name": "HMX x 80Retro Volume 0 Silent",
@@ -15089,33 +14812,6 @@
       "designer": "Suixin Studio",
       "switchType": "linear"
     },
-    "switches/keygeek-butterfly-48g": {
-      "name": "Keygeek Butterfly - 48g",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "Suixin Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-butterfly-50g-bottom-out": {
-      "name": "Keygeek Butterfly - 50g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "Suixin Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-butterfly-60g-bottom-out": {
-      "name": "Keygeek Butterfly - 60g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "Suixin Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-butterfly-48g-bottom-out": {
-      "name": "Keygeek Butterfly - 48g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
     "switches/keygeek-cera-x-42g-22mm-spring": {
       "name": "Keygeek Cera X - 42g (22mm Spring)",
       "manufacturer": "Keygeek",
@@ -15135,20 +14831,6 @@
       "manufacturer": "Keygeek",
       "brand": "Keygeek",
       "designer": "Gearpod",
-      "switchType": "linear"
-    },
-    "switches/keygeek-crepe-40g-bottom-out": {
-      "name": "Keygeek Crepe - 40g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "GearPod",
-      "switchType": "linear"
-    },
-    "switches/keygeek-crepe-53-bottom-out": {
-      "name": "Keygeek Crepe - 53 Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "GearPod",
       "switchType": "linear"
     },
     "switches/keygeek-ding-ding": {
@@ -15223,24 +14905,6 @@
       "brand": "Keygeek",
       "switchType": "linear"
     },
-    "switches/keygeek-orange-boi-48g-bottom-out": {
-      "name": "Keygeek Orange Boi - 48g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    "switches/keygeek-orange-boi-53g-bottom-out": {
-      "name": "Keygeek Orange Boi - 53g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    "switches/keygeek-orange-boi-57g-bottom-out": {
-      "name": "Keygeek Orange Boi - 57g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
     "switches/keygeek-peach-cheesecake": {
       "name": "Keygeek Peach Cheesecake",
       "manufacturer": "Keygeek",
@@ -15260,34 +14924,8 @@
       "brand": "Keygeek",
       "switchType": "linear"
     },
-    "switches/keygeek-su-color-v2-45g-bottom-out": {
-      "name": "Keygeek Su Color V2 - 45g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "WJBY Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-su-color-v2-50g-bottom-out": {
-      "name": "Keygeek Su Color V2 - 50g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "WJBY Studio",
-      "switchType": "linear"
-    },
     "switches/keygeek-su-v2": {
       "name": "Keygeek SU V2",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    "switches/keygeek-sunflower-57g-bottom-out": {
-      "name": "Keygeek Sunflower - 57g Bottom-out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    "switches/keygeek-sunflower-63-5g-bottom-out": {
-      "name": "Keygeek Sunflower - 63.5g Bottom-out",
       "manufacturer": "Keygeek",
       "brand": "Keygeek",
       "switchType": "linear"
@@ -15325,13 +14963,6 @@
       "brand": "Keygeek",
       "switchType": "linear"
     },
-    "switches/keygeek-y2-22mm-37g-bottom-out": {
-      "name": "Keygeek Y2 - 22mm 37g bottom out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
     "switches/keygeek-y2-45g-lighter-feel": {
       "name": "Keygeek Y2 - 45g (Lighter Feel)",
       "manufacturer": "Keygeek",
@@ -15346,74 +14977,6 @@
     },
     "switches/keygeek-y2-63g-heavier-feel": {
       "name": "Keygeek Y2 - 63g (Heavier feel)",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y2x-37g-bottom-out": {
-      "name": "Keygeek Y2X - 37g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y2x-45g-bottom-out": {
-      "name": "Keygeek Y2X - 45g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y2x-53g-bottom-out": {
-      "name": "Keygeek Y2X - 53g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y2x-63-5g-bottom-out": {
-      "name": "Keygeek Y2X - 63.5g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3-37g-bottom-out": {
-      "name": "Keygeek Y3 - 37g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3-45g-bottom-out": {
-      "name": "Keygeek Y3 - 45g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3-53g-bottom-out": {
-      "name": "Keygeek Y3 - 53g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3-63-5g-bottom-out": {
-      "name": "Keygeek Y3 - 63.5g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "designer": "MZ Studio",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3x-53g-bottom-out": {
-      "name": "Keygeek Y3X - 53g Bottom Out",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    "switches/keygeek-y3x-63-5g-bottom-out": {
-      "name": "Keygeek Y3X - 63.5g Bottom Out",
       "manufacturer": "Keygeek",
       "brand": "Keygeek",
       "switchType": "linear"
@@ -15480,20 +15043,6 @@
       "name": "Lekker 60",
       "switchType": "linear"
     },
-    "switches/lichicx-berry-cheesecake-silent-45g-bottom-out": {
-      "name": "Lichicx Berry Cheesecake Silent - 45g Bottom Out",
-      "manufacturer": "Wingtree / Lichicx",
-      "brand": "Wingtree",
-      "designer": "Black Cat Studio",
-      "switchType": "linear"
-    },
-    "switches/lichicx-berry-cheesecake-silent-53g-bottom-out": {
-      "name": "Lichicx Berry Cheesecake Silent - 53g Bottom Out",
-      "manufacturer": "Wingtree / Lichicx",
-      "brand": "Wingtree",
-      "designer": "Black Cat Studio",
-      "switchType": "linear"
-    },
     "switches/lichicx-raw-big": {
       "name": "Lichicx Raw Big",
       "manufacturer": "Lichicx",
@@ -15529,20 +15078,6 @@
       "brand": "Lichicx",
       "switchType": "tactile"
     },
-    "switches/lichicx-silent-yogurt-42g-bottom-out": {
-      "name": "Lichicx Silent Yogurt - 42g Bottom Out",
-      "manufacturer": "Wingtree / Lichicx",
-      "brand": "Wingtree",
-      "designer": "XLLAB",
-      "switchType": "linear"
-    },
-    "switches/lichicx-silent-yogurt-53g-bottom-out": {
-      "name": "Lichicx Silent Yogurt - 53g Bottom Out",
-      "manufacturer": "Wingtree / Lichicx",
-      "brand": "Wingtree",
-      "designer": "XLLAB",
-      "switchType": "linear"
-    },
     "switches/lichicx-taro-puree-silent": {
       "name": "Lichicx Taro Puree Silent",
       "manufacturer": "Wingtree & Lichicx Patent Molds",
@@ -15555,20 +15090,6 @@
       "manufacturer": "Wingtree & Lichicx Patent Molds",
       "brand": "Lichicx",
       "designer": "XL Lab",
-      "switchType": "tactile"
-    },
-    "switches/lichicx-yamatake-silent-42g-bottom-out": {
-      "name": "Lichicx Yamatake Silent - 42g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Lichicx",
-      "designer": "XLLAB",
-      "switchType": "tactile"
-    },
-    "switches/lichicx-yamatake-silent-53g-bottom-out": {
-      "name": "Lichicx Yamatake Silent - 53g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Lichicx",
-      "designer": "XLLAB",
       "switchType": "tactile"
     },
     "switches/lichicx-yogurt-silent": {
@@ -16154,12 +15675,6 @@
       "designer": "Unikeys",
       "switchType": "linear"
     },
-    "switches/unikeys-x-bsun-waves-rail-bottom-out": {
-      "name": "UNIKEYS X BSUN WAVES RAIL BOTTOM-OUT",
-      "manufacturer": "BSUN",
-      "designer": "Unikeys",
-      "switchType": "linear"
-    },
     "switches/unikeys-x-hmx-purple-dawn": {
       "name": "UNIKEYS X HMX Purple Dawn",
       "manufacturer": "HMX",
@@ -16233,48 +15748,6 @@
       "designer": "Wuhai Studio",
       "switchType": "linear"
     },
-    "switches/wingtree-camellia-48g-bottom-out": {
-      "name": "Wingtree Camellia - 48g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wuhai Studio",
-      "switchType": "linear"
-    },
-    "switches/wingtree-camellia-52g-bottom-out": {
-      "name": "Wingtree Camellia - 52g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wuhai Studio",
-      "switchType": "linear"
-    },
-    "switches/wingtree-camellia-58g-bottom-out": {
-      "name": "Wingtree Camellia - 58g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wuhai Studio",
-      "switchType": "linear"
-    },
-    "switches/wingtree-camellia-63g-bottom-out": {
-      "name": "Wingtree Camellia - 63g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wuhai Studio",
-      "switchType": "linear"
-    },
-    "switches/wingtree-g-one-55g": {
-      "name": "Wingtree G-One - 55g",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "YG Studio",
-      "switchType": "linear"
-    },
-    "switches/wingtree-g-one-55g-bottom-out": {
-      "name": "Wingtree G One - 55g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "YG",
-      "switchType": "linear"
-    },
     "switches/wingtree-lichicx-orange-silent-light": {
       "name": "Wingtree / Lichicx Orange Silent Light",
       "manufacturer": "Wingtree / Lichicx",
@@ -16299,20 +15772,6 @@
       "brand": "Wingtree",
       "switchType": "linear"
     },
-    "switches/wingtree-nezuko-55g-bottom-out": {
-      "name": "Wingtree Nezuko - 55g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "XIda",
-      "switchType": "linear"
-    },
-    "switches/wingtree-nezuko-60g-bottom-out": {
-      "name": "Wingtree Nezuko - 60g Bottom Out",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "XIda",
-      "switchType": "linear"
-    },
     "switches/wingtree-purple": {
       "name": "Wingtree Purple",
       "manufacturer": "Wingtree",
@@ -16325,20 +15784,6 @@
       "brand": "Wingtree",
       "designer": "Torrero",
       "switchType": "tactile"
-    },
-    "switches/wingtree-x-lichicx-pink-pink-silent-40g-bottom-out": {
-      "name": "Wingtree / Lichicx Pink Pink Silent - 40g Bottom Out",
-      "manufacturer": "Wingtree / Lichicx",
-      "brand": "Wingtree",
-      "designer": "Ruben",
-      "switchType": "linear"
-    },
-    "switches/wingtree-x-lichicx-pink-pink-silent-45g-bottom-out": {
-      "name": "Wingtree / Lichicx Pink Pink Silent - 45g Bottom Out",
-      "manufacturer": "Wingtree / Lichicx",
-      "brand": "Wingtree",
-      "designer": "Ruben",
-      "switchType": "linear"
     },
     "switches/wingtree-x-lichicx-taro-silent": {
       "name": "Wingtree / Lichicx Taro Silent",
@@ -16454,32 +15899,38 @@
     "switches/gateron-ks-3x47-milky-top-black-bottom": {
       "name": "Gateron KS-3X47 Milky Top Black Bottom",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     "switches/gateron-ks-3x47-milky-top-black-bottom-blue": {
       "name": "Gateron KS-3X47 Milky Top Black Bottom - Blue",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "clicky"
     },
     "switches/gateron-ks-3x47-milky-top-black-bottom-brown": {
       "name": "Gateron KS-3X47 Milky Top Black Bottom - Brown",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "tactile"
     },
     "switches/gateron-ks-3x47-milky-top-black-bottom-green": {
       "name": "Gateron KS-3X47 Milky Top Black Bottom - Green",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "clicky"
     },
     "switches/gateron-ks-3x47-milky-top-black-bottom-red": {
       "name": "Gateron KS-3X47 Milky Top Black Bottom - Red",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     "switches/gateron-ks-3x47-milky-top-black-bottom-yellow": {
       "name": "Gateron KS-3X47 Milky Top Black Bottom - Yellow",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     "switches/gateron-phantom-blue": {
       "name": "Gateron Phantom Blue",
@@ -16490,7 +15941,8 @@
     "switches/gateron-phantom-brown": {
       "name": "Gateron Phantom Brown",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "tactile"
     },
     "switches/gateron-phantom-red": {
       "name": "Gateron Phantom Red",
@@ -16501,7 +15953,8 @@
     "switches/gateron-phantom-yellow": {
       "name": "Gateron Phantom Yellow",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     "switches/huano-aoki": {
       "name": "Huano Aoki",
@@ -16537,12 +15990,6 @@
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "linear"
-    },
-    "switches/kailh-box-white": {
-      "name": "Kailh Box White",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "clicky"
     },
     "switches/mengmoda-ice-cream": {
       "name": "MMD Ice Cream",
@@ -17012,7 +16459,8 @@
     "switches/gateron-black-silent-ink-v2": {
       "name": "Gateron Black Silent INK V2",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     "switches/gateron-blue-ink-v1": {
       "name": "Gateron Blue Ink V1",
@@ -17041,7 +16489,8 @@
     "switches/gateron-cap-golden-brown-v2": {
       "name": "Gateron CAP Golden Brown V2",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "tactile"
     },
     "switches/gateron-cap-golden-yellow-v2": {
       "name": "Gateron CAP Golden Yellow V2",
@@ -17228,10 +16677,12 @@
       "switchType": "linear"
     },
     "switches/keychron-k-pro-silent-brown": {
-      "name": "Keychron K Pro Silent Brown"
+      "name": "Keychron K Pro Silent Brown",
+      "switchType": "tactile"
     },
     "switches/keychron-low-profile-optical-banana": {
-      "name": "Keychron Low Profile Optical Banana"
+      "name": "Keychron Low Profile Optical Banana",
+      "switchType": "tactile"
     },
     "switches/keychron-low-profile-optical-black": {
       "name": "Keychron Low Profile Optical Black",
@@ -17246,7 +16697,8 @@
       "switchType": "tactile"
     },
     "switches/keychron-low-profile-optical-mint": {
-      "name": "Keychron Low Profile Optical Mint"
+      "name": "Keychron Low Profile Optical Mint",
+      "switchType": "tactile"
     },
     "switches/keychron-low-profile-optical-orange": {
       "name": "Keychron Low Profile Optical Orange",
@@ -17578,7 +17030,8 @@
     },
     "switches/akko-wine-white": {
       "name": "Akko Wine White",
-      "brand": "Akko"
+      "brand": "Akko",
+      "switchType": "tactile"
     },
     "switches/gateron-dual-rail-magnetic-orange": {
       "name": "Gateron Dual-Rail Magnetic Orange",
@@ -17588,7 +17041,8 @@
     },
     "switches/ws-dash-he-magnetic": {
       "name": "WS Dash HE Magnetic",
-      "brand": "Wuque Studio"
+      "brand": "Wuque Studio",
+      "switchType": "linear"
     },
     "switches/ws-flux-cullinan-magnetic": {
       "name": "WS Flux Cullinan Magnetic",
@@ -17656,11 +17110,13 @@
     },
     "switches/cupid-48g-spring": {
       "name": "Cupid 48g Spring",
-      "brand": "Chaosera"
+      "brand": "Chaosera",
+      "switchType": "linear"
     },
     "switches/cupid-55g-spring": {
       "name": "Cupid 55g Spring",
-      "brand": "Chaosera"
+      "brand": "Chaosera",
+      "switchType": "linear"
     },
     "keycaps/tai-hao-black-on-white-128-keys": {
       "name": "Tai-Hao Black on White (128 Keys)",
@@ -17677,20 +17133,24 @@
     "switches/kailh-midnight-pro-silent-linear": {
       "name": "Kailh Midnight Pro Silent Linear",
       "manufacturer": "Kailh",
-      "brand": "Kailh"
+      "brand": "Kailh",
+      "switchType": "linear"
     },
     "switches/kailh-midnight-pro-silent-tactile": {
       "name": "Kailh Midnight Pro Silent Tactile",
       "manufacturer": "Kailh",
-      "brand": "Kailh"
+      "brand": "Kailh",
+      "switchType": "tactile"
     },
     "switches/sillyworks-x-napworks-37g": {
       "name": "Sillyworks x Napworks 37g",
-      "brand": "Sillyworks"
+      "brand": "Sillyworks",
+      "switchType": "linear"
     },
     "switches/sillyworks-x-napworks-45g": {
       "name": "Sillyworks x Napworks 45g",
-      "brand": "Sillyworks"
+      "brand": "Sillyworks",
+      "switchType": "linear"
     },
     "keycaps/dcs-dolch-2026": {
       "name": "DCS Dolch (2026)",
@@ -17709,7 +17169,8 @@
     "switches/kailh-box-cream": {
       "name": "Kailh Box Cream",
       "manufacturer": "Kailh",
-      "brand": "Kailh"
+      "brand": "Kailh",
+      "switchType": "linear"
     },
     "switches/bsun-dustproof-blue": {
       "manufacturer": "BSUN",
@@ -17751,7 +17212,7 @@
     "switches/hi-tek-725-white-one-eye": {
       "manufacturer": "Hi-Tek",
       "name": "Hi-Tek 725 White (One Eye)",
-      "switchType": null
+      "switchType": "linear"
     },
     "switches/huano-dustproof-black": {
       "manufacturer": "Huano",
@@ -17868,6 +17329,3620 @@
       "brand": "Gateron",
       "switchType": "tactile",
       "name": "Gateron Aliaz Silent (100 gf)"
+    },
+    "switches/gateron-melodic": {
+      "name": "Gateron Melodic",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky"
+    },
+    "switches/hmx-aster-43g": {
+      "name": "HMX Aster - 43g",
+      "manufacturer": "HMX",
+      "designer": "WY Studio",
+      "switchType": "linear"
+    },
+    "switches/hmx-aster-48g": {
+      "name": "HMX Aster - 48g",
+      "manufacturer": "HMX",
+      "designer": "WY Studio",
+      "switchType": "linear"
+    },
+    "switches/hmx-azalea-50g": {
+      "name": "HMX Azalea - 50g",
+      "manufacturer": "HMX",
+      "designer": "WY Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-azalea-55g": {
+      "name": "HMX Azalea - 55g",
+      "manufacturer": "HMX",
+      "designer": "WY Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-baobaolong-42g": {
+      "name": "HMX Baobaolong - 42g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-baobaolong-50g": {
+      "name": "HMX Baobaolong - 50g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-blush-charm-45g": {
+      "name": "HMX Blush Charm - 45g",
+      "manufacturer": "HMX",
+      "designer": "80Retros",
+      "switchType": "linear"
+    },
+    "switches/hmx-blush-charm-53g": {
+      "name": "HMX Blush Charm - 53g",
+      "manufacturer": "HMX",
+      "designer": "80Retros",
+      "switchType": "linear"
+    },
+    "switches/hmx-caramel-pudding-v2-45g": {
+      "name": "HMX Caramel Pudding V2 - 45g",
+      "manufacturer": "HMX",
+      "designer": "Lucky Pudding Studio",
+      "switchType": "linear"
+    },
+    "switches/hmx-caramel-pudding-v2-53g": {
+      "name": "HMX Caramel Pudding V2 - 53g",
+      "manufacturer": "HMX",
+      "designer": "Lucky Pudding Studio",
+      "switchType": "linear"
+    },
+    "switches/hmx-cinnamon-semi-silent-37g": {
+      "name": "HMX Cinnamon Semi Silent - 37g",
+      "manufacturer": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-cinnamon-semi-silent-45g": {
+      "name": "HMX Cinnamon Semi Silent - 45g",
+      "manufacturer": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-cinnamon-semi-silent-53g": {
+      "name": "HMX Cinnamon Semi Silent - 53g",
+      "manufacturer": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-cloud-v2-18mm-63g": {
+      "name": "HMX Cloud V2 - 18mm 63g",
+      "manufacturer": "HMX",
+      "designer": "XLLAB",
+      "switchType": "linear"
+    },
+    "switches/hmx-cloud-v2-22mm-43g": {
+      "name": "HMX Cloud V2 - 22mm 43g",
+      "manufacturer": "HMX",
+      "designer": "XLLAB",
+      "switchType": "linear"
+    },
+    "switches/hmx-cloud-v2-22mm-53g": {
+      "name": "HMX Cloud V2 - 22mm 53g",
+      "manufacturer": "HMX",
+      "designer": "XLLAB",
+      "switchType": "linear"
+    },
+    "switches/hmx-dirty-pink-42g": {
+      "name": "HMX Dirty Pink - 42g",
+      "manufacturer": "HMX",
+      "designer": "YG",
+      "switchType": "linear"
+    },
+    "switches/hmx-egg-yolk-45g": {
+      "name": "HMX Egg Yolk - 45g",
+      "manufacturer": "HMX",
+      "designer": "KK Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-egg-yolk-53g": {
+      "name": "HMX Egg Yolk - 53g",
+      "manufacturer": "HMX",
+      "designer": "KK Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-hydra-22mm-50g": {
+      "name": "HMX Hydra - 22mm 50g",
+      "manufacturer": "HMX",
+      "designer": "HMX",
+      "switchType": "tactile"
+    },
+    "switches/hmx-hydra-22mm-58g": {
+      "name": "HMX Hydra - 22mm 58g",
+      "manufacturer": "HMX",
+      "designer": "HMX",
+      "switchType": "tactile"
+    },
+    "switches/hmx-kd400-50g": {
+      "name": "HMX KD400 - 50g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-kd400-56g": {
+      "name": "HMX KD400 - 56g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-kd400-63g": {
+      "name": "HMX KD400 - 63g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-macchiato-v2-42g": {
+      "name": "HMX Macchiato V2 - 42g",
+      "manufacturer": "HMX",
+      "designer": "YG",
+      "switchType": "linear"
+    },
+    "switches/hmx-macchiato-v2-50g": {
+      "name": "HMX Macchiato V2 - 50g",
+      "manufacturer": "HMX",
+      "designer": "YG",
+      "switchType": "linear"
+    },
+    "switches/hmx-macchiato-v2-57g": {
+      "name": "HMX Macchiato V2 - 57g",
+      "manufacturer": "HMX",
+      "designer": "YG",
+      "switchType": "linear"
+    },
+    "switches/hmx-meme-37g": {
+      "name": "HMX Meme - 37g",
+      "manufacturer": "HMX",
+      "designer": "Rena Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-meme-45g": {
+      "name": "HMX Meme - 45g",
+      "manufacturer": "HMX",
+      "designer": "Rena Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-meme-53g": {
+      "name": "HMX Meme - 53g",
+      "manufacturer": "HMX",
+      "designer": "Rena Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-moonlight-silent-43g": {
+      "name": "HMX Moonlight Silent - 43g",
+      "manufacturer": "HMX",
+      "designer": "SU LAB",
+      "switchType": "tactile"
+    },
+    "switches/hmx-moonlight-silent-52g": {
+      "name": "HMX Moonlight Silent - 52g",
+      "manufacturer": "HMX",
+      "designer": "SU LAB",
+      "switchType": "tactile"
+    },
+    "switches/hmx-rain-rail-53g": {
+      "name": "HMX Rain Rail - 53g",
+      "manufacturer": "HMX",
+      "designer": "Youth Studio",
+      "switchType": "linear"
+    },
+    "switches/hmx-rain-rail-57g": {
+      "name": "HMX Rain Rail - 57g",
+      "manufacturer": "HMX",
+      "designer": "Youth Studio",
+      "switchType": "linear"
+    },
+    "switches/hmx-reze-42g": {
+      "name": "HMX Reze - 42g",
+      "manufacturer": "HMX",
+      "designer": "XIda",
+      "switchType": "tactile"
+    },
+    "switches/hmx-reze-50g": {
+      "name": "HMX Reze - 50g",
+      "manufacturer": "HMX",
+      "designer": "XIda",
+      "switchType": "tactile"
+    },
+    "switches/hmx-reze-55g": {
+      "name": "HMX Reze - 55g",
+      "manufacturer": "HMX",
+      "designer": "XIda",
+      "switchType": "tactile"
+    },
+    "switches/hmx-taro-ball-53g": {
+      "name": "HMX Taro Ball - 53g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-taro-ball-63g": {
+      "name": "HMX Taro Ball - 63g",
+      "brand": "HMX",
+      "switchType": "linear"
+    },
+    "switches/hmx-toast-45g": {
+      "name": "HMX Toast - 45g",
+      "manufacturer": "HMX",
+      "designer": "Rena Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-toast-53g": {
+      "name": "HMX Toast - 53g",
+      "manufacturer": "HMX",
+      "designer": "Rena Lab",
+      "switchType": "linear"
+    },
+    "switches/hmx-x-80-retros-kd400-46g": {
+      "name": "HMX X 80Retros KD400 - 46g",
+      "manufacturer": "HMX",
+      "designer": "80Retros",
+      "switchType": "linear"
+    },
+    "switches/hmx-x-80-retros-kd400-50g": {
+      "name": "HMX X 80Retros KD400 - 50g",
+      "manufacturer": "HMX",
+      "designer": "80Retros",
+      "switchType": "linear"
+    },
+    "switches/hmx-x-80-retros-kd400-55g": {
+      "name": "HMX X 80Retros KD400 - 55g",
+      "manufacturer": "HMX",
+      "designer": "80Retros",
+      "switchType": "linear"
+    },
+    "switches/hmx-x-80-retros-kd400-63g": {
+      "name": "HMX X 80Retros KD400 - 63g",
+      "manufacturer": "HMX",
+      "designer": "80Retros",
+      "switchType": "linear"
+    },
+    "switches/kailh-box-spring": {
+      "name": "Kailh Box Spring",
+      "manufacturer": "Kailh",
+      "brand": "Kailh",
+      "switchType": "linear"
+    },
+    "switches/kailh-box-summer": {
+      "name": "Kailh Box Summer",
+      "manufacturer": "Kailh",
+      "brand": "Kailh",
+      "switchType": "clicky"
+    },
+    "switches/kailh-box-white": {
+      "name": "Kailh Box White",
+      "manufacturer": "Kailh",
+      "brand": "Kailh",
+      "switchType": "clicky"
+    },
+    "switches/kailh-box-winter": {
+      "name": "Kailh Box Winter",
+      "manufacturer": "Kailh",
+      "brand": "Kailh",
+      "switchType": "tactile"
+    },
+    "switches/keygeek-butterfly-48g": {
+      "name": "Keygeek Butterfly - 48g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "Suixin Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-butterfly-50g": {
+      "name": "Keygeek Butterfly - 50g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "Suixin Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-butterfly-60g": {
+      "name": "Keygeek Butterfly - 60g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "Suixin Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-crepe-40g": {
+      "name": "Keygeek Crepe - 40g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "GearPod",
+      "switchType": "linear"
+    },
+    "switches/keygeek-crepe-53g": {
+      "name": "Keygeek Crepe - 53g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "GearPod",
+      "switchType": "linear"
+    },
+    "switches/keygeek-orange-boi-48g": {
+      "name": "Keygeek Orange Boi - 48g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "switchType": "linear"
+    },
+    "switches/keygeek-orange-boi-53g": {
+      "name": "Keygeek Orange Boi - 53g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "switchType": "linear"
+    },
+    "switches/keygeek-orange-boi-57g": {
+      "name": "Keygeek Orange Boi - 57g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "switchType": "linear"
+    },
+    "switches/keygeek-su-color-v2-45g": {
+      "name": "Keygeek Su Color V2 - 45g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "WJBY Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-su-color-v2-50g": {
+      "name": "Keygeek Su Color V2 - 50g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "WJBY Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-sunflower-57g": {
+      "name": "Keygeek Sunflower - 57g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "switchType": "linear"
+    },
+    "switches/keygeek-sunflower-63-5g": {
+      "name": "Keygeek Sunflower - 63.5g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y2-22mm-37g": {
+      "name": "Keygeek Y2 - 22mm 37g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y2x-37g": {
+      "name": "Keygeek Y2X - 37g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y2x-45g": {
+      "name": "Keygeek Y2X - 45g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y2x-53g": {
+      "name": "Keygeek Y2X - 53g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y2x-63-5g": {
+      "name": "Keygeek Y2X - 63.5g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y3-37g": {
+      "name": "Keygeek Y3 - 37g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y3-45g": {
+      "name": "Keygeek Y3 - 45g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y3-53g": {
+      "name": "Keygeek Y3 - 53g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y3-63-5g": {
+      "name": "Keygeek Y3 - 63.5g",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y3x-53g": {
+      "name": "Keygeek Y3X (53g)",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/keygeek-y3x-63-5g": {
+      "name": "Keygeek Y3X (63.5g)",
+      "manufacturer": "Keygeek",
+      "brand": "Keygeek",
+      "designer": "MZ Studio",
+      "switchType": "linear"
+    },
+    "switches/ktt-strawberry-v2": {
+      "name": "KTT Strawberry V2",
+      "brand": "KTT",
+      "switchType": "linear"
+    },
+    "switches/lichicx-berry-cheesecake-silent-45g": {
+      "name": "Lichicx Berry Cheesecake Silent - 45g",
+      "manufacturer": "Wingtree / Lichicx",
+      "brand": "Wingtree",
+      "designer": "Black Cat Studio",
+      "switchType": "linear"
+    },
+    "switches/lichicx-berry-cheesecake-silent-53g": {
+      "name": "Lichicx Berry Cheesecake Silent - 53g",
+      "manufacturer": "Wingtree / Lichicx",
+      "brand": "Wingtree",
+      "designer": "Black Cat Studio",
+      "switchType": "linear"
+    },
+    "switches/lichicx-silent-yogurt-42g": {
+      "name": "Lichicx Silent Yogurt - 42g",
+      "manufacturer": "Wingtree / Lichicx",
+      "brand": "Wingtree",
+      "designer": "XLLAB",
+      "switchType": "linear"
+    },
+    "switches/lichicx-silent-yogurt-53g": {
+      "name": "Lichicx Silent Yogurt - 53g",
+      "manufacturer": "Wingtree / Lichicx",
+      "brand": "Wingtree",
+      "designer": "XLLAB",
+      "switchType": "linear"
+    },
+    "switches/lichicx-yamatake-silent-42g": {
+      "name": "Lichicx Yamatake Silent - 42g",
+      "manufacturer": "Wingtree",
+      "brand": "Lichicx",
+      "designer": "XLLAB",
+      "switchType": "tactile"
+    },
+    "switches/lichicx-yamatake-silent-53g": {
+      "name": "Lichicx Yamatake Silent - 53g",
+      "manufacturer": "Wingtree",
+      "brand": "Lichicx",
+      "designer": "XLLAB",
+      "switchType": "tactile"
+    },
+    "switches/unikeys-x-bsun-waves": {
+      "name": "UNIKEYS X BSUN WAVES",
+      "manufacturer": "BSUN",
+      "designer": "Unikeys",
+      "switchType": "linear"
+    },
+    "switches/wingtree-camellia-48g": {
+      "name": "Wingtree Camellia - 48g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "Wuhai Studio",
+      "switchType": "linear"
+    },
+    "switches/wingtree-camellia-52g": {
+      "name": "Wingtree Camellia (52g)",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "switchType": "linear",
+      "designer": "Wuhai Studio"
+    },
+    "switches/wingtree-camellia-58g": {
+      "name": "Wingtree Camellia (58g)",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "switchType": "linear",
+      "designer": "Wuhai Studio"
+    },
+    "switches/wingtree-camellia-63g": {
+      "name": "Wingtree Camellia - 63g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "Wuhai Studio",
+      "switchType": "linear"
+    },
+    "switches/wingtree-g-one-55g": {
+      "name": "Wingtree G-One - 55g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "YG Studio",
+      "switchType": "linear"
+    },
+    "switches/wingtree-nezuko-55g": {
+      "name": "Wingtree Nezuko (55g)",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "switchType": "linear",
+      "designer": "XIda"
+    },
+    "switches/wingtree-nezuko-60g": {
+      "name": "Wingtree Nezuko (60g)",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "switchType": "linear",
+      "designer": "XIda"
+    },
+    "switches/wingtree-x-lichicx-pink-pink-silent-40g": {
+      "name": "Wingtree / Lichicx Pink Pink Silent - 40g",
+      "manufacturer": "Wingtree / Lichicx",
+      "brand": "Wingtree",
+      "designer": "Ruben",
+      "switchType": "linear"
+    },
+    "switches/wingtree-x-lichicx-pink-pink-silent-45g": {
+      "name": "Wingtree / Lichicx Pink Pink Silent - 45g",
+      "manufacturer": "Wingtree / Lichicx",
+      "brand": "Wingtree",
+      "designer": "Ruben",
+      "switchType": "linear"
+    },
+    "switches/wingtree-yunie-linear-40g-operating-force-50g": {
+      "name": "Wingtree Yunie Linear - 40g Operating Force/50g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "Wingtree",
+      "switchType": "linear"
+    },
+    "switches/wingtree-yunie-linear-45g-operating-force-60g": {
+      "name": "Wingtree Yunie Linear - 45g Operating Force/60g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "Wingtree",
+      "switchType": "linear"
+    },
+    "switches/wingtree-yunie-tactile-50g-operating-force-60g": {
+      "name": "Wingtree Yunie Tactile - 50g Operating Force/60g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "Wingtree",
+      "switchType": "tactile"
+    },
+    "switches/wingtree-yunie-tactile-57g-operating-force-63-5g": {
+      "name": "Wingtree Yunie Tactile - 57g Operating Force/63.5g",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": "Wingtree",
+      "switchType": "tactile"
+    },
+    "switches/415keys-sunset": {
+      "switchType": "linear"
+    },
+    "switches/80retros-hmx-fj400": {
+      "switchType": "linear"
+    },
+    "switches/80retros-hmx-game-1989": {
+      "switchType": "linear"
+    },
+    "switches/80retros-hmx-kd200": {
+      "switchType": "linear"
+    },
+    "switches/80retros-retro-blue": {
+      "switchType": "tactile"
+    },
+    "switches/80retros-volume-0": {
+      "switchType": "linear"
+    },
+    "switches/80retros-volume-0-t": {
+      "switchType": "tactile"
+    },
+    "switches/80s-retros-1989-silver": {
+      "switchType": "linear"
+    },
+    "switches/80s-retros-1989-silver-dustproof": {
+      "switchType": "linear"
+    },
+    "switches/aeboards-naevy-r2-1": {
+      "switchType": "tactile"
+    },
+    "switches/aeboards-raed-r1-5": {
+      "switchType": "linear"
+    },
+    "switches/aeboards-raed-r2-1": {
+      "switchType": "linear"
+    },
+    "switches/aflion-iceberg-blue": {
+      "switchType": "linear"
+    },
+    "switches/aflion-ink-shadow-55g": {
+      "switchType": "tactile"
+    },
+    "switches/aflion-panda": {
+      "switchType": "tactile"
+    },
+    "switches/aflion-shadow": {
+      "switchType": "tactile"
+    },
+    "switches/ajazz-as-mist-green": {
+      "switchType": "linear"
+    },
+    "switches/ajazz-black-clear-top-black-bottom": {
+      "switchType": "linear"
+    },
+    "switches/ajazz-brown": {
+      "switchType": "tactile"
+    },
+    "switches/ajazz-daydream": {
+      "switchType": "linear"
+    },
+    "switches/ajazz-red": {
+      "switchType": "linear"
+    },
+    "switches/ajazz-violet-clear-top-black-bottom": {
+      "switchType": "clicky"
+    },
+    "switches/akko-astroaim": {
+      "switchType": "linear"
+    },
+    "switches/akko-astrolink": {
+      "switchType": "linear"
+    },
+    "switches/akko-blue-v2-desoldered": {
+      "switchType": "clicky"
+    },
+    "switches/akko-flash": {
+      "switchType": "linear"
+    },
+    "switches/akko-frost-pink": {
+      "switchType": "linear"
+    },
+    "switches/akko-glare-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/akko-jelly-black": {
+      "switchType": "linear"
+    },
+    "switches/akko-jelly-blue": {
+      "switchType": "tactile"
+    },
+    "switches/akko-jelly-pink": {
+      "switchType": "linear"
+    },
+    "switches/akko-jelly-purple": {
+      "switchType": "tactile"
+    },
+    "switches/akko-jelly-white": {
+      "switchType": "linear"
+    },
+    "switches/akko-lavender-purple": {
+      "switchType": "tactile"
+    },
+    "switches/akko-matcha-green": {
+      "switchType": "linear"
+    },
+    "switches/akko-ocean-blue": {
+      "switchType": "tactile"
+    },
+    "switches/akko-orange-v2-desoldered": {
+      "switchType": "tactile"
+    },
+    "switches/akko-piano-pro": {
+      "switchType": "linear"
+    },
+    "switches/akko-piano-pro-v3-special-edition": {
+      "switchType": "linear"
+    },
+    "switches/akko-pink-v1": {
+      "switchType": "linear"
+    },
+    "switches/akko-radiant-red": {
+      "switchType": "linear"
+    },
+    "switches/akko-rose-red": {
+      "switchType": "linear"
+    },
+    "switches/akko-sponge": {
+      "switchType": "tactile"
+    },
+    "switches/akko-starfish": {
+      "switchType": "linear"
+    },
+    "switches/akko-v1-blue": {
+      "switchType": "clicky"
+    },
+    "switches/akko-v1-purple": {
+      "switchType": "linear"
+    },
+    "switches/akko-v3-pro-fairy": {
+      "switchType": "linear"
+    },
+    "switches/akko-v3-pro-penguin": {
+      "switchType": "tactile"
+    },
+    "switches/akko-vintage-white": {
+      "switchType": "linear"
+    },
+    "switches/akko-x-hmx-mirror": {
+      "switchType": "linear"
+    },
+    "switches/akko-x-hmx-stellar-rose": {
+      "switchType": "linear"
+    },
+    "switches/akko-x-kailh-sakura-pink-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/alps-bamboo-white-skbm-simplified": {
+      "switchType": "clicky"
+    },
+    "switches/alps-skcm-pine-white": {
+      "switchType": "clicky"
+    },
+    "switches/alps-skew-white": {
+      "switchType": "tactile"
+    },
+    "switches/aregs-caramel-chocolate": {
+      "switchType": "linear"
+    },
+    "switches/asus-rog-nx-snow": {
+      "switchType": "linear"
+    },
+    "switches/asus-rog-nx-storm": {
+      "switchType": "clicky"
+    },
+    "switches/asus-rog-rx-optical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/asus-rog-rx-optical-red": {
+      "switchType": "linear"
+    },
+    "switches/atk68-ii-magnetic-axis": {
+      "switchType": "linear"
+    },
+    "switches/attack-shark-milky-white": {
+      "switchType": "linear"
+    },
+    "switches/attack-shark-vibrant-yellow": {
+      "switchType": "linear"
+    },
+    "switches/aula-crystal-rose": {
+      "switchType": "linear"
+    },
+    "switches/aula-gold-powder": {
+      "switchType": "linear"
+    },
+    "switches/aula-matcha": {
+      "switchType": "tactile"
+    },
+    "switches/aula-volcanic": {
+      "switchType": "linear"
+    },
+    "switches/aula-wind-spirit": {
+      "switchType": "linear"
+    },
+    "switches/aula-wooden-blue": {
+      "switchType": "clicky"
+    },
+    "switches/azure-dragon-v3": {
+      "switchType": "tactile"
+    },
+    "switches/baby-s-breath-clear-white-gypsophila-3": {
+      "switchType": "tactile"
+    },
+    "switches/baby-s-breath-pink-red-gypsophila-5": {
+      "switchType": "linear"
+    },
+    "switches/baby-s-breath-pink-white-gypsophila-4": {
+      "switchType": "linear"
+    },
+    "switches/baby-s-breath-purple-cream-gypsophila-6": {
+      "switchType": "linear"
+    },
+    "switches/baby-s-breath-purple-green-gypsophila-2": {
+      "switchType": "linear"
+    },
+    "switches/baby-s-breath-purple-pink-gypsophila-1": {
+      "switchType": "tactile"
+    },
+    "switches/backspace-studios-gateron-black-jade-he": {
+      "switchType": "linear"
+    },
+    "switches/bald-brother-strawberry-ice-cream-v3": {
+      "switchType": "linear"
+    },
+    "switches/balhae-blue": {
+      "switchType": "tactile"
+    },
+    "switches/ball-bearing-lucy": {
+      "switchType": "linear"
+    },
+    "switches/ball-bearing-v2-pink": {
+      "switchType": "linear"
+    },
+    "switches/ball-bearing-v2-purple": {
+      "switchType": "linear"
+    },
+    "switches/batknight-obedience-v2": {
+      "switchType": "tactile"
+    },
+    "switches/bolsa-clunked-corsas": {
+      "switchType": "tactile"
+    },
+    "switches/bowl-x-gateron-lanes": {
+      "switchType": "tactile"
+    },
+    "switches/bsun-black": {
+      "switchType": "linear"
+    },
+    "switches/bsun-blue": {
+      "switchType": "clicky"
+    },
+    "switches/bsun-brown": {
+      "switchType": "tactile"
+    },
+    "switches/bsun-dustproof-brown": {
+      "switchType": "tactile"
+    },
+    "switches/bsun-flower-shadow": {
+      "switchType": "linear"
+    },
+    "switches/bsun-panda-v2-black": {
+      "switchType": "linear"
+    },
+    "switches/bsun-red": {
+      "switchType": "linear"
+    },
+    "switches/bsun-tai-chi": {
+      "switchType": "linear"
+    },
+    "switches/bsun-yellow-panda": {
+      "switchType": "linear"
+    },
+    "switches/burgess-beige-and-red-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/burgess-red-and-white-mouse-switch": {
+      "switchType": "clicky"
+    },
+    "switches/cbkbd-red-velvet": {
+      "switchType": "linear"
+    },
+    "switches/cbkbd-trash": {
+      "switchType": "linear"
+    },
+    "switches/cc-peripherals-sakura": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mv-viola": {
+      "switchType": "linear"
+    },
+    "switches/cherry-nixie": {
+      "switchType": "linear"
+    },
+    "switches/chilkey-wuque-studio-aster": {
+      "switchType": "linear"
+    },
+    "switches/chosfox-arctic-fox": {
+      "switchType": "clicky"
+    },
+    "switches/chosfox-box-speed-ultimate": {
+      "switchType": "linear"
+    },
+    "switches/chosfox-santa-h": {
+      "switchType": "linear"
+    },
+    "switches/chosfox-santa-t": {
+      "switchType": "linear"
+    },
+    "switches/chosfox-voyager": {
+      "switchType": "tactile"
+    },
+    "switches/ciy-sakura-pink": {
+      "switchType": "linear"
+    },
+    "switches/co-gain-amethyst-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/co-gain-amethyst-magnetic-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/co-gain-purple-and-white-magnetic-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/co-gain-sakura-silent-optical": {
+      "switchType": "linear"
+    },
+    "switches/content-blue-desoldered-with-condenser": {
+      "switchType": "clicky"
+    },
+    "switches/content-blue-non-desoldered": {
+      "switchType": "clicky"
+    },
+    "switches/content-brown-white-bottom": {
+      "switchType": "tactile"
+    },
+    "switches/content-red-white-bottom": {
+      "switchType": "linear"
+    },
+    "switches/content-silver": {
+      "switchType": "linear"
+    },
+    "switches/copre-dome": {
+      "switchType": "tactile"
+    },
+    "switches/cosmox-crystal": {
+      "switchType": "linear"
+    },
+    "switches/cosmox-wind-engine": {
+      "switchType": "linear"
+    },
+    "switches/dai-ichi-cl-1145-white": {
+      "switchType": "clicky"
+    },
+    "switches/dai-ichi-cl-1145-yellow": {
+      "switchType": "clicky"
+    },
+    "switches/dai-ichi-yellow": {
+      "switchType": "clicky"
+    },
+    "switches/dareu-cloud": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-a": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-b": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-c": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-d": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-e": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-f": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-g": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-h": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-i": {
+      "switchType": "linear"
+    },
+    "switches/dareu-mahjong-j": {
+      "switchType": "linear"
+    },
+    "switches/dareu-master-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/dareu-optical-colorful-red": {
+      "switchType": "linear"
+    },
+    "switches/dareu-purple-gold": {
+      "switchType": "tactile"
+    },
+    "switches/dareu-purple-gold-v2": {
+      "switchType": "tactile"
+    },
+    "switches/dareu-purple-gold-v3-pro": {
+      "switchType": "tactile"
+    },
+    "switches/dareu-sakura-candy": {
+      "switchType": "linear"
+    },
+    "switches/dareu-sky-blue": {
+      "switchType": "linear"
+    },
+    "switches/dareu-sky-blue-v2": {
+      "switchType": "linear"
+    },
+    "switches/dareu-sky-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/dareu-sky-sky-blue-v5": {
+      "switchType": "linear"
+    },
+    "switches/dareu-sky-v3-heavy-blue": {
+      "switchType": "linear"
+    },
+    "switches/desoldered-aristotle-yellow": {
+      "switchType": "linear"
+    },
+    "switches/desoldered-xiang-min-ksb-c-ivory": {
+      "switchType": "clicky"
+    },
+    "switches/devoted": {
+      "switchType": "tactile"
+    },
+    "switches/douyu-orange": {
+      "switchType": "tactile"
+    },
+    "switches/douyu-white": {
+      "switchType": "linear"
+    },
+    "switches/drinkey-black": {
+      "switchType": "linear"
+    },
+    "switches/drinkey-blue": {
+      "switchType": "clicky"
+    },
+    "switches/drinkey-brown": {
+      "switchType": "tactile"
+    },
+    "switches/drinkey-red": {
+      "switchType": "linear"
+    },
+    "switches/drinkey-xuan-tie-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/drop-holy-panda-x-3-pin": {
+      "switchType": "tactile"
+    },
+    "switches/drop-holy-panda-x-5-pin": {
+      "switchType": "tactile"
+    },
+    "switches/dukharo-mo-pink-v1": {
+      "switchType": "linear"
+    },
+    "switches/durock-korbs": {
+      "switchType": "linear"
+    },
+    "switches/durock-magnetic-rock": {
+      "switchType": "linear"
+    },
+    "switches/easylab-azure": {
+      "switchType": "linear"
+    },
+    "switches/epic-gear-eg-grey": {
+      "switchType": "linear"
+    },
+    "switches/epic-gear-violet": {
+      "switchType": "clicky"
+    },
+    "switches/epomaker-budgerigar": {
+      "switchType": "tactile"
+    },
+    "switches/epomaker-budgerigar-v1-1": {
+      "switchType": "tactile"
+    },
+    "switches/epomaker-peace-lily": {
+      "switchType": "linear"
+    },
+    "switches/everglide-glutinous-rice-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/everglide-haimu-jade-jasper": {
+      "switchType": "linear"
+    },
+    "switches/everglide-haimu-magnetic-pansy": {
+      "switchType": "linear"
+    },
+    "switches/everglide-sticky-rice": {
+      "switchType": "linear"
+    },
+    "switches/everglide-x-swagkeys-black-aqua-king": {
+      "switchType": "linear"
+    },
+    "switches/eweadn-piano": {
+      "switchType": "linear"
+    },
+    "switches/eweadn-something": {
+      "switchType": "linear"
+    },
+    "switches/feker-mute-rose": {
+      "switchType": "linear"
+    },
+    "switches/feker-raspberry-panda": {
+      "switchType": "tactile"
+    },
+    "switches/firstblood-chocolate-blue": {
+      "switchType": "clicky"
+    },
+    "switches/firstblood-chocolate-pink": {
+      "switchType": "linear"
+    },
+    "switches/flaming-skull-burning-ice": {
+      "switchType": "tactile"
+    },
+    "switches/flaming-skull-purple-night": {
+      "switchType": "linear"
+    },
+    "switches/flaretech-optical": {
+      "switchType": "clicky"
+    },
+    "switches/flcmmk-bauhinia-orchids": {
+      "switchType": "linear"
+    },
+    "switches/flcmmk-blue": {
+      "switchType": "tactile"
+    },
+    "switches/flcmmk-box-rosa-pink": {
+      "switchType": "linear"
+    },
+    "switches/flcmmk-pink": {
+      "switchType": "linear"
+    },
+    "switches/frost-porcelain-v2": {
+      "switchType": "tactile"
+    },
+    "switches/fuhlen-blue": {
+      "switchType": "clicky"
+    },
+    "switches/g-rule-cherry-blossom": {
+      "switchType": "linear"
+    },
+    "switches/g-rule-red": {
+      "switchType": "linear"
+    },
+    "switches/g-rule-silent": {
+      "switchType": "linear"
+    },
+    "switches/g-rule-white": {
+      "switchType": "clicky"
+    },
+    "switches/g-square-white-warrior-v2": {
+      "switchType": "linear"
+    },
+    "switches/g3ms-onyx-with-condenser": {
+      "switchType": "linear"
+    },
+    "switches/g3ms-sapphire": {
+      "switchType": "linear"
+    },
+    "switches/ganss-cobalt": {
+      "switchType": "clicky"
+    },
+    "switches/ganss-lunar-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-azure-dragon-v1": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-golden-brown-ks-26": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-golden-yellow-ks-26": {
+      "switchType": "linear"
+    },
+    "switches/gateron-creamy": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-deepping-4mm": {
+      "switchType": "linear"
+    },
+    "switches/gateron-dual-rail-magnetic-jade-mini-e-switch": {
+      "switchType": "linear"
+    },
+    "switches/gateron-dual-rail-orange-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/gateron-everfree-curry": {
+      "switchType": "linear"
+    },
+    "switches/gateron-everfree-fast-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-fei-matcha": {
+      "switchType": "linear"
+    },
+    "switches/gateron-firework": {
+      "switchType": "linear"
+    },
+    "switches/gateron-fox-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/gateron-full-pom-low-profile-jade-pro-he": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-g-pro-2-0-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-g-pro-2-0-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-silver-dual-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-silver-single-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-white-dual-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-white-single-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-goldenrod-pro-3-0-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-goldenrod-pro-3-0-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-goldenrod-pro-3-0-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-goldenrod-pro-3-0-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-goldenrod-pro-3-0-white": {
+      "switchType": "linear"
+    },
+    "switches/gateron-goldenrod-pro-3-0-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-hall-effect-magnetic-orange": {
+      "switchType": "linear"
+    },
+    "switches/gateron-hall-effect-magnetic-white": {
+      "switchType": "linear"
+    },
+    "switches/gateron-jade-gaming-he": {
+      "switchType": "linear"
+    },
+    "switches/gateron-jade-max-he": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3-clear-silent": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3-silent-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-33-banana": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-33-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-33-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-33-chocolate": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-33-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-33-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x47-clear": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x47-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x47-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-8-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-8-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-9-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-magnetic-jade-sapphire": {
+      "switchType": "linear"
+    },
+    "switches/gateron-north-pole-brown-v2-no-rubber-thingy": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-robin-62g": {
+      "switchType": "linear"
+    },
+    "switches/gateron-silent-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-smoothie-banana": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-smoothie-grape": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-smoothie-mint": {
+      "switchType": "linear"
+    },
+    "switches/gazzew-boba-u4": {
+      "switchType": "tactile"
+    },
+    "switches/gazzew-bobagum-52g": {
+      "switchType": "linear"
+    },
+    "switches/gazzew-bobagum-68g": {
+      "switchType": "linear"
+    },
+    "switches/geon-haimu-raw": {
+      "switchType": "linear"
+    },
+    "switches/geon-hg-black": {
+      "switchType": "linear"
+    },
+    "switches/geon-hg-red": {
+      "switchType": "linear"
+    },
+    "switches/geon-hg-white": {
+      "switchType": "tactile"
+    },
+    "switches/geon-hg-yellow": {
+      "switchType": "tactile"
+    },
+    "switches/geon-huano-raw": {
+      "switchType": "linear"
+    },
+    "switches/geon-tecsee-raw": {
+      "switchType": "linear"
+    },
+    "switches/gg-studio-sunset": {
+      "switchType": "linear"
+    },
+    "switches/glarses-cherry-mx-purple": {
+      "switchType": "tactile"
+    },
+    "switches/glorious-fox-light": {
+      "switchType": "linear"
+    },
+    "switches/glorious-lynx-he": {
+      "switchType": "linear"
+    },
+    "switches/glorious-mako-standard": {
+      "switchType": "tactile"
+    },
+    "switches/glorious-panda-he": {
+      "switchType": "tactile"
+    },
+    "switches/glove-x-domikey-choco-donut-v2-blue": {
+      "switchType": "linear"
+    },
+    "switches/glove-x-domikey-choco-donut-v2-green": {
+      "switchType": "linear"
+    },
+    "switches/glove-x-domikey-choco-donut-v2-orange": {
+      "switchType": "linear"
+    },
+    "switches/glove-x-domikey-choco-donut-v2-pink": {
+      "switchType": "linear"
+    },
+    "switches/glove-x-domikey-choco-donut-v2-purple": {
+      "switchType": "linear"
+    },
+    "switches/gmng-red": {
+      "switchType": "linear"
+    },
+    "switches/golden-orange-red": {
+      "switchType": "linear"
+    },
+    "switches/grain-gold-dustproof-amber-he": {
+      "switchType": "linear"
+    },
+    "switches/grain-gold-optical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/greetech-black-black-housing-through-hole-3-pin": {
+      "switchType": "linear"
+    },
+    "switches/greetech-black-black-housing-through-hole-5-pin": {
+      "switchType": "linear"
+    },
+    "switches/greetech-black-white-and-clear-housing-smd-3-pin": {
+      "switchType": "linear"
+    },
+    "switches/greetech-black-white-and-clear-housing-through-hole-3-pin": {
+      "switchType": "linear"
+    },
+    "switches/greetech-blue-black-housing-through-hole-3-pin": {
+      "switchType": "clicky"
+    },
+    "switches/greetech-blue-white-and-clear-housing-smd-3-pin": {
+      "switchType": "clicky"
+    },
+    "switches/greetech-blue-white-and-clear-housing-through-hole-5-pin": {
+      "switchType": "clicky"
+    },
+    "switches/greetech-brown-black-housing-through-hole-5-pin": {
+      "switchType": "tactile"
+    },
+    "switches/greetech-green-black-housing-through-hole-3-pin": {
+      "switchType": "clicky"
+    },
+    "switches/greetech-red-black-housing-through-hole-3-pin": {
+      "switchType": "linear"
+    },
+    "switches/haimu-brown": {
+      "switchType": "tactile"
+    },
+    "switches/haimu-moonlight-magnetic-axis": {
+      "switchType": "tactile"
+    },
+    "switches/haimu-panda-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/haimu-red": {
+      "switchType": "linear"
+    },
+    "switches/haimu-sea-salt-lemons": {
+      "switchType": "linear"
+    },
+    "switches/haimu-sea-salt-mini-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/haimu-sea-salt-mini-silent-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/haimu-x-swagkeys-deep-ruby": {
+      "switchType": "linear"
+    },
+    "switches/hecate-blue": {
+      "switchType": "clicky"
+    },
+    "switches/hecate-brown": {
+      "switchType": "tactile"
+    },
+    "switches/hecate-red": {
+      "switchType": "linear"
+    },
+    "switches/hhhh-h1": {
+      "switchType": "linear"
+    },
+    "switches/hmx-longjing-s-37g": {
+      "switchType": "tactile"
+    },
+    "switches/hmx-longjing-s-45g": {
+      "switchType": "tactile"
+    },
+    "switches/hmx-macchiato": {
+      "switchType": "linear"
+    },
+    "switches/hmx-moksae-silent": {
+      "switchType": "linear"
+    },
+    "switches/hmx-pearl": {
+      "switchType": "linear"
+    },
+    "switches/hmx-rainbow-candy-blue": {
+      "switchType": "linear"
+    },
+    "switches/hmx-rainbow-candy-green": {
+      "switchType": "linear"
+    },
+    "switches/hmx-rainbow-candy-pink": {
+      "switchType": "linear"
+    },
+    "switches/hmx-rainbow-candy-yellow": {
+      "switchType": "linear"
+    },
+    "switches/hmx-rainbow-v2-blue": {
+      "switchType": "linear"
+    },
+    "switches/hmx-xinhai-sea-wave": {
+      "switchType": "linear"
+    },
+    "switches/holy-jerry": {
+      "switchType": "linear"
+    },
+    "switches/holy-tom": {
+      "switchType": "tactile"
+    },
+    "switches/holy-tom-black-and-yellow": {
+      "switchType": "tactile"
+    },
+    "switches/holy-tom-rt-huano-blue-white-se": {
+      "switchType": "tactile"
+    },
+    "switches/hori-edge": {
+      "switchType": "linear"
+    },
+    "switches/hp-azure": {
+      "switchType": "linear"
+    },
+    "switches/huano-american-rose-garden": {
+      "switchType": "linear"
+    },
+    "switches/huano-aries-flaw-version": {
+      "switchType": "linear"
+    },
+    "switches/huano-bipolar-blue": {
+      "switchType": "linear"
+    },
+    "switches/huano-blue-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/huano-blue-dragon": {
+      "switchType": "linear"
+    },
+    "switches/huano-boiled-egg": {
+      "switchType": "linear"
+    },
+    "switches/huano-citrine-v2": {
+      "switchType": "linear"
+    },
+    "switches/huano-conch-pearl-v2": {
+      "switchType": "linear"
+    },
+    "switches/huano-diamond": {
+      "switchType": "linear"
+    },
+    "switches/huano-dustproof-pink-grey-bottom-swirl-logo": {
+      "switchType": "clicky"
+    },
+    "switches/huano-glass-jade": {
+      "switchType": "linear"
+    },
+    "switches/huano-green-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/huano-lunar-new-year-fi": {
+      "switchType": "linear"
+    },
+    "switches/huano-lunar-new-year-hi": {
+      "switchType": "linear"
+    },
+    "switches/huano-nylon-white": {
+      "switchType": "clicky"
+    },
+    "switches/huano-pink-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/huano-red": {
+      "switchType": "linear"
+    },
+    "switches/huano-red-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/huano-red-nylon": {
+      "switchType": "linear"
+    },
+    "switches/huano-spirit-wind-lingfeng": {
+      "switchType": "linear"
+    },
+    "switches/huano-star-ring": {
+      "switchType": "linear"
+    },
+    "switches/huano-strawberry-jelly-v1": {
+      "switchType": "tactile"
+    },
+    "switches/huano-strawberry-jelly-v2": {
+      "switchType": "linear"
+    },
+    "switches/huano-strawberry-jelly-v3": {
+      "switchType": "linear"
+    },
+    "switches/huano-swirl-blue-black-bottom": {
+      "switchType": "clicky"
+    },
+    "switches/huano-swirl-blue-white-bottom": {
+      "switchType": "clicky"
+    },
+    "switches/huano-swirl-brown": {
+      "switchType": "tactile"
+    },
+    "switches/huano-swirl-red": {
+      "switchType": "linear"
+    },
+    "switches/huano-turquoise-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/huano-white-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/huano-yellow-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/iceberg-blue-v2": {
+      "switchType": "linear"
+    },
+    "switches/iceberg-orange-v2": {
+      "switchType": "linear"
+    },
+    "switches/iceberg-pink-v2": {
+      "switchType": "linear"
+    },
+    "switches/iceberg-purple-v2": {
+      "switchType": "linear"
+    },
+    "switches/iceberg-red-v2": {
+      "switchType": "linear"
+    },
+    "switches/iceberg-teal-v2": {
+      "switchType": "linear"
+    },
+    "switches/iceberg-yellow-v2": {
+      "switchType": "linear"
+    },
+    "switches/idk-brown": {
+      "switchType": "tactile"
+    },
+    "switches/idk-red": {
+      "switchType": "linear"
+    },
+    "switches/ikeyx-yumo-a": {
+      "switchType": "linear"
+    },
+    "switches/ikeyx-yumo-c": {
+      "switchType": "linear"
+    },
+    "switches/ikeyx-yumo-d": {
+      "switchType": "linear"
+    },
+    "switches/infinity-key-cow-milk-pom": {
+      "switchType": "linear"
+    },
+    "switches/infinity-key-mango-milk-pom": {
+      "switchType": "linear"
+    },
+    "switches/infinity-key-strawberry-milk-pom": {
+      "switchType": "linear"
+    },
+    "switches/infinity-key-taro-milk-pom": {
+      "switchType": "linear"
+    },
+    "switches/inland-holy-panda": {
+      "switchType": "tactile"
+    },
+    "switches/invokeys-black-sesame-v2": {
+      "switchType": "linear"
+    },
+    "switches/invokeys-blueberry-chiffon-v2": {
+      "switchType": "tactile"
+    },
+    "switches/invokeys-hojicha-reserve": {
+      "switchType": "tactile"
+    },
+    "switches/invokeys-matcha-latte-v2": {
+      "switchType": "linear"
+    },
+    "switches/invokeys-pea-flower": {
+      "switchType": "clicky"
+    },
+    "switches/j-lab-ripple-v2": {
+      "switchType": "linear"
+    },
+    "switches/jagor-bald-brother-sea-salt-lemon-v3": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-black-housing-blue": {
+      "switchType": "clicky"
+    },
+    "switches/jerrzi-blueberry-silent-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-cherry-blossom-pink": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-kyria-silver": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-ruyi-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-salt-ice": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-similar-blue": {
+      "switchType": "clicky"
+    },
+    "switches/jerrzi-snow-white-low-profile": {
+      "switchType": "linear"
+    },
+    "switches/jerrzi-x-xcjz-lotus": {
+      "switchType": "clicky"
+    },
+    "switches/jixian-blue": {
+      "switchType": "clicky"
+    },
+    "switches/jixian-blue-desoldered": {
+      "switchType": "clicky"
+    },
+    "switches/jixian-brown": {
+      "switchType": "tactile"
+    },
+    "switches/jixian-plum": {
+      "switchType": "linear"
+    },
+    "switches/jixian-red": {
+      "switchType": "linear"
+    },
+    "switches/jixian-yellow": {
+      "switchType": "linear"
+    },
+    "switches/jwh-dustproof-blue": {
+      "switchType": "clicky"
+    },
+    "switches/jwick-nylon-black": {
+      "switchType": "linear"
+    },
+    "switches/jwick-nylon-t1": {
+      "switchType": "tactile"
+    },
+    "switches/jwick-t1-transparent-top": {
+      "switchType": "tactile"
+    },
+    "switches/jwick-taro-milk": {
+      "switchType": "tactile"
+    },
+    "switches/jwick-tinglan": {
+      "switchType": "linear"
+    },
+    "switches/jwick-turmeric-milk": {
+      "switchType": "linear"
+    },
+    "switches/jwk-rara-v2": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-black-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-box-dark-yellow": {
+      "switchType": "linear"
+    },
+    "switches/kailh-box-hako-royal-true": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-burnt-orange": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-choc-black-cloud": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-choc-hide-mountain": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-choc-white-rain": {
+      "switchType": "linear"
+    },
+    "switches/kailh-crystal-wine": {
+      "switchType": "linear"
+    },
+    "switches/kailh-extreme-intelligent": {
+      "switchType": "linear"
+    },
+    "switches/kailh-flame-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/kailh-haiqing": {
+      "switchType": "linear"
+    },
+    "switches/kailh-hako-royal-clear": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-hako-true": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-halo-clear": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-halo-true": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-long-hua-cardamom": {
+      "switchType": "linear"
+    },
+    "switches/kailh-long-hua-platycodon-grandiflorum": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-mistral-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/kailh-pale-blue": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-pro-burgundy": {
+      "switchType": "linear"
+    },
+    "switches/kailh-pro-light-green": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-pro-purple": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-red-ring": {
+      "switchType": "linear"
+    },
+    "switches/kailh-sun": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-turbo-red": {
+      "switchType": "linear"
+    },
+    "switches/kailh-white-mouse-switch": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-x-dareu-mx-master": {
+      "switchType": "linear"
+    },
+    "switches/kailh-x-skyloong-loong2-lavender": {
+      "switchType": "linear"
+    },
+    "switches/kailh-x-skyloong-loong2-speed-silver": {
+      "switchType": "linear"
+    },
+    "switches/kam-bouquet": {
+      "switchType": "tactile"
+    },
+    "switches/kbdfans-roller": {
+      "switchType": "linear"
+    },
+    "switches/kbdiy-kangbai": {
+      "switchType": "linear"
+    },
+    "switches/kbdiy-panda-55g": {
+      "switchType": "tactile"
+    },
+    "switches/kbdiy-panda-62g": {
+      "switchType": "tactile"
+    },
+    "switches/kbdiy-panda-67g": {
+      "switchType": "tactile"
+    },
+    "switches/kbdiy-rosewood": {
+      "switchType": "linear"
+    },
+    "switches/kbdiy-white-marble": {
+      "switchType": "linear"
+    },
+    "switches/kbdiy-wisteria": {
+      "switchType": "linear"
+    },
+    "switches/keebhut-aflion-tropical-waters": {
+      "switchType": "linear"
+    },
+    "switches/keebhut-blue-bubblegum": {
+      "switchType": "linear"
+    },
+    "switches/keebz-n-cables-bsun-taro-n-sweet-potato": {
+      "switchType": "linear"
+    },
+    "switches/keebz-n-cables-ice-kachang-v2": {
+      "switchType": "tactile"
+    },
+    "switches/kemove-gateron-brown": {
+      "switchType": "tactile"
+    },
+    "switches/keybay-w1-black-diamond-black": {
+      "switchType": "linear"
+    },
+    "switches/keybay-w1-black-diamond-pink": {
+      "switchType": "linear"
+    },
+    "switches/keychron-camo-camel": {
+      "switchType": "linear"
+    },
+    "switches/keychron-camo-green": {
+      "switchType": "linear"
+    },
+    "switches/keychron-camo-light-green": {
+      "switchType": "linear"
+    },
+    "switches/keychron-camo-wheat": {
+      "switchType": "linear"
+    },
+    "switches/keychron-gateron-phantom-blue": {
+      "switchType": "clicky"
+    },
+    "switches/keychron-gateron-phantom-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-low-profile-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-x-huano-gesha-latte": {
+      "switchType": "linear"
+    },
+    "switches/kinetic-labs-hippo": {
+      "switchType": "linear"
+    },
+    "switches/kinetic-labs-husky": {
+      "switchType": "linear"
+    },
+    "switches/kinetic-labs-salmon": {
+      "switchType": "tactile"
+    },
+    "switches/krgd-black-w-condenser-d-stock": {
+      "switchType": "linear"
+    },
+    "switches/krgd-red-desoldered": {
+      "switchType": "linear"
+    },
+    "switches/ktek-constellation-aquarius-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/ktt-bamboo-gleam-maybe": {
+      "switchType": "linear"
+    },
+    "switches/ktt-blue": {
+      "switchType": "linear"
+    },
+    "switches/ktt-blue-flutter": {
+      "switchType": "tactile"
+    },
+    "switches/ktt-cabbage-tofu-transparent-top": {
+      "switchType": "linear"
+    },
+    "switches/ktt-cabbage-tofu-v2": {
+      "switchType": "linear"
+    },
+    "switches/ktt-chalk": {
+      "switchType": "linear"
+    },
+    "switches/ktt-creamy-ice-cream": {
+      "switchType": "linear"
+    },
+    "switches/ktt-creamy-yellow-pro": {
+      "switchType": "linear"
+    },
+    "switches/ktt-grapefruit-5-pin": {
+      "switchType": "linear"
+    },
+    "switches/ktt-green-shadow": {
+      "switchType": "linear"
+    },
+    "switches/ktt-hyacinth-pink": {
+      "switchType": "linear"
+    },
+    "switches/ktt-hyacinth-v1-green": {
+      "switchType": "linear"
+    },
+    "switches/ktt-jacaranda-v1": {
+      "switchType": "linear"
+    },
+    "switches/ktt-jacaranda-v2": {
+      "switchType": "linear"
+    },
+    "switches/ktt-magnetic-axis": {
+      "switchType": "linear"
+    },
+    "switches/ktt-mallo-55g": {
+      "switchType": "tactile"
+    },
+    "switches/ktt-mallo-68g": {
+      "switchType": "tactile"
+    },
+    "switches/ktt-marshmallow": {
+      "switchType": "linear"
+    },
+    "switches/ktt-monochrome-onyx": {
+      "switchType": "tactile"
+    },
+    "switches/ktt-peach-blossom": {
+      "switchType": "linear"
+    },
+    "switches/ktt-pink-moon-v2": {
+      "switchType": "linear"
+    },
+    "switches/ktt-purple-sauce-ring": {
+      "switchType": "clicky"
+    },
+    "switches/ktt-purple-star-v2": {
+      "switchType": "linear"
+    },
+    "switches/ktt-retro-pure-white": {
+      "switchType": "linear"
+    },
+    "switches/ktt-soot-ash": {
+      "switchType": "tactile"
+    },
+    "switches/ktt-strawberry-with-logo": {
+      "switchType": "linear"
+    },
+    "switches/ktt-vaporwave": {
+      "switchType": "linear"
+    },
+    "switches/ktt-wine-red": {
+      "switchType": "linear"
+    },
+    "switches/ktt-wine-red-v1": {
+      "switchType": "linear"
+    },
+    "switches/ktt-wine-red-v3-37g": {
+      "switchType": "linear"
+    },
+    "switches/ktt-wine-red-v3-43g": {
+      "switchType": "linear"
+    },
+    "switches/ktt-xcjz-ice-orange-silent-silver": {
+      "switchType": "linear"
+    },
+    "switches/ktt-zen-cha-tea-silent": {
+      "switchType": "tactile"
+    },
+    "switches/kzzi-love": {
+      "switchType": "linear"
+    },
+    "switches/langtu-cuiyin": {
+      "switchType": "linear"
+    },
+    "switches/langtu-fog-purple": {
+      "switchType": "linear"
+    },
+    "switches/langtu-gold": {
+      "switchType": "linear"
+    },
+    "switches/lcet-black": {
+      "switchType": "linear"
+    },
+    "switches/lcet-blue": {
+      "switchType": "clicky"
+    },
+    "switches/lcet-brown": {
+      "switchType": "tactile"
+    },
+    "switches/lcet-dreamsea": {
+      "switchType": "linear"
+    },
+    "switches/lcet-glacier-brown": {
+      "switchType": "tactile"
+    },
+    "switches/lcet-glacier-red-d-stock": {
+      "switchType": "linear"
+    },
+    "switches/lcet-green-marsh-matcha": {
+      "switchType": "linear"
+    },
+    "switches/lcet-mountain": {
+      "switchType": "tactile"
+    },
+    "switches/lcet-north-panda": {
+      "switchType": "linear"
+    },
+    "switches/lcet-panda-f-stock": {
+      "switchType": "tactile"
+    },
+    "switches/lcet-panda-z-stock": {
+      "switchType": "tactile"
+    },
+    "switches/lcet-pollen": {
+      "switchType": "linear"
+    },
+    "switches/lcet-purple-red": {
+      "switchType": "linear"
+    },
+    "switches/lcet-purple-top-yellow": {
+      "switchType": "linear"
+    },
+    "switches/lcet-red": {
+      "switchType": "linear"
+    },
+    "switches/lcet-silver": {
+      "switchType": "linear"
+    },
+    "switches/lcet-star-flower": {
+      "switchType": "linear"
+    },
+    "switches/lemokey-ultra-fast-lime-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/leobog-black-crystal": {
+      "switchType": "tactile"
+    },
+    "switches/leobog-chitu-pro": {
+      "switchType": "linear"
+    },
+    "switches/leobog-crystal": {
+      "switchType": "linear"
+    },
+    "switches/leobog-juggle-block": {
+      "switchType": "tactile"
+    },
+    "switches/leobog-juggle-block-v2": {
+      "switchType": "tactile"
+    },
+    "switches/leobog-listening-to-the-rain": {
+      "switchType": "linear"
+    },
+    "switches/leobog-nimbus-v3-1": {
+      "switchType": "linear"
+    },
+    "switches/leobog-nimbus-v3-2": {
+      "switchType": "linear"
+    },
+    "switches/leobog-powder-king": {
+      "switchType": "linear"
+    },
+    "switches/leobog-purple-star-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/leobog-rocklee": {
+      "switchType": "linear"
+    },
+    "switches/leobog-s2-engine": {
+      "switchType": "linear"
+    },
+    "switches/leobog-seiya-star": {
+      "switchType": "linear"
+    },
+    "switches/leobog-space-crystal": {
+      "switchType": "linear"
+    },
+    "switches/lichicx-wasabi": {
+      "switchType": "linear"
+    },
+    "switches/little-tyrant-red": {
+      "switchType": "linear"
+    },
+    "switches/lk-bloody-lightstrike-optical": {
+      "switchType": "clicky"
+    },
+    "switches/lofree-ghost-low-profile-pom-switch": {
+      "switchType": "linear"
+    },
+    "switches/lofree-phantom-low-profile-pom-switch": {
+      "switchType": "tactile"
+    },
+    "switches/lofree-wizard-low-profile-pom-switch": {
+      "switchType": "clicky"
+    },
+    "switches/logitech-purple-yellow": {
+      "switchType": "linear"
+    },
+    "switches/logitech-red-green": {
+      "switchType": "linear"
+    },
+    "switches/lumia-duhuk-bitter-tea-58g": {
+      "switchType": "tactile"
+    },
+    "switches/marquadt-switch": {
+      "switchType": "linear"
+    },
+    "switches/matcha-bamboo-shoot": {
+      "switchType": "linear"
+    },
+    "switches/mek-raw-studio-rawk-mk-01": {
+      "switchType": "linear"
+    },
+    "switches/mengmoda-mmd-x-tomsb-iceberg": {
+      "switchType": "linear"
+    },
+    "switches/meow-claw-v3s": {
+      "switchType": "linear"
+    },
+    "switches/mintcaps-raze-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/mkid-rawon-black": {
+      "switchType": "linear"
+    },
+    "switches/mmd-cream-v4": {
+      "switchType": "linear"
+    },
+    "switches/mode-tomorrow-orange": {
+      "switchType": "tactile"
+    },
+    "switches/mw-phoenix-red-brown": {
+      "switchType": "tactile"
+    },
+    "switches/mz-peripherals-industrial-orange": {
+      "switchType": "tactile"
+    },
+    "switches/mz-peripherals-y1-28-36g": {
+      "switchType": "linear"
+    },
+    "switches/mz-peripherals-y1-42-48g": {
+      "switchType": "linear"
+    },
+    "switches/mz-peripherals-y1-49-57g": {
+      "switchType": "linear"
+    },
+    "switches/mz-peripherals-y3": {
+      "switchType": "linear"
+    },
+    "switches/mz-z1-32g": {
+      "switchType": "linear"
+    },
+    "switches/mz-z1-40g": {
+      "switchType": "linear"
+    },
+    "switches/newgiant-light-blue": {
+      "switchType": "clicky"
+    },
+    "switches/novelkeys-novelias": {
+      "switchType": "tactile"
+    },
+    "switches/old-dg-ikeyx-torch-v2": {
+      "switchType": "linear"
+    },
+    "switches/old-dg-sparrow-black": {
+      "switchType": "linear"
+    },
+    "switches/old-dg-torch-red-se": {
+      "switchType": "linear"
+    },
+    "switches/old-tom-ice-edge": {
+      "switchType": "tactile"
+    },
+    "switches/old-tom-powder-edge": {
+      "switchType": "linear"
+    },
+    "switches/omron-b3g-s": {
+      "switchType": "tactile"
+    },
+    "switches/onestar-traffic-light-green": {
+      "switchType": "linear"
+    },
+    "switches/onestar-traffic-light-red": {
+      "switchType": "linear"
+    },
+    "switches/onestar-traffic-light-yellow": {
+      "switchType": "linear"
+    },
+    "switches/outelo-x-green": {
+      "switchType": "clicky"
+    },
+    "switches/outemu-advance-brown": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-autumn-maple-leaf": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-black": {
+      "switchType": "linear"
+    },
+    "switches/outemu-blue": {
+      "switchType": "clicky"
+    },
+    "switches/outemu-blue-ice-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/outemu-blue-jade": {
+      "switchType": "clicky"
+    },
+    "switches/outemu-coconut-white": {
+      "switchType": "linear"
+    },
+    "switches/outemu-cream-blue": {
+      "switchType": "clicky"
+    },
+    "switches/outemu-cream-pink": {
+      "switchType": "linear"
+    },
+    "switches/outemu-cream-yellow": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-crystal-brown": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-crystal-red": {
+      "switchType": "linear"
+    },
+    "switches/outemu-g-yellow": {
+      "switchType": "linear"
+    },
+    "switches/outemu-jade-emerald": {
+      "switchType": "linear"
+    },
+    "switches/outemu-magnetic-pink": {
+      "switchType": "linear"
+    },
+    "switches/outemu-magnetic-silver": {
+      "switchType": "linear"
+    },
+    "switches/outemu-middle-profile-black": {
+      "switchType": "linear"
+    },
+    "switches/outemu-middle-profile-blue": {
+      "switchType": "clicky"
+    },
+    "switches/outemu-middle-profile-brown": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-middle-profile-red": {
+      "switchType": "linear"
+    },
+    "switches/outemu-obsidian": {
+      "switchType": "linear"
+    },
+    "switches/outemu-ocean-silent-dustproof": {
+      "switchType": "linear"
+    },
+    "switches/outemu-optical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/outemu-pink-jade": {
+      "switchType": "linear"
+    },
+    "switches/outemu-red-1": {
+      "switchType": "linear"
+    },
+    "switches/outemu-red-2": {
+      "switchType": "linear"
+    },
+    "switches/outemu-red-clear-top-white-bottom": {
+      "switchType": "linear"
+    },
+    "switches/outemu-silent-lemon-v2": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-silent-lemon-v3-1": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-silent-lemon-v3-pro": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-silent-peach-v2": {
+      "switchType": "linear"
+    },
+    "switches/outemu-silent-peach-v3-1": {
+      "switchType": "linear"
+    },
+    "switches/outemu-silent-peach-v3-pro": {
+      "switchType": "linear"
+    },
+    "switches/outemu-summer-pink-lotus": {
+      "switchType": "linear"
+    },
+    "switches/outemu-transparent": {
+      "switchType": "linear"
+    },
+    "switches/outemu-white-jade": {
+      "switchType": "linear"
+    },
+    "switches/outemu-winter-cold-plum": {
+      "switchType": "linear"
+    },
+    "switches/outemu-yellow-jade": {
+      "switchType": "tactile"
+    },
+    "switches/outva-yang": {
+      "switchType": "linear"
+    },
+    "switches/outva-yin": {
+      "switchType": "tactile"
+    },
+    "switches/oxford-micro-orange-optical": {
+      "switchType": "clicky"
+    },
+    "switches/oxwin-nimxo-grey": {
+      "switchType": "clicky"
+    },
+    "switches/pbs23-green": {
+      "switchType": "linear"
+    },
+    "switches/philikey-green-grey": {
+      "switchType": "tactile"
+    },
+    "switches/philikey-red-green": {
+      "switchType": "linear"
+    },
+    "switches/philikey-silent-peach": {
+      "switchType": "linear"
+    },
+    "switches/primekb-t1-opaque-62g": {
+      "switchType": "tactile"
+    },
+    "switches/primekb-t1-opaque-65g": {
+      "switchType": "tactile"
+    },
+    "switches/primekb-t1-translucent-62g": {
+      "switchType": "tactile"
+    },
+    "switches/primekb-t1-translucent-67g": {
+      "switchType": "tactile"
+    },
+    "switches/primekb-t1-translucent-67g-grey": {
+      "switchType": "tactile"
+    },
+    "switches/protozoa-studio-nightcall": {
+      "switchType": "linear"
+    },
+    "switches/punkshoo-cream-soda-stock": {
+      "switchType": "linear"
+    },
+    "switches/punkshoo-root-beer-float-new-leaf": {
+      "switchType": "tactile"
+    },
+    "switches/punkshoo-root-beer-float-old-leaf": {
+      "switchType": "tactile"
+    },
+    "switches/qtuo-studio-strawberry-shortcake": {
+      "switchType": "linear"
+    },
+    "switches/qwertykeys-qk01": {
+      "switchType": "linear"
+    },
+    "switches/raininkeys-karman": {
+      "switchType": "linear"
+    },
+    "switches/raininkeys-karman-undyed": {
+      "switchType": "linear"
+    },
+    "switches/ranked-rs-1-pro-silent-red": {
+      "switchType": "linear"
+    },
+    "switches/ranked-rs-2-water-ballet": {
+      "switchType": "linear"
+    },
+    "switches/rantopad-orange-gateron-ks-1": {
+      "switchType": "linear"
+    },
+    "switches/rapoo-black-clear-top-black-bottom": {
+      "switchType": "linear"
+    },
+    "switches/rapoo-black-full-black-housing": {
+      "switchType": "linear"
+    },
+    "switches/rapoo-black-white-bottom-clear-top": {
+      "switchType": "linear"
+    },
+    "switches/rapoo-blue": {
+      "switchType": "clicky"
+    },
+    "switches/rapoo-brown-clear-top-black-bottom": {
+      "switchType": "tactile"
+    },
+    "switches/readson-silver": {
+      "switchType": "linear"
+    },
+    "switches/reccazr-ku-brown": {
+      "switchType": "tactile"
+    },
+    "switches/reccazr-ku-orange": {
+      "switchType": "linear"
+    },
+    "switches/redragon-gtmx-alien-red": {
+      "switchType": "linear"
+    },
+    "switches/redragon-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/redragon-red": {
+      "switchType": "linear"
+    },
+    "switches/redragon-something": {
+      "switchType": "linear"
+    },
+    "switches/rk-biluo": {
+      "switchType": "linear"
+    },
+    "switches/rk-cloud": {
+      "switchType": "linear"
+    },
+    "switches/rk-x-ttc-aqua": {
+      "switchType": "linear"
+    },
+    "switches/rk-x-ttc-shimmer": {
+      "switchType": "linear"
+    },
+    "switches/rk-x-ttc-warrior": {
+      "switchType": "linear"
+    },
+    "switches/rog-nx-snow-v2": {
+      "switchType": "linear"
+    },
+    "switches/rog-wizard-ace-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/royal-kludge-chartreuse": {
+      "switchType": "linear"
+    },
+    "switches/royal-kludge-skycyan": {
+      "switchType": "linear"
+    },
+    "switches/sat3-blue": {
+      "switchType": "clicky"
+    },
+    "switches/saybour-optical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/sillyworks-hyacinth-v2-unity": {
+      "switchType": "linear"
+    },
+    "switches/skyline-v2-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/skyloong-chocolate-milk": {
+      "switchType": "linear"
+    },
+    "switches/skyloong-glacier-optical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/skyloong-glacier-optical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/skyloong-glacier-optical-green": {
+      "switchType": "tactile"
+    },
+    "switches/skyloong-glacier-optical-red": {
+      "switchType": "linear"
+    },
+    "switches/skyloong-glacier-optical-silver": {
+      "switchType": "linear"
+    },
+    "switches/skyloong-glacier-optical-yellow": {
+      "switchType": "linear"
+    },
+    "switches/skyloong-sea-salt-blue": {
+      "switchType": "tactile"
+    },
+    "switches/snow-leopard-v2-blue": {
+      "switchType": "linear"
+    },
+    "switches/snow-leopard-v2-pink": {
+      "switchType": "linear"
+    },
+    "switches/snow-leopard-v2-purple": {
+      "switchType": "linear"
+    },
+    "switches/soulcat-soda": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-dustproof-grey": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-dustproof-orange": {
+      "switchType": "tactile"
+    },
+    "switches/sp-star-dustproof-purple": {
+      "switchType": "tactile"
+    },
+    "switches/sp-star-dustproof-white": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-meteor-grey": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-meteor-white-grey-housing": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-polestar-grey": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-polestar-orange-pro": {
+      "switchType": "tactile"
+    },
+    "switches/sp-star-polestar-pink-pro": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-polestar-white-pro": {
+      "switchType": "linear"
+    },
+    "switches/star-polestar-purple": {
+      "switchType": "tactile"
+    },
+    "switches/summertime-ax": {
+      "switchType": "linear"
+    },
+    "switches/summertime-bx": {
+      "switchType": "linear"
+    },
+    "switches/summertime-v2": {
+      "switchType": "linear"
+    },
+    "switches/swagkeys-modern-grey": {
+      "switchType": "linear"
+    },
+    "switches/swagkeys-pure-berry": {
+      "switchType": "linear"
+    },
+    "switches/swagkeys-pure-sky": {
+      "switchType": "linear"
+    },
+    "switches/swagkeys-x-hmx-catmint": {
+      "switchType": "linear"
+    },
+    "switches/swagkeys-x-tecsee-vintage": {
+      "switchType": "linear"
+    },
+    "switches/sweet-potato-peripherals-ikeyx-wasabi": {
+      "switchType": "linear"
+    },
+    "switches/tannsen-desert": {
+      "switchType": "tactile"
+    },
+    "switches/tannsen-oasis": {
+      "switchType": "linear"
+    },
+    "switches/team-wolf-green-optical-4-0": {
+      "switchType": "clicky"
+    },
+    "switches/team-wolf-yelllow-tan-optical-2-0": {
+      "switchType": "clicky"
+    },
+    "switches/team-wolf-yellow-tan-optical-4-0": {
+      "switchType": "clicky"
+    },
+    "switches/tecsee-flame-volcano": {
+      "switchType": "linear"
+    },
+    "switches/tecsee-mango-ice": {
+      "switchType": "tactile"
+    },
+    "switches/tecware-f-stock": {
+      "switchType": "linear"
+    },
+    "switches/tecware-wraith-brown": {
+      "switchType": "tactile"
+    },
+    "switches/tecware-wraith-orange": {
+      "switchType": "tactile"
+    },
+    "switches/tecware-wraith-pink": {
+      "switchType": "linear"
+    },
+    "switches/tecware-wraith-red": {
+      "switchType": "linear"
+    },
+    "switches/tecware-z-stock": {
+      "switchType": "linear"
+    },
+    "switches/tja-clear": {
+      "switchType": "tactile"
+    },
+    "switches/transmit-42g": {
+      "switchType": "linear"
+    },
+    "switches/ttc-ace-v1-5-compatibility-condenser": {
+      "switchType": "linear"
+    },
+    "switches/ttc-ace-v2-compatibility-condenser-and-silver-pins": {
+      "switchType": "linear"
+    },
+    "switches/ttc-blue-dragon": {
+      "switchType": "linear"
+    },
+    "switches/ttc-bluish-white-new-led-condenser": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-bluish-white-semi-silent": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-bluish-white-silent": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-breeze": {
+      "switchType": "linear"
+    },
+    "switches/ttc-brother-gold-blue-new-led-condenser": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-crescent": {
+      "switchType": "linear"
+    },
+    "switches/ttc-flame-slotted": {
+      "switchType": "linear"
+    },
+    "switches/ttc-flame-snow-v2": {
+      "switchType": "linear"
+    },
+    "switches/ttc-flaming-purple-pok-stem": {
+      "switchType": "linear"
+    },
+    "switches/ttc-flaming-snow-pok-stem": {
+      "switchType": "linear"
+    },
+    "switches/ttc-flying-shark": {
+      "switchType": "linear"
+    },
+    "switches/ttc-gold-pink-new-led-condenser": {
+      "switchType": "linear"
+    },
+    "switches/ttc-gold-pink-v2-1": {
+      "switchType": "linear"
+    },
+    "switches/ttc-heart-v2": {
+      "switchType": "linear"
+    },
+    "switches/ttc-heroic-panda-v2": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-hey": {
+      "switchType": "linear"
+    },
+    "switches/ttc-ice-silver-frozen": {
+      "switchType": "linear"
+    },
+    "switches/ttc-iron": {
+      "switchType": "linear"
+    },
+    "switches/ttc-k-nylon-red": {
+      "switchType": "linear"
+    },
+    "switches/ttc-king-of-magnets-rgb": {
+      "switchType": "linear"
+    },
+    "switches/ttc-light-cloud-v2": {
+      "switchType": "linear"
+    },
+    "switches/ttc-loving-heart-honey": {
+      "switchType": "linear"
+    },
+    "switches/ttc-low-profile-brown": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-low-profile-purple": {
+      "switchType": "linear"
+    },
+    "switches/ttc-low-profile-red": {
+      "switchType": "linear"
+    },
+    "switches/ttc-low-profile-white": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-magneto-king-of-magnets": {
+      "switchType": "linear"
+    },
+    "switches/ttc-mini-magneto": {
+      "switchType": "linear"
+    },
+    "switches/ttc-mushan-purple-misty-purple-mountain": {
+      "switchType": "linear"
+    },
+    "switches/ttc-nylon-blue": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-orange-45g": {
+      "switchType": "linear"
+    },
+    "switches/ttc-orange-dragon": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-razer-green-v1": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-razer-green-v2": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-razer-green-v3": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-razer-orange-v1": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-razer-orange-v2": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-razer-orange-v3": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-razer-yellow-v1": {
+      "switchType": "linear"
+    },
+    "switches/ttc-razer-yellow-v2": {
+      "switchType": "linear"
+    },
+    "switches/ttc-razer-yellow-v3": {
+      "switchType": "linear"
+    },
+    "switches/ttc-red-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-silent-brown-v2": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-silent-red-v3": {
+      "switchType": "linear"
+    },
+    "switches/ttc-silver-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-snow-tiger": {
+      "switchType": "linear"
+    },
+    "switches/ttc-speed-silver-v2": {
+      "switchType": "linear"
+    },
+    "switches/ttc-superman-man-of-steel": {
+      "switchType": "linear"
+    },
+    "switches/ttc-tiger-og-edition": {
+      "switchType": "linear"
+    },
+    "switches/ttc-titan-heart": {
+      "switchType": "linear"
+    },
+    "switches/ttc-titan-rgb": {
+      "switchType": "linear"
+    },
+    "switches/ttc-uranus-gaming": {
+      "switchType": "linear"
+    },
+    "switches/ttc-uranus-standard": {
+      "switchType": "linear"
+    },
+    "switches/ttc-white-dot-micro-switch": {
+      "switchType": "clicky"
+    },
+    "switches/ttc-x-logitech-blast": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-x-logitech-daydream-cosmos": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-x-logitech-heartbreaker": {
+      "switchType": "tactile"
+    },
+    "switches/ttc-x-logitech-mist": {
+      "switchType": "tactile"
+    },
+    "switches/tx-lemon-ade": {
+      "switchType": "linear"
+    },
+    "switches/ukeebs-snowy-pink": {
+      "switchType": "linear"
+    },
+    "switches/ukeebs-snowy-silver": {
+      "switchType": "linear"
+    },
+    "switches/ukeebs-snowyyellow": {
+      "switchType": "tactile"
+    },
+    "switches/unholy-pandas-clear-spring": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme-black-jade": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme-burning-huashan": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme-cherry-blossom": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme-mixed": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme-pro": {
+      "switchType": "linear"
+    },
+    "switches/unionwell-magnetic-extreme-shallow-cherry-blossom": {
+      "switchType": "linear"
+    },
+    "switches/variekeys-jumping": {
+      "switchType": "linear"
+    },
+    "switches/variekeys-thunderbolt": {
+      "switchType": "clicky"
+    },
+    "switches/varmilo-ec-v2-ivy": {
+      "switchType": "clicky"
+    },
+    "switches/varmilo-ec-v2-rose-i": {
+      "switchType": "linear"
+    },
+    "switches/varmilo-ec-v2-rose-ii": {
+      "switchType": "linear"
+    },
+    "switches/wekt-initial-rise": {
+      "switchType": "linear"
+    },
+    "switches/wingtree-g-one": {
+      "switchType": "linear"
+    },
+    "switches/wingtree-yuci-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/womier-blue-jade": {
+      "switchType": "linear"
+    },
+    "switches/xcjz-chocolate-ball-bearing": {
+      "switchType": "linear"
+    },
+    "switches/xinmeng-plum": {
+      "switchType": "linear"
+    },
+    "switches/xvx-silver": {
+      "switchType": "linear"
+    },
+    "switches/yok-bitao": {
+      "switchType": "linear"
+    },
+    "switches/yusya-crystal": {
+      "switchType": "linear"
+    },
+    "switches/zdz-black": {
+      "switchType": "linear"
+    },
+    "switches/zdz-blue": {
+      "switchType": "clicky"
+    },
+    "switches/zdz-brown": {
+      "switchType": "tactile"
+    },
+    "switches/zdz-red": {
+      "switchType": "linear"
+    },
+    "switches/zealio-v1": {
+      "switchType": "tactile"
+    },
+    "switches/zepsody-wisteria-v1": {
+      "switchType": "linear"
+    },
+    "switches/zepsody-wisteria-v2": {
+      "switchType": "linear"
+    },
+    "switches/zorro-black": {
+      "switchType": "linear"
+    },
+    "switches/zorro-black-clear-top-black-bottom": {
+      "switchType": "linear"
+    },
+    "switches/zorro-blue-black-housing": {
+      "switchType": "clicky"
+    },
+    "switches/zorro-blue-clear-top-black-bottom": {
+      "switchType": "clicky"
+    },
+    "switches/zorro-violet-clear-top-black-bottom": {
+      "switchType": "clicky"
+    },
+    "switches/zorro-violet-white-bottom-clear-top": {
+      "switchType": "clicky"
+    },
+    "switches/zuoce-studios-daibai": {
+      "switchType": "tactile"
+    },
+    "switches/zuoce-studios-rococo": {
+      "switchType": "tactile"
+    },
+    "switches/akko-astrolink-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/gateron-regular": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-smd": {
+      "switchType": "linear"
+    },
+    "switches/gateron-new-north-pole-v2": {
+      "switchType": "linear"
+    },
+    "switches/gateron-north-pole-v2": {
+      "switchType": "linear"
+    },
+    "switches/gateron-dual-rail-magnetic-jade-mini-e-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/gateron-full-pom-smoothie-pink-silent": {
+      "switchType": "linear"
+    },
+    "switches/gateron-magnetic-genty-silent": {
+      "switchType": "linear"
+    },
+    "switches/gateron-magnetic-jade-air-he": {
+      "switchType": "linear"
+    },
+    "switches/gateron-magnetic-jade-silent": {
+      "switchType": "linear"
+    },
+    "switches/owlab-ti-he-magnetic-40g": {
+      "switchType": "linear"
+    },
+    "switches/owlab-ti-he-magnetic-50g": {
+      "switchType": "linear"
+    },
+    "switches/kailh-box-cream-pro": {
+      "switchType": "linear"
+    },
+    "switches/kailh-box-v2-box-red": {
+      "switchType": "linear"
+    },
+    "switches/kailh-coco-pink-box-v2": {
+      "switchType": "linear"
+    },
+    "switches/kailh-super-speed-red": {
+      "switchType": "linear"
+    },
+    "switches/kailh-box-v2-box-brown": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-box-v2-box-white": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-super-speed-bronze": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-white-owl-box": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-crystal-robin-box": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-speed-pro-heavy-berry": {
+      "switchType": "linear"
+    },
+    "switches/kailh-speed-pro-heavy-plum": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-speed-pro-heavy-navy": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-speed-pro-heavy-sage": {
+      "switchType": "clicky"
+    },
+    "switches/keychron-low-profile-mechanical-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-low-profile-mechanical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-low-profile-mechanical-banana": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-mechanical-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-mechanical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-mechanical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/keychron-milk-pom-low-profile-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-milk-pom-low-profile-brown": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-milk-pom-low-profile-banana": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-silk-pom-mechanical-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-silk-pom-mechanical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-silk-pom-mechanical-banana": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-low-profile-silent": {
+      "switchType": "linear"
+    },
+    "switches/keychron-ultra-fast-lime-magnetic-banana": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-ultra-fast-lime-magnetic-silent-banana": {
+      "switchType": "tactile"
+    },
+    "switches/keychron-ultra-fast-lime-magnetic-silent-red": {
+      "switchType": "linear"
+    },
+    "switches/lcet-dreamsea-silent": {
+      "switchType": "linear"
+    },
+    "switches/sp-star-meteor-white": {
+      "switchType": "linear"
+    },
+    "switches/durock-rock-magnetic-hall-effect": {
+      "switchType": "linear"
+    },
+    "switches/gateron-magnetic-jade-ultra-he": {
+      "switchType": "linear"
+    },
+    "switches/gateron-magnetic-jade-delta-he": {
+      "switchType": "linear"
+    },
+    "switches/gateron-magnetic-genty-semi-silent-he": {
+      "switchType": "linear"
+    },
+    "switches/keychron-silent-k-pro-red": {
+      "switchType": "linear"
+    },
+    "switches/keychron-silent-k-pro-white": {
+      "switchType": "linear"
+    },
+    "switches/keychron-ultra-fast-lime-magnetic": {
+      "switchType": "linear"
+    },
+    "switches/lk-optical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/lk-optical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/lk-optical-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-double-rail-magnetic-aurora": {
+      "switchType": "linear"
+    },
+    "switches/gateron-double-rail-magnetic-dawn": {
+      "switchType": "linear"
+    },
+    "switches/gateron-double-rail-magnetic-nebula": {
+      "switchType": "linear"
+    },
+    "switches/ball-bearing-pink-silent": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx-blue": {
+      "switchType": "clicky"
+    },
+    "switches/cherry-mx-brown": {
+      "switchType": "tactile"
+    },
+    "switches/cherry-mx-red": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx-rgb-blue": {
+      "switchType": "clicky"
+    },
+    "switches/cherry-mx-rgb-brown": {
+      "switchType": "tactile"
+    },
+    "switches/cherry-mx-rgb-red": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx1a-hyperglide-pcb-mount-black": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx1a-hyperglide-pcb-mount-brown": {
+      "switchType": "tactile"
+    },
+    "switches/cherry-mx2a-blue": {
+      "switchType": "clicky"
+    },
+    "switches/cherry-mx2a-rgb-black": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx2a-rgb-blue": {
+      "switchType": "clicky"
+    },
+    "switches/cherry-mx2a-rgb-brown": {
+      "switchType": "tactile"
+    },
+    "switches/cherry-mx2a-rgb-red": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx2a-rgb-speed-silver": {
+      "switchType": "linear"
+    },
+    "switches/cherry-mx2a-silent-rgb-red": {
+      "switchType": "linear"
+    },
+    "switches/durock-l7-smokey-l7-62g": {
+      "switchType": "linear"
+    },
+    "switches/durock-l7-smokey-l7-67g": {
+      "switchType": "linear"
+    },
+    "switches/durock-mocha-silk-and-chocolate-linear": {
+      "switchType": "linear"
+    },
+    "switches/durock-mocha-silk-and-chocolate-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-aliaz-silent": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-box-black-inks-v2": {
+      "switchType": "linear"
+    },
+    "switches/gateron-box-ink-v2-box-ink-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-box-ink-v2-box-ink-pink": {
+      "switchType": "linear"
+    },
+    "switches/gateron-box-pink-inks-v2": {
+      "switchType": "linear"
+    },
+    "switches/gateron-cap-v2-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-cap-v2-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-v2-cap-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-cap-v2-cap-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-v2-cap-golden-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-v2-cap-golden-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-cap-v2-cap-milky-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-v2-cap-milky-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-cap-v2-cap-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-cap-v2-milky-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-v2-milky-brown-golden-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-cap-v2-milky-yellow-golden-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-cap-v2-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-silver-two-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-2-0-white-two-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-3-0-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-g-pro-3-0-silver-two-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-3-0-white-two-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-g-pro-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-g-pro-green": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-g-pro-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-silver-two-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-white": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-white-two-stage-spring": {
+      "switchType": "linear"
+    },
+    "switches/gateron-g-pro-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ink-v2-ink-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ink-v2-ink-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ink-v2-ink-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ink-v2-ink-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-jupiter-banana-two-stage-spring-3-pin": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-jupiter-banana-two-stage-spring-5-pin": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-jupiter-brown-3-pin": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-jupiter-brown-5-pin": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-jupiter-red-3-pin": {
+      "switchType": "linear"
+    },
+    "switches/gateron-jupiter-red-5-pin": {
+      "switchType": "linear"
+    },
+    "switches/gateron-kangaroo-box-ink-59-gf": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-kangaroo-box-ink-63-gf": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-kangaroo-box-ink-kangaroo-box-ink-59-gf": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-kangaroo-box-ink-kangaroo-box-ink-63-gf": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-22-optical-version-2-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-22-optical-version-2-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-22-optical-version-2-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-22-optical-version-2-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-22-optical-version-2-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-22-optical-version-2-white": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-22-optical-version-2-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3-full-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3-full-black-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3-full-black-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-3-full-black-green": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3-full-black-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3-full-black-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3-milky-pro-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-33-low-profile-2-0-mechanical-banana": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-33-low-profile-2-0-mechanical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-33-low-profile-2-0-mechanical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-33-low-profile-2-0-mechanical-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x-full-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x-full-black-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3x-full-black-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-3x-full-black-green": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3x-full-black-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x-full-black-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-full-milky-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-full-milky-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3x1-full-milky-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-3x1-full-milky-green": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3x1-full-milky-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-full-milky-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-milky-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-milky-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3x1-milky-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-3x1-milky-green": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-3x1-milky-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-3x1-milky-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-8-mechanical-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-8-mechanical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-8-mechanical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-ks-8-mechanical-green": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-ks-8-mechanical-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-ks-8-mechanical-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-low-profile-2-0-mechanical-banana": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-low-profile-2-0-mechanical-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-low-profile-2-0-mechanical-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-low-profile-2-0-mechanical-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-milky-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-milky-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-milky-yellow-with-black-bottom": {
+      "switchType": "linear"
+    },
+    "switches/gateron-north-pole-2-0-box-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-north-pole-2-0-box-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-north-pole-2-0-box-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-north-pole-2-0-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-optical-version-2-black": {
+      "switchType": "linear"
+    },
+    "switches/gateron-optical-version-2-blue": {
+      "switchType": "clicky"
+    },
+    "switches/gateron-optical-version-2-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-optical-version-2-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-optical-version-2-silver": {
+      "switchType": "linear"
+    },
+    "switches/gateron-optical-version-2-white": {
+      "switchType": "linear"
+    },
+    "switches/gateron-optical-version-2-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-optical-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-silent-brown": {
+      "switchType": "tactile"
+    },
+    "switches/gateron-silent-clear": {
+      "switchType": "linear"
+    },
+    "switches/gateron-silent-red": {
+      "switchType": "linear"
+    },
+    "switches/gateron-silent-white": {
+      "switchType": "linear"
+    },
+    "switches/gateron-silent-yellow": {
+      "switchType": "linear"
+    },
+    "switches/gateron-silver-pro": {
+      "switchType": "linear"
+    },
+    "switches/gateron-zero-degree-fully-silent": {
+      "switchType": "linear"
+    },
+    "switches/geon-raptor-he-v2": {
+      "switchType": "linear"
+    },
+    "switches/geon-raptor-mx-extreme-gaming": {
+      "switchType": "linear"
+    },
+    "switches/geon-raptor-mx-gaming": {
+      "switchType": "linear"
+    },
+    "switches/hmx-volume-0-silent-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/jwk-jwick-black-t1": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-clione-limacina-58-gf-linear": {
+      "switchType": "linear"
+    },
+    "switches/kailh-clione-limacina-58-gf-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/kailh-jellyfish-box-x-clicky": {
+      "switchType": "clicky"
+    },
+    "switches/mmd-princess-ultra-45g-linear": {
+      "switchType": "linear"
+    },
+    "switches/mmd-princess-ultra-48g-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/mmd-princess-ultra-53g-linear": {
+      "switchType": "linear"
+    },
+    "switches/mmd-princess-ultra-60g-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/naevies-ec-45g-original": {
+      "switchType": "tactile"
+    },
+    "switches/naevies-ec-55g": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-cream-yellow-silent": {
+      "switchType": "tactile"
+    },
+    "switches/outemu-peach-v3-pro-magnetic-silent": {
+      "switchType": "linear"
+    },
+    "switches/raeds-he-55g-rgb": {
+      "switchType": "linear"
+    },
+    "switches/raeds-he-original": {
+      "switchType": "linear"
+    },
+    "switches/tecsee-medium-linear": {
+      "switchType": "linear"
+    },
+    "switches/tecsee-medium-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/tecsee-metal-coated-linear": {
+      "switchType": "linear"
+    },
+    "switches/tecsee-metal-coated-tactile": {
+      "switchType": "tactile"
+    },
+    "switches/zeal-clickiez-40g": {
+      "switchType": "clicky"
+    },
+    "switches/zeal-clickiez-75g": {
+      "switchType": "clicky"
+    },
+    "switches/wingtree-yuci-he-magnetic-gaming": {
+      "switchType": "linear"
     }
   },
   "excluded": {
@@ -18945,6 +22020,18 @@
     "keychronswitches:8263474446425": "Macro pad device, not an individual switch product.",
     "theremingoat:2843": "Factory-error or defective specimen excluded at user request.",
     "switchoddities:8119137796380": "Factory-error or defective specimen excluded at user request.",
-    "theremingoat:1930": "Factory-error or defective specimen excluded at user request."
+    "theremingoat:1930": "Factory-error or defective specimen excluded at user request.",
+    "switchoddities:8119130652956": "Assortment of Varmilo EC V2 switches, not an individual switch product.",
+    "switchoddities:9100477727004": "Random bag of broken switch parts, not an individual switch product.",
+    "switchoddities:10070299607324": "Loose housing and both linear/tactile stems, not one assembled switch.",
+    "switchoddities:8196278026524": "Separate LED diffuser accessory, not a switch.",
+    "switchoddities:9152340328732": "Random assorted Leobog switches, not an individual switch.",
+    "switchoddities:8119094542620": "Logo magnet merchandise, not a switch.",
+    "switchoddities:10651681980700": "Calendar assortment of switches, keycaps and accessories.",
+    "switchoddities:10456980062492": "Calendar assortment of different switches.",
+    "switchoddities:8119094313244": "Sticker merchandise, not a switch.",
+    "switchoddities:8119094083868": "Sticker merchandise, not a switch.",
+    "switchoddities:10070296133916": "Individual decorative keycap, incorrectly imported as a switch.",
+    "switchoddities:10070294954268": "Individual decorative keycap, incorrectly imported as a switch."
   }
 }

@@ -1,0 +1,47 @@
+# Unresolved switch types
+
+41 entries remain without a single supported `switchType`. Verified fills and their evidence are recorded in [switch-type-review.json](../Scripts/Catalogs/switch-type-review.json).
+
+| Switch / ID | Reason | Sources |
+|---|---|---|
+| Alps SKCC Cream Lock (`alps-skcc-cream-lock`) | Latching/locking switch; source does not supply a supported linear/tactile/clicky classification. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Alps SKCL Brown Lock (`alps-skcl-brown-lock`) | Latching/locking switch; source does not supply a supported linear/tactile/clicky classification. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Alps SKCL Cream Lock (`alps-skcl-cream-lock`) | Latching/locking switch; source does not supply a supported linear/tactile/clicky classification. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Alps SKCL Dark Grey Lock (SKCLJC) (`alps-skcl-dark-grey-lock-skcljc`) | Latching/locking switch; source does not supply a supported linear/tactile/clicky classification. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Alps SKCL Double Action (`alps-skcl-double-action`) | Double-action mechanism; source does not establish a single supported typing-feel category. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Alps SMK Monterey White Lock (`alps-smk-monterey-white-lock`) | Latching/locking switch; source does not supply a supported linear/tactile/clicky classification. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Cherry MX Lock (Grey/Black) (5 Pin) (`cherry-mx-lock-grey-black-5-pin`) | Latching/locking switch; source does not supply a supported linear/tactile/clicky classification. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Content Brown (Black Bottom) (`content-brown-black-bottom`) | Exact collection specimen has no type; stem color alone is insufficient evidence. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| Defond Mega Hard (`defond-mega-hard`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/defond-mega-hard) |
+| Defond Nano Soft (`defond-nano-soft`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/defond-nano-soft) |
+| Defond White (`defond-white`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/defond-white) |
+| Futaba MA Inverse (`futaba-ma-inverse`) | Product page lists both clicky and tactile and describes disagreement about the specimen. | [1](https://switchoddities.com/products/futaba-ma-inverse) |
+| Gateron Nightingale (`gateron-nightingale`) | Two collection specimens have the same name but conflicting linear/tactile types; no verified variant distinction. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| HCNHK EVA Purple Green (`hcnhk-eva-purple-green`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/hcnhk-eva-purple-green) |
+| HCNHK EVA Red/Orange Yellow (`hcnhk-eva-red-orange-yellow`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/hcnhk-eva-red-orange-yellow) |
+| Huano Blue Shell Blue (`huano-blue-shell-blue`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-blue) |
+| Huano Blue Shell Pink (`huano-blue-shell-pink`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-pink) |
+| Huano Blue Shell V2 Blue (`huano-blue-shell-v2-blue`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-v2-blue) |
+| Huano Blue Shell V2 Green (`huano-blue-shell-v2-green`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-v2-green) |
+| Huano Blue Shell V2 Pink 65g (`huano-blue-shell-v2-pink-65g`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-v2-pink-65g) |
+| Huano Blue Shell V2 Pink 75g (`huano-blue-shell-v2-pink-75g`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-v2-pink-75g) |
+| Huano Blue Shell V2 Red (`huano-blue-shell-v2-red`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-v2-red) |
+| Huano Blue Shell V2 Yellow (`huano-blue-shell-v2-yellow`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-v2-yellow) |
+| Huano Blue Shell White (`huano-blue-shell-white`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-blue-shell-white) |
+| Huano Incott Galloping Edition (`huano-incott-galloping-edition`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-incott-galloping-edition) |
+| Huano Incott Roaring Edition (`huano-incott-roaring-edition`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-incott-roaring-edition) |
+| Huano Silent Mouse Switch White Dot (`huano-silent-mouse-switch-white-dot`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-silent-mouse-switch-white-dot) |
+| Huano Silent Mouse Switch Yellow Dot (`huano-silent-mouse-switch-yellow-dot`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-silent-mouse-switch-yellow-dot) |
+| Huano White Shell V2 White 65g (`huano-white-shell-v2-white-65g`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-white-shell-v2-white-65g) |
+| Huano White Shell V2 White 75g (`huano-white-shell-v2-white-75g`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-white-shell-v2-white-75g) |
+| Huano White Spot Green (`huano-white-spot-green`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-white-spot-green) |
+| Huano White Spot Purple (`huano-white-spot-purple`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-white-spot-yellow) |
+| Huano White Spot Yellow (`huano-white-spot-yellow`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/huano-white-spot-yellow-1) |
+| Kailh 8.0 Blue Microswitch (`kailh-8-0-blue-microswitch`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/kailh-8-0-blue-microswitch) |
+| Kailh Mix-7 (`kailh-mix-7`) | Manufacturer specifies a switchable linear/clicky mechanism; the single-value field cannot represent both. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv), [2](https://www.kailhswitch.com/mechanical-keyboard-switches/kailh-mix-7-5-witch.html) |
+| Omron D2F-01F Microswitch (`omron-d2f-01f-microswitch`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/omron-d2f-01f-microswitch) |
+| Tecsee Ice Cream (`tecsee-ice-cream`) | Collection record covers all 192 DIY combinations, including different switch types; no single selected stem. | [1](https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv) |
+| TTC Dustproof Gold Brown (`ttc-dustproof-gold-brown`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/ttc-dustproof-gold-brown) |
+| TTC Dustproof Gold Orange (`ttc-dustproof-gold-orange`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/ttc-dustproof-gold-orange) |
+| TTC Transparent Grey (`ttc-transparent-grey`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/ttc-transparent-grey) |
+| TTC Year of the Dragon Microswitch (`ttc-year-of-the-dragon-microswitch`) | Source labels this as a mouse microswitch, without a keyboard-feel classification. | [1](https://switchoddities.com/products/ttc-dustproof-gold-orange-copy) |

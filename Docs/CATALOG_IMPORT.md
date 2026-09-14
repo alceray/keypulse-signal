@@ -11,6 +11,7 @@ The catalogs are offline JSON data maintained through a manual import and review
 | `Scripts/Catalogs/sources.json` | Fetch dates, Matrix commit, stable upstream identities, canonical IDs, source links, last observed fields, and collection variant notes |
 | `Scripts/Catalogs/overrides.json` | Reviewed duplicate decisions, metadata corrections, and exclusions |
 | `Scripts/Catalogs/keycap-enrichment.json` | Field-level source links and rationale for reviewed keycap metadata |
+| `Scripts/Catalogs/switch-type-review.json` | Reviewed switch-type fills, evidence links, and unresolved cases; summarized in [SWITCH_TYPE_GAPS.md](SWITCH_TYPE_GAPS.md) |
 | `Scripts/Catalogs/keycap-release-review.json` | Release eligibility decisions, evidence links, excluded source identities, and unresolved cases |
 | `Scripts/Catalogs/aliases.json` | Company spellings, abbreviations, profiles, and the inference rules below |
 | `Scripts/Catalogs/Aliases.ps1` | Applies those rules to display fields and duplicate comparisons while preserving IDs and source observations |
@@ -34,6 +35,7 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 
 - Unknown values are omitted. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
 - Metadata comes from explicit labels, reviewed product/project specifications, and the inference rules below. Comparisons, packaging, optional artisans, and tentative production options do not supply specifications for the set.
+- Switch-type review filled 1,046 missing values from product-page labels and variant specifications; 41 remain unresolved. Mouse microswitches, ambiguous specimens, and unsupported mechanisms retain omitted types; see [the gap report](SWITCH_TYPE_GAPS.md).
 - Names keep meaningful revisions, rounds, and switch weights and colors. Add-on kits for a named set have their own entries, and kit options inside a parent product stay attached to it.
 - Switch names and IDs omit redundant `Linear` and `Tactile` labels. Keep them when a switch has both variants, including variants sold at different weights. Same-type duplicates share a reviewed binding and preserve their source observations and metadata; names and ID redirects are pinned in `overrides.json` so replay does not restore the redundant labels.
 - Keycap releases qualify once GB or in-stock orders open. Exclude IC-only proposals, future openings, cancelled releases, and failed-MOQ attempts. Verify the specific maker, profile, round, and kit: a cancelled add-on does not disqualify a produced base set, and a later successful sale may qualify after an earlier failed attempt.
@@ -255,7 +257,7 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 
 ### Candidate switch sources
 
-The switch catalog now has 5,842 entries at version 26, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
+The switch catalog now has 5,812 entries at version 27, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
 
 | Source | Coverage benefit | Observed listings | Priority / remaining work |
 |---|---|---|---|
@@ -307,7 +309,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
 
-- Two Keychron assortments, one macro pad, and five factory-error/defect specimens. Parsing also rejects tester, macro-pad, and defect titles.
+- Six switch assortments, one macro pad, five factory-error/defect specimens, a bag of broken parts, loose components, stickers, a logo magnet, and two individual decorative keycaps misclassified as switches. Parsing also rejects tester, macro-pad, and defect titles.
 - 122 prototypes that no retailer ever listed, 95 samples, and 23 aftermarket modifications.
 - 82 canceled keycap sets, 15 switches whose names carried question marks about their identity, and one emoji-named GMK entry.
 - Release review removed 604 keycap entries that never reached an opened order round: 508 IC-only or superseded proposals, 41 unopened releases, 34 cancelled or failed-MOQ releases, and 21 with no evidence either way after a 2026-09-13 follow-up confirmed 23 other entries had actually opened for orders and kept them instead.
@@ -316,7 +318,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Merged.**
 
-- ID cleanup merged 241 switch and 12 keycap duplicates, removing collection suffixes, repeated wording, sales-stage prefixes, and pack/lube options from names and IDs. Source identities and notes survive; Cupid and Aliaz retain their separate weights. Mixed company-name conventions remain unchanged.
+- ID cleanup merged 259 switch and 12 keycap duplicates, removing collection suffixes, repeated wording, sales-stage prefixes, pack/lube options, image labels, and bottom-out wording from names and IDs. Source identities and notes survive; Cupid and Aliaz retain their separate weights. Mixed company-name conventions remain unchanged.
 - KeebsForAll's generic [Hyperglide Linear](https://keebsforall.com/products/cherry-mx-hyperglide-linear-switches) and [Hyperglide Tactile](https://keebsforall.com/products/cherry-mx-hyperglide-tactile-switches) listings joined Black (5 Pin) and Brown (5 Pin), respectively, as identified by their specifications. Brown's incorrect linear type was corrected to tactile.
 - 215 switch duplicates exposed by redundant type labels joined their matching variants, and 664 surviving names were shortened or clarified. Distinct linear/tactile variants, weights, rounds, and stem options remain separate, including differently prefixed families such as BBN/BuiltByNim, KNC Green Jacket, [Doom](https://www.keebfront.com/product/doom-switches), and [NK Cream](https://novelkeys.com/products/nk-cream-series).
 - 24 spelling-error pairs revealed by alias standardization and the score sheet.
