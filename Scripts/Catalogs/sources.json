@@ -2117,7 +2117,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "15030664757359",
       "kind": "switches",
-      "id": "gateron-strawberry-smoothie",
+      "id": "gateron-smoothie-strawberry",
       "url": "https://cannonkeys.com/products/gateron-strawberry-smoothie-linear-switch",
       "observed": {
         "name": "Gateron Strawberry Smoothie Linear",
@@ -3322,7 +3322,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7461639848047",
       "kind": "switches",
-      "id": "gateron-lunar-probe-dual-rail",
+      "id": "gateron-dual-rail-lunar-probe",
       "url": "https://cannonkeys.com/products/gateron-lunar-probe-dual-rail-linear-switch",
       "observed": {
         "name": "Gateron Lunar Probe Dual-Rail Linear",
@@ -5777,7 +5777,7 @@
       "source": "dcswiki",
       "sourceId": "122",
       "kind": "keycaps",
-      "id": "dcs-dolch",
+      "id": "dcs-dolch-2026",
       "url": "https://dcs.wiki/keycaps/dcs-dolch-2026",
       "observed": {
         "name": "DCS Dolch 2026",
@@ -8461,7 +8461,7 @@
       "source": "divinikey",
       "sourceId": "7809776320577",
       "kind": "keycaps",
-      "id": "dcs-dolch",
+      "id": "dcs-dolch-2026",
       "url": "https://divinikey.com/products/dcs-dolch-keycaps",
       "observed": {
         "name": "DCS Dolch",
@@ -9125,7 +9125,7 @@
       "source": "divinikeyswitches",
       "sourceId": "4531821051969/variant/39839985139777",
       "kind": "switches",
-      "id": "gateron-ink-v2-v2-black",
+      "id": "gateron-black-ink-v2",
       "url": "https://divinikey.com/products/gateron-ink-v2-switches",
       "observed": {
         "name": "Gateron Ink V2 - V2 Black",
@@ -9136,7 +9136,7 @@
       "source": "divinikeyswitches",
       "sourceId": "4531821051969/variant/39839985238081",
       "kind": "switches",
-      "id": "gateron-ink-v2-silent-black",
+      "id": "gateron-black-silent-ink-v2",
       "url": "https://divinikey.com/products/gateron-ink-v2-switches",
       "observed": {
         "name": "Gateron Ink V2 - Silent Black",
@@ -9181,7 +9181,7 @@
       "source": "divinikeyswitches",
       "sourceId": "6604619874369",
       "kind": "switches",
-      "id": "gateron-ks-3-milky-yellow-pro",
+      "id": "gateron-ks-3-milky-pro-yellow",
       "url": "https://divinikey.com/products/gateron-ks-3-milky-yellow-pro-linear-switches",
       "observed": {
         "name": "Gateron KS-3 Milky Yellow Pro Linear",
@@ -9255,7 +9255,7 @@
       "source": "divinikeyswitches",
       "sourceId": "6937406701633",
       "kind": "switches",
-      "id": "ws-ws-silent-tactile",
+      "id": "ws-silent-tactile",
       "url": "https://divinikey.com/products/wuque-ws-silent-tactile-switches",
       "observed": {
         "name": "Wuque WS Silent Tactile",
@@ -9303,7 +9303,7 @@
       "source": "divinikeyswitches",
       "sourceId": "6954705780801",
       "kind": "switches",
-      "id": "ws-ws-morandi",
+      "id": "ws-morandi",
       "url": "https://divinikey.com/products/wuque-ws-morandi-linear-switches",
       "observed": {
         "name": "Wuque WS Morandi Linear",
@@ -9361,7 +9361,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7020559106113",
       "kind": "switches",
-      "id": "wekt-lucy-v5-silent",
+      "id": "wekt-lucy-r5-silent",
       "url": "https://divinikey.com/products/lichicx-lucy-silent-linear-switches",
       "observed": {
         "name": "WEKT Lucy V5 Silent Linear",
@@ -9652,7 +9652,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7480823251009",
       "kind": "switches",
-      "id": "ws-ws-arowana-yellow",
+      "id": "ws-arowana-yellow",
       "url": "https://divinikey.com/products/wuque-ws-aurowana-yellow-linear-switches",
       "observed": {
         "name": "Wuque WS Arowana Yellow Linear",
@@ -9665,7 +9665,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7480823578689",
       "kind": "switches",
-      "id": "ws-ws-arowana-gold",
+      "id": "ws-arowana-gold",
       "url": "https://divinikey.com/products/wuque-ws-arowana-gold-linear-switches",
       "observed": {
         "name": "Wuque WS Arowana Gold Linear",
@@ -9678,7 +9678,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7480823676993",
       "kind": "switches",
-      "id": "ws-ws-arowana-red",
+      "id": "ws-arowana-red",
       "url": "https://divinikey.com/products/wuque-ws-arowana-red-linear-switches",
       "observed": {
         "name": "Wuque WS Arowana Red Linear",
@@ -9762,7 +9762,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7569740070977",
       "kind": "switches",
-      "id": "gateron-ink-v2-pro-black",
+      "id": "gateron-black-ink-v2-pro",
       "url": "https://divinikey.com/products/gateron-ink-v2-pro-black-linear-switches",
       "observed": {
         "name": "Gateron Ink V2 Pro Black Linear",
@@ -9997,7 +9997,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7682690777153",
       "kind": "switches",
-      "id": "ws-ws-biglucky-tactile",
+      "id": "ws-biglucky-tactile",
       "url": "https://divinikey.com/products/wuque-ws-biglucky-tactile-switches",
       "observed": {
         "name": "Wuque WS BigLucky Tactile",
@@ -10009,7 +10009,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7682690842689",
       "kind": "switches",
-      "id": "ws-ws-biglucky-linear",
+      "id": "ws-biglucky-linear",
       "url": "https://divinikey.com/products/wuque-ws-biglucky-linear-switches",
       "observed": {
         "name": "Wuque WS BigLucky Linear",
@@ -10573,7 +10573,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7853919043649",
       "kind": "switches",
-      "id": "gateron-strawberry-smoothie",
+      "id": "gateron-smoothie-strawberry",
       "url": "https://divinikey.com/products/gateron-strawberry-smoothie-linear-switches",
       "observed": {
         "name": "Gateron Strawberry Smoothie Linear",
@@ -11078,7 +11078,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7996861186113",
       "kind": "switches",
-      "id": "hmx-blossom",
+      "id": "hmx-blossoms",
       "url": "https://divinikey.com/products/hmx-blossom-linear-switches",
       "observed": {
         "name": "HMX Blossom Linear",
@@ -11390,7 +11390,7 @@
       "source": "gateron",
       "sourceId": "7066902954073/variant/39977308094553",
       "kind": "switches",
-      "id": "gateron-aliaz-silent-aliaz-silent-60-gf",
+      "id": "gateron-aliaz-silent-60-gf",
       "url": "https://www.gateron.co/products/gateron-aliaz-silent-switch",
       "observed": {
         "name": "Gateron Aliaz Silent Tactile - Aliaz Silent (60 gf))",
@@ -11402,7 +11402,7 @@
       "source": "gateron",
       "sourceId": "7066902954073/variant/39977308127321",
       "kind": "switches",
-      "id": "gateron-aliaz-silent-aliaz-silent-70-gf",
+      "id": "gateron-aliaz-silent-70-gf",
       "url": "https://www.gateron.co/products/gateron-aliaz-silent-switch",
       "observed": {
         "name": "Gateron Aliaz Silent Tactile - Aliaz Silent (70 gf)",
@@ -11414,7 +11414,7 @@
       "source": "gateron",
       "sourceId": "7066902954073/variant/39977308160089",
       "kind": "switches",
-      "id": "gateron-aliaz-silent-aliaz-silent-80-gf",
+      "id": "gateron-aliaz-silent-80-gf",
       "url": "https://www.gateron.co/products/gateron-aliaz-silent-switch",
       "observed": {
         "name": "Gateron Aliaz Silent Tactile - Aliaz Silent (80 gf))",
@@ -11426,7 +11426,7 @@
       "source": "gateron",
       "sourceId": "7066902954073/variant/39977308192857",
       "kind": "switches",
-      "id": "gateron-aliaz-silent-aliaz-slient-100-gf",
+      "id": "gateron-aliaz-silent-100-gf",
       "url": "https://www.gateron.co/products/gateron-aliaz-silent-switch",
       "observed": {
         "name": "Gateron Aliaz Silent Tactile - Aliaz Slient (100 gf)",
@@ -11438,7 +11438,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307616857",
       "kind": "switches",
-      "id": "gateron-cap-v2-milky-yellow",
+      "id": "gateron-cap-milky-yellow-v2",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Milky-Yellow",
@@ -11449,7 +11449,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307649625",
       "kind": "switches",
-      "id": "gateron-cap-v2-golden-yellow",
+      "id": "gateron-cap-golden-yellow-v2",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Golden-Yellow",
@@ -11471,7 +11471,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307747929",
       "kind": "switches",
-      "id": "gateron-cap-v2-golden-brown",
+      "id": "gateron-cap-golden-brown-v2",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Golden-Brown",
@@ -11970,7 +11970,7 @@
       "source": "gateron",
       "sourceId": "7096110710873/variant/40069325979737",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-red",
+      "id": "gateron-phantom-red",
       "url": "https://www.gateron.co/products/gateron-phantom-switch-set",
       "observed": {
         "name": "Gateron Phantom - Phantom Red",
@@ -11981,7 +11981,7 @@
       "source": "gateron",
       "sourceId": "7096110710873/variant/40069326012505",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-blue",
+      "id": "gateron-phantom-blue",
       "url": "https://www.gateron.co/products/gateron-phantom-switch-set",
       "observed": {
         "name": "Gateron Phantom - Phantom Blue",
@@ -11992,7 +11992,7 @@
       "source": "gateron",
       "sourceId": "7096110710873/variant/40069326045273",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-brown",
+      "id": "gateron-phantom-brown",
       "url": "https://www.gateron.co/products/gateron-phantom-switch-set",
       "observed": {
         "name": "Gateron Phantom - Phantom Brown",
@@ -12003,7 +12003,7 @@
       "source": "gateron",
       "sourceId": "7096110710873/variant/40069326078041",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-yellow",
+      "id": "gateron-phantom-yellow",
       "url": "https://www.gateron.co/products/gateron-phantom-switch-set",
       "observed": {
         "name": "Gateron Phantom - Phantom Yellow",
@@ -12223,7 +12223,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445040217",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-red",
+      "id": "gateron-ks-3x47-milky-top-black-bottom-red",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Red",
@@ -12234,7 +12234,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445072985",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-brown",
+      "id": "gateron-ks-3x47-milky-top-black-bottom-brown",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Brown",
@@ -12245,7 +12245,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445105753",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-blue",
+      "id": "gateron-ks-3x47-milky-top-black-bottom-blue",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Blue",
@@ -12256,7 +12256,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445138521",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-yellow",
+      "id": "gateron-ks-3x47-milky-top-black-bottom-yellow",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Yellow",
@@ -12267,7 +12267,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445171289",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-green",
+      "id": "gateron-ks-3x47-milky-top-black-bottom-green",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Green",
@@ -12278,7 +12278,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445204057",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom",
+      "id": "gateron-ks-3x47-milky-top-black-bottom",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom)",
@@ -13803,7 +13803,7 @@
       "source": "kbdfans",
       "sourceId": "7985350869131",
       "kind": "keycaps",
-      "id": "keykobo-the-great-barrier-reef",
+      "id": "keykobo-great-barrier-reef",
       "url": "https://kbdfans.com/products/keykobo-the-great-barrier-reef",
       "observed": {
         "name": "KeyKobo The Great Barrier Reef",
@@ -14580,7 +14580,7 @@
       "source": "kbdfans",
       "sourceId": "8378639155339",
       "kind": "keycaps",
-      "id": "gmk-just-mtnu",
+      "id": "gmk-mtnu-just",
       "url": "https://kbdfans.com/products/gmk-just-mtnu",
       "observed": {
         "name": "GMK JUST MTNU",
@@ -15393,7 +15393,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7485540499675",
       "kind": "switches",
-      "id": "durock-silent-shrimp",
+      "id": "durock-shrimp-silent",
       "url": "https://keebsforall.com/products/durock-silent-shrimp-tactile-switches",
       "observed": {
         "name": "Durock Silent Shrimp Tactile",
@@ -15604,10 +15604,10 @@
       "source": "keebsforallswitches",
       "sourceId": "7732320862427/variant/42991437283547",
       "kind": "switches",
-      "id": "kfa-pink-robin-un-lubed-36",
+      "id": "kfa-pink-robin",
       "url": "https://keebsforall.com/products/kfa-pink-robin-switches",
       "observed": {
-        "name": "KFA Pink Robin - Un-lubed (36)",
+        "name": "KFA Pink Robin - (36)",
         "manufacturer": "Aflion",
         "designer": "KFA"
       }
@@ -15616,7 +15616,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7736013652187",
       "kind": "switches",
-      "id": "gateron-ks-3-milky-yellow-pro",
+      "id": "gateron-ks-3-milky-pro-yellow",
       "url": "https://keebsforall.com/products/gateron-ks-3-milky-yellow-pro-linear-switches",
       "observed": {
         "name": "Gateron KS-3 Milky Yellow Pro Linear",
@@ -15772,7 +15772,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7922415927515",
       "kind": "switches",
-      "id": "ws-ws-onion",
+      "id": "ws-onion",
       "url": "https://keebsforall.com/products/wuque-ws-onion-linear-switches",
       "observed": {
         "name": "Wuque WS Onion Linear",
@@ -15835,7 +15835,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7962686554331",
       "kind": "switches",
-      "id": "ws-ws-aurora-clear",
+      "id": "ws-aurora-clear",
       "url": "https://keebsforall.com/products/wuque-ws-aurora-clear-linear-switches",
       "observed": {
         "name": "Wuque WS Aurora Clear Linear",
@@ -15847,7 +15847,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7962687963355",
       "kind": "switches",
-      "id": "ws-ws-red",
+      "id": "ws-red",
       "url": "https://keebsforall.com/products/wuque-ws-red-linear-switches",
       "observed": {
         "name": "Wuque WS Red Linear",
@@ -15859,7 +15859,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7962689634523",
       "kind": "switches",
-      "id": "ws-ws-silent-tactile",
+      "id": "ws-silent-tactile",
       "url": "https://keebsforall.com/products/wuque-ws-silent-tactile-switches",
       "observed": {
         "name": "Wuque WS Silent Tactile",
@@ -15955,7 +15955,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8031332827355",
       "kind": "switches",
-      "id": "ws-ws-brown",
+      "id": "ws-brown",
       "url": "https://keebsforall.com/products/wuque-ws-brown-tactile-switches",
       "observed": {
         "name": "Wuque WS Brown Tactile",
@@ -15967,7 +15967,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8031369396443",
       "kind": "switches",
-      "id": "ws-ws-heavy",
+      "id": "ws-heavy",
       "url": "https://keebsforall.com/products/wuque-ws-heavy-tactile-switches",
       "observed": {
         "name": "Wuque WS Heavy Tactile",
@@ -15979,7 +15979,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8031375786203",
       "kind": "switches",
-      "id": "ws-ws-quartz",
+      "id": "ws-quartz",
       "url": "https://keebsforall.com/products/wuque-ws-quartz-linear-switches",
       "observed": {
         "name": "Wuque WS Quartz Linear",
@@ -15991,7 +15991,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8031376408795",
       "kind": "switches",
-      "id": "ws-ws-silent-linear",
+      "id": "ws-silent-linear",
       "url": "https://keebsforall.com/products/wuque-ws-silent-linear-switches",
       "observed": {
         "name": "Wuque WS Silent Linear",
@@ -16003,7 +16003,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8031379849435",
       "kind": "switches",
-      "id": "ws-ws-yellow",
+      "id": "ws-yellow",
       "url": "https://keebsforall.com/products/wuque-ws-yellow-linear-switches",
       "observed": {
         "name": "Wuque WS Yellow Linear",
@@ -16128,7 +16128,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8044847988955",
       "kind": "switches",
-      "id": "ws-ws-morandi",
+      "id": "ws-morandi",
       "url": "https://keebsforall.com/products/wuque-ws-morandi-linear-switches",
       "observed": {
         "name": "Wuque WS Morandi Linear",
@@ -16141,7 +16141,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8059377615067",
       "kind": "switches",
-      "id": "cherry-nixie-mx-black-clear-top",
+      "id": "cherry-mx-black-clear-top-nixie",
       "url": "https://keebsforall.com/products/cherry-nixie-mx-black-clear-top-linear-switches-1",
       "observed": {
         "name": "Cherry Nixie (MX Black Clear Top) Linear",
@@ -16390,7 +16390,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8157885989083/variant/44448620380379",
       "kind": "switches",
-      "id": "cupid-cupid-48g-spring-version",
+      "id": "cupid-48g-spring",
       "url": "https://keebsforall.com/products/cupid-switches-by-chaosera",
       "observed": {
         "name": "Cupid - Cupid 48g Spring (Version)",
@@ -16401,7 +16401,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8157885989083/variant/44448620413147",
       "kind": "switches",
-      "id": "cupid-cupid-48g-spring-no-version",
+      "id": "cupid-48g-spring",
       "url": "https://keebsforall.com/products/cupid-switches-by-chaosera",
       "observed": {
         "name": "Cupid - Cupid 48g Spring(No Version)",
@@ -16412,7 +16412,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8157885989083/variant/44448620445915",
       "kind": "switches",
-      "id": "cupid-cupid-55g-spring-version",
+      "id": "cupid-55g-spring",
       "url": "https://keebsforall.com/products/cupid-switches-by-chaosera",
       "observed": {
         "name": "Cupid - Cupid 55g Spring (Version)",
@@ -16423,7 +16423,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8157885989083/variant/44448620478683",
       "kind": "switches",
-      "id": "cupid-cupid-55g-spring-no-version",
+      "id": "cupid-55g-spring",
       "url": "https://keebsforall.com/products/cupid-switches-by-chaosera",
       "observed": {
         "name": "Cupid - Cupid 55g Spring(No Version)",
@@ -16677,7 +16677,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209400758491",
       "kind": "switches",
-      "id": "gateron-red-ink-v2",
+      "id": "gateron-ink-red-v2",
       "url": "https://keebsforall.com/products/gateron-red-ink-v2-switches",
       "observed": {
         "name": "Gateron Red INK V2",
@@ -16688,7 +16688,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209402134747",
       "kind": "switches",
-      "id": "gateron-yellow-ink-v2",
+      "id": "gateron-ink-v2-yellow",
       "url": "https://keebsforall.com/products/gateron-yellow-ink-v2-switches",
       "observed": {
         "name": "Gateron Yellow INK V2",
@@ -16732,7 +16732,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209416454363",
       "kind": "switches",
-      "id": "gateron-ks-9-yellow-pro-2-0",
+      "id": "gateron-ks-9-pro-2-0-yellow",
       "url": "https://keebsforall.com/products/gateron-ks-9-yellow-pro-2-0-switches",
       "observed": {
         "name": "Gateron KS-9 Yellow PRO 2.0",
@@ -16820,7 +16820,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209454858459",
       "kind": "switches",
-      "id": "gateron-optical-brown",
+      "id": "gateron-brown-optical",
       "url": "https://keebsforall.com/products/gateron-optical-brown-switches",
       "observed": {
         "name": "Gateron Optical Brown",
@@ -16831,7 +16831,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209472323803",
       "kind": "switches",
-      "id": "gateron-optical-blue",
+      "id": "gateron-blue-optical",
       "url": "https://keebsforall.com/products/gateron-optical-blue-switches",
       "observed": {
         "name": "Gateron Optical Blue",
@@ -17201,7 +17201,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8233633906907",
       "kind": "switches",
-      "id": "ws-ws-jade",
+      "id": "ws-jade",
       "url": "https://keebsforall.com/products/wuque-ws-jade-linear-switches",
       "observed": {
         "name": "Wuque WS Jade Linear",
@@ -17296,7 +17296,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8290967453915",
       "kind": "switches",
-      "id": "gateron-ks-9-silent-yellow-2-0",
+      "id": "gateron-ks-9-silent-2-0-yellow",
       "url": "https://keebsforall.com/products/gateron-ks-9-silent-yellow-2-0-switches",
       "observed": {
         "name": "Gateron KS-9 Silent Yellow 2.0",
@@ -24395,7 +24395,7 @@
       "source": "keycaplendar",
       "sourceId": "MgoYcbov90Gkbi09ecre",
       "kind": "keycaps",
-      "id": "crp-hammerworks-r4",
+      "id": "hammerworks-crp-r4",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=WQrGRN3W67",
       "observed": {
         "name": "CRP Hammerworks r4",
@@ -26618,7 +26618,7 @@
       "source": "keycaplendar",
       "sourceId": "TTBImumyAuKg9srYw4GO",
       "kind": "keycaps",
-      "id": "dcs-dolch",
+      "id": "dcs-dolch-2026",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=vpNoC7iGPX",
       "observed": {
         "name": "DCS Dolch",
@@ -27059,7 +27059,7 @@
       "source": "keycaplendar",
       "sourceId": "Uk8gSXoV9A4PyImfSKXv",
       "kind": "keycaps",
-      "id": "dcs-alps-yuri",
+      "id": "dcs-yuri-alps",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=cnOrzeiWWn",
       "observed": {
         "name": "DCS Alps Yuri",
@@ -28861,7 +28861,7 @@
       "source": "keycaplendar",
       "sourceId": "ahfHUaY0UXaJyDwvJcHV",
       "kind": "keycaps",
-      "id": "crp-hammerworks-r5",
+      "id": "hammerworks-crp-r5",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=FIC1KziWWb",
       "observed": {
         "name": "CRP Hammerworks r5",
@@ -29142,7 +29142,7 @@
       "source": "keycaplendar",
       "sourceId": "bFxaOxMwsAvqd5kBcZAI",
       "kind": "keycaps",
-      "id": "gmk-centinela-extension-kits",
+      "id": "gmk-centinela-extension-kit",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=3adY-yZhWI",
       "observed": {
         "name": "GMK Centinela Extension Kits",
@@ -30818,7 +30818,7 @@
       "source": "keycaplendar",
       "sourceId": "gA69ljf5Mm3NFRFXfao9",
       "kind": "keycaps",
-      "id": "dcs-sport-walker",
+      "id": "dcs-sports-walker",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=d8KWeAr7rJ",
       "observed": {
         "name": "DCS Sport Walker",
@@ -35282,7 +35282,7 @@
       "source": "keycaplendar",
       "sourceId": "uzGV6T1wjVsUg6B7efi3",
       "kind": "keycaps",
-      "id": "alohakb-jxm-keycaps",
+      "id": "alohakb-jxm",
       "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=Rlo1n9TzTx",
       "observed": {
         "name": "AlohaKB JXM Keycaps",
@@ -38093,7 +38093,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/32264204419161",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-red",
+      "id": "keychron-low-profile-optical-red",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Red"
@@ -38103,7 +38103,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/32264204451929",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-blue",
+      "id": "keychron-low-profile-optical-blue",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Blue"
@@ -38113,7 +38113,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/32264204484697",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-brown",
+      "id": "keychron-low-profile-optical-brown",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Brown"
@@ -38123,7 +38123,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/32264204517465",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-white",
+      "id": "keychron-low-profile-optical-white",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - White"
@@ -38133,7 +38133,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/32264204550233",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-black",
+      "id": "keychron-low-profile-optical-black",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Black"
@@ -38143,7 +38143,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/32264204583001",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-orange",
+      "id": "keychron-low-profile-optical-orange",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Orange"
@@ -38151,19 +38151,9 @@
     },
     {
       "source": "keychronswitches",
-      "sourceId": "4745786032217/variant/32264204615769",
-      "kind": "switches",
-      "id": "low-profile-keychron-optical-low-profile-tester",
-      "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
-      "observed": {
-        "name": "Low Profile Keychron Optical - Low Profile Tester"
-      }
-    },
-    {
-      "source": "keychronswitches",
       "sourceId": "4745786032217/variant/39401450340441",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-banana",
+      "id": "keychron-low-profile-optical-banana",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Banana"
@@ -38173,7 +38163,7 @@
       "source": "keychronswitches",
       "sourceId": "4745786032217/variant/39401450405977",
       "kind": "switches",
-      "id": "low-profile-keychron-optical-mint",
+      "id": "keychron-low-profile-optical-mint",
       "url": "https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs",
       "observed": {
         "name": "Low Profile Keychron Optical - Mint"
@@ -38353,7 +38343,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40070747258969",
       "kind": "switches",
-      "id": "kailh-box-box-cream",
+      "id": "kailh-box-cream",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box Cream"
@@ -38363,7 +38353,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40136563687513",
       "kind": "switches",
-      "id": "kailh-box-box-red",
+      "id": "kailh-box-red",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box Red"
@@ -38373,7 +38363,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40136563720281",
       "kind": "switches",
-      "id": "kailh-box-box-white",
+      "id": "kailh-box-white",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box White"
@@ -38383,7 +38373,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40136563753049",
       "kind": "switches",
-      "id": "kailh-box-box-brown",
+      "id": "kailh-box-brown",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box Brown"
@@ -38393,7 +38383,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40136564539481",
       "kind": "switches",
-      "id": "kailh-box-box-jade",
+      "id": "kailh-box-jade",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box Jade"
@@ -38403,7 +38393,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40136564572249",
       "kind": "switches",
-      "id": "kailh-box-box-navy",
+      "id": "kailh-box-navy",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box Navy"
@@ -38413,7 +38403,7 @@
       "source": "keychronswitches",
       "sourceId": "6547882967129/variant/40305604624473",
       "kind": "switches",
-      "id": "kailh-box-box-black",
+      "id": "kailh-box-black",
       "url": "https://www.keychron.com/products/kailh-box-switch-set",
       "observed": {
         "name": "Kailh Box - Box Black"
@@ -38453,7 +38443,7 @@
       "source": "keychronswitches",
       "sourceId": "6591524700249/variant/40119297310809",
       "kind": "switches",
-      "id": "gateron-ink-v2-red",
+      "id": "gateron-ink-red-v2",
       "url": "https://www.keychron.com/products/gateron-ink-v2-switch-set",
       "observed": {
         "name": "Gateron Ink V2 - Red"
@@ -38463,7 +38453,7 @@
       "source": "keychronswitches",
       "sourceId": "6591524700249/variant/40119299276889",
       "kind": "switches",
-      "id": "gateron-ink-v2-blue",
+      "id": "gateron-blue-ink-v2",
       "url": "https://www.keychron.com/products/gateron-ink-v2-switch-set",
       "observed": {
         "name": "Gateron Ink V2 - Blue"
@@ -38483,7 +38473,7 @@
       "source": "keychronswitches",
       "sourceId": "6591524700249/variant/40119300882521",
       "kind": "switches",
-      "id": "gateron-ink-v2-black",
+      "id": "gateron-black-ink-v2",
       "url": "https://www.keychron.com/products/gateron-ink-v2-switch-set",
       "observed": {
         "name": "Gateron Ink V2 - Black"
@@ -38493,7 +38483,7 @@
       "source": "keychronswitches",
       "sourceId": "6664685453401/variant/40106804346969",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-yellow",
+      "id": "gateron-phantom-yellow",
       "url": "https://www.keychron.com/products/gateron-phantom-switch",
       "observed": {
         "name": "Gateron Phantom - Phantom Yellow"
@@ -38503,7 +38493,7 @@
       "source": "keychronswitches",
       "sourceId": "6664685453401/variant/40119317758041",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-red",
+      "id": "gateron-phantom-red",
       "url": "https://www.keychron.com/products/gateron-phantom-switch",
       "observed": {
         "name": "Gateron Phantom - Phantom Red"
@@ -38513,7 +38503,7 @@
       "source": "keychronswitches",
       "sourceId": "6664685453401/variant/40119318052953",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-blue",
+      "id": "gateron-phantom-blue",
       "url": "https://www.keychron.com/products/gateron-phantom-switch",
       "observed": {
         "name": "Gateron Phantom - Phantom Blue"
@@ -38523,7 +38513,7 @@
       "source": "keychronswitches",
       "sourceId": "6664685453401/variant/40119318675545",
       "kind": "switches",
-      "id": "gateron-phantom-phantom-brown",
+      "id": "gateron-phantom-brown",
       "url": "https://www.keychron.com/products/gateron-phantom-switch",
       "observed": {
         "name": "Gateron Phantom - Phantom Brown"
@@ -38704,7 +38694,7 @@
       "source": "keychronswitches",
       "sourceId": "7118684356697/variant/40461598359641",
       "kind": "switches",
-      "id": "keychron-silent-k-pro-brown",
+      "id": "keychron-k-pro-silent-brown",
       "url": "https://www.keychron.com/products/keychron-silent-k-pro-switch",
       "observed": {
         "name": "Keychron Silent K Pro - Brown"
@@ -39208,7 +39198,7 @@
       "source": "keychronswitches",
       "sourceId": "7177725182041/variant/40303142994009",
       "kind": "switches",
-      "id": "kailh-jellyfish-box-y",
+      "id": "kailh-box-jellyfish-y",
       "url": "https://www.keychron.com/products/kailh-jellyfish-box-switch",
       "observed": {
         "name": "Kailh Jellyfish Box - Y (Linear)"
@@ -39218,7 +39208,7 @@
       "source": "keychronswitches",
       "sourceId": "7177725706329",
       "kind": "switches",
-      "id": "kailh-red-bean-pudding-box",
+      "id": "kailh-box-red-bean-pudding",
       "url": "https://www.keychron.com/products/kailh-red-bean-pudding-box-switch",
       "observed": {
         "name": "Kailh Red Bean Pudding Box"
@@ -39279,7 +39269,7 @@
       "source": "keychronswitches",
       "sourceId": "7181514440793/variant/40313324208217",
       "kind": "switches",
-      "id": "kailh-midnight-pro-silent-silent-linear",
+      "id": "kailh-midnight-pro-silent-linear",
       "url": "https://www.keychron.com/products/kailh-midnight-pro-silent-switch",
       "observed": {
         "name": "Kailh Midnight Pro Silent - Silent Linear"
@@ -39289,7 +39279,7 @@
       "source": "keychronswitches",
       "sourceId": "7181514440793/variant/40313324470361",
       "kind": "switches",
-      "id": "kailh-midnight-pro-silent-silent-tactile",
+      "id": "kailh-midnight-pro-silent-tactile",
       "url": "https://www.keychron.com/products/kailh-midnight-pro-silent-switch",
       "observed": {
         "name": "Kailh Midnight Pro Silent - Silent Tactile"
@@ -39621,7 +39611,7 @@
       "source": "keychronswitches",
       "sourceId": "7198179328089",
       "kind": "switches",
-      "id": "kailh-crystal-royal-box",
+      "id": "kailh-box-crystal-royal",
       "url": "https://www.keychron.com/products/kailh-crystal-royal-box-tactile-switch",
       "observed": {
         "name": "Kailh Crystal Royal Box Tactile",
@@ -40144,16 +40134,6 @@
       }
     },
     {
-      "source": "keychronswitches",
-      "sourceId": "8263474446425",
-      "kind": "switches",
-      "id": "keychron-c100-8k-giant-custom-macro-pad",
-      "url": "https://www.keychron.com/products/keychron-c100-8k-giant-custom-macro-pad",
-      "observed": {
-        "name": "Keychron C100 8K Giant Custom Macro Pad"
-      }
-    },
-    {
       "source": "keygem",
       "sourceId": "11442628231436",
       "kind": "keycaps",
@@ -40340,7 +40320,7 @@
       "source": "keygem",
       "sourceId": "8011936792844",
       "kind": "keycaps",
-      "id": "deadline-airg-pc",
+      "id": "deadline-pc-airg",
       "url": "https://keygem.com/products/group-buy-deadline-airg-pc-keycaps",
       "observed": {
         "name": "Deadline AirG PC",
@@ -41035,7 +41015,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "7765007728853/variant/43402241474773",
       "kind": "switches",
-      "id": "gateron-ink-v2-pro-black",
+      "id": "gateron-black-ink-v2-pro",
       "url": "https://lumekeebs.com/products/gateron-ink-v2-black-linear-switch",
       "observed": {
         "name": "Gateron Ink V2 Pro Black Linear",
@@ -41047,7 +41027,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "7797881077973/variant/43398020006101",
       "kind": "switches",
-      "id": "cherry-mx-hyperglide-black",
+      "id": "cherry-mx-black-hyperglide",
       "url": "https://lumekeebs.com/products/cherry-mx-hyperglide-switches",
       "observed": {
         "name": "Cherry MX Hyperglide - Linear (Black)",
@@ -41069,7 +41049,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "7834196050133/variant/43526235455701",
       "kind": "switches",
-      "id": "durock-sunflower-t1-pom",
+      "id": "durock-sunflower-pom-t1",
       "url": "https://lumekeebs.com/products/durock-sunflower-pom-tactile-switches",
       "observed": {
         "name": "Durock Sunflower T1 POM Tactile",
@@ -41177,7 +41157,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "7929327747285/variant/43837606985941",
       "kind": "switches",
-      "id": "gateron-ks-3-milky-yellow-pro",
+      "id": "gateron-ks-3-milky-pro-yellow",
       "url": "https://lumekeebs.com/products/gateron-ks-3-milky-yellow-pro-linear-switches",
       "observed": {
         "name": "Gateron KS-3 Milky Yellow Pro Linear",
@@ -41333,7 +41313,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8032649937109/variant/44130258878677",
       "kind": "switches",
-      "id": "ws-ws-morandi",
+      "id": "ws-morandi",
       "url": "https://lumekeebs.com/products/ws-morandi-linear-switch",
       "observed": {
         "name": "Wuque WS Morandi Linear",
@@ -41511,7 +41491,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8169921380565/variant/44855679090901",
       "kind": "switches",
-      "id": "ws-ws-heavy",
+      "id": "ws-heavy",
       "url": "https://lumekeebs.com/products/wuque-ws-heavy-tactile-switches",
       "observed": {
         "name": "Wuque WS Heavy Tactile",
@@ -41523,7 +41503,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8169926492373/variant/44855690297557",
       "kind": "switches",
-      "id": "ws-ws-yellow",
+      "id": "ws-yellow",
       "url": "https://lumekeebs.com/products/wuque-ws-yellow-linear-switches",
       "observed": {
         "name": "Wuque WS Yellow Linear",
@@ -41595,7 +41575,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8252052275413/variant/45584901963989",
       "kind": "switches",
-      "id": "ws-ws-silent-tactile",
+      "id": "ws-silent-tactile",
       "url": "https://lumekeebs.com/products/wuque-ws-silent-tactile-switches",
       "observed": {
         "name": "Wuque WS Silent Tactile",
@@ -41607,7 +41587,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8252054470869/variant/45584911106261",
       "kind": "switches",
-      "id": "ws-ws-brown",
+      "id": "ws-brown",
       "url": "https://lumekeebs.com/products/wuque-ws-brown-tactile-switches",
       "observed": {
         "name": "Wuque WS Brown Tactile",
@@ -41667,7 +41647,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8272551608533/variant/45809909924053",
       "kind": "switches",
-      "id": "durock-ice-king",
+      "id": "durock-ice-king-linear",
       "url": "https://lumekeebs.com/products/durock-ice-king-linear-switches",
       "observed": {
         "name": "Durock Ice King - Linear",
@@ -41737,7 +41717,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8434317394133/variant/46917587566805",
       "kind": "switches",
-      "id": "ws-ws-dash-he-magnetic",
+      "id": "ws-dash-he-magnetic",
       "url": "https://lumekeebs.com/products/wuque-ws-dash-he-magnetic-switches",
       "observed": {
         "name": "Wuque WS Dash HE Magnetic",
@@ -41748,7 +41728,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8434369102037/variant/46918073254101",
       "kind": "switches",
-      "id": "ws-ws-pom-plus",
+      "id": "ws-pom-plus",
       "url": "https://lumekeebs.com/products/wuque-ws-pom-linear-switches",
       "observed": {
         "name": "Wuque WS POM+ Linear",
@@ -41880,7 +41860,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8591266414805/variant/47986735743189",
       "kind": "switches",
-      "id": "akko-v3-piano-pro",
+      "id": "akko-piano-v3-pro",
       "url": "https://lumekeebs.com/products/akko-v3-piano-pro-linear-switches",
       "observed": {
         "name": "Akko V3 Piano Pro Linear",
@@ -42021,7 +42001,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8694463725781/variant/48965933629653",
       "kind": "switches",
-      "id": "ttc-silent-frozen-v2",
+      "id": "ttc-frozen-silent-v2",
       "url": "https://lumekeebs.com/products/ttc-silent-frozen-v2-linear-switches",
       "observed": {
         "name": "TTC Silent Frozen V2 Linear",
@@ -42117,7 +42097,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8753685889237/variant/49834740318421",
       "kind": "switches",
-      "id": "ws-ws-light",
+      "id": "ws-light",
       "url": "https://lumekeebs.com/products/wuque-ws-light-tactile-switches",
       "observed": {
         "name": "Wuque WS Light Tactile",
@@ -42460,7 +42440,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8898717090005/variant/51133335797973",
       "kind": "switches",
-      "id": "akko-v5-creamy-blue-pro",
+      "id": "akko-creamy-blue-pro-v5",
       "url": "https://lumekeebs.com/products/akko-v5-creamy-blue-pro-tactile-switches",
       "observed": {
         "name": "Akko V5 Creamy Blue Pro Tactile",
@@ -42472,7 +42452,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8898737766613/variant/51133544464597",
       "kind": "switches",
-      "id": "akko-v5-creamy-yellow-pro",
+      "id": "akko-creamy-yellow-pro-v5",
       "url": "https://lumekeebs.com/products/akko-v5-creamy-yellow-pro-linear-switches",
       "observed": {
         "name": "Akko V5 Creamy Yellow Pro Linear",
@@ -42694,7 +42674,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8934692389077/variant/51311921496277",
       "kind": "switches",
-      "id": "ws-ws-silent-linear",
+      "id": "ws-silent-linear",
       "url": "https://lumekeebs.com/products/wuque-ws-silent-linear-switches",
       "observed": {
         "name": "Wuque WS Silent Linear",
@@ -42955,7 +42935,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9001091367125/variant/51621890162901",
       "kind": "switches",
-      "id": "keygeek-tipsy-red-blush",
+      "id": "keygeek-blush-tipsy-red",
       "url": "https://lumekeebs.com/products/keygeek-tipsy-red-blush-linear-switches",
       "observed": {
         "name": "Keygeek Tipsy Red (Blush) Linear",
@@ -43518,7 +43498,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9143934681301/variant/52244388610261",
       "kind": "switches",
-      "id": "hmx-x-sillyworks-sonja",
+      "id": "sillyworks-x-hmx-sonja",
       "url": "https://lumekeebs.com/products/hmx-x-siliworks-sonja-linear-switches",
       "observed": {
         "name": "HMX x Sillyworks Sonja Linear",
@@ -44270,7 +44250,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9306187071701/variant/53465834684629",
       "kind": "switches",
-      "id": "gateron-full-pom-smoothie-chocolate",
+      "id": "gateron-full-pom-chocolate-smoothie",
       "url": "https://lumekeebs.com/products/gateron-full-pom-smoothie-chocolate",
       "observed": {
         "name": "Gateron Full POM Smoothie Chocolate Tactile",
@@ -44294,7 +44274,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9306265944277/variant/53465918734549",
       "kind": "switches",
-      "id": "gateron-full-pom-smoothie-banana",
+      "id": "gateron-full-pom-banana-smoothie",
       "url": "https://lumekeebs.com/products/gateron-full-pom-smoothie-banana-tactile-switches-10pcs",
       "observed": {
         "name": "Gateron Full POM Smoothie Banana Tactile",
@@ -44413,7 +44393,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9308512813269/variant/53474946318549",
       "kind": "switches",
-      "id": "ttc-x-pantheonkeys-pt-black",
+      "id": "pantheonkeys-x-ttc-pt-black",
       "url": "https://lumekeebs.com/products/ttc-p-t-black-linear-switches-10pcs",
       "observed": {
         "name": "TTC x Pantheonkeys PT Black",
@@ -44830,7 +44810,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9460181401813/variant/54202776027349",
       "kind": "switches",
-      "id": "ws-ws-flux-cullinan-magnetic",
+      "id": "ws-flux-cullinan-magnetic",
       "url": "https://lumekeebs.com/products/wuque-studio-ws-flux-cullinan-linear-magnetic-switches-10pcs",
       "observed": {
         "name": "Wuque Studio WS Flux Cullinan Linear Magnetic",
@@ -44842,7 +44822,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9460224884949/variant/54202950156501",
       "kind": "switches",
-      "id": "ws-ws-flux-heart-of-the-ocean-magnetic",
+      "id": "ws-flux-heart-of-the-ocean-magnetic",
       "url": "https://lumekeebs.com/products/wuque-studio-ws-flux-heart-of-the-ocean-linear-magnetic-switches-10pcs",
       "observed": {
         "name": "Wuque Studio WS Flux Heart of the Ocean Linear Magnetic",
@@ -53193,7 +53173,7 @@
       "source": "mechanicalkeyboards",
       "sourceId": "8874584998188",
       "kind": "keycaps",
-      "id": "tai-hao-black-on-white-white",
+      "id": "tai-hao-black-on-white-128-keys",
       "url": "https://mechanicalkeyboards.com/products/tai-hao-128-key-abs-double-shot-cubic-keycap-set-white-bow",
       "observed": {
         "name": "Tai-Hao Black on White White",
@@ -53781,7 +53761,7 @@
       "source": "mechanicalkeyboards",
       "sourceId": "8874626122028",
       "kind": "keycaps",
-      "id": "tai-hao-black-on-white",
+      "id": "tai-hao-black-on-white-150-keys",
       "url": "https://mechanicalkeyboards.com/products/tai-hao-150-key-abs-double-shot-cubic-keycap-set-black-on-white",
       "observed": {
         "name": "Tai-Hao Black on White",
@@ -63206,7 +63186,7 @@
       "source": "swagkeys",
       "sourceId": "15283532857597",
       "kind": "keycaps",
-      "id": "group-buy-swg-hypermix",
+      "id": "swg-hypermix",
       "url": "https://swagkeys.com/products/group-buy-swg-hypermix",
       "observed": {
         "name": "[Group-Buy] SWG Hypermix"
@@ -63216,7 +63196,7 @@
       "source": "swagkeys",
       "sourceId": "15298994176253",
       "kind": "keycaps",
-      "id": "group-buy-swg-feralis",
+      "id": "swg-feralis",
       "url": "https://swagkeys.com/products/group-buy-swg-feralis",
       "observed": {
         "name": "[Group-Buy] SWG Feralis"
@@ -63226,7 +63206,7 @@
       "source": "swagkeys",
       "sourceId": "15332244226301",
       "kind": "keycaps",
-      "id": "group-buy-swg-art",
+      "id": "swg-art",
       "url": "https://swagkeys.com/products/group-buy-swg-art",
       "observed": {
         "name": "[Group-Buy] SWG Art"
@@ -63470,7 +63450,7 @@
       "source": "switchoddities",
       "sourceId": "10012087681308",
       "kind": "switches",
-      "id": "kfa-x-bsun-pistachio-gelato",
+      "id": "kfa-bsun-pistachio-gelato",
       "url": "https://switchoddities.com/products/kfa-bsun-pistachio-gelato",
       "observed": {
         "name": "KFA x BSUN Pistachio Gelato",
@@ -63846,7 +63826,7 @@
       "source": "switchoddities",
       "sourceId": "10050952823068",
       "kind": "switches",
-      "id": "attack-shark-jelly-green",
+      "id": "attack-shark-green-jelly",
       "url": "https://switchoddities.com/products/attack-shark-jelly-green",
       "observed": {
         "name": "Attack Shark Jelly Green"
@@ -63856,7 +63836,7 @@
       "source": "switchoddities",
       "sourceId": "10050953871644",
       "kind": "switches",
-      "id": "attack-shark-jelly-blue",
+      "id": "attack-shark-blue-jelly",
       "url": "https://switchoddities.com/products/attack-shark-jelly-blue",
       "observed": {
         "name": "Attack Shark Jelly Blue"
@@ -64297,7 +64277,7 @@
       "source": "switchoddities",
       "sourceId": "10071144628508",
       "kind": "switches",
-      "id": "sillyworks-x-napworks-napworks-37g",
+      "id": "sillyworks-x-napworks-37g",
       "url": "https://switchoddities.com/products/sillyworks-x-napworks-napworks-37g",
       "observed": {
         "name": "Sillyworks x Napworks Napworks 37g"
@@ -64307,7 +64287,7 @@
       "source": "switchoddities",
       "sourceId": "10071145546012",
       "kind": "switches",
-      "id": "sillyworks-x-napworks-napworks-45g",
+      "id": "sillyworks-x-napworks-45g",
       "url": "https://switchoddities.com/products/sillyworks-x-napworks-napworks-45g",
       "observed": {
         "name": "Sillyworks x Napworks Napworks 45g"
@@ -64477,7 +64457,7 @@
       "source": "switchoddities",
       "sourceId": "10071556948252",
       "kind": "switches",
-      "id": "jerrzi-smokey-purple",
+      "id": "jerrzi-smoky-purple",
       "url": "https://switchoddities.com/products/jerrzi-smokey-purple",
       "observed": {
         "name": "Jerrzi Smokey Purple"
@@ -64567,7 +64547,7 @@
       "source": "switchoddities",
       "sourceId": "10129915445532",
       "kind": "switches",
-      "id": "aeboards-raed-he",
+      "id": "aeboards-raeds-he",
       "url": "https://switchoddities.com/products/aeboards-raed-he",
       "observed": {
         "name": "AEboards Raed HE"
@@ -64818,7 +64798,7 @@
       "source": "switchoddities",
       "sourceId": "10129977835804",
       "kind": "switches",
-      "id": "swagkeys-x-knt-taro",
+      "id": "sw-x-knt-taro",
       "url": "https://switchoddities.com/products/swagkeys-x-knt-taro-linear",
       "observed": {
         "name": "Swagkeys x KNT Taro Linear",
@@ -64981,7 +64961,7 @@
       "source": "switchoddities",
       "sourceId": "10160796008732",
       "kind": "switches",
-      "id": "lekker-v2-45",
+      "id": "lekker-v2-45g",
       "url": "https://switchoddities.com/products/lekker-v2-45-linear",
       "observed": {
         "name": "Lekker V2 45 Linear",
@@ -64992,7 +64972,7 @@
       "source": "switchoddities",
       "sourceId": "10160796434716",
       "kind": "switches",
-      "id": "lekker-v2-60",
+      "id": "lekker-v2-60g",
       "url": "https://switchoddities.com/products/lekker-v2-60-linear",
       "observed": {
         "name": "Lekker V2 60 Linear",
@@ -68096,7 +68076,7 @@
       "source": "switchoddities",
       "sourceId": "10944529793308",
       "kind": "switches",
-      "id": "aesco-pop-lite-inductive-switch",
+      "id": "aesco-pop-lite-inductive",
       "url": "https://switchoddities.com/products/aesco-pop-lite-inductive-switch",
       "observed": {
         "name": "AESCO Pop Lite Inductive Switch"
@@ -68577,7 +68557,7 @@
       "source": "switchoddities",
       "sourceId": "10970633371932",
       "kind": "switches",
-      "id": "gateron-smoothie-chocolate",
+      "id": "gateron-chocolate-smoothie",
       "url": "https://switchoddities.com/products/gateron-smoothie-chocolate",
       "observed": {
         "name": "Gateron Smoothie Chocolate"
@@ -68970,7 +68950,7 @@
       "source": "switchoddities",
       "sourceId": "8119042703644",
       "kind": "switches",
-      "id": "mengmoda-mmd-holy-panda",
+      "id": "mmd-holy-panda",
       "url": "https://switchoddities.com/products/mengmoda-mmd-holy-panda",
       "observed": {
         "name": "Mengmoda (MMD) Holy Panda"
@@ -69240,7 +69220,7 @@
       "source": "switchoddities",
       "sourceId": "8119054237980",
       "kind": "switches",
-      "id": "mmd-mmd-ice-cream",
+      "id": "mengmoda-ice-cream",
       "url": "https://switchoddities.com/products/mengmoda-mmd-ice-cream-pre-lubed",
       "observed": {
         "name": "Mengmoda (MMD) Ice Cream (Pre"
@@ -69566,7 +69546,7 @@
       "source": "switchoddities",
       "sourceId": "8119069835548",
       "kind": "switches",
-      "id": "flcmmk-ice-mint-switch",
+      "id": "fl-cmmk-ice-mint",
       "url": "https://switchoddities.com/products/flcmmk-ice-mint-switch",
       "observed": {
         "name": "FLCMMK Ice Mint Switch"
@@ -70702,7 +70682,7 @@
       "source": "switchoddities",
       "sourceId": "8119099949340",
       "kind": "switches",
-      "id": "akko-wine-white-prelubed",
+      "id": "akko-wine-white",
       "url": "https://switchoddities.com/products/akko-wine-white-prelubed",
       "observed": {
         "name": "Akko Wine White"
@@ -70816,16 +70796,6 @@
       "url": "https://switchoddities.com/products/keychron-low-profile-optical-orange",
       "observed": {
         "name": "Keychron Low Profile Optical Orange"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119104667932",
-      "kind": "switches",
-      "id": "keychron-low-profile-optical-pack",
-      "url": "https://switchoddities.com/products/keychron-low-profile-optical-pack",
-      "observed": {
-        "name": "Keychron Low Profile Optical Pack"
       }
     },
     {
@@ -71222,7 +71192,7 @@
       "source": "switchoddities",
       "sourceId": "8119118299420",
       "kind": "switches",
-      "id": "varmilo-x-ttc-speed-gold",
+      "id": "ttc-x-varmilo-speed-gold",
       "url": "https://switchoddities.com/products/varmilo-x-ttc-speed-gold",
       "observed": {
         "name": "Varmilo x TTC Speed Gold"
@@ -71681,16 +71651,6 @@
     },
     {
       "source": "switchoddities",
-      "sourceId": "8119137796380",
-      "kind": "switches",
-      "id": "punkshoo-melody-factory-errors",
-      "url": "https://switchoddities.com/products/punkshoo-melody-factory-errors",
-      "observed": {
-        "name": "PuNkShoO Melody Factory Errors"
-      }
-    },
-    {
-      "source": "switchoddities",
       "sourceId": "8119138582812",
       "kind": "switches",
       "id": "huano-turquoise",
@@ -71993,7 +71953,7 @@
       "source": "switchoddities",
       "sourceId": "8119146381596",
       "kind": "switches",
-      "id": "bsun-red-lychee",
+      "id": "bsun-lychee-red",
       "url": "https://switchoddities.com/products/bsun-red-lychee",
       "observed": {
         "name": "BSUN Red Lychee"
@@ -72273,7 +72233,7 @@
       "source": "switchoddities",
       "sourceId": "8119155818780",
       "kind": "switches",
-      "id": "mengmoda-mmd-matcha-ice-cream",
+      "id": "mmd-matcha-ice-cream",
       "url": "https://switchoddities.com/products/mengmoda-mmd-matcha-ice-cream",
       "observed": {
         "name": "Mengmoda (MMD) Matcha Ice Cream"
@@ -72425,7 +72385,7 @@
       "source": "switchoddities",
       "sourceId": "8146576343324",
       "kind": "switches",
-      "id": "akko-x-gateron-pink",
+      "id": "akko-gateron-pink",
       "url": "https://switchoddities.com/products/akko-x-gateron-pink",
       "observed": {
         "name": "Akko x Gateron Pink"
@@ -72435,7 +72395,7 @@
       "source": "switchoddities",
       "sourceId": "8146585059612",
       "kind": "switches",
-      "id": "akko-x-gateron-orange",
+      "id": "akko-gateron-orange",
       "url": "https://switchoddities.com/products/akko-x-gateron-orange",
       "observed": {
         "name": "Akko x Gateron Orange"
@@ -72558,7 +72518,7 @@
       "source": "switchoddities",
       "sourceId": "8149391409436",
       "kind": "switches",
-      "id": "ttc-rabbit-og",
+      "id": "ttc-og-rabbit",
       "url": "https://switchoddities.com/products/ttc-rabbit-og",
       "observed": {
         "name": "TTC Rabbit OG"
@@ -73236,7 +73196,7 @@
       "source": "switchoddities",
       "sourceId": "8203799068956",
       "kind": "switches",
-      "id": "punkshoo-melody-stock",
+      "id": "punkshoo-melody",
       "url": "https://switchoddities.com/products/aflion-melody-stock-variant",
       "observed": {
         "name": "Punkshoo Melody (stock)"
@@ -73362,7 +73322,7 @@
       "source": "switchoddities",
       "sourceId": "8222292738332",
       "kind": "switches",
-      "id": "kfa-n20-laughing-gas",
+      "id": "kfa-n2o-laughing-gas",
       "url": "https://switchoddities.com/products/kfa-n20-laughing-gas",
       "observed": {
         "name": "KFA N20 (Laughing Gas)",
@@ -73574,7 +73534,7 @@
       "source": "switchoddities",
       "sourceId": "8240455549212",
       "kind": "switches",
-      "id": "glorious-pandas",
+      "id": "glorious-panda",
       "url": "https://switchoddities.com/products/glorious-pandas",
       "observed": {
         "name": "Glorious Pandas"
@@ -74755,7 +74715,7 @@
       "source": "switchoddities",
       "sourceId": "8346168000796",
       "kind": "switches",
-      "id": "dangkeebs-blueberry-swirl",
+      "id": "blueberry-swirl",
       "url": "https://switchoddities.com/products/dangkeebs-blueberry-swirl",
       "observed": {
         "name": "Dangkeebs Blueberry Swirl",
@@ -74768,7 +74728,7 @@
       "source": "switchoddities",
       "sourceId": "8346168328476",
       "kind": "switches",
-      "id": "dangkeebs-cookies-n-cream",
+      "id": "cookies-n-cream",
       "url": "https://switchoddities.com/products/dangkeebs-cookies-n-cream",
       "observed": {
         "name": "Dangkeebs Cookies n' Cream",
@@ -74781,7 +74741,7 @@
       "source": "switchoddities",
       "sourceId": "8346168590620",
       "kind": "switches",
-      "id": "dangkeebs-melon-milk-linear",
+      "id": "melon-milk-linear",
       "url": "https://switchoddities.com/products/dangkeebs-melon-milk-linear",
       "observed": {
         "name": "Dangkeebs Melon Milk - Linear",
@@ -74794,7 +74754,7 @@
       "source": "switchoddities",
       "sourceId": "8346168787228",
       "kind": "switches",
-      "id": "dangkeebs-melon-milk-tactile",
+      "id": "melon-milk-tactile",
       "url": "https://switchoddities.com/products/dangkeebs-melon-milk-tactile",
       "observed": {
         "name": "Dangkeebs Melon Milk - Tactile",
@@ -74807,7 +74767,7 @@
       "source": "switchoddities",
       "sourceId": "8346168983836",
       "kind": "switches",
-      "id": "dangkeebs-banana-milk-tactile",
+      "id": "banana-milk-tactile",
       "url": "https://switchoddities.com/products/dangkeebs-banana-milk-tactile",
       "observed": {
         "name": "Dangkeebs Banana Milk - Tactile",
@@ -74820,7 +74780,7 @@
       "source": "switchoddities",
       "sourceId": "8346169082140",
       "kind": "switches",
-      "id": "dangkeebs-banana-milk-linear",
+      "id": "banana-milk-linear",
       "url": "https://switchoddities.com/products/dangkeebs-banana-milk-linear",
       "observed": {
         "name": "Dangkeebs Banana Milk - Linear",
@@ -74833,7 +74793,7 @@
       "source": "switchoddities",
       "sourceId": "8346170949916",
       "kind": "switches",
-      "id": "dangkeebs-strawberry-milk-ice-linear",
+      "id": "strawberry-milk-ice-linear",
       "url": "https://switchoddities.com/products/dangkeebs-strawberry-milk-ice-linear",
       "observed": {
         "name": "Dangkeebs Strawberry Milk Ice - Linear",
@@ -74846,7 +74806,7 @@
       "source": "switchoddities",
       "sourceId": "8346171113756",
       "kind": "switches",
-      "id": "dangkeebs-strawberry-milk-ice-tactile",
+      "id": "strawberry-milk-ice-tactile",
       "url": "https://switchoddities.com/products/dangkeebs-strawberry-milk-ice-tactile",
       "observed": {
         "name": "Dangkeebs Strawberry Milk Ice - Tactile",
@@ -75060,7 +75020,7 @@
       "source": "switchoddities",
       "sourceId": "8369125228828",
       "kind": "switches",
-      "id": "mountain-45-speed",
+      "id": "mountain-45g-speed",
       "url": "https://switchoddities.com/products/mountain-gaming-45-speed",
       "observed": {
         "name": "Mountain Linear 45 Speed",
@@ -75183,7 +75143,7 @@
       "source": "switchoddities",
       "sourceId": "8423141081372",
       "kind": "switches",
-      "id": "outemu-smokey-blue",
+      "id": "outemu-smoky-blue",
       "url": "https://switchoddities.com/products/outemu-smokey-blue",
       "observed": {
         "name": "Outemu Smokey Blue"
@@ -75193,7 +75153,7 @@
       "source": "switchoddities",
       "sourceId": "8423161856284",
       "kind": "switches",
-      "id": "outemu-smokey-red",
+      "id": "outemu-smoky-red",
       "url": "https://switchoddities.com/products/outemu-smokey-red",
       "observed": {
         "name": "Outemu Smokey Red"
@@ -76667,7 +76627,7 @@
       "source": "switchoddities",
       "sourceId": "8602362413340",
       "kind": "switches",
-      "id": "durock-t1-smokey",
+      "id": "durock-smokey-t1",
       "url": "https://switchoddities.com/products/durock-t1-smokey",
       "observed": {
         "name": "Durock T1 - Smokey",
@@ -77189,7 +77149,7 @@
       "source": "switchoddities",
       "sourceId": "8615381958940",
       "kind": "switches",
-      "id": "kailh-box-marshmallow",
+      "id": "kailh-box-marshmallow-linear",
       "url": "https://switchoddities.com/products/kailh-box-marshmallow-linear",
       "observed": {
         "name": "Kailh Box Marshmallow Linear",
@@ -77232,7 +77192,7 @@
       "source": "switchoddities",
       "sourceId": "8615554613532",
       "kind": "switches",
-      "id": "akko-x-gateron-yellow",
+      "id": "akko-gateron-yellow",
       "url": "https://switchoddities.com/products/akko-x-gateron-yellow",
       "observed": {
         "name": "Akko x Gateron Yellow"
@@ -77242,7 +77202,7 @@
       "source": "switchoddities",
       "sourceId": "8615574864156",
       "kind": "switches",
-      "id": "akko-v3-pro-lavender-purple",
+      "id": "akko-lavender-purple-v3-pro",
       "url": "https://switchoddities.com/products/akko-v3-pro-lavender-purple",
       "observed": {
         "name": "Akko V3 Pro Lavender Purple"
@@ -77252,7 +77212,7 @@
       "source": "switchoddities",
       "sourceId": "8615585513756",
       "kind": "switches",
-      "id": "akko-v3-pro-silver",
+      "id": "akko-silver-v3-pro",
       "url": "https://switchoddities.com/products/akko-v3-pro-silver",
       "observed": {
         "name": "Akko V3 Pro Silver"
@@ -77522,7 +77482,7 @@
       "source": "switchoddities",
       "sourceId": "8763181334812",
       "kind": "switches",
-      "id": "knc-keys-green-jacket-tactile",
+      "id": "green-jacket-tactile",
       "url": "https://switchoddities.com/products/copy-of-1kelseys-template",
       "observed": {
         "name": "KNC Keys Green Jacket Tactile",
@@ -77574,7 +77534,7 @@
       "source": "switchoddities",
       "sourceId": "8763249918236",
       "kind": "switches",
-      "id": "knc-keys-chocolate-crinkle-cookie",
+      "id": "knc-keys-chocolate-crinkle-cookies",
       "url": "https://switchoddities.com/products/copy-of-knc-keys-red-jacket-linear-v1-redux",
       "observed": {
         "name": "KNC Keys Chocolate Crinkle Cookie",
@@ -77587,7 +77547,7 @@
       "source": "switchoddities",
       "sourceId": "8763273937180",
       "kind": "switches",
-      "id": "tofutypes-x-knc-keys-tofu",
+      "id": "knc-keys-x-tofutypes-tofu",
       "url": "https://switchoddities.com/products/copy-of-knc-keys-chocolate-crinkle-cookie",
       "observed": {
         "name": "TofuTypes x KNC Keys Tofu",
@@ -77613,7 +77573,7 @@
       "source": "switchoddities",
       "sourceId": "8763276165404",
       "kind": "switches",
-      "id": "knc-keys-ube-crinkle-cookie",
+      "id": "ube-crinkle-cookie",
       "url": "https://switchoddities.com/products/copy-of-knc-keys-ube-crinkle-cookie-v-2",
       "observed": {
         "name": "KNC Keys Ube Crinkle Cookie",
@@ -78402,7 +78362,7 @@
       "source": "switchoddities",
       "sourceId": "8834661089564",
       "kind": "switches",
-      "id": "builtbynim-bbn-tactile",
+      "id": "bbn-tactile",
       "url": "https://switchoddities.com/products/builtbynim-bbn-tactile",
       "observed": {
         "name": "BuiltByNim (BBN) Tactile",
@@ -80408,7 +80368,7 @@
       "source": "switchoddities",
       "sourceId": "8994417475868",
       "kind": "switches",
-      "id": "gateron-north-pole-yellow-v2",
+      "id": "gateron-north-pole-v2-yellow",
       "url": "https://switchoddities.com/products/gateron-north-pole-yellow-v2",
       "observed": {
         "name": "Gateron North Pole Yellow V2"
@@ -80521,7 +80481,7 @@
       "source": "switchoddities",
       "sourceId": "9014158459164",
       "kind": "switches",
-      "id": "swagkeys-s-s-s",
+      "id": "sw-s-s-s",
       "url": "https://switchoddities.com/products/swagkeys-s-s-s",
       "observed": {
         "name": "Swagkeys S.S.S."
@@ -81618,7 +81578,7 @@
       "source": "switchoddities",
       "sourceId": "9327473951004",
       "kind": "switches",
-      "id": "dareu-optical-purple-gold",
+      "id": "dareu-gold-purple-optical",
       "url": "https://switchoddities.com/products/dareu-optical-purple-gold",
       "observed": {
         "name": "Dareu Optical Purple Gold"
@@ -81718,7 +81678,7 @@
       "source": "switchoddities",
       "sourceId": "9329487872284",
       "kind": "switches",
-      "id": "huano-tortiseshell-v2",
+      "id": "huano-tortoiseshell-v2",
       "url": "https://switchoddities.com/products/huano-tortiseshell-v2",
       "observed": {
         "name": "Huano Tortiseshell V2"
@@ -81758,7 +81718,7 @@
       "source": "switchoddities",
       "sourceId": "9333102641436",
       "kind": "switches",
-      "id": "royal-kludge-silver",
+      "id": "rk-silver",
       "url": "https://switchoddities.com/products/royal-kludge-silver",
       "observed": {
         "name": "Royal Kludge Silver"
@@ -81888,7 +81848,7 @@
       "source": "switchoddities",
       "sourceId": "9333263925532",
       "kind": "switches",
-      "id": "outemu-brown",
+      "id": "outemu-brown-45g-actuation",
       "url": "https://switchoddities.com/products/outemu-brown",
       "observed": {
         "name": "Outemu Brown"
@@ -82854,7 +82814,7 @@
       "source": "switchoddities",
       "sourceId": "9450794680604",
       "kind": "switches",
-      "id": "ktt-retro-silver-dustproof",
+      "id": "ktt-dustproof-retro-silver",
       "url": "https://switchoddities.com/products/ktt-retro-silver-dustproof",
       "observed": {
         "name": "KTT Retro Silver Dustproof"
@@ -83364,7 +83324,7 @@
       "source": "switchoddities",
       "sourceId": "9496282005788",
       "kind": "switches",
-      "id": "gateron-smoothie-sea-salt",
+      "id": "gateron-sea-salt-smoothie",
       "url": "https://switchoddities.com/products/gateron-smoothie-sea-salt",
       "observed": {
         "name": "Gateron Smoothie Sea Salt"
@@ -83724,7 +83684,7 @@
       "source": "switchoddities",
       "sourceId": "9508829921564",
       "kind": "switches",
-      "id": "durock-ice-king",
+      "id": "durock-ice-king-linear",
       "url": "https://switchoddities.com/products/durock-ice-king-linear",
       "observed": {
         "name": "Durock Ice King Linear",
@@ -84711,7 +84671,7 @@
       "source": "switchoddities",
       "sourceId": "9596033171740",
       "kind": "switches",
-      "id": "durock-ice-king",
+      "id": "durock-ice-king-linear",
       "url": "https://switchoddities.com/products/durock-ice-king-linear-1",
       "observed": {
         "name": "Durock Ice King (Linear)",
@@ -85004,7 +84964,7 @@
       "source": "switchoddities",
       "sourceId": "9609113010460",
       "kind": "switches",
-      "id": "togar-gorrilla",
+      "id": "togar-gorilla",
       "url": "https://switchoddities.com/products/togar-gorrilla",
       "observed": {
         "name": "Togar Gorrilla"
@@ -85206,7 +85166,7 @@
       "source": "switchoddities",
       "sourceId": "9678465073436",
       "kind": "switches",
-      "id": "outemu-brown-55g",
+      "id": "outemu-brown-55g-actuation",
       "url": "https://switchoddities.com/products/outemu-brown-1",
       "observed": {
         "name": "Outemu Brown"
@@ -86089,7 +86049,7 @@
       "source": "switchoddities",
       "sourceId": "9954763309340",
       "kind": "switches",
-      "id": "jagor-bald-brother-ice-grass-v2",
+      "id": "bald-brother-jagor-ice-grass-v2",
       "url": "https://switchoddities.com/products/jagor-bald-brother-ice-grass-v2",
       "observed": {
         "name": "Jagor/Bald Brother Ice Grass V2"
@@ -86099,7 +86059,7 @@
       "source": "switchoddities",
       "sourceId": "9954766094620",
       "kind": "switches",
-      "id": "jagor-bald-brother-ice-cream-v2",
+      "id": "bald-brother-jagor-ice-cream-v2",
       "url": "https://switchoddities.com/products/jagor-bald-brother-ice-cream-v2",
       "observed": {
         "name": "Jagor/Bald Brother Ice Cream V2"
@@ -86706,7 +86666,7 @@
       "source": "switchoddities",
       "sourceId": "9999423013148",
       "kind": "switches",
-      "id": "akko-x-monsgeek-green-fog",
+      "id": "akko-x-monsgeek-fog-green",
       "url": "https://switchoddities.com/products/akko-x-monsgeek-green-fog",
       "observed": {
         "name": "Akko x Monsgeek Green Fog"
@@ -87036,32 +86996,6 @@
         "manufacturer": "Tecsee",
         "switchType": "linear"
       }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1022",
-      "kind": "switches",
-      "id": "defective-c3-kiwi",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "'Defective' C3 Kiwi",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      },
-      "notes": "From early 2021 defective batch"
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1023",
-      "kind": "switches",
-      "id": "defective-c3-tangerine-v2-67g",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "'Defective' C3 Tangerine V2 (67g)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "linear"
-      },
-      "notes": "From early 2021 defective batch"
     },
     {
       "source": "theremingoat",
@@ -88026,7 +87960,7 @@
       "source": "theremingoat",
       "sourceId": "1101",
       "kind": "switches",
-      "id": "ttc-ice-collection-1101",
+      "id": "ttc-ice",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC ICE",
@@ -88962,7 +88896,7 @@
       "source": "theremingoat",
       "sourceId": "1183",
       "kind": "switches",
-      "id": "mengmoda-holy-panda-collection-1183",
+      "id": "mmd-holy-panda",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Mengmoda 'Holy Panda'",
@@ -89008,7 +88942,7 @@
       "source": "theremingoat",
       "sourceId": "1187",
       "kind": "switches",
-      "id": "ms-ez-dustproof-blue-collection-1187",
+      "id": "ms-ez-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "MS&EZ Dustproof Blue",
@@ -89019,7 +88953,7 @@
       "source": "theremingoat",
       "sourceId": "1188",
       "kind": "switches",
-      "id": "lc-red-collection-1188",
+      "id": "lc-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LC Red",
@@ -89031,7 +88965,7 @@
       "source": "theremingoat",
       "sourceId": "1189",
       "kind": "switches",
-      "id": "lc-blue-collection-1189",
+      "id": "lc-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LC Blue",
@@ -89247,7 +89181,7 @@
       "source": "theremingoat",
       "sourceId": "1205",
       "kind": "switches",
-      "id": "novelkeys-cream-tactile",
+      "id": "cream-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Novelkeys Cream Tactile",
@@ -89654,7 +89588,7 @@
       "source": "theremingoat",
       "sourceId": "1236",
       "kind": "switches",
-      "id": "bsun-dustproof-blue-collection-1236",
+      "id": "bsun-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Dustproof Blue",
@@ -91413,7 +91347,7 @@
       "source": "theremingoat",
       "sourceId": "1381",
       "kind": "switches",
-      "id": "ttc-ice-3-collection-1381",
+      "id": "ttc-ice",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Ice",
@@ -91493,7 +91427,7 @@
       "source": "theremingoat",
       "sourceId": "1388",
       "kind": "switches",
-      "id": "ttc-razer-dustproof-orange",
+      "id": "ttc-razer-dustproof-orange-type-b",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Razer Dustproof Orange",
@@ -92127,7 +92061,7 @@
       "source": "theremingoat",
       "sourceId": "1436",
       "kind": "switches",
-      "id": "ms-ez-dustproof-blue-collection-1436",
+      "id": "ms-ez-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "MS&EZ Dustproof Blue",
@@ -92245,7 +92179,7 @@
       "source": "theremingoat",
       "sourceId": "1445",
       "kind": "switches",
-      "id": "lc-blue-collection-1445",
+      "id": "lc-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LC Blue",
@@ -92256,7 +92190,7 @@
       "source": "theremingoat",
       "sourceId": "1446",
       "kind": "switches",
-      "id": "lc-red-collection-1446",
+      "id": "lc-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LC Red",
@@ -92912,7 +92846,7 @@
       "source": "theremingoat",
       "sourceId": "1499",
       "kind": "switches",
-      "id": "mengmoda-holy-panda-collection-1499",
+      "id": "mmd-holy-panda",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Mengmoda Holy Panda",
@@ -93162,7 +93096,7 @@
       "source": "theremingoat",
       "sourceId": "1517",
       "kind": "switches",
-      "id": "silent-coral",
+      "id": "coral-silent",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Silent Coral",
@@ -93174,7 +93108,7 @@
       "source": "theremingoat",
       "sourceId": "1518",
       "kind": "switches",
-      "id": "silent-blue-macaw",
+      "id": "blue-macaw-silent",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Silent Blue Macaw",
@@ -93566,7 +93500,7 @@
       "source": "theremingoat",
       "sourceId": "1549",
       "kind": "switches",
-      "id": "tecsee-sky-blue-cloud-linear",
+      "id": "tecsee-blue-sky-cloud-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Tecsee Sky Blue Cloud Linear",
@@ -93589,7 +93523,7 @@
       "source": "theremingoat",
       "sourceId": "1550",
       "kind": "switches",
-      "id": "tecsee-sky-blue-cloud-tactile",
+      "id": "tecsee-blue-sky-cloud-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Tecsee Sky Blue Cloud Tactile",
@@ -94671,7 +94605,7 @@
       "source": "theremingoat",
       "sourceId": "1635",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-brown",
+      "id": "gateron-ks-9-brown-pro-2-0",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Brown",
@@ -94780,7 +94714,7 @@
       "source": "theremingoat",
       "sourceId": "1647",
       "kind": "switches",
-      "id": "ktt-phalaenopsis-collection-1647",
+      "id": "ktt-phalaenopsis",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Phalaenopsis",
@@ -95470,7 +95404,7 @@
       "source": "theremingoat",
       "sourceId": "1710",
       "kind": "switches",
-      "id": "haimu-hearbeat",
+      "id": "haimu-heartbeat",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Haimu Hearbeat",
@@ -95735,7 +95669,7 @@
       "source": "theremingoat",
       "sourceId": "1732",
       "kind": "switches",
-      "id": "jerrzi-blue-collection-1732",
+      "id": "jerrzi-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Jerrzi Blue",
@@ -95855,7 +95789,7 @@
       "source": "theremingoat",
       "sourceId": "1741",
       "kind": "switches",
-      "id": "leobog-leek-chive",
+      "id": "leobog-chive-leek",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Leobog Leek/Chive",
@@ -96349,7 +96283,7 @@
       "source": "theremingoat",
       "sourceId": "178",
       "kind": "switches",
-      "id": "huano-dustproof-black-collection-178",
+      "id": "huano-dustproof-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Dustproof Black",
@@ -97786,7 +97720,7 @@
       "source": "theremingoat",
       "sourceId": "190",
       "kind": "switches",
-      "id": "content-red-collection-190",
+      "id": "content-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Content Red",
@@ -97954,7 +97888,7 @@
       "source": "theremingoat",
       "sourceId": "1912",
       "kind": "switches",
-      "id": "bsun-dustproof-blue-3-collection-1912",
+      "id": "bsun-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Dustproof Blue",
@@ -97966,7 +97900,7 @@
       "source": "theremingoat",
       "sourceId": "1913",
       "kind": "switches",
-      "id": "bsun-racoon-panda-v2",
+      "id": "bsun-raccoon-panda-v2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Racoon Panda V2",
@@ -98086,7 +98020,7 @@
       "source": "theremingoat",
       "sourceId": "1923",
       "kind": "switches",
-      "id": "bsun-lychee-black",
+      "id": "bsun-black-lychee",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Lychee Black",
@@ -98176,18 +98110,6 @@
         "name": "Content Green",
         "manufacturer": "KTT",
         "switchType": "clicky"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1930",
-      "kind": "switches",
-      "id": "punkshoo-melody-factory-error",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "PunkShoo Melody Factory Error",
-        "manufacturer": "Aflion",
-        "switchType": "tactile"
       }
     },
     {
@@ -98591,7 +98513,7 @@
       "source": "theremingoat",
       "sourceId": "1968",
       "kind": "switches",
-      "id": "ajazz-as-sky-blue",
+      "id": "ajazz-as-blue-sky",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Ajazz AS Sky Blue",
@@ -98800,7 +98722,7 @@
       "source": "theremingoat",
       "sourceId": "1984",
       "kind": "switches",
-      "id": "bolsa-namazu",
+      "id": "bolsa-supply-namazu",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Bolsa Namazu",
@@ -98907,7 +98829,7 @@
       "source": "theremingoat",
       "sourceId": "1993",
       "kind": "switches",
-      "id": "gateron-baby-racoon",
+      "id": "gateron-baby-raccoon",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Baby Racoon",
@@ -100218,7 +100140,7 @@
       "source": "theremingoat",
       "sourceId": "210",
       "kind": "switches",
-      "id": "jixian-black-collection-210",
+      "id": "jixian-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Jixian Black",
@@ -100351,18 +100273,6 @@
       "observed": {
         "name": "Kaiche Blue",
         "switchType": "clicky"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2110",
-      "kind": "switches",
-      "id": "factory-defect-sp-star-meteor-white",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Factory Defect SP Star Meteor White",
-        "manufacturer": "SP Star",
-        "switchType": "linear"
       }
     },
     {
@@ -101087,7 +100997,7 @@
       "source": "theremingoat",
       "sourceId": "2168",
       "kind": "switches",
-      "id": "kailh-box-marshmallow",
+      "id": "kailh-box-marshmallow-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Kailh Box Marshmallow",
@@ -101135,7 +101045,7 @@
       "source": "theremingoat",
       "sourceId": "2171",
       "kind": "switches",
-      "id": "flcmmk-pink-glacier",
+      "id": "flcmmk-glacier-pink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "FLCMMK Pink Glacier",
@@ -101147,7 +101057,7 @@
       "source": "theremingoat",
       "sourceId": "2172",
       "kind": "switches",
-      "id": "flcmmk-purple-glacier",
+      "id": "flcmmk-glacier-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "FLCMMK Purple Glacier",
@@ -101159,7 +101069,7 @@
       "source": "theremingoat",
       "sourceId": "2173",
       "kind": "switches",
-      "id": "flcmmk-green-glacier",
+      "id": "flcmmk-glacier-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "FLCMMK Green Glacier",
@@ -102263,7 +102173,7 @@
       "source": "theremingoat",
       "sourceId": "2258",
       "kind": "switches",
-      "id": "ktt-carpenteria",
+      "id": "ktt-carpinteria",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Carpenteria",
@@ -102547,7 +102457,7 @@
       "source": "theremingoat",
       "sourceId": "2285",
       "kind": "switches",
-      "id": "keychron-camo-camel-patt-collection-2285",
+      "id": "keychron-camo-camel-patt-2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Camel (Patt. 2)",
@@ -102595,7 +102505,7 @@
       "source": "theremingoat",
       "sourceId": "2289",
       "kind": "switches",
-      "id": "keychron-camo-camel-patt-2-collection-2289",
+      "id": "keychron-camo-camel-patt-2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Camel (Patt. 2)",
@@ -103178,7 +103088,7 @@
       "source": "theremingoat",
       "sourceId": "2347",
       "kind": "switches",
-      "id": "skyloong-chocolate-rose-collection-2347",
+      "id": "skyloong-chocolate-rose",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Skyloong Chocolate Rose",
@@ -103589,7 +103499,7 @@
       "source": "theremingoat",
       "sourceId": "2379",
       "kind": "switches",
-      "id": "flower-shadow-collection-2379",
+      "id": "flower-shadow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Flower Shadow",
@@ -103725,7 +103635,7 @@
       "source": "theremingoat",
       "sourceId": "2389",
       "kind": "switches",
-      "id": "ktt-macron-pink",
+      "id": "ktt-macaron-pink-chinajoy-edition",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macron Pink",
@@ -104238,7 +104148,7 @@
       "source": "theremingoat",
       "sourceId": "2427",
       "kind": "switches",
-      "id": "content-blue-black-bottom-collection-2427",
+      "id": "content-blue-black-bottom",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Content Blue (Black Bottom)",
@@ -104895,7 +104805,7 @@
       "source": "theremingoat",
       "sourceId": "2479",
       "kind": "switches",
-      "id": "akko-x-gateron-yellow",
+      "id": "akko-gateron-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Akko x Gateron Yellow",
@@ -107280,7 +107190,7 @@
       "source": "theremingoat",
       "sourceId": "2682",
       "kind": "switches",
-      "id": "lcet-v3-blue",
+      "id": "lcet-blue-v3",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LCET V3 Blue",
@@ -107291,7 +107201,7 @@
       "source": "theremingoat",
       "sourceId": "2683",
       "kind": "switches",
-      "id": "ktt-macaron-red-3-collection-2683",
+      "id": "ktt-macaron-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Red",
@@ -107303,7 +107213,7 @@
       "source": "theremingoat",
       "sourceId": "2684",
       "kind": "switches",
-      "id": "ktt-macaron-orange-3-collection-2684",
+      "id": "ktt-macaron-orange",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Orange",
@@ -107315,7 +107225,7 @@
       "source": "theremingoat",
       "sourceId": "2685",
       "kind": "switches",
-      "id": "ktt-macaron-yellow-3-collection-2685",
+      "id": "ktt-macaron-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Yellow",
@@ -107327,7 +107237,7 @@
       "source": "theremingoat",
       "sourceId": "2686",
       "kind": "switches",
-      "id": "ktt-macaron-green-3-collection-2686",
+      "id": "ktt-macaron-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Green",
@@ -107339,7 +107249,7 @@
       "source": "theremingoat",
       "sourceId": "2687",
       "kind": "switches",
-      "id": "ktt-macaron-blue-3-collection-2687",
+      "id": "ktt-macaron-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Blue",
@@ -107351,7 +107261,7 @@
       "source": "theremingoat",
       "sourceId": "2688",
       "kind": "switches",
-      "id": "ktt-macaron-purple-3-collection-2688",
+      "id": "ktt-macaron-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Purple",
@@ -108298,7 +108208,7 @@
       "source": "theremingoat",
       "sourceId": "2760",
       "kind": "switches",
-      "id": "akko-hall-effect-cream-yellow",
+      "id": "akko-cream-yellow-hall-effect",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Akko Hall Effect Cream Yellow",
@@ -108572,7 +108482,7 @@
       "source": "theremingoat",
       "sourceId": "2784",
       "kind": "switches",
-      "id": "gateron-north-pole-v2-red",
+      "id": "gateron-north-pole-red-v2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron North Pole V2 Red",
@@ -108584,7 +108494,7 @@
       "source": "theremingoat",
       "sourceId": "2785",
       "kind": "switches",
-      "id": "gateron-north-pole-v2-brown",
+      "id": "gateron-north-pole-brown-v2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron North Pole V2 Brown",
@@ -108596,7 +108506,7 @@
       "source": "theremingoat",
       "sourceId": "2786",
       "kind": "switches",
-      "id": "gateron-north-pole-v2-silver",
+      "id": "gateron-north-pole-silver-v2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron North Pole V2 Silver",
@@ -108969,7 +108879,7 @@
       "source": "theremingoat",
       "sourceId": "2813",
       "kind": "switches",
-      "id": "content-blue-black-bottom-collection-2813",
+      "id": "content-blue-black-bottom",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Content Blue (Black Bottom)",
@@ -109131,7 +109041,7 @@
       "source": "theremingoat",
       "sourceId": "2826",
       "kind": "switches",
-      "id": "huano-quingdai-v2",
+      "id": "huano-qingdai-v2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Quingdai V2",
@@ -109359,19 +109269,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "2843",
-      "kind": "switches",
-      "id": "leobog-black-white-red-factory-error",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Leobog Black/White/Red Factory Error",
-        "manufacturer": "SOAI",
-        "switchType": "linear"
-      },
-      "notes": "Fucked Stem"
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2844",
       "kind": "switches",
       "id": "honeydew",
@@ -109410,7 +109307,7 @@
       "source": "theremingoat",
       "sourceId": "2847",
       "kind": "switches",
-      "id": "durock-ice-king",
+      "id": "durock-ice-king-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Durock Ice King",
@@ -109639,7 +109536,7 @@
       "source": "theremingoat",
       "sourceId": "2864",
       "kind": "switches",
-      "id": "gatron-dual-rail-magnetic-orange",
+      "id": "gateron-dual-rail-magnetic-orange",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gatron Dual-Rail Magnetic Orange",
@@ -109932,7 +109829,7 @@
       "source": "theremingoat",
       "sourceId": "2887",
       "kind": "switches",
-      "id": "paigu-mocha-cheese",
+      "id": "paigu-cheese-mocha",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Paigu Mocha Cheese",
@@ -110729,7 +110626,7 @@
       "source": "theremingoat",
       "sourceId": "2947",
       "kind": "switches",
-      "id": "cherry-mx-grey-5-pin",
+      "id": "cherry-mx-grey-linear-5-pin",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Cherry MX Grey (5 Pin)",
@@ -111797,7 +111694,7 @@
       "source": "theremingoat",
       "sourceId": "3026",
       "kind": "switches",
-      "id": "swagkeys-x-swk-toucan",
+      "id": "swagkeys-swk-toucan",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Swagkeys x SWK Toucan",
@@ -112428,7 +112325,7 @@
       "source": "theremingoat",
       "sourceId": "3074",
       "kind": "switches",
-      "id": "haimu-sea-orange",
+      "id": "haimu-orange-sea",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Haimu Sea Orange",
@@ -112484,7 +112381,7 @@
       "source": "theremingoat",
       "sourceId": "3079",
       "kind": "switches",
-      "id": "glove-unicorn-diamond-purple",
+      "id": "glove-diamond-unicorn-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Glove Unicorn Diamond Purple",
@@ -112507,7 +112404,7 @@
       "source": "theremingoat",
       "sourceId": "3080",
       "kind": "switches",
-      "id": "glove-unicorn-diamond-yellow",
+      "id": "glove-diamond-unicorn-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Glove Unicorn Diamond Yellow",
@@ -112518,7 +112415,7 @@
       "source": "theremingoat",
       "sourceId": "3081",
       "kind": "switches",
-      "id": "glove-unicorn-diamond-blue",
+      "id": "glove-diamond-unicorn-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Glove Unicorn Diamond Blue",
@@ -112659,7 +112556,7 @@
       "source": "theremingoat",
       "sourceId": "3092",
       "kind": "switches",
-      "id": "lcet-holy-panda-collection-3092",
+      "id": "lcet-holy-panda",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LCET \"Holy Panda\"",
@@ -113122,7 +113019,7 @@
       "source": "theremingoat",
       "sourceId": "3127",
       "kind": "switches",
-      "id": "wuque-ws-pom-plus",
+      "id": "ws-pom-plus",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Wuque WS POM+",
@@ -113666,7 +113563,7 @@
       "source": "theremingoat",
       "sourceId": "3173",
       "kind": "switches",
-      "id": "glorious-panda-silent-he",
+      "id": "glorious-panda-he-silent",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Glorious Panda Silent HE",
@@ -113714,7 +113611,7 @@
       "source": "theremingoat",
       "sourceId": "3177",
       "kind": "switches",
-      "id": "glorious-lynx-silent-he",
+      "id": "glorious-lynx-he-silent",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Glorious Lynx Silent HE",
@@ -113797,7 +113694,7 @@
       "source": "theremingoat",
       "sourceId": "3189",
       "kind": "switches",
-      "id": "wuque-studio-pearl",
+      "id": "ws-pearl",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Wuque Studio Pearl",
@@ -114249,7 +114146,7 @@
       "source": "theremingoat",
       "sourceId": "3223",
       "kind": "switches",
-      "id": "ktt-hyacinth-pro-green",
+      "id": "ktt-hyacinth-green-pro",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Hyacinth Pro Green",
@@ -114403,7 +114300,7 @@
       "source": "theremingoat",
       "sourceId": "3235",
       "kind": "switches",
-      "id": "saybour-blue-collection-3235",
+      "id": "saybour-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Saybour Blue",
@@ -115266,7 +115163,7 @@
       "source": "theremingoat",
       "sourceId": "3301",
       "kind": "switches",
-      "id": "drinkey-round-dustproof-brown",
+      "id": "drinkey-brown-round-dustproof",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Drinkey Round Dustproof Brown",
@@ -115718,7 +115615,7 @@
       "source": "theremingoat",
       "sourceId": "3336",
       "kind": "switches",
-      "id": "flower-shadow-collection-3336",
+      "id": "flower-shadow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Flower Shadow",
@@ -115774,7 +115671,7 @@
       "source": "theremingoat",
       "sourceId": "3340",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-r",
+      "id": "sillyworks-gateron-type-r",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Sillyworks x Gateron Type R",
@@ -115846,7 +115743,7 @@
       "source": "theremingoat",
       "sourceId": "3346",
       "kind": "switches",
-      "id": "aeboards-raed-he",
+      "id": "aeboards-raeds-he",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "AEBoards Raed HE",
@@ -116130,7 +116027,7 @@
       "source": "theremingoat",
       "sourceId": "3368",
       "kind": "switches",
-      "id": "gateron-longjing-tea-collection-3368",
+      "id": "gateron-longjing-tea",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Longjing Tea",
@@ -116534,7 +116431,7 @@
       "source": "theremingoat",
       "sourceId": "3399",
       "kind": "switches",
-      "id": "outemu-optical-dustproof-blue",
+      "id": "outemu-dustproof-optical-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Outemu Optical Dustproof Blue",
@@ -116619,7 +116516,7 @@
       "source": "theremingoat",
       "sourceId": "3404",
       "kind": "switches",
-      "id": "ktek-magnetic-switch",
+      "id": "ktek-magnetic",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTEK Magnetic Switch",
@@ -117432,7 +117329,7 @@
       "source": "theremingoat",
       "sourceId": "3468",
       "kind": "switches",
-      "id": "huano-populous-yellow",
+      "id": "huano-populus-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Populous Yellow",
@@ -117468,7 +117365,7 @@
       "source": "theremingoat",
       "sourceId": "3470",
       "kind": "switches",
-      "id": "huano-speedy-yellow-pro",
+      "id": "huano-speed-yellow-pro",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Speedy Yellow Pro",
@@ -117760,7 +117657,7 @@
       "source": "theremingoat",
       "sourceId": "3497",
       "kind": "switches",
-      "id": "clackbait-x-knc-keys-clackbit",
+      "id": "clackbait-x-knc-keys-clackbits",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Clackbait x KNC Keys Clackbit",
@@ -118187,7 +118084,7 @@
       "source": "theremingoat",
       "sourceId": "3534",
       "kind": "switches",
-      "id": "kfa-x-bsun-pistachio-gelato",
+      "id": "kfa-bsun-pistachio-gelato",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KFA x BSUN Pistachio Gelato",
@@ -118941,7 +118838,7 @@
       "source": "theremingoat",
       "sourceId": "3597",
       "kind": "switches",
-      "id": "gateron-longjing-tea-collection-3597",
+      "id": "gateron-longjing-tea",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Longjing Tea",
@@ -121581,7 +121478,7 @@
       "source": "theremingoat",
       "sourceId": "3806",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-l",
+      "id": "sillyworks-gateron-type-l",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Sillyworks x Gateron Type L",
@@ -122884,7 +122781,7 @@
       "source": "theremingoat",
       "sourceId": "3905",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-s",
+      "id": "sillyworks-gateron-type-s",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Sillyworks x Gateron Type S",
@@ -122920,7 +122817,7 @@
       "source": "theremingoat",
       "sourceId": "3908",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-a",
+      "id": "sillyworks-gateron-type-a",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Sillyworks x Gateron Type A",
@@ -123129,7 +123026,7 @@
       "source": "theremingoat",
       "sourceId": "3924",
       "kind": "switches",
-      "id": "huano-aoki-aoki",
+      "id": "huano-aoki",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Aoki Aoki",
@@ -124035,7 +123932,7 @@
       "source": "theremingoat",
       "sourceId": "3994",
       "kind": "switches",
-      "id": "gateron-full-pom-strawberry-smoothie",
+      "id": "gateron-full-pom-smoothie-strawberry",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Full POM Strawberry Smoothie",
@@ -127446,7 +127343,7 @@
       "source": "theremingoat",
       "sourceId": "432",
       "kind": "switches",
-      "id": "saybour-blue-3-collection-432",
+      "id": "saybour-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Saybour Blue",
@@ -127996,7 +127893,7 @@
       "source": "theremingoat",
       "sourceId": "473",
       "kind": "switches",
-      "id": "hi-tek-725-white-one-eye-collection-473",
+      "id": "hi-tek-725-white-one-eye",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 White Linear (One Eye)",
@@ -128400,7 +128297,7 @@
       "source": "theremingoat",
       "sourceId": "503",
       "kind": "switches",
-      "id": "dai-ichi-cl-1145-green-collection-503",
+      "id": "dai-ichi-cl-1145-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Dai-Ichi CL-1145 Green",
@@ -129316,7 +129213,7 @@
       "source": "theremingoat",
       "sourceId": "580",
       "kind": "switches",
-      "id": "gateron-silent-black-ks-3",
+      "id": "gateron-ks-3-black-silent",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Black",
@@ -130162,7 +130059,7 @@
       "source": "theremingoat",
       "sourceId": "643",
       "kind": "switches",
-      "id": "greetech-green-collection-643",
+      "id": "greetech-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Greetech Green",
@@ -130813,7 +130710,7 @@
       "source": "theremingoat",
       "sourceId": "695",
       "kind": "switches",
-      "id": "dai-ichi-cl-1145-green-collection-695",
+      "id": "dai-ichi-cl-1145-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Dai-Ichi CL-1145 Green",
@@ -131431,7 +131328,7 @@
       "source": "theremingoat",
       "sourceId": "75",
       "kind": "switches",
-      "id": "aliaz-60g",
+      "id": "gateron-aliaz-silent-60-gf",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Aliaz (60g.)",
@@ -131513,7 +131410,7 @@
       "source": "theremingoat",
       "sourceId": "76",
       "kind": "switches",
-      "id": "aliaz-70g",
+      "id": "gateron-aliaz-silent-70-gf",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Aliaz (70g.)",
@@ -131643,7 +131540,7 @@
       "source": "theremingoat",
       "sourceId": "77",
       "kind": "switches",
-      "id": "aliaz-80g",
+      "id": "gateron-aliaz-silent-80-gf",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Aliaz (80g.)",
@@ -131762,7 +131659,7 @@
       "source": "theremingoat",
       "sourceId": "78",
       "kind": "switches",
-      "id": "aliaz-100g",
+      "id": "gateron-aliaz-silent-100-gf",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Aliaz (100g.)",
@@ -132024,7 +131921,7 @@
       "source": "theremingoat",
       "sourceId": "8",
       "kind": "switches",
-      "id": "cherry-mx-grey-3-pin",
+      "id": "cherry-mx-grey-linear-3-pin",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Cherry MX Grey (3 Pin)",
@@ -132070,7 +131967,7 @@
       "source": "theremingoat",
       "sourceId": "802",
       "kind": "switches",
-      "id": "bsun-red-panda-v2",
+      "id": "bsun-panda-v2-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Red Panda V2",
@@ -132425,7 +132322,7 @@
       "source": "theremingoat",
       "sourceId": "833",
       "kind": "switches",
-      "id": "ttc-blueish-white",
+      "id": "ttc-bluish-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Blueish White",
@@ -132735,7 +132632,7 @@
       "source": "theremingoat",
       "sourceId": "863",
       "kind": "switches",
-      "id": "gateron-yellow-ink-v2",
+      "id": "gateron-ink-v2-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Yellow Ink V2",
@@ -132831,7 +132728,7 @@
       "source": "theremingoat",
       "sourceId": "870",
       "kind": "switches",
-      "id": "ttc-x-helix-lab-skylar",
+      "id": "ttc-helix-lab-skylar",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC x Helix Lab Skylar",
@@ -133684,7 +133581,7 @@
       "source": "theremingoat",
       "sourceId": "938",
       "kind": "switches",
-      "id": "huano-dustproof-black-collection-938",
+      "id": "huano-dustproof-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Dustproof Black",
@@ -134380,7 +134277,7 @@
       "source": "theremingoat",
       "sourceId": "990",
       "kind": "switches",
-      "id": "lcet-holy-panda-3-collection-990",
+      "id": "lcet-holy-panda",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LCET 'Holy Panda'",
@@ -134456,7 +134353,7 @@
       "source": "theremingoat",
       "sourceId": "996",
       "kind": "switches",
-      "id": "gateron-cap-yellow-milky-v2",
+      "id": "gateron-cap-milky-yellow-v2",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Yellow (Milky) V2",
@@ -134566,7 +134463,7 @@
       "source": "theremingoatscores",
       "sourceId": "023b809d1cf8",
       "kind": "switches",
-      "id": "ws-ws-pom-plus",
+      "id": "ws-pom-plus",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Wuque WS POM+",
@@ -134602,7 +134499,7 @@
       "source": "theremingoatscores",
       "sourceId": "0476a3a9890f",
       "kind": "switches",
-      "id": "zeal-clickiez-75g-linear",
+      "id": "zeal-75g-clickiez-linear",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Zeal Clickiez 75g. (Linear)",
@@ -134913,7 +134810,7 @@
       "source": "theremingoatscores",
       "sourceId": "14d937980ec4",
       "kind": "switches",
-      "id": "paigu-mocha-cheese",
+      "id": "paigu-cheese-mocha",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Paigu Mocha Cheese",
@@ -134996,7 +134893,7 @@
       "source": "theremingoatscores",
       "sourceId": "187d5292efb7",
       "kind": "switches",
-      "id": "snow-whites",
+      "id": "snow-white",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Snow Whites",
@@ -135020,7 +134917,7 @@
       "source": "theremingoatscores",
       "sourceId": "193321a15cd7",
       "kind": "switches",
-      "id": "zeal-clickiez-75g-tactile",
+      "id": "zeal-75g-clickiez-tactile",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Zeal Clickiez 75g. (Tactile)",
@@ -135032,7 +134929,7 @@
       "source": "theremingoatscores",
       "sourceId": "193a01aab30f",
       "kind": "switches",
-      "id": "zeal-clickiez-75g-clicky",
+      "id": "zeal-75g-clickiez-clicky",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Zeal Clickiez 75g. (Clicky)",
@@ -135389,7 +135286,7 @@
       "source": "theremingoatscores",
       "sourceId": "265e0ed1610b",
       "kind": "switches",
-      "id": "ttc-razer-dustproof-yellow",
+      "id": "razer-ttc-dustproof-yellow",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "TTC Razer Dustproof Yellow",
@@ -135713,7 +135610,7 @@
       "source": "theremingoatscores",
       "sourceId": "370929e30387",
       "kind": "switches",
-      "id": "gateron-vermilion-bird",
+      "id": "gateron-vermillion-bird",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Vermilion Bird",
@@ -136935,7 +136832,7 @@
       "source": "theremingoatscores",
       "sourceId": "75b2b5838fdd",
       "kind": "switches",
-      "id": "gateron-ink-blue-v1",
+      "id": "gateron-blue-ink-v1",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Ink Blue V1",
@@ -137019,7 +136916,7 @@
       "source": "theremingoatscores",
       "sourceId": "782645bc3368",
       "kind": "switches",
-      "id": "gateron-yellow-ks-8",
+      "id": "gateron-ks-8-yellow",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Yellow KS-8",
@@ -137496,7 +137393,7 @@
       "source": "theremingoatscores",
       "sourceId": "8f000059bcfa",
       "kind": "switches",
-      "id": "neapolitan-ice-creams",
+      "id": "neapolitan-ice-cream",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Neapolitan Ice Creams",
@@ -138594,7 +138491,7 @@
       "source": "theremingoatscores",
       "sourceId": "c064ae8262e2",
       "kind": "switches",
-      "id": "gateron-ink-yellow-v2",
+      "id": "gateron-ink-v2-yellow",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Ink Yellow V2",
@@ -138749,7 +138646,7 @@
       "source": "theremingoatscores",
       "sourceId": "c7173e090eb3",
       "kind": "switches",
-      "id": "ttc-x-helix-lab-skylar",
+      "id": "ttc-helix-lab-skylar",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "TTC x Helix Lab Skylar",
@@ -138785,7 +138682,7 @@
       "source": "theremingoatscores",
       "sourceId": "cb5c521ff4f3",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-r",
+      "id": "sillyworks-gateron-type-r",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Sillyworks x Gateron Type R",
@@ -139166,7 +139063,7 @@
       "source": "theremingoatscores",
       "sourceId": "e0d3c45bc6e7",
       "kind": "switches",
-      "id": "aliaz-80g",
+      "id": "gateron-aliaz-silent-80-gf",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Aliaz (80g)",
@@ -139308,7 +139205,7 @@
       "source": "theremingoatscores",
       "sourceId": "e5e9d76775bd",
       "kind": "switches",
-      "id": "ttc-razer-dustproof-orange",
+      "id": "ttc-razer-dustproof-orange-type-b",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "TTC Razer Dustproof Orange",
@@ -139380,7 +139277,7 @@
       "source": "theremingoatscores",
       "sourceId": "ec11100b4572",
       "kind": "switches",
-      "id": "rre-blacks",
+      "id": "rre-black",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "RRE Blacks",
@@ -139558,7 +139455,7 @@
       "source": "theremingoatscores",
       "sourceId": "f113d2c90923",
       "kind": "switches",
-      "id": "gatron-dual-rail-magnetic-orange",
+      "id": "gateron-dual-rail-magnetic-orange",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Dual-Rail Magnetic Orange",
@@ -139762,7 +139659,7 @@
       "source": "theremingoatscores",
       "sourceId": "f5887f830ece",
       "kind": "switches",
-      "id": "ttc-blueish-white",
+      "id": "ttc-bluish-white",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "TTC Blueish White",
@@ -140407,7 +140304,7 @@
       "source": "unikeys",
       "sourceId": "11732062699838/variant/52744435269950",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-r",
+      "id": "sillyworks-gateron-type-r",
       "url": "https://unikeyboards.com/products/sillyworks-x-gateron-type-r-tactile-switch-factory-lubed-10pcs",
       "observed": {
         "name": "SILLYWORKS X GATERON Type R Tactile",
@@ -140420,7 +140317,7 @@
       "source": "unikeys",
       "sourceId": "11732062699838/variant/52744435302718",
       "kind": "switches",
-      "id": "sillyworks-x-gateron-type-r",
+      "id": "sillyworks-gateron-type-r",
       "url": "https://unikeyboards.com/products/sillyworks-x-gateron-type-r-tactile-switch-factory-lubed-10pcs",
       "observed": {
         "name": "SILLYWORKS X GATERON Type R Tactile",
@@ -143064,7 +142961,7 @@
       "source": "unikeys",
       "sourceId": "8162239447358",
       "kind": "switches",
-      "id": "gateron-ks-3-milky-yellow-pro",
+      "id": "gateron-ks-3-milky-pro-yellow",
       "url": "https://unikeyboards.com/products/gateron-ks-3-milky-yellow-pro-linear-switch-factory-lubed-10pcs",
       "observed": {
         "name": "GATERON KS-3 Milky Yellow Pro Linear",
@@ -143112,7 +143009,7 @@
       "source": "unikeys",
       "sourceId": "8213224358206/variant/44931598385470",
       "kind": "switches",
-      "id": "vertex-v1-stock",
+      "id": "vertex-v1",
       "url": "https://unikeyboards.com/products/vertex-v1-switch",
       "observed": {
         "name": "VERTEX V1 Linear - Stock",

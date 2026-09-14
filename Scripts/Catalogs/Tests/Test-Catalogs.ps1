@@ -583,6 +583,28 @@ Test-Case 'Labels accept a colon or a dash, and company credits drop trademark s
     Assert ((Get-CatalogCreditName ('PBTfans' + [char]0x2122)) -ceq 'PBTfans') 'A trademark sign survived in a company credit.'
     Assert ((Get-CatalogLubeFreeName "Example Linear $([char]0x2013) Dry") -ceq 'Example Linear') 'An en dash lube option was not removed.'
 }
+Test-Case 'Tester options are excluded and separated unlubed labels do not create models' {
+    $tester = [ordered]@{ entry = [ordered]@{ name = 'Low Profile Keychron Optical - Low Profile Tester' }; excluded = $null }
+    Set-CatalogSwitchProduct $tester
+    Assert ($tester.excluded -match 'tester') 'A mixed tester variant was accepted as a switch model.'
+    foreach ($label in @('Un-lubed', 'Un lubed', 'Unlubed')) {
+        $name = Get-CatalogSwitchSuffixName "KFA Pink Robin Switches - $label (36)"
+        Assert ((Get-CatalogLubeFreeName $name) -ceq 'KFA Pink Robin') "Purchase option survived: $label"
+    }
+    Assert ((Get-CatalogLubeFreeName 'NK Dry Black') -ceq 'NK Dry Black') 'The named Dry product line was altered.'
+    Assert (-not (Get-CatalogSpecimenReason 'Cherry MX Brown')) 'An individual switch was excluded.'
+}
+Test-Case 'Factory defects and macro-pad hardware are not switch models' {
+    foreach ($name in @("'Defective' C3 Kiwi", 'Factory Defect SP Star Meteor White', 'Punkshoo Melody Factory Errors', 'Keychron C100 8K Giant Custom Macro Pad')) {
+        $record = [ordered]@{ entry = [ordered]@{ name = $name }; excluded = $null }
+        Set-CatalogSwitchProduct $record
+        Assert ($record.excluded) "Unwanted specimen or device accepted: $name"
+    }
+    $regular = [ordered]@{ entry = [ordered]@{ name = 'Punkshoo Melody' }; excluded = $null }
+    Set-CatalogSwitchProduct $regular
+    Assert (-not $regular.excluded) 'The regular switch was excluded with its defective specimens.'
+    Assert (-not (Get-CatalogSpecimenReason 'Example Macro Pad Keycaps')) 'The hardware filter leaked into keycap specimen filtering.'
+}
 Test-Case 'Spellings of one value agree, and only a real difference conflicts' {
     $records = New-TestRecords
     $first = Copy-Value $records[1]; $first.sourceId = 'spelling-a'; $first.entry = [ordered]@{ name = 'Spelling Example'; designer = 'biip' }

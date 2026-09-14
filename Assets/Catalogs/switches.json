@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 23,
-  "totalCount": 6091,
+  "catalogVersion": 26,
+  "totalCount": 5842,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -245,12 +245,6 @@
       "switchType": "linear"
     },
     {
-      "id": "aeboards-raed-he",
-      "name": "AEBoards Raed HE",
-      "manufacturer": "Tecsee",
-      "switchType": "tactile"
-    },
-    {
       "id": "aeboards-raed-he-white",
       "name": "AEBoards Raed HE White",
       "manufacturer": "Tecsee",
@@ -280,7 +274,9 @@
     {
       "id": "aeboards-raeds-he",
       "name": "AEboards Raeds HE",
-      "brand": "AEBoards"
+      "manufacturer": "Tecsee",
+      "brand": "AEBoards",
+      "switchType": "tactile"
     },
     {
       "id": "aesco-pop-inductive-pro",
@@ -295,11 +291,6 @@
       "manufacturer": "Kailh",
       "brand": "Aesco",
       "switchType": "linear"
-    },
-    {
-      "id": "aesco-pop-lite-inductive-switch",
-      "name": "Aesco Pop Lite Inductive Switch",
-      "brand": "Aesco"
     },
     {
       "id": "aflion-black-and-orange",
@@ -552,7 +543,8 @@
     },
     {
       "id": "ajazz-as-blue-sky",
-      "name": "Ajazz AS Blue Sky"
+      "name": "Ajazz AS Blue Sky",
+      "switchType": "tactile"
     },
     {
       "id": "ajazz-as-coral-pink",
@@ -572,11 +564,6 @@
       "id": "ajazz-as-royal-yellow",
       "name": "Ajazz AS Royal Yellow",
       "switchType": "linear"
-    },
-    {
-      "id": "ajazz-as-sky-blue",
-      "name": "Ajazz AS Sky Blue",
-      "switchType": "tactile"
     },
     {
       "id": "ajazz-big-switch-blue",
@@ -854,12 +841,15 @@
     {
       "id": "akko-cream-yellow-hall-effect",
       "name": "Akko Cream Yellow Hall Effect",
-      "brand": "Akko"
+      "manufacturer": "Outemu",
+      "brand": "Akko",
+      "switchType": "linear"
     },
     {
       "id": "akko-creamy-blue-pro-v5",
       "name": "Akko Creamy Blue Pro V5",
-      "brand": "Akko"
+      "brand": "Akko",
+      "switchType": "tactile"
     },
     {
       "id": "akko-creamy-cyan",
@@ -877,7 +867,8 @@
     {
       "id": "akko-creamy-yellow-pro-v5",
       "name": "Akko Creamy Yellow Pro V5",
-      "brand": "Akko"
+      "brand": "Akko",
+      "switchType": "linear"
     },
     {
       "id": "akko-creamy-yellow-u1",
@@ -1088,13 +1079,6 @@
       "id": "akko-glare-magnetic",
       "name": "Akko Glare Magnetic",
       "brand": "Akko"
-    },
-    {
-      "id": "akko-hall-effect-cream-yellow",
-      "name": "Akko Hall Effect Cream Yellow",
-      "manufacturer": "Outemu",
-      "brand": "Akko",
-      "switchType": "linear"
     },
     {
       "id": "akko-hall-effect-sakura-pink",
@@ -1424,42 +1408,14 @@
       "switchType": "tactile"
     },
     {
-      "id": "akko-v3-piano-pro",
-      "name": "Akko V3 Piano Pro",
-      "brand": "Akko",
-      "switchType": "linear"
-    },
-    {
       "id": "akko-v3-pro-fairy",
       "name": "Akko V3 Pro Fairy",
-      "brand": "Akko"
-    },
-    {
-      "id": "akko-v3-pro-lavender-purple",
-      "name": "Akko V3 Pro Lavender Purple",
       "brand": "Akko"
     },
     {
       "id": "akko-v3-pro-penguin",
       "name": "Akko V3 Pro Penguin",
       "brand": "Akko"
-    },
-    {
-      "id": "akko-v3-pro-silver",
-      "name": "Akko V3 Pro Silver",
-      "brand": "Akko"
-    },
-    {
-      "id": "akko-v5-creamy-blue-pro",
-      "name": "Akko V5 Creamy Blue Pro",
-      "brand": "Akko",
-      "switchType": "tactile"
-    },
-    {
-      "id": "akko-v5-creamy-yellow-pro",
-      "name": "Akko V5 Creamy Yellow Pro",
-      "brand": "Akko",
-      "switchType": "linear"
     },
     {
       "id": "akko-vintage-white",
@@ -1474,30 +1430,13 @@
       "switchType": "linear"
     },
     {
-      "id": "akko-wine-white-prelubed",
+      "id": "akko-wine-white",
       "name": "Akko Wine White",
-      "brand": "Akko"
-    },
-    {
-      "id": "akko-x-gateron-orange",
-      "name": "Akko x Gateron Orange",
-      "brand": "Akko"
-    },
-    {
-      "id": "akko-x-gateron-pink",
-      "name": "Akko x Gateron Pink",
       "brand": "Akko"
     },
     {
       "id": "akko-x-gateron-white",
       "name": "Akko x Gateron White",
-      "manufacturer": "Gateron",
-      "brand": "Akko",
-      "switchType": "linear"
-    },
-    {
-      "id": "akko-x-gateron-yellow",
-      "name": "Akko x Gateron Yellow",
       "manufacturer": "Gateron",
       "brand": "Akko",
       "switchType": "linear"
@@ -1525,11 +1464,6 @@
       "switchType": "linear"
     },
     {
-      "id": "akko-x-monsgeek-green-fog",
-      "name": "Akko x Monsgeek Green Fog",
-      "brand": "Akko"
-    },
-    {
       "id": "akko-x-ttc-demon",
       "name": "Akko x TTC Demon",
       "manufacturer": "TTC",
@@ -1553,30 +1487,6 @@
       "id": "alexotos-granite",
       "name": "Alexotos Granite",
       "switchType": "linear"
-    },
-    {
-      "id": "aliaz-100g",
-      "name": "Aliaz (100g.)",
-      "manufacturer": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "aliaz-60g",
-      "name": "Aliaz (60g.)",
-      "manufacturer": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "aliaz-70g",
-      "name": "Aliaz (70g.)",
-      "manufacturer": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "aliaz-80g",
-      "name": "Aliaz (80g.)",
-      "manufacturer": "Gateron",
-      "switchType": "tactile"
     },
     {
       "id": "all-clack",
@@ -2122,14 +2032,6 @@
       "switchType": "linear"
     },
     {
-      "id": "attack-shark-jelly-blue",
-      "name": "Attack Shark Jelly Blue"
-    },
-    {
-      "id": "attack-shark-jelly-green",
-      "name": "Attack Shark Jelly Green"
-    },
-    {
       "id": "attack-shark-milky-white",
       "name": "Attack Shark Milky White"
     },
@@ -2368,12 +2270,16 @@
       "id": "banana-milk-linear",
       "name": "Banana Milk Linear",
       "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "linear"
     },
     {
       "id": "banana-milk-tactile",
       "name": "Banana Milk Tactile",
       "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "tactile"
     },
     {
@@ -2462,6 +2368,7 @@
       "id": "bbn-tactile",
       "name": "BBN (Tactile)",
       "manufacturer": "Tecsee",
+      "designer": "BuiltByNim",
       "switchType": "tactile"
     },
     {
@@ -2564,6 +2471,8 @@
       "id": "blueberry-swirl",
       "name": "Blueberry Swirl",
       "manufacturer": "KTT",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "linear"
     },
     {
@@ -2631,13 +2540,6 @@
       "id": "bolsa-clunked-corsas",
       "name": "Bolsa Supply Clunked Corsas",
       "brand": "Bolsa Supply"
-    },
-    {
-      "id": "bolsa-namazu",
-      "name": "Bolsa Supply Namazu",
-      "manufacturer": "SP-Star",
-      "brand": "Bolsa Supply",
-      "switchType": "linear"
     },
     {
       "id": "bolsa-supply-banshee",
@@ -2823,7 +2725,9 @@
     },
     {
       "id": "bsun-black-lychee",
-      "name": "BSUN Black Lychee"
+      "name": "BSUN Black Lychee",
+      "manufacturer": "BSUN",
+      "switchType": "linear"
     },
     {
       "id": "bsun-black-white-bottom",
@@ -2955,17 +2859,7 @@
     },
     {
       "id": "bsun-dustproof-blue",
-      "name": "BSUN Dustproof Blue"
-    },
-    {
-      "id": "bsun-dustproof-blue-3-collection-1912",
-      "name": "BSUN Dustproof Blue - Collection 1912",
-      "manufacturer": "BSUN",
-      "switchType": "clicky"
-    },
-    {
-      "id": "bsun-dustproof-blue-collection-1236",
-      "name": "BSUN Dustproof Blue - Collection 1236",
+      "name": "BSUN Dustproof Blue",
       "manufacturer": "BSUN",
       "switchType": "clicky"
     },
@@ -3158,12 +3052,6 @@
       "switchType": "linear"
     },
     {
-      "id": "bsun-lychee-black",
-      "name": "BSUN Lychee Black",
-      "manufacturer": "BSUN",
-      "switchType": "linear"
-    },
-    {
       "id": "bsun-lychee-red",
       "name": "BSUN Lychee Red",
       "manufacturer": "BSUN",
@@ -3250,7 +3138,9 @@
     },
     {
       "id": "bsun-panda-v2-red",
-      "name": "BSUN Panda V2 Red"
+      "name": "BSUN Panda V2 Red",
+      "manufacturer": "Tecsee",
+      "switchType": "linear"
     },
     {
       "id": "bsun-paradise-island",
@@ -3321,11 +3211,7 @@
     },
     {
       "id": "bsun-raccoon-panda-v2",
-      "name": "BSUN Raccoon Panda V2"
-    },
-    {
-      "id": "bsun-racoon-panda-v2",
-      "name": "BSUN Racoon Panda V2",
+      "name": "BSUN Raccoon Panda V2",
       "manufacturer": "BSUN",
       "switchType": "tactile"
     },
@@ -3358,10 +3244,6 @@
       "switchType": "linear"
     },
     {
-      "id": "bsun-red-lychee",
-      "name": "BSUN Red Lychee"
-    },
-    {
       "id": "bsun-red-panda-5-pin",
       "name": "BSUN Red Panda (5-Pin)",
       "manufacturer": "Tecsee",
@@ -3370,12 +3252,6 @@
     {
       "id": "bsun-red-panda-v1",
       "name": "BSUN Red Panda V1",
-      "manufacturer": "Tecsee",
-      "switchType": "linear"
-    },
-    {
-      "id": "bsun-red-panda-v2",
-      "name": "BSUN Red Panda V2",
       "manufacturer": "Tecsee",
       "switchType": "linear"
     },
@@ -3527,13 +3403,6 @@
       "manufacturer": "Tecsee",
       "designer": "BuiltByNim",
       "switchType": "linear"
-    },
-    {
-      "id": "builtbynim-bbn-tactile",
-      "name": "BuiltByNim (BBN) Tactile",
-      "manufacturer": "Tecsee",
-      "designer": "BuiltByNim",
-      "switchType": "tactile"
     },
     {
       "id": "burgess-beige-and-red-micro-switch",
@@ -4041,15 +3910,15 @@
       "switchType": "clicky"
     },
     {
-      "id": "cherry-mx-grey-3-pin",
-      "name": "Cherry MX Grey (3 Pin) Linear",
+      "id": "cherry-mx-grey-linear-3-pin",
+      "name": "Cherry MX Grey Linear (3 Pin)",
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "switchType": "linear"
     },
     {
-      "id": "cherry-mx-grey-5-pin",
-      "name": "Cherry MX Grey (5 Pin)",
+      "id": "cherry-mx-grey-linear-5-pin",
+      "name": "Cherry MX Grey Linear (5 Pin)",
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "switchType": "linear"
@@ -4074,13 +3943,6 @@
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "switchType": "tactile"
-    },
-    {
-      "id": "cherry-mx-hyperglide-black",
-      "name": "Cherry MX Hyperglide - (Black)",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear"
     },
     {
       "id": "cherry-mx-hyperglide-black-3-pin",
@@ -4817,13 +4679,6 @@
       "brand": "Cherry"
     },
     {
-      "id": "cherry-nixie-mx-black-clear-top",
-      "name": "Cherry Nixie (MX Black Clear Top)",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear"
-    },
-    {
       "id": "cherry-vintage-plate-spring-contact",
       "name": "Cherry Vintage Plate Spring Contact",
       "manufacturer": "Cherry",
@@ -5087,12 +4942,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "clackbait-x-knc-keys-clackbit",
-      "name": "Clackbait x KNC Keys Clackbit",
-      "manufacturer": "Tecsee",
-      "switchType": "linear"
-    },
-    {
       "id": "clackbait-x-knc-keys-clackbits",
       "name": "Clackbait x KNC Keys Clackbits",
       "manufacturer": "Tecsee",
@@ -5346,18 +5195,6 @@
       "switchType": "clicky"
     },
     {
-      "id": "content-blue-black-bottom-collection-2427",
-      "name": "Content Blue (Black Bottom) - Collection 2427",
-      "manufacturer": "KTT",
-      "switchType": "clicky"
-    },
-    {
-      "id": "content-blue-black-bottom-collection-2813",
-      "name": "Content Blue (Black Bottom) - Collection 2813",
-      "manufacturer": "KTT",
-      "switchType": "clicky"
-    },
-    {
       "id": "content-blue-desoldered-with-condenser",
       "name": "Content Blue (Desoldered) with condenser"
     },
@@ -5400,7 +5237,9 @@
     },
     {
       "id": "content-red",
-      "name": "Content Red"
+      "name": "Content Red",
+      "manufacturer": "KTT",
+      "switchType": "linear"
     },
     {
       "id": "content-red-all-black-housing",
@@ -5411,12 +5250,6 @@
     {
       "id": "content-red-black-bottom",
       "name": "Content Red (Black Bottom)",
-      "manufacturer": "KTT",
-      "switchType": "linear"
-    },
-    {
-      "id": "content-red-collection-190",
-      "name": "Content Red - Collection 190",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -5438,6 +5271,8 @@
       "id": "cookies-n-cream",
       "name": "Cookies n' Cream",
       "manufacturer": "KTT",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "tactile"
     },
     {
@@ -5546,6 +5381,7 @@
       "id": "cream-tactile",
       "name": "Cream Tactile",
       "manufacturer": "Kailh",
+      "brand": "NovelKeys",
       "switchType": "tactile"
     },
     {
@@ -5596,23 +5432,13 @@
       "switchType": "linear"
     },
     {
-      "id": "cupid-cupid-48g-spring-no-version",
-      "name": "Cupid - Cupid 48g Spring(No Version)",
+      "id": "cupid-48g-spring",
+      "name": "Cupid 48g Spring",
       "brand": "Chaosera"
     },
     {
-      "id": "cupid-cupid-48g-spring-version",
-      "name": "Cupid - Cupid 48g Spring (Version)",
-      "brand": "Chaosera"
-    },
-    {
-      "id": "cupid-cupid-55g-spring-no-version",
-      "name": "Cupid - Cupid 55g Spring(No Version)",
-      "brand": "Chaosera"
-    },
-    {
-      "id": "cupid-cupid-55g-spring-version",
-      "name": "Cupid - Cupid 55g Spring (Version)",
+      "id": "cupid-55g-spring",
+      "name": "Cupid 55g Spring",
       "brand": "Chaosera"
     },
     {
@@ -5623,14 +5449,9 @@
       "switchType": "linear"
     },
     {
-      "id": "dai-ichi-cl-1145-green-collection-503",
-      "name": "Dai-Ichi CL-1145 Green - Collection 503",
+      "id": "dai-ichi-cl-1145-green",
+      "name": "Dai-Ichi CL-1145 Green",
       "manufacturer": "Dai-Ichi",
-      "switchType": "clicky"
-    },
-    {
-      "id": "dai-ichi-cl-1145-green-collection-695",
-      "name": "Dai-Ichi CL-1145 Green - Collection 695",
       "switchType": "clicky"
     },
     {
@@ -5670,30 +5491,6 @@
       "switchType": "linear"
     },
     {
-      "id": "dangkeebs-banana-milk-linear",
-      "name": "DK Banana Milk - Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear"
-    },
-    {
-      "id": "dangkeebs-banana-milk-tactile",
-      "name": "DK Banana Milk - Tactile",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "tactile"
-    },
-    {
-      "id": "dangkeebs-blueberry-swirl",
-      "name": "DK Blueberry Swirl",
-      "manufacturer": "KTT",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear"
-    },
-    {
       "id": "dangkeebs-cookie-dough",
       "name": "DK Cookie Dough",
       "manufacturer": "KTT",
@@ -5702,50 +5499,10 @@
       "switchType": "linear"
     },
     {
-      "id": "dangkeebs-cookies-n-cream",
-      "name": "DK Cookies n' Cream",
-      "manufacturer": "KTT",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "tactile"
-    },
-    {
       "id": "dangkeebs-lychee-milk",
       "name": "DK Lychee Milk",
       "manufacturer": "Tecsee",
       "brand": "Dangkeebs",
-      "switchType": "tactile"
-    },
-    {
-      "id": "dangkeebs-melon-milk-linear",
-      "name": "DK Melon Milk - Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear"
-    },
-    {
-      "id": "dangkeebs-melon-milk-tactile",
-      "name": "DK Melon Milk - Tactile",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "tactile"
-    },
-    {
-      "id": "dangkeebs-strawberry-milk-ice-linear",
-      "name": "DK Strawberry Milk Ice - Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear"
-    },
-    {
-      "id": "dangkeebs-strawberry-milk-ice-tactile",
-      "name": "DK Strawberry Milk Ice - Tactile",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
       "switchType": "tactile"
     },
     {
@@ -6019,11 +5776,6 @@
       "switchType": "clicky"
     },
     {
-      "id": "dareu-optical-purple-gold",
-      "name": "DareU Optical Purple Gold",
-      "brand": "DareU"
-    },
-    {
       "id": "dareu-optical-red",
       "name": "DareU Optical Red",
       "manufacturer": "Huano",
@@ -6167,18 +5919,6 @@
     {
       "id": "dark-project-g3ms-sapphire",
       "name": "Dark Project G3MS Sapphire",
-      "switchType": "linear"
-    },
-    {
-      "id": "defective-c3-kiwi",
-      "name": "'Defective' C3 Kiwi",
-      "manufacturer": "JWK",
-      "switchType": "tactile"
-    },
-    {
-      "id": "defective-c3-tangerine-v2-67g",
-      "name": "'Defective' C3 Tangerine V2 (67g)",
-      "manufacturer": "JWK",
       "switchType": "linear"
     },
     {
@@ -6532,7 +6272,8 @@
     },
     {
       "id": "drinkey-brown-round-dustproof",
-      "name": "Drinkey Brown Round Dustproof"
+      "name": "Drinkey Brown Round Dustproof",
+      "switchType": "tactile"
     },
     {
       "id": "drinkey-dustproof-black",
@@ -6562,11 +6303,6 @@
     {
       "id": "drinkey-red",
       "name": "Drinkey Red"
-    },
-    {
-      "id": "drinkey-round-dustproof-brown",
-      "name": "Drinkey Round Dustproof Brown",
-      "switchType": "tactile"
     },
     {
       "id": "drinkey-xuan-tie-magnetic",
@@ -6796,7 +6532,7 @@
       "switchType": "linear"
     },
     {
-      "id": "durock-ice-king",
+      "id": "durock-ice-king-linear",
       "name": "Durock Ice King Linear",
       "manufacturer": "JWK",
       "brand": "Durock",
@@ -7122,17 +6858,11 @@
       "switchType": "tactile"
     },
     {
-      "id": "durock-silent-shrimp",
-      "name": "Durock Silent Shrimp",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile"
-    },
-    {
       "id": "durock-smokey-t1",
       "name": "Durock Smokey T1",
       "manufacturer": "JWK",
       "brand": "Durock",
+      "designer": "Durock",
       "switchType": "tactile"
     },
     {
@@ -7166,23 +6896,8 @@
       "switchType": "tactile"
     },
     {
-      "id": "durock-sunflower-t1-pom",
-      "name": "Durock Sunflower T1 POM",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile"
-    },
-    {
       "id": "durock-t1-clear",
       "name": "Durock T1 - Clear",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "designer": "Durock",
-      "switchType": "tactile"
-    },
-    {
-      "id": "durock-t1-smokey",
-      "name": "Durock T1 - Smokey",
       "manufacturer": "JWK",
       "brand": "Durock",
       "designer": "Durock",
@@ -7980,12 +7695,6 @@
       "switchType": "linear"
     },
     {
-      "id": "factory-defect-sp-star-meteor-white",
-      "name": "Factory Defect SP Star Meteor White",
-      "manufacturer": "SP-Star",
-      "switchType": "linear"
-    },
-    {
       "id": "fadog-absolute-purple",
       "name": "FADOG Absolute Purple",
       "switchType": "linear"
@@ -8349,29 +8058,23 @@
     {
       "id": "flcmmk-glacier-green",
       "name": "FL.CMMK Glacier Green",
-      "brand": "FL.CMMK"
-    },
-    {
-      "id": "flcmmk-glacier-pink",
-      "name": "FL.CMMK Glacier Pink",
-      "brand": "FL.CMMK"
-    },
-    {
-      "id": "flcmmk-glacier-purple",
-      "name": "FL.CMMK Glacier Purple",
-      "brand": "FL.CMMK"
-    },
-    {
-      "id": "flcmmk-green-glacier",
-      "name": "FL.CMMK Green Glacier",
       "manufacturer": "Kailh",
       "brand": "FL.CMMK",
       "switchType": "clicky"
     },
     {
-      "id": "flcmmk-ice-mint-switch",
-      "name": "FL.CMMK Ice Mint Switch",
-      "brand": "FL.CMMK"
+      "id": "flcmmk-glacier-pink",
+      "name": "FL.CMMK Glacier Pink",
+      "manufacturer": "Kailh",
+      "brand": "FL.CMMK",
+      "switchType": "linear"
+    },
+    {
+      "id": "flcmmk-glacier-purple",
+      "name": "FL.CMMK Glacier Purple",
+      "manufacturer": "Kailh",
+      "brand": "FL.CMMK",
+      "switchType": "tactile"
     },
     {
       "id": "flcmmk-ice-mint-v2",
@@ -8393,20 +8096,6 @@
       "brand": "FL.CMMK"
     },
     {
-      "id": "flcmmk-pink-glacier",
-      "name": "FL.CMMK Pink Glacier",
-      "manufacturer": "Kailh",
-      "brand": "FL.CMMK",
-      "switchType": "linear"
-    },
-    {
-      "id": "flcmmk-purple-glacier",
-      "name": "FL.CMMK Purple Glacier",
-      "manufacturer": "Kailh",
-      "brand": "FL.CMMK",
-      "switchType": "tactile"
-    },
-    {
       "id": "flcmmk-x-kailh-box-rosa",
       "name": "FL.CMMK x Kailh Box Rosa",
       "manufacturer": "Kailh",
@@ -8423,18 +8112,8 @@
     {
       "id": "flower-shadow",
       "name": "Flower Shadow",
-      "brand": "NLandKeys",
-      "switchType": "linear"
-    },
-    {
-      "id": "flower-shadow-collection-2379",
-      "name": "Flower Shadow - Collection 2379",
       "manufacturer": "BSUN",
-      "switchType": "linear"
-    },
-    {
-      "id": "flower-shadow-collection-3336",
-      "name": "Flower Shadow - Collection 3336",
+      "brand": "NLandKeys",
       "switchType": "linear"
     },
     {
@@ -8846,56 +8525,28 @@
     },
     {
       "id": "gateron-aliaz-silent-100-gf",
-      "name": "Gateron Aliaz Silent - 100 gf",
+      "name": "Gateron Aliaz Silent (100 gf)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile"
     },
     {
       "id": "gateron-aliaz-silent-60-gf",
-      "name": "Gateron Aliaz Silent - 60 gf",
+      "name": "Gateron Aliaz Silent (60 gf)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile"
     },
     {
       "id": "gateron-aliaz-silent-70-gf",
-      "name": "Gateron Aliaz Silent - 70 gf",
+      "name": "Gateron Aliaz Silent (70 gf)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile"
     },
     {
       "id": "gateron-aliaz-silent-80-gf",
-      "name": "Gateron Aliaz Silent - 80 gf",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-aliaz-silent-aliaz-silent-60-gf",
-      "name": "Gateron Aliaz Silent - Aliaz Silent (60 gf))",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-aliaz-silent-aliaz-silent-70-gf",
-      "name": "Gateron Aliaz Silent - Aliaz Silent (70 gf)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-aliaz-silent-aliaz-silent-80-gf",
-      "name": "Gateron Aliaz Silent - Aliaz Silent (80 gf))",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-aliaz-silent-aliaz-slient-100-gf",
-      "name": "Gateron Aliaz Silent - Aliaz Slient (100 gf)",
+      "name": "Gateron Aliaz Silent (80 gf)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile"
@@ -8958,13 +8609,6 @@
     {
       "id": "gateron-baby-raccoon-2-0",
       "name": "Gateron Baby Raccoon 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-baby-racoon",
-      "name": "Gateron Baby Racoon",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -9360,18 +9004,6 @@
       "brand": "Gateron"
     },
     {
-      "id": "gateron-cap-v2-golden-brown",
-      "name": "Gateron Cap V2 - Golden-Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-cap-v2-golden-yellow",
-      "name": "Gateron Cap V2 - Golden-Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
       "id": "gateron-cap-v2-milky-brown",
       "name": "Gateron Cap V2 - Milky-Brown",
       "manufacturer": "Gateron",
@@ -9380,12 +9012,6 @@
     {
       "id": "gateron-cap-v2-milky-brown-golden-brown",
       "name": "Gateron CAP V2 Milky Brown/Golden Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-cap-v2-milky-yellow",
-      "name": "Gateron Cap V2 - Milky-Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron"
     },
@@ -9404,13 +9030,6 @@
     {
       "id": "gateron-cap-yellow-milky-top-v1",
       "name": "Gateron Cap Yellow (Milky Top) V1",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-cap-yellow-milky-v2",
-      "name": "Gateron Cap Yellow (Milky) V2",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -9612,6 +9231,13 @@
       "brand": "Gateron"
     },
     {
+      "id": "gateron-dual-rail-magnetic-orange",
+      "name": "Gateron Dual-Rail Magnetic Orange",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear"
+    },
+    {
       "id": "gateron-dual-rail-orange-hall-effect",
       "name": "Gateron Dual Rail Orange Hall Effect",
       "manufacturer": "Gateron",
@@ -9781,20 +9407,6 @@
       "switchType": "linear"
     },
     {
-      "id": "gateron-full-pom-smoothie-banana",
-      "name": "Gateron Full POM Smoothie Banana",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-full-pom-smoothie-chocolate",
-      "name": "Gateron Full POM Smoothie Chocolate",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
       "id": "gateron-full-pom-smoothie-grape",
       "name": "Gateron Full POM Smoothie Grape",
       "manufacturer": "Gateron",
@@ -9824,13 +9436,6 @@
     {
       "id": "gateron-full-pom-smoothie-strawberry",
       "name": "Gateron Full POM Smoothie Strawberry",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-full-pom-strawberry-smoothie",
-      "name": "Gateron Full POM Strawberry Smoothie",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -10206,13 +9811,6 @@
       "switchType": "linear"
     },
     {
-      "id": "gateron-ink-blue-v1",
-      "name": "Gateron Ink Blue V1",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky"
-    },
-    {
       "id": "gateron-ink-red-v2",
       "name": "Gateron Ink Red V2",
       "manufacturer": "Gateron",
@@ -10232,18 +9830,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
-    },
-    {
-      "id": "gateron-ink-v2-black",
-      "name": "Gateron Ink V2 - Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ink-v2-blue",
-      "name": "Gateron Ink V2 - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
     },
     {
       "id": "gateron-ink-v2-ink-black",
@@ -10270,39 +9856,8 @@
       "brand": "Gateron"
     },
     {
-      "id": "gateron-ink-v2-pro-black",
-      "name": "Gateron Ink V2 Pro Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-ink-v2-red",
-      "name": "Gateron Ink V2 - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ink-v2-silent-black",
-      "name": "Gateron Ink V2 - Silent Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ink-v2-v2-black",
-      "name": "Gateron Ink V2 - V2 Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
       "id": "gateron-ink-v2-yellow",
       "name": "Gateron Ink V2 - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ink-yellow-v2",
-      "name": "Gateron Ink Yellow V2",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -10566,7 +10121,8 @@
       "id": "gateron-ks-3-black-silent",
       "name": "Gateron KS-3 Black Silent",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     {
       "id": "gateron-ks-3-clear-silent",
@@ -10619,12 +10175,6 @@
     {
       "id": "gateron-ks-3-milky-pro-yellow",
       "name": "Gateron KS-3 Milky Pro - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-3-milky-yellow-pro",
-      "name": "Gateron KS-3 Milky Yellow Pro",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -10920,42 +10470,6 @@
       "brand": "Gateron"
     },
     {
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom",
-      "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-blue",
-      "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-brown",
-      "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-green",
-      "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-red",
-      "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-milky-top-black-bottom-yellow",
-      "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
       "id": "gateron-ks-3x47-milky-top-black-bottom",
       "name": "Gateron KS-3X47 Milky Top Black Bottom",
       "manufacturer": "Gateron",
@@ -11062,7 +10576,8 @@
       "id": "gateron-ks-8-yellow",
       "name": "Gateron KS-8 Yellow",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     {
       "id": "gateron-ks-9-3-0-silent-linear",
@@ -11088,7 +10603,8 @@
       "id": "gateron-ks-9-brown-pro-2-0",
       "name": "Gateron KS-9 Brown PRO 2.0",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "tactile"
     },
     {
       "id": "gateron-ks-9-g-pro-3-0-black",
@@ -11124,13 +10640,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky"
-    },
-    {
-      "id": "gateron-ks-9-pro-2-0-brown",
-      "name": "Gateron KS-9 Pro 2.0 Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
     },
     {
       "id": "gateron-ks-9-pro-2-0-red",
@@ -11182,18 +10691,6 @@
       "switchType": "linear"
     },
     {
-      "id": "gateron-ks-9-silent-yellow-2-0",
-      "name": "Gateron KS-9 Silent Yellow 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-ks-9-yellow-pro-2-0",
-      "name": "Gateron KS-9 Yellow PRO 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
       "id": "gateron-ks9-pro-2-0-silver-2-stage",
       "name": "Gateron KS9 Pro 2.0 Silver (2 Stage)",
       "manufacturer": "Gateron",
@@ -11231,20 +10728,6 @@
     {
       "id": "gateron-longjing-tea",
       "name": "Gateron Longjing Tea",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-longjing-tea-collection-3368",
-      "name": "Gateron Longjing Tea - Collection 3368",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    {
-      "id": "gateron-longjing-tea-collection-3597",
-      "name": "Gateron Longjing Tea - Collection 3597",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile"
@@ -11325,13 +10808,6 @@
     {
       "id": "gateron-lunar-probe",
       "name": "Gateron Lunar Probe",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-lunar-probe-dual-rail",
-      "name": "Gateron Lunar Probe Dual-Rail",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -11863,7 +11339,8 @@
       "id": "gateron-north-pole-brown-v2",
       "name": "Gateron North Pole Brown V2",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "tactile"
     },
     {
       "id": "gateron-north-pole-brown-v2-no-rubber-thingy",
@@ -11875,26 +11352,21 @@
       "id": "gateron-north-pole-red-v2",
       "name": "Gateron North Pole Red V2",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     {
       "id": "gateron-north-pole-silver-v2",
       "name": "Gateron North Pole Silver V2",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     {
       "id": "gateron-north-pole-v2",
       "name": "Gateron North Pole V2",
       "manufacturer": "Gateron",
       "brand": "Gateron"
-    },
-    {
-      "id": "gateron-north-pole-v2-brown",
-      "name": "Gateron North Pole V2 Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
     },
     {
       "id": "gateron-north-pole-v2-brown-no-band",
@@ -11904,31 +11376,11 @@
       "switchType": "tactile"
     },
     {
-      "id": "gateron-north-pole-v2-red",
-      "name": "Gateron North Pole V2 Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-north-pole-v2-silver",
-      "name": "Gateron North Pole V2 Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
       "id": "gateron-north-pole-v2-yellow",
       "name": "Gateron North Pole V2 Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
-    },
-    {
-      "id": "gateron-north-pole-yellow-v2",
-      "name": "Gateron North Pole Yellow V2",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
     },
     {
       "id": "gateron-oil-king",
@@ -11992,18 +11444,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
-    },
-    {
-      "id": "gateron-optical-blue",
-      "name": "Gateron Optical Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-optical-brown",
-      "name": "Gateron Optical Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
     },
     {
       "id": "gateron-optical-orange",
@@ -12077,30 +11517,6 @@
     {
       "id": "gateron-phantom-brown",
       "name": "Gateron Phantom Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-phantom-phantom-blue",
-      "name": "Gateron Phantom - Phantom Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-phantom-phantom-brown",
-      "name": "Gateron Phantom - Phantom Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-phantom-phantom-red",
-      "name": "Gateron Phantom - Phantom Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-phantom-phantom-yellow",
-      "name": "Gateron Phantom - Phantom Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron"
     },
@@ -12281,12 +11697,6 @@
       "switchType": "linear"
     },
     {
-      "id": "gateron-red-ink-v2",
-      "name": "Gateron Red INK V2",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
       "id": "gateron-red-ks-1",
       "name": "Gateron Red (KS-1)",
       "manufacturer": "Gateron",
@@ -12370,13 +11780,6 @@
     {
       "id": "gateron-silent-black-2-0",
       "name": "Gateron Silent Black 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-silent-black-ks-3",
-      "name": "Gateron Silent Black (KS-3)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -12570,12 +11973,6 @@
       "brand": "Gateron"
     },
     {
-      "id": "gateron-smoothie-chocolate",
-      "name": "Gateron Smoothie Chocolate",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
       "id": "gateron-smoothie-grape",
       "name": "Gateron Smoothie Grape",
       "manufacturer": "Gateron",
@@ -12584,12 +11981,6 @@
     {
       "id": "gateron-smoothie-mint",
       "name": "Gateron Smoothie Mint",
-      "manufacturer": "Gateron",
-      "brand": "Gateron"
-    },
-    {
-      "id": "gateron-smoothie-sea-salt",
-      "name": "Gateron Smoothie Sea Salt",
       "manufacturer": "Gateron",
       "brand": "Gateron"
     },
@@ -12611,7 +12002,8 @@
       "id": "gateron-smoothie-strawberry",
       "name": "Gateron Smoothie Strawberry",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "linear"
     },
     {
       "id": "gateron-snow-rabbit",
@@ -12663,13 +12055,6 @@
       "switchType": "linear"
     },
     {
-      "id": "gateron-strawberry-smoothie",
-      "name": "Gateron Strawberry Smoothie",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
       "id": "gateron-tangerine",
       "name": "Gateron Tangerine",
       "manufacturer": "Gateron",
@@ -12692,13 +12077,6 @@
     {
       "id": "gateron-unicorn",
       "name": "Gateron Unicorn",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-vermilion-bird",
-      "name": "Gateron Vermilion Bird",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -12796,13 +12174,6 @@
       "switchType": "linear"
     },
     {
-      "id": "gateron-yellow-ink-v2",
-      "name": "Gateron Yellow Ink V2",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
       "id": "gateron-yellow-ks-1",
       "name": "Gateron Yellow (KS-1)",
       "manufacturer": "Gateron",
@@ -12812,13 +12183,6 @@
     {
       "id": "gateron-yellow-ks-3",
       "name": "Gateron Yellow (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "gateron-yellow-ks-8",
-      "name": "Gateron Yellow KS-8",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -12854,13 +12218,6 @@
       "id": "gatistotle-clear",
       "name": "Gatistotle Clear",
       "switchType": "tactile"
-    },
-    {
-      "id": "gatron-dual-rail-magnetic-orange",
-      "name": "Gateron Dual-Rail Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
     },
     {
       "id": "gazzew-black-ice-62g",
@@ -13177,18 +12534,13 @@
     {
       "id": "glorious-lynx-he-silent",
       "name": "Glorious Lynx HE Silent",
-      "brand": "Glorious"
-    },
-    {
-      "id": "glorious-lynx-silent",
-      "name": "Glorious Lynx Silent",
       "manufacturer": "Outemu",
       "brand": "Glorious",
       "switchType": "linear"
     },
     {
-      "id": "glorious-lynx-silent-he",
-      "name": "Glorious Lynx Silent HE",
+      "id": "glorious-lynx-silent",
+      "name": "Glorious Lynx Silent",
       "manufacturer": "Outemu",
       "brand": "Glorious",
       "switchType": "linear"
@@ -13234,18 +12586,13 @@
     {
       "id": "glorious-panda-he-silent",
       "name": "Glorious Panda HE Silent",
-      "brand": "Glorious"
-    },
-    {
-      "id": "glorious-panda-silent",
-      "name": "Glorious Panda Silent",
       "manufacturer": "Outemu",
       "brand": "Glorious",
       "switchType": "tactile"
     },
     {
-      "id": "glorious-panda-silent-he",
-      "name": "Glorious Panda Silent HE",
+      "id": "glorious-panda-silent",
+      "name": "Glorious Panda Silent",
       "manufacturer": "Outemu",
       "brand": "Glorious",
       "switchType": "tactile"
@@ -13256,11 +12603,6 @@
       "manufacturer": "Outemu",
       "brand": "Glorious",
       "switchType": "tactile"
-    },
-    {
-      "id": "glorious-pandas",
-      "name": "Glorious Pandas",
-      "brand": "Glorious"
     },
     {
       "id": "glorious-raptor",
@@ -13313,17 +12655,20 @@
     {
       "id": "glove-diamond-unicorn-blue",
       "name": "Glove Studio Diamond Unicorn Blue",
-      "brand": "Glove Studio"
+      "brand": "Glove Studio",
+      "switchType": "linear"
     },
     {
       "id": "glove-diamond-unicorn-purple",
       "name": "Glove Studio Diamond Unicorn Purple",
-      "brand": "Glove Studio"
+      "brand": "Glove Studio",
+      "switchType": "linear"
     },
     {
       "id": "glove-diamond-unicorn-yellow",
       "name": "Glove Studio Diamond Unicorn Yellow",
-      "brand": "Glove Studio"
+      "brand": "Glove Studio",
+      "switchType": "linear"
     },
     {
       "id": "glove-studio-bullet",
@@ -13336,24 +12681,6 @@
       "id": "glove-studio-chimp",
       "name": "Glove Studio Chimp",
       "manufacturer": "Kailh",
-      "brand": "Glove Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "glove-unicorn-diamond-blue",
-      "name": "Glove Studio Unicorn Diamond Blue",
-      "brand": "Glove Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "glove-unicorn-diamond-purple",
-      "name": "Glove Studio Unicorn Diamond Purple",
-      "brand": "Glove Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "glove-unicorn-diamond-yellow",
-      "name": "Glove Studio Unicorn Diamond Yellow",
       "brand": "Glove Studio",
       "switchType": "linear"
     },
@@ -13590,6 +12917,7 @@
       "id": "green-jacket-tactile",
       "name": "Green Jacket Tactile",
       "manufacturer": "Tecsee",
+      "designer": "Store Link",
       "switchType": "tactile"
     },
     {
@@ -13703,6 +13031,12 @@
       "switchType": "tactile"
     },
     {
+      "id": "greetech-green",
+      "name": "Greetech Green",
+      "manufacturer": "Greetech",
+      "switchType": "clicky"
+    },
+    {
       "id": "greetech-green-all-black-housing",
       "name": "Greetech Green (All Black Housing)",
       "manufacturer": "Greetech",
@@ -13717,12 +13051,6 @@
     {
       "id": "greetech-green-black-housing-through-hole-3-pin",
       "name": "Greetech Green - Black Housing - Through Hole - 3 pin"
-    },
-    {
-      "id": "greetech-green-collection-643",
-      "name": "Greetech Green - Collection 643",
-      "manufacturer": "Greetech",
-      "switchType": "clicky"
     },
     {
       "id": "greetech-og-black-3-pin",
@@ -14060,13 +13388,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "haimu-hearbeat",
-      "name": "Haimu Hearbeat",
-      "manufacturer": "Haimu",
-      "brand": "Haimu",
-      "switchType": "linear"
-    },
-    {
       "id": "haimu-heartbeat",
       "name": "Haimu Heartbeat",
       "manufacturer": "Haimu",
@@ -14297,13 +13618,6 @@
     {
       "id": "haimu-sea-apricot",
       "name": "Haimu Sea Apricot",
-      "manufacturer": "Haimu",
-      "brand": "Haimu",
-      "switchType": "linear"
-    },
-    {
-      "id": "haimu-sea-orange",
-      "name": "Haimu Sea Orange",
       "manufacturer": "Haimu",
       "brand": "Haimu",
       "switchType": "linear"
@@ -14699,8 +14013,8 @@
       "switchType": "tactile"
     },
     {
-      "id": "hi-tek-725-white-one-eye-collection-473",
-      "name": "Hi-Tek 725 White (One Eye) - Collection 473",
+      "id": "hi-tek-725-white-one-eye",
+      "name": "Hi-Tek 725 White (One Eye)",
       "manufacturer": "Hi-Tek"
     },
     {
@@ -14916,13 +14230,6 @@
       "name": "HMX Bleed",
       "manufacturer": "HMX",
       "switchType": "tactile"
-    },
-    {
-      "id": "hmx-blossom",
-      "name": "HMX Blossom",
-      "manufacturer": "HMX",
-      "designer": "JKDK",
-      "switchType": "linear"
     },
     {
       "id": "hmx-blossoms",
@@ -16201,12 +15508,6 @@
       "switchType": "linear"
     },
     {
-      "id": "hmx-x-sillyworks-sonja",
-      "name": "HMX x Sillyworks Sonja",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    {
       "id": "hmx-x-wjby-su-color-r2",
       "name": "HMX x WJBY Su Color R2",
       "manufacturer": "HMX",
@@ -16548,11 +15849,7 @@
     },
     {
       "id": "huano-aoki",
-      "name": "Huano Aoki"
-    },
-    {
-      "id": "huano-aoki-aoki",
-      "name": "Huano Aoki Aoki",
+      "name": "Huano Aoki",
       "manufacturer": "Huano",
       "switchType": "clicky"
     },
@@ -16727,14 +16024,8 @@
       "switchType": "clicky"
     },
     {
-      "id": "huano-dustproof-black-collection-178",
-      "name": "Huano Dustproof Black - Collection 178",
-      "manufacturer": "Huano",
-      "switchType": "linear"
-    },
-    {
-      "id": "huano-dustproof-black-collection-938",
-      "name": "Huano Dustproof Black - Collection 938",
+      "id": "huano-dustproof-black",
+      "name": "Huano Dustproof Black",
       "manufacturer": "Huano",
       "switchType": "linear"
     },
@@ -16981,14 +16272,10 @@
       "switchType": "linear"
     },
     {
-      "id": "huano-populous-yellow",
-      "name": "Huano Populous Yellow",
+      "id": "huano-populus-yellow",
+      "name": "Huano Populus Yellow",
       "manufacturer": "Huano",
       "switchType": "tactile"
-    },
-    {
-      "id": "huano-populus-yellow",
-      "name": "Huano Populus Yellow"
     },
     {
       "id": "huano-purple-white-bottom",
@@ -17004,11 +16291,7 @@
     },
     {
       "id": "huano-qingdai-v2",
-      "name": "Huano Qingdai V2"
-    },
-    {
-      "id": "huano-quingdai-v2",
-      "name": "Huano Quingdai V2",
+      "name": "Huano Qingdai V2",
       "manufacturer": "Huano",
       "switchType": "linear"
     },
@@ -17070,11 +16353,7 @@
     },
     {
       "id": "huano-speed-yellow-pro",
-      "name": "Huano Speed Yellow Pro"
-    },
-    {
-      "id": "huano-speedy-yellow-pro",
-      "name": "Huano Speedy Yellow Pro",
+      "name": "Huano Speed Yellow Pro",
       "manufacturer": "Huano",
       "switchType": "linear"
     },
@@ -17161,10 +16440,6 @@
       "name": "Huano Teal (White Bottom)",
       "manufacturer": "Huano",
       "switchType": "clicky"
-    },
-    {
-      "id": "huano-tortiseshell-v2",
-      "name": "Huano Tortiseshell V2"
     },
     {
       "id": "huano-tortoiseshell-v2",
@@ -17623,14 +16898,6 @@
       "name": "J-Lab Ripple V2"
     },
     {
-      "id": "jagor-bald-brother-ice-cream-v2",
-      "name": "Jagor/Bald Brother Ice Cream V2"
-    },
-    {
-      "id": "jagor-bald-brother-ice-grass-v2",
-      "name": "Jagor/Bald Brother Ice Grass V2"
-    },
-    {
       "id": "jagor-bald-brother-sea-salt-lemon-v3",
       "name": "Jagor/Bald Brother Sea Salt Lemon V3"
     },
@@ -17663,13 +16930,6 @@
     {
       "id": "jerrzi-blue-clear-bottom",
       "name": "Jerrzi Blue (Clear Bottom)",
-      "manufacturer": "Jerrzi",
-      "brand": "Jerrzi",
-      "switchType": "clicky"
-    },
-    {
-      "id": "jerrzi-blue-collection-1732",
-      "name": "Jerrzi Blue - Collection 1732",
       "manufacturer": "Jerrzi",
       "brand": "Jerrzi",
       "switchType": "clicky"
@@ -18019,12 +17279,6 @@
       "brand": "Jerrzi"
     },
     {
-      "id": "jerrzi-smokey-purple",
-      "name": "Jerrzi Smokey Purple",
-      "manufacturer": "Jerrzi",
-      "brand": "Jerrzi"
-    },
-    {
       "id": "jerrzi-smoky-purple",
       "name": "Jerrzi Smoky Purple",
       "manufacturer": "Jerrzi",
@@ -18104,11 +17358,7 @@
     },
     {
       "id": "jixian-black",
-      "name": "Jixian Black"
-    },
-    {
-      "id": "jixian-black-collection-210",
-      "name": "Jixian Black - Collection 210",
+      "name": "Jixian Black",
       "switchType": "linear"
     },
     {
@@ -18836,48 +18086,6 @@
       "switchType": "linear"
     },
     {
-      "id": "kailh-box-box-black",
-      "name": "Kailh Box - Box Black",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
-      "id": "kailh-box-box-brown",
-      "name": "Kailh Box - Box Brown",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
-      "id": "kailh-box-box-cream",
-      "name": "Kailh Box - Box Cream",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
-      "id": "kailh-box-box-jade",
-      "name": "Kailh Box - Box Jade",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
-      "id": "kailh-box-box-navy",
-      "name": "Kailh Box - Box Navy",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
-      "id": "kailh-box-box-red",
-      "name": "Kailh Box - Box Red",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
-      "id": "kailh-box-box-white",
-      "name": "Kailh Box - Box White",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
-    },
-    {
       "id": "kailh-box-broken-ice",
       "name": "Kailh Box Broken Ice",
       "manufacturer": "Kailh",
@@ -18904,6 +18112,12 @@
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky"
+    },
+    {
+      "id": "kailh-box-cream",
+      "name": "Kailh Box Cream",
+      "manufacturer": "Kailh",
+      "brand": "Kailh"
     },
     {
       "id": "kailh-box-cream-pro",
@@ -19100,18 +18314,18 @@
       "switchType": "linear"
     },
     {
-      "id": "kailh-box-marshmallow",
-      "name": "Kailh Box Marshmallow Linear",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "linear"
-    },
-    {
       "id": "kailh-box-marshmallow-clicky",
       "name": "Kailh Box Marshmallow Clicky",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky"
+    },
+    {
+      "id": "kailh-box-marshmallow-linear",
+      "name": "Kailh Box Marshmallow Linear",
+      "manufacturer": "Kailh",
+      "brand": "Kailh",
+      "switchType": "linear"
     },
     {
       "id": "kailh-box-marshmallow-tactile",
@@ -19610,13 +18824,6 @@
       "brand": "Kailh"
     },
     {
-      "id": "kailh-crystal-royal-box",
-      "name": "Kailh Crystal Royal Box",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "tactile"
-    },
-    {
       "id": "kailh-crystal-wine",
       "name": "Kailh Crystal Wine",
       "manufacturer": "Kailh",
@@ -19767,13 +18974,6 @@
       "name": "Kailh Jellyfish Box - X (Clicky)",
       "manufacturer": "Kailh",
       "brand": "Kailh"
-    },
-    {
-      "id": "kailh-jellyfish-box-y",
-      "name": "Kailh Jellyfish Box - Y",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "linear"
     },
     {
       "id": "kailh-juliet",
@@ -19935,14 +19135,14 @@
       "switchType": "linear"
     },
     {
-      "id": "kailh-midnight-pro-silent-silent-linear",
-      "name": "Kailh Midnight Pro Silent - Silent Linear",
+      "id": "kailh-midnight-pro-silent-linear",
+      "name": "Kailh Midnight Pro Silent Linear",
       "manufacturer": "Kailh",
       "brand": "Kailh"
     },
     {
-      "id": "kailh-midnight-pro-silent-silent-tactile",
-      "name": "Kailh Midnight Pro Silent - Silent Tactile",
+      "id": "kailh-midnight-pro-silent-tactile",
+      "name": "Kailh Midnight Pro Silent Tactile",
       "manufacturer": "Kailh",
       "brand": "Kailh"
     },
@@ -20170,12 +19370,6 @@
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "linear"
-    },
-    {
-      "id": "kailh-red-bean-pudding-box",
-      "name": "Kailh Red Bean Pudding Box",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
     },
     {
       "id": "kailh-red-ring",
@@ -20899,10 +20093,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "keychron-c100-8k-giant-custom-macro-pad",
-      "name": "Keychron C100 8K Giant Custom Macro Pad"
-    },
-    {
       "id": "keychron-camo-camel",
       "name": "Keychron Camo Camel"
     },
@@ -20913,14 +20103,8 @@
       "switchType": "linear"
     },
     {
-      "id": "keychron-camo-camel-patt-2-collection-2289",
-      "name": "Keychron Camo Camel (Patt. 2) - Collection 2289",
-      "manufacturer": "Huano",
-      "switchType": "linear"
-    },
-    {
-      "id": "keychron-camo-camel-patt-collection-2285",
-      "name": "Keychron Camo Camel (Patt. 2) - Collection 2285",
+      "id": "keychron-camo-camel-patt-2",
+      "name": "Keychron Camo Camel (Patt. 2)",
       "manufacturer": "Huano",
       "switchType": "linear"
     },
@@ -21119,10 +20303,6 @@
       "switchType": "clicky"
     },
     {
-      "id": "keychron-low-profile-optical-pack",
-      "name": "Keychron Low Profile Optical Pack"
-    },
-    {
       "id": "keychron-low-profile-optical-red",
       "name": "Keychron Low Profile Optical Red",
       "switchType": "linear"
@@ -21207,10 +20387,6 @@
       "name": "Keychron Silent Banana",
       "manufacturer": "Outemu",
       "switchType": "tactile"
-    },
-    {
-      "id": "keychron-silent-k-pro-brown",
-      "name": "Keychron Silent K Pro - Brown"
     },
     {
       "id": "keychron-silent-k-pro-red",
@@ -22138,13 +21314,6 @@
       "switchType": "linear"
     },
     {
-      "id": "keygeek-tipsy-red-blush",
-      "name": "Keygeek Tipsy Red (Blush)",
-      "manufacturer": "Keygeek",
-      "brand": "Keygeek",
-      "switchType": "linear"
-    },
-    {
       "id": "keygeek-uni",
       "name": "Keygeek Uni",
       "manufacturer": "Keygeek",
@@ -22457,12 +21626,7 @@
     {
       "id": "kfa-bsun-pistachio-gelato",
       "name": "KFA BSUN Pistachio Gelato",
-      "brand": "KeebsForAll"
-    },
-    {
-      "id": "kfa-n20-laughing-gas",
-      "name": "KFA N20 (Laughing Gas)",
-      "manufacturer": "Aflion",
+      "manufacturer": "BSUN",
       "brand": "KeebsForAll",
       "designer": "KeebsForAll",
       "switchType": "linear"
@@ -22472,27 +21636,13 @@
       "name": "KFA N2O Laughing Gas",
       "manufacturer": "Aflion",
       "brand": "KeebsForAll",
+      "designer": "KeebsForAll",
       "switchType": "linear"
     },
     {
       "id": "kfa-pink-robin",
       "name": "KFA Pink Robin",
       "manufacturer": "Aflion",
-      "brand": "KeebsForAll",
-      "designer": "KeebsForAll",
-      "switchType": "linear"
-    },
-    {
-      "id": "kfa-pink-robin-un-lubed-36",
-      "name": "KFA Pink Robin - Un-lubed (36)",
-      "manufacturer": "Aflion",
-      "brand": "KeebsForAll",
-      "designer": "KeebsForAll"
-    },
-    {
-      "id": "kfa-x-bsun-pistachio-gelato",
-      "name": "KFA x BSUN Pistachio Gelato",
-      "manufacturer": "BSUN",
       "brand": "KeebsForAll",
       "designer": "KeebsForAll",
       "switchType": "linear"
@@ -22654,16 +21804,10 @@
       "switchType": "tactile"
     },
     {
-      "id": "knc-keys-chocolate-crinkle-cookie",
-      "name": "KNC Keys Chocolate Crinkle Cookie",
-      "manufacturer": "Tecsee",
-      "designer": "Store Link",
-      "switchType": "tactile"
-    },
-    {
       "id": "knc-keys-chocolate-crinkle-cookies",
       "name": "KNC Keys Chocolate Crinkle Cookies",
       "manufacturer": "Tecsee",
+      "designer": "Store Link",
       "switchType": "tactile"
     },
     {
@@ -22672,13 +21816,6 @@
       "manufacturer": "Tecsee",
       "designer": "Store Link",
       "switchType": "linear"
-    },
-    {
-      "id": "knc-keys-green-jacket-tactile",
-      "name": "KNC Keys Green Jacket Tactile",
-      "manufacturer": "Tecsee",
-      "designer": "Store Link",
-      "switchType": "tactile"
     },
     {
       "id": "knc-keys-red-jacket-v1-redux",
@@ -22702,13 +21839,6 @@
       "switchType": "linear"
     },
     {
-      "id": "knc-keys-ube-crinkle-cookie",
-      "name": "KNC Keys Ube Crinkle Cookie",
-      "manufacturer": "SP-Star",
-      "designer": "Store Link",
-      "switchType": "linear"
-    },
-    {
       "id": "knc-keys-ube-crinkle-cookie-v2",
       "name": "KNC Keys Ube Crinkle Cookie (v2)",
       "manufacturer": "Tecsee",
@@ -22719,6 +21849,7 @@
       "id": "knc-keys-x-tofutypes-tofu",
       "name": "KNC Keys x TofuTypes Tofu",
       "manufacturer": "Tecsee",
+      "designer": "Store Link",
       "switchType": "linear"
     },
     {
@@ -22879,11 +22010,7 @@
     },
     {
       "id": "ktek-magnetic",
-      "name": "KTEK Magnetic"
-    },
-    {
-      "id": "ktek-magnetic-switch",
-      "name": "KTEK Magnetic Switch",
+      "name": "KTEK Magnetic",
       "manufacturer": "TTC",
       "switchType": "linear"
     },
@@ -23010,14 +22137,10 @@
       "name": "KTT Cabbage Tofu V2"
     },
     {
-      "id": "ktt-carpenteria",
-      "name": "KTT Carpenteria",
+      "id": "ktt-carpinteria",
+      "name": "KTT Carpinteria",
       "manufacturer": "KTT",
       "switchType": "tactile"
-    },
-    {
-      "id": "ktt-carpinteria",
-      "name": "KTT Carpinteria"
     },
     {
       "id": "ktt-chalk",
@@ -23161,17 +22284,13 @@
     },
     {
       "id": "ktt-hyacinth-green-pro",
-      "name": "KTT Hyacinth Green Pro"
+      "name": "KTT Hyacinth Green Pro",
+      "manufacturer": "KTT",
+      "switchType": "linear"
     },
     {
       "id": "ktt-hyacinth-pink",
       "name": "KTT Hyacinth Pink"
-    },
-    {
-      "id": "ktt-hyacinth-pro-green",
-      "name": "KTT Hyacinth Pro Green",
-      "manufacturer": "KTT",
-      "switchType": "linear"
     },
     {
       "id": "ktt-hyacinth-v1-green",
@@ -23271,11 +22390,7 @@
     },
     {
       "id": "ktt-macaron-blue",
-      "name": "KTT Macaron Blue"
-    },
-    {
-      "id": "ktt-macaron-blue-3-collection-2687",
-      "name": "KTT Macaron Blue - Collection 2687",
+      "name": "KTT Macaron Blue",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -23287,11 +22402,7 @@
     },
     {
       "id": "ktt-macaron-green",
-      "name": "KTT Macaron Green"
-    },
-    {
-      "id": "ktt-macaron-green-3-collection-2686",
-      "name": "KTT Macaron Green - Collection 2686",
+      "name": "KTT Macaron Green",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -23303,11 +22414,7 @@
     },
     {
       "id": "ktt-macaron-orange",
-      "name": "KTT Macaron Orange"
-    },
-    {
-      "id": "ktt-macaron-orange-3-collection-2684",
-      "name": "KTT Macaron Orange - Collection 2684",
+      "name": "KTT Macaron Orange",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -23325,15 +22432,13 @@
     },
     {
       "id": "ktt-macaron-pink-chinajoy-edition",
-      "name": "KTT Macaron Pink (ChinaJoy Edition)"
+      "name": "KTT Macaron Pink ChinaJoy Edition",
+      "manufacturer": "KTT",
+      "switchType": "linear"
     },
     {
       "id": "ktt-macaron-purple",
-      "name": "KTT Macaron Purple"
-    },
-    {
-      "id": "ktt-macaron-purple-3-collection-2688",
-      "name": "KTT Macaron Purple - Collection 2688",
+      "name": "KTT Macaron Purple",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -23345,11 +22450,7 @@
     },
     {
       "id": "ktt-macaron-red",
-      "name": "KTT Macaron Red"
-    },
-    {
-      "id": "ktt-macaron-red-3-collection-2683",
-      "name": "KTT Macaron Red - Collection 2683",
+      "name": "KTT Macaron Red",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -23361,23 +22462,13 @@
     },
     {
       "id": "ktt-macaron-yellow",
-      "name": "KTT Macaron Yellow"
-    },
-    {
-      "id": "ktt-macaron-yellow-3-collection-2685",
-      "name": "KTT Macaron Yellow - Collection 2685",
+      "name": "KTT Macaron Yellow",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
     {
       "id": "ktt-macaron-yellow-chinajoy-edition",
       "name": "KTT Macaron Yellow (ChinaJoy Edition)",
-      "manufacturer": "KTT",
-      "switchType": "linear"
-    },
-    {
-      "id": "ktt-macron-pink",
-      "name": "KTT Macron Pink",
       "manufacturer": "KTT",
       "switchType": "linear"
     },
@@ -23516,11 +22607,7 @@
     },
     {
       "id": "ktt-phalaenopsis",
-      "name": "KTT Phalaenopsis"
-    },
-    {
-      "id": "ktt-phalaenopsis-collection-1647",
-      "name": "KTT Phalaenopsis - Collection 1647",
+      "name": "KTT Phalaenopsis",
       "manufacturer": "KTT",
       "switchType": "tactile"
     },
@@ -23639,10 +22726,6 @@
       "name": "KTT Retro Silver",
       "manufacturer": "KTT",
       "switchType": "linear"
-    },
-    {
-      "id": "ktt-retro-silver-dustproof",
-      "name": "KTT Retro Silver Dustproof"
     },
     {
       "id": "ktt-retro-white",
@@ -23990,23 +23073,13 @@
       "switchType": "linear"
     },
     {
-      "id": "lc-blue-collection-1189",
-      "name": "LC Blue - Collection 1189",
+      "id": "lc-blue",
+      "name": "LC Blue",
       "switchType": "clicky"
     },
     {
-      "id": "lc-blue-collection-1445",
-      "name": "LC Blue - Collection 1445",
-      "switchType": "clicky"
-    },
-    {
-      "id": "lc-red-collection-1188",
-      "name": "LC Red - Collection 1188",
-      "switchType": "linear"
-    },
-    {
-      "id": "lc-red-collection-1446",
-      "name": "LC Red - Collection 1446",
+      "id": "lc-red",
+      "name": "LC Red",
       "switchType": "linear"
     },
     {
@@ -24040,7 +23113,8 @@
     },
     {
       "id": "lcet-blue-v3",
-      "name": "LCET Blue V3"
+      "name": "LCET Blue V3",
+      "switchType": "clicky"
     },
     {
       "id": "lcet-blue-white-blue",
@@ -24138,17 +23212,8 @@
     },
     {
       "id": "lcet-holy-panda",
-      "name": "LCET Holy Panda"
-    },
-    {
-      "id": "lcet-holy-panda-3-collection-990",
-      "name": "LCET 'Holy Panda' - Collection 990",
+      "name": "LCET Holy Panda",
       "manufacturer": "LCET",
-      "switchType": "tactile"
-    },
-    {
-      "id": "lcet-holy-panda-collection-3092",
-      "name": "LCET \"Holy Panda\" - Collection 3092",
       "switchType": "tactile"
     },
     {
@@ -24323,11 +23388,6 @@
       "switchType": "linear"
     },
     {
-      "id": "lcet-v3-blue",
-      "name": "LCET V3 Blue",
-      "switchType": "clicky"
-    },
-    {
       "id": "lcet-wujing-eva",
       "name": "LCET Wujing Eva",
       "switchType": "linear"
@@ -24353,19 +23413,9 @@
       "switchType": "linear"
     },
     {
-      "id": "lekker-v2-45",
-      "name": "Lekker V2 45",
-      "switchType": "linear"
-    },
-    {
       "id": "lekker-v2-45g",
       "name": "Lekker V2 45g",
       "manufacturer": "Grain Gold",
-      "switchType": "linear"
-    },
-    {
-      "id": "lekker-v2-60",
-      "name": "Lekker V2 60",
       "switchType": "linear"
     },
     {
@@ -24454,13 +23504,6 @@
       "switchType": "linear"
     },
     {
-      "id": "leobog-black-white-red-factory-error",
-      "name": "LEOBOG Black/White/Red Factory Error",
-      "manufacturer": "SOAI",
-      "brand": "LEOBOG",
-      "switchType": "linear"
-    },
-    {
       "id": "leobog-blue-white",
       "name": "LEOBOG Blue/White",
       "manufacturer": "SOAI",
@@ -24475,7 +23518,9 @@
     {
       "id": "leobog-chive-leek",
       "name": "LEOBOG Chive (Leek)",
-      "brand": "LEOBOG"
+      "manufacturer": "SOAI",
+      "brand": "LEOBOG",
+      "switchType": "linear"
     },
     {
       "id": "leobog-crystal",
@@ -24594,13 +23639,6 @@
       "id": "leobog-led-diffusers",
       "name": "LEOBOG LED Diffusers",
       "brand": "LEOBOG"
-    },
-    {
-      "id": "leobog-leek-chive",
-      "name": "LEOBOG Leek/Chive",
-      "manufacturer": "SOAI",
-      "brand": "LEOBOG",
-      "switchType": "linear"
     },
     {
       "id": "leobog-leek-chive-v2",
@@ -25252,42 +24290,6 @@
       "switchType": "linear"
     },
     {
-      "id": "low-profile-keychron-optical-banana",
-      "name": "Low Profile Keychron Optical - Banana"
-    },
-    {
-      "id": "low-profile-keychron-optical-black",
-      "name": "Low Profile Keychron Optical - Black"
-    },
-    {
-      "id": "low-profile-keychron-optical-blue",
-      "name": "Low Profile Keychron Optical - Blue"
-    },
-    {
-      "id": "low-profile-keychron-optical-brown",
-      "name": "Low Profile Keychron Optical - Brown"
-    },
-    {
-      "id": "low-profile-keychron-optical-low-profile-tester",
-      "name": "Low Profile Keychron Optical - Low Profile Tester"
-    },
-    {
-      "id": "low-profile-keychron-optical-mint",
-      "name": "Low Profile Keychron Optical - Mint"
-    },
-    {
-      "id": "low-profile-keychron-optical-orange",
-      "name": "Low Profile Keychron Optical - Orange"
-    },
-    {
-      "id": "low-profile-keychron-optical-red",
-      "name": "Low Profile Keychron Optical - Red"
-    },
-    {
-      "id": "low-profile-keychron-optical-white",
-      "name": "Low Profile Keychron Optical - White"
-    },
-    {
       "id": "lowprokb-choc-ambient-nocturnal",
       "name": "LowProKB Choc Ambient Nocturnal",
       "manufacturer": "Kailh",
@@ -25559,12 +24561,16 @@
       "id": "melon-milk-linear",
       "name": "Melon Milk Linear",
       "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "linear"
     },
     {
       "id": "melon-milk-tactile",
       "name": "Melon Milk Tactile",
       "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "tactile"
     },
     {
@@ -25585,20 +24591,6 @@
       "switchType": "linear"
     },
     {
-      "id": "mengmoda-holy-panda-collection-1183",
-      "name": "MMD 'Holy Panda' - Collection 1183",
-      "manufacturer": "SOAI",
-      "brand": "MMD",
-      "switchType": "tactile"
-    },
-    {
-      "id": "mengmoda-holy-panda-collection-1499",
-      "name": "MMD Holy Panda - Collection 1499",
-      "manufacturer": "SOAI",
-      "brand": "MMD",
-      "switchType": "tactile"
-    },
-    {
       "id": "mengmoda-ice-cream",
       "name": "MMD Ice Cream",
       "manufacturer": "SOAI",
@@ -25606,20 +24598,10 @@
       "switchType": "linear"
     },
     {
-      "id": "mengmoda-mmd-holy-panda",
-      "name": "MMD (MMD) Holy Panda",
-      "brand": "MMD"
-    },
-    {
       "id": "mengmoda-mmd-honey-ht-stock",
       "name": "MMD (MMD) Honey HT (Stock)",
       "brand": "MMD",
       "switchType": "tactile"
-    },
-    {
-      "id": "mengmoda-mmd-matcha-ice-cream",
-      "name": "MMD (MMD) Matcha Ice Cream",
-      "brand": "MMD"
     },
     {
       "id": "mengmoda-mmd-x-tomsb-iceberg",
@@ -25875,11 +24857,6 @@
       "name": "MMD Matcha Ice Cream V3",
       "brand": "MMD",
       "switchType": "linear"
-    },
-    {
-      "id": "mmd-mmd-ice-cream",
-      "name": "MMD (MMD) Ice Cream",
-      "brand": "MMD"
     },
     {
       "id": "mmd-princess-linear-28g",
@@ -26399,11 +25376,6 @@
       "switchType": "linear"
     },
     {
-      "id": "mountain-45-speed",
-      "name": "Mountain 45 Speed",
-      "switchType": "linear"
-    },
-    {
       "id": "mountain-45g-speed",
       "name": "Mountain 45g Speed",
       "manufacturer": "TTC",
@@ -26479,13 +25451,8 @@
       "switchType": "linear"
     },
     {
-      "id": "ms-ez-dustproof-blue-collection-1187",
-      "name": "MS&EZ Dustproof Blue - Collection 1187",
-      "switchType": "clicky"
-    },
-    {
-      "id": "ms-ez-dustproof-blue-collection-1436",
-      "name": "MS&EZ Dustproof Blue - Collection 1436",
+      "id": "ms-ez-dustproof-blue",
+      "name": "MS&EZ Dustproof Blue",
       "switchType": "clicky"
     },
     {
@@ -26617,12 +25584,6 @@
     {
       "id": "neapolitan-ice-cream",
       "name": "Neapolitan Ice Cream",
-      "manufacturer": "Tecsee",
-      "switchType": "tactile"
-    },
-    {
-      "id": "neapolitan-ice-creams",
-      "name": "Neapolitan Ice Creams",
       "manufacturer": "Tecsee",
       "switchType": "tactile"
     },
@@ -27168,13 +26129,6 @@
       "manufacturer": "Kailh",
       "brand": "NovelKeys",
       "switchType": "linear"
-    },
-    {
-      "id": "novelkeys-cream-tactile",
-      "name": "NK Cream Tactile",
-      "manufacturer": "Kailh",
-      "brand": "NovelKeys",
-      "switchType": "tactile"
     },
     {
       "id": "novelkeys-cream-v1",
@@ -27822,14 +26776,14 @@
       "switchType": "linear"
     },
     {
-      "id": "outemu-brown",
+      "id": "outemu-brown-45g-actuation",
       "name": "Outemu Brown (45g actuation)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile"
     },
     {
-      "id": "outemu-brown-55g",
+      "id": "outemu-brown-55g-actuation",
       "name": "Outemu Brown (55g actuation)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
@@ -28539,13 +27493,6 @@
       "brand": "Outemu"
     },
     {
-      "id": "outemu-optical-dustproof-blue",
-      "name": "Outemu Optical Dustproof Blue",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "clicky"
-    },
-    {
       "id": "outemu-optical-dustproof-red",
       "name": "Outemu Optical Dustproof Red",
       "manufacturer": "Outemu",
@@ -28899,18 +27846,6 @@
       "switchType": "linear"
     },
     {
-      "id": "outemu-smokey-blue",
-      "name": "Outemu Smokey Blue",
-      "manufacturer": "Outemu",
-      "brand": "Outemu"
-    },
-    {
-      "id": "outemu-smokey-red",
-      "name": "Outemu Smokey Red",
-      "manufacturer": "Outemu",
-      "brand": "Outemu"
-    },
-    {
       "id": "outemu-smoky-blue",
       "name": "Outemu Smoky Blue",
       "manufacturer": "Outemu",
@@ -29127,11 +28062,7 @@
     },
     {
       "id": "paigu-cheese-mocha",
-      "name": "Paigu Cheese Mocha"
-    },
-    {
-      "id": "paigu-mocha-cheese",
-      "name": "Paigu Mocha Cheese",
+      "name": "Paigu Cheese Mocha",
       "switchType": "linear"
     },
     {
@@ -29150,6 +28081,7 @@
       "id": "pantheonkeys-x-ttc-pt-black",
       "name": "PantheonKeys x TTC PT Black",
       "manufacturer": "TTC",
+      "brand": "TTC",
       "switchType": "linear"
     },
     {
@@ -29544,28 +28476,11 @@
       "switchType": "tactile"
     },
     {
-      "id": "punkshoo-melody-factory-error",
-      "name": "Punkshoo Melody Factory Error",
-      "manufacturer": "Aflion",
-      "brand": "Punkshoo",
-      "switchType": "tactile"
-    },
-    {
-      "id": "punkshoo-melody-factory-errors",
-      "name": "Punkshoo Melody Factory Errors",
-      "brand": "Punkshoo"
-    },
-    {
       "id": "punkshoo-melody-redux",
       "name": "Punkshoo Melody Redux",
       "manufacturer": "BSUN",
       "brand": "Punkshoo",
       "switchType": "tactile"
-    },
-    {
-      "id": "punkshoo-melody-stock",
-      "name": "Punkshoo Melody (stock)",
-      "brand": "Punkshoo"
     },
     {
       "id": "punkshoo-root-beer-float-new-leaf",
@@ -30391,11 +29306,6 @@
       "brand": "Royal Kludge"
     },
     {
-      "id": "royal-kludge-silver",
-      "name": "RK Silver",
-      "brand": "Royal Kludge"
-    },
-    {
       "id": "royal-kludge-skycyan",
       "name": "RK Skycyan",
       "brand": "Royal Kludge"
@@ -30403,11 +29313,6 @@
     {
       "id": "rre-black",
       "name": "RRE Black",
-      "switchType": "linear"
-    },
-    {
-      "id": "rre-blacks",
-      "name": "RRE Blacks",
       "switchType": "linear"
     },
     {
@@ -30522,16 +29427,7 @@
     },
     {
       "id": "saybour-blue",
-      "name": "Saybour Blue"
-    },
-    {
-      "id": "saybour-blue-3-collection-432",
-      "name": "Saybour Blue - Collection 432",
-      "switchType": "clicky"
-    },
-    {
-      "id": "saybour-blue-collection-3235",
-      "name": "Saybour Blue - Collection 3235",
+      "name": "Saybour Blue",
       "switchType": "clicky"
     },
     {
@@ -30617,18 +29513,6 @@
       "switchType": "linear"
     },
     {
-      "id": "silent-blue-macaw",
-      "name": "Silent Blue Macaw",
-      "manufacturer": "JWK",
-      "switchType": "tactile"
-    },
-    {
-      "id": "silent-coral",
-      "name": "Silent Coral",
-      "manufacturer": "JWK",
-      "switchType": "linear"
-    },
-    {
       "id": "silk-emerald",
       "name": "Silk Emerald",
       "manufacturer": "JWK",
@@ -30637,22 +29521,31 @@
     {
       "id": "sillyworks-gateron-type-a",
       "name": "Sillyworks Gateron Type A",
-      "brand": "Sillyworks"
+      "manufacturer": "Gateron",
+      "brand": "Sillyworks",
+      "switchType": "linear"
     },
     {
       "id": "sillyworks-gateron-type-l",
       "name": "Sillyworks Gateron Type L",
-      "brand": "Sillyworks"
+      "manufacturer": "Gateron",
+      "brand": "Sillyworks",
+      "switchType": "linear"
     },
     {
       "id": "sillyworks-gateron-type-r",
       "name": "Sillyworks Gateron Type R",
-      "brand": "Sillyworks"
+      "manufacturer": "Gateron",
+      "brand": "Sillyworks",
+      "designer": "Sillyworks",
+      "switchType": "tactile"
     },
     {
       "id": "sillyworks-gateron-type-s",
       "name": "Sillyworks Gateron Type S",
-      "brand": "Sillyworks"
+      "manufacturer": "Gateron",
+      "brand": "Sillyworks",
+      "switchType": "linear"
     },
     {
       "id": "sillyworks-hyacinth-v2",
@@ -30686,35 +29579,6 @@
       "switchType": "linear"
     },
     {
-      "id": "sillyworks-x-gateron-type-a",
-      "name": "Sillyworks x Gateron Type A",
-      "manufacturer": "Gateron",
-      "brand": "Sillyworks",
-      "switchType": "linear"
-    },
-    {
-      "id": "sillyworks-x-gateron-type-l",
-      "name": "Sillyworks x Gateron Type L",
-      "manufacturer": "Gateron",
-      "brand": "Sillyworks",
-      "switchType": "linear"
-    },
-    {
-      "id": "sillyworks-x-gateron-type-r",
-      "name": "Sillyworks x Gateron Type R",
-      "manufacturer": "Gateron",
-      "brand": "Sillyworks",
-      "designer": "Sillyworks",
-      "switchType": "tactile"
-    },
-    {
-      "id": "sillyworks-x-gateron-type-s",
-      "name": "Sillyworks x Gateron Type S",
-      "manufacturer": "Gateron",
-      "brand": "Sillyworks",
-      "switchType": "linear"
-    },
-    {
       "id": "sillyworks-x-hmx-sonja",
       "name": "Sillyworks X HMX Sonja",
       "manufacturer": "HMX",
@@ -30731,6 +29595,16 @@
       "switchType": "tactile"
     },
     {
+      "id": "sillyworks-x-napworks-37g",
+      "name": "Sillyworks x Napworks 37g",
+      "brand": "Sillyworks"
+    },
+    {
+      "id": "sillyworks-x-napworks-45g",
+      "name": "Sillyworks x Napworks 45g",
+      "brand": "Sillyworks"
+    },
+    {
       "id": "sillyworks-x-napworks-hmx-nap-switch-37g",
       "name": "Sillyworks x Napworks HMX Nap Switch (37g)",
       "manufacturer": "HMX",
@@ -30743,16 +29617,6 @@
       "manufacturer": "HMX",
       "brand": "Sillyworks",
       "switchType": "linear"
-    },
-    {
-      "id": "sillyworks-x-napworks-napworks-37g",
-      "name": "Sillyworks x Napworks Napworks 37g",
-      "brand": "Sillyworks"
-    },
-    {
-      "id": "sillyworks-x-napworks-napworks-45g",
-      "name": "Sillyworks x Napworks Napworks 45g",
-      "brand": "Sillyworks"
     },
     {
       "id": "singularity",
@@ -30813,11 +29677,6 @@
     {
       "id": "skyloong-chocolate-rose",
       "name": "Skyloong Chocolate Rose",
-      "brand": "Skyloong"
-    },
-    {
-      "id": "skyloong-chocolate-rose-collection-2347",
-      "name": "Skyloong Chocolate Rose - Collection 2347",
       "brand": "Skyloong",
       "switchType": "tactile"
     },
@@ -31188,12 +30047,6 @@
       "switchType": "linear"
     },
     {
-      "id": "snow-whites",
-      "name": "Snow Whites",
-      "manufacturer": "JWK",
-      "switchType": "linear"
-    },
-    {
       "id": "solaris",
       "name": "Solaris",
       "manufacturer": "JWK",
@@ -31551,12 +30404,16 @@
       "id": "strawberry-milk-ice-linear",
       "name": "Strawberry Milk Ice Linear",
       "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "linear"
     },
     {
       "id": "strawberry-milk-ice-tactile",
       "name": "Strawberry Milk Ice Tactile",
       "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
       "switchType": "tactile"
     },
     {
@@ -31658,6 +30515,7 @@
       "id": "sw-s-s-s",
       "name": "SW S.S.S",
       "manufacturer": "BSUN",
+      "brand": "Swagkeys",
       "switchType": "tactile"
     },
     {
@@ -31693,6 +30551,7 @@
     {
       "id": "sw-x-knt-taro",
       "name": "SW x KNT Taro",
+      "brand": "Swagkeys",
       "switchType": "linear"
     },
     {
@@ -31725,14 +30584,11 @@
       "brand": "Swagkeys"
     },
     {
-      "id": "swagkeys-s-s-s",
-      "name": "SWG S.S.S.",
-      "brand": "Swagkeys"
-    },
-    {
       "id": "swagkeys-swk-toucan",
       "name": "SWG SWK Toucan",
-      "brand": "Swagkeys"
+      "manufacturer": "SWK",
+      "brand": "Swagkeys",
+      "switchType": "linear"
     },
     {
       "id": "swagkeys-x-hmx-catmint",
@@ -31740,21 +30596,8 @@
       "brand": "Swagkeys"
     },
     {
-      "id": "swagkeys-x-knt-taro",
-      "name": "SWG x KNT Taro",
-      "brand": "Swagkeys",
-      "switchType": "linear"
-    },
-    {
       "id": "swagkeys-x-swk-peony-he",
       "name": "SWG x SWK Peony HE",
-      "manufacturer": "SWK",
-      "brand": "Swagkeys",
-      "switchType": "linear"
-    },
-    {
-      "id": "swagkeys-x-swk-toucan",
-      "name": "SWG x SWK Toucan",
       "manufacturer": "SWK",
       "brand": "Swagkeys",
       "switchType": "linear"
@@ -32121,12 +30964,14 @@
     {
       "id": "tecsee-blue-sky-cloud-linear",
       "name": "Tecsee Blue Sky Cloud Linear",
+      "manufacturer": "Tecsee",
       "brand": "Tecsee",
       "switchType": "linear"
     },
     {
       "id": "tecsee-blue-sky-cloud-tactile",
       "name": "Tecsee Blue Sky Cloud Tactile",
+      "manufacturer": "Tecsee",
       "brand": "Tecsee",
       "switchType": "tactile"
     },
@@ -32563,20 +31408,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "tecsee-sky-blue-cloud-linear",
-      "name": "Tecsee Sky Blue Cloud Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Tecsee",
-      "switchType": "linear"
-    },
-    {
-      "id": "tecsee-sky-blue-cloud-tactile",
-      "name": "Tecsee Sky Blue Cloud Tactile",
-      "manufacturer": "Tecsee",
-      "brand": "Tecsee",
-      "switchType": "tactile"
-    },
-    {
       "id": "tecsee-snow-globe",
       "name": "Tecsee Snow Globe",
       "manufacturer": "Tecsee",
@@ -32800,13 +31631,6 @@
       "switchType": "linear"
     },
     {
-      "id": "tofutypes-x-knc-keys-tofu",
-      "name": "TofuTypes x KNC Keys Tofu",
-      "manufacturer": "Tecsee",
-      "designer": "Store Link",
-      "switchType": "linear"
-    },
-    {
       "id": "togar-egg",
       "name": "Togar Egg",
       "switchType": "tactile"
@@ -32820,10 +31644,6 @@
       "id": "togar-gorilla",
       "name": "Togar Gorilla",
       "switchType": "linear"
-    },
-    {
-      "id": "togar-gorrilla",
-      "name": "Togar Gorrilla"
     },
     {
       "id": "togar-ice-and-snow",
@@ -33026,12 +31846,6 @@
       "name": "TTC Blue (Short LED)",
       "manufacturer": "TTC",
       "switchType": "clicky"
-    },
-    {
-      "id": "ttc-blueish-white",
-      "name": "TTC Blueish White",
-      "manufacturer": "TTC",
-      "switchType": "tactile"
     },
     {
       "id": "ttc-blueish-white-condensor",
@@ -33283,7 +32097,9 @@
     },
     {
       "id": "ttc-frozen-silent-v2",
-      "name": "TTC Frozen Silent V2"
+      "name": "TTC Frozen Silent V2",
+      "brand": "TTC",
+      "switchType": "linear"
     },
     {
       "id": "ttc-frozen-v2",
@@ -33384,7 +32200,9 @@
     },
     {
       "id": "ttc-helix-lab-skylar",
-      "name": "TTC Helix Lab Skylar"
+      "name": "TTC Helix Lab Skylar",
+      "manufacturer": "TTC",
+      "switchType": "clicky"
     },
     {
       "id": "ttc-heroic-panda",
@@ -33414,17 +32232,7 @@
     },
     {
       "id": "ttc-ice",
-      "name": "TTC Ice"
-    },
-    {
-      "id": "ttc-ice-3-collection-1381",
-      "name": "TTC Ice - Collection 1381",
-      "manufacturer": "TTC",
-      "switchType": "linear"
-    },
-    {
-      "id": "ttc-ice-collection-1101",
-      "name": "TTC ICE - Collection 1101",
+      "name": "TTC Ice",
       "manufacturer": "TTC",
       "switchType": "linear"
     },
@@ -33788,10 +32596,6 @@
       "switchType": "linear"
     },
     {
-      "id": "ttc-rabbit-og",
-      "name": "TTC Rabbit OG"
-    },
-    {
       "id": "ttc-rabbit-rgb",
       "name": "TTC Rabbit RGB",
       "manufacturer": "TTC",
@@ -33804,16 +32608,10 @@
       "switchType": "clicky"
     },
     {
-      "id": "ttc-razer-dustproof-orange",
-      "name": "TTC Razer Dustproof Orange",
+      "id": "ttc-razer-dustproof-orange-type-b",
+      "name": "TTC Razer Dustproof Orange Type B",
       "manufacturer": "TTC",
       "switchType": "tactile"
-    },
-    {
-      "id": "ttc-razer-dustproof-yellow",
-      "name": "TTC Razer Dustproof Yellow",
-      "manufacturer": "TTC",
-      "switchType": "linear"
     },
     {
       "id": "ttc-razer-dustproof-yellow-type-b",
@@ -33936,12 +32734,6 @@
       "name": "TTC Silent Brown V2 Pro",
       "manufacturer": "TTC",
       "switchType": "tactile"
-    },
-    {
-      "id": "ttc-silent-frozen-v2",
-      "name": "TTC Silent Frozen V2",
-      "brand": "TTC",
-      "switchType": "linear"
     },
     {
       "id": "ttc-silent-pink",
@@ -34114,12 +32906,6 @@
       "switchType": "linear"
     },
     {
-      "id": "ttc-x-helix-lab-skylar",
-      "name": "TTC x Helix Lab Skylar",
-      "manufacturer": "TTC",
-      "switchType": "clicky"
-    },
-    {
       "id": "ttc-x-kbdfans-hey",
       "name": "TTC x KBDfans Hey",
       "switchType": "linear"
@@ -34157,11 +32943,6 @@
       "name": "TTC x Logitech Purple Brown",
       "manufacturer": "TTC",
       "switchType": "tactile"
-    },
-    {
-      "id": "ttc-x-pantheonkeys-pt-black",
-      "name": "TTC x Pantheonkeys PT Black",
-      "brand": "TTC"
     },
     {
       "id": "ttc-x-varmilo-speed-gold",
@@ -34249,6 +33030,7 @@
       "id": "ube-crinkle-cookie",
       "name": "Ube Crinkle Cookie",
       "manufacturer": "SP-Star",
+      "designer": "Store Link",
       "switchType": "linear"
     },
     {
@@ -34699,10 +33481,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "varmilo-x-ttc-speed-gold",
-      "name": "Varmilo x TTC Speed Gold"
-    },
-    {
       "id": "varo-tan",
       "name": "Varo Tan",
       "manufacturer": "Haimu",
@@ -34718,13 +33496,6 @@
       "name": "Vertex V1",
       "manufacturer": "JWK",
       "brand": "Vertex",
-      "switchType": "linear"
-    },
-    {
-      "id": "vertex-v1-stock",
-      "name": "Vertex V1 - Stock",
-      "manufacturer": "JWK",
-      "brand": "JWICK",
       "switchType": "linear"
     },
     {
@@ -34819,13 +33590,6 @@
       "id": "wekt-lucy-r5t",
       "name": "WEKT Lucy R5T",
       "manufacturer": "WEKT",
-      "switchType": "linear"
-    },
-    {
-      "id": "wekt-lucy-v5-silent",
-      "name": "WEKT Lucy V5 Silent",
-      "manufacturer": "WEKT (formerly Lichicx)",
-      "brand": "WEKT",
       "switchType": "linear"
     },
     {
@@ -35690,6 +34454,11 @@
       "switchType": "linear"
     },
     {
+      "id": "ws-dash-he-magnetic",
+      "name": "WS Dash HE Magnetic",
+      "brand": "Wuque Studio"
+    },
+    {
       "id": "ws-dopamine",
       "name": "WS Dopamine",
       "manufacturer": "Gateron",
@@ -35706,6 +34475,12 @@
       "switchType": "linear"
     },
     {
+      "id": "ws-flux-cullinan-magnetic",
+      "name": "WS Flux Cullinan Magnetic",
+      "brand": "Wuque Studio",
+      "switchType": "linear"
+    },
+    {
       "id": "ws-flux-deep-clacky",
       "name": "WS Flux Deep Clacky",
       "manufacturer": "K2",
@@ -35716,6 +34491,12 @@
       "id": "ws-flux-he",
       "name": "WS Flux HE",
       "manufacturer": "K2",
+      "brand": "Wuque Studio",
+      "switchType": "linear"
+    },
+    {
+      "id": "ws-flux-heart-of-the-ocean-magnetic",
+      "name": "WS Flux Heart of the Ocean Magnetic",
       "brand": "Wuque Studio",
       "switchType": "linear"
     },
@@ -36070,137 +34851,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "ws-ws-arowana-gold",
-      "name": "WS WS Arowana Gold",
-      "manufacturer": "HMX",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-arowana-red",
-      "name": "WS WS Arowana Red",
-      "manufacturer": "HMX",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-arowana-yellow",
-      "name": "WS WS Arowana Yellow",
-      "manufacturer": "HMX",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-aurora-clear",
-      "name": "WS WS Aurora Clear",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-biglucky-linear",
-      "name": "WS WS BigLucky Linear",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-biglucky-tactile",
-      "name": "WS WS BigLucky Tactile",
-      "brand": "Wuque Studio",
-      "switchType": "tactile"
-    },
-    {
-      "id": "ws-ws-brown",
-      "name": "WS WS Brown",
-      "brand": "Wuque Studio",
-      "switchType": "tactile"
-    },
-    {
-      "id": "ws-ws-dash-he-magnetic",
-      "name": "WS WS Dash HE Magnetic",
-      "brand": "Wuque Studio"
-    },
-    {
-      "id": "ws-ws-flux-cullinan-magnetic",
-      "name": "WS WS Flux Cullinan Magnetic",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-flux-heart-of-the-ocean-magnetic",
-      "name": "WS WS Flux Heart of the Ocean Magnetic",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-heavy",
-      "name": "WS WS Heavy",
-      "brand": "Wuque Studio",
-      "switchType": "tactile"
-    },
-    {
-      "id": "ws-ws-jade",
-      "name": "WS WS Jade",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-light",
-      "name": "WS WS Light",
-      "brand": "Wuque Studio",
-      "switchType": "tactile"
-    },
-    {
-      "id": "ws-ws-morandi",
-      "name": "WS WS Morandi",
-      "manufacturer": "Haimu",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-onion",
-      "name": "WS WS Onion",
-      "manufacturer": "JWK",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-pom-plus",
-      "name": "WS WS POM+",
-      "manufacturer": "Gateron",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-quartz",
-      "name": "WS WS Quartz",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-red",
-      "name": "WS WS Red",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-silent-linear",
-      "name": "WS WS Silent Linear",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "ws-ws-silent-tactile",
-      "name": "WS WS Silent Tactile",
-      "brand": "Wuque Studio",
-      "switchType": "tactile"
-    },
-    {
-      "id": "ws-ws-yellow",
-      "name": "WS WS Yellow",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
       "id": "ws-yellow",
       "name": "WS Yellow",
       "manufacturer": "Haimu",
@@ -36258,19 +34908,6 @@
       "id": "wuque-studio-dustproof-white",
       "name": "WS Dustproof White",
       "manufacturer": "Haimu",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "wuque-studio-pearl",
-      "name": "WS Pearl",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    {
-      "id": "wuque-ws-pom-plus",
-      "name": "WS POM+",
-      "manufacturer": "Gateron",
       "brand": "Wuque Studio",
       "switchType": "linear"
     },
@@ -36745,24 +35382,6 @@
     {
       "id": "zeal-clickiez-75g",
       "name": "Zeal Clickiez 75g"
-    },
-    {
-      "id": "zeal-clickiez-75g-clicky",
-      "name": "Zeal Clickiez 75g. (Clicky)",
-      "manufacturer": "Gateron",
-      "switchType": "clicky"
-    },
-    {
-      "id": "zeal-clickiez-75g-linear",
-      "name": "Zeal Clickiez 75g. (Linear)",
-      "manufacturer": "Gateron",
-      "switchType": "linear"
-    },
-    {
-      "id": "zeal-clickiez-75g-tactile",
-      "name": "Zeal Clickiez 75g. (Tactile)",
-      "manufacturer": "Gateron",
-      "switchType": "tactile"
     },
     {
       "id": "zeal-crystal",

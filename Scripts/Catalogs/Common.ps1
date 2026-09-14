@@ -182,6 +182,8 @@ function Get-CatalogMatchName([string]$Text, [switch]$SourceIdentity) {
 $script:CatalogLubeModelName = '(?:NK|NovelKeys)\s+Dry\b'
 
 function Get-CatalogSpecimenReason([string]$Name) {
+    if ($Name -match '(?i)\b(?:factory\s+(?:errors?|defects?)|defective)\b') { return 'Factory-error or defective specimen, not a distinct product' }
+    if ($Name -match '(?i)\btesters?\b') { return 'Switch tester assortment, not a distinct product' }
     if ($Name -match '(?i)\b(?:prototypes?|proto)\b') { return 'Prototype specimen, not a listed product' }
     if ($Name -match '(?i)\bsamples?\b|\btrial set\b') { return 'Sample specimen, not a distinct product' }
     if ($Name -match '(?i)\bdisplay unit\b') { return 'Open-box display unit, not a distinct product' }
@@ -218,6 +220,7 @@ function Get-CatalogModificationReason([string]$Name) {
 # lube wording does not belong in its name.
 function Get-CatalogLubeFreeName([string]$Name) {
     if ($Name -match "(?i)\b$script:CatalogLubeModelName") { return Get-CatalogName $Name }
+    $Name = $Name -replace '(?i)\bun[- ]lubed\b', 'unlubed'
     # A composed variant suffix reads first, or the rule below would match its opening
     # parenthesis alone and leave "Stock" stranded.
     $name = $Name -replace '(?i)\s*[-\u2013]\s*(?:stock\s*)?\(?(?:no\s+|light\s+|medium\s+|heavy\s+|factory\s+|pre-?|hand\s+)?(?:lubed?|unlubed|dry)\)?\s*$', ''
@@ -234,6 +237,7 @@ function Get-CatalogLubeFreeName([string]$Name) {
 # One decision point for whether a switch listing is a product and what it is called.
 function Set-CatalogSwitchProduct($Record) {
     if ($Record.excluded) { return }
+    if ($Record.entry.name -match '(?i)\bmacro[- ]?pad\b') { $Record.excluded = 'Macro pad device, not an individual switch product'; return }
     $reason = Get-CatalogModificationReason $Record.entry.name
     if (-not $reason) { $reason = Get-CatalogSpecimenReason $Record.entry.name }
     if ($reason) { $Record.excluded = $reason; return }

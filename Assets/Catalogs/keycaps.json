@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 30,
-  "totalCount": 2745,
+  "catalogVersion": 32,
+  "totalCount": 2733,
   "entries": [
     {
       "id": "80retros-1990s-blush",
@@ -326,13 +326,6 @@
       "designer": "Ovie Grant",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "alohakb-jxm-keycaps",
-      "name": "AlohaKB JXM Keycaps",
-      "manufacturer": "AlohaKB",
-      "brand": "AlohaKB",
-      "designer": "Ovie Grant"
     },
     {
       "id": "alohakb-k-o-ii-ep-133",
@@ -1021,24 +1014,6 @@
       "material": "PBT"
     },
     {
-      "id": "crp-hammerworks-r4",
-      "name": "CRP Hammerworks r4",
-      "manufacturer": "Hammerworks",
-      "brand": "CRP",
-      "designer": "Hammerworks",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "crp-hammerworks-r5",
-      "name": "CRP Hammerworks r5",
-      "manufacturer": "Hammerworks",
-      "brand": "CRP",
-      "designer": "Hammerworks",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
       "id": "crp-mirror-image",
       "name": "CRP Mirror Image",
       "manufacturer": "Hammerworks",
@@ -1472,14 +1447,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-alps-yuri",
-      "name": "DCS Alps Yuri",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "T0mb3ry",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-america",
       "name": "DCS America",
       "manufacturer": "Signature Plastics",
@@ -1736,20 +1703,20 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-dolch",
-      "name": "DCS Dolch (2026)",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Carter",
-      "profile": "DCS",
-      "material": "ABS"
-    },
-    {
       "id": "dcs-dolch-2024",
       "name": "DCS Dolch (2024)",
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "HickNeller",
+      "profile": "DCS",
+      "material": "ABS"
+    },
+    {
+      "id": "dcs-dolch-2026",
+      "name": "DCS Dolch (2026)",
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics",
+      "designer": "Carter",
       "profile": "DCS",
       "material": "ABS"
     },
@@ -2491,14 +2458,6 @@
       "material": "ABS"
     },
     {
-      "id": "dcs-sport-walker",
-      "name": "DCS Sport Walker",
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "Fredington",
-      "profile": "DCS"
-    },
-    {
       "id": "dcs-sports-walker",
       "name": "DCS Sports Walker",
       "manufacturer": "Signature Plastics",
@@ -3024,13 +2983,6 @@
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
       "designer": "Deadline Studio"
-    },
-    {
-      "id": "deadline-airg-pc",
-      "name": "Deadline AirG PC",
-      "manufacturer": "Deadline Studio",
-      "brand": "Deadline Studio",
-      "profile": "Cherry"
     },
     {
       "id": "deadline-hmc",
@@ -6170,14 +6122,6 @@
       "name": "GMK Centinela Extension Kit",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-centinela-extension-kits",
-      "name": "GMK Centinela Extension Kits",
-      "manufacturer": "GMK",
-      "brand": "GMK",
       "designer": "vheissu",
       "profile": "Cherry",
       "material": "ABS"
@@ -8159,15 +8103,6 @@
       "material": "PBT"
     },
     {
-      "id": "gmk-just-mtnu",
-      "name": "GMK JUST MTNU",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Nephlock",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
       "id": "gmk-ka-2019-valentine",
       "name": "GMK KA 2019 Valentine",
       "manufacturer": "GMK",
@@ -8914,6 +8849,7 @@
       "name": "GMK MTNU JUST",
       "manufacturer": "GMK",
       "brand": "GMK",
+      "designer": "Nephlock",
       "profile": "MTNU",
       "material": "PBT"
     },
@@ -11217,18 +11153,6 @@
       "material": "PBT"
     },
     {
-      "id": "group-buy-swg-art",
-      "name": "[Group-Buy] SWG Art"
-    },
-    {
-      "id": "group-buy-swg-feralis",
-      "name": "[Group-Buy] SWG Feralis"
-    },
-    {
-      "id": "group-buy-swg-hypermix",
-      "name": "[Group-Buy] SWG Hypermix"
-    },
-    {
       "id": "gsa-game-1989-classic",
       "name": "GSA Game 1989 Classic",
       "designer": "80Retros",
@@ -11383,6 +11307,7 @@
       "name": "Hammerworks CRP R5",
       "manufacturer": "Hammerworks",
       "brand": "CRP",
+      "designer": "Hammerworks",
       "profile": "Cherry",
       "material": "PBT"
     },
@@ -14386,15 +14311,6 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "Kei",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "keykobo-the-great-barrier-reef",
-      "name": "KKB The Great Barrier Reef",
-      "manufacturer": "KeyKobo",
-      "brand": "KeyKobo",
-      "designer": "BrainAha",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -20513,15 +20429,15 @@
       "material": "PBT"
     },
     {
-      "id": "tai-hao-black-on-white",
-      "name": "Tai-Hao Black on White",
+      "id": "tai-hao-black-on-white-128-keys",
+      "name": "Tai-Hao Black on White (128 Keys)",
       "brand": "Tai-Hao",
       "profile": "Cubic",
       "material": "ABS"
     },
     {
-      "id": "tai-hao-black-on-white-white",
-      "name": "Tai-Hao Black on White White",
+      "id": "tai-hao-black-on-white-150-keys",
+      "name": "Tai-Hao Black on White (150 Keys)",
       "brand": "Tai-Hao",
       "profile": "Cubic",
       "material": "ABS"

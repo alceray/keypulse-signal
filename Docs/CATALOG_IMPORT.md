@@ -255,7 +255,7 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 
 ### Candidate switch sources
 
-The switch catalog now has 6,091 entries at version 23, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
+The switch catalog now has 5,842 entries at version 26, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
 
 | Source | Coverage benefit | Observed listings | Priority / remaining work |
 |---|---|---|---|
@@ -307,6 +307,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
 
+- Two Keychron assortments, one macro pad, and five factory-error/defect specimens. Parsing also rejects tester, macro-pad, and defect titles.
 - 122 prototypes that no retailer ever listed, 95 samples, and 23 aftermarket modifications.
 - 82 canceled keycap sets, 15 switches whose names carried question marks about their identity, and one emoji-named GMK entry.
 - Release review removed 604 keycap entries that never reached an opened order round: 508 IC-only or superseded proposals, 41 unopened releases, 34 cancelled or failed-MOQ releases, and 21 with no evidence either way after a 2026-09-13 follow-up confirmed 23 other entries had actually opened for orders and kept them instead.
@@ -315,6 +316,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Merged.**
 
+- ID cleanup merged 241 switch and 12 keycap duplicates, removing collection suffixes, repeated wording, sales-stage prefixes, and pack/lube options from names and IDs. Source identities and notes survive; Cupid and Aliaz retain their separate weights. Mixed company-name conventions remain unchanged.
 - KeebsForAll's generic [Hyperglide Linear](https://keebsforall.com/products/cherry-mx-hyperglide-linear-switches) and [Hyperglide Tactile](https://keebsforall.com/products/cherry-mx-hyperglide-tactile-switches) listings joined Black (5 Pin) and Brown (5 Pin), respectively, as identified by their specifications. Brown's incorrect linear type was corrected to tactile.
 - 215 switch duplicates exposed by redundant type labels joined their matching variants, and 664 surviving names were shortened or clarified. Distinct linear/tactile variants, weights, rounds, and stem options remain separate, including differently prefixed families such as BBN/BuiltByNim, KNC Green Jacket, [Doom](https://www.keebfront.com/product/doom-switches), and [NK Cream](https://novelkeys.com/products/nk-cream-series).
 - 24 spelling-error pairs revealed by alias standardization and the score sheet.
@@ -326,9 +328,9 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Kept apart on purpose.**
 
+- TTC Razer Orange Type B, KTT Macaron Pink ChinaJoy, Togar V1/Z1, reversed keycap colors, and Tai-Hao BoW 128/150-key kits. HMX Yogurt/Sogurt V2 remains unresolved.
 - Olivia and Olivia++, because plus signs are meaningful.
 - `Cherry Blossom` by JWK and `Cherry MX Blossom` by Cherry.
-- KTT Phalaenopsis, Skyloong Chocolate Rose, and other specimens without enough variant detail.
 - Retailer pages reused across rounds, such as `PBTfans Spark Light R2` and `PBTfans X-ray R3`.
 - Switch pairs where only one side is numbered V1.
 - Historical GMK White on Black with a different designer credit, and the archived MTNU WoB release, pending evidence that they match the current listings.
