@@ -7413,7 +7413,7 @@
     },
     "switches/gateron-nightingale": {
       "name": "Gateron Nightingale",
-      "switchType": null
+      "switchType": "tactile"
     },
     "switches/gateron-tangerine": {
       "name": "Gateron Tangerine",
@@ -20943,6 +20943,36 @@
     },
     "switches/wingtree-yuci-he-magnetic-gaming": {
       "switchType": "linear"
+    },
+    "switches/alps-skcc-cream-lock": {
+      "switchType": "latching"
+    },
+    "switches/alps-skcl-brown-lock": {
+      "switchType": "latching"
+    },
+    "switches/alps-skcl-cream-lock": {
+      "switchType": "latching"
+    },
+    "switches/alps-skcl-dark-grey-lock-skcljc": {
+      "switchType": "latching"
+    },
+    "switches/alps-skcl-double-action": {
+      "switchType": "linear"
+    },
+    "switches/alps-smk-monterey-white-lock": {
+      "switchType": "latching"
+    },
+    "switches/cherry-mx-lock-grey-black-5-pin": {
+      "switchType": "latching"
+    },
+    "switches/content-brown-black-bottom": {
+      "switchType": "tactile"
+    },
+    "switches/futaba-ma-inverse": {
+      "switchType": "clicky"
+    },
+    "switches/kailh-mix-7": {
+      "switchType": "linear/clicky"
     }
   },
   "excluded": {
@@ -22032,6 +22062,36 @@
     "switchoddities:8119094313244": "Sticker merchandise, not a switch.",
     "switchoddities:8119094083868": "Sticker merchandise, not a switch.",
     "switchoddities:10070296133916": "Individual decorative keycap, incorrectly imported as a switch.",
-    "switchoddities:10070294954268": "Individual decorative keycap, incorrectly imported as a switch."
+    "switchoddities:10070294954268": "Individual decorative keycap, incorrectly imported as a switch.",
+    "switchoddities:8971259248924": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971257053468": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971254300956": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813386621212": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813386785052": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971201708316": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971198464284": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971235918108": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971226710300": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971231723804": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971233788188": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971238441244": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971224219932": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971195089180": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813368369436": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813369024796": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8615895957788": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8615899037980": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971242635548": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8971244601628": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813373939996": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813372301596": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813374169372": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813384655132": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813382918428": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "theremingoat:1764": "Collection record covering all 192 DIY combinations, not an individual switch variant.",
+    "switchoddities:10813377675548": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813378199836": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813377315100": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813378429212": "Documented mouse microswitch; excluded from the keyboard switch catalog."
   }
 }

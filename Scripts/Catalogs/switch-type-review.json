@@ -8559,79 +8559,108 @@
         "https://keebsforall.com/products/tecsee-metal-coated-switches"
       ],
       "reason": "Explicit type in the selected product variant name."
-    }
-  ],
-  "unresolved": [
+    },
     {
       "id": "alps-skcc-cream-lock",
-      "name": "Alps SKCC Cream Lock",
-      "reason": "Latching/locking switch; source does not supply a supported linear/tactile/clicky classification.",
+      "switchType": "latching",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User requested Latching for documented locking switches; the catalog now supports this operation category."
     },
     {
       "id": "alps-skcl-brown-lock",
-      "name": "Alps SKCL Brown Lock",
-      "reason": "Latching/locking switch; source does not supply a supported linear/tactile/clicky classification.",
+      "switchType": "latching",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User requested Latching for documented locking switches; the catalog now supports this operation category."
     },
     {
       "id": "alps-skcl-cream-lock",
-      "name": "Alps SKCL Cream Lock",
-      "reason": "Latching/locking switch; source does not supply a supported linear/tactile/clicky classification.",
+      "switchType": "latching",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User requested Latching for documented locking switches; the catalog now supports this operation category."
     },
     {
       "id": "alps-skcl-dark-grey-lock-skcljc",
-      "name": "Alps SKCL Dark Grey Lock (SKCLJC)",
-      "reason": "Latching/locking switch; source does not supply a supported linear/tactile/clicky classification.",
+      "switchType": "latching",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User requested Latching for documented locking switches; the catalog now supports this operation category."
     },
     {
       "id": "alps-skcl-double-action",
-      "name": "Alps SKCL Double Action",
-      "reason": "Double-action mechanism; source does not establish a single supported typing-feel category.",
+      "switchType": "linear",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User-reviewed classification; previous source ambiguity resolved by explicit catalog decision."
     },
     {
       "id": "alps-smk-monterey-white-lock",
-      "name": "Alps SMK Monterey White Lock",
-      "reason": "Latching/locking switch; source does not supply a supported linear/tactile/clicky classification.",
+      "switchType": "latching",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User requested Latching for documented locking switches; the catalog now supports this operation category."
     },
     {
       "id": "cherry-mx-lock-grey-black-5-pin",
-      "name": "Cherry MX Lock (Grey/Black) (5 Pin)",
-      "reason": "Latching/locking switch; source does not supply a supported linear/tactile/clicky classification.",
+      "switchType": "latching",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User requested Latching for documented locking switches; the catalog now supports this operation category."
     },
     {
       "id": "content-brown-black-bottom",
-      "name": "Content Brown (Black Bottom)",
-      "reason": "Exact collection specimen has no type; stem color alone is insufficient evidence.",
+      "switchType": "tactile",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
-      ]
+      ],
+      "reason": "User-reviewed classification; previous source ambiguity resolved by explicit catalog decision."
     },
+    {
+      "id": "futaba-ma-inverse",
+      "switchType": "clicky",
+      "urls": [
+        "https://switchoddities.com/products/futaba-ma-inverse"
+      ],
+      "reason": "User-reviewed classification; previous source ambiguity resolved by explicit catalog decision."
+    },
+    {
+      "id": "gateron-nightingale",
+      "switchType": "tactile",
+      "urls": [
+        "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
+      ],
+      "reason": "User-reviewed classification; previous source ambiguity resolved by explicit catalog decision."
+    },
+    {
+      "id": "kailh-mix-7",
+      "switchType": "linear/clicky",
+      "urls": [
+        "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
+        "https://www.kailhswitch.com/mechanical-keyboard-switches/kailh-mix-7-5-witch.html"
+      ],
+      "reason": "User-confirmed switchable linear/clicky mechanism; the catalog now supports the combined category."
+    }
+  ],
+  "unresolved": [],
+  "excluded": [
     {
       "id": "defond-mega-hard",
       "name": "Defond Mega Hard",
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/defond-mega-hard"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971259248924"
       ]
     },
     {
@@ -8640,6 +8669,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/defond-nano-soft"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971257053468"
       ]
     },
     {
@@ -8648,22 +8680,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/defond-white"
-      ]
-    },
-    {
-      "id": "futaba-ma-inverse",
-      "name": "Futaba MA Inverse",
-      "reason": "Product page lists both clicky and tactile and describes disagreement about the specimen.",
-      "urls": [
-        "https://switchoddities.com/products/futaba-ma-inverse"
-      ]
-    },
-    {
-      "id": "gateron-nightingale",
-      "name": "Gateron Nightingale",
-      "reason": "Two collection specimens have the same name but conflicting linear/tactile types; no verified variant distinction.",
-      "urls": [
-        "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971254300956"
       ]
     },
     {
@@ -8672,6 +8691,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/hcnhk-eva-purple-green"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813386621212"
       ]
     },
     {
@@ -8680,6 +8702,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/hcnhk-eva-red-orange-yellow"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813386785052"
       ]
     },
     {
@@ -8688,6 +8713,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-blue"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971201708316"
       ]
     },
     {
@@ -8696,6 +8724,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-pink"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971198464284"
       ]
     },
     {
@@ -8704,6 +8735,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-v2-blue"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971235918108"
       ]
     },
     {
@@ -8712,6 +8746,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-v2-green"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971226710300"
       ]
     },
     {
@@ -8720,6 +8757,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-v2-pink-65g"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971231723804"
       ]
     },
     {
@@ -8728,6 +8768,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-v2-pink-75g"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971233788188"
       ]
     },
     {
@@ -8736,6 +8779,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-v2-red"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971238441244"
       ]
     },
     {
@@ -8744,6 +8790,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-v2-yellow"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971224219932"
       ]
     },
     {
@@ -8752,6 +8801,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-blue-shell-white"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971195089180"
       ]
     },
     {
@@ -8760,6 +8812,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-incott-galloping-edition"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813368369436"
       ]
     },
     {
@@ -8768,6 +8823,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-incott-roaring-edition"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813369024796"
       ]
     },
     {
@@ -8776,6 +8834,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-silent-mouse-switch-white-dot"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8615895957788"
       ]
     },
     {
@@ -8784,6 +8845,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-silent-mouse-switch-yellow-dot"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8615899037980"
       ]
     },
     {
@@ -8792,6 +8856,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-white-shell-v2-white-65g"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971242635548"
       ]
     },
     {
@@ -8800,6 +8867,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-white-shell-v2-white-75g"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8971244601628"
       ]
     },
     {
@@ -8808,6 +8878,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-white-spot-green"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813373939996"
       ]
     },
     {
@@ -8816,6 +8889,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-white-spot-yellow"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813372301596"
       ]
     },
     {
@@ -8824,6 +8900,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/huano-white-spot-yellow-1"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813374169372"
       ]
     },
     {
@@ -8832,15 +8911,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/kailh-8-0-blue-microswitch"
-      ]
-    },
-    {
-      "id": "kailh-mix-7",
-      "name": "Kailh Mix-7",
-      "reason": "Manufacturer specifies a switchable linear/clicky mechanism; the single-value field cannot represent both.",
-      "urls": [
-        "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-        "https://www.kailhswitch.com/mechanical-keyboard-switches/kailh-mix-7-5-witch.html"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813384655132"
       ]
     },
     {
@@ -8849,6 +8922,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/omron-d2f-01f-microswitch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813382918428"
       ]
     },
     {
@@ -8857,6 +8933,9 @@
       "reason": "Collection record covers all 192 DIY combinations, including different switch types; no single selected stem.",
       "urls": [
         "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv"
+      ],
+      "sourceIdentities": [
+        "theremingoat:1764"
       ]
     },
     {
@@ -8865,6 +8944,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/ttc-dustproof-gold-brown"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813377675548"
       ]
     },
     {
@@ -8873,6 +8955,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/ttc-dustproof-gold-orange"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813378199836"
       ]
     },
     {
@@ -8881,6 +8966,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/ttc-transparent-grey"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813377315100"
       ]
     },
     {
@@ -8889,6 +8977,9 @@
       "reason": "Source labels this as a mouse microswitch, without a keyboard-feel classification.",
       "urls": [
         "https://switchoddities.com/products/ttc-dustproof-gold-orange-copy"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813378429212"
       ]
     }
   ]

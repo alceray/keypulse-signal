@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 27,
-  "totalCount": 5812,
+  "catalogVersion": 28,
+  "totalCount": 5782,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -6082,18 +6082,6 @@
       "id": "dark-project-g3ms-sapphire",
       "name": "Dark Project G3MS Sapphire",
       "switchType": "linear"
-    },
-    {
-      "id": "defond-mega-hard",
-      "name": "Defond Mega Hard"
-    },
-    {
-      "id": "defond-nano-soft",
-      "name": "Defond Nano Soft"
-    },
-    {
-      "id": "defond-white",
-      "name": "Defond White"
     },
     {
       "id": "designer-studio-graphite-gold",
@@ -14343,14 +14331,6 @@
       "switchType": "linear"
     },
     {
-      "id": "hcnhk-eva-purple-green",
-      "name": "HCNHK EVA Purple Green"
-    },
-    {
-      "id": "hcnhk-eva-red-orange-yellow",
-      "name": "HCNHK EVA Red/Orange Yellow"
-    },
-    {
       "id": "hcp-hirose-clear",
       "name": "HCP Hirose Clear",
       "switchType": "linear"
@@ -16358,42 +16338,6 @@
       "switchType": "linear"
     },
     {
-      "id": "huano-blue-shell-blue",
-      "name": "Huano Blue Shell Blue"
-    },
-    {
-      "id": "huano-blue-shell-pink",
-      "name": "Huano Blue Shell Pink"
-    },
-    {
-      "id": "huano-blue-shell-v2-blue",
-      "name": "Huano Blue Shell V2 Blue"
-    },
-    {
-      "id": "huano-blue-shell-v2-green",
-      "name": "Huano Blue Shell V2 Green"
-    },
-    {
-      "id": "huano-blue-shell-v2-pink-65g",
-      "name": "Huano Blue Shell V2 Pink 65g"
-    },
-    {
-      "id": "huano-blue-shell-v2-pink-75g",
-      "name": "Huano Blue Shell V2 Pink 75g"
-    },
-    {
-      "id": "huano-blue-shell-v2-red",
-      "name": "Huano Blue Shell V2 Red"
-    },
-    {
-      "id": "huano-blue-shell-v2-yellow",
-      "name": "Huano Blue Shell V2 Yellow"
-    },
-    {
-      "id": "huano-blue-shell-white",
-      "name": "Huano Blue Shell White"
-    },
-    {
       "id": "huano-blue-white-huano-np",
       "name": "Huano Blue (White/Huano NP)",
       "manufacturer": "Huano",
@@ -16585,14 +16529,6 @@
       "name": "Huano Hot Pink (White Bottom)",
       "manufacturer": "Huano",
       "switchType": "tactile"
-    },
-    {
-      "id": "huano-incott-galloping-edition",
-      "name": "Huano Incott Galloping Edition"
-    },
-    {
-      "id": "huano-incott-roaring-edition",
-      "name": "Huano Incott Roaring Edition"
     },
     {
       "id": "huano-ink-s",
@@ -16798,14 +16734,6 @@
       "switchType": "linear"
     },
     {
-      "id": "huano-silent-mouse-switch-white-dot",
-      "name": "Huano Silent Mouse Switch White Dot"
-    },
-    {
-      "id": "huano-silent-mouse-switch-yellow-dot",
-      "name": "Huano Silent Mouse Switch Yellow Dot"
-    },
-    {
       "id": "huano-silent-red",
       "name": "Huano Silent Red",
       "manufacturer": "Huano",
@@ -16967,26 +16895,6 @@
       "name": "Huano White Marble",
       "manufacturer": "Huano",
       "switchType": "linear"
-    },
-    {
-      "id": "huano-white-shell-v2-white-65g",
-      "name": "Huano White Shell V2 White 65g"
-    },
-    {
-      "id": "huano-white-shell-v2-white-75g",
-      "name": "Huano White Shell V2 White 75g"
-    },
-    {
-      "id": "huano-white-spot-green",
-      "name": "Huano White Spot Green"
-    },
-    {
-      "id": "huano-white-spot-purple",
-      "name": "Huano White Spot Purple"
-    },
-    {
-      "id": "huano-white-spot-yellow",
-      "name": "Huano White Spot Yellow"
     },
     {
       "id": "huano-wu-yue-tan",
@@ -18402,12 +18310,6 @@
       "id": "kaicheng-red-white-bottom",
       "name": "Kaicheng Red (White Bottom)",
       "switchType": "linear"
-    },
-    {
-      "id": "kailh-8-0-blue-microswitch",
-      "name": "Kailh 8.0 Blue Microswitch",
-      "manufacturer": "Kailh",
-      "brand": "Kailh"
     },
     {
       "id": "kailh-arctic-fox",
@@ -27078,10 +26980,6 @@
       "switchType": "tactile"
     },
     {
-      "id": "omron-d2f-01f-microswitch",
-      "name": "Omron D2F-01F Microswitch"
-    },
-    {
       "id": "onestar-traffic-light-green",
       "name": "OneStar Traffic Light Green",
       "switchType": "linear"
@@ -31987,12 +31885,6 @@
       "switchType": "linear"
     },
     {
-      "id": "tecsee-ice-cream",
-      "name": "Tecsee Ice Cream",
-      "manufacturer": "Tecsee",
-      "brand": "Tecsee"
-    },
-    {
       "id": "tecsee-ice-grape",
       "name": "Tecsee Ice Grape",
       "brand": "Tecsee",
@@ -32798,14 +32690,6 @@
       "name": "TTC DP Razer Yellow (Clear Top)",
       "manufacturer": "TTC",
       "switchType": "linear"
-    },
-    {
-      "id": "ttc-dustproof-gold-brown",
-      "name": "TTC Dustproof Gold Brown"
-    },
-    {
-      "id": "ttc-dustproof-gold-orange",
-      "name": "TTC Dustproof Gold Orange"
     },
     {
       "id": "ttc-dustproof-razer-orange",
@@ -33692,10 +33576,6 @@
       "switchType": "linear"
     },
     {
-      "id": "ttc-transparent-grey",
-      "name": "TTC Transparent Grey"
-    },
-    {
       "id": "ttc-uranus-gaming",
       "name": "TTC Uranus Gaming",
       "switchType": "linear"
@@ -33819,10 +33699,6 @@
       "name": "TTC Xizi",
       "manufacturer": "TTC",
       "switchType": "linear"
-    },
-    {
-      "id": "ttc-year-of-the-dragon-microswitch",
-      "name": "TTC Year of the Dragon Microswitch"
     },
     {
       "id": "ttc-yellow",

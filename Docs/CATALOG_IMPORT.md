@@ -29,13 +29,13 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 | `manufacturer` | Both | Production credit. For keycaps, the community-known production name is sufficient; it need not identify the legal factory operator. Switches retain their separately attributed manufacturer |
 | `brand` | Both | Product or commissioning brand, recorded even when it matches the manufacturer. This is not a retailer/vendor field |
 | `designer` | Both | Credited designer or collaboration |
-| `switchType` | Switches | `linear`, `tactile`, or `clicky` |
+| `switchType` | Switches | `linear`, `tactile`, `clicky`, `linear/clicky`, or `latching`; broad feel/operation categories |
 | `profile` | Keycaps | Keycap profile |
 | `material` | Keycaps | Keycap material; `ABS/PBT` records both plastics, whether a blend or different keys within the set |
 
 - Unknown values are omitted. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
 - Metadata comes from explicit labels, reviewed product/project specifications, and the inference rules below. Comparisons, packaging, optional artisans, and tentative production options do not supply specifications for the set.
-- Switch-type review filled 1,046 missing values from product-page labels and variant specifications; 41 remain unresolved. Mouse microswitches, ambiguous specimens, and unsupported mechanisms retain omitted types; see [the gap report](SWITCH_TYPE_GAPS.md).
+- Switch-type review filled 1,057 missing values from product-page labels, variant specifications, and user-reviewed classifications. All accepted entries have a type; combined linear/clicky mechanisms and latching switches retain their distinct categories. See [the coverage report](SWITCH_TYPE_GAPS.md).
 - Names keep meaningful revisions, rounds, and switch weights and colors. Add-on kits for a named set have their own entries, and kit options inside a parent product stay attached to it.
 - Switch names and IDs omit redundant `Linear` and `Tactile` labels. Keep them when a switch has both variants, including variants sold at different weights. Same-type duplicates share a reviewed binding and preserve their source observations and metadata; names and ID redirects are pinned in `overrides.json` so replay does not restore the redundant labels.
 - Keycap releases qualify once GB or in-stock orders open. Exclude IC-only proposals, future openings, cancelled releases, and failed-MOQ attempts. Verify the specific maker, profile, round, and kit: a cancelled add-on does not disqualify a produced base set, and a later successful sale may qualify after an earlier failed attempt.
@@ -257,7 +257,7 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 
 ### Candidate switch sources
 
-The switch catalog now has 5,812 entries at version 27, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
+The switch catalog now has 5,782 entries at version 29, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
 
 | Source | Coverage benefit | Observed listings | Priority / remaining work |
 |---|---|---|---|
@@ -309,7 +309,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
 
-- Six switch assortments, one macro pad, five factory-error/defect specimens, a bag of broken parts, loose components, stickers, a logo magnet, and two individual decorative keycaps misclassified as switches. Parsing also rejects tester, macro-pad, and defect titles.
+- Six switch assortments, the Tecsee Ice Cream combination collection, 29 documented mouse microswitches, one macro pad, five factory-error/defect specimens, a bag of broken parts, loose components, stickers, a logo magnet, and two individual decorative keycaps misclassified as switches. Parsing also rejects tester, macro-pad, and defect titles.
 - 122 prototypes that no retailer ever listed, 95 samples, and 23 aftermarket modifications.
 - 82 canceled keycap sets, 15 switches whose names carried question marks about their identity, and one emoji-named GMK entry.
 - Release review removed 604 keycap entries that never reached an opened order round: 508 IC-only or superseded proposals, 41 unopened releases, 34 cancelled or failed-MOQ releases, and 21 with no evidence either way after a 2026-09-13 follow-up confirmed 23 other entries had actually opened for orders and kept them instead.
