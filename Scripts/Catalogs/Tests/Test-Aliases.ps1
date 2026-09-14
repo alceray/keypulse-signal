@@ -59,10 +59,10 @@ function Test-CatalogAliases {
     }
     Test-Case 'Alias normalization retains product IDs and original source spellings' {
         $records = New-TestRecords
-        $records[0].entry = [ordered]@{ name = 'KEYGEEK Example 50g'; manufacturer = 'KEYGEEK' }
+        $records[0].entry = [ordered]@{ name = 'KEYGEEK Example 50g'; manufacturer = 'KEYGEEK'; switchType = 'linear' }
         $other = Copy-Value $records[0]
         $other.sourceId = 'alias-variant'
-        $other.entry = [ordered]@{ name = 'Keygeek Example 60g'; manufacturer = 'KeyGeek' }
+        $other.entry = [ordered]@{ name = 'Keygeek Example 60g'; manufacturer = 'KeyGeek'; switchType = 'linear' }
         $state = (New-CatalogCandidate (Read-CatalogState (Join-Path $testRoot 'alias-empty')) ($records + @($other))).state
         $beforeIds = @($state.catalogs.switches.entries.id)
         $records[0].entry.name = 'Keygeek Example 50g'
@@ -77,7 +77,7 @@ function Test-CatalogAliases {
     }
     Test-Case 'Explicit duplicate rebindings retire only an unreferenced duplicate' {
         $records = New-TestRecords
-        $records[0].entry = [ordered]@{ name = 'IKEYX Example' }
+        $records[0].entry = [ordered]@{ name = 'IKEYX Example'; switchType = 'linear' }
         $duplicate = Copy-Value $records[0]
         $duplicate.sourceId = 'spelling-duplicate'
         $duplicate.entry.name = 'IKYEX Example'
@@ -107,7 +107,7 @@ function Test-CatalogAliases {
     }
     Test-Case 'Reviewed metadata omissions take precedence over alias relationships' {
         $records = New-TestRecords
-        $records[0].entry = [ordered]@{ name = 'Durock Example' }
+        $records[0].entry = [ordered]@{ name = 'Durock Example'; switchType = 'linear' }
         $state = (New-CatalogCandidate (Read-CatalogState (Join-Path $testRoot 'omission-empty')) $records).state
         $state.overrides.entries['switches/durock-example'] = [ordered]@{ manufacturer = $null; brand = $null }
         $result = New-CatalogCandidate $state $records

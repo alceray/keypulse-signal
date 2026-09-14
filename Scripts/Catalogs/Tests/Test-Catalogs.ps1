@@ -53,12 +53,14 @@ function Save-TestFetch([string]$Run) {
         } elseif ($source -eq 'theremingoat') {
             $relative = 'raw/theremingoat/collection.xlsx'
             $path = Join-Path $Run $relative
-            Save-TestCollection $path (New-TestCollectionItems)
+            $items = New-TestCollectionItems
+            $items[2].type = 'Clicky'
+            Save-TestCollection $path $items
             $manifest.sources[$source] = [ordered]@{ files = @([ordered]@{ path = $relative; sha256 = Get-CatalogHash $path; url = $script:CatalogSources.theremingoat.endpoint }) }
         } elseif ($source -eq 'theremingoatscores') {
             $relative = 'raw/theremingoatscores/scores.csv'
             $path = Join-Path $Run $relative
-            Save-TestScoreSheet $path (New-TestScoreSheetText)
+            Save-TestScoreSheet $path ((New-TestScoreSheetText).Replace(',Hall Effect,', ',Linear,'))
             $manifest.sources[$source] = [ordered]@{ files = @([ordered]@{ path = $relative; sha256 = Get-CatalogHash $path; url = $script:CatalogSources.theremingoatscores.endpoint }) }
         } elseif ($source -eq 'matrix') {
             $relative = 'raw/matrix/Example-R2.md'
@@ -81,6 +83,7 @@ function Save-TestFetch([string]$Run) {
                 if ($script:CatalogSources[$source].kind -eq 'switches') {
                     # The shared fixture's "Kit" option is a keycap concept a switch source never sees.
                     $data.products[0].variants = @($data.products[0].variants[0]); $data.products[0].options = @()
+                    foreach ($product in $data.products) { $product.body_html = '<p>Switch Type: Linear</p>' }
                 }
             }
             $files = @()
@@ -408,6 +411,37 @@ Test-Case 'Validation rejects duplicate IDs, unsupported fields, and orphan mapp
     $state = New-TestState
     $state.bindings[0].id = 'missing'
     Assert-Throws { Test-CatalogState $state } 'missing ID'
+}
+Test-Case 'Switch types are required after reviewed overrides are applied' {
+    $state = New-TestState
+    $entry = $state.catalogs.switches.entries[0]
+    $entry.Remove('switchType')
+    Assert-Throws { Test-CatalogState $state } 'Missing switchType'
+    foreach ($value in @($null, '', 'unknown')) {
+        $entry.switchType = $value
+        Assert-Throws { Test-CatalogState $state } 'Invalid switchType|Invalid switch type'
+    }
+    $records = New-TestRecords
+    $switch = $records | Where-Object { $_.kind -eq 'switches' } | Select-Object -First 1
+    $switch.entry.Remove('switchType')
+    $empty = Read-CatalogState (Join-Path $testRoot 'empty')
+    Assert-Throws { New-CatalogCandidate $empty $records } 'Missing switchType'
+    $empty.overrides.entries["switches/$(Get-CatalogSlug $switch.entry.name)"] = [ordered]@{ switchType = 'linear' }
+    $next = (New-CatalogCandidate $empty $records).state
+    Test-CatalogState $next
+}
+Test-Case 'Reviewed latching and combined types survive replay and validation' {
+    foreach ($type in @('latching', 'linear/clicky')) {
+        $state = New-TestState
+        $id = $state.catalogs.switches.entries[0].id
+        $state.overrides.entries["switches/$id"] = [ordered]@{ switchType = $type }
+        $next = (New-CatalogCandidate $state (New-TestRecords)).state
+        Test-CatalogState $next
+        Assert (($next.catalogs.switches.entries | Where-Object { $_.id -eq $id }).switchType -ceq $type) 'Reviewed type was lost on replay.'
+    }
+    $state = New-TestState
+    $state.catalogs.switches.entries[0].switchType = 'unknown'
+    Assert-Throws { Test-CatalogState $state } 'Invalid switch type'
 }
 Test-Case 'Promotion checks candidates, baselines, overrides, and complete state' {
     $root = Join-Path $testRoot 'promotion-root'

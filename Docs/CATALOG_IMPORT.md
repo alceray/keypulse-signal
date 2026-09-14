@@ -11,7 +11,7 @@ The catalogs are offline JSON data maintained through a manual import and review
 | `Scripts/Catalogs/sources.json` | Fetch dates, Matrix commit, stable upstream identities, canonical IDs, source links, last observed fields, and collection variant notes |
 | `Scripts/Catalogs/overrides.json` | Reviewed duplicate decisions, metadata corrections, and exclusions |
 | `Scripts/Catalogs/keycap-enrichment.json` | Field-level source links and rationale for reviewed keycap metadata |
-| `Scripts/Catalogs/switch-type-review.json` | Reviewed switch-type fills, evidence links, and unresolved cases; summarized in [SWITCH_TYPE_GAPS.md](SWITCH_TYPE_GAPS.md) |
+| `Scripts/Catalogs/switch-type-review.json` | Reviewed switch-type classifications, evidence links, and exclusions |
 | `Scripts/Catalogs/keycap-release-review.json` | Release eligibility decisions, evidence links, excluded source identities, and unresolved cases |
 | `Scripts/Catalogs/aliases.json` | Company spellings, abbreviations, profiles, and the inference rules below |
 | `Scripts/Catalogs/Aliases.ps1` | Applies those rules to display fields and duplicate comparisons while preserving IDs and source observations |
@@ -22,20 +22,20 @@ Requires Windows PowerShell 5.1 or later with permission to run local scripts. N
 
 ## Catalog fields
 
-Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `entries` array. The importer calculates `totalCount` from the entries, and validation rejects a missing or mismatched count. Each entry requires a stable `id` and `name`.
+Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `entries` array. The importer calculates `totalCount` from the entries, and validation rejects a missing or mismatched count. Each entry requires a stable `id` and `name`; switches also require `switchType`.
 
-| Optional field | Catalog | Meaning |
+| Metadata field | Catalog | Meaning |
 |---|---|---|
 | `manufacturer` | Both | Production credit. For keycaps, the community-known production name is sufficient; it need not identify the legal factory operator. Switches retain their separately attributed manufacturer |
 | `brand` | Both | Product or commissioning brand, recorded even when it matches the manufacturer. This is not a retailer/vendor field |
 | `designer` | Both | Credited designer or collaboration |
-| `switchType` | Switches | `linear`, `tactile`, `clicky`, `linear/clicky`, or `latching`; broad feel/operation categories |
+| `switchType` | Switches | Required: `linear`, `tactile`, `clicky`, `linear/clicky`, or `latching`; broad feel/operation categories |
 | `profile` | Keycaps | Keycap profile |
 | `material` | Keycaps | Keycap material; `ABS/PBT` records both plastics, whether a blend or different keys within the set |
 
-- Unknown values are omitted. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
+- Other metadata fields are optional; unknown values are omitted. A missing switch type blocks candidate generation and promotion: add a reviewed type override or exclude the entry, then replay. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
 - Metadata comes from explicit labels, reviewed product/project specifications, and the inference rules below. Comparisons, packaging, optional artisans, and tentative production options do not supply specifications for the set.
-- Switch-type review filled 1,057 missing values from product-page labels, variant specifications, and user-reviewed classifications. All accepted entries have a type; combined linear/clicky mechanisms and latching switches retain their distinct categories. See [the coverage report](SWITCH_TYPE_GAPS.md).
+- Switch-type review filled 1,057 missing values from product-page labels, variant specifications, and user-reviewed classifications. All accepted entries have a type; combined linear/clicky mechanisms and latching switches retain their distinct categories. Evidence is recorded in [switch-type-review.json](../Scripts/Catalogs/switch-type-review.json).
 - Names keep meaningful revisions, rounds, and switch weights and colors. Add-on kits for a named set have their own entries, and kit options inside a parent product stay attached to it.
 - Switch names and IDs omit redundant `Linear` and `Tactile` labels. Keep them when a switch has both variants, including variants sold at different weights. Same-type duplicates share a reviewed binding and preserve their source observations and metadata; names and ID redirects are pinned in `overrides.json` so replay does not restore the redundant labels.
 - Keycap releases qualify once GB or in-stock orders open. Exclude IC-only proposals, future openings, cancelled releases, and failed-MOQ attempts. Verify the specific maker, profile, round, and kit: a cancelled add-on does not disqualify a produced base set, and a later successful sale may qualify after an earlier failed attempt.

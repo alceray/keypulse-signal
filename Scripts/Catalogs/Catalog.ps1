@@ -31,11 +31,12 @@ function Test-CatalogState($State, [switch]$AllowEmpty) {
             $key = "$kind/$($entry.id)"
             if ($ids.ContainsKey($key)) { throw "Duplicate ID: $key" }
             $ids[$key] = $true
+            if ($kind -eq 'switches' -and -not $entry.Contains('switchType')) { throw "Missing switchType on $key. Add a reviewed type override or exclude this entry, then Replay." }
             foreach ($field in $entry.Keys) {
                 if ($field -notin (Get-CatalogFields $kind)) { throw "Unsupported field '$field' on $key" }
                 if ($entry[$field] -isnot [string] -or -not $entry[$field].Trim() -or $entry[$field] -cne (Get-CatalogName $entry[$field])) { throw "Invalid $field on $key" }
             }
-            if ($entry.Contains('switchType') -and $entry.switchType -cnotin @('linear', 'tactile', 'clicky')) { throw "Invalid switch type: $key" }
+            if ($entry.Contains('switchType') -and $entry.switchType -cnotin @('linear', 'tactile', 'clicky', 'linear/clicky', 'latching')) { throw "Invalid switch type: $key" }
         }
         if (-not $catalog.Contains('totalCount') -or $catalog.totalCount -isnot [int] -or $catalog.totalCount -ne $catalog.entries.Count) { throw "Invalid $kind total count." }
     }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 28,
+  "catalogVersion": 29,
   "totalCount": 5782,
   "entries": [
     {
@@ -1580,7 +1580,8 @@
     {
       "id": "alps-skcc-cream-lock",
       "name": "Alps SKCC Cream Lock",
-      "manufacturer": "Alps"
+      "manufacturer": "Alps",
+      "switchType": "latching"
     },
     {
       "id": "alps-skcc-cream-skccbj",
@@ -1621,7 +1622,8 @@
     {
       "id": "alps-skcl-brown-lock",
       "name": "Alps SKCL Brown Lock",
-      "manufacturer": "Alps"
+      "manufacturer": "Alps",
+      "switchType": "latching"
     },
     {
       "id": "alps-skcl-compact-green",
@@ -1638,17 +1640,20 @@
     {
       "id": "alps-skcl-cream-lock",
       "name": "Alps SKCL Cream Lock",
-      "manufacturer": "Alps"
+      "manufacturer": "Alps",
+      "switchType": "latching"
     },
     {
       "id": "alps-skcl-dark-grey-lock-skcljc",
       "name": "Alps SKCL Dark Grey Lock (SKCLJC)",
-      "manufacturer": "Alps"
+      "manufacturer": "Alps",
+      "switchType": "latching"
     },
     {
       "id": "alps-skcl-double-action",
       "name": "Alps SKCL Double Action",
-      "manufacturer": "Alps"
+      "manufacturer": "Alps",
+      "switchType": "linear"
     },
     {
       "id": "alps-skcl-green",
@@ -1859,7 +1864,8 @@
     },
     {
       "id": "alps-smk-monterey-white-lock",
-      "name": "Alps SMK Monterey White Lock"
+      "name": "Alps SMK Monterey White Lock",
+      "switchType": "latching"
     },
     {
       "id": "alps-tw-type-od1-black",
@@ -4161,7 +4167,8 @@
       "id": "cherry-mx-lock-grey-black-5-pin",
       "name": "Cherry MX Lock (Grey/Black) (5 Pin)",
       "manufacturer": "Cherry",
-      "brand": "Cherry"
+      "brand": "Cherry",
+      "switchType": "latching"
     },
     {
       "id": "cherry-mx-low-profile-red",
@@ -5346,7 +5353,8 @@
     {
       "id": "content-brown-black-bottom",
       "name": "Content Brown (Black Bottom)",
-      "manufacturer": "KTT"
+      "manufacturer": "KTT",
+      "switchType": "tactile"
     },
     {
       "id": "content-brown-white-bottom",
@@ -8383,7 +8391,8 @@
     },
     {
       "id": "futaba-ma-inverse",
-      "name": "Futaba MA Inverse"
+      "name": "Futaba MA Inverse",
+      "switchType": "clicky"
     },
     {
       "id": "futaba-mr-6c-white-cylinder",
@@ -11663,7 +11672,8 @@
       "id": "gateron-nightingale",
       "name": "Gateron Nightingale",
       "manufacturer": "Gateron",
-      "brand": "Gateron"
+      "brand": "Gateron",
+      "switchType": "tactile"
     },
     {
       "id": "gateron-north-pole",
@@ -19624,7 +19634,8 @@
       "id": "kailh-mix-7",
       "name": "Kailh Mix-7",
       "manufacturer": "Kailh",
-      "brand": "Kailh"
+      "brand": "Kailh",
+      "switchType": "linear/clicky"
     },
     {
       "id": "kailh-muxue",
