@@ -257,7 +257,7 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 
 ### Candidate switch sources
 
-The switch catalog now has 5,782 entries at version 29, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
+The switch catalog now has 5,769 entries at version 30, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
 
 | Source | Coverage benefit | Observed listings | Priority / remaining work |
 |---|---|---|---|
@@ -309,7 +309,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
 
-- Six switch assortments, the Tecsee Ice Cream combination collection, 29 documented mouse microswitches, one macro pad, five factory-error/defect specimens, a bag of broken parts, loose components, stickers, a logo magnet, and two individual decorative keycaps misclassified as switches. Parsing also rejects tester, macro-pad, and defect titles.
+- Six switch assortments, the Tecsee Ice Cream combination collection, 41 documented mouse switches and one general microswitch, one macro pad, five factory-error/defect specimens, a bag of broken parts, loose components, stickers, a logo magnet, and two individual decorative keycaps misclassified as switches. Parsing also rejects tester, macro-pad, and defect titles.
 - 122 prototypes that no retailer ever listed, 95 samples, and 23 aftermarket modifications.
 - 82 canceled keycap sets, 15 switches whose names carried question marks about their identity, and one emoji-named GMK entry.
 - Release review removed 604 keycap entries that never reached an opened order round: 508 IC-only or superseded proposals, 41 unopened releases, 34 cancelled or failed-MOQ releases, and 21 with no evidence either way after a 2026-09-13 follow-up confirmed 23 other entries had actually opened for orders and kept them instead.

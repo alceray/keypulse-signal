@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 29,
-  "totalCount": 5782,
+  "catalogVersion": 30,
+  "totalCount": 5769,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -3502,16 +3502,6 @@
       "manufacturer": "Tecsee",
       "designer": "BuiltByNim",
       "switchType": "linear"
-    },
-    {
-      "id": "burgess-beige-and-red-micro-switch",
-      "name": "Burgess Beige and Red Micro Switch",
-      "switchType": "clicky"
-    },
-    {
-      "id": "burgess-red-and-white-mouse-switch",
-      "name": "Burgess Red and White Mouse Switch",
-      "switchType": "clicky"
     },
     {
       "id": "buri-diamond",
@@ -16338,11 +16328,6 @@
       "switchType": "clicky"
     },
     {
-      "id": "huano-blue-dot-micro-switch",
-      "name": "Huano Blue Dot Micro Switch",
-      "switchType": "clicky"
-    },
-    {
       "id": "huano-blue-dragon",
       "name": "Huano Blue Dragon",
       "switchType": "linear"
@@ -16524,11 +16509,6 @@
       "switchType": "linear"
     },
     {
-      "id": "huano-green-dot-micro-switch",
-      "name": "Huano Green Dot Micro Switch",
-      "switchType": "clicky"
-    },
-    {
       "id": "huano-hi",
       "name": "Huano Hi",
       "manufacturer": "Huano",
@@ -16664,11 +16644,6 @@
       "switchType": "linear"
     },
     {
-      "id": "huano-pink-dot-micro-switch",
-      "name": "Huano Pink Dot Micro Switch",
-      "switchType": "clicky"
-    },
-    {
       "id": "huano-pink-white-bottom",
       "name": "Huano Pink (White Bottom)",
       "manufacturer": "Huano",
@@ -16726,11 +16701,6 @@
       "name": "Huano Red (Clear/White Housing)",
       "manufacturer": "Huano",
       "switchType": "linear"
-    },
-    {
-      "id": "huano-red-dot-micro-switch",
-      "name": "Huano Red Dot Micro Switch",
-      "switchType": "clicky"
     },
     {
       "id": "huano-red-dustproof-yellow",
@@ -16896,11 +16866,6 @@
       "switchType": "linear"
     },
     {
-      "id": "huano-white-dot-micro-switch",
-      "name": "Huano White Dot Micro Switch",
-      "switchType": "clicky"
-    },
-    {
       "id": "huano-white-marble",
       "name": "Huano White Marble",
       "manufacturer": "Huano",
@@ -16917,11 +16882,6 @@
       "name": "Huano Yellow Crystal V2",
       "manufacturer": "Huano",
       "switchType": "linear"
-    },
-    {
-      "id": "huano-yellow-dot-micro-switch",
-      "name": "Huano Yellow Dot Micro Switch",
-      "switchType": "clicky"
     },
     {
       "id": "huano-yun-su",
@@ -18454,13 +18414,6 @@
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "linear"
-    },
-    {
-      "id": "kailh-black-micro-switch",
-      "name": "Kailh Black Micro Switch",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "clicky"
     },
     {
       "id": "kailh-blue",
@@ -20070,13 +20023,6 @@
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "linear"
-    },
-    {
-      "id": "kailh-white-mouse-switch",
-      "name": "Kailh White Mouse Switch",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "clicky"
     },
     {
       "id": "kailh-white-ovoid",
@@ -33410,11 +33356,6 @@
       "switchType": "linear"
     },
     {
-      "id": "ttc-red-dot-micro-switch",
-      "name": "TTC Red Dot Micro Switch",
-      "switchType": "clicky"
-    },
-    {
       "id": "ttc-red-long-led",
       "name": "TTC Red (Long LED)",
       "manufacturer": "TTC",
@@ -33501,11 +33442,6 @@
       "id": "ttc-silent-red-v3",
       "name": "TTC Silent Red V3",
       "switchType": "linear"
-    },
-    {
-      "id": "ttc-silver-micro-switch",
-      "name": "TTC Silver Micro Switch",
-      "switchType": "clicky"
     },
     {
       "id": "ttc-snow-tiger",
@@ -33632,11 +33568,6 @@
       "name": "TTC Watermelon Milkshake",
       "manufacturer": "TTC",
       "switchType": "tactile"
-    },
-    {
-      "id": "ttc-white-dot-micro-switch",
-      "name": "TTC White Dot Micro Switch",
-      "switchType": "clicky"
     },
     {
       "id": "ttc-wild-42g",

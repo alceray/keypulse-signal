@@ -67774,26 +67774,6 @@
     },
     {
       "source": "switchoddities",
-      "sourceId": "10813366862108",
-      "kind": "switches",
-      "id": "huano-red-dot-micro-switch",
-      "url": "https://switchoddities.com/products/huano-red-dot-micro-switch",
-      "observed": {
-        "name": "Huano Red Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "10813367484700",
-      "kind": "switches",
-      "id": "huano-blue-dot-micro-switch",
-      "url": "https://switchoddities.com/products/huano-blue-dot-micro-switch",
-      "observed": {
-        "name": "Huano Blue Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
       "sourceId": "10943074009372",
       "kind": "switches",
       "id": "haimu-red",
@@ -71021,96 +71001,6 @@
     },
     {
       "source": "switchoddities",
-      "sourceId": "8119119315228",
-      "kind": "switches",
-      "id": "kailh-white-mouse-switch",
-      "url": "https://switchoddities.com/products/kailh-white-mouse-switch",
-      "observed": {
-        "name": "Kailh White Mouse Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119119544604",
-      "kind": "switches",
-      "id": "kailh-black-micro-switch",
-      "url": "https://switchoddities.com/products/kailh-black-micro-switch",
-      "observed": {
-        "name": "Kailh Black Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119119642908",
-      "kind": "switches",
-      "id": "huano-pink-dot-micro-switch",
-      "url": "https://switchoddities.com/products/huano-pink-dot-micro-switch",
-      "observed": {
-        "name": "Huano Pink Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119119839516",
-      "kind": "switches",
-      "id": "huano-yellow-dot-micro-switch",
-      "url": "https://switchoddities.com/products/huano-yellow-dot-micro-switch",
-      "observed": {
-        "name": "Huano Yellow Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119120036124",
-      "kind": "switches",
-      "id": "huano-white-dot-micro-switch",
-      "url": "https://switchoddities.com/products/huano-white-dot-micro-switch",
-      "observed": {
-        "name": "Huano White Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119120199964",
-      "kind": "switches",
-      "id": "huano-green-dot-micro-switch",
-      "url": "https://switchoddities.com/products/huano-green-dot-micro-switch",
-      "observed": {
-        "name": "Huano Green Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119120462108",
-      "kind": "switches",
-      "id": "ttc-white-dot-micro-switch",
-      "url": "https://switchoddities.com/products/ttc-white-dot-micro-switch",
-      "observed": {
-        "name": "TTC White Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119120560412",
-      "kind": "switches",
-      "id": "ttc-red-dot-micro-switch",
-      "url": "https://switchoddities.com/products/ttc-red-dot-micro-switch",
-      "observed": {
-        "name": "TTC Red Dot Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8119120757020",
-      "kind": "switches",
-      "id": "ttc-silver-micro-switch",
-      "url": "https://switchoddities.com/products/ttc-silver-micro-switch",
-      "observed": {
-        "name": "TTC Silver Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
       "sourceId": "8119121281308",
       "kind": "switches",
       "id": "varmilo-ec-v2-rose-i",
@@ -72730,26 +72620,6 @@
         "manufacturer": "JWK",
         "designer": "KeysPensory",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8196275634460",
-      "kind": "switches",
-      "id": "burgess-beige-and-red-micro-switch",
-      "url": "https://switchoddities.com/products/burgess-beige-and-red-micro-switch",
-      "observed": {
-        "name": "Burgess Beige and Red Micro Switch"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8196276683036",
-      "kind": "switches",
-      "id": "burgess-red-and-white-mouse-switch",
-      "url": "https://switchoddities.com/products/burgess-red-and-white-mouse-switch",
-      "observed": {
-        "name": "Burgess Red and White Mouse Switch"
       }
     },
     {

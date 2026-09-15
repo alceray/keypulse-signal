@@ -764,22 +764,6 @@
       "reason": "Explicit product-page Type label."
     },
     {
-      "id": "burgess-beige-and-red-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/burgess-beige-and-red-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "burgess-red-and-white-mouse-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/burgess-red-and-white-mouse-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
       "id": "cbkbd-red-velvet",
       "switchType": "linear",
       "urls": [
@@ -2580,14 +2564,6 @@
       "reason": "Explicit product-page Type label."
     },
     {
-      "id": "huano-blue-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/huano-blue-dot-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
       "id": "huano-blue-dragon",
       "switchType": "linear",
       "urls": [
@@ -2644,14 +2620,6 @@
       "reason": "Explicit product-page Type label."
     },
     {
-      "id": "huano-green-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/huano-green-dot-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
       "id": "huano-lunar-new-year-fi",
       "switchType": "linear",
       "urls": [
@@ -2676,26 +2644,10 @@
       "reason": "Explicit product-page Type label."
     },
     {
-      "id": "huano-pink-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/huano-pink-dot-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
       "id": "huano-red",
       "switchType": "linear",
       "urls": [
         "https://switchoddities.com/products/huano-red"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "huano-red-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/huano-red-dot-micro-switch"
       ],
       "reason": "Explicit product-page Type label."
     },
@@ -2784,22 +2736,6 @@
       "switchType": "linear",
       "urls": [
         "https://switchoddities.com/products/huano-turquoise-low-profile"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "huano-white-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/huano-white-dot-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "huano-yellow-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/huano-yellow-dot-micro-switch"
       ],
       "reason": "Explicit product-page Type label."
     },
@@ -3206,14 +3142,6 @@
       "reason": "Explicit product-page Type label."
     },
     {
-      "id": "kailh-black-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/kailh-black-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
       "id": "kailh-box-dark-yellow",
       "switchType": "linear",
       "urls": [
@@ -3402,14 +3330,6 @@
       "switchType": "linear",
       "urls": [
         "https://switchoddities.com/products/kailh-turbo-red"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "kailh-white-mouse-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/kailh-white-mouse-switch"
       ],
       "reason": "Explicit product-page Type label."
     },
@@ -6048,14 +5968,6 @@
       "reason": "Explicit product-page Type label."
     },
     {
-      "id": "ttc-red-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/ttc-red-dot-micro-switch"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
       "id": "ttc-silent-brown-v2",
       "switchType": "tactile",
       "urls": [
@@ -6068,14 +5980,6 @@
       "switchType": "linear",
       "urls": [
         "https://switchoddities.com/products/ttc-silent-red-v3"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "ttc-silver-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/ttc-silver-micro-switch"
       ],
       "reason": "Explicit product-page Type label."
     },
@@ -6140,14 +6044,6 @@
       "switchType": "linear",
       "urls": [
         "https://switchoddities.com/products/ttc-uranus-standard"
-      ],
-      "reason": "Explicit product-page Type label."
-    },
-    {
-      "id": "ttc-white-dot-micro-switch",
-      "switchType": "clicky",
-      "urls": [
-        "https://switchoddities.com/products/ttc-white-dot-micro-switch"
       ],
       "reason": "Explicit product-page Type label."
     },
@@ -8980,6 +8876,149 @@
       ],
       "sourceIdentities": [
         "switchoddities:10813378429212"
+      ]
+    },
+    {
+      "id": "burgess-beige-and-red-micro-switch",
+      "name": "Burgess Beige and Red Micro Switch",
+      "reason": "General microswitch, not a keyboard switch; source says its dimensions differ from a mouse switch.",
+      "urls": [
+        "https://switchoddities.com/products/burgess-beige-and-red-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8196275634460"
+      ]
+    },
+    {
+      "id": "burgess-red-and-white-mouse-switch",
+      "name": "Burgess Red and White Mouse Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/burgess-red-and-white-mouse-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8196276683036"
+      ]
+    },
+    {
+      "id": "huano-blue-dot-micro-switch",
+      "name": "Huano Blue Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/huano-blue-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813367484700"
+      ]
+    },
+    {
+      "id": "huano-green-dot-micro-switch",
+      "name": "Huano Green Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/huano-green-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119120199964"
+      ]
+    },
+    {
+      "id": "huano-pink-dot-micro-switch",
+      "name": "Huano Pink Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/huano-pink-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119119642908"
+      ]
+    },
+    {
+      "id": "huano-red-dot-micro-switch",
+      "name": "Huano Red Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/huano-red-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:10813366862108"
+      ]
+    },
+    {
+      "id": "huano-white-dot-micro-switch",
+      "name": "Huano White Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/huano-white-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119120036124"
+      ]
+    },
+    {
+      "id": "huano-yellow-dot-micro-switch",
+      "name": "Huano Yellow Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/huano-yellow-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119119839516"
+      ]
+    },
+    {
+      "id": "kailh-black-micro-switch",
+      "name": "Kailh Black Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/kailh-black-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119119544604"
+      ]
+    },
+    {
+      "id": "kailh-white-mouse-switch",
+      "name": "Kailh White Mouse Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/kailh-white-mouse-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119119315228"
+      ]
+    },
+    {
+      "id": "ttc-red-dot-micro-switch",
+      "name": "TTC Red Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/ttc-red-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119120560412"
+      ]
+    },
+    {
+      "id": "ttc-silver-micro-switch",
+      "name": "TTC Silver Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/ttc-silver-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119120757020"
+      ]
+    },
+    {
+      "id": "ttc-white-dot-micro-switch",
+      "name": "TTC White Dot Micro Switch",
+      "reason": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+      "urls": [
+        "https://switchoddities.com/products/ttc-white-dot-micro-switch"
+      ],
+      "sourceIdentities": [
+        "switchoddities:8119120462108"
       ]
     }
   ]

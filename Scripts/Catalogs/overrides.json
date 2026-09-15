@@ -18202,12 +18202,6 @@
     "switches/bsun-yellow-panda": {
       "switchType": "linear"
     },
-    "switches/burgess-beige-and-red-micro-switch": {
-      "switchType": "clicky"
-    },
-    "switches/burgess-red-and-white-mouse-switch": {
-      "switchType": "clicky"
-    },
     "switches/cbkbd-red-velvet": {
       "switchType": "linear"
     },
@@ -18868,9 +18862,6 @@
     "switches/huano-bipolar-blue": {
       "switchType": "linear"
     },
-    "switches/huano-blue-dot-micro-switch": {
-      "switchType": "clicky"
-    },
     "switches/huano-blue-dragon": {
       "switchType": "linear"
     },
@@ -18892,9 +18883,6 @@
     "switches/huano-glass-jade": {
       "switchType": "linear"
     },
-    "switches/huano-green-dot-micro-switch": {
-      "switchType": "clicky"
-    },
     "switches/huano-lunar-new-year-fi": {
       "switchType": "linear"
     },
@@ -18904,14 +18892,8 @@
     "switches/huano-nylon-white": {
       "switchType": "clicky"
     },
-    "switches/huano-pink-dot-micro-switch": {
-      "switchType": "clicky"
-    },
     "switches/huano-red": {
       "switchType": "linear"
-    },
-    "switches/huano-red-dot-micro-switch": {
-      "switchType": "clicky"
     },
     "switches/huano-red-nylon": {
       "switchType": "linear"
@@ -18945,12 +18927,6 @@
     },
     "switches/huano-turquoise-low-profile": {
       "switchType": "linear"
-    },
-    "switches/huano-white-dot-micro-switch": {
-      "switchType": "clicky"
-    },
-    "switches/huano-yellow-dot-micro-switch": {
-      "switchType": "clicky"
     },
     "switches/iceberg-blue-v2": {
       "switchType": "linear"
@@ -19093,9 +19069,6 @@
     "switches/jwk-rara-v2": {
       "switchType": "tactile"
     },
-    "switches/kailh-black-micro-switch": {
-      "switchType": "clicky"
-    },
     "switches/kailh-box-dark-yellow": {
       "switchType": "linear"
     },
@@ -19167,9 +19140,6 @@
     },
     "switches/kailh-turbo-red": {
       "switchType": "linear"
-    },
-    "switches/kailh-white-mouse-switch": {
-      "switchType": "clicky"
     },
     "switches/kailh-x-dareu-mx-master": {
       "switchType": "linear"
@@ -20125,17 +20095,11 @@
     "switches/ttc-razer-yellow-v3": {
       "switchType": "linear"
     },
-    "switches/ttc-red-dot-micro-switch": {
-      "switchType": "clicky"
-    },
     "switches/ttc-silent-brown-v2": {
       "switchType": "tactile"
     },
     "switches/ttc-silent-red-v3": {
       "switchType": "linear"
-    },
-    "switches/ttc-silver-micro-switch": {
-      "switchType": "clicky"
     },
     "switches/ttc-snow-tiger": {
       "switchType": "linear"
@@ -20160,9 +20124,6 @@
     },
     "switches/ttc-uranus-standard": {
       "switchType": "linear"
-    },
-    "switches/ttc-white-dot-micro-switch": {
-      "switchType": "clicky"
     },
     "switches/ttc-x-logitech-blast": {
       "switchType": "tactile"
@@ -22092,6 +22053,19 @@
     "switchoddities:10813377675548": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
     "switchoddities:10813378199836": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
     "switchoddities:10813377315100": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
-    "switchoddities:10813378429212": "Documented mouse microswitch; excluded from the keyboard switch catalog."
+    "switchoddities:10813378429212": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8196275634460": "General microswitch, not a keyboard switch; source says its dimensions differ from a mouse switch.",
+    "switchoddities:8196276683036": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813367484700": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119120199964": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119119642908": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:10813366862108": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119120036124": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119119839516": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119119544604": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119119315228": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119120560412": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119120757020": "Documented mouse microswitch; excluded from the keyboard switch catalog.",
+    "switchoddities:8119120462108": "Documented mouse microswitch; excluded from the keyboard switch catalog."
   }
 }
