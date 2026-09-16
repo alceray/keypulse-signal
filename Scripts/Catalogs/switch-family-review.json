@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "catalog": "switches",
+  "field": "switchFamily",
+  "methodology": "Bulk-classified from manufacturer/brand identity and family keywords (Alps, Choc, HE, EC, Optical, Legacy, TMR/inductive); MX is the default absent other evidence. Entries below are the exceptions individually researched because the bulk classification would have been wrong or the entry had no manufacturer, brand, or keyword signal at all. A second pass individually searched 280 entries that had no manufacturer, brand, or keyword signal at all (previously defaulted to MX sight unseen); 145 were checked before diminishing returns ended the pass, surfacing 17 reclassifications (3 later corrected back to MX, see decisions). The remaining 135 were then pattern-matched against known manufacturers/brands and catalog siblings rather than left as blind defaults: 77 resolved this way (patternMatched below); 3 more (Kelowna Crimson, Zoe Moonlight, KPT Amber) had only a weak single-generic-word sibling match suggesting HE/Alps, so were individually web-searched instead and confirmed/left at MX (see decisions). The remaining 55 with no pattern match were then individually web-searched, sources visited directly where the summary snippet was insufficient: 7 reclassified (aruz-blue, desoldered-xiang-min-ksb-c-ivory, pbs23-green to Alps; lk-black-all-black-housing to Optical; mei-t-15, th-5160, katano to Legacy — see decisions), 19 confirmed MX with real evidence (confirmedMxBySearch below), and 29 had no confirming web evidence either way. Those 29 were then checked against a local copy of ThereminGoat's Collection List the user provided (Collection List.xlsx, cited in this project's own import history as an original source but otherwise unreachable from here): 26 confirmed MX there (confirmedByCollectionList below), 1 reclassified to Alps (cha-hongye-green) and 1 to Legacy (yantai-yellow) per its tags, and the last (sat3-blue) wasn't in that list either but was confirmed Alps by the user directly. No entry is left blank: the 8 originally unidentified after search (C&K, Content x4, E-Switch, F Switch, Hitune) are all MX per user direction, two on user-supplied sourcing (Content = KTT, Hitune = Wingtree house brands). Unlike switch-type-review.json this is not full per-entry citation coverage.",
+  "patternMatched": {
+    "switchFamily": "MX",
+    "reason": "Not individually web-searched, but resolved from the 135 originally-unsearched entries by matching the name against (a) a known manufacturer/brand elsewhere in the catalog, or (b) a sibling entry in the catalog sharing a distinctive product/theme word with a populated manufacturer or brand (e.g. 'Azure Dragon V3' matches 'Gateron Azure Dragon V3'; 'Content Silver' matches 'Content Black' / manufacturer KTT). Matches on a single generic color/quality word (Amber, Crimson, Moonlight) were treated as too weak to trust and were separately web-searched instead; see decisions below.",
+    "ids": [
+      "415keys-sunset", "aeboards-naevy-r2-1", "aeboards-raed-r1-5", "aeboards-raed-r2-1",
+      "alexotos-granite", "arc-red", "aregs-caramel-chocolate", "azure-dragon-v3",
+      "b-stone-dark-eyes", "baldbrothers-strawb-ice-cream-v3", "balhae-blue",
+      "black-raspberry", "blue-and-pink-holy-panda", "bowl-x-gateron-lanes",
+      "brazilian-iron-switch", "cc-peripherals-sakura", "ciy-sakura-pink", "content-silver",
+      "desoldered-aristotle-yellow", "diamond-avalon", "dukharo-mo-pink-v1", "easylab-azure",
+      "epic-gear-violet", "evil-airy", "fake-kailh-blue", "fosen-aquamarine",
+      "frost-porcelain-v2", "gg-studio-muxia", "gg-studio-sunset", "golden-orange-pink",
+      "golden-orange-red", "hifi-fox-diamond-yellow-fruit", "inland-holy-panda", "iok-red",
+      "j-lab-ripple-v2", "jagor-bald-brother-sea-salt-lemon-v3", "kam-bouquet",
+      "keebfront-sinister", "keebz-n-cables-bsun-taro-n-sweet-potato",
+      "keebz-n-cables-ice-kachang-v2", "keyback-w1-black-diamond-black",
+      "keyback-w1-black-diamond-pink", "kiki-meow-happy", "knt-ice-rose",
+      "low-profile-dustproof-purple", "ltc-x-jerrzi-lava", "m-mountain-axis",
+      "matcha-bamboo-shoot", "matcha-latte", "mek-raw-studio-rawk-mk-01", "meow-claw-v3s",
+      "milky-dustproof-grey", "mitarashi-dango", "moldy-cabbage-yiwu", "night-sakura",
+      "old-tom-ice-edge", "old-tom-powder-edge", "olive-switch", "outva-yang", "outva-yin",
+      "paigu-cheese-mocha", "pk-misu", "sg-apple-pie", "sw-flow-black", "sw-popcorn",
+      "sweet-potato-peripherals-ikeyx-wasabi", "translucent-dustproof-yellow",
+      "unbranded-low-profile-blue", "unbranded-low-profile-red", "variekeys-jumping",
+      "variekeys-thunderbolt", "wave-silent-peach", "white-raspberry", "x-lime-green",
+      "xida-usagi", "yellow-ball-roller", "yh-dustproof-brown"
+    ]
+  },
+  "confirmedMxBySearch": {
+    "switchFamily": "MX",
+    "reason": "Web-searched individually; found real evidence for MX (a known manufacturer behind the name, a described Cherry-compatible/MX-style construction, or a matching sibling product from an established MX brand), not just absence of a contrary signal.",
+    "ids": [
+      "80s-retros-1989-silver", "80s-retros-1989-silver-dustproof", "ausdom-yellow", "bat-green",
+      "devil-demon", "devoted", "epic-gear-eg-grey", "epic-gear-orange", "evil-miami",
+      "gatistotle-clear", "hhhh-h1", "loobed-oak", "pro-world-black", "qk01",
+      "rajoa-dustproof-blue", "ruben-pink", "usw-lmbw02", "wikuo-harmony", "x-green"
+    ]
+  },
+  "confirmedByCollectionList": {
+    "switchFamily": "MX",
+    "reason": "Web search found nothing, but the user provided local access to ThereminGoat's Collection List (a private spreadsheet this project's own import history cites as an original source, not otherwise reachable from here). Each is tagged 'Modern, MX' or 'Vintage, MX' there.",
+    "source": "C:\\Users\\Ray Lin\\Downloads\\Collection List.xlsx (Sheet3)",
+    "ids": [
+      "atom-dustproof-pink", "ck-dustproof-blue", "df-gray-and-yellow", "drank",
+      "ele-works-orange", "fadog-absolute-purple", "forgiven", "in-former-days",
+      "jiate-dustproof-black", "jinml-home-x-axis", "kaiche-blue", "lambda-dustproof-blue",
+      "lc-blue", "lc-red", "men-dustproof-black", "men-dustproof-red", "milo-white-blue-pink",
+      "rre-black", "rre-white", "snk-yellow", "tomato-black", "tomato-blue",
+      "tr-dustproof-red", "ttr-y-red", "white-dustproof-glaze", "yh-dustproof-red"
+    ]
+  },
+  "decisions": [
+    {
+      "ids": ["matias-clicky", "matias-quiet", "matias-quiet-click", "matias-quiet-click-early-run-white"],
+      "switchFamily": "Alps",
+      "urls": ["https://deskthority.net/wiki/Matias_switch", "http://matias.ca/switches/"],
+      "reason": "Matias switches are an exact-replica Alps mount, not compatible with MX PCBs/plates/keycaps, despite no 'Alps' keyword in the name."
+    },
+    {
+      "ids": ["apc-blue", "apc-green"],
+      "switchFamily": "Alps",
+      "urls": ["https://3dkeycap.com/blogs/new-release/alps-mechanical-switches-explained-alps-electric-complicated-simplified-alps-matias-and-apc"],
+      "reason": "APC produces its own version of the Alps stem, same category as Matias."
+    },
+    {
+      "ids": ["forward-electronics-black", "forward-electronics-grey", "forward-electronics-yellow"],
+      "switchFamily": "Alps",
+      "urls": ["https://deskthority.net/wiki/Forward_Electronics"],
+      "reason": "Forward Electronics (Fuhua Electronic) manufactured Alps SKBL/SKBM 'simplified Alps' switches from 1985; Alps mount despite no 'Alps' keyword in the name."
+    },
+    {
+      "ids": [
+        "taiwan-jet-axis-black", "taiwan-jet-axis-brown", "taiwan-jet-axis-dark-blue",
+        "taiwan-jet-axis-light-purple-grey", "taiwan-jet-axis-mustard-yellow", "taiwan-jet-axis-pale-yellow",
+        "taiwan-jet-axis-red", "taiwan-jet-axis-two-tone-miscolor", "taiwan-jet-axis-white", "taiwan-jet-axis-yellow"
+      ],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/Taiwan_jet_axis", "https://kbd.news/Taiwan-Jet-Axis-switch-review-934.html"],
+      "reason": "Vintage hybrid mount with 180-degree radial symmetry, described by its own documentation as 'not a serious MX-mount contender'; rare, discontinued, no modern equivalent."
+    },
+    {
+      "ids": ["taiwan-shigi-white"],
+      "switchFamily": "Legacy",
+      "urls": ["https://mechbox.co.uk/products/taiwan-shigi-switch"],
+      "reason": "Same vintage Taiwanese switch-sample category as Taiwan Jet Axis; sold only as a collector sample, not a current product line."
+    },
+    {
+      "ids": ["smk-inverse-cross-mount-brown"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/SMK_inverse_cross_mount"],
+      "reason": "SMK's proprietary third mount (alongside their Alps-mount and MX-mount lines), a cross peg into a cross hole, not MX- or Alps-compatible."
+    },
+    {
+      "ids": ["mx-mount-smk-usw-lmbu01-blue", "smk-cherry-orange", "smk-cherry-white"],
+      "switchFamily": "MX",
+      "urls": ["https://deskthority.net/wiki/Category:SMK_switches"],
+      "reason": "SMK also produced an explicit MX-mount line and MX-compatible Cherry-branded switches, distinct from their inverse cross mount line."
+    },
+    {
+      "ids": ["clare-pendar-s88010-e9", "clare-pendar-series-s880-black"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/Clare-Pendar", "https://deskthority.net/wiki/Clare-Pendar_Series_S820"],
+      "reason": "Clare-Pendar Co. (1966+) magnetic-reed switches, proprietary mount unrelated to MX/Alps, long discontinued."
+    },
+    {
+      "ids": ["marquadt-switch"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/Marquardt", "https://deskthority.net/wiki/Marquardt_Series_6184"],
+      "reason": "Marquardt (German) produced proprietary keyboard switches for its own 1990s keyboards, not MX/Alps compatible."
+    },
+    {
+      "ids": ["tokai-mm9-2"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/Tokai_MM9_series"],
+      "reason": "Tokai MM9 series uses a metal-ball contact mechanism, primarily an arcade pushbutton switch design, not MX/Alps compatible."
+    },
+    {
+      "ids": ["steelseries-qs1"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/SteelSeries_QS1"],
+      "reason": "Proprietary switch and keycap mount built with Kailh for the discontinued Apex M800; not MX-compatible, same category as Romer-G."
+    },
+    {
+      "ids": ["micro-sd-1001sd1b3a"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/Micro_Switch_SD_Series"],
+      "reason": "Honeywell Micro Switch SD-series Hall-effect switch (1975+); part-number naming matches Micro Switch's scheme. Proprietary discontinued system, unrelated to the modern HE family."
+    },
+    {
+      "ids": [
+        "cherry-hirose-black", "cherry-hirose-m8-yellow", "cherry-hirose-white-dotted",
+        "cherry-mx-hirose-clear", "cherry-mx-hirose-orange", "hcp-hirose-clear", "hiroseal"
+      ],
+      "switchFamily": "MX",
+      "urls": ["https://deskthority.net/wiki/Category:Keyboard_switches_with_Hirose_Cherry_mount"],
+      "reason": "Hirose Cherry mount is a smaller-cross vintage variant; standard Cherry MX keycaps fit Hirose switches, so it is treated as MX rather than Legacy."
+    },
+    {
+      "ids": ["krgd-black-w-condenser-d-stock", "krgd-black-with-condensor", "krgd-brown", "krgd-red", "krgd-red-desoldered"],
+      "switchFamily": "MX",
+      "urls": ["https://www.banggood.com/buy/keyboard-krgd.html"],
+      "reason": "KRGD Red is documented as a Cherry MX Red clone; MX-compatible stem."
+    },
+    {
+      "ids": ["c-k-black", "e-switch-red", "f-switch-red"],
+      "switchFamily": "MX",
+      "urls": [],
+      "reason": "Web search found no confirmed keyboard switch product for C&K, E-Switch, or F Switch specifically, but per user direction all remaining unidentified entries default to MX rather than staying blank."
+    },
+    {
+      "ids": [
+        "content-blue-desoldered-with-condenser", "content-blue-non-desoldered",
+        "content-brown-white-bottom", "content-red-white-bottom"
+      ],
+      "switchFamily": "MX",
+      "urls": [],
+      "reason": "User: \"Content is KTT's full name/parent company.\" KTT is a known MX-compatible manufacturer, so these are MX."
+    },
+    {
+      "ids": ["hitune-bm10"],
+      "switchFamily": "MX",
+      "urls": [],
+      "reason": "User: \"Hitune seems to be a house brand for Wingtree.\" Wingtree is a known MX-compatible manufacturer, so this is MX."
+    },
+    {
+      "ids": ["raesha-low-profile-purple", "raesha-low-profile-red", "raesha-ultra-lp-blue", "raesha-ultra-lp-red"],
+      "switchFamily": "HE",
+      "urls": ["https://attackshark.com/blogs/knowledges/gateron-raesha-magnetic-switch-fps-comparison"],
+      "reason": "RAESHA is a dedicated Hall-effect magnetic switch brand; had no manufacturer/brand field and no keyword match despite being magnetic."
+    },
+    {
+      "ids": ["lofree-ghost-low-profile-pom-switch", "lofree-phantom-low-profile-pom-switch", "lofree-wizard-low-profile-pom-switch"],
+      "switchFamily": "MX",
+      "urls": [],
+      "reason": "Corrected per user: these are not Kailh Choc-mount despite marketing language suggesting Choc V2 compatibility. Non-Choc low-profile switches stay MX, same as Gateron KS-33 and Cherry MX Low Profile."
+    },
+    {
+      "ids": ["varmilo-rose-v1", "varmilo-sakura-v1"],
+      "switchFamily": "EC",
+      "urls": ["https://www.theremingoat.com/blog/varmilo-ec-v2-switch-review"],
+      "reason": "Confirmed as the original Varmilo EC V1 line; catalog name omits 'EC'."
+    },
+    {
+      "ids": ["kzzi-eternity", "kzzi-love"],
+      "switchFamily": "HE",
+      "urls": ["https://mechkeys.com/blogs/news/kzzi-g68-65-rgb-keyboard-with-second-gen-magnetic-switches"],
+      "reason": "KZZI's keyboards use Gateron Magnetic/Hall-effect switches as their core product line."
+    },
+    {
+      "ids": ["lekker-45", "lekker-60"],
+      "switchFamily": "HE",
+      "urls": ["https://deskthority.net/wiki/Wooting_Lekker"],
+      "reason": "Wooting Lekker switches are Hall-effect/magnetic despite a Cherry-compatible stem; name has no 'magnetic'/'HE' keyword."
+    },
+    {
+      "ids": ["vgn-lime-green-salmon"],
+      "switchFamily": "HE",
+      "urls": ["https://vgnlab.com/blogs/news/2025-best-magnetic-switch-keyboards-vgn-flash-series"],
+      "reason": "VGN is a dedicated Hall-effect/magnetic switch brand."
+    },
+    {
+      "ids": ["vxe-dustproof-silver"],
+      "switchFamily": "HE",
+      "urls": ["https://mechkeys.com/products/vxe-atk68-magnetic-switch-mechanical-keyboard"],
+      "reason": "VXE is VGN's sister brand, exclusively Gateron Magnetic switches."
+    },
+    {
+      "ids": ["hua-jie-ak-cn2", "hua-jie-ak-dn2"],
+      "switchFamily": "Alps",
+      "urls": ["https://deskthority.net/wiki/Hua-Jie_AK_series"],
+      "reason": "Hua-Jie AK series (ivory slider) are confirmed Alps clones, made by Himake under the Hua-Jie name."
+    },
+    {
+      "ids": ["kelowna-crimson"],
+      "switchFamily": "MX",
+      "urls": ["https://www.ebay.com/itm/274860287610"],
+      "reason": "A catalog sibling-match suggested HE via a shared word with an unrelated Co-Gain magnetic switch ('Crimson'); web search confirmed Kelowna Crimson is a standard linear switch, not magnetic."
+    },
+    {
+      "ids": ["zoe-moonlight"],
+      "switchFamily": "MX",
+      "urls": [],
+      "reason": "A catalog sibling-match suggested HE via a shared word with Gateron's unrelated 'Magnetic Moonlight' switch. Web search found 'Moonlight' used by several unrelated brands (Gateron HE, SU LAB tactile, Varmilo, ASUS ROG), none matching 'Zoe' specifically; too ambiguous to reclassify, MX default stands."
+    },
+    {
+      "ids": ["kpt-amber"],
+      "switchFamily": "MX",
+      "urls": [],
+      "reason": "A catalog sibling-match suggested Alps via a shared word with an unrelated 'Alps SKCL Amber' switch ('Amber' is a common switch color, not distinctive). Web search found no brand called KPT; too weak to reclassify, MX default stands."
+    },
+    {
+      "ids": ["aruz-blue"],
+      "switchFamily": "Alps",
+      "urls": ["https://deskthority.net/wiki/Tai-Hao_Aruz"],
+      "reason": "Aruz is Tai-Hao's own switch (developed with Himake, the same maker behind Hua-Jie's Alps clones), an Alps-mount clicky/tactile design from c.1989, replaced a year or two later by the APC series."
+    },
+    {
+      "ids": ["desoldered-xiang-min-ksb-c-ivory"],
+      "switchFamily": "Alps",
+      "urls": ["https://deskthority.net/wiki/Xiang_Min_KSB_series", "https://switchoddities.com/products/desoldered-xiang-min-ksb-c-ivory"],
+      "reason": "Xiang Min KSB-C is a documented Alps clone switch (PCB-mount, unusual for Alps clones); the SwitchOddities listing matches this catalog entry's name exactly."
+    },
+    {
+      "ids": ["pbs23-green"],
+      "switchFamily": "Alps",
+      "urls": [],
+      "reason": "PBS23 is documented as an Alps-style linear switch from Butre (SwitchModders)."
+    },
+    {
+      "ids": ["lk-black-all-black-housing"],
+      "switchFamily": "Optical",
+      "urls": [],
+      "reason": "LK ('Light Strike') is Bloody/A4Tech's infrared optical switch technology, marketed as the first optical mechanical switch; not MX-compatible in sensing mechanism despite a Cherry-style housing."
+    },
+    {
+      "ids": ["mei-t-15"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/MEI_T-15_series"],
+      "reason": "T-15 is a proprietary rubber-and-conductive-element switch from Mechanical Enterprises (MEI), patented by Robert Twyford, sold 1988-1990 before MEI reincorporated as Datalux. Not MX/Alps compatible."
+    },
+    {
+      "ids": ["th-5160"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/TH-5160"],
+      "reason": "TH-5160 is one of Tai-Hao's oldest keyboards; Tai-Hao states its switches came from a long-defunct Japanese manufacturer possibly named Katano. Vintage, discontinued, no modern equivalent."
+    },
+    {
+      "ids": ["katano"],
+      "switchFamily": "Legacy",
+      "urls": ["https://deskthority.net/wiki/TH-5160"],
+      "reason": "Per the TH-5160 source, Katano is the (speculative) name of the long-defunct Japanese manufacturer behind Tai-Hao's TH-5160 switches; grouped with TH-5160 as the same vintage, discontinued system."
+    },
+    {
+      "ids": ["cha-hongye-green"],
+      "switchFamily": "Alps",
+      "urls": [],
+      "source": "ThereminGoat's Collection List (C:\\Users\\Ray Lin\\Downloads\\Collection List.xlsx, Sheet3, #2504)",
+      "reason": "Tagged 'Modern, Alps' in the collection list; not found in web search."
+    },
+    {
+      "ids": ["yantai-yellow"],
+      "switchFamily": "Legacy",
+      "urls": [],
+      "source": "ThereminGoat's Collection List (C:\\Users\\Ray Lin\\Downloads\\Collection List.xlsx, Sheet3, #691)",
+      "reason": "Tagged 'Vintage' with no MX/Alps qualifier, the same tagging pattern used there exclusively for genuine proprietary systems (Hi-Tek, Futaba, NEC, Omron, Clare-Pendar, SMK, Micro Switch, TH-5160 all carry the identical bare 'Vintage' tag). Listed among other vintage-collector submissions (Siemens, Mitsumi, Alps, NEC, Dai-Ichi, SMK, Cherry Hirose) from the same contributor."
+    },
+    {
+      "ids": ["sat3-blue"],
+      "switchFamily": "Alps",
+      "urls": [],
+      "reason": "Not found in web search or in ThereminGoat's Collection List; user confirmed directly."
+    }
+  ]
+}
