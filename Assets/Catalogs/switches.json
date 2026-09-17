@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 37,
-  "totalCount": 5769,
+  "catalogVersion": 42,
+  "totalCount": 5729,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -819,15 +819,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ajazz-magnetic-yellow-hole",
-      "name": "Ajazz Magnetic Yellow (Hole)",
-      "manufacturer": "Outemu",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "ajazz-magnetic-yellow-no-hole",
-      "name": "Ajazz Magnetic Yellow (No Hole)",
+      "id": "ajazz-magnetic-yellow",
+      "name": "Ajazz Magnetic Yellow",
       "manufacturer": "Outemu",
       "switchType": "linear",
       "switchFamily": "HE"
@@ -966,13 +959,6 @@
       "id": "akko-blue-v2",
       "name": "Akko Blue V2",
       "manufacturer": "KTT",
-      "brand": "Akko",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "akko-blue-v2-desoldered",
-      "name": "Akko Blue V2 (desoldered)",
       "brand": "Akko",
       "switchType": "clicky",
       "switchFamily": "MX"
@@ -1410,13 +1396,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "akko-orange-v2-desoldered",
-      "name": "Akko Orange V2 *DESOLDERED",
-      "brand": "Akko",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "akko-penguin",
       "name": "Akko Penguin",
       "brand": "Akko",
@@ -1446,8 +1425,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "akko-piano-pro-v3-condenser",
-      "name": "Akko Piano Pro V3 (Condenser)",
+      "id": "akko-piano-pro-v3",
+      "name": "Akko Piano Pro V3",
       "manufacturer": "Outemu",
       "brand": "Akko",
       "switchType": "linear",
@@ -1922,15 +1901,8 @@
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcl-grey-bottom-logo",
-      "name": "Alps SKCL Grey (Bottom Logo)",
-      "manufacturer": "Alps",
-      "switchType": "linear",
-      "switchFamily": "Alps"
-    },
-    {
-      "id": "alps-skcl-grey-no-bottom-logo",
-      "name": "Alps SKCL Grey (No Bottom Logo)",
+      "id": "alps-skcl-grey",
+      "name": "Alps SKCL Grey",
       "manufacturer": "Alps",
       "switchType": "linear",
       "switchFamily": "Alps"
@@ -1985,22 +1957,22 @@
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcm-blue-logo-white-plate",
-      "name": "Alps SKCM Blue (Logo, White Plate)",
+      "id": "alps-skcm-blue-white-plate",
+      "name": "Alps SKCM Blue (White Plate)",
       "manufacturer": "Alps",
       "switchType": "clicky",
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcm-blue-no-logo-black",
-      "name": "Alps SKCM Blue (No Logo, Black)",
+      "id": "alps-skcm-blue-black",
+      "name": "Alps SKCM Blue (Black)",
       "manufacturer": "Alps",
       "switchType": "clicky",
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcm-blue-no-logo-white",
-      "name": "Alps SKCM Blue (No Logo, White)",
+      "id": "alps-skcm-blue-white",
+      "name": "Alps SKCM Blue (White)",
       "manufacturer": "Alps",
       "switchType": "clicky",
       "switchFamily": "Alps"
@@ -2055,22 +2027,15 @@
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcm-orange-logo-white",
-      "name": "Alps SKCM Orange (Logo, White)",
+      "id": "alps-skcm-orange-white",
+      "name": "Alps SKCM Orange (White)",
       "manufacturer": "Alps",
       "switchType": "tactile",
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcm-orange-no-logo-grey",
-      "name": "Alps SKCM Orange (No Logo, Grey)",
-      "manufacturer": "Alps",
-      "switchType": "tactile",
-      "switchFamily": "Alps"
-    },
-    {
-      "id": "alps-skcm-orange-no-logo-white",
-      "name": "Alps SKCM Orange (No Logo, White)",
+      "id": "alps-skcm-orange-grey",
+      "name": "Alps SKCM Orange (Grey)",
       "manufacturer": "Alps",
       "switchType": "tactile",
       "switchFamily": "Alps"
@@ -2210,28 +2175,28 @@
     },
     {
       "id": "aqua-zilent-v2-62g",
-      "name": "Aqua Zilent V2 (62g.)",
+      "name": "Aqua Zilent V2 (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "aqua-zilent-v2-67g",
-      "name": "Aqua Zilent V2 (67g.)",
+      "name": "Aqua Zilent V2 (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "aquamarine-tealio-63-5g",
-      "name": "Aquamarine Tealio (63.5g.)",
+      "name": "Aquamarine Tealio (63.5g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "aquamarine-tealio-65g",
-      "name": "Aquamarine Tealio (65g.)",
+      "name": "Aquamarine Tealio (65g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -2244,14 +2209,14 @@
     },
     {
       "id": "arctos-65g",
-      "name": "Arctos (65g.)",
+      "name": "Arctos (65g)",
       "manufacturer": "Tecsee",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "arctos-72g",
-      "name": "Arctos (72g.)",
+      "name": "Arctos (72g)",
       "manufacturer": "Tecsee",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -2852,8 +2817,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "bbn-tactile",
-      "name": "BBN (Tactile)",
+      "id": "builtbynim-bbn-tactile",
+      "name": "BuiltByNim (BBN) Tactile",
       "manufacturer": "Tecsee",
       "designer": "BuiltByNim",
       "switchType": "tactile",
@@ -2997,7 +2962,7 @@
     },
     {
       "id": "boba-grey-silent-52g",
-      "name": "Boba Grey Silent (52g.)",
+      "name": "Boba Grey Silent (52g)",
       "manufacturer": "Outemu",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -3011,35 +2976,35 @@
     },
     {
       "id": "boba-u4t-62g",
-      "name": "Boba U4T (62g.)",
+      "name": "Boba U4T (62g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "boba-u4t-68g",
-      "name": "Boba U4T (68g.)",
+      "name": "Boba U4T (68g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "boba-u4t-black-62g",
-      "name": "Boba U4T Black (62g.)",
+      "name": "Boba U4T Black (62g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "boba-u4t-black-68g",
-      "name": "Boba U4T Black (68g.)",
+      "name": "Boba U4T Black (68g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "bobagum-62g",
-      "name": "Bobagum (62g.)",
+      "name": "Bobagum (62g)",
       "manufacturer": "Outemu",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -3153,28 +3118,28 @@
     },
     {
       "id": "branded-stealio-v2-62g",
-      "name": "Branded Stealio V2 (62g.)",
+      "name": "Branded Stealio V2 (62g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "branded-stealio-v2-65g",
-      "name": "Branded Stealio V2 (65g.)",
+      "name": "Branded Stealio V2 (65g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "branded-stealio-v2-67g",
-      "name": "Branded Stealio V2 (67g.)",
+      "name": "Branded Stealio V2 (67g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "branded-stealio-v2-78g",
-      "name": "Branded Stealio V2 (78g.)",
+      "name": "Branded Stealio V2 (78g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -3432,13 +3397,6 @@
     {
       "id": "bsun-dustproof-blue",
       "name": "BSUN Dustproof Blue",
-      "manufacturer": "BSUN",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-dustproof-blue-condenser",
-      "name": "BSUN Dustproof Blue Condenser",
       "manufacturer": "BSUN",
       "switchType": "clicky",
       "switchFamily": "MX"
@@ -4223,7 +4181,7 @@
     },
     {
       "id": "c3-tangerine-v2-62g",
-      "name": "C3 Tangerine V2 (62g.)",
+      "name": "C3 Tangerine V2 (62g)",
       "manufacturer": "JWK",
       "brand": "C3Equalz",
       "switchType": "linear",
@@ -4231,7 +4189,7 @@
     },
     {
       "id": "c3-tangerine-v2-67g",
-      "name": "C3 Tangerine V2 (67g.)",
+      "name": "C3 Tangerine V2 (67g)",
       "manufacturer": "JWK",
       "brand": "C3Equalz",
       "switchType": "linear",
@@ -4252,13 +4210,13 @@
     },
     {
       "id": "candy-jade-green-55g",
-      "name": "Candy Jade Green (55g.)",
+      "name": "Candy Jade Green (55g)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "candy-jade-green-62g",
-      "name": "Candy Jade Green (62g.)",
+      "name": "Candy Jade Green (62g)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -4312,13 +4270,13 @@
     },
     {
       "id": "candy-sakura-snow-62g",
-      "name": "Candy Sakura Snow (62g.)",
+      "name": "Candy Sakura Snow (62g)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "candy-sakura-snow-65g",
-      "name": "Candy Sakura Snow (65g.)",
+      "name": "Candy Sakura Snow (65g)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -5898,21 +5856,21 @@
     },
     {
       "id": "clear-zealio-62g",
-      "name": "Clear Zealio (62g.)",
+      "name": "Clear Zealio (62g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "clear-zealio-65g",
-      "name": "Clear Zealio (65g.)",
+      "name": "Clear Zealio (65g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "clear-zealio-67g",
-      "name": "Clear Zealio (67g.)",
+      "name": "Clear Zealio (67g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -6172,18 +6130,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "content-blue-desoldered-with-condenser",
-      "name": "Content Blue (Desoldered) with condenser",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "content-blue-non-desoldered",
-      "name": "Content Blue (non-desoldered)",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "content-blue-tall-light-pipe",
       "name": "Content Blue Tall Light Pipe",
       "manufacturer": "KTT",
@@ -6206,7 +6152,7 @@
     },
     {
       "id": "content-brown-white-bottom",
-      "name": "Content Brown (white bottom)",
+      "name": "Content Brown (White Bottom)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -6247,7 +6193,7 @@
     },
     {
       "id": "content-red-white-bottom",
-      "name": "Content Red (white bottom)",
+      "name": "Content Red (White Bottom)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -7135,14 +7081,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "desoldered-aristotle-yellow",
-      "name": "*Desoldered* Aristotle Yellow",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "desoldered-xiang-min-ksb-c-ivory",
-      "name": "*Desoldered* Xiang Min KSB-C Ivory",
+      "id": "xiang-min-ksb-c-ivory",
+      "name": "Xiang Min KSB-C Ivory",
       "switchType": "clicky",
       "switchFamily": "Alps"
     },
@@ -7698,8 +7638,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "durock-clear-t1-unbranded",
-      "name": "Durock Clear T1 (Unbranded)",
+      "id": "durock-clear-t1",
+      "name": "Durock Clear T1",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
@@ -8156,8 +8096,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "durock-smoky-t1-unbranded",
-      "name": "Durock Smoky T1 (Unbranded)",
+      "id": "durock-smoky-t1",
+      "name": "Durock Smoky T1",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
@@ -8232,7 +8172,7 @@
     },
     {
       "id": "durock-zealio-v2-62g",
-      "name": "Durock 'Zealio V2' (62g.)",
+      "name": "Durock 'Zealio V2' (62g)",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
@@ -8240,7 +8180,7 @@
     },
     {
       "id": "durock-zealio-v2-65g",
-      "name": "Durock 'Zealio V2' (65g.)",
+      "name": "Durock 'Zealio V2' (65g)",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
@@ -8248,7 +8188,7 @@
     },
     {
       "id": "durock-zealio-v2-67g",
-      "name": "Durock 'Zealio V2' (67g.)",
+      "name": "Durock 'Zealio V2' (67g)",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
@@ -8256,7 +8196,7 @@
     },
     {
       "id": "durock-zealio-v2-78g",
-      "name": "Durock 'Zealio V2' (78g.)",
+      "name": "Durock 'Zealio V2' (78g)",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
@@ -8590,7 +8530,7 @@
     },
     {
       "id": "error-leaf-aqua-zilent-62g",
-      "name": "'Error Leaf' Aqua Zilent (62g.)",
+      "name": "'Error Leaf' Aqua Zilent (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -9023,7 +8963,7 @@
     },
     {
       "id": "everglide-tourmaline-blue-v2-pro-55g",
-      "name": "Everglide Tourmaline Blue V2 Pro! (55g.)",
+      "name": "Everglide Tourmaline Blue V2 Pro! (55g)",
       "manufacturer": "JWK",
       "brand": "Everglide",
       "switchType": "linear",
@@ -9031,7 +8971,7 @@
     },
     {
       "id": "everglide-v3-water-king-37g",
-      "name": "Everglide V3 'Water King' (37g.)",
+      "name": "Everglide V3 'Water King' (37g)",
       "manufacturer": "JWK",
       "brand": "Everglide",
       "switchType": "linear",
@@ -9039,7 +8979,7 @@
     },
     {
       "id": "everglide-v3-water-king-55g",
-      "name": "Everglide V3 'Water King' (55g.)",
+      "name": "Everglide V3 'Water King' (55g)",
       "manufacturer": "JWK",
       "brand": "Everglide",
       "switchType": "linear",
@@ -9047,7 +8987,7 @@
     },
     {
       "id": "everglide-v3-water-king-60g",
-      "name": "Everglide V3 'Water King' (60g.)",
+      "name": "Everglide V3 'Water King' (60g)",
       "manufacturer": "JWK",
       "brand": "Everglide",
       "switchType": "linear",
@@ -9055,7 +8995,7 @@
     },
     {
       "id": "everglide-v3-water-king-67g",
-      "name": "Everglide V3 'Water King' (67g.)",
+      "name": "Everglide V3 'Water King' (67g)",
       "manufacturer": "JWK",
       "brand": "Everglide",
       "switchType": "linear",
@@ -9940,24 +9880,9 @@
       "switchFamily": "MX"
     },
     {
-      "id": "g3ms-onyx-condenser",
-      "name": "G3MS Onyx (Condenser)",
+      "id": "g3ms-onyx",
+      "name": "G3MS Onyx",
       "manufacturer": "Grain Gold",
-      "brand": "G3MS",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "g3ms-onyx-no-condenser",
-      "name": "G3MS Onyx - No Condenser",
-      "manufacturer": "Grain Gold",
-      "brand": "G3MS",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "g3ms-onyx-with-condenser",
-      "name": "G3MS Onyx - With Condenser",
       "brand": "G3MS",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -11270,7 +11195,7 @@
     },
     {
       "id": "gateron-g-pro-2-0-silver-two-stage-spring",
-      "name": "Gateron G Pro 2.0 - Silver(Two-stage Spring)",
+      "name": "Gateron G Pro 2.0 - Silver(Two-Stage Spring)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11294,7 +11219,7 @@
     },
     {
       "id": "gateron-g-pro-2-0-white-two-stage-spring",
-      "name": "Gateron G Pro 2.0 - White(Two-stage Spring)",
+      "name": "Gateron G Pro 2.0 - White(Two-Stage Spring)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11470,7 +11395,7 @@
     },
     {
       "id": "gateron-g-pro-silver-two-stage-spring",
-      "name": "Gateron G Pro - Silver(Two-stage Spring)",
+      "name": "Gateron G Pro - Silver(Two-Stage Spring)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11486,7 +11411,7 @@
     },
     {
       "id": "gateron-g-pro-white-two-stage-spring",
-      "name": "Gateron G Pro - White(Two-stage Spring)",
+      "name": "Gateron G Pro - White(Two-Stage Spring)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -13556,14 +13481,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-north-pole-brown-v2-no-rubber-thingy",
-      "name": "Gateron North Pole Brown V2 (no rubber thingy)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-north-pole-red-v2",
       "name": "Gateron North Pole Red V2",
       "manufacturer": "Gateron",
@@ -14590,13 +14507,13 @@
     },
     {
       "id": "gazzew-black-ice-62g",
-      "name": "Gazzew 'Black Ice' (62g.)",
+      "name": "Gazzew 'Black Ice' (62g)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "gazzew-black-ice-68g",
-      "name": "Gazzew 'Black Ice' (68g.)",
+      "name": "Gazzew 'Black Ice' (68g)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -16606,7 +16523,7 @@
     },
     {
       "id": "healio-67g",
-      "name": "Healio (67g.)",
+      "name": "Healio (67g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -19052,8 +18969,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-dustproof-pink-grey-bottom-swirl-logo",
-      "name": "Huano Dustproof Pink - Grey Bottom - Swirl Logo",
+      "id": "huano-dustproof-pink-grey-bottom",
+      "name": "Huano Dustproof Pink - Grey Bottom",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -19580,14 +19497,14 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hyperx-aqua-release",
-      "name": "HyperX Aqua (Release)",
+      "id": "hyperx-aqua",
+      "name": "HyperX Aqua",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
-      "id": "hyperx-blue-release",
-      "name": "HyperX Blue (Release)",
+      "id": "hyperx-blue",
+      "name": "HyperX Blue",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -19610,8 +19527,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hyperx-red-release",
-      "name": "HyperX Red (Release)",
+      "id": "hyperx-red",
+      "name": "HyperX Red",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -20605,12 +20522,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "jixian-blue-desoldered",
-      "name": "Jixian Blue (Desoldered)",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "jixian-blue-white-bottom",
       "name": "Jixian Blue (White Bottom)",
       "switchType": "clicky",
@@ -21474,7 +21385,7 @@
     },
     {
       "id": "kailh-box-crystal-67g",
-      "name": "Kailh Box Crystal (67g.)",
+      "name": "Kailh Box Crystal (67g)",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "tactile",
@@ -21482,7 +21393,7 @@
     },
     {
       "id": "kailh-box-crystal-72g",
-      "name": "Kailh Box Crystal (72g.)",
+      "name": "Kailh Box Crystal (72g)",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "tactile",
@@ -21812,7 +21723,7 @@
     },
     {
       "id": "kailh-box-robin-52g",
-      "name": "Kailh Box Robin (52g.)",
+      "name": "Kailh Box Robin (52g)",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky",
@@ -21820,7 +21731,7 @@
     },
     {
       "id": "kailh-box-robin-57g",
-      "name": "Kailh Box Robin (57g.)",
+      "name": "Kailh Box Robin (57g)",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky",
@@ -22447,8 +22358,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "kailh-jellyfish-box-x-clicky",
-      "name": "Kailh Jellyfish Box - X (Clicky)",
+      "id": "kailh-jellyfish-box-x",
+      "name": "Kailh Jellyfish Box - X",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky",
@@ -22551,7 +22462,7 @@
     },
     {
       "id": "kailh-low-profile-robin-52g",
-      "name": "Kailh Low Profile Robin (52g.)",
+      "name": "Kailh Low Profile Robin (52g)",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky",
@@ -22560,7 +22471,7 @@
     },
     {
       "id": "kailh-low-profile-robin-57g",
-      "name": "Kailh Low Profile Robin (57g.)",
+      "name": "Kailh Low Profile Robin (57g)",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky",
@@ -23444,16 +23355,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "kbdfans-t1-clear-kbdfans-stock",
-      "name": "KBDfans T1 Clear (KBDFans Stock)",
-      "manufacturer": "JWK",
-      "brand": "KBDfans",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "kbdfans-t1-clear-novelkeys-stock",
-      "name": "KBDfans T1 Clear (Novelkeys Stock)",
+      "id": "kbdfans-t1-clear",
+      "name": "KBDfans T1 Clear",
       "manufacturer": "JWK",
       "brand": "KBDfans",
       "switchType": "tactile",
@@ -25831,7 +25734,7 @@
     },
     {
       "id": "knc-keys-ube-crinkle-cookie-v2",
-      "name": "KNC Keys Ube Crinkle Cookie (v2)",
+      "name": "KNC Keys Ube Crinkle Cookie (V2)",
       "manufacturer": "Tecsee",
       "designer": "Store Link",
       "switchType": "tactile",
@@ -25974,20 +25877,14 @@
     },
     {
       "id": "krazy-top-clear-base-v2-2-75g",
-      "name": "Krazy Top/Clear Base V2.2 (75g.)",
+      "name": "Krazy Top/Clear Base V2.2 (75g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
-      "id": "krgd-black-w-condenser-d-stock",
-      "name": "KRGD Black w/ Condenser (D-Stock)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "krgd-black-with-condensor",
-      "name": "KRGD Black with Condensor",
+      "id": "krgd-black",
+      "name": "KRGD Black",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -26002,12 +25899,6 @@
       "id": "krgd-red",
       "name": "KRGD Red",
       "manufacturer": "SOAI",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "krgd-red-desoldered",
-      "name": "KRGD Red (Desoldered)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -26150,13 +26041,6 @@
     {
       "id": "ktt-cabbage-tofu",
       "name": "KTT Cabbage Tofu",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-cabbage-tofu-condenser",
-      "name": "KTT Cabbage Tofu (Condenser)",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -26330,22 +26214,22 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-halu-halo-blue-release",
-      "name": "KTT Halu Halo Blue (Release)",
+      "id": "ktt-halu-halo-blue",
+      "name": "KTT Halu Halo Blue",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-halu-halo-red-release",
-      "name": "KTT Halu Halo Red (Release)",
+      "id": "ktt-halu-halo-red",
+      "name": "KTT Halu Halo Red",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-halu-halo-yellow-release",
-      "name": "KTT Halu Halo Yellow (Release)",
+      "id": "ktt-halu-halo-yellow",
+      "name": "KTT Halu Halo Yellow",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -26433,13 +26317,6 @@
     {
       "id": "ktt-lavender",
       "name": "KTT Lavender",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-lavender-condenser",
-      "name": "KTT Lavender (Condenser)",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -26627,13 +26504,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-mallo-release",
-      "name": "KTT Mallo (Release)",
-      "manufacturer": "KTT",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ktt-mallo-v1",
       "name": "KTT Mallo V1",
       "manufacturer": "KTT",
@@ -26798,15 +26668,15 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-pink-star-condenser",
-      "name": "KTT Pink Star (Condenser)",
+      "id": "ktt-pink-star",
+      "name": "KTT Pink Star",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-purple-moon-condenser",
-      "name": "KTT Purple Moon (Condenser)",
+      "id": "ktt-purple-moon",
+      "name": "KTT Purple Moon",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -26922,14 +26792,14 @@
     },
     {
       "id": "ktt-rose-60g",
-      "name": "KTT Rose (60g.)",
+      "name": "KTT Rose (60g)",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "ktt-rose-63-5g",
-      "name": "KTT Rose (63.5g.)",
+      "name": "KTT Rose (63.5g)",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -27004,8 +26874,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-strawberry-v1-logo",
-      "name": "KTT Strawberry V1 (Logo)",
+      "id": "ktt-strawberry-v1",
+      "name": "KTT Strawberry V1",
       "manufacturer": "KTT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -27014,12 +26884,6 @@
       "id": "ktt-strawberry-v2",
       "name": "KTT Strawberry V2",
       "brand": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-strawberry-with-logo",
-      "name": "KTT Strawberry (With Logo)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -27462,14 +27326,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lcet-glacier-red-d-stock",
-      "name": "LCET Glacier Red (D-Stock)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-glacier-red-qc-reject",
-      "name": "LCET Glacier Red (QC Reject)",
+      "id": "lcet-glacier-red",
+      "name": "LCET Glacier Red",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -27588,18 +27446,6 @@
       "id": "lcet-panda",
       "name": "LCET 'Panda'",
       "manufacturer": "LCET",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-panda-f-stock",
-      "name": "LCET Panda F-Stock",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-panda-z-stock",
-      "name": "LCET Panda Z-Stock",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -27624,12 +27470,6 @@
     {
       "id": "lcet-purple-red",
       "name": "LCET Purple/Red",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-purple-red-qc-reject",
-      "name": "LCET Purple Red (QC Reject)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -28206,13 +28046,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "leobog-shanyi-clicky",
-      "name": "LEOBOG Shanyi (clicky)",
-      "brand": "LEOBOG",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "leobog-smoky-rock-crystal",
       "name": "LEOBOG Smoky Rock Crystal",
       "manufacturer": "SOAI",
@@ -28670,13 +28503,6 @@
     {
       "id": "logitech-long-hua-purple",
       "name": "Logitech Long Hua Purple",
-      "manufacturer": "Kailh",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "logitech-long-hua-purple-condenser",
-      "name": "Logitech Long Hua Purple (Condenser)",
       "manufacturer": "Kailh",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -29159,8 +28985,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "mengmoda-mmd-honey-ht-stock",
-      "name": "MMD (MMD) Honey HT (Stock)",
+      "id": "mengmoda-mmd-honey-ht",
+      "name": "MMD (MMD) Honey HT",
       "brand": "MMD",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -30060,14 +29886,14 @@
     },
     {
       "id": "moss-62g",
-      "name": "Moss (62g.)",
+      "name": "Moss (62g)",
       "manufacturer": "JWK",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "moss-67g",
-      "name": "Moss (67g.)",
+      "name": "Moss (67g)",
       "manufacturer": "JWK",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -30275,8 +30101,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "naevies-ec-45g-original",
-      "name": "Naevies EC - 45G (Original)",
+      "id": "naevies-ec-45g",
+      "name": "Naevies EC - 45G",
       "manufacturer": "Tecsee",
       "designer": "Keyboard treehouse. Sold in packs of 35.",
       "switchType": "tactile",
@@ -30527,7 +30353,7 @@
     },
     {
       "id": "niz-plum-35g",
-      "name": "Niz Plum (35g.)",
+      "name": "Niz Plum (35g)",
       "switchType": "linear",
       "switchFamily": "EC"
     },
@@ -31352,8 +31178,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "original-aspiration-release",
-      "name": "Original Aspiration (Release)",
+      "id": "original-aspiration",
+      "name": "Original Aspiration",
       "manufacturer": "JWK",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -31757,7 +31583,7 @@
     },
     {
       "id": "outemu-clear-clear-blue-48g",
-      "name": "Outemu Clear/Clear Blue (48g.)",
+      "name": "Outemu Clear/Clear Blue (48g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31765,7 +31591,7 @@
     },
     {
       "id": "outemu-clear-clear-blue-62g",
-      "name": "Outemu Clear/Clear Blue (62g.)",
+      "name": "Outemu Clear/Clear Blue (62g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31773,7 +31599,7 @@
     },
     {
       "id": "outemu-clear-clear-blue-68g",
-      "name": "Outemu Clear/Clear Blue (68g.)",
+      "name": "Outemu Clear/Clear Blue (68g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31781,7 +31607,7 @@
     },
     {
       "id": "outemu-clear-clear-blue-75g",
-      "name": "Outemu Clear/Clear Blue (75g.)",
+      "name": "Outemu Clear/Clear Blue (75g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31789,7 +31615,7 @@
     },
     {
       "id": "outemu-clear-clear-dustproof-blue-48g",
-      "name": "Outemu Clear/Clear Dustproof Blue (48g.)",
+      "name": "Outemu Clear/Clear Dustproof Blue (48g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31797,7 +31623,7 @@
     },
     {
       "id": "outemu-clear-clear-dustproof-blue-62g",
-      "name": "Outemu Clear/Clear Dustproof Blue (62g.)",
+      "name": "Outemu Clear/Clear Dustproof Blue (62g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31805,7 +31631,7 @@
     },
     {
       "id": "outemu-clear-clear-dustproof-blue-68g",
-      "name": "Outemu Clear/Clear Dustproof Blue (68g.)",
+      "name": "Outemu Clear/Clear Dustproof Blue (68g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -31813,7 +31639,7 @@
     },
     {
       "id": "outemu-clear-clear-dustproof-blue-75g",
-      "name": "Outemu Clear/Clear Dustproof Blue (75g.)",
+      "name": "Outemu Clear/Clear Dustproof Blue (75g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
@@ -32830,7 +32656,7 @@
     },
     {
       "id": "outemu-sky-clear-clear-v2-0-48g",
-      "name": "Outemu Sky Clear/Clear V2.0 (48g.)",
+      "name": "Outemu Sky Clear/Clear V2.0 (48g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32838,7 +32664,7 @@
     },
     {
       "id": "outemu-sky-clear-clear-v2-0-62g",
-      "name": "Outemu Sky Clear/Clear V2.0 (62g.)",
+      "name": "Outemu Sky Clear/Clear V2.0 (62g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32846,7 +32672,7 @@
     },
     {
       "id": "outemu-sky-clear-clear-v2-1-48g",
-      "name": "Outemu Sky Clear/Clear V2.1 (48g.)",
+      "name": "Outemu Sky Clear/Clear V2.1 (48g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32854,7 +32680,7 @@
     },
     {
       "id": "outemu-sky-clear-clear-v2-1-62g",
-      "name": "Outemu Sky Clear/Clear V2.1 (62g.)",
+      "name": "Outemu Sky Clear/Clear V2.1 (62g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32862,7 +32688,7 @@
     },
     {
       "id": "outemu-sky-clear-clear-v2-2-48g",
-      "name": "Outemu Sky Clear/Clear V2.2 (48g.)",
+      "name": "Outemu Sky Clear/Clear V2.2 (48g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32870,7 +32696,7 @@
     },
     {
       "id": "outemu-sky-clear-clear-v2-2-62g",
-      "name": "Outemu Sky Clear/Clear V2.2 (62g.)",
+      "name": "Outemu Sky Clear/Clear V2.2 (62g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32878,7 +32704,7 @@
     },
     {
       "id": "outemu-sky-clear-ice-v2-0-68g",
-      "name": "Outemu Sky Clear/ICE V2.0 (68g.)",
+      "name": "Outemu Sky Clear/ICE V2.0 (68g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32886,7 +32712,7 @@
     },
     {
       "id": "outemu-sky-clear-ice-v2-0-75g",
-      "name": "Outemu Sky Clear/ICE V2.0 (75g.)",
+      "name": "Outemu Sky Clear/ICE V2.0 (75g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32894,7 +32720,7 @@
     },
     {
       "id": "outemu-sky-clear-ice-v2-1-68g",
-      "name": "Outemu Sky Clear/ICE V2.1 (68g.)",
+      "name": "Outemu Sky Clear/ICE V2.1 (68g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32902,7 +32728,7 @@
     },
     {
       "id": "outemu-sky-clear-ice-v2-1-75g",
-      "name": "Outemu Sky Clear/ICE V2.1 (75g.)",
+      "name": "Outemu Sky Clear/ICE V2.1 (75g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32910,7 +32736,7 @@
     },
     {
       "id": "outemu-sky-clear-ice-v2-2-68g",
-      "name": "Outemu Sky Clear/ICE V2.2 (68g.)",
+      "name": "Outemu Sky Clear/ICE V2.2 (68g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32918,7 +32744,7 @@
     },
     {
       "id": "outemu-sky-clear-ice-v2-2-75g",
-      "name": "Outemu Sky Clear/ICE V2.2 (75g.)",
+      "name": "Outemu Sky Clear/ICE V2.2 (75g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32926,7 +32752,7 @@
     },
     {
       "id": "outemu-sky-silent-48g",
-      "name": "Outemu Sky Silent (48g.)",
+      "name": "Outemu Sky Silent (48g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32934,7 +32760,7 @@
     },
     {
       "id": "outemu-sky-silent-62g",
-      "name": "Outemu Sky Silent (62g.)",
+      "name": "Outemu Sky Silent (62g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32942,7 +32768,7 @@
     },
     {
       "id": "outemu-sky-silent-68g",
-      "name": "Outemu Sky Silent (68g.)",
+      "name": "Outemu Sky Silent (68g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -32950,7 +32776,7 @@
     },
     {
       "id": "outemu-sky-silent-75g",
-      "name": "Outemu Sky Silent (75g.)",
+      "name": "Outemu Sky Silent (75g)",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -33386,70 +33212,70 @@
     },
     {
       "id": "phoenix-v1-clear-clear-48g",
-      "name": "Phoenix V1 Clear/Clear (48g.)",
+      "name": "Phoenix V1 Clear/Clear (48g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v1-clear-clear-62g",
-      "name": "Phoenix V1 Clear/Clear (62g.)",
+      "name": "Phoenix V1 Clear/Clear (62g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v1-clear-clear-68g",
-      "name": "Phoenix V1 Clear/Clear (68g.)",
+      "name": "Phoenix V1 Clear/Clear (68g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v1-clear-clear-75g",
-      "name": "Phoenix V1 Clear/Clear (75g.)",
+      "name": "Phoenix V1 Clear/Clear (75g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v1-manual-declaw-68g",
-      "name": "Phoenix V1 Manual Declaw (68g.)",
+      "name": "Phoenix V1 Manual Declaw (68g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v1-retooled-base-75g",
-      "name": "Phoenix V1 Retooled Base (75g.)",
+      "name": "Phoenix V1 Retooled Base (75g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v2-clear-clear-48g",
-      "name": "Phoenix V2 Clear/Clear (48g.)",
+      "name": "Phoenix V2 Clear/Clear (48g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v2-clear-clear-62g",
-      "name": "Phoenix V2 Clear/Clear (62g.)",
+      "name": "Phoenix V2 Clear/Clear (62g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v2-clear-clear-68g",
-      "name": "Phoenix V2 Clear/Clear (68g.)",
+      "name": "Phoenix V2 Clear/Clear (68g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
       "id": "phoenix-v2-clear-clear-75g",
-      "name": "Phoenix V2 Clear/Clear (75g.)",
+      "name": "Phoenix V2 Clear/Clear (75g)",
       "manufacturer": "Outemu",
       "switchType": "clicky",
       "switchFamily": "MX"
@@ -33596,7 +33422,7 @@
     },
     {
       "id": "primekb-62g-red-t1",
-      "name": "PrimeKB 62g. Red 'T1'",
+      "name": "PrimeKB 62g Red 'T1'",
       "manufacturer": "JWK",
       "brand": "Prime Keyboards",
       "switchType": "tactile",
@@ -33604,7 +33430,7 @@
     },
     {
       "id": "primekb-65g-red-t1",
-      "name": "PrimeKB 65g. Red 'T1'",
+      "name": "PrimeKB 65g Red 'T1'",
       "manufacturer": "JWK",
       "brand": "Prime Keyboards",
       "switchType": "tactile",
@@ -33612,7 +33438,7 @@
     },
     {
       "id": "primekb-67g-grey-t1",
-      "name": "PrimeKB 67g. Grey 'T1'",
+      "name": "PrimeKB 67g Grey 'T1'",
       "manufacturer": "JWK",
       "brand": "Prime Keyboards",
       "switchType": "tactile",
@@ -33706,8 +33532,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "punkshoo-cream-soda-stock",
-      "name": "Punkshoo Cream Soda (stock)",
+      "id": "punkshoo-cream-soda",
+      "name": "Punkshoo Cream Soda",
       "brand": "Punkshoo",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -34213,7 +34039,7 @@
     },
     {
       "id": "red-noppoo-top-clear-base-v2-1-75g",
-      "name": "Red Noppoo Top/Clear Base V2.1 (75g.)",
+      "name": "Red Noppoo Top/Clear Base V2.1 (75g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -34726,7 +34552,7 @@
     },
     {
       "id": "roselio-67g",
-      "name": "Roselio (67g.)",
+      "name": "Roselio (67g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -34800,7 +34626,7 @@
     },
     {
       "id": "sakurio-62g",
-      "name": "Sakurio (62g.)",
+      "name": "Sakurio (62g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -35181,15 +35007,8 @@
       "name": "Skyloong Chocolate Rose",
       "brand": "Skyloong",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "skyloong-chocolate-rose-original",
-      "name": "Skyloong Chocolate Rose (original)",
-      "manufacturer": "LCET",
-      "brand": "Skyloong",
-      "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "manufacturer": "LCET"
     },
     {
       "id": "skyloong-chocolate-silver",
@@ -35542,28 +35361,28 @@
     },
     {
       "id": "smoky-durock-zealio-v2-62g",
-      "name": "Smoky Durock 'Zealio V2' (62g.)",
+      "name": "Smoky Durock 'Zealio V2' (62g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "smoky-durock-zealio-v2-65g",
-      "name": "Smoky Durock 'Zealio V2' (65g.)",
+      "name": "Smoky Durock 'Zealio V2' (65g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "smoky-durock-zealio-v2-67g",
-      "name": "Smoky Durock 'Zealio V2' (67g.)",
+      "name": "Smoky Durock 'Zealio V2' (67g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "smoky-durock-zealio-v2-78g",
-      "name": "Smoky Durock 'Zealio V2' (78g.)",
+      "name": "Smoky Durock 'Zealio V2' (78g)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -36628,14 +36447,14 @@
     },
     {
       "id": "tealio-v1-67g",
-      "name": "Tealio V1 (67g.)",
+      "name": "Tealio V1 (67g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "tealio-v2-67g",
-      "name": "Tealio V2 (67g.)",
+      "name": "Tealio V2 (67g)",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -36938,7 +36757,8 @@
       "name": "Tecsee Ice Candy",
       "brand": "Tecsee",
       "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "manufacturer": "Tecsee"
     },
     {
       "id": "tecsee-ice-candy-branded",
@@ -36959,14 +36779,6 @@
     {
       "id": "tecsee-ice-candy-uhmwpe-stem",
       "name": "Tecsee Ice Candy (UHMWPE Stem)",
-      "manufacturer": "Tecsee",
-      "brand": "Tecsee",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "tecsee-ice-candy-unbranded",
-      "name": "Tecsee Ice Candy (Unbranded)",
       "manufacturer": "Tecsee",
       "brand": "Tecsee",
       "switchType": "linear",
@@ -37325,8 +37137,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "tecware-f-stock",
-      "name": "Tecware F-Stock",
+      "id": "tecware",
+      "name": "Tecware",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -37369,12 +37181,6 @@
     {
       "id": "tecware-wraith-red",
       "name": "Tecware Wraith Red",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "tecware-z-stock",
-      "name": "Tecware Z-Stock",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -37693,12 +37499,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-ace-v1-5-compatibility-condenser",
-      "name": "TTC Ace V1.5 (Compatibility Condenser)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ttc-ace-v2",
       "name": "TTC Ace V2",
       "manufacturer": "TTC",
@@ -37706,8 +37506,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-ace-v2-compatibility-condenser-and-silver-pins",
-      "name": "TTC Ace V2 (Compatibility Condenser and Silver Pins)",
+      "id": "ttc-ace-v2-silver-pins",
+      "name": "TTC Ace V2 (Silver Pins)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -37719,8 +37519,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-black-short-led",
-      "name": "TTC Black (Short LED)",
+      "id": "ttc-black",
+      "name": "TTC Black",
       "manufacturer": "TTC",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -37739,22 +37539,15 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-blue-long-led",
-      "name": "TTC Blue (Long LED)",
+      "id": "ttc-blue",
+      "name": "TTC Blue",
       "manufacturer": "TTC",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-blue-short-led",
-      "name": "TTC Blue (Short LED)",
-      "manufacturer": "TTC",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-blueish-white-condensor",
-      "name": "TTC Blueish White (Condensor)",
+      "id": "ttc-blueish-white",
+      "name": "TTC Blueish White",
       "manufacturer": "TTC",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -37771,12 +37564,6 @@
       "id": "ttc-bluish-white-full-silent",
       "name": "TTC Bluish White (Full Silent)",
       "manufacturer": "TTC",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-bluish-white-new-led-condenser",
-      "name": "TTC Bluish White (New LED Condenser)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -37820,15 +37607,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-brother-condensor",
-      "name": "TTC Brother (Condensor)",
-      "manufacturer": "TTC",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-brother-gold-blue-new-led-condenser",
-      "name": "TTC Brother (Gold-Blue) (New LED Condenser)",
+      "id": "ttc-brother-gold-blue",
+      "name": "TTC Brother (Gold-Blue)",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -37846,8 +37626,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-brown-short-led",
-      "name": "TTC Brown (Short LED)",
+      "id": "ttc-brown",
+      "name": "TTC Brown",
       "manufacturer": "TTC",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -38093,19 +37873,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-gold-pink-condensor",
-      "name": "TTC Gold Pink (Condensor)",
-      "manufacturer": "TTC",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-gold-pink-new-led-condenser",
-      "name": "TTC Gold Pink (New LED Condenser)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ttc-gold-pink-v2",
       "name": "TTC Gold Pink V2",
       "manufacturer": "TTC",
@@ -38211,13 +37978,6 @@
     {
       "id": "ttc-ice-silver-frozen",
       "name": "TTC Ice Silver (Frozen)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-ice-small-condenser",
-      "name": "TTC Ice (Small Condenser)",
-      "manufacturer": "TTC",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -38615,14 +38375,14 @@
     },
     {
       "id": "ttc-orange-v1-45g",
-      "name": "TTC Orange V1 (45g.)",
+      "name": "TTC Orange V1 (45g)",
       "manufacturer": "TTC",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "ttc-orange-v1-60g",
-      "name": "TTC Orange V1 (60g.)",
+      "name": "TTC Orange V1 (60g)",
       "manufacturer": "TTC",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -38752,15 +38512,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-red-long-led",
-      "name": "TTC Red (Long LED)",
-      "manufacturer": "TTC",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-red-short-led",
-      "name": "TTC Red (Short LED)",
+      "id": "ttc-red",
+      "name": "TTC Red",
       "manufacturer": "TTC",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -39191,26 +38944,6 @@
       "name": "Ukeebs SnowyYellow",
       "switchType": "tactile",
       "switchFamily": "MX"
-    },
-    {
-      "id": "unbranded-clicky-yellow-alps-clone",
-      "name": "Unbranded Clicky Yellow Alps Clone",
-      "switchType": "clicky",
-      "switchFamily": "Alps"
-    },
-    {
-      "id": "unbranded-low-profile-blue",
-      "name": "Unbranded Low Profile Blue",
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "unbranded-low-profile-red",
-      "name": "Unbranded Low Profile Red",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": true
     },
     {
       "id": "unholy-gsus-panda",
@@ -39911,7 +39644,7 @@
     },
     {
       "id": "white-noppoo-top-clear-base-v2-0-75g",
-      "name": "White Noppoo Top/Clear Base V2.0 (75g.)",
+      "name": "White Noppoo Top/Clear Base V2.0 (75g)",
       "manufacturer": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -41900,21 +41633,21 @@
     },
     {
       "id": "zealio-r1-v1-62g",
-      "name": "Zealio R1 V1 62g.",
+      "name": "Zealio R1 V1 62g",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-r1-v1-65g",
-      "name": "Zealio R1 V1 65g.",
+      "name": "Zealio R1 V1 65g",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-r1-v1-67g",
-      "name": "Zealio R1 V1 67g.",
+      "name": "Zealio R1 V1 67g",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -41927,28 +41660,28 @@
     },
     {
       "id": "zealio-v1-62g",
-      "name": "Zealio V1 (62g.)",
+      "name": "Zealio V1 (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v1-65g",
-      "name": "Zealio V1 (65g.)",
+      "name": "Zealio V1 (65g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v1-67g",
-      "name": "Zealio V1 (67g.)",
+      "name": "Zealio V1 (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v1-78g",
-      "name": "Zealio V1 (78g.)",
+      "name": "Zealio V1 (78g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -41969,63 +41702,63 @@
     },
     {
       "id": "zealio-v2-62g",
-      "name": "Zealio V2 (62g.)",
+      "name": "Zealio V2 (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-65g",
-      "name": "Zealio V2 (65g.)",
+      "name": "Zealio V2 (65g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-65g-milky-bottom-error",
-      "name": "Zealio V2 (65g.) Milky Bottom Error",
+      "name": "Zealio V2 (65g) Milky Bottom Error",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-67g",
-      "name": "Zealio V2 (67g.)",
+      "name": "Zealio V2 (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-78g",
-      "name": "Zealio V2 (78g.)",
+      "name": "Zealio V2 (78g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-ac-62g",
-      "name": "Zealio V2 AC (62g.)",
+      "name": "Zealio V2 AC (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-ac-65g",
-      "name": "Zealio V2 AC (65g.)",
+      "name": "Zealio V2 AC (65g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-ac-67g",
-      "name": "Zealio V2 AC (67g.)",
+      "name": "Zealio V2 AC (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zealio-v2-ac-78g",
-      "name": "Zealio V2 AC (78g.)",
+      "name": "Zealio V2 AC (78g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -42088,91 +41821,91 @@
     },
     {
       "id": "zilent-v1-62g",
-      "name": "Zilent V1 (62g.)",
+      "name": "Zilent V1 (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v1-65g",
-      "name": "Zilent V1 (65g.)",
+      "name": "Zilent V1 (65g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v1-67g",
-      "name": "Zilent V1 (67g.)",
+      "name": "Zilent V1 (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v1-67g-cloudy-top",
-      "name": "Zilent V1 (67g.) Cloudy Top",
+      "name": "Zilent V1 (67g) Cloudy Top",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v1-78g",
-      "name": "Zilent V1 (78g.)",
+      "name": "Zilent V1 (78g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-62g",
-      "name": "Zilent V2 (62g.)",
+      "name": "Zilent V2 (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-65g",
-      "name": "Zilent V2 (65g.)",
+      "name": "Zilent V2 (65g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-67g",
-      "name": "Zilent V2 (67g.)",
+      "name": "Zilent V2 (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-78g",
-      "name": "Zilent V2 (78g.)",
+      "name": "Zilent V2 (78g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-ac-62g",
-      "name": "Zilent V2 AC (62g.)",
+      "name": "Zilent V2 AC (62g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-ac-65g",
-      "name": "Zilent V2 AC (65g.)",
+      "name": "Zilent V2 AC (65g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-ac-67g",
-      "name": "Zilent V2 AC (67g.)",
+      "name": "Zilent V2 AC (67g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "zilent-v2-ac-78g",
-      "name": "Zilent V2 AC (78g.)",
+      "name": "Zilent V2 AC (78g)",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
