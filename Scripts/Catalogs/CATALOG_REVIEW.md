@@ -708,15 +708,15 @@ Reviewed 2026-09-23. The retained NovelKeys source [TFUE Keycaps](https://novelk
 
 Reviewed 2026-09-23. V60 and V80 denote compatible keyboards, not release versions. Remove inferred predecessor lists from KBParadise ALPS V60 Vintage Blank, KBParadise ALPS V80 Vintage, and KBParadise MX V60 Black Blank; retain model names and IDs. The retailer describes the [ALPS V60](https://mechanicalkeyboards.com/products/kbparadise-alps-v60-vintage-61-key-blank-abs-keycap-set), [ALPS V80](https://mechanicalkeyboards.com/products/kbparadise-alps-v80-vintage-oem-profile-abs-keycap-set), and [MX V60](https://mechanicalkeyboards.com/products/kbparadise-mx-v60-black-abs-keycaps-blank) as individual sets. No alternate options are established. Pin omitted variants and exempt these compatibility models from release inference. An audit of both accepted catalogs, including names, IDs, and options with V10+/R10+ or spelled-out version/round labels, found no other matches.
 
-## Sparse-entry research ? pending catalog edits
+## Sparse-entry metadata review
 
-Researched 2026-09-23. **Research only: the user requested no catalog changes until after their commit.** Catalogs, overrides, and source observations were not changed for this pass. Scope: entries containing only id/name and at most one other field; no switch entries matched.
+Researched and applied 2026-09-23. Research was initially held for the user's commit; the subsequent request to add metadata authorized applying the supported fields below. Accepted metadata is pinned in overrides; original source observations remain unchanged. Scope: entries containing only id/name and at most one other field; no switch entries matched.
 
-Findings below come from existing product URLs, their full specification sections, and explicitly linked supplementary sources. Unknown factories/designers remain unknown. Do not infer a factory from a seller, copy navigation/recommended-product metadata, expand compatibility model numbers, or apply artisan-only specifications to full sets. Recheck conflicts before edits; any future accepted changes need matching overrides and replay validation.
+Findings below come from existing product URLs, their full specification sections, and explicitly linked supplementary sources. Unknown factories/designers remain unknown. Do not infer a factory from a seller, copy navigation/recommended-product metadata, expand compatibility model numbers, or apply artisan-only specifications to full sets. Conflicting profiles remain unset for Akko Shiny Kitten and Steam Engine Cyrillic. Work Louder Wrk. gains its brand only; TRIFL gains its confirmed profile while its final material remains pending. NicePBT and CannonCaps manufacturer labels follow the existing catalog convention and the vendor specifications; these identify product lines rather than establish an underlying factory. Biip's PBoW sublegend credit remains in these notes. New material combinations use the existing slash notation. Names, IDs, and variant lists are unchanged.
 
 ### Supported metadata and caveats
 
-| Existing entry | Findings to consider | Evidence |
+| Existing entry | Evidence and caveats for applied metadata | Evidence |
 |---|---|---|
 | Akko Black & Cyan Cyrillic | Material PBT; profile ASA. | [Source 1](https://akkogear.eu/products/black-cyan-cyrillic-keycap-set-98-key) |
 | Akko Black & Gold Cyrillic | Material PBT; profile ASA. | [Source 1](https://akkogear.eu/products/black-gold-russian-layout-cyrillic-keycap-68-key), [Source 2](https://akkogear.eu/products/black-gold-cyrillic-keycap-set-98-key) |
@@ -823,7 +823,7 @@ Findings below come from existing product URLs, their full specification section
 
 ### Unresolved identities and follow-up sources
 
-These are leads, not approved metadata.
+These leads remain unapplied. CC ZeRo also appears to duplicate the existing CannonCaps ZeRo entry; verify and merge separately rather than independently enriching a duplicate.
 
 | Existing entry | Remaining research | Lead |
 |---|---|---|

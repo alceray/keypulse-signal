@@ -10488,7 +10488,8 @@
       "brand": "Drop"
     },
     "keycaps/sw-bow-accents": {
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "material": "ABS/PBT"
     },
     "keycaps/momoka-focus": {
       "brand": "Momoka",
@@ -11831,7 +11832,8 @@
       "material": "PBT"
     },
     "keycaps/doodlecaps-nakseo-black": {
-      "material": "PBT"
+      "material": "PBT",
+      "brand": "Swagkeys"
     },
     "keycaps/dcs-hhkblanks": {
       "brand": "Signature Plastics"
@@ -11874,7 +11876,8 @@
       "brand": "Signature Plastics"
     },
     "keycaps/sw-antarctic": {
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "material": "ABS/PBT"
     },
     "keycaps/mt3-abs-pulse": {
       "manufacturer": "Drop",
@@ -12175,13 +12178,17 @@
       "name": "Tai-Hao Pine Green Gradient"
     },
     "keycaps/mkl-classic-black-wob": {
-      "name": "MKL Classic Black (WoB)"
+      "name": "MKL Classic Black (WoB)",
+      "profile": "Leopold",
+      "material": "PBT"
     },
     "keycaps/epbt-x-gok-black-on-white": {
       "name": "ePBT x GOK Black on White"
     },
     "keycaps/glorious-gpbt-national-parks-collection": {
-      "name": "Glorious GPBT National Parks Collection"
+      "name": "Glorious GPBT National Parks Collection",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     "keycaps/tai-hao-love-in-paris-backlit": {
       "name": "Tai-Hao Love in Paris Backlit"
@@ -12615,7 +12622,10 @@
       "material": "PBT"
     },
     "keycaps/doys-dat-1": {
-      "name": "Doys Dat.1"
+      "name": "Doys Dat.1",
+      "manufacturer": "Deadline Studio",
+      "profile": "DOYS",
+      "material": "PC"
     },
     "keycaps/kfapbt-black-on-white": {
       "material": "PBT"
@@ -32478,6 +32488,409 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": null
+    },
+    "keycaps/akko-black-cyan-cyrillic": {
+      "material": "PBT",
+      "profile": "ASA"
+    },
+    "keycaps/akko-black-gold-cyrillic": {
+      "material": "PBT",
+      "profile": "ASA"
+    },
+    "keycaps/akko-black-gold-iso-nordic": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-black-pink-cyrillic": {
+      "material": "PBT",
+      "profile": "ASA"
+    },
+    "keycaps/akko-black-pink-gradient": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-blue-gradient": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-blue-on-white-cyrillic": {
+      "material": "PBT",
+      "profile": "ASA"
+    },
+    "keycaps/akko-blue-on-white-iso-spare": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-forest-gradient": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-glassy-carbon-fiber": {
+      "material": "ABS/PC",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-greedy-bear": {
+      "material": "PBT/PC",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-horizon-iso-nordic": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-love": {
+      "material": "PC",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-orange-on-black-iso-de-uk-nordic": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-pc-transparent": {
+      "material": "PC",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-purple-gradient": {
+      "material": "PBT",
+      "profile": "Cherry"
+    },
+    "keycaps/akko-quantum-horizon": {
+      "material": "PC",
+      "profile": "Cherry",
+      "designer": "Akko & OSHID"
+    },
+    "keycaps/akko-shine-through-black": {
+      "material": "PBT",
+      "profile": "OEM"
+    },
+    "keycaps/akko-shine-through-white": {
+      "material": "PBT",
+      "profile": "OEM"
+    },
+    "keycaps/akko-shiny-kitten": {
+      "material": "PBT/PC"
+    },
+    "keycaps/akko-steam-engine-cyrillic": {
+      "material": "PBT"
+    },
+    "keycaps/akko-the-king-s-avatar": {
+      "material": "PBT",
+      "profile": "MOA"
+    },
+    "keycaps/akko-timeline": {
+      "material": "PBT",
+      "profile": "ACA"
+    },
+    "keycaps/glorious-gpbt-afterparty": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-alpine-forest": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-arctic-white": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-armor-grey-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-backlit": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-classic-black-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-classic-white-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-daydream": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-epic-purple-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-high-tide": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-ink-noir": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-mana-blue-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-olive": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-potion-pink-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-power-panel": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-purple-haze": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-revive-red-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-star-sign": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-synth-sunrise": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-synth-sunset": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-totem-green-basics": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/glorious-gpbt-zero-one": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-aegissil": {
+      "profile": "Cherry",
+      "material": "Silicone"
+    },
+    "keycaps/epomaker-aquashift": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-cream-bunny": {
+      "profile": "MOA",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-duochrome": {
+      "profile": "Cherry",
+      "material": "PBT/PC"
+    },
+    "keycaps/epomaker-frost-jelly": {
+      "profile": "Cherry",
+      "material": "ABS/PC"
+    },
+    "keycaps/epomaker-glintrix": {
+      "profile": "Cherry",
+      "material": "PBT/PC"
+    },
+    "keycaps/epomaker-human-fall-flat-fallen-series": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-jellypaw": {
+      "profile": "MAO",
+      "material": "ABS/PC"
+    },
+    "keycaps/epomaker-lavender-jade": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-lusterfly-jelly": {
+      "profile": "MDA",
+      "material": "ABS/PC"
+    },
+    "keycaps/epomaker-meow-sushi": {
+      "profile": "MOA",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-mist-clouds": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-opalux": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-phos": {
+      "profile": "Cherry",
+      "material": "PBT/PC"
+    },
+    "keycaps/epomaker-shimmeow": {
+      "profile": "MAO",
+      "material": "ABS/PC"
+    },
+    "keycaps/epomaker-smokfiber": {
+      "profile": "Cherry",
+      "material": "PC"
+    },
+    "keycaps/epomaker-sunflower": {
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/epomaker-vvyruus-retromania": {
+      "profile": "Cherry",
+      "material": "PBT",
+      "designer": "vvyruus"
+    },
+    "keycaps/epomaker-x-lindseyszn-azure-dragon-szn": {
+      "profile": "MOA",
+      "material": "PBT",
+      "designer": "LINDSEYSZN"
+    },
+    "keycaps/cannonkeys-x-tamagotchi": {
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/cannonkeys-x-tamagotchi-cheffy-edition": {
+      "manufacturer": "NicePBT",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/cherry-charcoal": {
+      "brand": "NovelKeys",
+      "material": "PBT"
+    },
+    "keycaps/cherry-flowershop": {
+      "brand": "NovelKeys",
+      "material": "PBT"
+    },
+    "keycaps/cherry-industrial-keys": {
+      "brand": "NovelKeys",
+      "material": "PBT",
+      "designer": "biip"
+    },
+    "keycaps/cherry-olivia": {
+      "brand": "NovelKeys",
+      "material": "PBT",
+      "designer": "Olivia"
+    },
+    "keycaps/cherry-pbow": {
+      "brand": "NovelKeys",
+      "material": "PBT"
+    },
+    "keycaps/cherry-sage": {
+      "brand": "NovelKeys",
+      "material": "PBT",
+      "designer": "dotnick"
+    },
+    "keycaps/cxa-pine": {
+      "manufacturer": "CannonCaps",
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "profile": "CXA",
+      "material": "ABS/PBT"
+    },
+    "keycaps/dimensional": {
+      "manufacturer": "GMK",
+      "designer": "LittleAad",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    "keycaps/doodlecaps-nakseo": {
+      "brand": "Swagkeys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/ffxiv-eorzean": {
+      "manufacturer": "Keyreative",
+      "material": "PBT"
+    },
+    "keycaps/galactic-empire": {
+      "manufacturer": "Signature Plastics",
+      "profile": "DSA",
+      "material": "PBT"
+    },
+    "keycaps/jkdk-studio-blue-gradient-side-print": {
+      "profile": "OEM",
+      "material": "PBT"
+    },
+    "keycaps/keycapsule-prism": {
+      "manufacturer": "Keyreative",
+      "designer": "biip",
+      "material": "PBT"
+    },
+    "keycaps/keychron-k12": {
+      "profile": "OEM",
+      "material": "ABS"
+    },
+    "keycaps/keychron-k3": {
+      "material": "ABS"
+    },
+    "keycaps/keychron-k7": {
+      "material": "ABS"
+    },
+    "keycaps/mcr-horseman": {
+      "manufacturer": "MelGeek",
+      "profile": "MCR",
+      "material": "ABS"
+    },
+    "keycaps/mm-glazed-beige": {
+      "material": "PBT"
+    },
+    "keycaps/moomin-summertime": {
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/otc-9009": {
+      "brand": "Omnitype",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/otc-modo-light": {
+      "brand": "Omnitype",
+      "profile": "Cherry",
+      "material": "PBT",
+      "designer": "Omnitype & Qoda Studio"
+    },
+    "keycaps/pbt-office-beige": {
+      "brand": "Hibi",
+      "designer": "Hibi & Eura Bang",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/pff-verdant-retro": {
+      "profile": "PFF",
+      "material": "PBT"
+    },
+    "keycaps/pga-circus": {
+      "profile": "PGA",
+      "material": "ABS"
+    },
+    "keycaps/pga-jeans": {
+      "profile": "PGA",
+      "material": "ABS"
+    },
+    "keycaps/qk-pearl-milk-tea": {
+      "brand": "Qwertykeys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/qk-taro-balls": {
+      "brand": "Qwertykeys",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/series-1-yuji-and-megumi-edition": {
+      "manufacturer": "MONOKEI",
+      "profile": "Cherry",
+      "material": "PBT"
+    },
+    "keycaps/trifl-alpha": {
+      "profile": "TRIFL"
+    },
+    "keycaps/work-louder-wrk": {
+      "brand": "Work Louder"
     }
   },
   "excluded": {

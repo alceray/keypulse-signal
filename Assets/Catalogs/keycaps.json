@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 48,
+  "catalogVersion": 49,
   "totalCount": 2437,
   "entries": [
     {
@@ -71,42 +71,58 @@
     {
       "id": "akko-black-cyan-cyrillic",
       "name": "Akko Black & Cyan Cyrillic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "ASA",
+      "material": "PBT"
     },
     {
       "id": "akko-black-gold-cyrillic",
       "name": "Akko Black & Gold Cyrillic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "ASA",
+      "material": "PBT"
     },
     {
       "id": "akko-black-gold-iso-nordic",
       "name": "Akko Black & Gold ISO Nordic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-black-pink-cyrillic",
       "name": "Akko Black & Pink Cyrillic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "ASA",
+      "material": "PBT"
     },
     {
       "id": "akko-black-pink-gradient",
       "name": "Akko Black & Pink Gradient",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-blue-gradient",
       "name": "Akko Blue Gradient",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-blue-on-white-cyrillic",
       "name": "Akko Blue on White Cyrillic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "ASA",
+      "material": "PBT"
     },
     {
       "id": "akko-blue-on-white-iso-spare",
       "name": "Akko Blue on White ISO Spare",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-bun-wonderland",
@@ -148,12 +164,16 @@
     {
       "id": "akko-forest-gradient",
       "name": "Akko Forest Gradient",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-glassy-carbon-fiber",
       "name": "Akko Glassy Carbon Fiber",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "ABS/PC"
     },
     {
       "id": "akko-good-luck-charm",
@@ -165,17 +185,23 @@
     {
       "id": "akko-greedy-bear",
       "name": "Akko Greedy Bear",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT/PC"
     },
     {
       "id": "akko-horizon-iso-nordic",
       "name": "Akko Horizon ISO Nordic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-love",
       "name": "Akko Love",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "akko-lucky-tangerine",
@@ -192,7 +218,9 @@
     {
       "id": "akko-orange-on-black-iso-de-uk-nordic",
       "name": "Akko Orange on Black ISO-DE/UK/Nordic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-otter-hustle",
@@ -203,7 +231,9 @@
     {
       "id": "akko-pc-transparent",
       "name": "Akko PC Transparent",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "akko-piggy-party",
@@ -245,32 +275,43 @@
     {
       "id": "akko-purple-gradient",
       "name": "Akko Purple Gradient",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "akko-quantum-horizon",
       "name": "Akko Quantum Horizon",
-      "brand": "Akko"
+      "brand": "Akko",
+      "designer": "Akko & OSHID",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "akko-shine-through-black",
       "name": "Akko Shine-Through Black",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "akko-shine-through-white",
       "name": "Akko Shine-Through White",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "akko-shiny-kitten",
       "name": "Akko Shiny Kitten",
-      "brand": "Akko"
+      "brand": "Akko",
+      "material": "PBT/PC"
     },
     {
       "id": "akko-steam-engine-cyrillic",
       "name": "Akko Steam Engine Cyrillic",
-      "brand": "Akko"
+      "brand": "Akko",
+      "material": "PBT"
     },
     {
       "id": "akko-steamed-buns",
@@ -287,12 +328,16 @@
     {
       "id": "akko-the-king-s-avatar",
       "name": "Akko The King's Avatar",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "MOA",
+      "material": "PBT"
     },
     {
       "id": "akko-timeline",
       "name": "Akko Timeline",
-      "brand": "Akko"
+      "brand": "Akko",
+      "profile": "ACA",
+      "material": "PBT"
     },
     {
       "id": "akko-watermelon",
@@ -620,12 +665,18 @@
     {
       "id": "cannonkeys-x-tamagotchi",
       "name": "CannonKeys x Tamagotchi",
-      "brand": "CannonKeys"
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cannonkeys-x-tamagotchi-cheffy-edition",
       "name": "CannonKeys x Tamagotchi (Cheffy Edition)",
-      "brand": "CannonKeys"
+      "manufacturer": "NicePBT",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "capybaras-daily-lifer",
@@ -671,7 +722,9 @@
     {
       "id": "cherry-charcoal",
       "name": "Cherry Charcoal",
-      "profile": "Cherry"
+      "brand": "NovelKeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cherry-clear-aurora",
@@ -712,7 +765,9 @@
     {
       "id": "cherry-flowershop",
       "name": "Cherry Flowershop",
-      "profile": "Cherry"
+      "brand": "NovelKeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cherry-game-1989-candy",
@@ -744,7 +799,10 @@
     {
       "id": "cherry-industrial-keys",
       "name": "Cherry Industrial Keys",
-      "profile": "Cherry"
+      "brand": "NovelKeys",
+      "designer": "biip",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cherry-infinity",
@@ -802,12 +860,17 @@
     {
       "id": "cherry-olivia",
       "name": "Cherry Olivia",
-      "profile": "Cherry"
+      "brand": "NovelKeys",
+      "designer": "Olivia",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cherry-pbow",
       "name": "Cherry PBoW",
-      "profile": "Cherry"
+      "brand": "NovelKeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cherry-photographer",
@@ -842,7 +905,10 @@
     {
       "id": "cherry-sage",
       "name": "Cherry Sage",
-      "profile": "Cherry"
+      "brand": "NovelKeys",
+      "designer": "dotnick",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "cherry-series-00",
@@ -1361,7 +1427,12 @@
     },
     {
       "id": "cxa-pine",
-      "name": "CXA Pine"
+      "name": "CXA Pine",
+      "manufacturer": "CannonCaps",
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "profile": "CXA",
+      "material": "ABS/PBT"
     },
     {
       "id": "dcd-akatsuki-indigo",
@@ -3210,7 +3281,11 @@
     },
     {
       "id": "dimensional",
-      "name": "Dimensional"
+      "name": "Dimensional",
+      "manufacturer": "GMK",
+      "designer": "LittleAad",
+      "profile": "Cherry",
+      "material": "ABS"
     },
     {
       "id": "dmk-adventurer",
@@ -3563,17 +3638,24 @@
     },
     {
       "id": "doodlecaps-nakseo",
-      "name": "Doodlecaps Nakseo"
+      "name": "Doodlecaps Nakseo",
+      "brand": "Swagkeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "doodlecaps-nakseo-black",
       "name": "Doodlecaps Nakseo Black",
+      "brand": "Swagkeys",
       "material": "PBT"
     },
     {
       "id": "doys-dat-1",
       "name": "Doys Dat.1",
-      "designer": "Deadline Studio"
+      "manufacturer": "Deadline Studio",
+      "designer": "Deadline Studio",
+      "profile": "DOYS",
+      "material": "PC"
     },
     {
       "id": "doys-pc-blanks",
@@ -4898,97 +4980,137 @@
     {
       "id": "epomaker-aegissil",
       "name": "Epomaker AegisSil",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "Silicone"
     },
     {
       "id": "epomaker-aquashift",
       "name": "Epomaker AquaShift",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-cream-bunny",
       "name": "Epomaker Cream Bunny",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "MOA",
+      "material": "PBT"
     },
     {
       "id": "epomaker-duochrome",
       "name": "Epomaker DuoChrome",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT/PC"
     },
     {
       "id": "epomaker-frost-jelly",
       "name": "Epomaker Frost Jelly",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "ABS/PC"
     },
     {
       "id": "epomaker-glintrix",
       "name": "Epomaker Glintrix",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT/PC"
     },
     {
       "id": "epomaker-human-fall-flat-fallen-series",
       "name": "Epomaker × Human Fall Flat FALLEN Series",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-jellypaw",
       "name": "Epomaker JellyPaw",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "MAO",
+      "material": "ABS/PC"
     },
     {
       "id": "epomaker-lavender-jade",
       "name": "Epomaker Lavender Jade",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-lusterfly-jelly",
       "name": "Epomaker Lusterfly Jelly",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "MDA",
+      "material": "ABS/PC"
     },
     {
       "id": "epomaker-meow-sushi",
       "name": "Epomaker Meow Sushi",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "MOA",
+      "material": "PBT"
     },
     {
       "id": "epomaker-mist-clouds",
       "name": "Epomaker Mist Clouds",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-opalux",
       "name": "Epomaker Opalux",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-phos",
       "name": "Epomaker Phos",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT/PC"
     },
     {
       "id": "epomaker-shimmeow",
       "name": "Epomaker Shimmeow",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "MAO",
+      "material": "ABS/PC"
     },
     {
       "id": "epomaker-smokfiber",
       "name": "Epomaker SmokFiber",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PC"
     },
     {
       "id": "epomaker-sunflower",
       "name": "Epomaker Sunflower",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-vvyruus-retromania",
       "name": "Epomaker × vvyruus Retromania",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "designer": "vvyruus",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "epomaker-x-lindseyszn-azure-dragon-szn",
       "name": "Epomaker x LINDSEYSZN Azure Dragon SZN",
-      "brand": "Epomaker"
+      "brand": "Epomaker",
+      "designer": "LINDSEYSZN",
+      "profile": "MOA",
+      "material": "PBT"
     },
     {
       "id": "fbb-baozaoyingye",
@@ -5019,7 +5141,9 @@
     },
     {
       "id": "ffxiv-eorzean",
-      "name": "FFXIV Eorzean"
+      "name": "FFXIV Eorzean",
+      "manufacturer": "Keyreative",
+      "material": "PBT"
     },
     {
       "id": "filco-chocolate-custardminila",
@@ -5143,7 +5267,10 @@
     },
     {
       "id": "galactic-empire",
-      "name": "Galactic Empire"
+      "name": "Galactic Empire",
+      "manufacturer": "Signature Plastics",
+      "profile": "DSA",
+      "material": "PBT"
     },
     {
       "id": "gateron-aluminum-year-of-the-tiger",
@@ -5232,22 +5359,30 @@
     {
       "id": "glorious-gpbt-afterparty",
       "name": "Glorious GPBT Afterparty",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-alpine-forest",
       "name": "Glorious GPBT Alpine Forest",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-arctic-white",
       "name": "Glorious GPBT Arctic White",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-armor-grey-basics",
       "name": "Glorious GPBT Armor Grey Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-aura",
@@ -5262,7 +5397,9 @@
     {
       "id": "glorious-gpbt-backlit",
       "name": "Glorious GPBT Backlit",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-celestial-fire",
@@ -5285,22 +5422,30 @@
     {
       "id": "glorious-gpbt-classic-black-basics",
       "name": "Glorious GPBT Classic Black Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-classic-white-basics",
       "name": "Glorious GPBT Classic White Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-daydream",
       "name": "Glorious GPBT Daydream",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-epic-purple-basics",
       "name": "Glorious GPBT Epic Purple Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-grapefruit",
@@ -5314,22 +5459,30 @@
     {
       "id": "glorious-gpbt-high-tide",
       "name": "Glorious GPBT High Tide",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-ink-noir",
       "name": "Glorious GPBT Ink Noir",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-mana-blue-basics",
       "name": "Glorious GPBT Mana Blue Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-national-parks-collection",
       "name": "Glorious GPBT National Parks Collection",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-nebula",
@@ -5352,7 +5505,9 @@
     {
       "id": "glorious-gpbt-olive",
       "name": "Glorious GPBT Olive",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-pastel",
@@ -5364,17 +5519,23 @@
     {
       "id": "glorious-gpbt-potion-pink-basics",
       "name": "Glorious GPBT Potion Pink Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-power-panel",
       "name": "Glorious GPBT Power Panel",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-purple-haze",
       "name": "Glorious GPBT Purple Haze",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-rain-forest",
@@ -5388,27 +5549,37 @@
     {
       "id": "glorious-gpbt-revive-red-basics",
       "name": "Glorious GPBT Revive Red Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-star-sign",
       "name": "Glorious GPBT Star Sign",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-synth-sunrise",
       "name": "Glorious GPBT Synth Sunrise",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-synth-sunset",
       "name": "Glorious GPBT Synth Sunset",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-totem-green-basics",
       "name": "Glorious GPBT Totem Green Basics",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "glorious-gpbt-white",
@@ -5420,7 +5591,9 @@
     {
       "id": "glorious-gpbt-zero-one",
       "name": "Glorious GPBT Zero One",
-      "brand": "Glorious"
+      "brand": "Glorious",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "glorious-polychroma-rgb",
@@ -11265,7 +11438,9 @@
     {
       "id": "jkdk-studio-blue-gradient-side-print",
       "name": "JKDK Studio Blue Gradient Side Print",
-      "brand": "JKDK"
+      "brand": "JKDK",
+      "profile": "OEM",
+      "material": "PBT"
     },
     {
       "id": "jkdk-studio-dark-matter",
@@ -12715,7 +12890,10 @@
     },
     {
       "id": "keycapsule-prism",
-      "name": "Keycapsule Prism"
+      "name": "Keycapsule Prism",
+      "manufacturer": "Keyreative",
+      "designer": "biip",
+      "material": "PBT"
     },
     {
       "id": "keychron-arsenal-nuclear-power-shine-through",
@@ -13015,17 +13193,21 @@
     {
       "id": "keychron-k12",
       "name": "Keychron K12",
-      "brand": "Keychron"
+      "brand": "Keychron",
+      "profile": "OEM",
+      "material": "ABS"
     },
     {
       "id": "keychron-k3",
       "name": "Keychron K3",
-      "brand": "Keychron"
+      "brand": "Keychron",
+      "material": "ABS"
     },
     {
       "id": "keychron-k7",
       "name": "Keychron K7",
-      "brand": "Keychron"
+      "brand": "Keychron",
+      "material": "ABS"
     },
     {
       "id": "keychron-knight",
@@ -14191,7 +14373,10 @@
     {
       "id": "mcr-horseman",
       "name": "MCR Horseman",
-      "designer": "Muni"
+      "manufacturer": "MelGeek",
+      "designer": "Muni",
+      "profile": "MCR",
+      "material": "ABS"
     },
     {
       "id": "mda-ember-dawn",
@@ -14432,12 +14617,15 @@
     {
       "id": "mkl-classic-black-wob",
       "name": "MKL Classic Black (WoB)",
-      "brand": "MK"
+      "brand": "MK",
+      "profile": "Leopold",
+      "material": "PBT"
     },
     {
       "id": "mm-glazed-beige",
       "name": "MM Glazed Beige",
-      "designer": "Totoro"
+      "designer": "Totoro",
+      "material": "PBT"
     },
     {
       "id": "mode-anthracite",
@@ -14489,7 +14677,10 @@
     },
     {
       "id": "moomin-summertime",
-      "name": "Moomin® Summertime"
+      "name": "Moomin® Summertime",
+      "brand": "CannonKeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "mt3-abs-3277",
@@ -16550,11 +16741,18 @@
     },
     {
       "id": "otc-9009",
-      "name": "OTC 9009"
+      "name": "OTC 9009",
+      "brand": "Omnitype",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "otc-modo-light",
-      "name": "OTC Modo® Light"
+      "name": "OTC Modo® Light",
+      "brand": "Omnitype",
+      "designer": "Omnitype & Qoda Studio",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "otter-coffee",
@@ -16697,7 +16895,11 @@
     },
     {
       "id": "pbt-office-beige",
-      "name": "PBT Office Beige"
+      "name": "PBT Office Beige",
+      "brand": "Hibi",
+      "designer": "Hibi & Eura Bang",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "pbtfans-1950",
@@ -17946,7 +18148,9 @@
     {
       "id": "pff-verdant-retro",
       "name": "PFF Verdant Retro",
-      "designer": "OrinNYC"
+      "designer": "OrinNYC",
+      "profile": "PFF",
+      "material": "PBT"
     },
     {
       "id": "pff-wob",
@@ -17956,12 +18160,16 @@
     {
       "id": "pga-circus",
       "name": "PGA Circus",
-      "designer": "KBDfans"
+      "designer": "KBDfans",
+      "profile": "PGA",
+      "material": "ABS"
     },
     {
       "id": "pga-jeans",
       "name": "PGA Jeans",
-      "designer": "KBDfans"
+      "designer": "KBDfans",
+      "profile": "PGA",
+      "material": "ABS"
     },
     {
       "id": "pheilcia-galaxc-blank",
@@ -17993,12 +18201,18 @@
     {
       "id": "qk-pearl-milk-tea",
       "name": "QK Pearl Milk Tea",
-      "designer": "Qwertykeys"
+      "brand": "Qwertykeys",
+      "designer": "Qwertykeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "qk-taro-balls",
       "name": "QK Taro Balls",
-      "designer": "Qwertykeys"
+      "brand": "Qwertykeys",
+      "designer": "Qwertykeys",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "qtuo-studio-bear-cafe",
@@ -18805,7 +19019,10 @@
     },
     {
       "id": "series-1-yuji-and-megumi-edition",
-      "name": "Series 1 Yuji and Megumi Edition"
+      "name": "Series 1 Yuji and Megumi Edition",
+      "manufacturer": "MONOKEI",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "shadow",
@@ -18926,12 +19143,14 @@
     {
       "id": "sw-antarctic",
       "name": "SW Antarctic",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "material": "ABS/PBT"
     },
     {
       "id": "sw-bow-accents",
       "name": "SW BoW Accents",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "material": "ABS/PBT"
     },
     {
       "id": "sw-calm-beige-pbt",
@@ -19964,7 +20183,8 @@
     {
       "id": "trifl-alpha",
       "name": "TRIFL alpha",
-      "designer": "Lu"
+      "designer": "Lu",
+      "profile": "TRIFL"
     },
     {
       "id": "tut-black-sugar-bobo",
@@ -20269,6 +20489,7 @@
     {
       "id": "work-louder-wrk",
       "name": "Work Louder Wrk.",
+      "brand": "Work Louder",
       "designer": "Biip"
     },
     {
