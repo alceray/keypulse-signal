@@ -163,7 +163,34 @@ function Get-NormalizedCatalogEntry($Entry, [string]$Kind) {
     $map = Get-CatalogAliases
     # The one switch name in another script is a studio's own name, not a translation.
     $name = if ($Kind -eq 'keycaps') { Get-CatalogLatinName $result.name } else { $result.name }
-    $result.name = Get-CatalogAliasName $name $Kind
+    $result.name = Get-CatalogReleaseName (Get-CatalogAliasName $name $Kind)
+    # These historical group-buy names identify distinct projects, not variants
+    # of a generic DCS product. Preserve their source titles and literal kits.
+    $historicalDcs = $Kind -eq 'keycaps' -and $result.name -match '^DCS R(?:1|3 and (?:R)?4)$'
+    if ($historicalDcs) {
+        $result.name = if ($result.name -eq 'DCS R1') { 'DCS Round 1' } else { 'DCS Round 3 and 4' }
+    }
+    if ($Kind -eq 'keycaps') {
+        $result.name = ($result.name -replace '(?i)\s*\bCherry[ -]+profile\b', '').Trim()
+        if ($result.Contains('designer')) {
+            $result.designer = ($result.designer -replace '(?i)[,\s]+(?:this set|NicePBT\s+[^,]+)\s+consists of\b.*$', '').Trim()
+        }
+    }
+    $crpRound = $Kind -eq 'keycaps' -and $result.name -match '^(?:Hammerworks\s+)?CRP\s+(?:Hammerworks\s+)?R\d+(?:\.\d+)*(?:\s+Beige)?$'
+    if ($crpRound) { $result.name = [regex]::Match($result.name, 'R\d+(?:\.\d+)*').Value.Insert(0, 'CRP ') }
+    $crpC64Round = $Kind -eq 'keycaps' -and $result.name -match '^(?:Hammerworks\s+)?CRP C64 R\d+(?:\.\d+)*$'
+    if ($crpC64Round) { $result.name = [regex]::Match($result.name, 'R\d+(?:\.\d+)*').Value.Insert(0, 'CRP C64 ') }
+    $labels = @()
+    if ($result.Contains('variants')) { $labels = $result.variants }
+    if ($result.Contains('variants') -and ($labels -isnot [array] -or -not $labels.Count)) { throw 'Invalid variants list.' }
+    # Switch labels represent complete observed options (for example V2 / 62g).
+    # Never split them or infer standalone predecessor versions from them/names.
+    # Realforce R3 and KBParadise V60/V80 identify compatible keyboards, not releases.
+    $keyboardModel = $Kind -eq 'keycaps' -and (
+        $result.name -match '^(?:Topre\s+)?Realforce\s+(?:R\d+|RC\d+)\b' -or
+        $result.name -match '^KBParadise\s+(?:ALPS|MX)\s+V(?:60|80)\b')
+    $labels = Get-CatalogVariantLabels $labels $result.name -LiteralKits:($Kind -eq 'switches' -or $crpRound -or $crpC64Round -or $historicalDcs -or $keyboardModel)
+    if ($labels.Count) { $result.variants = $labels }
     foreach ($field in @('manufacturer', 'brand', 'designer')) {
         if ($result.Contains($field)) { $result[$field] = Get-CatalogCreditName $result[$field] }
     }

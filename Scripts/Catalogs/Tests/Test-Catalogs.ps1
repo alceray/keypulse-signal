@@ -740,6 +740,158 @@ Test-Case 'New stores preserve kit identities, profiles, and production roles' {
     $record = Convert-CatalogProduct $product 'keebsforall'
     Assert (-not $record.entry.Contains('brand')) 'A multibrand store became the product brand.'
 }
+Test-Case 'Historical DCS group buys preserve their identities without invented variants' {
+    foreach ($name in @('DCS Round 1', 'DCS Round 3 and 4')) {
+        $entry = Get-NormalizedCatalogEntry ([ordered]@{ name = $name; designer = 'Original designer'; profile = 'DCS' }) 'keycaps'
+        Assert ($entry.name -ceq $name -and -not $entry.Contains('variants')) 'Historical DCS identity became a release list.'
+        Assert ((ConvertTo-CatalogJson (Get-NormalizedCatalogEntry $entry 'keycaps')) -ceq (ConvertTo-CatalogJson $entry)) 'DCS normalization was not stable.'
+    }
+}
+Test-Case 'R0/R5 sculpt kit is not expanded into production rounds' {
+    $labels = Get-CatalogVariantLabels @('40s', 'Colevrak+', 'R0/R5') 'GMK WoB 40s, Colevrak+, R0/R5'
+    Assert (($labels -join ',') -ceq '40s,Colevrak+,R0/R5') 'Sculpt rows became invented rounds.'
+    $labels = Get-CatalogVariantLabels @('R0/R5', 'R2')
+    Assert (($labels -join ',') -ceq 'R1,R2,R0/R5') 'A sculpt kit interfered with an actual release label.'
+}
+Test-Case 'Cherry profile wording leaves names and credits while profile metadata survives' {
+    $entry = Get-NormalizedCatalogEntry ([ordered]@{ name = 'Example Cherry profile'; profile = 'Cherry'; designer = 'OneCreativeMind and Alas, this set consists of Cherry Profile, Dye-sublimated PBT keycaps.' }) 'keycaps'
+    Assert ($entry.name -ceq 'Example' -and $entry.profile -ceq 'Cherry' -and $entry.designer -ceq 'OneCreativeMind and Alas') 'Profile wording or trailing designer prose survived.'
+    $entry = Get-NormalizedCatalogEntry ([ordered]@{ name = 'NicePBT Deep North'; designer = 'Liv, NicePBT Deep North consists of Cherry Profile, dye-sub keycaps.' }) 'keycaps'
+    Assert ($entry.designer -ceq 'Liv') 'Named-set designer prose survived.'
+    $entry = Get-NormalizedCatalogEntry ([ordered]@{ name = 'Example'; designer = 'PWade3 this set consists of Cherry Profile, dye-sub keycaps.' }) 'keycaps'
+    Assert ($entry.designer -ceq 'PWade3') 'Designer prose without a comma survived.'
+}
+Test-Case 'Outemu Sky keeps only reviewed variants without inferred predecessors' {
+    $entry = Get-NormalizedCatalogEntry ([ordered]@{ id = 'outemu-sky'; name = 'Outemu Sky'; variants = @('V2.1', 'V2.2', '62g', '68g', '75g', '80g') }) 'switches'
+    Assert (($entry.variants -join ',') -ceq '62g,68g,75g,80g,V2.1,V2.2') 'Unverified Sky versions were inferred.'
+}
+Test-Case 'New open-slot source records cannot reintroduce removed switches' {
+    $state = New-TestState
+    $records = @(New-TestRecords)
+    foreach ($label in @('Open Slot', 'Open-Slot')) {
+        $record = Copy-Value $records[0]
+        $record.sourceId = "new-$label"
+        $record.entry.name = "Example ($label)"
+        $records += $record
+    }
+    $next = New-CatalogCandidate $state $records
+    Assert ((ConvertTo-CatalogJson $state.catalogs) -ceq (ConvertTo-CatalogJson $next.state.catalogs)) 'An open-slot switch was accepted.'
+}
+Test-Case 'Simple variant labels survive normalization and no-op replay' {
+    $state = New-TestState
+    $entry = $state.catalogs.switches.entries[0]
+    $entry.variants = @('62g', '67g')
+    $entry.switchFamily = 'MX'
+    $entry.isLowProfile = $true
+    $state.overrides.entries["switches/$($entry.id)"] = [ordered]@{ variants = @('62g', '67g') }
+    $next = (New-CatalogCandidate $state (New-TestRecords)).state
+    $actual = $next.catalogs.switches.entries[0]
+    Assert ($actual.variants -is [array] -and ($actual.variants -join ',') -ceq '62g,67g') 'Variant list was flattened or discarded.'
+    Assert ($actual.switchFamily -ceq 'MX' -and $actual.isLowProfile) 'Existing family/form-factor metadata was lost.'
+    $again = (New-CatalogCandidate $next (New-TestRecords)).state
+    Assert ((ConvertTo-CatalogJson $again) -ceq (ConvertTo-CatalogJson $next)) 'No-op replay changed variants or version.'
+    $keycap = $state.catalogs.keycaps.entries[0]
+    $keycap.variants = @('R1', 'R2')
+    Test-CatalogState $state
+}
+Test-Case 'Variant labels reject nested data, empty labels, and duplicates' {
+    foreach ($invalid in @('R1', @(), @(''), @(' R1'), @('R1', 'r1'), @([ordered]@{ id = 'r1' }))) {
+        $state = New-TestState
+        $state.catalogs.switches.entries[0].variants = $invalid
+        Assert-Throws { Test-CatalogState $state } 'Invalid.*variant'
+    }
+    $state = New-TestState
+    $state.catalogs.switches.entries[0].isLowProfile = 'true'
+    Assert-Throws { Test-CatalogState $state } 'Invalid isLowProfile'
+    $state.catalogs.switches.entries[0].isLowProfile = $false
+    Assert-Throws { Test-CatalogState $state } 'Invalid isLowProfile'
+}
+Test-Case 'Source variant lists union without expanding combinations or losing retired labels' {
+    $state = New-TestState
+    $entry = $state.catalogs.switches.entries[0]
+    $entry.variants = @('R1 / 62g')
+    $records = New-TestRecords
+    $records[0].entry.variants = @('R2 / 67g')
+    $next = (New-CatalogCandidate $state $records).state
+    Assert (($next.catalogs.switches.entries[0].variants -join ',') -ceq 'R1 / 62g,R2 / 67g') 'Variant combinations were lost or invented.'
+    $records[0].entry.variants = @('r1 / 62g')
+    $again = (New-CatalogCandidate $next $records).state
+    Assert ($again.catalogs.switches.entries[0].variants.Count -eq 2) 'Case-only variant duplicated a label.'
+}
+Test-Case 'Reviewed switch singleton omissions survive source replay' {
+    $state = New-TestState
+    $entry = $state.catalogs.switches.entries[0]
+    $state.overrides.entries["switches/$($entry.id)"] = [ordered]@{ variants = $null }
+    $records = New-TestRecords
+    $records[0].entry.variants = @('Clicky')
+    $next = (New-CatalogCandidate $state $records).state
+    Assert (-not $next.catalogs.switches.entries[0].Contains('variants')) 'A removed singleton returned from a source.'
+    $again = (New-CatalogCandidate $next $records).state
+    Assert ((ConvertTo-CatalogJson $again) -ceq (ConvertTo-CatalogJson $next)) 'Singleton omission was not stable.'
+}
+Test-Case 'Release labels fill integer predecessors without changing profiles or weights' {
+    $labels = Get-CatalogVariantLabels @('r3', 'v2', '62g', 'R3')
+    Assert (($labels -join ',') -ceq 'R1,R2,R3,V1,V2,62g') 'Releases were not normalized, expanded, and deduplicated.'
+    $labels = Get-CatalogVariantLabels @('r2.5 / 67g')
+    Assert (($labels -join ',') -ceq 'R1,R2,R2.5,R2.5 / 67g') 'Decimal release or weight combinations were fabricated.'
+    $entry = Get-NormalizedCatalogEntry ([ordered]@{ id = 'sa-r3-1976'; name = 'SA-R3 1976'; profile = 'SA-R3'; variants = @('r2') }) 'keycaps'
+    Assert ($entry.name -ceq 'SA-R3 1976' -and $entry.profile -ceq 'SA-R3' -and ($entry.variants -join ',') -ceq 'R1,R2') 'Profile R3 became a release.'
+    $entry = Get-NormalizedCatalogEntry ([ordered]@{ id = 'plain'; name = 'SA-R3 1976'; profile = 'SA-R3' }) 'keycaps'
+    Assert (-not $entry.Contains('variants')) 'A profile alone invented release variants.'
+    Assert ((Get-CatalogReleaseName 'Example r2 / version 3 / Round 4') -ceq 'Example R2 / V3 / R4') 'Release casing was not canonicalized.'
+}
+Test-Case 'CRP rounds remain separate and sculpt kits do not expand into releases' {
+    $records = @(
+        [ordered]@{ source = 'dailyclack'; sourceId = 'crp-test-6'; kind = 'keycaps'; url = 'https://example.com/r6'; excluded = $null; entry = [ordered]@{ name = 'Hammerworks CRP Round 6'; variants = @('r0', 'r5', 'Numpad') } },
+        [ordered]@{ source = 'dailyclack'; sourceId = 'crp-test-7'; kind = 'keycaps'; url = 'https://example.com/r7'; excluded = $null; entry = [ordered]@{ name = 'CRP r7'; variants = @('Desko Black', 'R5A', 'R1 Accent Blue') } }
+    )
+    $next = (New-CatalogCandidate (New-TestState) $records).state
+    $r6 = @($next.catalogs.keycaps.entries | Where-Object { $_.id -eq 'crp-r6' })[0]
+    $r7 = @($next.catalogs.keycaps.entries | Where-Object { $_.id -eq 'crp-r7' })[0]
+    Assert ($r6.name -ceq 'CRP R6' -and ($r6.variants -join ',') -ceq 'Numpad,R0,R5') 'CRP sculpt labels were lost or expanded.'
+    Assert (($r7.variants -join ',') -ceq 'Desko Black,R1 Accent Blue,R5A') 'Round number contaminated the kit list.'
+    $again = (New-CatalogCandidate $next $records).state
+    Assert ((ConvertTo-CatalogJson $again) -ceq (ConvertTo-CatalogJson $next)) 'CRP round replay changed the catalog.'
+    $old = Get-NormalizedCatalogEntry ([ordered]@{ name = 'CRP Hammerworks r1' }) 'keycaps'
+    Assert ($old.name -ceq 'CRP R1' -and -not $old.Contains('variants')) 'Unknown old-round kits were invented.'
+    $other = Get-NormalizedCatalogEntry ([ordered]@{ name = 'Example R3' }) 'keycaps'
+    Assert (($other.variants -join ',') -ceq 'R1,R2,R3') 'CRP exception leaked to other products.'
+}
+Test-Case 'Keyboard compatibility models do not invent keycap releases' {
+    foreach ($name in @('KBParadise ALPS V60 Vintage Blank', 'KBParadise ALPS V80 Vintage', 'KBParadise MX V60 Black Blank', 'Topre Realforce R3 Replacement Keycaps')) {
+        $entry = Get-NormalizedCatalogEntry ([ordered]@{ id = 'model-test'; name = $name }) 'keycaps'
+        Assert ($entry.name -ceq $name -and -not $entry.Contains('variants')) 'Keyboard model invented release variants.'
+        $entry = Get-NormalizedCatalogEntry ([ordered]@{ id = 'model-test'; name = $name; variants = @('White', 'Black') }) 'keycaps'
+        Assert (($entry.variants -join ',') -ceq 'Black,White') 'Model normalization changed literal choices.'
+    }
+    foreach ($release in @('V10', 'R10')) {
+        $entry = Get-NormalizedCatalogEntry ([ordered]@{ id = 'release-test'; name = "Example $release" }) 'keycaps'
+        Assert ($entry.variants.Count -eq 10 -and $entry.variants -contains $release) 'Model exception suppressed a genuine release.'
+    }
+}
+Test-Case 'C64 rounds preserve literal kit lists without release variants' {
+    $records = @(1, 2 | ForEach-Object {
+        [ordered]@{ source = 'dailyclack'; sourceId = "c64-test-$_"; kind = 'keycaps'; url = 'https://example.com/c64'; excluded = $null; entry = [ordered]@{ name = "Hammerworks CRP C64 Round $_"; designer = 'BUGER.WORK'; variants = @('C64 Alphas', 'Numpad') } }
+    })
+    $next = (New-CatalogCandidate (New-TestState) $records).state
+    foreach ($round in @(1, 2)) {
+        $entry = @($next.catalogs.keycaps.entries | Where-Object { $_.id -eq "crp-c64-r$round" })[0]
+        Assert ($entry.name -ceq "CRP C64 R$round" -and $entry.designer -ceq 'BUGER.WORK') 'C64 identity or credit changed.'
+        Assert (($entry.variants -join ',') -ceq 'C64 Alphas,Numpad') 'C64 round number became a kit.'
+    }
+    $again = (New-CatalogCandidate $next $records).state
+    Assert ((ConvertTo-CatalogJson $again) -ceq (ConvertTo-CatalogJson $next)) 'C64 replay changed the catalog.'
+}
+Test-Case 'Reviewed historical keycap provenance survives absent feeds' {
+    $state = New-TestState
+    $record = [ordered]@{ source = 'reviewedkeycaps'; sourceId = 'crp-r1'; kind = 'keycaps'; url = 'https://example.com/history'; notes = 'Reviewed historical CRP round evidence; kit list unavailable.'; excluded = $null; entry = [ordered]@{ name = 'CRP R1' } }
+    $next = (New-CatalogCandidate $state @($record)).state
+    $again = (New-CatalogCandidate $next @()).state
+    Assert ((ConvertTo-CatalogJson $again) -ceq (ConvertTo-CatalogJson $next)) 'Missing live feed lost reviewed history.'
+    $binding = @($next.bindings | Where-Object { $_.source -eq 'reviewedkeycaps' })[0]
+    $binding.Remove('notes')
+    Assert-Throws { Test-CatalogState $next } 'Invalid reviewed source'
+}
 Test-Case 'Catalog scripts stay ASCII so Windows PowerShell reads them as written' {
     # Without a byte order mark, Windows PowerShell decodes a script in the ANSI code page,
     # where an em dash contains a closing curly quote that ends a string early.

@@ -34,9 +34,22 @@ function Test-CatalogState($State, [switch]$AllowEmpty) {
             if ($kind -eq 'switches' -and -not $entry.Contains('switchType')) { throw "Missing switchType on $key. Add a reviewed type override or exclude this entry, then Replay." }
             foreach ($field in $entry.Keys) {
                 if ($field -notin (Get-CatalogFields $kind)) { throw "Unsupported field '$field' on $key" }
+                if ($field -eq 'variants') {
+                    if ($entry[$field] -isnot [array] -or -not $entry[$field].Count) { throw "Invalid variants on $key" }
+                    $labels = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+                    foreach ($label in $entry[$field]) {
+                        if ($label -isnot [string] -or -not $label.Trim() -or $label -cne (Get-CatalogName $label) -or -not $labels.Add($label)) { throw "Invalid or duplicate variant on $key" }
+                    }
+                    continue
+                }
+                if ($field -eq 'isLowProfile') {
+                    if ($entry[$field] -isnot [bool] -or -not $entry[$field]) { throw "Invalid isLowProfile on $key" }
+                    continue
+                }
                 if ($entry[$field] -isnot [string] -or -not $entry[$field].Trim() -or $entry[$field] -cne (Get-CatalogName $entry[$field])) { throw "Invalid $field on $key" }
             }
             if ($entry.Contains('switchType') -and $entry.switchType -cnotin @('linear', 'tactile', 'clicky', 'linear/clicky', 'latching')) { throw "Invalid switch type: $key" }
+            if ($entry.Contains('switchFamily') -and $entry.switchFamily -cnotmatch '^(MX|Alps|Choc|HE|EC|Optical|Legacy|Other)(/(MX|Alps|Choc|HE|EC|Optical|Legacy|Other))*$') { throw "Invalid switch family: $key" }
         }
         if (-not $catalog.Contains('totalCount') -or $catalog.totalCount -isnot [int] -or $catalog.totalCount -ne $catalog.entries.Count) { throw "Invalid $kind total count." }
     }
@@ -48,7 +61,11 @@ function Test-CatalogState($State, [switch]$AllowEmpty) {
         $seen[$key] = $true
         $target = "$($binding.kind)/$($binding.id)"
         if (-not $ids.ContainsKey($target)) { throw "Source mapping points to missing ID: $target" }
-        if (-not $script:CatalogSources.Contains($binding.source) -or $script:CatalogSources[$binding.source].kind -ne $binding.kind) { throw "Invalid source kind: $key" }
+        if ($binding.source -eq 'reviewedkeycaps') {
+            # Historical, manually researched pages have no live feed adapter.
+            # Keep their provenance through replay without scheduling a fetch.
+            if ($binding.kind -ne 'keycaps' -or -not $binding.Contains('url') -or $binding.url -notmatch '^https://' -or -not $binding.Contains('notes') -or -not $binding.notes.Trim()) { throw "Invalid reviewed source: $key" }
+        } elseif (-not $script:CatalogSources.Contains($binding.source) -or $script:CatalogSources[$binding.source].kind -ne $binding.kind) { throw "Invalid source kind: $key" }
         if (-not $binding.Contains('observed') -or -not $binding.observed.Contains('name')) { throw "Missing source observation: $key" }
         $referenced[$target] = $true
     }
@@ -127,6 +144,7 @@ function New-CatalogCandidate($State, [array]$Records) {
             foreach ($warning in $record.warnings) { $report.sourceWarnings += [ordered]@{ source = $sourceKey; name = $record.entry.name; warning = $warning } }
         }
         $reason = $record.excluded
+        if ($record.kind -eq 'switches' -and $record.entry.name -match '(?i)\bopen[\s-]+slot\b') { $reason = 'Open-slot entries excluded by catalog policy.' }
         if ($override.excluded.Contains($sourceKey)) { $reason = $override.excluded[$sourceKey] }
         if ($reason) {
             $report.rejected += [ordered]@{ source = $sourceKey; name = $record.entry.name; reason = $reason }
@@ -216,6 +234,24 @@ function New-CatalogCandidate($State, [array]$Records) {
                 continue
             }
             # Case-insensitive sorting would collapse a case variant and restyle the accepted value.
+            if ($field -eq 'variants') {
+                $labels = [Collections.Generic.List[string]]::new()
+                $seenLabels = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+                if ($entry.Contains('variants')) {
+                    foreach ($label in $entry.variants) { if ($seenLabels.Add($label)) { $labels.Add($label) } }
+                }
+                foreach ($record in $recordsForEntry) {
+                    if ($record.entry.Contains('variants')) {
+                        if ($record.entry.variants -isnot [array]) { throw "Invalid source variants on $key" }
+                        foreach ($label in $record.entry.variants) {
+                            if ($label -isnot [string] -or -not $label.Trim() -or $label -cne (Get-CatalogName $label)) { throw "Invalid source variant on $key" }
+                            if ($seenLabels.Add($label)) { $labels.Add($label) }
+                        }
+                    }
+                }
+                if ($labels.Count) { $entry.variants = Get-CatalogSortedStrings $labels }
+                continue
+            }
             $values = @($recordsForEntry | Where-Object { $_.entry.Contains($field) } | ForEach-Object { $_.entry[$field] } | Sort-Object -Unique -CaseSensitive)
             if ($values.Count -gt 1) {
                 # Spellings of one value agree, so the accepted spelling stays.

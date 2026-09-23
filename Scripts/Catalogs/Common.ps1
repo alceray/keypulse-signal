@@ -253,8 +253,49 @@ function Get-CatalogSlug([string]$Name) {
 
 function Get-CatalogFields([string]$Kind) {
     $fields = @('id', 'name', 'manufacturer', 'brand', 'designer')
-    if ($Kind -eq 'switches') { return $fields + 'switchType' }
-    $fields + @('profile', 'material')
+    if ($Kind -eq 'switches') { return $fields + @('switchType', 'switchFamily', 'isLowProfile', 'variants') }
+    $fields + @('profile', 'material', 'variants')
+}
+
+# A hyphenated profile such as SA-R3 is not a product release. Keep decimal
+# revisions explicit; fill only integer major releases, never spring weights.
+function Get-CatalogReleaseName([string]$Value) {
+    [regex]::Replace($Value, '(?i)(?<![\p{L}\p{N}_-])(?<prefix>round\s+|version\s+|r\.?|v\.?)(?<number>\d+(?:\.\d+)*)(?![\p{L}\p{N}_])', [Text.RegularExpressions.MatchEvaluator]{
+        param($match)
+        $prefix = if ($match.Groups['prefix'].Value.StartsWith('r', [StringComparison]::OrdinalIgnoreCase)) { 'R' } else { 'V' }
+        $prefix + $match.Groups['number'].Value
+    })
+}
+
+function Get-CatalogVariantLabels($Labels, [string]$Name = '', [switch]$LiteralKits) {
+    $values = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+    $releases = [Collections.Generic.Dictionary[string, int]]::new([StringComparer]::Ordinal)
+    foreach ($label in @($Labels)) {
+        if ($label -isnot [string] -or -not $label.Trim() -or $label -cne (Get-CatalogName $label)) { throw 'Invalid variant label.' }
+        [void]$values.Add((Get-CatalogReleaseName $label))
+    }
+    # CRP rounds are separate products. R0/R5 inside their kit lists are sculpt
+    # rows, not release numbers; preserve the labels without adding predecessors.
+    if ($LiteralKits) { return ,(Get-CatalogSortedStrings $values) }
+    foreach ($text in @($values) + @((Get-CatalogReleaseName $Name))) {
+        # R0/R5 denotes a combined sculpt-row kit, not a sequence of rounds.
+        $text = $text -replace '(?i)\bR0\s*/\s*R5\b', ''
+        foreach ($match in [regex]::Matches($text, '(?<![\p{L}\p{N}_-])(?<prefix>[RV])(?<major>\d+)(?:\.\d+)*(?![\p{L}\p{N}_])')) {
+            $number = 0
+            if (-not [int]::TryParse($match.Groups['major'].Value, [ref]$number) -or $number -gt 100) { throw "Release number outside supported 0-100 range: $($match.Value)" }
+            $prefix = $match.Groups['prefix'].Value
+            if (-not $releases.ContainsKey($prefix) -or $number -gt $releases[$prefix]) { $releases[$prefix] = $number }
+            [void]$values.Add($match.Value)
+        }
+    }
+    $ordered = [Collections.Generic.List[string]]::new()
+    foreach ($prefix in @('R', 'V')) {
+        if ($releases.ContainsKey($prefix)) {
+            for ($number = 1; $number -le $releases[$prefix]; $number++) { $ordered.Add("$prefix$number"); [void]$values.Remove("$prefix$number") }
+        }
+    }
+    foreach ($label in (Get-CatalogSortedStrings $values)) { $ordered.Add($label) }
+    return ,$ordered.ToArray()
 }
 
 function Get-CatalogSortedStrings($Values) {

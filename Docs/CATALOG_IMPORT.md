@@ -33,22 +33,20 @@ Both catalogs contain `schemaVersion`, `catalogVersion`, `totalCount`, and an `e
 | `switchType` | Switches | Required: `linear`, `tactile`, `clicky`, `linear/clicky`, or `latching`; broad feel/operation categories |
 | `switchFamily` | Switches | Required: `MX`, `Alps`, `Choc`, `HE`, `EC`, `Optical`, `Legacy`, or `Other`, or a combined value such as `EC/HE` for a genuine hybrid; stem/mount and sensing lineage, distinct from `switchType`'s feel/operation categories |
 | `isLowProfile` | Switches | Optional bool, `true` only; omitted rather than written `false`. Short-housing form factor, independent of `switchFamily` — a `Choc` switch is always low-profile, but `HE`/`MX`-stem switches (Gateron KS-33, RAESHA Ultra LP) can be too |
+| `variants` | Both | Optional nonempty list of distinct labels, such as `["R1", "R2"]` or `["62g", "67g"]`. Omitted when no variants are recorded. No nested objects or variant IDs. |
 | `profile` | Keycaps | Keycap profile |
 | `material` | Keycaps | Keycap material; `ABS/PBT` records both plastics, whether a blend or different keys within the set |
 
-- Other metadata fields are optional; unknown values are omitted. A missing switch type or family blocks candidate generation and promotion: add a reviewed override or exclude the entry, then replay. A hosting store is not evidence of brand or manufacturer. Documented house production lines such as NicePBT, CannonCaps, and Drop can supply community manufacturer names.
-- Metadata comes from explicit labels, reviewed product/project specifications, and the inference rules below. Comparisons, packaging, optional artisans, and tentative production options do not supply specifications for the set.
-- Switch-type review filled 1,057 missing values from product-page labels, variant specifications, and user-reviewed classifications. All accepted entries have a type; combined linear/clicky mechanisms and latching switches retain their distinct categories. Evidence is recorded in [switch-type-review.json](../Scripts/Catalogs/switch-type-review.json).
-- `switchFamily` groups by stem/mount and sensing lineage, not feel: `MX` is the default absent other evidence; `Alps`, `Choc`, `HE`, `EC`, `Optical`, `Legacy`, and `Other` cover the rest, with a combined value such as `EC/HE` for a genuine hybrid. `Choc` needs a word-boundary match; a bare "choc" substring also matches "Chocolate," an unrelated color name. Every entry has a `switchFamily`, fully resolved with evidence — none left blank or unverified. Full classification history (pattern-matched sibling evidence, individually web-searched sources, and a handful cross-checked against ThereminGoat's Collection List) is recorded in [switch-family-review.json](../Scripts/Catalogs/switch-family-review.json).
-- `isLowProfile` is set from an explicit "low profile"/"low-profile" match or a bare "LP" abbreviation (`RAESHA Ultra LP`) in the name, plus every `Choc` entry regardless of wording, since the Kailh Choc mount is inherently low-profile even when the name doesn't say so (`Kailh Choc Autumn`).
-- Names keep meaningful revisions, rounds, and switch weights and colors. Add-on kits for a named set have their own entries, and kit options inside a parent product stay attached to it.
-- Switch names and IDs omit redundant `Linear` and `Tactile` labels. Keep them when a switch has both variants, including variants sold at different weights. Same-type duplicates share a reviewed binding and preserve their source observations and metadata; names and ID redirects are pinned in `overrides.json` so replay does not restore the redundant labels.
-- Names drop annotations with no functional or visual difference (`Condenser`, `Hole`/`No Hole`, `Short`/`Long LED`, `Logo`/`No Logo`, `Unbranded`, `Desoldered`, `Original`/`Release`/`Stock`, grade/retailer-stock markers, `Swirl Logo`) and the trailing period on weights (`(62g.)` → `(62g)`). Weight, pin/mount type, and housing color stay — real distinguishing specs.
-- Keycap releases qualify once GB or in-stock orders open. Exclude IC-only proposals, future openings, cancelled releases, and failed-MOQ attempts. Verify the specific maker, profile, round, and kit: a cancelled add-on does not disqualify a produced base set, and a later successful sale may qualify after an earlier failed attempt.
-- Keycap names show only their Latin form. Switch names and designer credits are kept as written.
-- Accepted IDs normally stay fixed through name changes. Alternate names stay traceable in source observations and reviewed bindings. Reviewed exceptions removed translated-name duplication from 57 IDs and redundant switch-type labels from 661 IDs, updating all source bindings with them.
-- Catalog versions increase only when accepted entry content changes. Fetch timestamps and formatting never change a version.
-- JSON files use two-space indentation and write non-ASCII characters literally.
+- Other metadata fields are optional and unknown values are omitted; a missing switch type or family blocks promotion until a reviewed override or exclusion resolves it. A hosting store is not evidence of brand or manufacturer, though documented house lines (NicePBT, CannonCaps, Drop) can supply community manufacturer names. Metadata comes from explicit labels, reviewed specifications, and the inference rules below — not comparisons, packaging, optional artisans, or tentative production options.
+- Switch-type review filled 1,057 missing values; every accepted entry has a type, with combined linear/clicky and latching mechanisms kept distinct. Evidence: [switch-type-review.json](../Scripts/Catalogs/switch-type-review.json).
+- `switchFamily` groups by stem/mount and sensing lineage, not feel: `MX` is the default absent other evidence, and `Choc` needs a word-boundary match (not the "Chocolate" color). Every entry is fully resolved with evidence in [switch-family-review.json](../Scripts/Catalogs/switch-family-review.json).
+- `isLowProfile` is set from an explicit "low profile"/"LP" match in the name, plus every `Choc` entry regardless of wording, since the Kailh Choc mount is inherently low-profile.
+- Same-product entries combine revisions, rounds, weights, colors, or kits into `variants` when their other metadata agrees, staying separate on type/family/maker/material/profile conflicts; switch options must be supported combinations, not invented predecessors or cross-products, and unlabelled listings don't imply R1 or a default weight.
+- Keycap release labels use uppercase R/V, filling integer predecessors down to 1 (never decimals or model/profile tokens like `SA-R3`); CRP and CRP C64 keep separate, literal round-specific kit lists, and sculpt labels like R0/R5 are kits, not release ranges. A release only qualifies once GB or in-stock orders actually open — not IC-only, future, cancelled, or failed-MOQ attempts — verified per maker/profile/round/kit.
+- Names and IDs drop redundant switch-type labels (`Linear`/`Tactile`), pin-count wording (kept in variants only when every option has a count and both counts occur), and cosmetic annotations with no functional/visual difference (`Condenser`, `Hole`/`No Hole`, LED length, logo/branding, `Desoldered`, `Original`/`Release`/`Stock`, grade markers) plus the trailing period on weights (`(62g.)` → `(62g)`); weight, pin/mount type, and housing color stay as real distinguishing specs. Compatible weight/revision variants share a reviewed binding pinned in `overrides.json` so replay doesn't re-split them, with original source observations unchanged.
+- Keycap names show only their Latin form; switch names and designer credits are kept as written.
+- Accepted IDs stay fixed through name changes, with alternates traceable in source observations and reviewed bindings; reviewed exceptions removed translated-name duplication from 57 IDs and redundant switch-type labels from 661 IDs.
+- Catalog versions bump only on accepted entry content changes, not fetch timestamps or formatting; JSON files use two-space indentation and write non-ASCII characters literally.
 
 ## Update step by step
 
@@ -263,7 +261,7 @@ Coverage is not exhaustive. Retailers remove discontinued products, Matrix's GMK
 
 ### Candidate switch sources
 
-The switch catalog now has 5,769 entries at version 30, with nine live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
+The switch catalog uses live store feeds plus ThereminGoat's workbook and score sheet. LumeKeebs, CannonKeys, KeebsForAll, Divinikey, Gateron, Keychron, and Akko EU are integrated and no longer candidates. The remaining shortlist is below. **Listings** count products, not distinct switch variants or confirmed additions. The old new-entry ceilings predated those imports and the type-label cleanup and are retired; new-entry estimates need a fresh comparison. Collection pages remain readable, but JSON feed requests returned 403 during this review, preventing a complete recount and match pass.
 
 | Source | Coverage benefit | Observed listings | Priority / remaining work |
 |---|---|---|---|
@@ -309,8 +307,6 @@ Small gaps worth filling manually:
 
 ## History
 
-The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,745 at version 30. Switch coverage is 69 percent manufacturer, 53 percent brand, and 80 percent type. Keycap coverage is 71 percent manufacturer, 90 percent brand, 85 percent profile, and 80 percent material.
-
 **Sources.** Early imports used SwitchOddities, Matrix, Divinikey, KBDfans, and DCS Wiki. ThereminGoat's workbook and UniKeys expanded switches, KeycapLendar expanded keycaps, the score sheet followed, and seven retailer keycap feeds made sixteen adapters on 2026-09-10. Six more stores on 2026-09-12 added 573 keycap entries, mostly Keychron, Tai-Hao, Akko, Ducky, PBTfans, and Glorious sets. Osume, KeebsForAll, Prototypist, and Mode brought the adapter count to 26, adding 124 sets and kits and enriching 44 entries. CannonKeys, Divinikey, KeebsForAll, LumeKeebs, Gateron's own store, and the switch collections at Keychron and Akko EU brought it to 33 on 2026-09-13, adding 897 switches and filling a field on 214 existing ones; SwitchOddities and UniKeys had been the only live switch retailers before this.
 
 **Removed.** Every removal has a reviewed exclusion, so it survives later imports.
@@ -321,6 +317,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 - Release review removed 604 keycap entries that never reached an opened order round: 508 IC-only or superseded proposals, 41 unopened releases, 34 cancelled or failed-MOQ releases, and 21 with no evidence either way after a 2026-09-13 follow-up confirmed 23 other entries had actually opened for orders and kept them instead.
 - Cherry listings with no pin count where a pin-specific entry exists, including `Cherry Brown`, and nameplate specimens that duplicated a plain entry. MX1A listings are Hyperglide.
 - 36 artisans and 23 other listings that are not keycap sets, such as kit collections, leftover sales, faceplates, a keyboard, and single novelty keys.
+- Outemu Sky uses an evidence-only variant list, without inferred predecessor versions; open-slot switch entries are excluded on import, plus explicit exclusions for TTC Flame (Slotted) and TTC Flame Red Half Height LED.
 
 **Merged.**
 
@@ -333,6 +330,12 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 - 71 MechanicalKeyboards listings joined existing entries, and layout or regional listings of one set joined it. Keychron and Ducky colorways sold in several shapes stay separate and carry the shape in their names, as in `Keychron OSA Retro`.
 - Five expanded WoB/BoW names joined the matching KKB, PBTfans, GMK CYL, and current GMK MTNU entries.
 - 142 new switch listings joined existing entries, mostly spelling variants of switches ThereminGoat's workbook already carried. A pack size or lube-shipping choice that composed to the same name as another of a listing's own combinations joined that combination instead of creating a second entry. Seven more surfaced only once a default-lube option's wording was cleaned up enough to reveal the match, all from LumeKeebs.
+- A 2026-09-22 follow-up corrected 533 groups (e.g. DCS Cream Cheese and Green `R1`-`R3`, GMK Modern Dolch `R1`-`R2`), combining equivalent CYL/base and ABS/base spellings while keeping distinct designer credits and omitting variable material/manufacturer/brand fields; different switch mechanisms stayed separate. Full decisions are in [catalog review notes](../Scripts/Catalogs/CATALOG_REVIEW.md).
+- DCS R4 Accent Kits merged into DCS Row 4 Accent Kits, matching the manufacturer's own [Row 4](https://spkeyboards.com/collections/new-releases) naming.
+- GMK add-ons and alternate names merged into their parents: 9009 add-ons, Alt Grrrrr Addon, Black Snail Red Cyrillic, Hammerhead year/batch listings, and GREG 2. Beloved and Classic Beige drop their KA-series subtitles. Black Snail has 15 documented kit options — see [catalog review notes](../Scripts/Catalogs/CATALOG_REVIEW.md#gmk-kit-and-alternate-name-review).
+- GMK CYL names/IDs are preferred over duplicate sources identifying the same CYL set, merging Classic Beige, WoB/White on Black, Olivia, Vaporwave, Dolch, and Kaiju Part Deux aliases, and applying that preference to 97 already-combined sets. MTNU stays separate.
+- The kit/add-on audit reviewed all 90 matching keycap names and 1 matching switch name, merging 65 child/duplicate entries into 51 canonical parents; kit labels stay in variants, parent metadata and sources preserved. See [catalog review notes](../Scripts/Catalogs/CATALOG_REVIEW.md#kit-and-add-on-catalog-review).
+- GMK CYL WoB Extensions merges former GMK WoB 40s, Colevrak+, and R0/R5 duplicates into three kits (40s, Colevrak+, R0/R5 — a sculpt-row kit, not rounds R1-R5); designer ttom, verified against [NovelKeys](https://novelkeys.com/products/gmk-wob-extensions) and the [original group buy](https://geekhack.org/index.php?topic=105239.0).
 
 **Kept apart on purpose.**
 
@@ -342,6 +345,7 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 - Retailer pages reused across rounds, such as `PBTfans Spark Light R2` and `PBTfans X-ray R3`.
 - Switch pairs where only one side is numbered V1.
 - Historical GMK White on Black with a different designer credit, and the archived MTNU WoB release, pending evidence that they match the current listings.
+- Model identifiers and profile/sculpt names (SA-R3, KBParadise V60/V80, Keychron V1 compatibility, Topre Realforce R3, Vertex V1) are not releases and stay unstripped.
 
 **Notable metadata decisions.**
 
@@ -354,6 +358,9 @@ The switch catalog holds 6,091 entries at version 23, and the keycap catalog 2,7
 - MX2A Brown's mislabeled linear listing joins its tactile entry: [Cherry's specification](https://www.cherry.de/en-gb/product/mx2a-brown) and the [retail description](https://keebsforall.com/products/cherry-mx2a-brown-linear-switches) confirm tactile operation. [CannonKeys' current Luxury specifications](https://cannonkeys.com/products/keygeek-luxury-linear-switch) confirm Keygeek despite the cached Haimu label. [Akuamarin's project announcement](https://geekhack.org/index.php?topic=121846.0) supports keeping Wuque Studio as its brand.
 - `Tescee`, a transposed-letter misspelling, and the plain-case `TECSEE` both resolve to `Tecsee` now, correcting two existing keycap designer credits that had kept the all-caps spelling.
 - `JWK Durock` resolves to `Durock`, the same brand its reversed word order already named.
+- GMK WoB R0/R5 describes sculpt rows, not rounds.
+- Zoom WS credits Wuque Studio as manufacturer, with seven colorways (BOW, Blue Oasis, Creamy Charcoal, Gray Skies, Lavender Bliss, Sunset Bliss, WOB) per its [WS Matching Keycap Series](https://shop.wuquestudio.com/collections/ws-matching-keycap-series); reviewed 2026-09-22 against the retailer and Meletrix pages.
+- Cherry profile wording is removed from keycap names/IDs, and trailing product-description sentences from designer credits (11 entries renamed, 14 designer fields corrected); the dedicated Cherry profile field remains.
 
 **Open for review.**
 
