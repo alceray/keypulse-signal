@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 58,
-  "totalCount": 4947,
+  "catalogVersion": 67,
+  "totalCount": 4735,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -856,8 +856,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ajazz-violet-clear-top-black-bottom",
-      "name": "Ajazz Violet (Clear Top/Black Bottom)",
+      "id": "ajazz-violet",
+      "name": "Ajazz Violet",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -2016,13 +2016,6 @@
       "switchFamily": "Alps"
     },
     {
-      "id": "alps-skcm-dust-cover",
-      "name": "Alps SKCM (Dust Cover)",
-      "manufacturer": "Alps",
-      "switchType": "clicky",
-      "switchFamily": "Alps"
-    },
-    {
       "id": "alps-skcm-neon-green",
       "name": "Alps SKCM Neon Green",
       "manufacturer": "Alps",
@@ -2226,12 +2219,6 @@
     {
       "id": "aristotle-black",
       "name": "Aristotle Black",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "aristotle-black-oval-slot",
-      "name": "Aristotle Black (Oval Slot)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -2900,12 +2887,6 @@
       "switchFamily": "Optical"
     },
     {
-      "id": "blue-and-pink-holy-panda",
-      "name": "Blue and Pink Holy Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "blue-lotus",
       "name": "Blue Lotus",
       "manufacturer": "JWK",
@@ -2929,14 +2910,14 @@
     },
     {
       "id": "blue-velvet-linear",
-      "name": "Blue Velvet (Linear)",
+      "name": "Blue Velvet Linear",
       "manufacturer": "Tecsee",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "blue-velvet-tactile",
-      "name": "Blue Velvet (Tactile)",
+      "name": "Blue Velvet Tactile",
       "manufacturer": "Tecsee",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -2979,13 +2960,6 @@
     {
       "id": "boba-grey-silent",
       "name": "Boba Grey Silent",
-      "manufacturer": "Outemu",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "boba-lt",
-      "name": "Boba LT",
       "manufacturer": "Outemu",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -3270,28 +3244,12 @@
       "id": "bsun-brown",
       "name": "BSUN Brown",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-brown-black-bottom",
-      "name": "BSUN Brown (Black Bottom)",
-      "manufacturer": "BSUN",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-brown-cream-bottom",
-      "name": "BSUN Brown (Cream Bottom)",
-      "manufacturer": "Tecsee",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-brown-white-bottom",
-      "name": "BSUN Brown (White Bottom)",
-      "manufacturer": "BSUN",
-      "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Black Bottom",
+        "Cream Bottom",
+        "White Bottom"
+      ]
     },
     {
       "id": "bsun-bubble",
@@ -3361,8 +3319,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "bsun-dark-brown-black-bottom",
-      "name": "BSUN Dark Brown (Black Bottom)",
+      "id": "bsun-dark-brown",
+      "name": "BSUN Dark Brown",
       "manufacturer": "BSUN",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -3468,17 +3426,17 @@
       "switchFamily": "MX"
     },
     {
-      "id": "bsun-green-arrow",
-      "name": "BSUN Green Arrow",
+      "id": "bsun-green",
+      "name": "BSUN Green",
       "manufacturer": "BSUN",
-      "brand": "BSUN",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "bsun-green-full-black-housing",
-      "name": "BSUN Green (Full Black Housing)",
+      "id": "bsun-green-arrow",
+      "name": "BSUN Green Arrow",
       "manufacturer": "BSUN",
+      "brand": "BSUN",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -3503,18 +3461,6 @@
       "manufacturer": "BSUN",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-holy-red-panda",
-      "name": "BSUN Holy Red Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1 / Clear Stem",
-        "V1 / True Stem",
-        "V2 / Clear Stem",
-        "V2 / True Stem"
-      ]
     },
     {
       "id": "bsun-ice",
@@ -3924,16 +3870,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "bsun-unholy-panda-stem",
-      "name": "BSUN Unholy Panda ( Stem)",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
       "id": "bsun-usagi",
       "name": "BSUN Usagi",
       "brand": "BSUN",
@@ -3962,24 +3898,21 @@
       "switchFamily": "MX"
     },
     {
-      "id": "bsun-yellow-clear-white",
-      "name": "BSUN Yellow (Clear/White)",
+      "id": "bsun-yellow",
+      "name": "BSUN Yellow",
       "manufacturer": "BSUN",
       "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Clear Top / White Bottom",
+        "Full Black Housing"
+      ]
     },
     {
       "id": "bsun-yellow-clicky",
       "name": "BSUN Yellow Clicky",
       "manufacturer": "BSUN",
       "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-yellow-full-black-housing",
-      "name": "BSUN Yellow (Full Black Housing)",
-      "manufacturer": "BSUN",
-      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -4116,53 +4049,13 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "V1",
+        "V1 / 67g / Black Bottom",
+        "V1.5 / 62g / Milky Bottom",
+        "V1.5 / 67g / Black Bottom",
         "V2 / 62g",
         "V2 / 67g",
         "V2.2 / 67g"
       ]
-    },
-    {
-      "id": "c3-tangerine-black-bottom",
-      "name": "C3 Tangerine (Black Bottom)",
-      "manufacturer": "Gateron",
-      "brand": "C3Equalz",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V1.5"
-      ]
-    },
-    {
-      "id": "c3-tangerine-milky-bottom",
-      "name": "C3 Tangerine (Milky Bottom)",
-      "manufacturer": "Gateron",
-      "brand": "C3Equalz",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V1.5"
-      ]
-    },
-    {
-      "id": "c3-x-tkc-tangerine-dark",
-      "name": "C3 x TKC Tangerine Dark",
-      "manufacturer": "JWK",
-      "brand": "C3Equalz",
-      "designer": "C3Equalz x TKC",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "c3-x-tkc-tangerine-light",
-      "name": "C3 x TKC Tangerine Light",
-      "manufacturer": "JWK",
-      "brand": "C3Equalz",
-      "designer": "C3Equalz x TKC",
-      "switchType": "tactile",
-      "switchFamily": "MX"
     },
     {
       "id": "ca-phe-sua-da",
@@ -4572,7 +4465,7 @@
     },
     {
       "id": "cherry-mx-hyperglide-brown",
-      "name": "Cherry MX Hyperglide - (Brown)",
+      "name": "Cherry MX Hyperglide Brown",
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "switchType": "tactile",
@@ -6236,24 +6129,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "dangkeebs-strawberry-milk-linear-milk",
-      "name": "DK Strawberry Milk - Linear (Milk)",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dangkeebs-strawberry-milk-tactile-milk",
-      "name": "DK Strawberry Milk - Tactile (Milk)",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "dareu-candy-pink",
       "name": "DareU Candy Pink",
       "brand": "DareU",
@@ -6563,19 +6438,8 @@
       "switchFamily": "MX",
       "variants": [
         "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "dareu-purple-gold-pro",
-      "name": "DareU Purple Gold (Pro)",
-      "brand": "DareU",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
         "V2",
-        "V3"
+        "V3 / Pro"
       ]
     },
     {
@@ -6584,17 +6448,6 @@
       "brand": "DareU",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-sky",
-      "name": "DareU Sky",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
     },
     {
       "id": "dareu-sky-blue",
@@ -6606,6 +6459,7 @@
         "V1",
         "V2",
         "V3",
+        "V3 / Heavy",
         "V4"
       ]
     },
@@ -6618,26 +6472,6 @@
       "switchFamily": "HE"
     },
     {
-      "id": "dareu-sky-blue-heavy",
-      "name": "DareU Sky Blue Heavy",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-sky-heavy-blue",
-      "name": "DareU Sky Heavy Blue",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2",
-        "V3"
-      ]
-    },
-    {
       "id": "dareu-sky-magnetic",
       "name": "DareU Sky Magnetic",
       "brand": "DareU",
@@ -6645,43 +6479,11 @@
       "switchFamily": "HE"
     },
     {
-      "id": "dareu-sky-sky-blue",
-      "name": "DareU Sky (Sky Blue )",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4",
-        "V5"
-      ]
-    },
-    {
       "id": "dareu-snow",
       "name": "DareU Snow",
       "brand": "DareU",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-violet-gold-pro",
-      "name": "DareU Violet Gold Pro",
-      "brand": "DareU",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-violet-purple-gold",
-      "name": "DareU Violet/Purple Gold",
-      "brand": "DareU",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
     },
     {
       "id": "dark-amber-t1",
@@ -6889,6 +6691,34 @@
       "designer": "Divinikey",
       "switchType": "tactile",
       "switchFamily": "MX"
+    },
+    {
+      "id": "dk-strawberry-milk-linear",
+      "name": "DK Strawberry Milk Linear",
+      "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Ice / Clear Housing",
+        "Milk / White Housing / Pink Stem",
+        "Strawberry / Pink Housing / White Stem"
+      ]
+    },
+    {
+      "id": "dk-strawberry-milk-tactile",
+      "name": "DK Strawberry Milk Tactile",
+      "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "variants": [
+        "Ice / Clear Housing",
+        "Milk / White Housing / Pink Stem",
+        "Strawberry / Pink Housing / White Stem"
+      ]
     },
     {
       "id": "dk-x-gateron-uhmknown",
@@ -8037,13 +7867,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "epicgear-purple-red-led",
-      "name": "EpicGear Purple (Red LED)",
-      "brand": "EpicGear",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "epomaker-bluebird",
       "name": "Epomaker Bluebird",
       "manufacturer": "Haimu",
@@ -8398,14 +8221,7 @@
       "manufacturer": "Haimu",
       "brand": "Everglide",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "everglide-haimu-jade-jasper",
-      "name": "Everglide Haimu Jade (Jasper)",
-      "brand": "Everglide",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "HE"
     },
     {
       "id": "everglide-haimu-magnetic-pansy",
@@ -8924,22 +8740,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ffff-linear-replacement-top",
-      "name": "FFFF Linear (Replacement Top)",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ffff-tactile",
       "name": "FFFF Tactile",
-      "manufacturer": "JWK",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ffff-tactile-replacement-top",
-      "name": "FFFF Tactile (Replacement Top)",
       "manufacturer": "JWK",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -9757,14 +9559,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-black",
-      "name": "Gateron Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-black-ink",
       "name": "Gateron Black Ink",
       "manufacturer": "Gateron",
@@ -9789,22 +9583,6 @@
       ]
     },
     {
-      "id": "gateron-black-ks-1",
-      "name": "Gateron Black (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-black-ks-3",
-      "name": "Gateron Black (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-black-silent-ink",
       "name": "Gateron Black Silent INK",
       "manufacturer": "Gateron",
@@ -9827,30 +9605,6 @@
         "V1",
         "V2"
       ]
-    },
-    {
-      "id": "gateron-blue-ks-1",
-      "name": "Gateron Blue (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-blue-ks-3",
-      "name": "Gateron Blue (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-blue-optical",
-      "name": "Gateron Blue Optical",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "Optical"
     },
     {
       "id": "gateron-box-black-inks",
@@ -9933,38 +9687,6 @@
       ]
     },
     {
-      "id": "gateron-brown",
-      "name": "Gateron Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-brown-ks-1",
-      "name": "Gateron Brown (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-brown-ks-3",
-      "name": "Gateron Brown (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-brown-optical",
-      "name": "Gateron Brown Optical",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "Optical"
-    },
-    {
       "id": "gateron-bubblegum",
       "name": "Gateron Bubblegum",
       "manufacturer": "Gateron",
@@ -9982,215 +9704,34 @@
     },
     {
       "id": "gateron-cap-blue",
-      "name": "Gateron Cap Blue",
+      "name": "Gateron CAP Blue",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
+        "V2 / Black Crystal",
+        "V2 / Clear Top / White Bottom"
       ]
     },
     {
       "id": "gateron-cap-brown",
-      "name": "Gateron Cap Brown",
+      "name": "Gateron CAP Brown",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
-        "Milky Housing (Version Unspecified)",
-        "V2"
+        "V1 / Golden (Chocolate)",
+        "V2 / Black Crystal",
+        "V2 / Clear Top / White Bottom",
+        "V2 / Golden (Chocolate)",
+        "V2 / Milky"
       ]
-    },
-    {
-      "id": "gateron-cap-brown-chocolate",
-      "name": "Gateron Cap Brown (Chocolate)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-blue",
-      "name": "Gateron Cap - Cap Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-brown",
-      "name": "Gateron Cap - Cap Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-golden-brown",
-      "name": "Gateron Cap - Cap Golden-Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-golden-yellow",
-      "name": "Gateron Cap - Cap Golden-Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-milky-brown",
-      "name": "Gateron Cap - Cap Milky-Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-milky-yellow",
-      "name": "Gateron Cap - Cap Milky-Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-cap-red",
-      "name": "Gateron Cap - Cap Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-crystal-blue",
-      "name": "Gateron Cap Crystal Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-crystal-brown",
-      "name": "Gateron Cap Crystal Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-crystal-red",
-      "name": "Gateron Cap Crystal Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-crystal-silent-red",
-      "name": "Gateron Cap Crystal Silent Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-crystal-silver",
-      "name": "Gateron Cap Crystal Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-crystal-yellow",
-      "name": "Gateron Cap Crystal Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "gateron-cap-e-commerce-anniversary",
       "name": "Gateron CAP E-Commerce Anniversary",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-golden-brown",
-      "name": "Gateron CAP Golden Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-golden-brown-ks-26",
-      "name": "Gateron Cap Golden Brown KS-26",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cap-golden-yellow",
-      "name": "Gateron CAP Golden Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-golden-yellow-ks-26",
-      "name": "Gateron Cap Golden Yellow KS-26",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -10205,99 +9746,46 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-cap-milky-brown",
-      "name": "Gateron Cap - Milky-Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-milky-brown-golden-brown",
-      "name": "Gateron CAP Milky Brown/Golden Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-milky-yellow",
-      "name": "Gateron Cap Milky Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-cap-milky-yellow-golden-yellow",
-      "name": "Gateron CAP Milky Yellow/Golden Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
       "id": "gateron-cap-red",
-      "name": "Gateron Cap - Red",
+      "name": "Gateron CAP Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
+        "V2 / Black Crystal",
+        "V2 / Clear Top / White Bottom"
       ]
     },
     {
-      "id": "gateron-cap-yellow-milky-top",
-      "name": "Gateron Cap Yellow (Milky Top)",
+      "id": "gateron-cap-silent-red",
+      "name": "Gateron CAP Silent Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "MX"
     },
     {
-      "id": "gateron-cap-yellow-yellow",
-      "name": "Gateron Cap Yellow (Yellow)",
+      "id": "gateron-cap-silver",
+      "name": "Gateron CAP Silver",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "MX"
     },
     {
-      "id": "gateron-cap-yellow-yellow-top",
-      "name": "Gateron Cap Yellow (Yellow Top)",
+      "id": "gateron-cap-yellow",
+      "name": "Gateron CAP Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
+        "V1 / Golden",
+        "V1 / Milky",
+        "V2 / Black Crystal",
+        "V2 / Golden",
+        "V2 / Milky"
       ]
     },
     {
@@ -10315,15 +9803,6 @@
       "brand": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-chocolate-low-profile",
-      "name": "Gateron Chocolate Low Profile",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": true
     },
     {
       "id": "gateron-chocolate-smoothie",
@@ -10374,22 +9853,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-clear-ks-1",
-      "name": "Gateron Clear (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-clear-ks-3",
-      "name": "Gateron Clear (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-cm",
       "name": "Gateron CM",
       "manufacturer": "Gateron",
@@ -10434,32 +9897,13 @@
       "name": "Gateron Deepping",
       "manufacturer": "Gateron",
       "brand": "Gateron",
+      "designer": "Swagkeys",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-deepping-3-7mm",
-      "name": "Gateron Deepping 3.7mm",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-deepping-4-0-mm",
-      "name": "Gateron Deepping (4.0 mm)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-deepping-4mm",
-      "name": "Gateron Deepping 4mm",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "3.7mm",
+        "4.0mm"
+      ]
     },
     {
       "id": "gateron-double-rail-magnetic-aurora",
@@ -10504,22 +9948,6 @@
     {
       "id": "gateron-dual-rail-magnetic-jade-mini-e-switch",
       "name": "Gateron Dual Rail Magnetic Jade Mini E Switch",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-dual-rail-magnetic-orange",
-      "name": "Gateron Dual-Rail Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-dual-rail-orange-hall-effect",
-      "name": "Gateron Dual Rail Orange Hall Effect",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -10621,22 +10049,6 @@
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-fox-hall-effect",
-      "name": "Gateron Fox Hall Effect",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-fox-he",
-      "name": "Gateron Fox HE",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
     },
     {
       "id": "gateron-fruit-jelly-banana-heavy",
@@ -10761,286 +10173,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-g-pro-2-0-black",
-      "name": "Gateron G Pro 2.0 Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-blue",
-      "name": "Gateron G Pro 2.0 Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-brown",
-      "name": "Gateron G Pro 2.0 Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-red",
-      "name": "Gateron G Pro 2.0 Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-silver-dual-stage-spring",
-      "name": "Gateron G Pro 2.0 Silver Dual Stage Spring",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-silver-single-stage-spring",
-      "name": "Gateron G Pro 2.0 Silver Single Stage Spring",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-silver-two-stage-spring",
-      "name": "Gateron G Pro 2.0 - Silver(Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-white-dual-stage-spring",
-      "name": "Gateron G Pro 2.0 White Dual Stage Spring",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-white-single-stage-spring",
-      "name": "Gateron G Pro 2.0 White Single Stage Spring",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-white-two-stage-spring",
-      "name": "Gateron G Pro 2.0 - White(Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-2-0-yellow",
-      "name": "Gateron G Pro 2.0 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-black",
-      "name": "Gateron G Pro 3.0 Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-blue",
-      "name": "Gateron G Pro 3.0 - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-brown",
-      "name": "Gateron G Pro 3.0 Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-goldenrod-blue",
-      "name": "Gateron G Pro 3.0 Goldenrod Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-goldenrod-brown",
-      "name": "Gateron G Pro 3.0 Goldenrod Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-goldenrod-red",
-      "name": "Gateron G Pro 3.0 Goldenrod Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-goldenrod-silver",
-      "name": "Gateron G Pro 3.0 Goldenrod Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-goldenrod-white",
-      "name": "Gateron G Pro 3.0 Goldenrod White",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-goldenrod-yellow",
-      "name": "Gateron G Pro 3.0 Goldenrod Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-red",
-      "name": "Gateron G Pro 3.0 Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-silver",
-      "name": "Gateron G Pro 3.0 Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-silver-two-stage-spring",
-      "name": "Gateron G Pro 3.0 - Silver (Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-white",
-      "name": "Gateron G Pro 3.0 White",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-white-two-stage-spring",
-      "name": "Gateron G Pro 3.0 - White (Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-3-0-yellow",
-      "name": "Gateron G Pro 3.0 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-black",
-      "name": "Gateron G Pro - Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-blue",
-      "name": "Gateron G Pro - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-brown",
-      "name": "Gateron G Pro - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-green",
-      "name": "Gateron G Pro - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-red",
-      "name": "Gateron G Pro - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-silver-two-stage-spring",
-      "name": "Gateron G Pro - Silver(Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-white",
-      "name": "Gateron G Pro - White",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-white-two-stage-spring",
-      "name": "Gateron G Pro - White(Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-g-pro-yellow",
-      "name": "Gateron G Pro - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-genty-silent-he",
       "name": "Gateron Genty Silent HE",
       "manufacturer": "Gateron",
@@ -11101,22 +10233,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-goldenrod-pro-3-0-silver",
-      "name": "Gateron Goldenrod Pro 3.0 Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-goldenrod-pro-3-0-white",
-      "name": "Gateron Goldenrod Pro 3.0 White",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-goldenrod-pro-3-0-yellow",
       "name": "Gateron Goldenrod Pro 3.0 Yellow",
       "manufacturer": "Gateron",
@@ -11144,22 +10260,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-green-ks-1",
-      "name": "Gateron Green (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-green-ks-3",
-      "name": "Gateron Green (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
@@ -11333,14 +10433,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-jupiter-banana-two-stage-spring",
-      "name": "Gateron Jupiter - Banana (Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
         "3-pin",
@@ -11384,28 +10476,16 @@
       ]
     },
     {
-      "id": "gateron-kangaroo-ink-monstargear",
-      "name": "Gateron Kangaroo Ink (Monstargear)",
+      "id": "gateron-kangaroo-ink",
+      "name": "Gateron Kangaroo Ink",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-kangaroo-ink-nk-variant",
-      "name": "Gateron Kangaroo Ink (NK Variant)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-kangaroo-inks",
-      "name": "Gateron Kangaroo Inks",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Monstargears",
+        "NovelKeys"
+      ]
     },
     {
       "id": "gateron-keyfirst-cream",
@@ -11425,8 +10505,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-1-black-black-housing",
-      "name": "Gateron KS-1 Black (Black Housing)",
+      "id": "gateron-ks-1-black",
+      "name": "Gateron KS-1 Black",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11457,6 +10537,22 @@
       ]
     },
     {
+      "id": "gateron-ks-1-clear",
+      "name": "Gateron KS-1 Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-1-green",
+      "name": "Gateron KS-1 Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
       "id": "gateron-ks-1-red",
       "name": "Gateron KS-1 Red",
       "manufacturer": "Gateron",
@@ -11469,6 +10565,14 @@
       ]
     },
     {
+      "id": "gateron-ks-1-yellow",
+      "name": "Gateron KS-1 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
       "id": "gateron-ks-2-blue",
       "name": "Gateron KS-2 Blue",
       "manufacturer": "Gateron",
@@ -11478,7 +10582,7 @@
     },
     {
       "id": "gateron-ks-20-dual-rail-magnetic-orange",
-      "name": "Gateron KS-20 Dual-rail Magnetic Orange",
+      "name": "Gateron KS-20 Dual-Rail Magnetic Orange",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11494,163 +10598,153 @@
     },
     {
       "id": "gateron-ks-22-optical-black",
-      "name": "Gateron KS-22 Optical - Black",
+      "name": "Gateron KS-22 Optical Black",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-ks-22-optical-blue",
-      "name": "Gateron KS-22 Optical - Blue",
+      "name": "Gateron KS-22 Optical Blue",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-ks-22-optical-brown",
-      "name": "Gateron KS-22 Optical - Brown",
+      "name": "Gateron KS-22 Optical Brown",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-ks-22-optical-red",
-      "name": "Gateron KS-22 Optical - Red",
+      "name": "Gateron KS-22 Optical Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-ks-22-optical-silver",
-      "name": "Gateron KS-22 Optical - Silver",
+      "name": "Gateron KS-22 Optical Silver",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-ks-22-optical-white",
-      "name": "Gateron KS-22 Optical - White",
+      "name": "Gateron KS-22 Optical White",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-ks-22-optical-yellow",
-      "name": "Gateron KS-22 Optical - Yellow",
+      "name": "Gateron KS-22 Optical Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
+      "switchFamily": "Optical"
+    },
+    {
+      "id": "gateron-ks-3-black",
+      "name": "Gateron KS-3 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
       ]
     },
     {
-      "id": "gateron-ks-3-black-silent",
-      "name": "Gateron KS-3 Black Silent",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3-clear-silent",
-      "name": "Gateron KS-3 Clear Silent",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3-full-black",
-      "name": "Gateron KS-3 Full Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3-full-black-blue",
-      "name": "Gateron KS-3 Full Black - Blue",
+      "id": "gateron-ks-3-blue",
+      "name": "Gateron KS-3 Blue",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
     },
     {
-      "id": "gateron-ks-3-full-black-brown",
-      "name": "Gateron KS-3 Full Black - Brown",
+      "id": "gateron-ks-3-brown",
+      "name": "Gateron KS-3 Brown",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
     },
     {
-      "id": "gateron-ks-3-full-black-green",
-      "name": "Gateron KS-3 Full Black - Green",
+      "id": "gateron-ks-3-clear",
+      "name": "Gateron KS-3 Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    {
+      "id": "gateron-ks-3-green",
+      "name": "Gateron KS-3 Green",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3-full-black-red",
-      "name": "Gateron KS-3 Full Black - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3-full-black-yellow",
-      "name": "Gateron KS-3 Full Black - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3-milky-pro-red",
-      "name": "Gateron KS-3 Milky Pro - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
     },
     {
       "id": "gateron-ks-3-milky-pro-yellow",
-      "name": "Gateron KS-3 Milky Pro - Yellow",
+      "name": "Gateron KS-3 Milky Pro Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Full Milky Housing",
+        "Milky Top / Black Bottom"
+      ]
+    },
+    {
+      "id": "gateron-ks-3-red",
+      "name": "Gateron KS-3 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    {
+      "id": "gateron-ks-3-silent-black",
+      "name": "Gateron KS-3 Silent Black",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11665,81 +10759,33 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-33-banana",
-      "name": "Gateron KS-33 Banana",
+      "id": "gateron-ks-3-silent-red",
+      "name": "Gateron KS-3 Silent Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
-      "switchType": "tactile",
+      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-33-blue",
-      "name": "Gateron KS-33 Blue",
+      "id": "gateron-ks-3-silent-white",
+      "name": "Gateron KS-3 Silent White",
       "manufacturer": "Gateron",
       "brand": "Gateron",
-      "switchType": "clicky",
+      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-33-brown",
-      "name": "Gateron KS-33 Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-33-chocolate",
-      "name": "Gateron KS-33 Chocolate",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-33-low-profile-2-0-chocolate",
-      "name": "Gateron KS-33 Low Profile 2.0 Chocolate",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-banana",
-      "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Banana",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-blue",
-      "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-brown",
-      "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-red",
-      "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Red",
+      "id": "gateron-ks-3-yellow",
+      "name": "Gateron KS-3 Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX",
-      "isLowProfile": true
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
     },
     {
       "id": "gateron-ks-33-low-profile-bamboo-clicky",
@@ -11747,6 +10793,15 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": true
+    },
+    {
+      "id": "gateron-ks-33-low-profile-banana",
+      "name": "Gateron KS-33 Low Profile Banana",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
       "switchFamily": "MX",
       "isLowProfile": true
     },
@@ -11771,6 +10826,15 @@
     {
       "id": "gateron-ks-33-low-profile-brown",
       "name": "Gateron KS-33 Low Profile Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": true
+    },
+    {
+      "id": "gateron-ks-33-low-profile-chocolate",
+      "name": "Gateron KS-33 Low Profile Chocolate",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
@@ -11823,164 +10887,12 @@
       "isLowProfile": true
     },
     {
-      "id": "gateron-ks-33-red",
-      "name": "Gateron KS-33 Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-33-silver",
-      "name": "Gateron KS-33 Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-ks-37b-magnetic-fox",
-      "name": "Gateron KS-37B Magnetic FOX",
+      "name": "Gateron KS-37B Magnetic Fox",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-ks-3x-full-black",
-      "name": "Gateron KS-3X Full Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x-full-black-blue",
-      "name": "Gateron KS-3X Full Black - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x-full-black-brown",
-      "name": "Gateron KS-3X Full Black - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x-full-black-green",
-      "name": "Gateron KS-3X Full Black - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x-full-black-red",
-      "name": "Gateron KS-3X Full Black - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x-full-black-yellow",
-      "name": "Gateron KS-3X Full Black - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-black",
-      "name": "Gateron KS-3X1 Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-full-milky-black",
-      "name": "Gateron KS-3X1 Full Milky - Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-full-milky-blue",
-      "name": "Gateron KS-3X1 Full Milky - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-full-milky-brown",
-      "name": "Gateron KS-3X1 Full Milky - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-full-milky-green",
-      "name": "Gateron KS-3X1 Full Milky - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-full-milky-red",
-      "name": "Gateron KS-3X1 Full Milky - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-full-milky-yellow",
-      "name": "Gateron KS-3X1 Full Milky - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-milky-black",
-      "name": "Gateron KS-3X1 Milky - Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-milky-blue",
-      "name": "Gateron KS-3X1 Milky - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-milky-brown",
-      "name": "Gateron KS-3X1 Milky - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-milky-green",
-      "name": "Gateron KS-3X1 Milky - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
     },
     {
       "id": "gateron-ks-3x1-milky-pro-heavy",
@@ -11991,112 +10903,24 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-3x1-milky-pro-pink-silent",
-      "name": "Gateron KS-3X1 Milky Pro Pink Silent",
+      "id": "gateron-ks-3x1-milky-pro-pink",
+      "name": "Gateron KS-3X1 Milky Pro Pink",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-3x1-milky-pro-purple-silent",
-      "name": "Gateron KS-3X1 Milky Pro Purple Silent",
+      "id": "gateron-ks-3x1-milky-pro-purple",
+      "name": "Gateron KS-3X1 Milky Pro Purple",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-3x1-milky-red",
-      "name": "Gateron KS-3X1 Milky - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-milky-yellow",
-      "name": "Gateron KS-3X1 Milky - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x1-yellow",
-      "name": "Gateron KS-3X1 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-clear",
-      "name": "Gateron KS-3X47 Clear",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-top-black-bottom",
-      "name": "Gateron KS-3X47 Milky Top Black Bottom",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-top-black-bottom-blue",
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-top-black-bottom-brown",
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-top-black-bottom-green",
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-top-black-bottom-red",
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-milky-top-black-bottom-yellow",
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-red",
-      "name": "Gateron KS-3x47 Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-3x47-yellow",
-      "name": "Gateron KS-3X47 Yellow",
+      "id": "gateron-ks-3x1-milky-pro-red",
+      "name": "Gateron KS-3X1 Milky Pro Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -12105,6 +10929,14 @@
     {
       "id": "gateron-ks-5-black",
       "name": "Gateron KS-5 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-8-black",
+      "name": "Gateron KS-8 Black",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -12127,48 +10959,16 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-8-mechanical-black",
-      "name": "Gateron KS-8 Mechanical - Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-8-mechanical-blue",
-      "name": "Gateron KS-8 Mechanical - Blue",
+      "id": "gateron-ks-8-green",
+      "name": "Gateron KS-8 Green",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-8-mechanical-brown",
-      "name": "Gateron KS-8 Mechanical - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-8-mechanical-green",
-      "name": "Gateron KS-8 Mechanical - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-8-mechanical-red",
-      "name": "Gateron KS-8 Mechanical - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-ks-8-mechanical-yellow",
-      "name": "Gateron KS-8 Mechanical - Yellow",
+      "id": "gateron-ks-8-red",
+      "name": "Gateron KS-8 Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -12199,6 +10999,14 @@
       "switchFamily": "MX"
     },
     {
+      "id": "gateron-ks-9-black",
+      "name": "Gateron KS-9 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
       "id": "gateron-ks-9-blue",
       "name": "Gateron KS-9 Blue",
       "manufacturer": "Gateron",
@@ -12207,11 +11015,83 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-brown-pro-2-0",
-      "name": "Gateron KS-9 Brown PRO 2.0",
+      "id": "gateron-ks-9-brown",
+      "name": "Gateron KS-9 Brown",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-clear",
+      "name": "Gateron KS-9 Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-black",
+      "name": "Gateron KS-9 G Pro 2.0 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-blue",
+      "name": "Gateron KS-9 G Pro 2.0 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-brown",
+      "name": "Gateron KS-9 G Pro 2.0 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-red",
+      "name": "Gateron KS-9 G Pro 2.0 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-silver",
+      "name": "Gateron KS-9 G Pro 2.0 Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-white",
+      "name": "Gateron KS-9 G Pro 2.0 White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    {
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
+      "name": "Gateron KS-9 G Pro 2.0 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -12223,12 +11103,84 @@
       "switchFamily": "MX"
     },
     {
+      "id": "gateron-ks-9-g-pro-3-0-blue",
+      "name": "Gateron KS-9 G Pro 3.0 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-brown",
+      "name": "Gateron KS-9 G Pro 3.0 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-blue",
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-brown",
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-red",
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-yellow",
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-red",
+      "name": "Gateron KS-9 G Pro 3.0 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
       "id": "gateron-ks-9-g-pro-3-0-silver",
       "name": "Gateron KS-9 G Pro 3.0 Silver",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Goldenrod / Green Bottom",
+        "Standard / White Bottom"
+      ]
+    },
+    {
+      "id": "gateron-ks-9-g-pro-3-0-white",
+      "name": "Gateron KS-9 G Pro 3.0 White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Goldenrod / Green Bottom",
+        "Standard / White Bottom"
+      ]
     },
     {
       "id": "gateron-ks-9-g-pro-3-0-yellow",
@@ -12239,80 +11191,136 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-2-0-black",
-      "name": "Gateron KS-9 Pro 2.0 Black",
+      "id": "gateron-ks-9-g-pro-black",
+      "name": "Gateron KS-9 G Pro Black",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-2-0-blue",
-      "name": "Gateron KS-9 Pro 2.0 Blue",
+      "id": "gateron-ks-9-g-pro-blue",
+      "name": "Gateron KS-9 G Pro Blue",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-2-0-red",
-      "name": "Gateron KS-9 Pro 2.0 Red",
+      "id": "gateron-ks-9-g-pro-brown",
+      "name": "Gateron KS-9 G Pro Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-green",
+      "name": "Gateron KS-9 G Pro Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-g-pro-red",
+      "name": "Gateron KS-9 G Pro Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-2-0-silver",
-      "name": "Gateron KS-9 Pro 2.0 Silver",
+      "id": "gateron-ks-9-g-pro-silver",
+      "name": "Gateron KS-9 G Pro Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    {
+      "id": "gateron-ks-9-g-pro-white",
+      "name": "Gateron KS-9 G Pro White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    {
+      "id": "gateron-ks-9-g-pro-yellow",
+      "name": "Gateron KS-9 G Pro Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-2-0-white",
-      "name": "Gateron KS-9 Pro 2.0 White",
+      "id": "gateron-ks-9-green",
+      "name": "Gateron KS-9 Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-red",
+      "name": "Gateron KS-9 Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-2-0-yellow",
-      "name": "Gateron KS-9 Pro 2.0 Yellow",
+      "id": "gateron-ks-9-silent-black",
+      "name": "Gateron KS-9 Silent Black",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-white-1-stage",
-      "name": "Gateron KS-9 Pro White (1 Stage)",
+      "id": "gateron-ks-9-silent-brown",
+      "name": "Gateron KS-9 Silent Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-9-silent-red",
+      "name": "Gateron KS-9 Silent Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-pro-white-2-stage",
-      "name": "Gateron KS-9 Pro White (2 Stage)",
+      "id": "gateron-ks-9-silent-white",
+      "name": "Gateron KS-9 Silent White",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks-9-silent-2-0-yellow",
-      "name": "Gateron KS-9 Silent 2.0 Yellow",
+      "id": "gateron-ks-9-silent-yellow-2-0",
+      "name": "Gateron KS-9 Silent Yellow 2.0",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-ks9-pro-2-0-silver-2-stage",
-      "name": "Gateron KS9 Pro 2.0 Silver (2 Stage)",
+      "id": "gateron-ks-9-yellow",
+      "name": "Gateron KS-9 Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -12381,42 +11389,6 @@
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-low-profile-2-0-mechanical-banana",
-      "name": "Gateron Low Profile 2.0 Mechanical - Banana",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-low-profile-2-0-mechanical-blue",
-      "name": "Gateron Low Profile 2.0 Mechanical - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-low-profile-2-0-mechanical-brown",
-      "name": "Gateron Low Profile 2.0 Mechanical - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": true
-    },
-    {
-      "id": "gateron-low-profile-2-0-mechanical-red",
-      "name": "Gateron Low Profile 2.0 Mechanical - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": true
     },
     {
       "id": "gateron-low-profile-blue-wide",
@@ -12766,156 +11738,12 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-milky-black",
-      "name": "Gateron Milky Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-black-ks-3-x1",
-      "name": "Gateron Milky Black (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-blue-ks-3-x1",
-      "name": "Gateron Milky Blue (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-brown",
-      "name": "Gateron Milky Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-brown-ks-3-x1",
-      "name": "Gateron Milky Brown (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-clear-ks-3-x1",
-      "name": "Gateron Milky Clear (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-green-ks-3-x1",
-      "name": "Gateron Milky Green (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-pro-pink",
-      "name": "Gateron Milky Pro Pink",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-pro-purple",
-      "name": "Gateron Milky Pro Purple",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-pro-silent-linear",
-      "name": "Gateron Milky Pro Silent Linear",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-pro-silent-tactile",
-      "name": "Gateron Milky Pro Silent Tactile",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-pro-yellow",
-      "name": "Gateron Milky Pro Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-red-ks-3-x1",
-      "name": "Gateron Milky Red (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-red-pro",
-      "name": "Gateron Milky Red Pro",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-yellow",
-      "name": "Gateron Milky Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-yellow-black-bottom-pro",
-      "name": "Gateron Milky Yellow Black Bottom Pro",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-milky-yellow-he",
       "name": "Gateron Milky Yellow HE",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-milky-yellow-ks-3-x1",
-      "name": "Gateron Milky Yellow (KS-3-X1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-milky-yellow-with-black-bottom",
-      "name": "Gateron Milky Yellow with Black Bottom",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "gateron-mini",
@@ -13030,14 +11858,6 @@
       ]
     },
     {
-      "id": "gateron-north-pole-2-0-box-brown",
-      "name": "Gateron North Pole 2.0 - Box Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-north-pole-2-0-box-red",
       "name": "Gateron North Pole 2.0 - Box Red",
       "manufacturer": "Gateron",
@@ -13069,20 +11889,8 @@
       "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-north-pole-brown-no-band",
-      "name": "Gateron North Pole Brown (No Band)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
+        "V2 / With Band",
+        "V2 / Without Band"
       ]
     },
     {
@@ -13187,35 +11995,23 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-optical-blue",
-      "name": "Gateron Optical - Blue",
+      "name": "Gateron Optical Blue",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-optical-brown",
-      "name": "Gateron Optical - Brown",
+      "name": "Gateron Optical Brown",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-optical-orange",
@@ -13231,35 +12027,15 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-optical-silver",
-      "name": "Gateron Optical - Silver",
+      "name": "Gateron Optical Silver",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "gateron-optical-white",
-      "name": "Gateron Optical - White",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-optical-yellow",
@@ -13267,11 +12043,7 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "Optical",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "Optical"
     },
     {
       "id": "gateron-phantom-blue",
@@ -13399,22 +12171,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-pro-speed-silver-1-stage",
-      "name": "Gateron Pro Speed Silver (1 Stage)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-pro-speed-silver-2-stage",
-      "name": "Gateron Pro Speed Silver (2 Stage)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-pro-ultra-glory-red",
       "name": "Gateron Pro Ultra Glory Red",
       "manufacturer": "Gateron",
@@ -13480,14 +12236,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-red",
-      "name": "Gateron Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-red-ink",
       "name": "Gateron Red Ink",
       "manufacturer": "Gateron",
@@ -13498,22 +12246,6 @@
         "V1",
         "V2"
       ]
-    },
-    {
-      "id": "gateron-red-ks-1",
-      "name": "Gateron Red (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-red-ks-3",
-      "name": "Gateron Red (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "gateron-regular",
@@ -13544,22 +12276,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-root-beer-float-new-pin",
-      "name": "Gateron Root Beer Float (New Pin)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-root-beer-float-old-pin",
-      "name": "Gateron Root Beer Float (Old Pin)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-sage",
       "name": "Gateron Sage",
       "manufacturer": "Gateron",
@@ -13584,48 +12300,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-silent-black",
-      "name": "Gateron Silent Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-silent-black-2-0",
       "name": "Gateron Silent Black 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-black-ks-9",
-      "name": "Gateron Silent Black (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-brown",
-      "name": "Gateron Silent - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-brown-ks-9",
-      "name": "Gateron Silent Brown (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-clear",
-      "name": "Gateron Silent Clear",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -13652,40 +12328,8 @@
       ]
     },
     {
-      "id": "gateron-silent-red",
-      "name": "Gateron Silent - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-silent-red-2-0",
       "name": "Gateron Silent Red 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-red-ks-3",
-      "name": "Gateron Silent Red (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-red-ks-9",
-      "name": "Gateron Silent Red (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-white",
-      "name": "Gateron Silent - White",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -13708,28 +12352,12 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-silent-yellow-2-0",
-      "name": "Gateron Silent Yellow 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-silent-yellow-ks-1",
       "name": "Gateron Silent Yellow (KS-1)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silver-optical",
-      "name": "Gateron Silver Optical",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "Optical"
     },
     {
       "id": "gateron-silver-pro",
@@ -13750,62 +12378,6 @@
     {
       "id": "gateron-smd",
       "name": "Gateron SMD",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-black-ks-9",
-      "name": "Gateron 'SMD' Black (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-blue-ks-9",
-      "name": "Gateron 'SMD' Blue (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-brown-ks-9",
-      "name": "Gateron 'SMD' Brown (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-clear-ks-9",
-      "name": "Gateron 'SMD' Clear (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-green-ks-9",
-      "name": "Gateron 'SMD' Green (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-red-ks-9",
-      "name": "Gateron 'SMD' Red (KS-9)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-smd-yellow-ks-9",
-      "name": "Gateron 'SMD' Yellow (KS-9)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -14062,22 +12634,6 @@
       ]
     },
     {
-      "id": "gateron-yellow-ks-1",
-      "name": "Gateron Yellow (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-yellow-ks-3",
-      "name": "Gateron Yellow (KS-3)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-zero",
       "name": "Gateron Zero",
       "manufacturer": "Gateron",
@@ -14110,12 +12666,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gatistotle-clear",
-      "name": "Gatistotle Clear",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gazzew-black-ice",
       "name": "Gazzew 'Black Ice'",
       "switchType": "linear",
@@ -14126,8 +12676,10 @@
       ]
     },
     {
-      "id": "gazzew-boba-lt-thock",
-      "name": "Gazzew Boba LT ( Thock)",
+      "id": "gazzew-boba-lt",
+      "name": "Gazzew Boba LT",
+      "manufacturer": "Outemu",
+      "brand": "Gazzew",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
@@ -14203,6 +12755,7 @@
     {
       "id": "geon-haimu-raw",
       "name": "Geon Haimu Raw",
+      "manufacturer": "Haimu",
       "brand": "Geon",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -15207,13 +13760,13 @@
     },
     {
       "id": "gugu-ice-linear",
-      "name": "Gugu Ice (Linear)",
+      "name": "Gugu Ice Linear",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "gugu-ice-tactile",
-      "name": "Gugu Ice (Tactile)",
+      "name": "Gugu Ice Tactile",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -15600,22 +14153,6 @@
       "name": "Haimu Purple Fluroite",
       "manufacturer": "Haimu",
       "brand": "Haimu",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "haimu-raw-with-led-diffuser",
-      "name": "Haimu Raw - With LED Diffuser",
-      "manufacturer": "Haimu",
-      "brand": "Geon",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "haimu-raw-without-led-diffuser",
-      "name": "Haimu Raw - Without LED Diffuser",
-      "manufacturer": "Haimu",
-      "brand": "Geon",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -16042,78 +14579,69 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hi-tek-725-black-clicky-two-eye",
-      "name": "Hi-Tek 725 Black Clicky (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "tactile",
-      "switchFamily": "Legacy"
-    },
-    {
-      "id": "hi-tek-725-black-two-eye",
-      "name": "Hi-Tek 725 Black (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "tactile",
-      "switchFamily": "Legacy"
-    },
-    {
-      "id": "hi-tek-725-dark-grey-one-eye",
-      "name": "Hi-Tek 725 Dark Grey (One Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "linear",
-      "switchFamily": "Legacy"
-    },
-    {
-      "id": "hi-tek-725-grey-two-eye",
-      "name": "Hi-Tek 725 Grey (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "tactile",
-      "switchFamily": "Legacy"
-    },
-    {
-      "id": "hi-tek-725-lime-green-two-eye",
-      "name": "Hi-Tek 725 Lime Green (Two Eye)",
+      "id": "hi-tek-725-black-clicky",
+      "name": "Hi-Tek 725 Black Clicky",
       "manufacturer": "Hi-Tek",
       "switchType": "clicky",
       "switchFamily": "Legacy"
     },
     {
-      "id": "hi-tek-725-sea-green-two-eye",
-      "name": "Hi-Tek 725 Sea Green (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "linear",
-      "switchFamily": "Legacy"
-    },
-    {
-      "id": "hi-tek-725-tan-one-eye",
-      "name": "Hi-Tek 725 Tan (One Eye)",
+      "id": "hi-tek-725-black-tactile",
+      "name": "Hi-Tek 725 Black Tactile",
       "manufacturer": "Hi-Tek",
       "switchType": "tactile",
       "switchFamily": "Legacy"
     },
     {
-      "id": "hi-tek-725-white-one-eye",
-      "name": "Hi-Tek 725 White (One Eye)",
+      "id": "hi-tek-725-dark-grey",
+      "name": "Hi-Tek 725 Dark Grey",
       "manufacturer": "Hi-Tek",
       "switchType": "linear",
       "switchFamily": "Legacy"
     },
     {
-      "id": "hi-tek-725-white-one-eye-gundam",
-      "name": "Hi-Tek 725 White (One Eye) (Gundam)",
+      "id": "hi-tek-725-grey",
+      "name": "Hi-Tek 725 Grey",
+      "manufacturer": "Hi-Tek",
+      "switchType": "tactile",
+      "switchFamily": "Legacy"
+    },
+    {
+      "id": "hi-tek-725-lime-green",
+      "name": "Hi-Tek 725 Lime Green",
+      "manufacturer": "Hi-Tek",
+      "switchType": "clicky",
+      "switchFamily": "Legacy"
+    },
+    {
+      "id": "hi-tek-725-sea-green",
+      "name": "Hi-Tek 725 Sea Green",
       "manufacturer": "Hi-Tek",
       "switchType": "linear",
       "switchFamily": "Legacy"
     },
     {
-      "id": "hi-tek-725-white-two-eye",
-      "name": "Hi-Tek 725 White (Two Eye)",
+      "id": "hi-tek-725-tan",
+      "name": "Hi-Tek 725 Tan",
       "manufacturer": "Hi-Tek",
-      "switchType": "linear",
+      "switchType": "tactile",
       "switchFamily": "Legacy"
     },
     {
-      "id": "hi-tek-725-yellow-2-eye",
-      "name": "Hi-Tek 725 Yellow (2 Eye)",
+      "id": "hi-tek-725-white",
+      "name": "Hi-Tek 725 White",
+      "manufacturer": "Hi-Tek",
+      "switchType": "linear",
+      "switchFamily": "Legacy",
+      "variants": [
+        "One Eye",
+        "One Eye / Gundam",
+        "Two Eye"
+      ]
+    },
+    {
+      "id": "hi-tek-725-yellow",
+      "name": "Hi-Tek 725 Yellow",
       "manufacturer": "Hi-Tek",
       "switchType": "linear",
       "switchFamily": "Legacy"
@@ -16143,12 +14671,6 @@
       "name": "HippoKeys Unicorn",
       "manufacturer": "Gateron",
       "designer": "HippoKeys",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "hiroseal",
-      "name": "'Hiroseal'",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -16437,32 +14959,11 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "37g",
-        "42g",
-        "45g"
+        "37g / Black Stem / 3.5mm",
+        "42g / Black Stem / 3.5mm",
+        "45g / Black Stem / 3.5mm",
+        "45g / Red Stem / 3.8mm"
       ]
-    },
-    {
-      "id": "hmx-cola-3-8mm",
-      "name": "HMX Cola (3.8mm)",
-      "manufacturer": "HMX",
-      "designer": "WY",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "hmx-cola-black",
-      "name": "HMX Cola - Black",
-      "brand": "HMX",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "hmx-cola-red",
-      "name": "HMX Cola - Red",
-      "brand": "HMX",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "hmx-cosmic-purple",
@@ -17189,8 +15690,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hmx-snow-crash-overlubed-batch",
-      "name": "HMX Snow Crash (Overlubed Batch)",
+      "id": "hmx-snow-crash",
+      "name": "HMX Snow Crash",
       "manufacturer": "HMX",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -17631,98 +16132,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "holy-bsun-blue-panda",
-      "name": "Holy BSUN Blue Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-bsun-clear-panda",
-      "name": "Holy BSUN Clear Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-bsun-green-panda",
-      "name": "Holy BSUN Green Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-bsun-red-panda",
-      "name": "Holy BSUN Red Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-bsun-translucent-panda",
-      "name": "Holy BSUN Translucent Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-bsun-white-panda",
-      "name": "Holy BSUN White Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-bsun-yellow-panda",
-      "name": "Holy BSUN Yellow Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-gsus-panda",
-      "name": "Holy GSUS Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "holy-invyr-panda",
-      "name": "Holy Invyr Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1 / Clear Stem",
-        "V1 / True Stem",
-        "V3 / Clear Stem",
-        "V3 / True Stem"
-      ]
-    },
-    {
       "id": "holy-jerry",
       "name": "Holy Jerry",
       "switchType": "linear",
@@ -17799,13 +16208,6 @@
     {
       "id": "hori-edge-blue",
       "name": "HORI Edge Blue",
-      "brand": "HORI",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "hori-edge-blue-led",
-      "name": "HORI Edge Blue (LED)",
       "brand": "HORI",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -17903,14 +16305,8 @@
       ]
     },
     {
-      "id": "huano-aries-flaw-version",
-      "name": "Huano Aries (flaw version)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-aries-flawed-version",
-      "name": "Huano Aries (Flawed Version)",
+      "id": "huano-aries",
+      "name": "Huano Aries",
       "manufacturer": "Huano",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -21169,7 +19565,7 @@
     },
     {
       "id": "kailh-clione-limacina-linear",
-      "name": "Kailh Clione Limacina (Linear)",
+      "name": "Kailh Clione Limacina Linear",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "linear",
@@ -21177,7 +19573,7 @@
     },
     {
       "id": "kailh-clione-limacina-tactile",
-      "name": "Kailh Clione Limacina (Tactile)",
+      "name": "Kailh Clione Limacina Tactile",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "tactile",
@@ -21369,14 +19765,6 @@
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "kailh-holy-panda-red",
-      "name": "Kailh \"Holy Panda Red\"",
-      "manufacturer": "Kailh",
-      "brand": "Kailh",
-      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -24564,8 +22952,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ktt-bamboo-gleam-maybe",
-      "name": "KTT Bamboo Gleam (maybe)",
+      "id": "ktt-bamboo-gleam",
+      "name": "KTT Bamboo Gleam",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -27771,37 +26159,37 @@
     },
     {
       "id": "mod-h-linear",
-      "name": "MOD-H (Linear)",
+      "name": "MOD-H Linear",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "mod-h-tactile",
-      "name": "MOD-H (Tactile)",
+      "name": "MOD-H Tactile",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "mod-l-linear",
-      "name": "MOD-L (Linear)",
+      "name": "MOD-L Linear",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "mod-l-tactile",
-      "name": "MOD-L (Tactile)",
+      "name": "MOD-L Tactile",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
       "id": "mod-m-linear",
-      "name": "MOD-M (Linear)",
+      "name": "MOD-M Linear",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "mod-m-tactile",
-      "name": "MOD-M (Tactile)",
+      "name": "MOD-M Tactile",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -31641,15 +30029,10 @@
       "switchFamily": "MX"
     },
     {
-      "id": "rantopad-orange",
-      "name": "Rantopad Orange",
-      "manufacturer": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "rantopad-orange-gateron-ks-1",
-      "name": "Rantopad Orange Gateron KS-1",
+      "name": "Rantopad Orange (Gateron KS-1)",
+      "manufacturer": "Gateron",
+      "brand": "Rantopad",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -33610,64 +31993,6 @@
       "id": "strawberry-jelly-tactile",
       "name": "Strawberry Jelly Tactile",
       "manufacturer": "Huano",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-ice-linear",
-      "name": "Strawberry Milk Ice Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-ice-tactile",
-      "name": "Strawberry Milk Ice Tactile",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-linear",
-      "name": "Strawberry Milk Linear",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-pink-linear",
-      "name": "Strawberry Milk Pink (Linear)",
-      "manufacturer": "Tecsee",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-pink-tactile",
-      "name": "Strawberry Milk Pink (Tactile)",
-      "manufacturer": "Tecsee",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-tactile",
-      "name": "Strawberry Milk Tactile",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-white-linear",
-      "name": "Strawberry Milk White (Linear)",
-      "manufacturer": "Tecsee",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "strawberry-milk-white-tactile",
-      "name": "Strawberry Milk White (Tactile)",
-      "manufacturer": "Tecsee",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -36583,24 +34908,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "unholy-gsus-panda",
-      "name": "Unholy GSUS Panda",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "unholy-invyr-panda",
-      "name": "Unholy Invyr Panda",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "unholy-pandas-clear-spring",
-      "name": "Unholy Pandas (Clear Spring)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "unikeys-x-bsun-udon",
       "name": "UNIKEYS X BSUN Udon",
       "manufacturer": "BSUN",
@@ -38835,46 +37142,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "yok-holy-mint-panda",
-      "name": "YOK Holy Mint Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "yok-holy-polar-panda",
-      "name": "YOK Holy Polar Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "yok-holy-red-panda",
-      "name": "YOK Holy Red Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
-      "id": "yok-holy-trash-panda",
-      "name": "YOK Holy Trash Panda",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    {
       "id": "yok-mint-panda",
       "name": "YOK Mint Panda",
       "manufacturer": "Tecsee",
@@ -38926,13 +37193,6 @@
     {
       "id": "yumo-d",
       "name": "Yumo D",
-      "manufacturer": "WEKT",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "yumo-d-diffuser",
-      "name": "Yumo D (Diffuser)",
       "manufacturer": "WEKT",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -39124,7 +37384,7 @@
     },
     {
       "id": "zeal-clickiez-linear",
-      "name": "Zeal Clickiez (Linear)",
+      "name": "Zeal Clickiez Linear",
       "manufacturer": "Gateron",
       "switchType": "linear",
       "switchFamily": "MX",
@@ -39135,7 +37395,7 @@
     },
     {
       "id": "zeal-clickiez-tactile",
-      "name": "Zeal Clickiez (Tactile)",
+      "name": "Zeal Clickiez Tactile",
       "manufacturer": "Gateron",
       "switchType": "tactile",
       "switchFamily": "MX",

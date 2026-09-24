@@ -526,12 +526,12 @@
     "theremingoat:2226": "jerrzi-fortune",
     "theremingoat:2188": "gateron-cap-e-commerce-anniversary",
     "theremingoat:2291": "gateron-purple-jade",
-    "theremingoat:2315": "gateron-g-pro-3-0-white",
-    "theremingoat:2318": "gateron-g-pro-3-0-red",
-    "theremingoat:2243": "gateron-g-pro-3-0-yellow",
-    "theremingoat:2317": "gateron-g-pro-3-0-black",
-    "theremingoat:2316": "gateron-g-pro-3-0-silver",
-    "theremingoat:2314": "gateron-g-pro-3-0-brown",
+    "theremingoat:2315": "gateron-ks-9-g-pro-3-0-white",
+    "theremingoat:2318": "gateron-ks-9-g-pro-3-0-red",
+    "theremingoat:2243": "gateron-ks-9-g-pro-3-0-yellow",
+    "theremingoat:2317": "gateron-ks-9-g-pro-3-0-black",
+    "theremingoat:2316": "gateron-ks-9-g-pro-3-0-silver",
+    "theremingoat:2314": "gateron-ks-9-g-pro-3-0-brown",
     "theremingoat:2311": "everfree-red",
     "theremingoat:2312": "everfree-yellow",
     "theremingoat:2313": "everfree-brown",
@@ -785,7 +785,7 @@
     "theremingoat:2790": "gateron-melodic",
     "theremingoat:2829": "gateron-silent-white-2-0",
     "theremingoat:2830": "gateron-silent-red-2-0",
-    "theremingoat:2831": "gateron-silent-yellow-2-0",
+    "theremingoat:2831": "gateron-ks-9-silent-yellow-2-0",
     "theremingoat:2832": "gateron-silent-black-2-0",
     "theremingoat:2835": "gateron-magnetic-jade",
     "theremingoat:2816": "latenpow-magnetic-strawberry",
@@ -871,7 +871,7 @@
     "theremingoat:2981": "g-square-fancy",
     "theremingoat:3027": "neo-lavender-hall-effect",
     "theremingoat:3017": "gugu-black-knight-hall-effect",
-    "theremingoat:2860": "gateron-deepping-3-7mm",
+    "theremingoat:2860": "gateron-deepping",
     "theremingoat:3031": "everfree-cedar",
     "theremingoat:2895": "gateron-smoothie-silver",
     "theremingoat:3013": "keychron-x-gateron-dawn",
@@ -1059,23 +1059,23 @@
     "theremingoat:1445": "lc-blue",
     "theremingoat:1446": "lc-red",
     "theremingoat:1499": "mmd-holy-panda",
-    "theremingoat:16": "gateron-milky-black-ks-3-x1",
+    "theremingoat:16": "gateron-ks-3-black",
     "theremingoat:1612": "cherry-mx-hyperglide-black",
     "theremingoat:1647": "ktt-phalaenopsis",
-    "theremingoat:17": "gateron-milky-red-ks-3-x1",
+    "theremingoat:17": "gateron-ks-3-red",
     "theremingoat:1732": "jerrzi-blue",
     "theremingoat:178": "huano-dustproof-black",
-    "theremingoat:18": "gateron-milky-brown-ks-3-x1",
-    "theremingoat:19": "gateron-milky-blue-ks-3-x1",
+    "theremingoat:18": "gateron-ks-3-brown",
+    "theremingoat:19": "gateron-ks-3-blue",
     "theremingoat:190": "content-red",
     "theremingoat:1912": "bsun-dustproof-blue",
-    "theremingoat:20": "gateron-milky-green-ks-3-x1",
-    "theremingoat:21": "gateron-milky-clear-ks-3-x1",
+    "theremingoat:20": "gateron-ks-3-green",
+    "theremingoat:21": "gateron-ks-3-clear",
     "theremingoat:210": "jixian-black",
-    "theremingoat:22": "gateron-milky-yellow-ks-3-x1",
+    "theremingoat:22": "gateron-ks-3-yellow",
     "theremingoat:2285": "keychron-camo-camel",
     "theremingoat:2289": "keychron-camo-camel",
-    "theremingoat:23": "gateron-black-ks-1",
+    "theremingoat:23": "gateron-ks-1-black",
     "theremingoat:2347": "skyloong-chocolate-rose",
     "theremingoat:2379": "flower-shadow",
     "theremingoat:2383": "ktt-macaron-red-chinajoy-edition",
@@ -1084,36 +1084,36 @@
     "theremingoat:2386": "ktt-macaron-green-chinajoy-edition",
     "theremingoat:2387": "ktt-macaron-blue-chinajoy-edition",
     "theremingoat:2388": "ktt-macaron-purple-chinajoy-edition",
-    "theremingoat:24": "gateron-red-ks-1",
+    "theremingoat:24": "gateron-ks-1-red",
     "theremingoat:2427": "content-blue",
-    "theremingoat:25": "gateron-brown-ks-1",
-    "theremingoat:26": "gateron-blue-ks-1",
+    "theremingoat:25": "gateron-ks-1-brown",
+    "theremingoat:26": "gateron-ks-1-blue",
     "theremingoat:2683": "ktt-macaron-red",
     "theremingoat:2684": "ktt-macaron-orange",
     "theremingoat:2685": "ktt-macaron-yellow",
     "theremingoat:2686": "ktt-macaron-green",
     "theremingoat:2687": "ktt-macaron-blue",
     "theremingoat:2688": "ktt-macaron-purple",
-    "theremingoat:27": "gateron-green-ks-1",
-    "theremingoat:28": "gateron-clear-ks-1",
+    "theremingoat:27": "gateron-ks-1-green",
+    "theremingoat:28": "gateron-ks-1-clear",
     "theremingoat:2813": "content-blue",
-    "theremingoat:29": "gateron-yellow-ks-1",
-    "theremingoat:30": "gateron-smd-black-ks-9",
+    "theremingoat:29": "gateron-ks-1-yellow",
+    "theremingoat:30": "gateron-ks-9-black",
     "theremingoat:3092": "lcet-holy-panda",
-    "theremingoat:31": "gateron-smd-red-ks-9",
-    "theremingoat:32": "gateron-smd-brown-ks-9",
+    "theremingoat:31": "gateron-ks-9-red",
+    "theremingoat:32": "gateron-ks-9-brown",
     "theremingoat:3235": "saybour-blue",
     "theremingoat:3283": "jerrzi-blue-winglatch-full-black",
-    "theremingoat:33": "gateron-smd-blue-ks-9",
+    "theremingoat:33": "gateron-ks-9-blue",
     "theremingoat:3336": "flower-shadow",
     "theremingoat:3368": "gateron-longjing-tea",
-    "theremingoat:34": "gateron-smd-green-ks-9",
-    "theremingoat:35": "gateron-smd-clear-ks-9",
+    "theremingoat:34": "gateron-ks-9-green",
+    "theremingoat:35": "gateron-ks-9-clear",
     "theremingoat:3597": "gateron-longjing-tea",
-    "theremingoat:36": "gateron-smd-yellow-ks-9",
-    "theremingoat:37": "gateron-silent-black-ks-9",
-    "theremingoat:38": "gateron-silent-red-ks-9",
-    "theremingoat:39": "gateron-silent-brown-ks-9",
+    "theremingoat:36": "gateron-ks-9-yellow",
+    "theremingoat:37": "gateron-ks-9-silent-black",
+    "theremingoat:38": "gateron-ks-9-silent-red",
+    "theremingoat:39": "gateron-ks-9-silent-brown",
     "theremingoat:40": "gateron-silent-yellow-ks-1",
     "theremingoat:41": "gateron-silent-clear-ks-1",
     "theremingoat:4216": "wingtree-matcha-cream-tactile",
@@ -1122,28 +1122,28 @@
     "theremingoat:4228": "wingtree-matcha-cream-linear",
     "theremingoat:432": "saybour-blue",
     "theremingoat:435": "greetech-green",
-    "theremingoat:473": "hi-tek-725-white-one-eye",
-    "theremingoat:475": "hi-tek-725-white-one-eye-gundam",
-    "theremingoat:48": "c3-tangerine-milky-bottom",
-    "theremingoat:49": "c3-tangerine-black-bottom",
+    "theremingoat:473": "hi-tek-725-white",
+    "theremingoat:475": "hi-tek-725-white",
+    "theremingoat:48": "c3-tangerine",
+    "theremingoat:49": "c3-tangerine",
     "theremingoat:503": "dai-ichi-cl-1145-green",
     "theremingoat:552": "lilac-tactile",
-    "theremingoat:580": "gateron-ks-3-black-silent",
-    "theremingoat:581": "gateron-silent-red-ks-3",
+    "theremingoat:580": "gateron-ks-3-silent-black",
+    "theremingoat:581": "gateron-ks-3-silent-red",
     "theremingoat:602": "outemu-ice-dustproof-blue-squared-off",
     "theremingoat:603": "outemu-ice-dustproof-blue-rounded-off",
-    "theremingoat:633": "gateron-black-ks-3",
-    "theremingoat:634": "gateron-red-ks-3",
-    "theremingoat:635": "gateron-brown-ks-3",
-    "theremingoat:636": "gateron-blue-ks-3",
-    "theremingoat:637": "gateron-clear-ks-3",
-    "theremingoat:638": "gateron-yellow-ks-3",
+    "theremingoat:633": "gateron-ks-3-black",
+    "theremingoat:634": "gateron-ks-3-red",
+    "theremingoat:635": "gateron-ks-3-brown",
+    "theremingoat:636": "gateron-ks-3-blue",
+    "theremingoat:637": "gateron-ks-3-clear",
+    "theremingoat:638": "gateron-ks-3-yellow",
     "theremingoat:643": "greetech-green",
     "theremingoat:648": "content-red",
     "theremingoat:653": "jixian-black",
     "theremingoat:695": "dai-ichi-cl-1145-green",
     "theremingoat:71": "gateron-giant",
-    "theremingoat:714": "gateron-green-ks-3",
+    "theremingoat:714": "gateron-ks-3-green",
     "theremingoat:72": "gateron-giant",
     "theremingoat:784": "cherry-mx-hyperglide-black",
     "theremingoat:938": "huano-dustproof-black",
@@ -1197,7 +1197,7 @@
     "unikeys:12231468679486/variant/52861716529470": "wingtree-puer-tea",
     "unikeys:12231468679486/variant/52861716562238": "wingtree-puer-tea",
     "unikeys:12234220699966": "wingtree-qingyan",
-    "unikeys:12234221814078": "hmx-cola-3-8mm",
+    "unikeys:12234221814078": "hmx-cola",
     "unikeys:12254047994174/variant/52978687574334": "keygeek-ding-ding",
     "unikeys:12254047994174/variant/52978687607102": "keygeek-ding-ding",
     "unikeys:12254047994174/variant/52978687639870": "keygeek-ding-ding",
@@ -1247,11 +1247,11 @@
     "unikeys:12572285534526": "gateron-icey-spring",
     "unikeys:8171355046206": "gateron-baby-kangaroo",
     "unikeys:8236591743294": "ktt-peach",
-    "unikeys:8299534090558": "gateron-g-pro-3-0-white",
-    "unikeys:8299608703294": "gateron-g-pro-3-0-brown",
-    "unikeys:8299690754366": "gateron-g-pro-3-0-red",
-    "unikeys:8299743805758": "gateron-g-pro-3-0-yellow",
-    "unikeys:8299915051326": "gateron-g-pro-3-0-black",
+    "unikeys:8299534090558": "gateron-ks-9-g-pro-3-0-white",
+    "unikeys:8299608703294": "gateron-ks-9-g-pro-3-0-brown",
+    "unikeys:8299690754366": "gateron-ks-9-g-pro-3-0-red",
+    "unikeys:8299743805758": "gateron-ks-9-g-pro-3-0-yellow",
+    "unikeys:8299915051326": "gateron-ks-9-g-pro-3-0-black",
     "unikeys:9967402975550": "mmd-vivian",
     "keycaplendar:0207tialbFK21qYCkra3": "gmk-wob-bow-icon-extension",
     "keycaplendar:04DHyIn28RdoheV2RwR0": "gmk-cyl-sloth",
@@ -1891,7 +1891,7 @@
     "theremingoatscores:2ca9c5fdc8f3": "taro-n-sweet-potato",
     "theremingoatscores:2fa0005c8d84": "star-grey",
     "theremingoatscores:2fcb11fcec60": "ck-x-haimu-pastel-thistle",
-    "theremingoatscores:301e4a62b240": "gateron-g-pro-3-0-yellow",
+    "theremingoatscores:301e4a62b240": "gateron-ks-9-g-pro-3-0-yellow",
     "theremingoatscores:306ec1de06e6": "huano-earth-yellow",
     "theremingoatscores:308a98d9b955": "kailh-midnight-pro-light-yellow",
     "theremingoatscores:30a99c753e1a": "kailh-box-dark-chocolate",
@@ -2174,7 +2174,7 @@
     "theremingoatscores:f02a407b6302": "ttc-gold-pink",
     "theremingoatscores:f02f07d2e748": "huano-pineapple",
     "theremingoatscores:f0e47f746118": "ttc-neptune",
-    "theremingoatscores:f113d2c90923": "gateron-dual-rail-magnetic-orange",
+    "theremingoatscores:f113d2c90923": "gateron-ks-20-dual-rail-magnetic-orange",
     "theremingoatscores:f1b32816f3fd": "everfree-fast-silver",
     "theremingoatscores:f22f07da66c0": "cherry-mx2a-rgb-black",
     "theremingoatscores:f35129f4351d": "hmx-anti",
@@ -3210,26 +3210,26 @@
     "divinikeyswitches:7913854468161": "gateron-oil-king-heavy",
     "divinikeyswitches:7924723580993/variant/44039200211009": "wingtree-camellia",
     "divinikeyswitches:7988711292993/variant/44245486501953": "ef-sugar",
-    "gateron:7087745040473/variant/40036010459225": "gateron-g-pro-2-0-red",
-    "keychronswitches:7114732142681/variant/40106823975001": "gateron-g-pro-2-0-red",
-    "gateron:7087745040473/variant/40036010491993": "gateron-g-pro-2-0-blue",
-    "keychronswitches:7114732142681/variant/40106825056345": "gateron-g-pro-2-0-blue",
-    "gateron:7087745040473/variant/40036010557529": "gateron-g-pro-2-0-brown",
-    "keychronswitches:7114732142681/variant/40106825121881": "gateron-g-pro-2-0-brown",
-    "gateron:7087745040473/variant/40036010623065": "gateron-g-pro-2-0-yellow",
-    "keychronswitches:7114732142681/variant/40106825941081": "gateron-g-pro-2-0-yellow",
-    "gateron:7087745040473/variant/40042316628057": "gateron-g-pro-2-0-black",
-    "keychronswitches:7114732142681/variant/40106826006617": "gateron-g-pro-2-0-black",
-    "gateron:7087842426969/variant/40036318707801": "gateron-silent-black",
-    "keychronswitches:7120050323545/variant/40122790051929": "gateron-silent-black",
-    "gateron:7288849858649/variant/40479582879833": "gateron-g-pro-3-0-red",
-    "keychronswitches:7303355170905/variant/40509382656089": "gateron-g-pro-3-0-red",
-    "gateron:7288849858649/variant/40479582945369": "gateron-g-pro-3-0-brown",
-    "keychronswitches:7303355170905/variant/40509382721625": "gateron-g-pro-3-0-brown",
-    "gateron:7288849858649/variant/40479582978137": "gateron-g-pro-3-0-yellow",
-    "keychronswitches:7303355170905/variant/40509382754393": "gateron-g-pro-3-0-yellow",
-    "gateron:7288849858649/variant/40479583076441": "gateron-g-pro-3-0-black",
-    "keychronswitches:7303355170905/variant/40509382787161": "gateron-g-pro-3-0-black",
+    "gateron:7087745040473/variant/40036010459225": "gateron-ks-9-g-pro-2-0-red",
+    "keychronswitches:7114732142681/variant/40106823975001": "gateron-ks-9-g-pro-2-0-red",
+    "gateron:7087745040473/variant/40036010491993": "gateron-ks-9-g-pro-2-0-blue",
+    "keychronswitches:7114732142681/variant/40106825056345": "gateron-ks-9-g-pro-2-0-blue",
+    "gateron:7087745040473/variant/40036010557529": "gateron-ks-9-g-pro-2-0-brown",
+    "keychronswitches:7114732142681/variant/40106825121881": "gateron-ks-9-g-pro-2-0-brown",
+    "gateron:7087745040473/variant/40036010623065": "gateron-ks-9-g-pro-2-0-yellow",
+    "keychronswitches:7114732142681/variant/40106825941081": "gateron-ks-9-g-pro-2-0-yellow",
+    "gateron:7087745040473/variant/40042316628057": "gateron-ks-9-g-pro-2-0-black",
+    "keychronswitches:7114732142681/variant/40106826006617": "gateron-ks-9-g-pro-2-0-black",
+    "gateron:7087842426969/variant/40036318707801": "gateron-ks-9-silent-black",
+    "keychronswitches:7120050323545/variant/40122790051929": "gateron-ks-9-silent-black",
+    "gateron:7288849858649/variant/40479582879833": "gateron-ks-9-g-pro-3-0-red",
+    "keychronswitches:7303355170905/variant/40509382656089": "gateron-ks-9-g-pro-3-0-red",
+    "gateron:7288849858649/variant/40479582945369": "gateron-ks-9-g-pro-3-0-brown",
+    "keychronswitches:7303355170905/variant/40509382721625": "gateron-ks-9-g-pro-3-0-brown",
+    "gateron:7288849858649/variant/40479582978137": "gateron-ks-9-g-pro-3-0-yellow",
+    "keychronswitches:7303355170905/variant/40509382754393": "gateron-ks-9-g-pro-3-0-yellow",
+    "gateron:7288849858649/variant/40479583076441": "gateron-ks-9-g-pro-3-0-black",
+    "keychronswitches:7303355170905/variant/40509382787161": "gateron-ks-9-g-pro-3-0-black",
     "gateron:7295920570457": "gateron-luciola",
     "keebsforallswitches:8029110436059": "gateron-luciola",
     "keychronswitches:7307129356377": "gateron-luciola",
@@ -3254,9 +3254,9 @@
     "keebsforallswitches:8209403314395": "gateron-blue-ink",
     "keebsforallswitches:8209405575387": "gateron-black-ink",
     "keebsforallswitches:8209444765915": "gateron-optical-red",
-    "keebsforallswitches:8209520525531": "gateron-silent-red",
+    "keebsforallswitches:8209520525531": "gateron-ks-9-silent-red",
     "keebsforallswitches:8209521934555": "gateron-silent-yellow",
-    "keebsforallswitches:8209523900635": "gateron-silent-black",
+    "keebsforallswitches:8209523900635": "gateron-ks-9-silent-black",
     "keebsforallswitches:8209582915803/variant/44652534792411": "haimu-x-geon-hg-clear",
     "keebsforallswitches:8209621975259": "kailh-box-red",
     "keebsforallswitches:8209635246299": "kailh-box-black",
@@ -3274,15 +3274,15 @@
     "keebsforallswitches:8290972205275": "gateron-mountain-top",
     "keebsforallswitches:8312986271963": "geon-raptor-mx-extreme-gaming",
     "keebsforallswitches:8492952944859": "bsun-strawberry-cheesecake",
-    "keychronswitches:4507940880473/variant/31923914408025": "gateron-g-pro-green",
-    "keychronswitches:4507940880473/variant/31923920240729": "gateron-g-pro-white",
-    "keychronswitches:4507940880473/variant/40106816438361": "gateron-g-pro-blue",
-    "keychronswitches:4507940880473/variant/40119134355545": "gateron-g-pro-red",
-    "keychronswitches:4507940880473/variant/40119145726041": "gateron-g-pro-brown",
-    "keychronswitches:4507940880473/variant/40119153295449": "gateron-g-pro-yellow",
-    "keychronswitches:4507940880473/variant/40119153852505": "gateron-g-pro-black",
-    "keychronswitches:4507940880473/variant/40119161880665": "gateron-g-pro-white-two-stage-spring",
-    "keychronswitches:4507940880473/variant/40119163453529": "gateron-g-pro-silver-two-stage-spring",
+    "keychronswitches:4507940880473/variant/31923914408025": "gateron-ks-9-g-pro-green",
+    "keychronswitches:4507940880473/variant/31923920240729": "gateron-ks-9-g-pro-white",
+    "keychronswitches:4507940880473/variant/40106816438361": "gateron-ks-9-g-pro-blue",
+    "keychronswitches:4507940880473/variant/40119134355545": "gateron-ks-9-g-pro-red",
+    "keychronswitches:4507940880473/variant/40119145726041": "gateron-ks-9-g-pro-brown",
+    "keychronswitches:4507940880473/variant/40119153295449": "gateron-ks-9-g-pro-yellow",
+    "keychronswitches:4507940880473/variant/40119153852505": "gateron-ks-9-g-pro-black",
+    "keychronswitches:4507940880473/variant/40119161880665": "gateron-ks-9-g-pro-white",
+    "keychronswitches:4507940880473/variant/40119163453529": "gateron-ks-9-g-pro-silver",
     "keychronswitches:4673190789209/variant/32028881485913": "keychron-optical-red",
     "keychronswitches:4673190789209/variant/32028881551449": "keychron-optical-blue",
     "keychronswitches:4673190789209/variant/32028881616985": "keychron-optical-brown",
@@ -3300,27 +3300,27 @@
     "keychronswitches:7114729029721/variant/40106810769497": "keychron-kpro-yellow",
     "keychronswitches:7114729029721/variant/40299927240793": "keychron-kpro-banana",
     "keychronswitches:7114729029721/variant/40299927306329": "keychron-kpro-mint",
-    "keychronswitches:7114732142681/variant/40106826137689": "gateron-g-pro-2-0-white-two-stage-spring",
-    "keychronswitches:7114732142681/variant/40106826924121": "gateron-g-pro-2-0-silver-two-stage-spring",
+    "keychronswitches:7114732142681/variant/40106826137689": "gateron-ks-9-g-pro-2-0-white",
+    "keychronswitches:7114732142681/variant/40106826924121": "gateron-ks-9-g-pro-2-0-silver",
     "keychronswitches:7116454723673/variant/40111600205913": "gateron-baby-kangaroo-2-0",
     "keychronswitches:7118774829145/variant/40119400595545": "gateron-cj-light-blue",
     "keychronswitches:7119490449497/variant/41888434192473": "gateron-box-ink-pink",
     "keychronswitches:7119490449497/variant/41911702782041": "gateron-box-ink-black",
-    "keychronswitches:7120050323545/variant/40122789920857": "gateron-silent-red",
-    "keychronswitches:7120050323545/variant/40122789986393": "gateron-silent-brown",
+    "keychronswitches:7120050323545/variant/40122789920857": "gateron-ks-9-silent-red",
+    "keychronswitches:7120050323545/variant/40122789986393": "gateron-ks-9-silent-brown",
     "keychronswitches:7120050323545/variant/40122790019161": "gateron-silent-yellow",
-    "keychronswitches:7120050323545/variant/40122790084697": "gateron-silent-white",
+    "keychronswitches:7120050323545/variant/40122790084697": "gateron-ks-9-silent-white",
     "keychronswitches:7120054124633/variant/40122805026905": "gateron-north-pole-2-0-yellow",
     "keychronswitches:7120054124633/variant/40122805059673": "gateron-north-pole-2-0-box-red",
     "keychronswitches:7120054124633/variant/40122805518425": "gateron-north-pole-2-0-box-silver",
-    "keychronswitches:7120054124633/variant/40530291589209": "gateron-north-pole-2-0-box-brown",
-    "keychronswitches:7137940537433/variant/40176677093465": "gateron-ks-8-mechanical-red",
-    "keychronswitches:7137940537433/variant/40176677126233": "gateron-ks-8-mechanical-blue",
-    "keychronswitches:7137940537433/variant/40176677159001": "gateron-ks-8-mechanical-brown",
-    "keychronswitches:7137940537433/variant/40176677191769": "gateron-ks-8-mechanical-yellow",
-    "keychronswitches:7137940537433/variant/40176677224537": "gateron-ks-8-mechanical-black",
-    "keychronswitches:7137940537433/variant/40176677257305": "gateron-ks-8-mechanical-green",
-    "keychronswitches:7159593205849/variant/40259121971289": "gateron-ks-3-milky-pro-red",
+    "keychronswitches:7120054124633/variant/40530291589209": "gateron-north-pole-brown",
+    "keychronswitches:7137940537433/variant/40176677093465": "gateron-ks-8-red",
+    "keychronswitches:7137940537433/variant/40176677126233": "gateron-ks-8-blue",
+    "keychronswitches:7137940537433/variant/40176677159001": "gateron-ks-8-brown",
+    "keychronswitches:7137940537433/variant/40176677191769": "gateron-ks-8-yellow",
+    "keychronswitches:7137940537433/variant/40176677224537": "gateron-ks-8-black",
+    "keychronswitches:7137940537433/variant/40176677257305": "gateron-ks-8-green",
+    "keychronswitches:7159593205849/variant/40259121971289": "gateron-ks-3x1-milky-pro-red",
     "keychronswitches:7159593205849/variant/41888412106841": "gateron-ks-3-milky-pro-yellow",
     "keychronswitches:7186834554969/variant/40328606416985": "kailh-super-speed-silver",
     "keychronswitches:7186834554969/variant/40328606449753": "kailh-super-speed-copper",
@@ -3340,12 +3340,12 @@
     "keychronswitches:7295887343705/variant/40497568055385": "keychron-camo-light-green",
     "keychronswitches:7295887343705/variant/40497568088153": "keychron-camo-camel",
     "keychronswitches:7295887343705/variant/40497568120921": "keychron-camo-wheat",
-    "keychronswitches:7303355170905/variant/40509382819929": "gateron-g-pro-3-0-white-two-stage-spring",
-    "keychronswitches:7303355170905/variant/40509382852697": "gateron-g-pro-3-0-silver-two-stage-spring",
-    "keychronswitches:7303355170905/variant/40749904953433": "gateron-g-pro-3-0-blue",
+    "keychronswitches:7303355170905/variant/40509382819929": "gateron-ks-9-g-pro-3-0-white",
+    "keychronswitches:7303355170905/variant/40509382852697": "gateron-ks-9-g-pro-3-0-silver",
+    "keychronswitches:7303355170905/variant/40749904953433": "gateron-ks-9-g-pro-3-0-blue",
     "keychronswitches:7335810433113/variant/40561949704281": "gateron-jupiter-red",
     "keychronswitches:7335810433113/variant/40561949737049": "gateron-jupiter-brown",
-    "keychronswitches:7335810433113/variant/40561950031961": "gateron-jupiter-banana-two-stage-spring",
+    "keychronswitches:7335810433113/variant/40561950031961": "gateron-jupiter-banana",
     "keychronswitches:7335810433113/variant/41951042273369": "gateron-jupiter-red",
     "keychronswitches:7612745023577/variant/41231474950233": "keychron-super-red",
     "keychronswitches:7612745023577/variant/41231475015769": "keychron-super-brown",
@@ -3354,8 +3354,8 @@
     "lumekeebsswitches:8242830737621/variant/45489816699093": "ktt-kang-white",
     "lumekeebsswitches:8342744170709/variant/46371779051733": "keygeek-raw",
     "lumekeebsswitches:8461040451797/variant/47061876637909": "hmx-sillyworks-hyacinth",
-    "lumekeebsswitches:8625211441365/variant/48296854782165": "gateron-ks-33-low-profile-2-0-mechanical-red",
-    "lumekeebsswitches:8625211441365/variant/48296854814933": "gateron-ks-33-low-profile-2-0-mechanical-brown",
+    "lumekeebsswitches:8625211441365/variant/48296854782165": "gateron-ks-33-low-profile-red",
+    "lumekeebsswitches:8625211441365/variant/48296854814933": "gateron-ks-33-low-profile-brown",
     "lumekeebsswitches:8807293059285/variant/50634946642133": "ktt-peach",
     "lumekeebsswitches:8896276693205/variant/51120853876949": "vertex-v1",
     "lumekeebsswitches:8931934994645/variant/51300006723797": "kailh-bcp",
@@ -3492,23 +3492,23 @@
     "gateron:7090522947673": "gateron-box-cj",
     "lumekeebsswitches:7970682208469/variant/43954047910101": "gateron-box-ink-black",
     "lumekeebsswitches:7970682208469/variant/43954047975637": "gateron-box-ink-pink",
-    "cannonkeysswitches:6895612788847": "gateron-cap-golden-yellow",
+    "cannonkeysswitches:6895612788847": "gateron-cap-yellow",
     "cannonkeysswitches:15029400797295": "gateron-chocolate-jelly",
     "cannonkeysswitches:6894095663215": "gateron-cj",
     "gateron:7090129109081/variant/40041282142297": "gateron-cj-dark-blue",
     "gateron:7090129109081/variant/40041282109529": "gateron-cj-light-blue",
     "cannonkeysswitches:7459650273391": "gateron-cm",
     "lumekeebsswitches:8257995014357/variant/45657636798677": "gateron-dual-rail-lunar-probe",
-    "cannonkeysswitches:7093118697583": "gateron-g-pro-2-0-yellow",
-    "lumekeebsswitches:8058415513813/variant/44205084639445": "gateron-g-pro-3-0-silver",
-    "lumekeebsswitches:8058418757845/variant/44205115015381": "gateron-g-pro-3-0-yellow",
+    "cannonkeysswitches:7093118697583": "gateron-ks-9-g-pro-2-0-yellow",
+    "lumekeebsswitches:8058415513813/variant/44205084639445": "gateron-ks-9-g-pro-3-0-silver",
+    "lumekeebsswitches:8058418757845/variant/44205115015381": "gateron-ks-9-g-pro-3-0-yellow",
     "divinikeyswitches:7461602525249": "gateron-green-apple",
     "lumekeebsswitches:9307498021077/variant/53469183049941": "gateron-harmonic",
     "divinikeyswitches:7660466864193/variant/42828097749057": "gateron-khonsu",
     "switchoddities:10129917149468": "gateron-longjing-tea",
     "cannonkeysswitches:7117302595695": "gateron-luciola",
     "keebsforallswitches:8272972349659": "gateron-magnetic-jade",
-    "cannonkeysswitches:3955397132399/variant/41095934247023": "gateron-milky-yellow",
+    "cannonkeysswitches:3955397132399/variant/41095934247023": "gateron-ks-3-yellow",
     "cannonkeysswitches:7147784274031": "gateron-mini-i",
     "cannonkeysswitches:6976546766959": "gateron-mizu-mink",
     "cannonkeysswitches:7147808391279": "gateron-mountain-top",
@@ -3665,14 +3665,14 @@
     "akkogearswitches:8839811399879/variant/46915846734023": "creamy-blue-u1",
     "cannonkeysswitches:15027981877359": "gateron-ks-33-low-profile-strawberry-chocolate",
     "cannonkeysswitches:15028010254447": "gateron-ks-33-low-profile-banana-chocolate",
-    "cannonkeysswitches:15028015857775": "gateron-ks-33-low-profile-2-0-chocolate",
+    "cannonkeysswitches:15028015857775": "gateron-ks-33-low-profile-chocolate",
     "cannonkeysswitches:15028038041711": "gateron-oil-king-yellow-heavy",
-    "cannonkeysswitches:15029408170095": "gateron-ks-9-silent-2-0-yellow",
+    "cannonkeysswitches:15029408170095": "gateron-ks-9-silent-yellow-2-0",
     "cannonkeysswitches:15030653943919": "gateron-chocolate-smoothie",
     "cannonkeysswitches:15030664757359": "gateron-smoothie-strawberry",
-    "cannonkeysswitches:4405677752431": "gateron-black",
-    "cannonkeysswitches:4405678997615": "gateron-red",
-    "cannonkeysswitches:4405679226991": "gateron-brown",
+    "cannonkeysswitches:4405677752431": "gateron-ks-3-black",
+    "cannonkeysswitches:4405678997615": "gateron-ks-3-red",
+    "cannonkeysswitches:4405679226991": "gateron-ks-3-brown",
     "cannonkeysswitches:4565355233391": "ws-original-aspiration-oa",
     "cannonkeysswitches:4590493106287": "gateron-full-nylon-yellow",
     "cannonkeysswitches:4605867884655": "cherry-mx-black-hyperglide",
@@ -3682,7 +3682,7 @@
     "cannonkeysswitches:6714820886639": "ttc-bluish-white",
     "cannonkeysswitches:6725152178287/variant/41095928676463": "momoka-frog",
     "cannonkeysswitches:6871385079919": "gateron-black-ink",
-    "cannonkeysswitches:6895303721071": "gateron-cap-milky-yellow",
+    "cannonkeysswitches:6895303721071": "gateron-cap-yellow",
     "cannonkeysswitches:6904476008559/variant/41095932575855": "gateron-x-36",
     "cannonkeysswitches:6932104478831": "korbs",
     "cannonkeysswitches:6948270833775": "jwick-black",
@@ -3702,7 +3702,7 @@
     "cannonkeysswitches:7089242210415": "blush-light",
     "cannonkeysswitches:7093110669423": "gateron-pro-milky-brown-1-0",
     "cannonkeysswitches:7093119549551": "gateron-baby-raccoon",
-    "cannonkeysswitches:7117017514095": "gateron-milky-yellow-black-bottom-pro",
+    "cannonkeysswitches:7117017514095": "gateron-ks-3-milky-pro-yellow",
     "cannonkeysswitches:7120922640495": "gateron-new-north-pole-2-0",
     "cannonkeysswitches:7147672371311": "gateron-pro-3-0-brown",
     "cannonkeysswitches:7147705991279": "gateron-pro-3-0-red",
@@ -3780,8 +3780,8 @@
     "divinikeyswitches:7867137458241": "lichicx-yamatake-silent-light",
     "divinikeyswitches:7867137556545": "lichicx-yogurt-silent",
     "divinikeyswitches:7898847215681/variant/43936435667009": "wingtree-g-one",
-    "divinikeyswitches:7913854173249": "gateron-ks-3x1-milky-pro-pink-silent",
-    "divinikeyswitches:7913854238785": "gateron-ks-3x1-milky-pro-purple-silent",
+    "divinikeyswitches:7913854173249": "gateron-ks-3x1-milky-pro-pink",
+    "divinikeyswitches:7913854238785": "gateron-ks-3x1-milky-pro-purple",
     "divinikeyswitches:7913854271553": "gateron-ks-3x1-milky-pro-heavy",
     "divinikeyswitches:7913854304321": "gateron-oil-king-pink-silent",
     "divinikeyswitches:7913854435393": "gateron-oil-king-purple-silent",
@@ -3820,7 +3820,7 @@
     "keebsforallswitches:7485540499675": "durock-shrimp-silent",
     "keebsforallswitches:7507508134107": "ttc-x-kbdfans-hey",
     "keebsforallswitches:7537331601627": "durock-daybreak",
-    "keebsforallswitches:7736032723163": "gateron-milky-red-pro",
+    "keebsforallswitches:7736032723163": "gateron-ks-3x1-milky-pro-red",
     "keebsforallswitches:7737103909083": "tecsee-diamond-jadeite",
     "keebsforallswitches:7737118327003": "tecsee-ice-candy",
     "keebsforallswitches:7737123733723/variant/43004013117659": "tecsee-ice-grape",
@@ -3837,8 +3837,8 @@
     "keebsforallswitches:8031375786203": "ws-quartz",
     "keebsforallswitches:8031379849435": "ws-yellow",
     "keebsforallswitches:8032590495963": "cherry-mx-ergo-clear",
-    "keebsforallswitches:8032594165979/variant/44484309549275": "haimu-raw-with-led-diffuser",
-    "keebsforallswitches:8032594165979/variant/44484309582043": "haimu-raw-without-led-diffuser",
+    "keebsforallswitches:8032594165979/variant/44484309549275": "geon-haimu-raw",
+    "keebsforallswitches:8032594165979/variant/44484309582043": "geon-haimu-raw",
     "keebsforallswitches:8032610484443": "huano-raw",
     "keebsforallswitches:8032806535387": "sarokeys-strawberry-wine",
     "keebsforallswitches:8032806600923": "bsun-pine",
@@ -3999,8 +3999,8 @@
     "lumekeebsswitches:9244389605589/variant/53013122318549": "keygeek-y3x",
     "lumekeebsswitches:9244391243989/variant/53013123530965": "bsun-l2",
     "lumekeebsswitches:9244392685781/variant/53013142110421": "bsun-timely-snow",
-    "lumekeebsswitches:9244393832661/variant/53013153054933": "hmx-cola-red",
-    "lumekeebsswitches:9244393832661/variant/53013156495573": "hmx-cola-black",
+    "lumekeebsswitches:9244393832661/variant/53013153054933": "hmx-cola",
+    "lumekeebsswitches:9244393832661/variant/53013156495573": "hmx-cola",
     "lumekeebsswitches:9244394586325/variant/53013163409621": "hmx-blackberry-silent",
     "lumekeebsswitches:9299802849493/variant/53380904878293": "outemu-honey-peach-silent",
     "lumekeebsswitches:9299805896917/variant/53380924244181": "outemu-great-sage",
@@ -4055,7 +4055,7 @@
     "switchoddities:10973465215260": "hitune-bm10",
     "switchoddities:10973594059036": "jerrzi-golden-low-profile",
     "switchoddities:8119054631196": "mengmoda-mmd-honey-ht-stock",
-    "switchoddities:8119087792412": "gazzew-boba-lt-thock",
+    "switchoddities:8119087792412": "gazzew-boba-lt",
     "switchoddities:8119096181020": "zuoce-studios-daibai-linear",
     "switchoddities:8119096443164": "zuoce-studios-daibai-linear",
     "switchoddities:8119119151388": "sunset-choc",
@@ -4176,9 +4176,9 @@
     "theremingoat:424": "tecsee-yellow-yellow-stem",
     "theremingoat:425": "tecsee-yellow-orange-stem",
     "theremingoat:427": "tecsee-brown-panda",
-    "theremingoat:469": "hi-tek-725-black-two-eye",
-    "theremingoat:471": "hi-tek-725-grey-two-eye",
-    "theremingoat:474": "hi-tek-725-white-two-eye",
+    "theremingoat:469": "hi-tek-725-black-tactile",
+    "theremingoat:471": "hi-tek-725-grey",
+    "theremingoat:474": "hi-tek-725-white",
     "theremingoat:512": "winkeyless-kr-zeal-fake-clear",
     "theremingoat:676": "a1-white-alps-clone",
     "theremingoat:721": "outemu-white-silent",
@@ -4311,18 +4311,18 @@
     "divinikeyswitches:4531821051969/variant/39839985139777": "gateron-black-ink",
     "keychronswitches:6591524700249/variant/40119300882521": "gateron-black-ink",
     "theremingoat:753": "gateron-black-ink",
-    "gateron:7107744006233/variant/40089445204057": "gateron-ks-3x47-milky-top-black-bottom",
-    "keychronswitches:7137940176985/variant/40176676339801": "gateron-ks-3x47-milky-top-black-bottom",
-    "gateron:7107744006233/variant/40089445105753": "gateron-ks-3x47-milky-top-black-bottom-blue",
-    "keychronswitches:7137940176985/variant/40176676241497": "gateron-ks-3x47-milky-top-black-bottom-blue",
-    "gateron:7107744006233/variant/40089445072985": "gateron-ks-3x47-milky-top-black-bottom-brown",
-    "keychronswitches:7137940176985/variant/40176676274265": "gateron-ks-3x47-milky-top-black-bottom-brown",
-    "gateron:7107744006233/variant/40089445171289": "gateron-ks-3x47-milky-top-black-bottom-green",
-    "keychronswitches:7137940176985/variant/40176676372569": "gateron-ks-3x47-milky-top-black-bottom-green",
-    "gateron:7107744006233/variant/40089445040217": "gateron-ks-3x47-milky-top-black-bottom-red",
-    "keychronswitches:7137940176985/variant/40176676208729": "gateron-ks-3x47-milky-top-black-bottom-red",
-    "gateron:7107744006233/variant/40089445138521": "gateron-ks-3x47-milky-top-black-bottom-yellow",
-    "keychronswitches:7137940176985/variant/40176676307033": "gateron-ks-3x47-milky-top-black-bottom-yellow",
+    "gateron:7107744006233/variant/40089445204057": "gateron-ks-3-black",
+    "keychronswitches:7137940176985/variant/40176676339801": "gateron-ks-3-black",
+    "gateron:7107744006233/variant/40089445105753": "gateron-ks-3-blue",
+    "keychronswitches:7137940176985/variant/40176676241497": "gateron-ks-3-blue",
+    "gateron:7107744006233/variant/40089445072985": "gateron-ks-3-brown",
+    "keychronswitches:7137940176985/variant/40176676274265": "gateron-ks-3-brown",
+    "gateron:7107744006233/variant/40089445171289": "gateron-ks-3-green",
+    "keychronswitches:7137940176985/variant/40176676372569": "gateron-ks-3-green",
+    "gateron:7107744006233/variant/40089445040217": "gateron-ks-3-red",
+    "keychronswitches:7137940176985/variant/40176676208729": "gateron-ks-3-red",
+    "gateron:7107744006233/variant/40089445138521": "gateron-ks-3-yellow",
+    "keychronswitches:7137940176985/variant/40176676307033": "gateron-ks-3-yellow",
     "gateron:7096110710873/variant/40069326012505": "gateron-phantom-blue",
     "theremingoat:1844": "gateron-phantom-blue",
     "gateron:7096110710873/variant/40069326045273": "gateron-phantom-brown",
@@ -4385,10 +4385,10 @@
     "theremingoat:2125": "melon-milk-linear",
     "switchoddities:8346168787228": "melon-milk-tactile",
     "theremingoat:2134": "melon-milk-tactile",
-    "switchoddities:8346170949916": "strawberry-milk-ice-linear",
-    "theremingoat:1721": "strawberry-milk-ice-linear",
-    "switchoddities:8346171113756": "strawberry-milk-ice-tactile",
-    "theremingoat:1722": "strawberry-milk-ice-tactile",
+    "switchoddities:8346170949916": "dk-strawberry-milk-linear",
+    "theremingoat:1721": "dk-strawberry-milk-linear",
+    "switchoddities:8346171113756": "dk-strawberry-milk-tactile",
+    "theremingoat:1722": "dk-strawberry-milk-tactile",
     "switchoddities:8763181334812": "green-jacket-tactile",
     "theremingoat:1605": "green-jacket-tactile",
     "switchoddities:8763276165404": "ube-crinkle-cookie",
@@ -4471,16 +4471,16 @@
     "theremingoatscores:75b2b5838fdd": "gateron-blue-ink",
     "keychronswitches:6591524700249/variant/40119299276889": "gateron-blue-ink",
     "theremingoat:862": "gateron-blue-ink",
-    "keebsforallswitches:8209472323803": "gateron-blue-optical",
-    "theremingoat:45": "gateron-blue-optical",
-    "keebsforallswitches:8209454858459": "gateron-brown-optical",
-    "theremingoat:44": "gateron-brown-optical",
-    "gateron:7066902986841/variant/40042307747929": "gateron-cap-golden-brown",
-    "keebsforallswitches:8206390329563": "gateron-cap-golden-brown",
-    "gateron:7066902986841/variant/40042307649625": "gateron-cap-golden-yellow",
-    "keebsforallswitches:8206373421275": "gateron-cap-golden-yellow",
-    "gateron:7066902986841/variant/40042307616857": "gateron-cap-milky-yellow",
-    "theremingoat:996": "gateron-cap-milky-yellow",
+    "keebsforallswitches:8209472323803": "gateron-optical-blue",
+    "theremingoat:45": "gateron-optical-blue",
+    "keebsforallswitches:8209454858459": "gateron-optical-brown",
+    "theremingoat:44": "gateron-optical-brown",
+    "gateron:7066902986841/variant/40042307747929": "gateron-cap-brown",
+    "keebsforallswitches:8206390329563": "gateron-cap-brown",
+    "gateron:7066902986841/variant/40042307649625": "gateron-cap-yellow",
+    "keebsforallswitches:8206373421275": "gateron-cap-yellow",
+    "gateron:7066902986841/variant/40042307616857": "gateron-cap-yellow",
+    "theremingoat:996": "gateron-cap-yellow",
     "switchoddities:10970633371932": "gateron-chocolate-smoothie",
     "keebsforallswitches:8291034628315": "gateron-dual-rail-lunar-probe",
     "theremingoat:3995": "gateron-full-pom-banana-smoothie",
@@ -4492,15 +4492,15 @@
     "keychronswitches:6591524700249/variant/40119299866713": "gateron-ink-yellow",
     "theremingoat:863": "gateron-ink-yellow",
     "theremingoatscores:c064ae8262e2": "gateron-ink-yellow",
-    "switchoddities:9131306058012": "gateron-ks-3-black-silent",
+    "switchoddities:9131306058012": "gateron-ks-3-silent-black",
     "gateron:7120808935513/variant/40124530098265": "gateron-ks-3-milky-pro-yellow",
     "switchoddities:8237754908956": "gateron-ks-8-yellow",
     "theremingoatscores:782645bc3368": "gateron-ks-8-yellow",
-    "keebsforallswitches:8209418256603": "gateron-ks-9-brown-pro-2-0",
-    "theremingoat:1635": "gateron-ks-9-brown-pro-2-0",
-    "keebsforallswitches:8209416454363": "gateron-ks-9-pro-2-0-yellow",
-    "theremingoat:1637": "gateron-ks-9-pro-2-0-yellow",
-    "keebsforallswitches:8290967453915": "gateron-ks-9-silent-2-0-yellow",
+    "keebsforallswitches:8209418256603": "gateron-ks-9-g-pro-2-0-brown",
+    "theremingoat:1635": "gateron-ks-9-g-pro-2-0-brown",
+    "keebsforallswitches:8209416454363": "gateron-ks-9-g-pro-2-0-yellow",
+    "theremingoat:1637": "gateron-ks-9-g-pro-2-0-yellow",
+    "keebsforallswitches:8290967453915": "gateron-ks-9-silent-yellow-2-0",
     "switchoddities:8994421604636": "gateron-north-pole-brown",
     "theremingoat:2785": "gateron-north-pole-brown",
     "switchoddities:8994416787740": "gateron-north-pole-red",
@@ -4640,7 +4640,7 @@
     "keycaplendar:bFxaOxMwsAvqd5kBcZAI": "gmk-cyl-centinela-extension-kit",
     "novelkeys:8822530375847": "gmk-cyl-centinela-extension-kit",
     "switchoddities:8119099949340": "akko-wine-white",
-    "theremingoat:2864": "gateron-dual-rail-magnetic-orange",
+    "theremingoat:2864": "gateron-ks-20-dual-rail-magnetic-orange",
     "keychronswitches:6547882967129/variant/40070747258969": "kailh-box-cream",
     "lumekeebsswitches:8434317394133/variant/46917587566805": "ws-dash-he-magnetic",
     "keebsforallswitches:7732320862427/variant/42991437283547": "kfa-pink-robin",
@@ -5222,7 +5222,7 @@
     "theremingoat:1175": "candy-jade-green",
     "theremingoat:1176": "candy-sakura-snow",
     "theremingoat:1177": "candy-sakura-snow",
-    "theremingoat:1190": "dareu-sky",
+    "theremingoat:1190": "dareu-sky-blue",
     "theremingoat:1191": "dareu-purple-gold",
     "theremingoat:1192": "zealio",
     "theremingoat:1193": "zealio",
@@ -5295,7 +5295,7 @@
     "theremingoat:1667": "ttc-ace",
     "theremingoat:1712": "kailh-super-speed-red",
     "theremingoat:1747": "invokeys-black-sesame",
-    "theremingoat:1750": "dareu-sky",
+    "theremingoat:1750": "dareu-sky-blue",
     "theremingoat:1799": "akko-blue",
     "theremingoat:1824": "gateron-x",
     "theremingoat:1828": "mekanisk-ultramarine",
@@ -5387,25 +5387,13 @@
     "theremingoat:2575": "bsun-agarwood",
     "theremingoat:2603": "cherry-mx-hyperglide-red",
     "theremingoat:2621": "ttc-flaming-snow",
-    "theremingoat:2636": "dareu-sky",
+    "theremingoat:2636": "dareu-sky-blue",
     "theremingoat:2677": "mmd-cream",
     "theremingoat:2681": "feker-matcha",
     "theremingoat:2698": "ttc-love",
     "theremingoat:2713": "halo-clear",
     "theremingoat:2717": "mz-z1-actuation",
     "theremingoat:2718": "mz-z1-actuation",
-    "theremingoat:2730": "holy-bsun-translucent-panda",
-    "theremingoat:2731": "holy-bsun-translucent-panda",
-    "theremingoat:2732": "holy-bsun-white-panda",
-    "theremingoat:2733": "holy-bsun-white-panda",
-    "theremingoat:2734": "holy-bsun-red-panda",
-    "theremingoat:2735": "holy-bsun-red-panda",
-    "theremingoat:2736": "holy-bsun-green-panda",
-    "theremingoat:2737": "holy-bsun-green-panda",
-    "theremingoat:2738": "holy-bsun-blue-panda",
-    "theremingoat:2739": "holy-bsun-blue-panda",
-    "theremingoat:2740": "holy-bsun-yellow-panda",
-    "theremingoat:2741": "holy-bsun-yellow-panda",
     "theremingoat:2759": "gateron-azure-dragon",
     "theremingoat:276": "primekb-t1",
     "theremingoat:277": "primekb-t1",
@@ -5481,24 +5469,11 @@
     "theremingoat:3153": "mz-peripherals-y1",
     "theremingoat:3154": "mz-peripherals-y1",
     "theremingoat:317": "invyr-panda",
-    "theremingoat:318": "holy-invyr-panda",
-    "theremingoat:319": "holy-invyr-panda",
     "theremingoat:3206": "keygeek-y3",
     "theremingoat:3209": "keygeek-keylin",
-    "theremingoat:321": "holy-gsus-panda",
-    "theremingoat:322": "holy-gsus-panda",
-    "theremingoat:324": "yok-holy-red-panda",
     "theremingoat:3247": "jixian-white",
-    "theremingoat:325": "yok-holy-red-panda",
     "theremingoat:3250": "asus-rog-snow",
-    "theremingoat:327": "yok-holy-mint-panda",
-    "theremingoat:328": "yok-holy-mint-panda",
-    "theremingoat:330": "yok-holy-trash-panda",
-    "theremingoat:331": "yok-holy-trash-panda",
-    "theremingoat:333": "yok-holy-polar-panda",
-    "theremingoat:334": "yok-holy-polar-panda",
     "theremingoat:3342": "bsun-agarwood",
-    "theremingoat:336": "holy-bsun-clear-panda",
     "theremingoat:3361": "xllab-x-haimu-rock",
     "theremingoat:3362": "xllab-x-haimu-rock",
     "theremingoat:339": "halo-clear",
@@ -5599,10 +5574,7 @@
     "theremingoat:530": "kailh-box-crystal-pink",
     "theremingoat:538": "cherry-mx-dark-blue",
     "theremingoat:54": "arctos",
-    "theremingoat:544": "holy-bsun-clear-panda",
     "theremingoat:545": "invyr-panda",
-    "theremingoat:546": "holy-invyr-panda",
-    "theremingoat:547": "holy-invyr-panda",
     "theremingoat:55": "gateron-ink",
     "theremingoat:555": "alps-skcm-neon-green",
     "theremingoat:569": "aquamarine-tealio",
@@ -5659,10 +5631,6 @@
     "theremingoat:796": "zilent-ac",
     "theremingoat:799": "bsun-red-panda",
     "theremingoat:80": "ttc-brown",
-    "theremingoat:800": "bsun-holy-red-panda",
-    "theremingoat:801": "bsun-holy-red-panda",
-    "theremingoat:803": "bsun-holy-red-panda",
-    "theremingoat:804": "bsun-holy-red-panda",
     "theremingoat:818": "giant",
     "theremingoat:825": "alpaca",
     "theremingoat:827": "ktt-red-wine",
@@ -5694,7 +5662,7 @@
     "theremingoat:899": "moss",
     "theremingoat:90": "everglide-jade-green",
     "theremingoat:91": "everglide-sakura-pink",
-    "theremingoat:920": "gateron-cap-brown-chocolate",
+    "theremingoat:920": "gateron-cap-brown",
     "theremingoat:921": "greetech-brown",
     "theremingoat:922": "naevy",
     "theremingoat:923": "raed",
@@ -5717,7 +5685,7 @@
     "theremingoat:97": "kailh-pro-heavy-berry",
     "theremingoat:98": "kailh-pro-heavy-plum",
     "theremingoat:99": "ttc-razer-green",
-    "theremingoat:997": "gateron-cap-brown-chocolate",
+    "theremingoat:997": "gateron-cap-brown",
     "theremingoat:999": "gateron-ks-1-red",
     "theremingoatscores:0245c403be02": "kk-lightwave",
     "theremingoatscores:0cca5d0bba01": "healio",
@@ -5784,7 +5752,7 @@
     "divinikey:7569525932097": "kap-retro-lights",
     "divinikey:7594331340865": "gom-winter-breath",
     "divinikey:7857240899649": "jtk-hyperfuse",
-    "gateron:7066902986841/variant/40042307682393": "gateron-cap-milky-brown",
+    "gateron:7066902986841/variant/40042307682393": "gateron-cap-brown",
     "gateron:7066902986841/variant/40042307780697": "gateron-cap-red",
     "gateron:7066903183449/variant/39977308618841": "gateron-ink-ink-red",
     "gateron:7066903183449/variant/39977308651609": "gateron-ink-ink-blue",
@@ -5822,8 +5790,8 @@
     "kbdfans:8290947137675": "gmk-cyl-masterpiece",
     "keebsforallswitches:8206277312731": "gateron-box-black-inks",
     "keebsforallswitches:8206295957723": "gateron-box-pink-inks",
-    "keebsforallswitches:8206307426523": "gateron-cap-milky-yellow-golden-yellow",
-    "keebsforallswitches:8206364377307": "gateron-cap-milky-brown-golden-brown",
+    "keebsforallswitches:8206307426523": "gateron-cap-yellow",
+    "keebsforallswitches:8206364377307": "gateron-cap-brown",
     "keebsforallswitches:8209451417819": "gateron-optical-yellow",
     "keycaplendar:2KpD2mDISWj5ffYU2B2y": "pbtfans-abs-poco",
     "keycaplendar:2Y37S3dSBujYuGOypWix": "pbtfans-purpolch",
@@ -5895,20 +5863,20 @@
     "keycaplendar:xKgkjtqgu3vIaeCfTf9w": "pbtfans-spark",
     "keycaplendar:zQejgau3C0jFUB76Z04r": "gmk-frost-witch",
     "keycaplendar:ztrFv6fZ5FiP0MfiGCOF": "gmk-cyl-analog-dreams",
-    "keychronswitches:4750687436889/variant/40119281418329": "gateron-cap-cap-red",
-    "keychronswitches:4750687436889/variant/40119284465753": "gateron-cap-cap-blue",
-    "keychronswitches:4750687436889/variant/40119285284953": "gateron-cap-cap-brown",
-    "keychronswitches:4750687436889/variant/40119288201305": "gateron-cap-cap-golden-brown",
-    "keychronswitches:4750687436889/variant/40119289053273": "gateron-cap-cap-milky-yellow",
-    "keychronswitches:4750687436889/variant/40119289741401": "gateron-cap-cap-golden-yellow",
-    "keychronswitches:4750687436889/variant/40119291576409": "gateron-cap-cap-milky-brown",
-    "keychronswitches:7120052158553/variant/40122793033817": "gateron-optical-red",
-    "keychronswitches:7120052158553/variant/40122793066585": "gateron-optical-blue",
-    "keychronswitches:7120052158553/variant/40122793099353": "gateron-optical-brown",
-    "keychronswitches:7120052158553/variant/40122794344537": "gateron-optical-yellow",
-    "keychronswitches:7120052158553/variant/40122794377305": "gateron-optical-white",
-    "keychronswitches:7120052158553/variant/40122803322969": "gateron-optical-black",
-    "keychronswitches:7120052158553/variant/40122803683417": "gateron-optical-silver",
+    "keychronswitches:4750687436889/variant/40119281418329": "gateron-cap-red",
+    "keychronswitches:4750687436889/variant/40119284465753": "gateron-cap-blue",
+    "keychronswitches:4750687436889/variant/40119285284953": "gateron-cap-brown",
+    "keychronswitches:4750687436889/variant/40119288201305": "gateron-cap-brown",
+    "keychronswitches:4750687436889/variant/40119289053273": "gateron-cap-yellow",
+    "keychronswitches:4750687436889/variant/40119289741401": "gateron-cap-yellow",
+    "keychronswitches:4750687436889/variant/40119291576409": "gateron-cap-brown",
+    "keychronswitches:7120052158553/variant/40122793033817": "gateron-ks-22-optical-red",
+    "keychronswitches:7120052158553/variant/40122793066585": "gateron-ks-22-optical-blue",
+    "keychronswitches:7120052158553/variant/40122793099353": "gateron-ks-22-optical-brown",
+    "keychronswitches:7120052158553/variant/40122794344537": "gateron-ks-22-optical-yellow",
+    "keychronswitches:7120052158553/variant/40122794377305": "gateron-ks-22-optical-white",
+    "keychronswitches:7120052158553/variant/40122803322969": "gateron-ks-22-optical-black",
+    "keychronswitches:7120052158553/variant/40122803683417": "gateron-ks-22-optical-silver",
     "keychronswitches:7179510186073/variant/40307671007321": "kailh-box-red",
     "keychronswitches:7179510186073/variant/40307671072857": "kailh-box-white",
     "keychronswitches:7179510186073/variant/40307671138393": "kailh-box-brown",
@@ -5976,7 +5944,7 @@
     "switchoddities:10052255875356": "ttc-speed-gold",
     "switchoddities:10054098092316": "tecsee-candling-dragon",
     "switchoddities:10160782213404": "huano-strawberry-jelly-linear",
-    "switchoddities:10160789356828": "dareu-sky-heavy-blue",
+    "switchoddities:10160789356828": "dareu-sky-blue",
     "switchoddities:10160797384988": "j-lab-ripple",
     "switchoddities:10160826253596": "skyline-magnetic",
     "switchoddities:10566762168604": "click-clack-vertex",
@@ -6031,8 +5999,8 @@
     "switchoddities:8119148052764": "bsun-polar-panda",
     "switchoddities:8149609218332": "g-square-black-warrior",
     "switchoddities:8196348641564": "batknight-cloud",
-    "switchoddities:8222287954204": "c3-x-tkc-tangerine-dark",
-    "switchoddities:8295539835164": "c3-x-tkc-tangerine-light",
+    "switchoddities:8222287954204": "c3-tangerine",
+    "switchoddities:8295539835164": "c3-tangerine",
     "switchoddities:8321500610844": "iceberg-red",
     "switchoddities:8321502183708": "iceberg-yellow",
     "switchoddities:8321504674076": "iceberg-orange",
@@ -6044,7 +6012,7 @@
     "switchoddities:8340597866780": "akko-cream-blue-pro",
     "switchoddities:8368879042844": "sp-star-meteor",
     "switchoddities:8369121394972": "mountain-linear",
-    "switchoddities:8430411383068": "dareu-purple-gold-pro",
+    "switchoddities:8430411383068": "dareu-purple-gold",
     "switchoddities:8430459978012": "huano-strawberry-jelly-tactile",
     "switchoddities:8433940693276/variant/45736735605020": "mmd-princess-linear",
     "switchoddities:8433940693276/variant/45736735637788": "mmd-princess-linear",
@@ -6073,7 +6041,7 @@
     "switchoddities:8939091165468": "akko-pro-fairy",
     "switchoddities:8939093164316": "akko-pro-penguin",
     "switchoddities:8940899238172": "bald-brother-strawberry-ice-cream",
-    "switchoddities:8941187105052": "dareu-sky-sky-blue",
+    "switchoddities:8941187105052": "dareu-sky-blue",
     "switchoddities:8991972720924": "swk-mocha",
     "switchoddities:8994389721372": "azure-dragon",
     "switchoddities:9131077402908": "keygeek-candling-dragon",
@@ -6145,7 +6113,7 @@
     "theremingoat:1733": "daibai-linear",
     "theremingoat:1734": "daibai-linear",
     "theremingoat:1748": "dareu-candy-pink",
-    "theremingoat:1752": "dareu-violet-purple-gold",
+    "theremingoat:1752": "dareu-purple-gold",
     "theremingoat:1765": "emt",
     "theremingoat:1768": "strawberry",
     "theremingoat:1774": "tropical-water",
@@ -6181,7 +6149,7 @@
     "theremingoat:2743": "sp-star-polestar-white",
     "theremingoat:2777": "punkshoo-summertime",
     "theremingoat:278": "primekb-t1",
-    "theremingoat:2787": "gateron-north-pole-brown-no-band",
+    "theremingoat:2787": "gateron-north-pole-brown",
     "theremingoat:2824": "huano-conch-bead",
     "theremingoat:2825": "huano-yellow-crystal",
     "theremingoat:2846": "bsun-aniya",
@@ -6278,9 +6246,8 @@
     "theremingoat:779": "outemu-ice-dustproof-teal",
     "theremingoat:797": "healio-ac",
     "theremingoat:798": "tealio-ac",
-    "theremingoat:805": "bsun-unholy-panda-stem",
     "theremingoat:811": "varmilo-ec-rose",
-    "theremingoat:824": "gateron-cap-yellow-yellow-top",
+    "theremingoat:824": "gateron-cap-yellow",
     "theremingoat:829": "everglide-amber-orange-linear",
     "theremingoat:831": "aqua-zilent",
     "theremingoat:834": "akko-pink",
@@ -6289,12 +6256,12 @@
     "theremingoat:856": "bobagum",
     "theremingoat:876": "polished-top-alpaca",
     "theremingoat:88": "everglide-amber-orange-tactile",
-    "theremingoat:886": "gateron-cap-yellow-milky-top",
+    "theremingoat:886": "gateron-cap-yellow",
     "theremingoat:92": "everglide-dark-blue-optical",
     "theremingoat:980": "momoka-frog",
     "theremingoat:981": "momoka-frog",
     "theremingoat:982": "momoka-frog",
-    "theremingoat:995": "gateron-cap-yellow-yellow",
+    "theremingoat:995": "gateron-cap-yellow",
     "theremingoatscores:333b7843ceb6": "hexin-workshop-bamboo-green",
     "theremingoatscores:95e39f29ffcd": "u4t",
     "theremingoatscores:b45b5e1c1807": "zealios-linear",
@@ -6472,9 +6439,9 @@
     "theremingoat:785": "greetech-razer-orange",
     "gateron:7335203340377/variant/40560564863065": "gateron-jupiter-red",
     "gateron:7335203340377/variant/40560564895833": "gateron-jupiter-brown",
-    "gateron:7335203340377/variant/40560564928601": "gateron-jupiter-banana-two-stage-spring",
+    "gateron:7335203340377/variant/40560564928601": "gateron-jupiter-banana",
     "gateron:7335203340377/variant/41955994337369": "gateron-jupiter-red",
-    "keychronswitches:7335810433113/variant/41678213939289": "gateron-jupiter-banana-two-stage-spring",
+    "keychronswitches:7335810433113/variant/41678213939289": "gateron-jupiter-banana",
     "keychronswitches:7335810433113/variant/41907231719513": "gateron-jupiter-brown",
     "switchoddities:8119144055068": "ktt-mango-sago",
     "switchoddities:8119156605212": "drop-holy-panda-x-clear",
@@ -6529,7 +6496,210 @@
     "theremingoat:2071": "ktt-cloud-blue",
     "theremingoat:2918": "punkshoo-summertime-bx",
     "theremingoat:621": "maroon-durock",
-    "theremingoat:891": "bobagum-monroe"
+    "theremingoat:891": "bobagum-monroe",
+    "switchoddities:10944581370140": "ktt-bamboo-gleam",
+    "switchoddities:8783264579868": "ajazz-violet",
+    "theremingoat:971": "blue-velvet-linear",
+    "theremingoat:970": "blue-velvet-tactile",
+    "switchoddities:8119145333020": "bsun-brown",
+    "theremingoat:1409": "bsun-brown",
+    "theremingoat:1413": "bsun-brown",
+    "theremingoat:198": "bsun-brown",
+    "theremingoat:1911": "bsun-yellow",
+    "theremingoat:3599": "bsun-yellow",
+    "theremingoat:1407": "bsun-dark-brown",
+    "theremingoat:3600": "bsun-green",
+    "switchoddities:8119061512476": "dk-strawberry-milk-linear",
+    "switchoddities:8602392920348": "dk-strawberry-milk-linear",
+    "theremingoat:1279": "dk-strawberry-milk-linear",
+    "theremingoat:1280": "dk-strawberry-milk-linear",
+    "switchoddities:8119090086172": "dk-strawberry-milk-tactile",
+    "switchoddities:8602395148572": "dk-strawberry-milk-tactile",
+    "theremingoat:1281": "dk-strawberry-milk-tactile",
+    "theremingoat:1282": "dk-strawberry-milk-tactile",
+    "theremingoat:3931": "epicgear-purple",
+    "theremingoat:526": "epicgear-purple",
+    "theremingoat:902": "ffff-linear",
+    "theremingoat:904": "ffff-linear",
+    "theremingoat:903": "ffff-tactile",
+    "theremingoat:905": "ffff-tactile",
+    "theremingoat:2897": "hori-edge-blue",
+    "theremingoat:710": "hori-edge-blue",
+    "switchoddities:8322766471452": "geon-haimu-raw",
+    "theremingoat:1751": "dareu-purple-gold",
+    "theremingoat:3637": "dareu-sky-blue",
+    "switchoddities:10160835330332": "everglide-haimu-jade",
+    "theremingoat:3654": "everglide-haimu-jade",
+    "switchoddities:9496163156252": "gateron-deepping",
+    "switchoddities:9496168595740": "gateron-deepping",
+    "theremingoat:2859": "gateron-deepping",
+    "theremingoatscores:eda7dca49a34": "gateron-deepping",
+    "switchoddities:10591523602716": "gateron-cap-brown",
+    "theremingoat:1079": "gateron-cap-brown",
+    "switchoddities:10591523438876": "gateron-cap-yellow",
+    "theremingoat:1081": "gateron-cap-yellow",
+    "gateron:7087745040473/variant/40036010688601": "gateron-ks-9-g-pro-2-0-white",
+    "switchoddities:8119075471644": "gateron-ks-9-g-pro-2-0-white",
+    "switchoddities:8119075864860": "gateron-ks-9-g-pro-2-0-white",
+    "gateron:7288849858649/variant/40479583010905": "gateron-ks-9-g-pro-3-0-white",
+    "switchoddities:8427011047708": "gateron-ks-9-g-pro-3-0-white",
+    "theremingoat:3375": "gateron-ks-9-g-pro-3-0-white",
+    "gateron:7087745040473/variant/40036010754137": "gateron-ks-9-g-pro-2-0-silver",
+    "switchoddities:8119076290844": "gateron-ks-9-g-pro-2-0-silver",
+    "switchoddities:8119076651292": "gateron-ks-9-g-pro-2-0-silver",
+    "gateron:7288849858649/variant/40479583043673": "gateron-ks-9-g-pro-3-0-silver",
+    "switchoddities:8427074060572": "gateron-ks-9-g-pro-3-0-silver",
+    "theremingoat:3378": "gateron-ks-9-g-pro-3-0-silver",
+    "switchoddities:9997727891740": "gateron-ks-9-g-pro-3-0-white",
+    "switchoddities:9997735887132": "gateron-ks-9-g-pro-3-0-silver",
+    "theremingoat:1078": "gateron-cap-blue",
+    "theremingoat:1080": "gateron-cap-red",
+    "theremingoat:1082": "gateron-cap-silver",
+    "theremingoat:1083": "gateron-cap-silent-red",
+    "gateron:7066903478361/variant/40017397579865": "gateron-ks-9-g-pro-white",
+    "gateron:7066903478361/variant/40053021147225": "gateron-ks-9-g-pro-white",
+    "theremingoat:1638": "gateron-ks-9-g-pro-white",
+    "theremingoat:1639": "gateron-ks-9-g-pro-white",
+    "gateron:7066903478361/variant/40026508558425": "gateron-ks-9-g-pro-silver",
+    "theremingoat:1099": "gateron-ks-9-g-pro-silver",
+    "theremingoat:959": "gateron-ks-9-g-pro-silver",
+    "theremingoat:1632": "gateron-ks-9-g-pro-2-0-white",
+    "theremingoat:1634": "gateron-ks-9-g-pro-2-0-silver",
+    "switchoddities:8941220757788": "gateron-jupiter-banana",
+    "theremingoat:1140": "gateron-kangaroo-ink",
+    "theremingoat:821": "gateron-kangaroo-ink",
+    "theremingoatscores:af68a763e404": "gateron-kangaroo-ink",
+    "gateron:7094123364441/variant/40471899111513": "gateron-north-pole-brown",
+    "theremingoat:998": "gateron-ks-1-black",
+    "theremingoat:2041": "gateron-root-beer-float",
+    "theremingoat:2042": "gateron-root-beer-float",
+    "theremingoatscores:3c115e912a5b": "gateron-root-beer-float",
+    "gateron:7100353708121/variant/40069272207449": "gateron-ks-3-black",
+    "gateron:7107680763993/variant/40089318162521": "gateron-ks-3-black",
+    "gateron:7107760291929/variant/40089466732633": "gateron-ks-8-black",
+    "keebsforallswitches:8209437655259": "gateron-ks-3-black",
+    "keychronswitches:7137939488857/variant/40176673423449": "gateron-ks-3-black",
+    "keychronswitches:7182403240025/variant/40315991687257": "gateron-ks-3-black",
+    "switchoddities:8237765034268": "gateron-ks-3-black",
+    "gateron:7100353708121/variant/40069272240217": "gateron-ks-3-blue",
+    "gateron:7107680763993/variant/40089318064217": "gateron-ks-3-blue",
+    "gateron:7107760291929/variant/40089466634329": "gateron-ks-8-blue",
+    "keychronswitches:7137939488857/variant/40176673063001": "gateron-ks-3-blue",
+    "keychronswitches:7182403240025/variant/40315991588953": "gateron-ks-3-blue",
+    "switchoddities:8237790495004": "gateron-ks-8-blue",
+    "switchoddities:8237794099484": "gateron-ks-9-blue",
+    "gateron:7100353708121/variant/40069272272985": "gateron-ks-3-brown",
+    "gateron:7107680763993/variant/40089318031449": "gateron-ks-3-brown",
+    "gateron:7107760291929/variant/40089466601561": "gateron-ks-8-brown",
+    "keebsforallswitches:8209438671067": "gateron-ks-3-brown",
+    "keychronswitches:7137939488857/variant/40176673161305": "gateron-ks-3-brown",
+    "keychronswitches:7182403240025/variant/40315991621721": "gateron-ks-3-brown",
+    "switchoddities:8237784858908": "gateron-ks-8-brown",
+    "switchoddities:8237728465180": "gateron-ks-3-clear",
+    "gateron:7100353708121/variant/40069272305753": "gateron-ks-3-green",
+    "gateron:7107680763993/variant/40089318129753": "gateron-ks-3-green",
+    "gateron:7107760291929/variant/40089466699865": "gateron-ks-8-green",
+    "keychronswitches:7137939488857/variant/40176674963545": "gateron-ks-3-green",
+    "keychronswitches:7182403240025/variant/40315991720025": "gateron-ks-3-green",
+    "gateron:7100353708121/variant/40069272174681": "gateron-ks-3-red",
+    "gateron:7107680763993/variant/40089317998681": "gateron-ks-3-red",
+    "gateron:7107760291929/variant/40089466568793": "gateron-ks-8-red",
+    "keychronswitches:7137939488857/variant/40176672964697": "gateron-ks-3-red",
+    "keychronswitches:7182403240025/variant/40315991556185": "gateron-ks-3-red",
+    "switchoddities:9678503772444": "gateron-ks-3-red",
+    "gateron:7100353708121/variant/40069272141913": "gateron-ks-3-yellow",
+    "gateron:7107680763993/variant/40089318096985": "gateron-ks-3-yellow",
+    "gateron:7107760291929/variant/40089466667097": "gateron-ks-8-yellow",
+    "keebsforallswitches:8209430741211": "gateron-ks-3-yellow",
+    "keebsforallswitches:8209433854171": "gateron-ks-3-yellow",
+    "keychronswitches:7137939488857/variant/40176673259609": "gateron-ks-3-yellow",
+    "keychronswitches:7182403240025/variant/40315991654489": "gateron-ks-3-yellow",
+    "switchoddities:8237742850332": "gateron-ks-3-yellow",
+    "switchoddities:9131304517916": "gateron-ks-3-yellow",
+    "switchoddities:8119077634332": "gateron-ks-9-g-pro-2-0-black",
+    "theremingoat:1636": "gateron-ks-9-g-pro-2-0-black",
+    "switchoddities:8427065344284": "gateron-ks-9-g-pro-3-0-black",
+    "switchoddities:8119078224156": "gateron-ks-9-g-pro-2-0-blue",
+    "theremingoat:1631": "gateron-ks-9-g-pro-2-0-blue",
+    "switchoddities:8119077962012": "gateron-ks-9-g-pro-2-0-brown",
+    "switchoddities:8119076946204": "gateron-ks-9-g-pro-2-0-red",
+    "theremingoat:1633": "gateron-ks-9-g-pro-2-0-red",
+    "switchoddities:8119077306652": "gateron-ks-9-g-pro-2-0-yellow",
+    "switchoddities:8427058364700": "gateron-ks-9-g-pro-3-0-yellow",
+    "theremingoat:1678": "gateron-ks-9-g-pro-2-0-silver",
+    "gateron:7120808935513/variant/40124530131033": "gateron-ks-3x1-milky-pro-red",
+    "theremingoat:4092": "gateron-ks-3-milky-pro-yellow",
+    "lumekeebsswitches:9399303438549/variant/53982491082965": "gateron-ks-3x1-milky-pro-pink",
+    "theremingoat:4090": "gateron-ks-3x1-milky-pro-pink",
+    "lumekeebsswitches:9399386374357/variant/53982623924437": "gateron-ks-3x1-milky-pro-purple",
+    "theremingoat:4091": "gateron-ks-3x1-milky-pro-purple",
+    "switchoddities:8237772865820": "gateron-ks-9-silent-black",
+    "gateron:7087842426969/variant/40036318773337": "gateron-ks-9-silent-brown",
+    "switchoddities:9131306713372": "gateron-ks-3-silent-brown",
+    "gateron:7087842426969/variant/40036318740569": "gateron-ks-9-silent-red",
+    "switchoddities:9131329913116": "gateron-ks-9-silent-yellow-2-0",
+    "gateron:7087842426969/variant/40036318838873": "gateron-ks-9-silent-white",
+    "keebsforallswitches:8209507549403": "gateron-ks-9-silent-white",
+    "switchoddities:9131300258076": "gateron-ks-3-silent-white",
+    "gateron:7090111479897/variant/40041225027673": "gateron-ks-33-low-profile-red",
+    "keychronswitches:4745785868377/variant/40122792575065": "gateron-ks-33-low-profile-red",
+    "switchoddities:9498777452828": "gateron-ks-33-low-profile-red",
+    "theremingoat:3002": "gateron-ks-33-low-profile-red",
+    "gateron:7090111479897/variant/40041225060441": "gateron-ks-33-low-profile-blue",
+    "keychronswitches:4745785868377/variant/40122792607833": "gateron-ks-33-low-profile-blue",
+    "switchoddities:9498786365724": "gateron-ks-33-low-profile-blue",
+    "theremingoat:3005": "gateron-ks-33-low-profile-blue",
+    "gateron:7090111479897/variant/40041225093209": "gateron-ks-33-low-profile-brown",
+    "keychronswitches:4745785868377/variant/40122792673369": "gateron-ks-33-low-profile-brown",
+    "switchoddities:9498781319452": "gateron-ks-33-low-profile-brown",
+    "theremingoat:3004": "gateron-ks-33-low-profile-brown",
+    "gateron:7090111479897/variant/40557145784409": "gateron-ks-33-low-profile-banana",
+    "keychronswitches:4745785868377/variant/40587643355225": "gateron-ks-33-low-profile-banana",
+    "switchoddities:8941227507996": "gateron-ks-33-low-profile-banana",
+    "switchoddities:9498793476380": "gateron-ks-33-low-profile-silver",
+    "theremingoat:3003": "gateron-ks-33-low-profile-silver",
+    "switchoddities:9498810974492": "gateron-ks-33-low-profile-chocolate",
+    "theremingoat:2896": "gateron-ks-33-low-profile-chocolate",
+    "switchoddities:9498581041436": "gateron-ks-37b-magnetic-fox",
+    "theremingoat:3117": "gateron-ks-37b-magnetic-fox",
+    "switchoddities:9498569867548": "gateron-ks-20-dual-rail-magnetic-orange",
+    "switchoddities:8119075209500": "rantopad-orange-gateron-ks-1",
+    "theremingoat:722": "rantopad-orange-gateron-ks-1",
+    "theremingoat:46": "gateron-optical-silver",
+    "gateron:7066903478361/variant/40017397350489": "gateron-ks-9-g-pro-red",
+    "gateron:7066903478361/variant/40017397416025": "gateron-ks-9-g-pro-blue",
+    "gateron:7066903478361/variant/40017397448793": "gateron-ks-9-g-pro-brown",
+    "gateron:7066903478361/variant/40017397481561": "gateron-ks-9-g-pro-green",
+    "gateron:7066903478361/variant/40017397514329": "gateron-ks-9-g-pro-yellow",
+    "gateron:7066903478361/variant/40017397547097": "gateron-ks-9-g-pro-black",
+    "gateron:7288849858649/variant/40750542684249": "gateron-ks-9-g-pro-3-0-blue",
+    "switchoddities:8427036410140": "gateron-ks-9-g-pro-3-0-red",
+    "switchoddities:8427080974620": "gateron-ks-9-g-pro-3-0-brown",
+    "theremingoat:3376": "gateron-ks-9-g-pro-3-0-goldenrod-red",
+    "theremingoat:3377": "gateron-ks-9-g-pro-3-0-goldenrod-yellow",
+    "theremingoat:3379": "gateron-ks-9-g-pro-3-0-goldenrod-brown",
+    "theremingoat:3380": "gateron-ks-9-g-pro-3-0-goldenrod-blue",
+    "switchoddities:9508766286108": "huano-aries",
+    "theremingoat:1384": "gugu-ice-linear",
+    "theremingoat:1385": "gugu-ice-tactile",
+    "theremingoat:1477": "gazzew-boba-lt",
+    "theremingoat:2969": "huano-aries",
+    "theremingoat:3054": "hmx-snow-crash",
+    "theremingoat:3975": "yumo-d",
+    "theremingoat:4047": "hmx-cola",
+    "theremingoat:4187": "yumo-d",
+    "theremingoat:467": "hi-tek-725-lime-green",
+    "theremingoat:468": "hi-tek-725-tan",
+    "theremingoat:470": "hi-tek-725-sea-green",
+    "theremingoat:472": "hi-tek-725-black-clicky",
+    "theremingoat:540": "hi-tek-725-dark-grey",
+    "theremingoat:61": "mod-l-linear",
+    "theremingoat:62": "mod-m-linear",
+    "theremingoat:63": "mod-h-linear",
+    "theremingoat:64": "mod-l-tactile",
+    "theremingoat:65": "mod-m-tactile",
+    "theremingoat:66": "mod-h-tactile",
+    "theremingoat:681": "hi-tek-725-yellow"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -6912,9 +7082,6 @@
     "switches/designer-studio-taoyao": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-milky-black-ks-3-x1": {
-      "name": "Gateron Milky Black (KS-3-X1)"
-    },
     "switches/jwk-die-for-me": {
       "manufacturer": "JWK"
     },
@@ -6942,9 +7109,6 @@
     "switches/jwick-taro": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-milky-red-ks-3-x1": {
-      "name": "Gateron Milky Red (KS-3-X1)"
-    },
     "switches/sparkly-dp-purple-grain-gold": {
       "manufacturer": "Dongguan Grain Gold"
     },
@@ -6966,17 +7130,11 @@
     "switches/sotc": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-milky-brown-ks-3-x1": {
-      "name": "Gateron Milky Brown (KS-3-X1)"
-    },
     "switches/obsidian-l": {
       "manufacturer": "JWK"
     },
     "switches/chosfox-x-jwk-dd-jingle": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-milky-blue-ks-3-x1": {
-      "name": "Gateron Milky Blue (KS-3-X1)"
     },
     "switches/lichicx-green-mustard": {
       "manufacturer": "LICHICX"
@@ -6999,9 +7157,6 @@
     "switches/moyu-studio-ice-matcha": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-milky-green-ks-3-x1": {
-      "name": "Gateron Milky Green (KS-3-X1)"
-    },
     "switches/jwk-cw": {
       "manufacturer": "JWK"
     },
@@ -7013,9 +7168,6 @@
     },
     "switches/durock-blush": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-milky-clear-ks-3-x1": {
-      "name": "Gateron Milky Clear (KS-3-X1)"
     },
     "switches/chosfox-hanami-dango-green": {
       "manufacturer": "JWK"
@@ -7033,17 +7185,11 @@
     "switches/dustproof-banana-split": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-milky-yellow-ks-3-x1": {
-      "name": "Gateron Milky Yellow (KS-3-X1)"
-    },
     "switches/blue-lotus": {
       "manufacturer": "JWK"
     },
     "switches/white-lotus": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-black-ks-1": {
-      "name": "Gateron Black (KS-1)"
     },
     "switches/endless-summer": {
       "manufacturer": "JWK"
@@ -7066,12 +7212,6 @@
     "switches/ktt-macaron-purple-chinajoy-edition": {
       "name": "KTT Macaron Purple (ChinaJoy Edition)"
     },
-    "switches/gateron-red-ks-1": {
-      "name": "Gateron Red (KS-1)"
-    },
-    "switches/gateron-brown-ks-1": {
-      "name": "Gateron Brown (KS-1)"
-    },
     "switches/jwick-prism": {
       "manufacturer": "JWK"
     },
@@ -7081,17 +7221,11 @@
     "switches/molly-tactile": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-blue-ks-1": {
-      "name": "Gateron Blue (KS-1)"
-    },
     "switches/durock-geekmaker-light-blue": {
       "manufacturer": "JWK"
     },
     "switches/durock-geekmaker-light-yellow": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-green-ks-1": {
-      "name": "Gateron Green (KS-1)"
     },
     "switches/durock-geekmaker-light-purple": {
       "manufacturer": "JWK"
@@ -7114,35 +7248,14 @@
     "switches/smoky-durock-geekmaker-pink": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-clear-ks-1": {
-      "name": "Gateron Clear (KS-1)"
-    },
     "switches/43-studio-jing": {
       "manufacturer": "JWK",
       "name": "43 Studio Jing",
       "brand": "43 Studio",
       "switchType": "linear"
     },
-    "switches/gateron-yellow-ks-1": {
-      "name": "Gateron Yellow (KS-1)"
-    },
-    "switches/gateron-smd-black-ks-9": {
-      "name": "Gateron 'SMD' Black (KS-9)"
-    },
-    "switches/gateron-smd-red-ks-9": {
-      "name": "Gateron 'SMD' Red (KS-9)"
-    },
-    "switches/gateron-smd-brown-ks-9": {
-      "name": "Gateron 'SMD' Brown (KS-9)"
-    },
     "switches/jerrzi-blue-winglatch-full-black": {
       "name": "Jerrzi Blue (Winglatch, Full Black)"
-    },
-    "switches/gateron-smd-blue-ks-9": {
-      "name": "Gateron 'SMD' Blue (KS-9)"
-    },
-    "switches/gateron-smd-green-ks-9": {
-      "name": "Gateron 'SMD' Green (KS-9)"
     },
     "switches/kbdfans-t1-clear-kbdfans-stock": {
       "manufacturer": "JWK"
@@ -7158,9 +7271,6 @@
     },
     "switches/durock-smoky-t1-unbranded": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-smd-clear-ks-9": {
-      "name": "Gateron 'SMD' Clear (KS-9)"
     },
     "switches/keyspensory-jwk-carol": {
       "manufacturer": "JWK"
@@ -7183,26 +7293,14 @@
     "switches/durock-mocha-chocolate": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-smd-yellow-ks-9": {
-      "name": "Gateron 'SMD' Yellow (KS-9)"
-    },
     "switches/durock-he": {
       "manufacturer": "JWK"
     },
     "switches/cherry-mx-vintage-white": {
       "manufacturer": "Cherry"
     },
-    "switches/gateron-silent-black-ks-9": {
-      "name": "Gateron Silent Black (KS-9)"
-    },
     "switches/sw-cocoblack": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-silent-red-ks-9": {
-      "name": "Gateron Silent Red (KS-9)"
-    },
-    "switches/gateron-silent-brown-ks-9": {
-      "name": "Gateron Silent Brown (KS-9)"
     },
     "switches/jwk-axe": {
       "manufacturer": "JWK"
@@ -7278,29 +7376,8 @@
     "switches/geekmaker-light-yello": {
       "manufacturer": "JWK"
     },
-    "switches/gateron-silent-red-ks-3": {
-      "name": "Gateron Silent Red (KS-3)"
-    },
     "switches/43-studios-rara": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-black-ks-3": {
-      "name": "Gateron Black (KS-3)"
-    },
-    "switches/gateron-red-ks-3": {
-      "name": "Gateron Red (KS-3)"
-    },
-    "switches/gateron-brown-ks-3": {
-      "name": "Gateron Brown (KS-3)"
-    },
-    "switches/gateron-blue-ks-3": {
-      "name": "Gateron Blue (KS-3)"
-    },
-    "switches/gateron-clear-ks-3": {
-      "name": "Gateron Clear (KS-3)"
-    },
-    "switches/gateron-yellow-ks-3": {
-      "name": "Gateron Yellow (KS-3)"
     },
     "switches/marshmallow": {
       "manufacturer": "JWK"
@@ -7313,9 +7390,6 @@
     },
     "switches/transparent-jwk-giant": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-green-ks-3": {
-      "name": "Gateron Green (KS-3)"
     },
     "switches/moyu-black": {
       "manufacturer": "JWK"
@@ -7370,18 +7444,6 @@
       "manufacturer": "JWK"
     },
     "switches/tropical": {
-      "manufacturer": "JWK"
-    },
-    "switches/ffff-linear": {
-      "manufacturer": "JWK"
-    },
-    "switches/ffff-tactile": {
-      "manufacturer": "JWK"
-    },
-    "switches/ffff-linear-replacement-top": {
-      "manufacturer": "JWK"
-    },
-    "switches/ffff-tactile-replacement-top": {
       "manufacturer": "JWK"
     },
     "switches/c3-fierce-girl": {
@@ -7593,9 +7655,6 @@
       "designer": "Ruben Studio",
       "switchType": "tactile"
     },
-    "switches/hmx-cola-3-8mm": {
-      "name": "HMX Cola (3.8mm)"
-    },
     "switches/hmx-lanikai": {
       "name": "HMX Lanikai",
       "manufacturer": "HMX",
@@ -7645,24 +7704,6 @@
       "manufacturer": "KTT",
       "brand": "KTT",
       "switchType": "linear"
-    },
-    "switches/gateron-g-pro-3-0-white": {
-      "name": "Gateron G Pro 3.0 White"
-    },
-    "switches/gateron-g-pro-3-0-brown": {
-      "name": "Gateron G Pro 3.0 Brown"
-    },
-    "switches/gateron-g-pro-3-0-red": {
-      "name": "Gateron G Pro 3.0 Red"
-    },
-    "switches/gateron-g-pro-3-0-yellow": {
-      "name": "Gateron G Pro 3.0 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-3-0-black": {
-      "name": "Gateron G Pro 3.0 Black"
     },
     "switches/mmd-vivian": {
       "name": "MMD Vivian",
@@ -13097,18 +13138,6 @@
       "brand": "Gateron",
       "switchType": "linear"
     },
-    "switches/gateron-g-pro-2-0-yellow": {
-      "name": "Gateron G Pro 2.0 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-3-0-silver": {
-      "name": "Gateron G Pro 3.0 Silver",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
     "switches/gateron-green-apple": {
       "name": "Gateron Green Apple",
       "manufacturer": "Gateron",
@@ -13123,12 +13152,6 @@
     },
     "switches/gateron-magnetic-jade": {
       "name": "Gateron Magnetic Jade",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-milky-yellow": {
-      "name": "Gateron Milky Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -14219,18 +14242,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/gateron-black": {
-      "name": "Gateron Black",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-brown": {
-      "name": "Gateron Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
     "switches/gateron-cj-pom": {
       "name": "Gateron CJ POM",
       "manufacturer": "Gateron",
@@ -14310,18 +14321,6 @@
       "brand": "Gateron",
       "switchType": "linear"
     },
-    "switches/gateron-ks-20-dual-rail-magnetic-orange": {
-      "name": "Gateron KS-20 Dual-rail Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-33-low-profile-2-0-chocolate": {
-      "name": "Gateron KS-33 Low Profile 2.0 Chocolate",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
     "switches/gateron-ks-33-low-profile-banana-chocolate": {
       "name": "Gateron KS-33 Low Profile Banana Chocolate",
       "manufacturer": "Gateron",
@@ -14333,30 +14332,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
-    },
-    "switches/gateron-ks-37b-magnetic-fox": {
-      "name": "Gateron KS-37B Magnetic FOX",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-milky-pro-heavy": {
-      "name": "Gateron KS-3X1 Milky Pro Heavy",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-3x1-milky-pro-pink-silent": {
-      "name": "Gateron KS-3X1 Milky Pro Pink Silent",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-milky-pro-purple-silent": {
-      "name": "Gateron KS-3X1 Milky Pro Purple Silent",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
     },
     "switches/gateron-lemon-seabreeze": {
       "name": "Gateron Lemon Seabreeze",
@@ -14454,18 +14429,6 @@
       "brand": "Gateron",
       "switchType": "linear"
     },
-    "switches/gateron-milky-red-pro": {
-      "name": "Gateron Milky Red Pro",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-milky-yellow-black-bottom-pro": {
-      "name": "Gateron Milky Yellow Black Bottom Pro",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
     "switches/gateron-mint-smoothie-silent": {
       "name": "Gateron Mint Smoothie Silent",
       "manufacturer": "Gateron",
@@ -14547,12 +14510,6 @@
     },
     "switches/gateron-pro-milky-yellow-1-0": {
       "name": "Gateron Pro Milky Yellow 1.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-red": {
-      "name": "Gateron Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -14729,18 +14686,6 @@
       "brand": "Haimu",
       "switchType": "linear"
     },
-    "switches/haimu-raw-with-led-diffuser": {
-      "name": "Haimu Raw - With LED Diffuser",
-      "manufacturer": "Haimu",
-      "brand": "Geon",
-      "switchType": "linear"
-    },
-    "switches/haimu-raw-without-led-diffuser": {
-      "name": "Haimu Raw - Without LED Diffuser",
-      "manufacturer": "Haimu",
-      "brand": "Geon",
-      "switchType": "linear"
-    },
     "switches/haimu-swan": {
       "name": "Haimu Swan",
       "manufacturer": "Haimu",
@@ -14804,26 +14749,6 @@
       "brand": "TTC",
       "switchType": "linear"
     },
-    "switches/hi-tek-725-black-two-eye": {
-      "name": "Hi-Tek 725 Black (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "tactile"
-    },
-    "switches/hi-tek-725-grey-two-eye": {
-      "name": "Hi-Tek 725 Grey (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "tactile"
-    },
-    "switches/hi-tek-725-white-one-eye-gundam": {
-      "name": "Hi-Tek 725 White (One Eye) (Gundam)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "linear"
-    },
-    "switches/hi-tek-725-white-two-eye": {
-      "name": "Hi-Tek 725 White (Two Eye)",
-      "manufacturer": "Hi-Tek",
-      "switchType": "linear"
-    },
     "switches/higround-dreamland": {
       "name": "HiGround Dreamland",
       "manufacturer": "Grain Gold",
@@ -14859,16 +14784,6 @@
       "brand": "HMX",
       "designer": "XL Lab",
       "switchType": "tactile"
-    },
-    "switches/hmx-cola-black": {
-      "name": "HMX Cola - Black",
-      "brand": "HMX",
-      "switchType": "linear"
-    },
-    "switches/hmx-cola-red": {
-      "name": "HMX Cola - Red",
-      "brand": "HMX",
-      "switchType": "linear"
     },
     "switches/hmx-dino": {
       "name": "HMX Dino",
@@ -16038,42 +15953,6 @@
       "designer": "Wuque Studio",
       "switchType": "linear"
     },
-    "switches/gateron-ks-3x47-milky-top-black-bottom": {
-      "name": "Gateron KS-3X47 Milky Top Black Bottom",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x47-milky-top-black-bottom-blue": {
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x47-milky-top-black-bottom-brown": {
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Brown",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-3x47-milky-top-black-bottom-green": {
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Green",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x47-milky-top-black-bottom-red": {
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Red",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x47-milky-top-black-bottom-yellow": {
-      "name": "Gateron KS-3X47 Milky Top Black Bottom - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
     "switches/gateron-phantom-blue": {
       "name": "Gateron Phantom Blue",
       "manufacturer": "Gateron",
@@ -16340,20 +16219,6 @@
       "designer": "Dangkeebs",
       "switchType": "tactile"
     },
-    "switches/strawberry-milk-ice-linear": {
-      "name": "Strawberry Milk Ice Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "linear"
-    },
-    "switches/strawberry-milk-ice-tactile": {
-      "name": "Strawberry Milk Ice Tactile",
-      "manufacturer": "Tecsee",
-      "brand": "Dangkeebs",
-      "designer": "Dangkeebs",
-      "switchType": "tactile"
-    },
     "switches/green-jacket-tactile": {
       "name": "Green Jacket Tactile",
       "manufacturer": "Tecsee",
@@ -16581,18 +16446,6 @@
       "brand": "FL.CMMK",
       "switchType": "tactile"
     },
-    "switches/gateron-blue-optical": {
-      "name": "Gateron Blue Optical",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "clicky"
-    },
-    "switches/gateron-brown-optical": {
-      "name": "Gateron Brown Optical",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
     "switches/gateron-chocolate-smoothie": {
       "name": "Gateron Chocolate Smoothie",
       "manufacturer": "Gateron",
@@ -16619,42 +16472,6 @@
     },
     "switches/gateron-full-pom-smoothie-strawberry": {
       "name": "Gateron Full POM Smoothie Strawberry",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-black-silent": {
-      "name": "Gateron KS-3 Black Silent",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-milky-pro-yellow": {
-      "name": "Gateron KS-3 Milky Pro - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-8-yellow": {
-      "name": "Gateron KS-8 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-9-brown-pro-2-0": {
-      "name": "Gateron KS-9 Brown PRO 2.0",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-9-pro-2-0-yellow": {
-      "name": "Gateron KS-9 Pro 2.0 Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-9-silent-2-0-yellow": {
-      "name": "Gateron KS-9 Silent 2.0 Yellow",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
@@ -17002,12 +16819,6 @@
       "brand": "Akko",
       "switchType": "tactile"
     },
-    "switches/gateron-dual-rail-magnetic-orange": {
-      "name": "Gateron Dual-Rail Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
     "switches/ws-dash-he-magnetic": {
       "name": "WS Dash HE Magnetic",
       "brand": "Wuque Studio",
@@ -17132,11 +16943,6 @@
       "brand": "Gateron",
       "switchType": "tactile",
       "name": "Gateron Longjing Tea"
-    },
-    "switches/hi-tek-725-white-one-eye": {
-      "manufacturer": "Hi-Tek",
-      "name": "Hi-Tek 725 White (One Eye)",
-      "switchType": "linear"
     },
     "switches/huano-dustproof-black": {
       "manufacturer": "Huano",
@@ -17362,9 +17168,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/ajazz-violet-clear-top-black-bottom": {
-      "switchType": "clicky"
-    },
     "switches/akko-astroaim": {
       "switchType": "linear"
     },
@@ -17544,9 +17347,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/bsun-brown": {
-      "switchType": "tactile"
-    },
     "switches/bsun-dustproof-brown": {
       "name": "BSUN Dustproof Brown",
       "variants": null,
@@ -17717,36 +17517,8 @@
     "switches/dareu-optical-colorful-red": {
       "switchType": "linear"
     },
-    "switches/dareu-purple-gold": {
-      "name": "DareU Purple Gold",
-      "variants": [
-        "V1",
-        "V2"
-      ],
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/dareu-sakura-candy": {
       "switchType": "linear"
-    },
-    "switches/dareu-sky-blue": {
-      "name": "DareU Sky Blue",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4"
-      ],
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
     },
     "switches/dareu-sky-magnetic": {
       "switchType": "linear"
@@ -17800,9 +17572,6 @@
       "switchType": "linear"
     },
     "switches/everglide-glutinous-rice-magnetic": {
-      "switchType": "linear"
-    },
-    "switches/everglide-haimu-jade-jasper": {
       "switchType": "linear"
     },
     "switches/everglide-haimu-magnetic-pansy": {
@@ -17880,22 +17649,10 @@
     "switches/ganss-lunar-silver": {
       "switchType": "linear"
     },
-    "switches/gateron-cap-golden-brown-ks-26": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-cap-golden-yellow-ks-26": {
-      "switchType": "linear"
-    },
     "switches/gateron-creamy": {
       "switchType": "tactile"
     },
-    "switches/gateron-deepping-4mm": {
-      "switchType": "linear"
-    },
     "switches/gateron-dual-rail-magnetic-jade-mini-e-switch": {
-      "switchType": "linear"
-    },
-    "switches/gateron-dual-rail-orange-hall-effect": {
       "switchType": "linear"
     },
     "switches/gateron-everfree-curry": {
@@ -17910,34 +17667,7 @@
     "switches/gateron-firework": {
       "switchType": "linear"
     },
-    "switches/gateron-fox-hall-effect": {
-      "switchType": "linear"
-    },
     "switches/gateron-full-pom-low-profile-jade-pro-he": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-g-pro-2-0-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-g-pro-2-0-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-silver-dual-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-silver-single-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-white-dual-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-white-single-stage-spring": {
       "switchType": "linear"
     },
     "switches/gateron-goldenrod-pro-3-0-blue": {
@@ -17947,12 +17677,6 @@
       "switchType": "tactile"
     },
     "switches/gateron-goldenrod-pro-3-0-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-goldenrod-pro-3-0-silver": {
-      "switchType": "linear"
-    },
-    "switches/gateron-goldenrod-pro-3-0-white": {
       "switchType": "linear"
     },
     "switches/gateron-goldenrod-pro-3-0-yellow": {
@@ -17970,62 +17694,11 @@
     "switches/gateron-jade-max-he": {
       "switchType": "linear"
     },
-    "switches/gateron-ks-3-clear-silent": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-silent-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-33-banana": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-33-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-33-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-33-chocolate": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-33-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-33-silver": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x47-clear": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x47-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x47-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-8-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-8-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-9-blue": {
-      "switchType": "clicky"
-    },
     "switches/gateron-magnetic-jade-sapphire": {
       "switchType": "linear"
     },
     "switches/gateron-north-pole-brown-v2-no-rubber-thingy": {
       "switchType": "tactile"
-    },
-    "switches/gateron-silent-black": {
-      "switchType": "linear"
     },
     "switches/gateron-smoothie-banana": {
       "switchType": "tactile"
@@ -18038,9 +17711,6 @@
     },
     "switches/gazzew-boba-u4": {
       "switchType": "tactile"
-    },
-    "switches/geon-haimu-raw": {
-      "switchType": "linear"
     },
     "switches/geon-hg-black": {
       "switchType": "linear"
@@ -18197,9 +17867,6 @@
       "switchType": "linear"
     },
     "switches/huano-american-rose-garden": {
-      "switchType": "linear"
-    },
-    "switches/huano-aries-flaw-version": {
       "switchType": "linear"
     },
     "switches/huano-bipolar-blue": {
@@ -18600,9 +18267,6 @@
       "switchType": "linear"
     },
     "switches/ktek-constellation-aquarius-magnetic": {
-      "switchType": "linear"
-    },
-    "switches/ktt-bamboo-gleam-maybe": {
       "switchType": "linear"
     },
     "switches/ktt-blue": {
@@ -19075,9 +18739,6 @@
     "switches/ranked-rs-2-water-ballet": {
       "switchType": "linear"
     },
-    "switches/rantopad-orange-gateron-ks-1": {
-      "switchType": "linear"
-    },
     "switches/rapoo-blue": {
       "name": "Rapoo Blue",
       "variants": null,
@@ -19394,9 +19055,6 @@
     },
     "switches/ukeebs-snowyyellow": {
       "switchType": "tactile"
-    },
-    "switches/unholy-pandas-clear-spring": {
-      "switchType": "linear"
     },
     "switches/unionwell-magnetic-extreme": {
       "switchType": "linear"
@@ -19815,177 +19473,6 @@
     "switches/durock-mocha-silk-and-chocolate-tactile": {
       "switchType": "tactile"
     },
-    "switches/gateron-g-pro-2-0-silver-two-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-2-0-white-two-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-3-0-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-g-pro-3-0-silver-two-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-3-0-white-two-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-g-pro-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-g-pro-green": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-g-pro-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-silver-two-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-white": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-white-two-stage-spring": {
-      "switchType": "linear"
-    },
-    "switches/gateron-g-pro-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-full-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-full-black-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3-full-black-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-3-full-black-green": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3-full-black-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-full-black-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3-milky-pro-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-33-low-profile-2-0-mechanical-banana": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-33-low-profile-2-0-mechanical-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-33-low-profile-2-0-mechanical-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-33-low-profile-2-0-mechanical-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x-full-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x-full-black-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x-full-black-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-3x-full-black-green": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x-full-black-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x-full-black-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-full-milky-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-full-milky-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x1-full-milky-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-3x1-full-milky-green": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x1-full-milky-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-full-milky-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-milky-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-milky-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x1-milky-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-3x1-milky-green": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-3x1-milky-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-3x1-milky-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-8-mechanical-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-8-mechanical-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-8-mechanical-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-ks-8-mechanical-green": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-ks-8-mechanical-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-ks-8-mechanical-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-low-profile-2-0-mechanical-banana": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-low-profile-2-0-mechanical-blue": {
-      "switchType": "clicky"
-    },
-    "switches/gateron-low-profile-2-0-mechanical-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-low-profile-2-0-mechanical-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-milky-black": {
-      "switchType": "linear"
-    },
-    "switches/gateron-milky-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-milky-yellow-with-black-bottom": {
-      "switchType": "linear"
-    },
-    "switches/gateron-north-pole-2-0-box-brown": {
-      "switchType": "tactile"
-    },
     "switches/gateron-north-pole-2-0-box-red": {
       "switchType": "linear"
     },
@@ -19993,18 +19480,6 @@
       "switchType": "linear"
     },
     "switches/gateron-north-pole-2-0-yellow": {
-      "switchType": "linear"
-    },
-    "switches/gateron-silent-brown": {
-      "switchType": "tactile"
-    },
-    "switches/gateron-silent-clear": {
-      "switchType": "linear"
-    },
-    "switches/gateron-silent-red": {
-      "switchType": "linear"
-    },
-    "switches/gateron-silent-white": {
       "switchType": "linear"
     },
     "switches/gateron-silent-yellow": {
@@ -20858,21 +20333,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/bsun-holy-red-panda": {
-      "name": "BSUN Holy Red Panda",
-      "variants": [
-        "V1 / Clear Stem",
-        "V1 / True Stem",
-        "V2 / Clear Stem",
-        "V2 / True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/bsun-red-panda": {
       "name": "BSUN Red Panda",
       "variants": [
@@ -21075,19 +20535,6 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": true
-    },
-    "switches/dareu-sky": {
-      "name": "DareU Sky",
-      "variants": [
-        "V1",
-        "V2"
-      ],
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
     },
     "switches/duhuk-lumia-matcha": {
       "name": "Duhuk Lumia Matcha",
@@ -21335,45 +20782,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/gateron-cap-blue": {
-      "name": "Gateron Cap Blue",
-      "variants": [
-        "V1",
-        "V2"
-      ],
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/gateron-cap-brown": {
-      "name": "Gateron Cap Brown",
-      "variants": [
-        "Milky Housing (Version Unspecified)",
-        "V2"
-      ],
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/gateron-cap-brown-chocolate": {
-      "name": "Gateron Cap Brown (Chocolate)",
-      "variants": [
-        "V1",
-        "V2"
-      ],
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/gateron-giant": {
       "name": "Gateron Giant",
       "variants": [
@@ -21402,45 +20810,6 @@
       "variants": [
         "V1",
         "V2"
-      ],
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/gateron-ks-1-blue": {
-      "name": "Gateron KS-1 Blue",
-      "variants": [
-        "Black Housing",
-        "Milky Housing"
-      ],
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/gateron-ks-1-brown": {
-      "name": "Gateron KS-1 Brown",
-      "variants": [
-        "Black Housing",
-        "Milky Housing"
-      ],
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/gateron-ks-1-red": {
-      "name": "Gateron KS-1 Red",
-      "variants": [
-        "Black Housing",
-        "Milky Housing"
       ],
       "manufacturer": "Gateron",
       "brand": "Gateron",
@@ -21716,20 +21085,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/hmx-cola": {
-      "name": "HMX Cola",
-      "variants": [
-        "37g",
-        "42g",
-        "45g"
-      ],
-      "manufacturer": "HMX",
-      "brand": null,
-      "designer": "WY",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/hmx-cream-tea": {
       "name": "HMX Cream Tea",
       "variants": [
@@ -21914,47 +21269,6 @@
       "brand": null,
       "designer": "80Retros",
       "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/holy-bsun-clear-panda": {
-      "name": "Holy BSUN Clear Panda",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/holy-gsus-panda": {
-      "name": "Holy GSUS Panda",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/holy-invyr-panda": {
-      "name": "Holy Invyr Panda",
-      "variants": [
-        "V1 / Clear Stem",
-        "V1 / True Stem",
-        "V3 / Clear Stem",
-        "V3 / True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
       "switchFamily": "MX",
       "isLowProfile": null
     },
@@ -23738,58 +23052,6 @@
       ],
       "manufacturer": "Haimu",
       "brand": "XLLAB",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/yok-holy-mint-panda": {
-      "name": "YOK Holy Mint Panda",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/yok-holy-polar-panda": {
-      "name": "YOK Holy Polar Panda",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/yok-holy-red-panda": {
-      "name": "YOK Holy Red Panda",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/yok-holy-trash-panda": {
-      "name": "YOK Holy Trash Panda",
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ],
-      "manufacturer": null,
-      "brand": null,
       "designer": null,
       "switchType": "tactile",
       "switchFamily": "MX",
@@ -25954,80 +25216,6 @@
         "V2"
       ]
     },
-    "switches/bsun-unholy-panda-stem": {
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "BSUN Unholy Panda ( Stem)",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/c3-x-tkc-tangerine-dark": {
-      "manufacturer": "JWK",
-      "brand": "C3Equalz",
-      "designer": "C3Equalz x TKC",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "C3 x TKC Tangerine Dark",
-      "variants": null
-    },
-    "switches/c3-x-tkc-tangerine-light": {
-      "manufacturer": "JWK",
-      "brand": "C3Equalz",
-      "designer": "C3Equalz x TKC",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "C3 x TKC Tangerine Light",
-      "variants": null
-    },
-    "switches/c3-tangerine": {
-      "manufacturer": null,
-      "brand": "C3Equalz",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "C3 Tangerine",
-      "variants": [
-        "V1",
-        "V2 / 62g",
-        "V2 / 67g",
-        "V2.2 / 67g"
-      ]
-    },
-    "switches/c3-tangerine-black-bottom": {
-      "manufacturer": "Gateron",
-      "brand": "C3Equalz",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "C3 Tangerine (Black Bottom)",
-      "variants": [
-        "V1",
-        "V1.5"
-      ]
-    },
-    "switches/c3-tangerine-milky-bottom": {
-      "manufacturer": "Gateron",
-      "brand": "C3Equalz",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "C3 Tangerine (Milky Bottom)",
-      "variants": [
-        "V1",
-        "V1.5"
-      ]
-    },
     "switches/chosfox-white-fox": {
       "manufacturer": "HMX",
       "brand": null,
@@ -26128,63 +25316,6 @@
       "isLowProfile": null,
       "name": "DareU Candy Pink",
       "variants": null
-    },
-    "switches/dareu-purple-gold-pro": {
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "DareU Purple Gold (Pro)",
-      "variants": [
-        "V1",
-        "V2",
-        "V3"
-      ]
-    },
-    "switches/dareu-sky-sky-blue": {
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "DareU Sky (Sky Blue )",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4",
-        "V5"
-      ]
-    },
-    "switches/dareu-sky-heavy-blue": {
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "DareU Sky Heavy Blue",
-      "variants": [
-        "V1",
-        "V2",
-        "V3"
-      ]
-    },
-    "switches/dareu-violet-purple-gold": {
-      "manufacturer": null,
-      "brand": "DareU",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "DareU Violet/Purple Gold",
-      "variants": [
-        "V1",
-        "V2"
-      ]
     },
     "switches/duhuk-lumia-matcha-pro": {
       "manufacturer": null,
@@ -26667,227 +25798,6 @@
         "V2"
       ]
     },
-    "switches/gateron-cap-golden-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron CAP Golden Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-golden-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron CAP Golden Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-milky-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap Milky Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-blue": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Blue",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-golden-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Golden-Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-golden-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Golden-Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-milky-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Milky-Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-milky-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Milky-Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-cap-red": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Cap Red",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-milky-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Milky-Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-milky-brown-golden-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron CAP Milky Brown/Golden Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-milky-yellow-golden-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron CAP Milky Yellow/Golden Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-red": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap - Red",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-yellow-milky-top": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap Yellow (Milky Top)",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-yellow-yellow-top": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap Yellow (Yellow Top)",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-cap-yellow-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron Cap Yellow (Yellow)",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
     "switches/gateron-gopolar-azure-dragon": {
       "manufacturer": "Gateron",
       "brand": "Gateron",
@@ -26981,110 +25891,6 @@
         "V2"
       ]
     },
-    "switches/gateron-ks-22-optical-black": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - Black",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-ks-22-optical-blue": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - Blue",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-ks-22-optical-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-ks-22-optical-red": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - Red",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-ks-22-optical-silver": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - Silver",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-ks-22-optical-white": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - White",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-ks-22-optical-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron KS-22 Optical - Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-north-pole-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron North Pole Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
     "switches/gateron-north-pole-red": {
       "manufacturer": "Gateron",
       "brand": "Gateron",
@@ -27111,19 +25917,6 @@
         "V2"
       ]
     },
-    "switches/gateron-north-pole-brown-no-band": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gateron North Pole Brown (No Band)",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
     "switches/gateron-north-pole-yellow": {
       "manufacturer": "Gateron",
       "brand": "Gateron",
@@ -27132,97 +25925,6 @@
       "switchFamily": "MX",
       "isLowProfile": null,
       "name": "Gateron North Pole Yellow",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-black": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical Black",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-red": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical Red",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-blue": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical - Blue",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-brown": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical - Brown",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-silver": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical - Silver",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-white": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical - White",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/gateron-optical-yellow": {
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "Optical",
-      "isLowProfile": null,
-      "name": "Gateron Optical Yellow",
       "variants": [
         "V1",
         "V2"
@@ -27278,19 +25980,6 @@
       "variants": [
         "V1",
         "V2"
-      ]
-    },
-    "switches/gazzew-boba-lt-thock": {
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Gazzew Boba LT ( Thock)",
-      "variants": [
-        "55g",
-        "65g"
       ]
     },
     "switches/ggboy-mw-fire-phoenix": {
@@ -30265,26 +28954,26 @@
       ]
     },
     "switches/zeal-clickiez-linear": {
+      "name": "Zeal Clickiez Linear",
       "manufacturer": "Gateron",
       "brand": null,
       "designer": null,
       "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": null,
-      "name": "Zeal Clickiez (Linear)",
       "variants": [
         "40g",
         "75g"
       ]
     },
     "switches/zeal-clickiez-tactile": {
+      "name": "Zeal Clickiez Tactile",
       "manufacturer": "Gateron",
       "brand": null,
       "designer": null,
       "switchType": "tactile",
       "switchFamily": "MX",
       "isLowProfile": null,
-      "name": "Zeal Clickiez (Tactile)",
       "variants": [
         "40g",
         "75g"
@@ -31693,18 +30382,6 @@
       "material": "ABS",
       "variants": null
     },
-    "switches/gateron-ks-9-g-pro-3-0-black": {
-      "name": "Gateron KS-9 G Pro 3.0 Black",
-      "variants": null
-    },
-    "switches/gateron-ks-9-g-pro-3-0-silver": {
-      "name": "Gateron KS-9 G Pro 3.0 Silver",
-      "variants": null
-    },
-    "switches/gateron-ks-9-g-pro-3-0-yellow": {
-      "name": "Gateron KS-9 G Pro 3.0 Yellow",
-      "variants": null
-    },
     "switches/primekb-t1": {
       "name": "PrimeKB T1",
       "manufacturer": "JWK",
@@ -31826,19 +30503,6 @@
       "switchFamily": "MX",
       "isLowProfile": null,
       "variants": null
-    },
-    "switches/cherry-mx-hyperglide-brown": {
-      "name": "Cherry MX Hyperglide - (Brown)",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "3-pin",
-        "5-pin"
-      ]
     },
     "switches/cherry-mx-hyperglide-rgb-black": {
       "name": "Cherry MX Hyperglide RGB Black",
@@ -32026,19 +30690,6 @@
         "5-pin"
       ]
     },
-    "switches/gateron-jupiter-banana-two-stage-spring": {
-      "name": "Gateron Jupiter - Banana (Two-Stage Spring)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "3-pin",
-        "5-pin"
-      ]
-    },
     "switches/gateron-jupiter-brown": {
       "name": "Gateron Jupiter Brown",
       "manufacturer": "Gateron",
@@ -32103,84 +30754,6 @@
       "variants": [
         "Clear Top / White Bottom",
         "Full Black Housing"
-      ]
-    },
-    "switches/holy-bsun-blue-panda": {
-      "name": "Holy BSUN Blue Panda",
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    "switches/holy-bsun-green-panda": {
-      "name": "Holy BSUN Green Panda",
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    "switches/holy-bsun-red-panda": {
-      "name": "Holy BSUN Red Panda",
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    "switches/holy-bsun-white-panda": {
-      "name": "Holy BSUN White Panda",
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    "switches/holy-bsun-yellow-panda": {
-      "name": "Holy BSUN Yellow Panda",
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Stem",
-        "True Stem"
-      ]
-    },
-    "switches/holy-bsun-translucent-panda": {
-      "name": "Holy BSUN Translucent Panda",
-      "manufacturer": null,
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Stem",
-        "True Stem"
       ]
     },
     "switches/ktt-mango-sago": {
@@ -32248,7 +30821,7 @@
       ]
     },
     "switches/kailh-clione-limacina-linear": {
-      "name": "Kailh Clione Limacina (Linear)",
+      "name": "Kailh Clione Limacina Linear",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "designer": null,
@@ -32258,7 +30831,7 @@
       "variants": null
     },
     "switches/kailh-clione-limacina-tactile": {
-      "name": "Kailh Clione Limacina (Tactile)",
+      "name": "Kailh Clione Limacina Tactile",
       "manufacturer": "Kailh",
       "brand": "Kailh",
       "designer": null,
@@ -32891,6 +31464,1477 @@
     },
     "keycaps/work-louder-wrk": {
       "brand": "Work Louder"
+    },
+    "switches/ktt-bamboo-gleam": {
+      "name": "KTT Bamboo Gleam",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ajazz-violet": {
+      "name": "Ajazz Violet",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/blue-velvet-linear": {
+      "name": "Blue Velvet Linear",
+      "manufacturer": "Tecsee",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/blue-velvet-tactile": {
+      "name": "Blue Velvet Tactile",
+      "manufacturer": "Tecsee",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/cherry-mx-hyperglide-brown": {
+      "name": "Cherry MX Hyperglide Brown",
+      "manufacturer": "Cherry",
+      "brand": "Cherry",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "3-pin",
+        "5-pin"
+      ]
+    },
+    "switches/bsun-brown": {
+      "name": "BSUN Brown",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Black Bottom",
+        "Cream Bottom",
+        "White Bottom"
+      ]
+    },
+    "switches/bsun-yellow": {
+      "name": "BSUN Yellow",
+      "manufacturer": "BSUN",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Top / White Bottom",
+        "Full Black Housing"
+      ]
+    },
+    "switches/bsun-dark-brown": {
+      "name": "BSUN Dark Brown",
+      "manufacturer": "BSUN",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/bsun-green": {
+      "name": "BSUN Green",
+      "manufacturer": "BSUN",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/c3-tangerine": {
+      "name": "C3 Tangerine",
+      "manufacturer": null,
+      "brand": "C3Equalz",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1 / 67g / Black Bottom",
+        "V1.5 / 62g / Milky Bottom",
+        "V1.5 / 67g / Black Bottom",
+        "V2 / 62g",
+        "V2 / 67g",
+        "V2.2 / 67g"
+      ]
+    },
+    "switches/dk-strawberry-milk-linear": {
+      "name": "DK Strawberry Milk Linear",
+      "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Ice / Clear Housing",
+        "Milk / White Housing / Pink Stem",
+        "Strawberry / Pink Housing / White Stem"
+      ]
+    },
+    "switches/dk-strawberry-milk-tactile": {
+      "name": "DK Strawberry Milk Tactile",
+      "manufacturer": "Tecsee",
+      "brand": "Dangkeebs",
+      "designer": "Dangkeebs",
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Ice / Clear Housing",
+        "Milk / White Housing / Pink Stem",
+        "Strawberry / Pink Housing / White Stem"
+      ]
+    },
+    "switches/epicgear-purple": {
+      "name": "EpicGear Purple",
+      "manufacturer": null,
+      "brand": "EpicGear",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ffff-linear": {
+      "name": "FFFF Linear",
+      "manufacturer": "JWK",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ffff-tactile": {
+      "name": "FFFF Tactile",
+      "manufacturer": "JWK",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hori-edge-blue": {
+      "name": "HORI Edge Blue",
+      "manufacturer": null,
+      "brand": "HORI",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/geon-haimu-raw": {
+      "name": "Geon Haimu Raw",
+      "manufacturer": "Haimu",
+      "brand": "Geon",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/dareu-purple-gold": {
+      "name": "DareU Purple Gold",
+      "manufacturer": null,
+      "brand": "DareU",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1",
+        "V2",
+        "V3 / Pro"
+      ]
+    },
+    "switches/everglide-haimu-jade": {
+      "name": "Everglide Haimu Jade",
+      "manufacturer": "Haimu",
+      "brand": "Everglide",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-cap-brown": {
+      "name": "Gateron CAP Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1 / Golden (Chocolate)",
+        "V2 / Black Crystal",
+        "V2 / Clear Top / White Bottom",
+        "V2 / Golden (Chocolate)",
+        "V2 / Milky"
+      ]
+    },
+    "switches/gateron-cap-yellow": {
+      "name": "Gateron CAP Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1 / Golden",
+        "V1 / Milky",
+        "V2 / Black Crystal",
+        "V2 / Golden",
+        "V2 / Milky"
+      ]
+    },
+    "switches/gateron-deepping": {
+      "name": "Gateron Deepping",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": "Swagkeys",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "3.7mm",
+        "4.0mm"
+      ]
+    },
+    "switches/gateron-cap-blue": {
+      "name": "Gateron CAP Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V2 / Black Crystal",
+        "V2 / Clear Top / White Bottom"
+      ]
+    },
+    "switches/gateron-cap-red": {
+      "name": "Gateron CAP Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V2 / Black Crystal",
+        "V2 / Clear Top / White Bottom"
+      ]
+    },
+    "switches/gateron-cap-silver": {
+      "name": "Gateron CAP Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-cap-silent-red": {
+      "name": "Gateron CAP Silent Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-jupiter-banana": {
+      "name": "Gateron Jupiter Banana",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "3-pin",
+        "5-pin"
+      ]
+    },
+    "switches/gateron-kangaroo-ink": {
+      "name": "Gateron Kangaroo Ink",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Monstargears",
+        "NovelKeys"
+      ]
+    },
+    "switches/gateron-north-pole-brown": {
+      "name": "Gateron North Pole Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V2 / With Band",
+        "V2 / Without Band"
+      ]
+    },
+    "switches/gateron-root-beer-float": {
+      "name": "Gateron Root Beer Float",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-1-black": {
+      "name": "Gateron KS-1 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-1-blue": {
+      "name": "Gateron KS-1 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Black Housing",
+        "Milky Housing"
+      ]
+    },
+    "switches/gateron-ks-1-brown": {
+      "name": "Gateron KS-1 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Black Housing",
+        "Milky Housing"
+      ]
+    },
+    "switches/gateron-ks-1-clear": {
+      "name": "Gateron KS-1 Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-1-green": {
+      "name": "Gateron KS-1 Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-1-red": {
+      "name": "Gateron KS-1 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Black Housing",
+        "Milky Housing"
+      ]
+    },
+    "switches/gateron-ks-1-yellow": {
+      "name": "Gateron KS-1 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-33-low-profile-red": {
+      "name": "Gateron KS-33 Low Profile Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-33-low-profile-blue": {
+      "name": "Gateron KS-33 Low Profile Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-33-low-profile-brown": {
+      "name": "Gateron KS-33 Low Profile Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-33-low-profile-banana": {
+      "name": "Gateron KS-33 Low Profile Banana",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-33-low-profile-silver": {
+      "name": "Gateron KS-33 Low Profile Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-33-low-profile-chocolate": {
+      "name": "Gateron KS-33 Low Profile Chocolate",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-black": {
+      "name": "Gateron KS-22 Optical Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-optical-black": {
+      "name": "Gateron Optical Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-blue": {
+      "name": "Gateron KS-22 Optical Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-optical-blue": {
+      "name": "Gateron Optical Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-brown": {
+      "name": "Gateron KS-22 Optical Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-optical-brown": {
+      "name": "Gateron Optical Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-red": {
+      "name": "Gateron KS-22 Optical Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-optical-red": {
+      "name": "Gateron Optical Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-yellow": {
+      "name": "Gateron KS-22 Optical Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-optical-yellow": {
+      "name": "Gateron Optical Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-silver": {
+      "name": "Gateron KS-22 Optical Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-optical-silver": {
+      "name": "Gateron Optical Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-22-optical-white": {
+      "name": "Gateron KS-22 Optical White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-black": {
+      "name": "Gateron KS-3 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-8-black": {
+      "name": "Gateron KS-8 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-black": {
+      "name": "Gateron KS-9 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-blue": {
+      "name": "Gateron KS-3 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-8-blue": {
+      "name": "Gateron KS-8 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-blue": {
+      "name": "Gateron KS-9 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-brown": {
+      "name": "Gateron KS-3 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-8-brown": {
+      "name": "Gateron KS-8 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-brown": {
+      "name": "Gateron KS-9 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-clear": {
+      "name": "Gateron KS-3 Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-9-clear": {
+      "name": "Gateron KS-9 Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-green": {
+      "name": "Gateron KS-3 Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-8-green": {
+      "name": "Gateron KS-8 Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-green": {
+      "name": "Gateron KS-9 Green",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-red": {
+      "name": "Gateron KS-3 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-8-red": {
+      "name": "Gateron KS-8 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-red": {
+      "name": "Gateron KS-9 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-silent-black": {
+      "name": "Gateron KS-3 Silent Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-silent-black": {
+      "name": "Gateron KS-9 Silent Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-silent-brown": {
+      "name": "Gateron KS-3 Silent Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-silent-brown": {
+      "name": "Gateron KS-9 Silent Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-silent-red": {
+      "name": "Gateron KS-3 Silent Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-silent-red": {
+      "name": "Gateron KS-9 Silent Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-silent-white": {
+      "name": "Gateron KS-3 Silent White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-silent-white": {
+      "name": "Gateron KS-9 Silent White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-yellow": {
+      "name": "Gateron KS-3 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "KS-3 / Full Black Housing",
+        "KS-3X1 / Full Milky Housing",
+        "KS-3X47 / Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-8-yellow": {
+      "name": "Gateron KS-8 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-yellow": {
+      "name": "Gateron KS-9 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-20-dual-rail-magnetic-orange": {
+      "name": "Gateron KS-20 Dual-Rail Magnetic Orange",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-2-0-black": {
+      "name": "Gateron KS-9 G Pro 2.0 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-2-0-blue": {
+      "name": "Gateron KS-9 G Pro 2.0 Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-2-0-brown": {
+      "name": "Gateron KS-9 G Pro 2.0 Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-2-0-red": {
+      "name": "Gateron KS-9 G Pro 2.0 Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-2-0-silver": {
+      "name": "Gateron KS-9 G Pro 2.0 Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    "switches/gateron-ks-9-g-pro-2-0-white": {
+      "name": "Gateron KS-9 G Pro 2.0 White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    "switches/gateron-ks-9-g-pro-2-0-yellow": {
+      "name": "Gateron KS-9 G Pro 2.0 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-3-0-black": {
+      "name": "Gateron KS-9 G Pro 3.0 Black",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-3-0-blue": {
+      "switchType": "clicky",
+      "name": "Gateron KS-9 G Pro 3.0 Blue"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-brown": {
+      "name": "Gateron KS-9 G Pro 3.0 Brown"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-goldenrod-blue": {
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Blue"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-goldenrod-brown": {
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Brown"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-goldenrod-red": {
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Red"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-goldenrod-yellow": {
+      "name": "Gateron KS-9 G Pro 3.0 Goldenrod Yellow"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-red": {
+      "name": "Gateron KS-9 G Pro 3.0 Red"
+    },
+    "switches/gateron-ks-9-g-pro-3-0-silver": {
+      "name": "Gateron KS-9 G Pro 3.0 Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Goldenrod / Green Bottom",
+        "Standard / White Bottom"
+      ]
+    },
+    "switches/gateron-ks-9-g-pro-3-0-white": {
+      "name": "Gateron KS-9 G Pro 3.0 White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Goldenrod / Green Bottom",
+        "Standard / White Bottom"
+      ]
+    },
+    "switches/gateron-ks-9-g-pro-3-0-yellow": {
+      "name": "Gateron KS-9 G Pro 3.0 Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-9-g-pro-black": {
+      "switchType": "linear",
+      "name": "Gateron KS-9 G Pro Black"
+    },
+    "switches/gateron-ks-9-g-pro-blue": {
+      "switchType": "clicky",
+      "name": "Gateron KS-9 G Pro Blue"
+    },
+    "switches/gateron-ks-9-g-pro-brown": {
+      "switchType": "tactile",
+      "name": "Gateron KS-9 G Pro Brown"
+    },
+    "switches/gateron-ks-9-g-pro-green": {
+      "switchType": "clicky",
+      "name": "Gateron KS-9 G Pro Green"
+    },
+    "switches/gateron-ks-9-g-pro-red": {
+      "switchType": "linear",
+      "name": "Gateron KS-9 G Pro Red"
+    },
+    "switches/gateron-ks-9-g-pro-silver": {
+      "name": "Gateron KS-9 G Pro Silver",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    "switches/gateron-ks-9-g-pro-white": {
+      "name": "Gateron KS-9 G Pro White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Single-Stage Spring",
+        "Two-Stage Spring"
+      ]
+    },
+    "switches/gateron-ks-9-g-pro-yellow": {
+      "switchType": "linear",
+      "name": "Gateron KS-9 G Pro Yellow"
+    },
+    "switches/gateron-ks-37b-magnetic-fox": {
+      "name": "Gateron KS-37B Magnetic Fox",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3x1-milky-pro-heavy": {
+      "name": "Gateron KS-3X1 Milky Pro Heavy",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3x1-milky-pro-pink": {
+      "name": "Gateron KS-3X1 Milky Pro Pink",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3x1-milky-pro-purple": {
+      "name": "Gateron KS-3X1 Milky Pro Purple",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3x1-milky-pro-red": {
+      "name": "Gateron KS-3X1 Milky Pro Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-3-milky-pro-yellow": {
+      "name": "Gateron KS-3 Milky Pro Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Full Milky Housing",
+        "Milky Top / Black Bottom"
+      ]
+    },
+    "switches/gateron-ks-9-silent-yellow-2-0": {
+      "name": "Gateron KS-9 Silent Yellow 2.0",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/rantopad-orange-gateron-ks-1": {
+      "name": "Rantopad Orange (Gateron KS-1)",
+      "manufacturer": "Gateron",
+      "brand": "Rantopad",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gugu-ice-linear": {
+      "name": "Gugu Ice Linear",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gugu-ice-tactile": {
+      "name": "Gugu Ice Tactile",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mod-h-linear": {
+      "name": "MOD-H Linear",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mod-h-tactile": {
+      "name": "MOD-H Tactile",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mod-l-linear": {
+      "name": "MOD-L Linear",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mod-l-tactile": {
+      "name": "MOD-L Tactile",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mod-m-linear": {
+      "name": "MOD-M Linear",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mod-m-tactile": {
+      "name": "MOD-M Tactile",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/yumo-d": {
+      "name": "Yumo D",
+      "manufacturer": "WEKT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-aries": {
+      "name": "Huano Aries",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gazzew-boba-lt": {
+      "name": "Gazzew Boba LT",
+      "manufacturer": "Outemu",
+      "brand": "Gazzew",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "55g",
+        "65g"
+      ]
+    },
+    "switches/hmx-snow-crash": {
+      "name": "HMX Snow Crash",
+      "manufacturer": "HMX",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hmx-cola": {
+      "name": "HMX Cola",
+      "manufacturer": "HMX",
+      "brand": null,
+      "designer": "WY",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "37g / Black Stem / 3.5mm",
+        "42g / Black Stem / 3.5mm",
+        "45g / Black Stem / 3.5mm",
+        "45g / Red Stem / 3.8mm"
+      ]
+    },
+    "switches/hi-tek-725-white": {
+      "name": "Hi-Tek 725 White",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": [
+        "One Eye",
+        "One Eye / Gundam",
+        "Two Eye"
+      ]
+    },
+    "switches/hi-tek-725-black-clicky": {
+      "name": "Hi-Tek 725 Black Clicky",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-black-tactile": {
+      "name": "Hi-Tek 725 Black Tactile",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-dark-grey": {
+      "name": "Hi-Tek 725 Dark Grey",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-grey": {
+      "name": "Hi-Tek 725 Grey",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-lime-green": {
+      "name": "Hi-Tek 725 Lime Green",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-sea-green": {
+      "name": "Hi-Tek 725 Sea Green",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-tan": {
+      "name": "Hi-Tek 725 Tan",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hi-tek-725-yellow": {
+      "name": "Hi-Tek 725 Yellow",
+      "manufacturer": "Hi-Tek",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/dareu-sky-blue": {
+      "name": "DareU Sky Blue",
+      "manufacturer": null,
+      "brand": "DareU",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1",
+        "V2",
+        "V3",
+        "V3 / Heavy",
+        "V4"
+      ]
     }
   },
   "excluded": {
@@ -34029,6 +34073,48 @@
     "theremingoat:3228": "Open-slot entry removed at user request; original observation archived in CATALOG_REVIEW.md#retired-switch-records.",
     "theremingoat:3229": "Open-slot entry removed at user request; original observation archived in CATALOG_REVIEW.md#retired-switch-records.",
     "switchoddities:9379550724380": "Removed at user request; original observation archived in CATALOG_REVIEW.md#retired-switch-records.",
-    "theremingoat:1597": "Removed at user request; original observation archived in CATALOG_REVIEW.md#retired-switch-records."
+    "theremingoat:1597": "Removed at user request; original observation archived in CATALOG_REVIEW.md#retired-switch-records.",
+    "theremingoat:3609": "Oval-slot specimen excluded at user request; ordinary Aristotle Black remains cataloged.",
+    "switchoddities:8237989593372": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:1295": "Unresolved Alps SKCM Dust Cover specimen removed at user request; exact switch identity unverified.",
+    "theremingoat:175": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:215": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2730": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2731": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2732": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2733": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2734": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2735": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2736": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2737": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2738": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2739": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2740": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:2741": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:318": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:319": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:321": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:322": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:324": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:325": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:327": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:328": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:330": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:331": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:333": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:334": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:336": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:337": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:338": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:544": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:546": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:547": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:800": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:801": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:803": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:804": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:805": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
+    "theremingoat:1474": "Unresolved switch identity/manufacturing status; removed at user request after frankenswitch review.",
+    "theremingoat:2751": "Unresolved switch identity/manufacturing status; removed at user request after frankenswitch review."
   }
 }

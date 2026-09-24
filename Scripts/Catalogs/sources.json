@@ -2045,7 +2045,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "15028015857775",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-chocolate",
+      "id": "gateron-ks-33-low-profile-chocolate",
       "url": "https://cannonkeys.com/products/gateron-ks-33-low-profile-2-0-chocolate-tactile-switch",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Chocolate Tactile",
@@ -2093,7 +2093,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "15029408170095",
       "kind": "switches",
-      "id": "gateron-ks-9-silent-2-0-yellow",
+      "id": "gateron-ks-9-silent-yellow-2-0",
       "url": "https://cannonkeys.com/products/gateron-ks-9-silent-2-0-yellow-linear-switch",
       "observed": {
         "name": "Gateron KS-9 Silent 2.0 Yellow Linear",
@@ -2129,7 +2129,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "3955397132399/variant/41095934247023",
       "kind": "switches",
-      "id": "gateron-milky-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://cannonkeys.com/products/gateron-yellow-10",
       "observed": {
         "name": "Gateron Milky Yellow Linear",
@@ -2165,7 +2165,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "4405677752431",
       "kind": "switches",
-      "id": "gateron-black",
+      "id": "gateron-ks-3-black",
       "url": "https://cannonkeys.com/products/gateron-black-switch-10",
       "observed": {
         "name": "Gateron Black Linear",
@@ -2177,7 +2177,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "4405678997615",
       "kind": "switches",
-      "id": "gateron-red",
+      "id": "gateron-ks-3-red",
       "url": "https://cannonkeys.com/products/gateron-red-switch-10",
       "observed": {
         "name": "Gateron Red Linear",
@@ -2189,7 +2189,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "4405679226991",
       "kind": "switches",
-      "id": "gateron-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://cannonkeys.com/products/gateron-brown-switch-10",
       "observed": {
         "name": "Gateron Brown Tactile",
@@ -2441,7 +2441,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "6895303721071",
       "kind": "switches",
-      "id": "gateron-cap-milky-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://cannonkeys.com/products/gateron-cap-milky-yellow-v2",
       "observed": {
         "name": "Gateron Cap Milky Yellow V2 Linear",
@@ -2453,7 +2453,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "6895612788847",
       "kind": "switches",
-      "id": "gateron-cap-golden-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://cannonkeys.com/products/gateron-cap-golden-yellow-v2",
       "observed": {
         "name": "Gateron Cap Golden Yellow V2 Linear",
@@ -2867,7 +2867,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7093118697583",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-yellow",
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
       "url": "https://cannonkeys.com/products/gateron-g-pro-2-0-yellow-linear-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 Yellow Linear",
@@ -2927,7 +2927,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7117017514095",
       "kind": "switches",
-      "id": "gateron-milky-yellow-black-bottom-pro",
+      "id": "gateron-ks-3-milky-pro-yellow",
       "url": "https://cannonkeys.com/products/gateron-milky-yellow-black-bottom-pro-linear-switch",
       "observed": {
         "name": "Gateron Milky Yellow Black Bottom Pro Linear",
@@ -10701,7 +10701,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7913854173249",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-pro-pink-silent",
+      "id": "gateron-ks-3x1-milky-pro-pink",
       "url": "https://divinikey.com/products/gateron-ks-3x1-milky-pro-silent-linear-switches",
       "observed": {
         "name": "Gateron KS-3X1 Milky Pro Pink Silent Linear",
@@ -10713,7 +10713,7 @@
       "source": "divinikeyswitches",
       "sourceId": "7913854238785",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-pro-purple-silent",
+      "id": "gateron-ks-3x1-milky-pro-purple",
       "url": "https://divinikey.com/products/gateron-ks-3x1-milky-pro-silent-tactile-switches",
       "observed": {
         "name": "Gateron KS-3X1 Milky Pro Purple Silent Tactile",
@@ -11438,7 +11438,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307616857",
       "kind": "switches",
-      "id": "gateron-cap-milky-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Milky-Yellow",
@@ -11449,7 +11449,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307649625",
       "kind": "switches",
-      "id": "gateron-cap-golden-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Golden-Yellow",
@@ -11460,7 +11460,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307682393",
       "kind": "switches",
-      "id": "gateron-cap-milky-brown",
+      "id": "gateron-cap-brown",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Milky-Brown",
@@ -11471,7 +11471,7 @@
       "source": "gateron",
       "sourceId": "7066902986841/variant/40042307747929",
       "kind": "switches",
-      "id": "gateron-cap-golden-brown",
+      "id": "gateron-cap-brown",
       "url": "https://www.gateron.co/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Golden-Brown",
@@ -11559,7 +11559,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397350489",
       "kind": "switches",
-      "id": "gateron-g-pro-red",
+      "id": "gateron-ks-9-g-pro-red",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Red",
@@ -11570,7 +11570,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397416025",
       "kind": "switches",
-      "id": "gateron-g-pro-blue",
+      "id": "gateron-ks-9-g-pro-blue",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Blue",
@@ -11581,7 +11581,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397448793",
       "kind": "switches",
-      "id": "gateron-g-pro-brown",
+      "id": "gateron-ks-9-g-pro-brown",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Brown",
@@ -11592,7 +11592,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397481561",
       "kind": "switches",
-      "id": "gateron-g-pro-green",
+      "id": "gateron-ks-9-g-pro-green",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Green",
@@ -11603,7 +11603,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397514329",
       "kind": "switches",
-      "id": "gateron-g-pro-yellow",
+      "id": "gateron-ks-9-g-pro-yellow",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Yellow",
@@ -11614,7 +11614,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397547097",
       "kind": "switches",
-      "id": "gateron-g-pro-black",
+      "id": "gateron-ks-9-g-pro-black",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Black",
@@ -11625,7 +11625,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40017397579865",
       "kind": "switches",
-      "id": "gateron-g-pro-white-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-white",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - White(Two-stage Spring)",
@@ -11636,7 +11636,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40026508558425",
       "kind": "switches",
-      "id": "gateron-g-pro-silver-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-silver",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Silver(Two-stage Spring)",
@@ -11647,7 +11647,7 @@
       "source": "gateron",
       "sourceId": "7066903478361/variant/40053021147225",
       "kind": "switches",
-      "id": "gateron-g-pro-white",
+      "id": "gateron-ks-9-g-pro-white",
       "url": "https://www.gateron.co/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - White",
@@ -11680,7 +11680,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40036010459225",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-red",
+      "id": "gateron-ks-9-g-pro-2-0-red",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - Red",
@@ -11691,7 +11691,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40036010491993",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-blue",
+      "id": "gateron-ks-9-g-pro-2-0-blue",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - Blue",
@@ -11702,7 +11702,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40036010557529",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-brown",
+      "id": "gateron-ks-9-g-pro-2-0-brown",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - Brown",
@@ -11713,7 +11713,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40036010623065",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-yellow",
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - Yellow",
@@ -11724,7 +11724,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40036010688601",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-white-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-white",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - White(Two-stage Spring)",
@@ -11735,7 +11735,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40036010754137",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-silver-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-silver",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - Silver(Two-stage Spring)",
@@ -11746,7 +11746,7 @@
       "source": "gateron",
       "sourceId": "7087745040473/variant/40042316628057",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-black",
+      "id": "gateron-ks-9-g-pro-2-0-black",
       "url": "https://www.gateron.co/products/gateron-g-pro-2-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 2.0 - Black",
@@ -11769,7 +11769,7 @@
       "source": "gateron",
       "sourceId": "7087842426969/variant/40036318707801",
       "kind": "switches",
-      "id": "gateron-silent-black",
+      "id": "gateron-ks-9-silent-black",
       "url": "https://www.gateron.co/products/gateron-silent-switch-set",
       "observed": {
         "name": "Gateron Silent - Black",
@@ -11780,7 +11780,7 @@
       "source": "gateron",
       "sourceId": "7087842426969/variant/40036318740569",
       "kind": "switches",
-      "id": "gateron-silent-red",
+      "id": "gateron-ks-9-silent-red",
       "url": "https://www.gateron.co/products/gateron-silent-switch-set",
       "observed": {
         "name": "Gateron Silent - Red",
@@ -11791,7 +11791,7 @@
       "source": "gateron",
       "sourceId": "7087842426969/variant/40036318773337",
       "kind": "switches",
-      "id": "gateron-silent-brown",
+      "id": "gateron-ks-9-silent-brown",
       "url": "https://www.gateron.co/products/gateron-silent-switch-set",
       "observed": {
         "name": "Gateron Silent - Brown",
@@ -11813,7 +11813,7 @@
       "source": "gateron",
       "sourceId": "7087842426969/variant/40036318838873",
       "kind": "switches",
-      "id": "gateron-silent-white",
+      "id": "gateron-ks-9-silent-white",
       "url": "https://www.gateron.co/products/gateron-silent-switch-set",
       "observed": {
         "name": "Gateron Silent - White",
@@ -11824,7 +11824,7 @@
       "source": "gateron",
       "sourceId": "7090111479897/variant/40041225027673",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-red",
+      "id": "gateron-ks-33-low-profile-red",
       "url": "https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Red",
@@ -11835,7 +11835,7 @@
       "source": "gateron",
       "sourceId": "7090111479897/variant/40041225060441",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-blue",
+      "id": "gateron-ks-33-low-profile-blue",
       "url": "https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Blue",
@@ -11846,7 +11846,7 @@
       "source": "gateron",
       "sourceId": "7090111479897/variant/40041225093209",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-brown",
+      "id": "gateron-ks-33-low-profile-brown",
       "url": "https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Brown",
@@ -11857,7 +11857,7 @@
       "source": "gateron",
       "sourceId": "7090111479897/variant/40557145784409",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-banana",
+      "id": "gateron-ks-33-low-profile-banana",
       "url": "https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Banana",
@@ -11959,7 +11959,7 @@
       "source": "gateron",
       "sourceId": "7094123364441/variant/40471899111513",
       "kind": "switches",
-      "id": "gateron-north-pole-2-0-box-brown",
+      "id": "gateron-north-pole-brown",
       "url": "https://www.gateron.co/products/gateron-north-pole-switch-set",
       "observed": {
         "name": "Gateron North Pole 2.0 - Box Brown",
@@ -12014,7 +12014,7 @@
       "source": "gateron",
       "sourceId": "7100353708121/variant/40069272141913",
       "kind": "switches",
-      "id": "gateron-ks-3x1-full-milky-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://www.gateron.co/products/gateron-ks-3x1-full-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X1 Full Milky - Yellow",
@@ -12025,7 +12025,7 @@
       "source": "gateron",
       "sourceId": "7100353708121/variant/40069272174681",
       "kind": "switches",
-      "id": "gateron-ks-3x1-full-milky-red",
+      "id": "gateron-ks-3-red",
       "url": "https://www.gateron.co/products/gateron-ks-3x1-full-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X1 Full Milky - Red",
@@ -12036,7 +12036,7 @@
       "source": "gateron",
       "sourceId": "7100353708121/variant/40069272207449",
       "kind": "switches",
-      "id": "gateron-ks-3x1-full-milky-black",
+      "id": "gateron-ks-3-black",
       "url": "https://www.gateron.co/products/gateron-ks-3x1-full-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X1 Full Milky - Black",
@@ -12047,7 +12047,7 @@
       "source": "gateron",
       "sourceId": "7100353708121/variant/40069272240217",
       "kind": "switches",
-      "id": "gateron-ks-3x1-full-milky-blue",
+      "id": "gateron-ks-3-blue",
       "url": "https://www.gateron.co/products/gateron-ks-3x1-full-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X1 Full Milky - Blue",
@@ -12058,7 +12058,7 @@
       "source": "gateron",
       "sourceId": "7100353708121/variant/40069272272985",
       "kind": "switches",
-      "id": "gateron-ks-3x1-full-milky-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://www.gateron.co/products/gateron-ks-3x1-full-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X1 Full Milky - Brown",
@@ -12069,7 +12069,7 @@
       "source": "gateron",
       "sourceId": "7100353708121/variant/40069272305753",
       "kind": "switches",
-      "id": "gateron-ks-3x1-full-milky-green",
+      "id": "gateron-ks-3-green",
       "url": "https://www.gateron.co/products/gateron-ks-3x1-full-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X1 Full Milky - Green",
@@ -12157,7 +12157,7 @@
       "source": "gateron",
       "sourceId": "7107680763993/variant/40089317998681",
       "kind": "switches",
-      "id": "gateron-ks-3-full-black-red",
+      "id": "gateron-ks-3-red",
       "url": "https://www.gateron.co/products/gateron-ks-3-full-black-switch-set",
       "observed": {
         "name": "Gateron KS-3 Full Black - Red",
@@ -12168,7 +12168,7 @@
       "source": "gateron",
       "sourceId": "7107680763993/variant/40089318031449",
       "kind": "switches",
-      "id": "gateron-ks-3-full-black-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://www.gateron.co/products/gateron-ks-3-full-black-switch-set",
       "observed": {
         "name": "Gateron KS-3 Full Black - Brown",
@@ -12179,7 +12179,7 @@
       "source": "gateron",
       "sourceId": "7107680763993/variant/40089318064217",
       "kind": "switches",
-      "id": "gateron-ks-3-full-black-blue",
+      "id": "gateron-ks-3-blue",
       "url": "https://www.gateron.co/products/gateron-ks-3-full-black-switch-set",
       "observed": {
         "name": "Gateron KS-3 Full Black - Blue",
@@ -12190,7 +12190,7 @@
       "source": "gateron",
       "sourceId": "7107680763993/variant/40089318096985",
       "kind": "switches",
-      "id": "gateron-ks-3-full-black-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://www.gateron.co/products/gateron-ks-3-full-black-switch-set",
       "observed": {
         "name": "Gateron KS-3 Full Black - Yellow",
@@ -12201,7 +12201,7 @@
       "source": "gateron",
       "sourceId": "7107680763993/variant/40089318129753",
       "kind": "switches",
-      "id": "gateron-ks-3-full-black-green",
+      "id": "gateron-ks-3-green",
       "url": "https://www.gateron.co/products/gateron-ks-3-full-black-switch-set",
       "observed": {
         "name": "Gateron KS-3 Full Black - Green",
@@ -12212,7 +12212,7 @@
       "source": "gateron",
       "sourceId": "7107680763993/variant/40089318162521",
       "kind": "switches",
-      "id": "gateron-ks-3-full-black",
+      "id": "gateron-ks-3-black",
       "url": "https://www.gateron.co/products/gateron-ks-3-full-black-switch-set",
       "observed": {
         "name": "Gateron KS-3 Full Black",
@@ -12223,7 +12223,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445040217",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-red",
+      "id": "gateron-ks-3-red",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Red",
@@ -12234,7 +12234,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445072985",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Brown",
@@ -12245,7 +12245,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445105753",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-blue",
+      "id": "gateron-ks-3-blue",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Blue",
@@ -12256,7 +12256,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445138521",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Yellow",
@@ -12267,7 +12267,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445171289",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-green",
+      "id": "gateron-ks-3-green",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom) - Green",
@@ -12278,7 +12278,7 @@
       "source": "gateron",
       "sourceId": "7107744006233/variant/40089445204057",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom",
+      "id": "gateron-ks-3-black",
       "url": "https://www.gateron.co/products/gateron-ks-3x47-milky-switch-set",
       "observed": {
         "name": "Gateron KS-3X47 Milky (Milky Top Black Bottom)",
@@ -12289,7 +12289,7 @@
       "source": "gateron",
       "sourceId": "7107760291929/variant/40089466568793",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-red",
+      "id": "gateron-ks-8-red",
       "url": "https://www.gateron.co/products/gateron-ks-8-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Red",
@@ -12300,7 +12300,7 @@
       "source": "gateron",
       "sourceId": "7107760291929/variant/40089466601561",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-brown",
+      "id": "gateron-ks-8-brown",
       "url": "https://www.gateron.co/products/gateron-ks-8-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Brown",
@@ -12311,7 +12311,7 @@
       "source": "gateron",
       "sourceId": "7107760291929/variant/40089466634329",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-blue",
+      "id": "gateron-ks-8-blue",
       "url": "https://www.gateron.co/products/gateron-ks-8-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Blue",
@@ -12322,7 +12322,7 @@
       "source": "gateron",
       "sourceId": "7107760291929/variant/40089466667097",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-yellow",
+      "id": "gateron-ks-8-yellow",
       "url": "https://www.gateron.co/products/gateron-ks-8-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Yellow",
@@ -12333,7 +12333,7 @@
       "source": "gateron",
       "sourceId": "7107760291929/variant/40089466699865",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-green",
+      "id": "gateron-ks-8-green",
       "url": "https://www.gateron.co/products/gateron-ks-8-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Green",
@@ -12344,7 +12344,7 @@
       "source": "gateron",
       "sourceId": "7107760291929/variant/40089466732633",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-black",
+      "id": "gateron-ks-8-black",
       "url": "https://www.gateron.co/products/gateron-ks-8-mechanical-switch-set",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Black",
@@ -12378,7 +12378,7 @@
       "source": "gateron",
       "sourceId": "7120808935513/variant/40124530131033",
       "kind": "switches",
-      "id": "gateron-ks-3-milky-pro-red",
+      "id": "gateron-ks-3x1-milky-pro-red",
       "url": "https://www.gateron.co/products/gateron-ks-3-milky-pro-switch-set",
       "observed": {
         "name": "Gateron KS-3 Milky Pro - Red",
@@ -12389,7 +12389,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40479582879833",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-red",
+      "id": "gateron-ks-9-g-pro-3-0-red",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - Red",
@@ -12400,7 +12400,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40479582945369",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-brown",
+      "id": "gateron-ks-9-g-pro-3-0-brown",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - Brown",
@@ -12411,7 +12411,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40479582978137",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - Yellow",
@@ -12422,7 +12422,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40479583010905",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-white-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - White (Two-Stage Spring)",
@@ -12433,7 +12433,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40479583043673",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-silver-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - Silver (Two-Stage Spring)",
@@ -12444,7 +12444,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40479583076441",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-black",
+      "id": "gateron-ks-9-g-pro-3-0-black",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - Black",
@@ -12455,7 +12455,7 @@
       "source": "gateron",
       "sourceId": "7288849858649/variant/40750542684249",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-blue",
+      "id": "gateron-ks-9-g-pro-3-0-blue",
       "url": "https://www.gateron.co/products/gateron-g-pro-3-0-switch-set",
       "observed": {
         "name": "Gateron G Pro 3.0 - Blue",
@@ -12500,7 +12500,7 @@
       "source": "gateron",
       "sourceId": "7335203340377/variant/40560564928601",
       "kind": "switches",
-      "id": "gateron-jupiter-banana-two-stage-spring",
+      "id": "gateron-jupiter-banana",
       "url": "https://www.gateron.co/products/gateron-jupiter-switch-set",
       "observed": {
         "name": "Gateron Jupiter - Banana (Two-Stage Spring) 3 Pin",
@@ -15628,7 +15628,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7736032723163",
       "kind": "switches",
-      "id": "gateron-milky-red-pro",
+      "id": "gateron-ks-3x1-milky-pro-red",
       "url": "https://keebsforall.com/products/gateron-milky-red-pro-linear-switches",
       "observed": {
         "name": "Gateron Milky Red Pro Linear",
@@ -16027,7 +16027,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8032594165979/variant/44484309549275",
       "kind": "switches",
-      "id": "haimu-raw-with-led-diffuser",
+      "id": "geon-haimu-raw",
       "url": "https://keebsforall.com/products/haimu-raw-linear-switches",
       "observed": {
         "name": "Haimu Raw Linear - With LED Diffuser",
@@ -16040,7 +16040,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8032594165979/variant/44484309582043",
       "kind": "switches",
-      "id": "haimu-raw-without-led-diffuser",
+      "id": "geon-haimu-raw",
       "url": "https://keebsforall.com/products/haimu-raw-linear-switches",
       "observed": {
         "name": "Haimu Raw Linear - Without LED Diffuser",
@@ -16633,7 +16633,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8206307426523",
       "kind": "switches",
-      "id": "gateron-cap-milky-yellow-golden-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://keebsforall.com/products/gateron-cap-v2-milky-yellow-golden-yellow-switches",
       "observed": {
         "name": "Gateron CAP V2 Milky Yellow/Golden Yellow",
@@ -16644,7 +16644,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8206364377307",
       "kind": "switches",
-      "id": "gateron-cap-milky-brown-golden-brown",
+      "id": "gateron-cap-brown",
       "url": "https://keebsforall.com/products/gateron-cap-v2-milky-brown-golden-brown-switches",
       "observed": {
         "name": "Gateron CAP V2 Milky Brown/Golden Brown",
@@ -16655,7 +16655,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8206373421275",
       "kind": "switches",
-      "id": "gateron-cap-golden-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://keebsforall.com/products/gateron-cap-golden-yellow-v2-switches",
       "observed": {
         "name": "Gateron CAP Golden Yellow V2",
@@ -16666,7 +16666,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8206390329563",
       "kind": "switches",
-      "id": "gateron-cap-golden-brown",
+      "id": "gateron-cap-brown",
       "url": "https://keebsforall.com/products/gateron-cap-golden-brown-v2-switches",
       "observed": {
         "name": "Gateron CAP Golden Brown V2",
@@ -16732,7 +16732,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209416454363",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-yellow",
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
       "url": "https://keebsforall.com/products/gateron-ks-9-yellow-pro-2-0-switches",
       "observed": {
         "name": "Gateron KS-9 Yellow PRO 2.0",
@@ -16743,7 +16743,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209418256603",
       "kind": "switches",
-      "id": "gateron-ks-9-brown-pro-2-0",
+      "id": "gateron-ks-9-g-pro-2-0-brown",
       "url": "https://keebsforall.com/products/gateron-ks-9-brown-pro-2-0-switches",
       "observed": {
         "name": "Gateron KS-9 Brown PRO 2.0",
@@ -16754,7 +16754,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209430741211",
       "kind": "switches",
-      "id": "gateron-milky-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://keebsforall.com/products/gateron-milky-yellow-switches",
       "observed": {
         "name": "Gateron Milky Yellow",
@@ -16765,7 +16765,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209433854171",
       "kind": "switches",
-      "id": "gateron-milky-yellow-with-black-bottom",
+      "id": "gateron-ks-3-yellow",
       "url": "https://keebsforall.com/products/gateron-milky-yellow-with-black-bottom-switches",
       "observed": {
         "name": "Gateron Milky Yellow with Black Bottom",
@@ -16776,7 +16776,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209437655259",
       "kind": "switches",
-      "id": "gateron-milky-black",
+      "id": "gateron-ks-3-black",
       "url": "https://keebsforall.com/products/gateron-milky-black-switches",
       "observed": {
         "name": "Gateron Milky Black",
@@ -16787,7 +16787,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209438671067",
       "kind": "switches",
-      "id": "gateron-milky-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://keebsforall.com/products/gateron-milky-brown-switches",
       "observed": {
         "name": "Gateron Milky Brown",
@@ -16820,7 +16820,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209454858459",
       "kind": "switches",
-      "id": "gateron-brown-optical",
+      "id": "gateron-optical-brown",
       "url": "https://keebsforall.com/products/gateron-optical-brown-switches",
       "observed": {
         "name": "Gateron Optical Brown",
@@ -16831,7 +16831,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209472323803",
       "kind": "switches",
-      "id": "gateron-blue-optical",
+      "id": "gateron-optical-blue",
       "url": "https://keebsforall.com/products/gateron-optical-blue-switches",
       "observed": {
         "name": "Gateron Optical Blue",
@@ -16842,7 +16842,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209507549403",
       "kind": "switches",
-      "id": "gateron-silent-clear",
+      "id": "gateron-ks-9-silent-white",
       "url": "https://keebsforall.com/products/gateron-silent-clear-switches",
       "observed": {
         "name": "Gateron Silent Clear",
@@ -16853,7 +16853,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209520525531",
       "kind": "switches",
-      "id": "gateron-silent-red",
+      "id": "gateron-ks-9-silent-red",
       "url": "https://keebsforall.com/products/gateron-silent-red-switches",
       "observed": {
         "name": "Gateron Silent Red",
@@ -16875,7 +16875,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8209523900635",
       "kind": "switches",
-      "id": "gateron-silent-black",
+      "id": "gateron-ks-9-silent-black",
       "url": "https://keebsforall.com/products/gateron-silent-black-switches",
       "observed": {
         "name": "Gateron Silent Black",
@@ -17296,7 +17296,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8290967453915",
       "kind": "switches",
-      "id": "gateron-ks-9-silent-2-0-yellow",
+      "id": "gateron-ks-9-silent-yellow-2-0",
       "url": "https://keebsforall.com/products/gateron-ks-9-silent-yellow-2-0-switches",
       "observed": {
         "name": "Gateron KS-9 Silent Yellow 2.0",
@@ -37891,7 +37891,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/31923914408025",
       "kind": "switches",
-      "id": "gateron-g-pro-green",
+      "id": "gateron-ks-9-g-pro-green",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Green"
@@ -37901,7 +37901,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/31923920240729",
       "kind": "switches",
-      "id": "gateron-g-pro-white",
+      "id": "gateron-ks-9-g-pro-white",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - White"
@@ -37911,7 +37911,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40106816438361",
       "kind": "switches",
-      "id": "gateron-g-pro-blue",
+      "id": "gateron-ks-9-g-pro-blue",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Blue"
@@ -37921,7 +37921,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40119134355545",
       "kind": "switches",
-      "id": "gateron-g-pro-red",
+      "id": "gateron-ks-9-g-pro-red",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Red"
@@ -37931,7 +37931,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40119145726041",
       "kind": "switches",
-      "id": "gateron-g-pro-brown",
+      "id": "gateron-ks-9-g-pro-brown",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Brown"
@@ -37941,7 +37941,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40119153295449",
       "kind": "switches",
-      "id": "gateron-g-pro-yellow",
+      "id": "gateron-ks-9-g-pro-yellow",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Yellow"
@@ -37951,7 +37951,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40119153852505",
       "kind": "switches",
-      "id": "gateron-g-pro-black",
+      "id": "gateron-ks-9-g-pro-black",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Black"
@@ -37961,7 +37961,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40119161880665",
       "kind": "switches",
-      "id": "gateron-g-pro-white-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-white",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - White (Two-Stage Spring)"
@@ -37971,7 +37971,7 @@
       "source": "keychronswitches",
       "sourceId": "4507940880473/variant/40119163453529",
       "kind": "switches",
-      "id": "gateron-g-pro-silver-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-silver",
       "url": "https://www.keychron.com/products/gateron-switch-set",
       "observed": {
         "name": "Gateron G Pro - Silver (Two-Stage Spring)"
@@ -38041,7 +38041,7 @@
       "source": "keychronswitches",
       "sourceId": "4745785868377/variant/40122792575065",
       "kind": "switches",
-      "id": "gateron-low-profile-2-0-mechanical-red",
+      "id": "gateron-ks-33-low-profile-red",
       "url": "https://www.keychron.com/products/low-profile-gateron-mechanical-switch-set",
       "observed": {
         "name": "Gateron Low Profile 2.0 Mechanical - Red"
@@ -38051,7 +38051,7 @@
       "source": "keychronswitches",
       "sourceId": "4745785868377/variant/40122792607833",
       "kind": "switches",
-      "id": "gateron-low-profile-2-0-mechanical-blue",
+      "id": "gateron-ks-33-low-profile-blue",
       "url": "https://www.keychron.com/products/low-profile-gateron-mechanical-switch-set",
       "observed": {
         "name": "Gateron Low Profile 2.0 Mechanical - Blue"
@@ -38061,7 +38061,7 @@
       "source": "keychronswitches",
       "sourceId": "4745785868377/variant/40122792673369",
       "kind": "switches",
-      "id": "gateron-low-profile-2-0-mechanical-brown",
+      "id": "gateron-ks-33-low-profile-brown",
       "url": "https://www.keychron.com/products/low-profile-gateron-mechanical-switch-set",
       "observed": {
         "name": "Gateron Low Profile 2.0 Mechanical - Brown"
@@ -38071,7 +38071,7 @@
       "source": "keychronswitches",
       "sourceId": "4745785868377/variant/40587643355225",
       "kind": "switches",
-      "id": "gateron-low-profile-2-0-mechanical-banana",
+      "id": "gateron-ks-33-low-profile-banana",
       "url": "https://www.keychron.com/products/low-profile-gateron-mechanical-switch-set",
       "observed": {
         "name": "Gateron Low Profile 2.0 Mechanical - Banana"
@@ -38161,7 +38161,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119281418329",
       "kind": "switches",
-      "id": "gateron-cap-cap-red",
+      "id": "gateron-cap-red",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Red"
@@ -38171,7 +38171,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119284465753",
       "kind": "switches",
-      "id": "gateron-cap-cap-blue",
+      "id": "gateron-cap-blue",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Blue"
@@ -38181,7 +38181,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119285284953",
       "kind": "switches",
-      "id": "gateron-cap-cap-brown",
+      "id": "gateron-cap-brown",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Brown"
@@ -38191,7 +38191,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119288201305",
       "kind": "switches",
-      "id": "gateron-cap-cap-golden-brown",
+      "id": "gateron-cap-brown",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Golden-Brown"
@@ -38201,7 +38201,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119289053273",
       "kind": "switches",
-      "id": "gateron-cap-cap-milky-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Milky-Yellow"
@@ -38211,7 +38211,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119289741401",
       "kind": "switches",
-      "id": "gateron-cap-cap-golden-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Golden-Yellow"
@@ -38221,7 +38221,7 @@
       "source": "keychronswitches",
       "sourceId": "4750687436889/variant/40119291576409",
       "kind": "switches",
-      "id": "gateron-cap-cap-milky-brown",
+      "id": "gateron-cap-brown",
       "url": "https://www.keychron.com/products/gateron-cap-switch-set",
       "observed": {
         "name": "Gateron Cap V2 - Cap Milky-Brown"
@@ -38591,7 +38591,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106823975001",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-red",
+      "id": "gateron-ks-9-g-pro-2-0-red",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - Red"
@@ -38601,7 +38601,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106825056345",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-blue",
+      "id": "gateron-ks-9-g-pro-2-0-blue",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - Blue"
@@ -38611,7 +38611,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106825121881",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-brown",
+      "id": "gateron-ks-9-g-pro-2-0-brown",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - Brown"
@@ -38621,7 +38621,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106825941081",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-yellow",
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - Yellow"
@@ -38631,7 +38631,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106826006617",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-black",
+      "id": "gateron-ks-9-g-pro-2-0-black",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - Black"
@@ -38641,7 +38641,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106826137689",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-white-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-white",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - White (Two-Stage Spring)"
@@ -38651,7 +38651,7 @@
       "source": "keychronswitches",
       "sourceId": "7114732142681/variant/40106826924121",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-silver-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-silver",
       "url": "https://www.keychron.com/products/gateron-g-pro-2-0-switch",
       "observed": {
         "name": "Gateron G Pro 2.0 - Silver (Two-Stage Spring)"
@@ -38762,7 +38762,7 @@
       "source": "keychronswitches",
       "sourceId": "7120050323545/variant/40122789920857",
       "kind": "switches",
-      "id": "gateron-silent-red",
+      "id": "gateron-ks-9-silent-red",
       "url": "https://www.keychron.com/products/gateron-silent-switch",
       "observed": {
         "name": "Gateron Silent - Red"
@@ -38772,7 +38772,7 @@
       "source": "keychronswitches",
       "sourceId": "7120050323545/variant/40122789986393",
       "kind": "switches",
-      "id": "gateron-silent-brown",
+      "id": "gateron-ks-9-silent-brown",
       "url": "https://www.keychron.com/products/gateron-silent-switch",
       "observed": {
         "name": "Gateron Silent - Brown"
@@ -38792,7 +38792,7 @@
       "source": "keychronswitches",
       "sourceId": "7120050323545/variant/40122790051929",
       "kind": "switches",
-      "id": "gateron-silent-black",
+      "id": "gateron-ks-9-silent-black",
       "url": "https://www.keychron.com/products/gateron-silent-switch",
       "observed": {
         "name": "Gateron Silent - Black"
@@ -38802,7 +38802,7 @@
       "source": "keychronswitches",
       "sourceId": "7120050323545/variant/40122790084697",
       "kind": "switches",
-      "id": "gateron-silent-white",
+      "id": "gateron-ks-9-silent-white",
       "url": "https://www.keychron.com/products/gateron-silent-switch",
       "observed": {
         "name": "Gateron Silent - White"
@@ -38812,7 +38812,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122793033817",
       "kind": "switches",
-      "id": "gateron-optical-red",
+      "id": "gateron-ks-22-optical-red",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - Red"
@@ -38822,7 +38822,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122793066585",
       "kind": "switches",
-      "id": "gateron-optical-blue",
+      "id": "gateron-ks-22-optical-blue",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - Blue"
@@ -38832,7 +38832,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122793099353",
       "kind": "switches",
-      "id": "gateron-optical-brown",
+      "id": "gateron-ks-22-optical-brown",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - Brown"
@@ -38842,7 +38842,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122794344537",
       "kind": "switches",
-      "id": "gateron-optical-yellow",
+      "id": "gateron-ks-22-optical-yellow",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - Yellow"
@@ -38852,7 +38852,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122794377305",
       "kind": "switches",
-      "id": "gateron-optical-white",
+      "id": "gateron-ks-22-optical-white",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - White"
@@ -38862,7 +38862,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122803322969",
       "kind": "switches",
-      "id": "gateron-optical-black",
+      "id": "gateron-ks-22-optical-black",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - Black"
@@ -38872,7 +38872,7 @@
       "source": "keychronswitches",
       "sourceId": "7120052158553/variant/40122803683417",
       "kind": "switches",
-      "id": "gateron-optical-silver",
+      "id": "gateron-ks-22-optical-silver",
       "url": "https://www.keychron.com/products/gateron-optical-switch-version-2",
       "observed": {
         "name": "Gateron Optical (Version 2) - Silver"
@@ -38922,7 +38922,7 @@
       "source": "keychronswitches",
       "sourceId": "7120054124633/variant/40530291589209",
       "kind": "switches",
-      "id": "gateron-north-pole-2-0-box-brown",
+      "id": "gateron-north-pole-brown",
       "url": "https://www.keychron.com/products/gateron-north-pole-switch",
       "observed": {
         "name": "Gateron North Pole 2.0 - Box Brown"
@@ -38932,7 +38932,7 @@
       "source": "keychronswitches",
       "sourceId": "7137939488857/variant/40176672964697",
       "kind": "switches",
-      "id": "gateron-ks-3x-full-black-red",
+      "id": "gateron-ks-3-red",
       "url": "https://www.keychron.com/products/gateron-ks-3x-full-black-switch",
       "observed": {
         "name": "Gateron KS-3X Full Black - Red"
@@ -38942,7 +38942,7 @@
       "source": "keychronswitches",
       "sourceId": "7137939488857/variant/40176673063001",
       "kind": "switches",
-      "id": "gateron-ks-3x-full-black-blue",
+      "id": "gateron-ks-3-blue",
       "url": "https://www.keychron.com/products/gateron-ks-3x-full-black-switch",
       "observed": {
         "name": "Gateron KS-3X Full Black - Blue"
@@ -38952,7 +38952,7 @@
       "source": "keychronswitches",
       "sourceId": "7137939488857/variant/40176673161305",
       "kind": "switches",
-      "id": "gateron-ks-3x-full-black-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://www.keychron.com/products/gateron-ks-3x-full-black-switch",
       "observed": {
         "name": "Gateron KS-3X Full Black - Brown"
@@ -38962,7 +38962,7 @@
       "source": "keychronswitches",
       "sourceId": "7137939488857/variant/40176673259609",
       "kind": "switches",
-      "id": "gateron-ks-3x-full-black-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://www.keychron.com/products/gateron-ks-3x-full-black-switch",
       "observed": {
         "name": "Gateron KS-3X Full Black - Yellow"
@@ -38972,7 +38972,7 @@
       "source": "keychronswitches",
       "sourceId": "7137939488857/variant/40176673423449",
       "kind": "switches",
-      "id": "gateron-ks-3x-full-black",
+      "id": "gateron-ks-3-black",
       "url": "https://www.keychron.com/products/gateron-ks-3x-full-black-switch",
       "observed": {
         "name": "Gateron KS-3X Full Black"
@@ -38982,7 +38982,7 @@
       "source": "keychronswitches",
       "sourceId": "7137939488857/variant/40176674963545",
       "kind": "switches",
-      "id": "gateron-ks-3x-full-black-green",
+      "id": "gateron-ks-3-green",
       "url": "https://www.keychron.com/products/gateron-ks-3x-full-black-switch",
       "observed": {
         "name": "Gateron KS-3X Full Black - Green"
@@ -38992,7 +38992,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940176985/variant/40176676208729",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-red",
+      "id": "gateron-ks-3-red",
       "url": "https://www.keychron.com/products/gateron-ks-3x47-milky-top-black-bottom-switch",
       "observed": {
         "name": "Gateron KS-3X47 Milky Top Black Bottom - Red"
@@ -39002,7 +39002,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940176985/variant/40176676241497",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-blue",
+      "id": "gateron-ks-3-blue",
       "url": "https://www.keychron.com/products/gateron-ks-3x47-milky-top-black-bottom-switch",
       "observed": {
         "name": "Gateron KS-3X47 Milky Top Black Bottom - Blue"
@@ -39012,7 +39012,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940176985/variant/40176676274265",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://www.keychron.com/products/gateron-ks-3x47-milky-top-black-bottom-switch",
       "observed": {
         "name": "Gateron KS-3X47 Milky Top Black Bottom - Brown"
@@ -39022,7 +39022,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940176985/variant/40176676307033",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://www.keychron.com/products/gateron-ks-3x47-milky-top-black-bottom-switch",
       "observed": {
         "name": "Gateron KS-3X47 Milky Top Black Bottom - Yellow"
@@ -39032,7 +39032,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940176985/variant/40176676339801",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom",
+      "id": "gateron-ks-3-black",
       "url": "https://www.keychron.com/products/gateron-ks-3x47-milky-top-black-bottom-switch",
       "observed": {
         "name": "Gateron KS-3X47 Milky Top Black Bottom"
@@ -39042,7 +39042,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940176985/variant/40176676372569",
       "kind": "switches",
-      "id": "gateron-ks-3x47-milky-top-black-bottom-green",
+      "id": "gateron-ks-3-green",
       "url": "https://www.keychron.com/products/gateron-ks-3x47-milky-top-black-bottom-switch",
       "observed": {
         "name": "Gateron KS-3X47 Milky Top Black Bottom - Green"
@@ -39052,7 +39052,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940537433/variant/40176677093465",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-red",
+      "id": "gateron-ks-8-red",
       "url": "https://www.keychron.com/products/gateron-ks-8-mechanical-switch",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Red"
@@ -39062,7 +39062,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940537433/variant/40176677126233",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-blue",
+      "id": "gateron-ks-8-blue",
       "url": "https://www.keychron.com/products/gateron-ks-8-mechanical-switch",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Blue"
@@ -39072,7 +39072,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940537433/variant/40176677159001",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-brown",
+      "id": "gateron-ks-8-brown",
       "url": "https://www.keychron.com/products/gateron-ks-8-mechanical-switch",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Brown"
@@ -39082,7 +39082,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940537433/variant/40176677191769",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-yellow",
+      "id": "gateron-ks-8-yellow",
       "url": "https://www.keychron.com/products/gateron-ks-8-mechanical-switch",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Yellow"
@@ -39092,7 +39092,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940537433/variant/40176677224537",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-black",
+      "id": "gateron-ks-8-black",
       "url": "https://www.keychron.com/products/gateron-ks-8-mechanical-switch",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Black"
@@ -39102,7 +39102,7 @@
       "source": "keychronswitches",
       "sourceId": "7137940537433/variant/40176677257305",
       "kind": "switches",
-      "id": "gateron-ks-8-mechanical-green",
+      "id": "gateron-ks-8-green",
       "url": "https://www.keychron.com/products/gateron-ks-8-mechanical-switch",
       "observed": {
         "name": "Gateron KS-8 Mechanical - Green"
@@ -39156,7 +39156,7 @@
       "source": "keychronswitches",
       "sourceId": "7159593205849/variant/40259121971289",
       "kind": "switches",
-      "id": "gateron-ks-3-milky-pro-red",
+      "id": "gateron-ks-3x1-milky-pro-red",
       "url": "https://www.keychron.com/products/gateron-ks-3-milky-pro-switch",
       "observed": {
         "name": "Gateron KS-3 Milky Pro - Red"
@@ -39287,7 +39287,7 @@
       "source": "keychronswitches",
       "sourceId": "7182403240025/variant/40315991556185",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-red",
+      "id": "gateron-ks-3-red",
       "url": "https://www.keychron.com/products/gateron-ks-3x1-milky-switch",
       "observed": {
         "name": "Gateron KS-3X1 Milky - Red"
@@ -39297,7 +39297,7 @@
       "source": "keychronswitches",
       "sourceId": "7182403240025/variant/40315991588953",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-blue",
+      "id": "gateron-ks-3-blue",
       "url": "https://www.keychron.com/products/gateron-ks-3x1-milky-switch",
       "observed": {
         "name": "Gateron KS-3X1 Milky - Blue"
@@ -39307,7 +39307,7 @@
       "source": "keychronswitches",
       "sourceId": "7182403240025/variant/40315991621721",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-brown",
+      "id": "gateron-ks-3-brown",
       "url": "https://www.keychron.com/products/gateron-ks-3x1-milky-switch",
       "observed": {
         "name": "Gateron KS-3X1 Milky - Brown"
@@ -39317,7 +39317,7 @@
       "source": "keychronswitches",
       "sourceId": "7182403240025/variant/40315991654489",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://www.keychron.com/products/gateron-ks-3x1-milky-switch",
       "observed": {
         "name": "Gateron KS-3X1 Milky - Yellow"
@@ -39327,7 +39327,7 @@
       "source": "keychronswitches",
       "sourceId": "7182403240025/variant/40315991687257",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-black",
+      "id": "gateron-ks-3-black",
       "url": "https://www.keychron.com/products/gateron-ks-3x1-milky-switch",
       "observed": {
         "name": "Gateron KS-3X1 Milky - Black"
@@ -39337,7 +39337,7 @@
       "source": "keychronswitches",
       "sourceId": "7182403240025/variant/40315991720025",
       "kind": "switches",
-      "id": "gateron-ks-3x1-milky-green",
+      "id": "gateron-ks-3-green",
       "url": "https://www.keychron.com/products/gateron-ks-3x1-milky-switch",
       "observed": {
         "name": "Gateron KS-3X1 Milky - Green"
@@ -39681,7 +39681,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40509382656089",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-red",
+      "id": "gateron-ks-9-g-pro-3-0-red",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - Red"
@@ -39691,7 +39691,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40509382721625",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-brown",
+      "id": "gateron-ks-9-g-pro-3-0-brown",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - Brown"
@@ -39701,7 +39701,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40509382754393",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - Yellow"
@@ -39711,7 +39711,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40509382787161",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-black",
+      "id": "gateron-ks-9-g-pro-3-0-black",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - Black"
@@ -39721,7 +39721,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40509382819929",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-white-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - White (Two-Stage Spring)"
@@ -39731,7 +39731,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40509382852697",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-silver-two-stage-spring",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - Silver (Two-Stage Spring)"
@@ -39741,7 +39741,7 @@
       "source": "keychronswitches",
       "sourceId": "7303355170905/variant/40749904953433",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-blue",
+      "id": "gateron-ks-9-g-pro-3-0-blue",
       "url": "https://www.keychron.com/products/gateron-g-pro-3-0-switch",
       "observed": {
         "name": "Gateron G Pro 3.0 - Blue"
@@ -39834,7 +39834,7 @@
       "source": "keychronswitches",
       "sourceId": "7335810433113/variant/40561950031961",
       "kind": "switches",
-      "id": "gateron-jupiter-banana-two-stage-spring",
+      "id": "gateron-jupiter-banana",
       "url": "https://www.keychron.com/products/gateron-jupiter-switch-set",
       "observed": {
         "name": "Gateron Jupiter - Banana (Two-Stage Spring) 3 Pin"
@@ -39844,7 +39844,7 @@
       "source": "keychronswitches",
       "sourceId": "7335810433113/variant/41678213939289",
       "kind": "switches",
-      "id": "gateron-jupiter-banana-two-stage-spring",
+      "id": "gateron-jupiter-banana",
       "url": "https://www.keychron.com/products/gateron-jupiter-switch-set",
       "observed": {
         "name": "Gateron Jupiter - Banana (Two-Stage Spring) 5 Pin"
@@ -41336,7 +41336,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8058415513813/variant/44205084639445",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-silver",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://lumekeebs.com/products/gateron-g-pro-3-0-silver-linear-switches",
       "observed": {
         "name": "Gateron G Pro 3.0 Silver Linear",
@@ -41348,7 +41348,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8058418757845/variant/44205115015381",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://lumekeebs.com/products/gateron-g-pro-3-0-yellow-linear-switches",
       "observed": {
         "name": "Gateron G Pro 3.0 Yellow Linear",
@@ -41908,7 +41908,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8625211441365/variant/48296854782165",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-red",
+      "id": "gateron-ks-33-low-profile-red",
       "url": "https://lumekeebs.com/products/gateron-ks-33-low-profile-2-0-mechanical-switches",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Red",
@@ -41919,7 +41919,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "8625211441365/variant/48296854814933",
       "kind": "switches",
-      "id": "gateron-ks-33-low-profile-2-0-mechanical-brown",
+      "id": "gateron-ks-33-low-profile-brown",
       "url": "https://lumekeebs.com/products/gateron-ks-33-low-profile-2-0-mechanical-switches",
       "observed": {
         "name": "Gateron KS-33 Low Profile 2.0 Mechanical - Brown",
@@ -44022,7 +44022,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9244393832661/variant/53013153054933",
       "kind": "switches",
-      "id": "hmx-cola-red",
+      "id": "hmx-cola",
       "url": "https://lumekeebs.com/products/hmx-coa-linear-switches-10pcs-pre-order",
       "observed": {
         "name": "HMX Cola Linear - Red",
@@ -44034,7 +44034,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9244393832661/variant/53013156495573",
       "kind": "switches",
-      "id": "hmx-cola-black",
+      "id": "hmx-cola",
       "url": "https://lumekeebs.com/products/hmx-coa-linear-switches-10pcs-pre-order",
       "observed": {
         "name": "HMX Cola Linear - Black",
@@ -44654,7 +44654,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9399303438549/variant/53982491082965",
       "kind": "switches",
-      "id": "gateron-milky-pro-silent-linear",
+      "id": "gateron-ks-3x1-milky-pro-pink",
       "url": "https://lumekeebs.com/products/gateron-milky-pro-silent-linear-switches-10pcs-1",
       "observed": {
         "name": "Gateron Milky Pro Silent Linear",
@@ -44666,7 +44666,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "9399386374357/variant/53982623924437",
       "kind": "switches",
-      "id": "gateron-milky-pro-silent-tactile",
+      "id": "gateron-ks-3x1-milky-pro-purple",
       "url": "https://lumekeebs.com/products/gateron-milky-pro-silent-tactile-switches-10pcs",
       "observed": {
         "name": "Gateron Milky Pro Silent Tactile",
@@ -65162,7 +65162,7 @@
       "source": "switchoddities",
       "sourceId": "10160789356828",
       "kind": "switches",
-      "id": "dareu-sky-heavy-blue",
+      "id": "dareu-sky-blue",
       "url": "https://switchoddities.com/products/dareu-sky-v3-heavy-blue",
       "observed": {
         "name": "Dareu Sky V3 Heavy Blue"
@@ -65276,7 +65276,7 @@
       "source": "switchoddities",
       "sourceId": "10160835330332",
       "kind": "switches",
-      "id": "everglide-haimu-jade-jasper",
+      "id": "everglide-haimu-jade",
       "url": "https://switchoddities.com/products/everglide-haimu-jade-jasper",
       "observed": {
         "name": "Everglide Haimu Jade (Jasper)"
@@ -66730,7 +66730,7 @@
       "source": "switchoddities",
       "sourceId": "10591523438876",
       "kind": "switches",
-      "id": "gateron-cap-golden-yellow-ks-26",
+      "id": "gateron-cap-yellow",
       "url": "https://switchoddities.com/products/gateron-cap-golden-yellow-ks-26",
       "observed": {
         "name": "Gateron Cap Golden Yellow KS-26"
@@ -66740,7 +66740,7 @@
       "source": "switchoddities",
       "sourceId": "10591523602716",
       "kind": "switches",
-      "id": "gateron-cap-golden-brown-ks-26",
+      "id": "gateron-cap-brown",
       "url": "https://switchoddities.com/products/gateron-cap-golden-brown-ks-26",
       "observed": {
         "name": "Gateron Cap Golden Brown KS-26"
@@ -68229,7 +68229,7 @@
       "source": "switchoddities",
       "sourceId": "10944581370140",
       "kind": "switches",
-      "id": "ktt-bamboo-gleam-maybe",
+      "id": "ktt-bamboo-gleam",
       "url": "https://switchoddities.com/products/ktt-bamboo-gleam-maybe-1",
       "observed": {
         "name": "KTT Bamboo Gleam (maybe)"
@@ -69374,7 +69374,7 @@
       "source": "switchoddities",
       "sourceId": "8119061512476",
       "kind": "switches",
-      "id": "strawberry-milk-linear",
+      "id": "dk-strawberry-milk-linear",
       "url": "https://switchoddities.com/products/strawberry-milk-linear",
       "observed": {
         "name": "Strawberry Milk Linear",
@@ -69809,7 +69809,7 @@
       "source": "switchoddities",
       "sourceId": "8119075471644",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-white-single-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-white",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-white-single-stage-spring",
       "observed": {
         "name": "Gateron G Pro 2.0 White Single Stage Spring"
@@ -69819,7 +69819,7 @@
       "source": "switchoddities",
       "sourceId": "8119075864860",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-white-dual-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-white",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-white-dual-stage-spring",
       "observed": {
         "name": "Gateron G Pro 2.0 White Dual Stage Spring"
@@ -69829,7 +69829,7 @@
       "source": "switchoddities",
       "sourceId": "8119076290844",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-silver-single-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-silver",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-silver-single-stage-spring",
       "observed": {
         "name": "Gateron G Pro 2.0 Silver Single Stage Spring"
@@ -69839,7 +69839,7 @@
       "source": "switchoddities",
       "sourceId": "8119076651292",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-silver-dual-stage-spring",
+      "id": "gateron-ks-9-g-pro-2-0-silver",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-silver-dual-stage-spring",
       "observed": {
         "name": "Gateron G Pro 2.0 Silver Dual Stage Spring"
@@ -69849,7 +69849,7 @@
       "source": "switchoddities",
       "sourceId": "8119076946204",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-red",
+      "id": "gateron-ks-9-g-pro-2-0-red",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-red",
       "observed": {
         "name": "Gateron G Pro 2.0 Red"
@@ -69859,7 +69859,7 @@
       "source": "switchoddities",
       "sourceId": "8119077306652",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-yellow",
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-yellow",
       "observed": {
         "name": "Gateron G Pro 2.0 Yellow"
@@ -69869,7 +69869,7 @@
       "source": "switchoddities",
       "sourceId": "8119077634332",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-black",
+      "id": "gateron-ks-9-g-pro-2-0-black",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-black",
       "observed": {
         "name": "Gateron G Pro 2.0 Black"
@@ -69879,7 +69879,7 @@
       "source": "switchoddities",
       "sourceId": "8119077962012",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-brown",
+      "id": "gateron-ks-9-g-pro-2-0-brown",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-brown",
       "observed": {
         "name": "Gateron G Pro 2.0 Brown"
@@ -69889,7 +69889,7 @@
       "source": "switchoddities",
       "sourceId": "8119078224156",
       "kind": "switches",
-      "id": "gateron-g-pro-2-0-blue",
+      "id": "gateron-ks-9-g-pro-2-0-blue",
       "url": "https://switchoddities.com/products/gateron-g-pro-2-0-blue",
       "observed": {
         "name": "Gateron G Pro 2.0 Blue"
@@ -70261,7 +70261,7 @@
       "source": "switchoddities",
       "sourceId": "8119087792412",
       "kind": "switches",
-      "id": "gazzew-boba-lt-thock",
+      "id": "gazzew-boba-lt",
       "url": "https://switchoddities.com/products/gazzew-boba-lt-linear-thock-55g",
       "observed": {
         "name": "Gazzew Boba LT (Linear Thock) 55g",
@@ -70382,7 +70382,7 @@
       "source": "switchoddities",
       "sourceId": "8119090086172",
       "kind": "switches",
-      "id": "strawberry-milk-tactile",
+      "id": "dk-strawberry-milk-tactile",
       "url": "https://switchoddities.com/products/strawberry-milk-tactile",
       "observed": {
         "name": "Strawberry Milk Tactile",
@@ -73162,7 +73162,7 @@
       "source": "switchoddities",
       "sourceId": "8222287954204",
       "kind": "switches",
-      "id": "c3-x-tkc-tangerine-dark",
+      "id": "c3-tangerine",
       "url": "https://switchoddities.com/products/c-equalz-kiwi",
       "observed": {
         "name": "C³Equalz x TKC Tangerine Dark (67g)",
@@ -73277,7 +73277,7 @@
       "source": "switchoddities",
       "sourceId": "8237728465180",
       "kind": "switches",
-      "id": "gateron-ks-3x47-clear",
+      "id": "gateron-ks-3-clear",
       "url": "https://switchoddities.com/products/gateron-clear-ks-3x47",
       "observed": {
         "name": "Gateron KS-3X47 Clear"
@@ -73287,7 +73287,7 @@
       "source": "switchoddities",
       "sourceId": "8237742850332",
       "kind": "switches",
-      "id": "gateron-ks-3x47-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://switchoddities.com/products/gateron-ks-3x47-yellow",
       "observed": {
         "name": "Gateron KS-3X47 Yellow"
@@ -73307,7 +73307,7 @@
       "source": "switchoddities",
       "sourceId": "8237765034268",
       "kind": "switches",
-      "id": "gateron-ks-3x1-black",
+      "id": "gateron-ks-3-black",
       "url": "https://switchoddities.com/products/gateron-ks-3x1-black",
       "observed": {
         "name": "Gateron KS-3X1 Black"
@@ -73317,7 +73317,7 @@
       "source": "switchoddities",
       "sourceId": "8237772865820",
       "kind": "switches",
-      "id": "gateron-silent-black",
+      "id": "gateron-ks-9-silent-black",
       "url": "https://switchoddities.com/products/gateron-ks-9-silent-black",
       "observed": {
         "name": "Gateron Silent Black"
@@ -73371,16 +73371,6 @@
       "url": "https://switchoddities.com/products/novelkeys-blueberry",
       "observed": {
         "name": "Novelkeys Blueberry"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8237989593372",
-      "kind": "switches",
-      "id": "unholy-pandas-clear-spring",
-      "url": "https://switchoddities.com/products/unholy-pandas-clear-spring",
-      "observed": {
-        "name": "Unholy Pandas (Clear Spring)"
       }
     },
     {
@@ -73994,7 +73984,7 @@
       "source": "switchoddities",
       "sourceId": "8295539835164",
       "kind": "switches",
-      "id": "c3-x-tkc-tangerine-light",
+      "id": "c3-tangerine",
       "url": "https://switchoddities.com/products/c-equalz-x-tkc-tangerine-light-62g",
       "observed": {
         "name": "C³Equalz x TKC Tangerine Light (62g)",
@@ -74696,7 +74686,7 @@
       "source": "switchoddities",
       "sourceId": "8346170949916",
       "kind": "switches",
-      "id": "strawberry-milk-ice-linear",
+      "id": "dk-strawberry-milk-linear",
       "url": "https://switchoddities.com/products/dangkeebs-strawberry-milk-ice-linear",
       "observed": {
         "name": "Dangkeebs Strawberry Milk Ice - Linear",
@@ -74709,7 +74699,7 @@
       "source": "switchoddities",
       "sourceId": "8346171113756",
       "kind": "switches",
-      "id": "strawberry-milk-ice-tactile",
+      "id": "dk-strawberry-milk-tactile",
       "url": "https://switchoddities.com/products/dangkeebs-strawberry-milk-ice-tactile",
       "observed": {
         "name": "Dangkeebs Strawberry Milk Ice - Tactile",
@@ -75187,7 +75177,7 @@
       "source": "switchoddities",
       "sourceId": "8427011047708",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-white",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://switchoddities.com/products/gateron-g-pro-3-0-white",
       "observed": {
         "name": "Gateron G Pro 3.0 White"
@@ -75197,7 +75187,7 @@
       "source": "switchoddities",
       "sourceId": "8427036410140",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-red",
+      "id": "gateron-ks-9-g-pro-3-0-red",
       "url": "https://switchoddities.com/products/gateron-g-pro",
       "observed": {
         "name": "Gateron G Pro 3.0 Red"
@@ -75207,7 +75197,7 @@
       "source": "switchoddities",
       "sourceId": "8427058364700",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://switchoddities.com/products/gateron-g-pro-3-0-yellow",
       "observed": {
         "name": "Gateron G Pro 3.0 Yellow"
@@ -75217,7 +75207,7 @@
       "source": "switchoddities",
       "sourceId": "8427065344284",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-black",
+      "id": "gateron-ks-9-g-pro-3-0-black",
       "url": "https://switchoddities.com/products/gateron-g-pro-3-0-black",
       "observed": {
         "name": "Gateron G Pro 3.0 Black"
@@ -75227,7 +75217,7 @@
       "source": "switchoddities",
       "sourceId": "8427074060572",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-silver",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://switchoddities.com/products/gateron-g-pro-3-0-silver",
       "observed": {
         "name": "Gateron G Pro 3.0 Silver"
@@ -75237,7 +75227,7 @@
       "source": "switchoddities",
       "sourceId": "8427080974620",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-brown",
+      "id": "gateron-ks-9-g-pro-3-0-brown",
       "url": "https://switchoddities.com/products/gateron-g-pro-3-0-brown",
       "observed": {
         "name": "Gateron G Pro 3.0 Brown"
@@ -75467,7 +75457,7 @@
       "source": "switchoddities",
       "sourceId": "8430411383068",
       "kind": "switches",
-      "id": "dareu-purple-gold-pro",
+      "id": "dareu-purple-gold",
       "url": "https://switchoddities.com/products/dareu-purple-gold-v3-pro",
       "observed": {
         "name": "Dareu Purple Gold V3 (Pro)"
@@ -76621,7 +76611,7 @@
       "source": "switchoddities",
       "sourceId": "8602392920348",
       "kind": "switches",
-      "id": "dangkeebs-strawberry-milk-linear-milk",
+      "id": "dk-strawberry-milk-linear",
       "url": "https://switchoddities.com/products/dangkeebs-strawberry-milk-linear-milk",
       "observed": {
         "name": "Dangkeebs Strawberry Milk - Linear (Milk)",
@@ -76634,7 +76624,7 @@
       "source": "switchoddities",
       "sourceId": "8602395148572",
       "kind": "switches",
-      "id": "dangkeebs-strawberry-milk-tactile-milk",
+      "id": "dk-strawberry-milk-tactile",
       "url": "https://switchoddities.com/products/dangkeebs-strawberry-milk-tactile-milk",
       "observed": {
         "name": "Dangkeebs Strawberry Milk - Tactile (Milk)",
@@ -77668,7 +77658,7 @@
       "source": "switchoddities",
       "sourceId": "8783264579868",
       "kind": "switches",
-      "id": "ajazz-violet-clear-top-black-bottom",
+      "id": "ajazz-violet",
       "url": "https://switchoddities.com/products/ajazz-violet-clear-top-black-bottom",
       "observed": {
         "name": "Ajazz Violet (Clear Top/Black Bottom)"
@@ -79571,7 +79561,7 @@
       "source": "switchoddities",
       "sourceId": "8941187105052",
       "kind": "switches",
-      "id": "dareu-sky-sky-blue",
+      "id": "dareu-sky-blue",
       "url": "https://switchoddities.com/products/dareu-sky-sky-blue-v5",
       "observed": {
         "name": "Dareu Sky (Sky Blue V5)"
@@ -79671,7 +79661,7 @@
       "source": "switchoddities",
       "sourceId": "8941227507996",
       "kind": "switches",
-      "id": "gateron-ks-33-banana",
+      "id": "gateron-ks-33-low-profile-banana",
       "url": "https://switchoddities.com/products/gateron-ks-33-low-profile-banana",
       "observed": {
         "name": "Gateron KS-33 Banana"
@@ -80896,7 +80886,7 @@
       "source": "switchoddities",
       "sourceId": "9131300258076",
       "kind": "switches",
-      "id": "gateron-ks-3-clear-silent",
+      "id": "gateron-ks-3-silent-white",
       "url": "https://switchoddities.com/products/gateron-ks-3-clear-silent",
       "observed": {
         "name": "Gateron KS-3 Clear Silent"
@@ -80906,7 +80896,7 @@
       "source": "switchoddities",
       "sourceId": "9131304517916",
       "kind": "switches",
-      "id": "gateron-ks-3x1-yellow",
+      "id": "gateron-ks-3-yellow",
       "url": "https://switchoddities.com/products/gateron-ks-3x1-yellow",
       "observed": {
         "name": "Gateron KS-3X1 Yellow"
@@ -80916,7 +80906,7 @@
       "source": "switchoddities",
       "sourceId": "9131306058012",
       "kind": "switches",
-      "id": "gateron-ks-3-black-silent",
+      "id": "gateron-ks-3-silent-black",
       "url": "https://switchoddities.com/products/gateron-ks-3-black-silent",
       "observed": {
         "name": "Gateron KS-3 Black Silent"
@@ -80986,7 +80976,7 @@
       "source": "switchoddities",
       "sourceId": "9131329913116",
       "kind": "switches",
-      "id": "gateron-silent-yellow-2-0",
+      "id": "gateron-ks-9-silent-yellow-2-0",
       "url": "https://switchoddities.com/products/gateron-silent-yellow-2-0",
       "observed": {
         "name": "Gateron Silent Yellow 2.0"
@@ -82997,7 +82987,7 @@
       "source": "switchoddities",
       "sourceId": "9496163156252",
       "kind": "switches",
-      "id": "gateron-deepping-4mm",
+      "id": "gateron-deepping",
       "url": "https://switchoddities.com/products/gateron-deepping-4mm",
       "observed": {
         "name": "Gateron Deepping 4mm"
@@ -83007,7 +82997,7 @@
       "source": "switchoddities",
       "sourceId": "9496168595740",
       "kind": "switches",
-      "id": "gateron-deepping-3-7mm",
+      "id": "gateron-deepping",
       "url": "https://switchoddities.com/products/gateron-deepping-3-7mm",
       "observed": {
         "name": "Gateron Deepping 3.7mm"
@@ -83047,7 +83037,7 @@
       "source": "switchoddities",
       "sourceId": "9498569867548",
       "kind": "switches",
-      "id": "gateron-dual-rail-orange-hall-effect",
+      "id": "gateron-ks-20-dual-rail-magnetic-orange",
       "url": "https://switchoddities.com/products/gateron-dual-rail-orange-hall-effect",
       "observed": {
         "name": "Gateron Dual Rail Orange Hall Effect"
@@ -83057,7 +83047,7 @@
       "source": "switchoddities",
       "sourceId": "9498581041436",
       "kind": "switches",
-      "id": "gateron-fox-hall-effect",
+      "id": "gateron-ks-37b-magnetic-fox",
       "url": "https://switchoddities.com/products/gateron-fox-hall-effect",
       "observed": {
         "name": "Gateron Fox Hall Effect"
@@ -83117,7 +83107,7 @@
       "source": "switchoddities",
       "sourceId": "9498777452828",
       "kind": "switches",
-      "id": "gateron-ks-33-red",
+      "id": "gateron-ks-33-low-profile-red",
       "url": "https://switchoddities.com/products/gateron-ks-33-red",
       "observed": {
         "name": "Gateron KS-33 Red"
@@ -83127,7 +83117,7 @@
       "source": "switchoddities",
       "sourceId": "9498781319452",
       "kind": "switches",
-      "id": "gateron-ks-33-brown",
+      "id": "gateron-ks-33-low-profile-brown",
       "url": "https://switchoddities.com/products/gateron-ks-33-brown",
       "observed": {
         "name": "Gateron KS-33 Brown"
@@ -83137,7 +83127,7 @@
       "source": "switchoddities",
       "sourceId": "9498786365724",
       "kind": "switches",
-      "id": "gateron-ks-33-blue",
+      "id": "gateron-ks-33-low-profile-blue",
       "url": "https://switchoddities.com/products/gateron-ks-33-blue",
       "observed": {
         "name": "Gateron KS-33 Blue"
@@ -83147,7 +83137,7 @@
       "source": "switchoddities",
       "sourceId": "9498793476380",
       "kind": "switches",
-      "id": "gateron-ks-33-silver",
+      "id": "gateron-ks-33-low-profile-silver",
       "url": "https://switchoddities.com/products/gateron-ks-33-silver",
       "observed": {
         "name": "Gateron KS-33 Silver"
@@ -83157,7 +83147,7 @@
       "source": "switchoddities",
       "sourceId": "9498810974492",
       "kind": "switches",
-      "id": "gateron-ks-33-chocolate",
+      "id": "gateron-ks-33-low-profile-chocolate",
       "url": "https://switchoddities.com/products/gateron-ks-33-chocolate",
       "observed": {
         "name": "Gateron KS-33 Chocolate"
@@ -83387,7 +83377,7 @@
       "source": "switchoddities",
       "sourceId": "9508766286108",
       "kind": "switches",
-      "id": "huano-aries-flaw-version",
+      "id": "huano-aries",
       "url": "https://switchoddities.com/products/huano-aries-flaw-version",
       "observed": {
         "name": "Huano Aries (flaw version)"
@@ -84889,7 +84879,7 @@
       "source": "switchoddities",
       "sourceId": "9678503772444",
       "kind": "switches",
-      "id": "gateron-ks-3x47-red",
+      "id": "gateron-ks-3-red",
       "url": "https://switchoddities.com/products/gateron-ks-3x47-red",
       "observed": {
         "name": "Gateron KS-3x47 Red"
@@ -85932,7 +85922,7 @@
       "source": "switchoddities",
       "sourceId": "9997727891740",
       "kind": "switches",
-      "id": "gateron-goldenrod-pro-3-0-white",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://switchoddities.com/products/gateron-goldenrod-pro-3-0-white",
       "observed": {
         "name": "Gateron Goldenrod Pro 3.0 White"
@@ -85962,7 +85952,7 @@
       "source": "switchoddities",
       "sourceId": "9997735887132",
       "kind": "switches",
-      "id": "gateron-goldenrod-pro-3-0-silver",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://switchoddities.com/products/gateron-goldenrod-pro-3-0-silver",
       "observed": {
         "name": "Gateron Goldenrod Pro 3.0 Silver"
@@ -87357,7 +87347,7 @@
       "source": "theremingoat",
       "sourceId": "1078",
       "kind": "switches",
-      "id": "gateron-cap-crystal-blue",
+      "id": "gateron-cap-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Crystal Blue",
@@ -87369,7 +87359,7 @@
       "source": "theremingoat",
       "sourceId": "1079",
       "kind": "switches",
-      "id": "gateron-cap-crystal-brown",
+      "id": "gateron-cap-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Crystal Brown",
@@ -87392,7 +87382,7 @@
       "source": "theremingoat",
       "sourceId": "1080",
       "kind": "switches",
-      "id": "gateron-cap-crystal-red",
+      "id": "gateron-cap-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Crystal Red",
@@ -87404,7 +87394,7 @@
       "source": "theremingoat",
       "sourceId": "1081",
       "kind": "switches",
-      "id": "gateron-cap-crystal-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Crystal Yellow",
@@ -87416,7 +87406,7 @@
       "source": "theremingoat",
       "sourceId": "1082",
       "kind": "switches",
-      "id": "gateron-cap-crystal-silver",
+      "id": "gateron-cap-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Crystal Silver",
@@ -87428,7 +87418,7 @@
       "source": "theremingoat",
       "sourceId": "1083",
       "kind": "switches",
-      "id": "gateron-cap-crystal-silent-red",
+      "id": "gateron-cap-silent-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Crystal Silent Red",
@@ -87625,7 +87615,7 @@
       "source": "theremingoat",
       "sourceId": "1099",
       "kind": "switches",
-      "id": "gateron-pro-speed-silver-2-stage",
+      "id": "gateron-ks-9-g-pro-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Pro Speed Silver (2 Stage)",
@@ -88074,7 +88064,7 @@
       "source": "theremingoat",
       "sourceId": "1140",
       "kind": "switches",
-      "id": "gateron-kangaroo-ink-monstargear",
+      "id": "gateron-kangaroo-ink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Kangaroo Ink (Monstargear)",
@@ -88701,7 +88691,7 @@
       "source": "theremingoat",
       "sourceId": "1190",
       "kind": "switches",
-      "id": "dareu-sky",
+      "id": "dareu-sky-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "DareU Sky V1",
@@ -89787,7 +89777,7 @@
       "source": "theremingoat",
       "sourceId": "1279",
       "kind": "switches",
-      "id": "strawberry-milk-pink-linear",
+      "id": "dk-strawberry-milk-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Strawberry Milk Pink (Linear)",
@@ -89811,7 +89801,7 @@
       "source": "theremingoat",
       "sourceId": "1280",
       "kind": "switches",
-      "id": "strawberry-milk-white-linear",
+      "id": "dk-strawberry-milk-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Strawberry Milk White (Linear)",
@@ -89823,7 +89813,7 @@
       "source": "theremingoat",
       "sourceId": "1281",
       "kind": "switches",
-      "id": "strawberry-milk-pink-tactile",
+      "id": "dk-strawberry-milk-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Strawberry Milk Pink (Tactile)",
@@ -89835,7 +89825,7 @@
       "source": "theremingoat",
       "sourceId": "1282",
       "kind": "switches",
-      "id": "strawberry-milk-white-tactile",
+      "id": "dk-strawberry-milk-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Strawberry Milk White (Tactile)",
@@ -89962,18 +89952,6 @@
         "name": "Gateron CJ (Dustproof)",
         "manufacturer": "Gateron",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1295",
-      "kind": "switches",
-      "id": "alps-skcm-dust-cover",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Alps SKCM (Dust Cover)",
-        "manufacturer": "Alps",
-        "switchType": "clicky"
       }
     },
     {
@@ -91405,7 +91383,7 @@
       "source": "theremingoat",
       "sourceId": "1407",
       "kind": "switches",
-      "id": "bsun-dark-brown-black-bottom",
+      "id": "bsun-dark-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Dark Brown (Black Bottom)",
@@ -91429,7 +91407,7 @@
       "source": "theremingoat",
       "sourceId": "1409",
       "kind": "switches",
-      "id": "bsun-brown-black-bottom",
+      "id": "bsun-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Brown (Black Bottom)",
@@ -91489,7 +91467,7 @@
       "source": "theremingoat",
       "sourceId": "1413",
       "kind": "switches",
-      "id": "bsun-brown-white-bottom",
+      "id": "bsun-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Brown (White Bottom)",
@@ -92250,17 +92228,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "1474",
-      "kind": "switches",
-      "id": "blue-and-pink-holy-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Blue and Pink Holy Panda",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "1475",
       "kind": "switches",
       "id": "ttc-matrix-01-linear",
@@ -92287,7 +92254,7 @@
       "source": "theremingoat",
       "sourceId": "1477",
       "kind": "switches",
-      "id": "boba-lt",
+      "id": "gazzew-boba-lt",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Boba LT",
@@ -93844,7 +93811,7 @@
       "source": "theremingoat",
       "sourceId": "16",
       "kind": "switches",
-      "id": "gateron-milky-black-ks-3-x1",
+      "id": "gateron-ks-3-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Black",
@@ -94258,7 +94225,7 @@
       "source": "theremingoat",
       "sourceId": "1631",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-blue",
+      "id": "gateron-ks-9-g-pro-2-0-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Blue",
@@ -94270,7 +94237,7 @@
       "source": "theremingoat",
       "sourceId": "1632",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-white",
+      "id": "gateron-ks-9-g-pro-2-0-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 White",
@@ -94282,7 +94249,7 @@
       "source": "theremingoat",
       "sourceId": "1633",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-red",
+      "id": "gateron-ks-9-g-pro-2-0-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Red",
@@ -94294,7 +94261,7 @@
       "source": "theremingoat",
       "sourceId": "1634",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-silver",
+      "id": "gateron-ks-9-g-pro-2-0-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Silver",
@@ -94306,7 +94273,7 @@
       "source": "theremingoat",
       "sourceId": "1635",
       "kind": "switches",
-      "id": "gateron-ks-9-brown-pro-2-0",
+      "id": "gateron-ks-9-g-pro-2-0-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Brown",
@@ -94318,7 +94285,7 @@
       "source": "theremingoat",
       "sourceId": "1636",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-black",
+      "id": "gateron-ks-9-g-pro-2-0-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Black",
@@ -94330,7 +94297,7 @@
       "source": "theremingoat",
       "sourceId": "1637",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-2-0-yellow",
+      "id": "gateron-ks-9-g-pro-2-0-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro 2.0 Yellow",
@@ -94342,7 +94309,7 @@
       "source": "theremingoat",
       "sourceId": "1638",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-white-1-stage",
+      "id": "gateron-ks-9-g-pro-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro White (1 Stage)",
@@ -94354,7 +94321,7 @@
       "source": "theremingoat",
       "sourceId": "1639",
       "kind": "switches",
-      "id": "gateron-ks-9-pro-white-2-stage",
+      "id": "gateron-ks-9-g-pro-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-9 Pro White (2 Stage)",
@@ -94773,7 +94740,7 @@
       "source": "theremingoat",
       "sourceId": "1678",
       "kind": "switches",
-      "id": "gateron-ks9-pro-2-0-silver-2-stage",
+      "id": "gateron-ks-9-g-pro-2-0-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS9 Pro 2.0 Silver (2 Stage)",
@@ -94986,7 +94953,7 @@
       "source": "theremingoat",
       "sourceId": "17",
       "kind": "switches",
-      "id": "gateron-milky-red-ks-3-x1",
+      "id": "gateron-ks-3-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Red",
@@ -95250,7 +95217,7 @@
       "source": "theremingoat",
       "sourceId": "1721",
       "kind": "switches",
-      "id": "strawberry-milk-ice-linear",
+      "id": "dk-strawberry-milk-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Strawberry Milk Ice Linear",
@@ -95262,7 +95229,7 @@
       "source": "theremingoat",
       "sourceId": "1722",
       "kind": "switches",
-      "id": "strawberry-milk-ice-tactile",
+      "id": "dk-strawberry-milk-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Strawberry Milk Ice Tactile",
@@ -95594,20 +95561,9 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "175",
-      "kind": "switches",
-      "id": "gatistotle-clear",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Gatistotle Clear",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "1750",
       "kind": "switches",
-      "id": "dareu-sky",
+      "id": "dareu-sky-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "DareU Sky V2",
@@ -95618,7 +95574,7 @@
       "source": "theremingoat",
       "sourceId": "1751",
       "kind": "switches",
-      "id": "dareu-violet-gold-pro",
+      "id": "dareu-purple-gold",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "DareU Violet Gold Pro",
@@ -95629,7 +95585,7 @@
       "source": "theremingoat",
       "sourceId": "1752",
       "kind": "switches",
-      "id": "dareu-violet-purple-gold",
+      "id": "dareu-purple-gold",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "DareU Violet/Purple Gold V2",
@@ -96211,7 +96167,7 @@
       "source": "theremingoat",
       "sourceId": "18",
       "kind": "switches",
-      "id": "gateron-milky-brown-ks-3-x1",
+      "id": "gateron-ks-3-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Brown",
@@ -97396,7 +97352,7 @@
       "source": "theremingoat",
       "sourceId": "19",
       "kind": "switches",
-      "id": "gateron-milky-blue-ks-3-x1",
+      "id": "gateron-ks-3-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Blue",
@@ -97565,7 +97521,7 @@
       "source": "theremingoat",
       "sourceId": "1911",
       "kind": "switches",
-      "id": "bsun-yellow-clear-white",
+      "id": "bsun-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Yellow (Clear/White)",
@@ -98350,7 +98306,7 @@
       "source": "theremingoat",
       "sourceId": "198",
       "kind": "switches",
-      "id": "bsun-brown-cream-bottom",
+      "id": "bsun-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Brown (Cream Bottom)",
@@ -98613,7 +98569,7 @@
       "source": "theremingoat",
       "sourceId": "20",
       "kind": "switches",
-      "id": "gateron-milky-green-ks-3-x1",
+      "id": "gateron-ks-3-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Greern",
@@ -99152,7 +99108,7 @@
       "source": "theremingoat",
       "sourceId": "2041",
       "kind": "switches",
-      "id": "gateron-root-beer-float-old-pin",
+      "id": "gateron-root-beer-float",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Root Beer Float (Old Pin)",
@@ -99164,7 +99120,7 @@
       "source": "theremingoat",
       "sourceId": "2042",
       "kind": "switches",
-      "id": "gateron-root-beer-float-new-pin",
+      "id": "gateron-root-beer-float",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Root Beer Float (New Pin)",
@@ -99816,7 +99772,7 @@
       "source": "theremingoat",
       "sourceId": "21",
       "kind": "switches",
-      "id": "gateron-milky-clear-ks-3-x1",
+      "id": "gateron-ks-3-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Clear",
@@ -100442,18 +100398,6 @@
         "manufacturer": "Kailh",
         "switchType": "linear"
       }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "215",
-      "kind": "switches",
-      "id": "hiroseal",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "'Hiroseal'",
-        "switchType": "linear"
-      },
-      "notes": "Hirose Stem, Zeal V2 Housing, TX Film, TX Gold Spring, Custom Lube"
     },
     {
       "source": "theremingoat",
@@ -101103,7 +101047,7 @@
       "source": "theremingoat",
       "sourceId": "22",
       "kind": "switches",
-      "id": "gateron-milky-yellow-ks-3-x1",
+      "id": "gateron-ks-3-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Yellow",
@@ -101670,7 +101614,7 @@
       "source": "theremingoat",
       "sourceId": "2243",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Yellow",
@@ -102333,7 +102277,7 @@
       "source": "theremingoat",
       "sourceId": "23",
       "kind": "switches",
-      "id": "gateron-black-ks-1",
+      "id": "gateron-ks-1-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Black",
@@ -102528,7 +102472,7 @@
       "source": "theremingoat",
       "sourceId": "2314",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-brown",
+      "id": "gateron-ks-9-g-pro-3-0-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Brown",
@@ -102540,7 +102484,7 @@
       "source": "theremingoat",
       "sourceId": "2315",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-white",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 White",
@@ -102552,7 +102496,7 @@
       "source": "theremingoat",
       "sourceId": "2316",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-silver",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Silver",
@@ -102564,7 +102508,7 @@
       "source": "theremingoat",
       "sourceId": "2317",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-black",
+      "id": "gateron-ks-9-g-pro-3-0-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Black",
@@ -102576,7 +102520,7 @@
       "source": "theremingoat",
       "sourceId": "2318",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-red",
+      "id": "gateron-ks-9-g-pro-3-0-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Red",
@@ -103469,7 +103413,7 @@
       "source": "theremingoat",
       "sourceId": "24",
       "kind": "switches",
-      "id": "gateron-red-ks-1",
+      "id": "gateron-ks-1-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Red",
@@ -104714,7 +104658,7 @@
       "source": "theremingoat",
       "sourceId": "25",
       "kind": "switches",
-      "id": "gateron-brown-ks-1",
+      "id": "gateron-ks-1-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Brown",
@@ -105847,7 +105791,7 @@
       "source": "theremingoat",
       "sourceId": "26",
       "kind": "switches",
-      "id": "gateron-blue-ks-1",
+      "id": "gateron-ks-1-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Blue",
@@ -106337,7 +106281,7 @@
       "source": "theremingoat",
       "sourceId": "2636",
       "kind": "switches",
-      "id": "dareu-sky",
+      "id": "dareu-sky-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "DareU Sky",
@@ -107107,7 +107051,7 @@
       "source": "theremingoat",
       "sourceId": "27",
       "kind": "switches",
-      "id": "gateron-green-ks-1",
+      "id": "gateron-ks-1-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Green",
@@ -107517,116 +107461,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "2730",
-      "kind": "switches",
-      "id": "holy-bsun-translucent-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN Translucent Panda 3 Pin (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2731",
-      "kind": "switches",
-      "id": "holy-bsun-translucent-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN Translucent Panda 3 Pin (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2732",
-      "kind": "switches",
-      "id": "holy-bsun-white-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin White Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2733",
-      "kind": "switches",
-      "id": "holy-bsun-white-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin White Panda (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2734",
-      "kind": "switches",
-      "id": "holy-bsun-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Red Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2735",
-      "kind": "switches",
-      "id": "holy-bsun-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Red Panda (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2736",
-      "kind": "switches",
-      "id": "holy-bsun-green-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Green Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2737",
-      "kind": "switches",
-      "id": "holy-bsun-green-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Green Panda (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2738",
-      "kind": "switches",
-      "id": "holy-bsun-blue-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Blue Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2739",
-      "kind": "switches",
-      "id": "holy-bsun-blue-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Blue Panda (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "274",
       "kind": "switches",
       "id": "smoky-durock-geekmaker-light-purple",
@@ -107637,28 +107471,6 @@
         "switchType": "linear"
       },
       "notes": "L4"
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2740",
-      "kind": "switches",
-      "id": "holy-bsun-yellow-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Yellow Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2741",
-      "kind": "switches",
-      "id": "holy-bsun-yellow-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN 5 Pin Yellow Panda (Clear Stem)",
-        "switchType": "tactile"
-      }
     },
     {
       "source": "theremingoat",
@@ -107775,18 +107587,6 @@
         "name": "KRGD Black with Condensor",
         "switchType": "linear"
       }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "2751",
-      "kind": "switches",
-      "id": "kailh-holy-panda-red",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Kailh \"Holy Panda Red\"",
-        "switchType": "linear"
-      },
-      "notes": "Possible frankenswitch, sold as is from MMD"
     },
     {
       "source": "theremingoat",
@@ -108207,7 +108007,7 @@
       "source": "theremingoat",
       "sourceId": "2787",
       "kind": "switches",
-      "id": "gateron-north-pole-brown-no-band",
+      "id": "gateron-north-pole-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron North Pole V2 Brown (No Band)",
@@ -108375,7 +108175,7 @@
       "source": "theremingoat",
       "sourceId": "28",
       "kind": "switches",
-      "id": "gateron-clear-ks-1",
+      "id": "gateron-ks-1-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Clear",
@@ -108803,7 +108603,7 @@
       "source": "theremingoat",
       "sourceId": "2831",
       "kind": "switches",
-      "id": "gateron-silent-yellow-2-0",
+      "id": "gateron-ks-9-silent-yellow-2-0",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Yellow 2.0",
@@ -109151,7 +108951,7 @@
       "source": "theremingoat",
       "sourceId": "2859",
       "kind": "switches",
-      "id": "gateron-deepping-4-0-mm",
+      "id": "gateron-deepping",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Deepping (4.0 mm)",
@@ -109176,7 +108976,7 @@
       "source": "theremingoat",
       "sourceId": "2860",
       "kind": "switches",
-      "id": "gateron-deepping-3-7mm",
+      "id": "gateron-deepping",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Deepping (3.7 mm)",
@@ -109225,7 +109025,7 @@
       "source": "theremingoat",
       "sourceId": "2864",
       "kind": "switches",
-      "id": "gateron-dual-rail-magnetic-orange",
+      "id": "gateron-ks-20-dual-rail-magnetic-orange",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gatron Dual-Rail Magnetic Orange",
@@ -109636,7 +109436,7 @@
       "source": "theremingoat",
       "sourceId": "2896",
       "kind": "switches",
-      "id": "gateron-chocolate-low-profile",
+      "id": "gateron-ks-33-low-profile-chocolate",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Chocolate Low Profile",
@@ -109648,7 +109448,7 @@
       "source": "theremingoat",
       "sourceId": "2897",
       "kind": "switches",
-      "id": "hori-edge-blue-led",
+      "id": "hori-edge-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "HORI Edge Blue (LED)",
@@ -109683,7 +109483,7 @@
       "source": "theremingoat",
       "sourceId": "29",
       "kind": "switches",
-      "id": "gateron-yellow-ks-1",
+      "id": "gateron-ks-1-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Yellow",
@@ -110606,7 +110406,7 @@
       "source": "theremingoat",
       "sourceId": "2969",
       "kind": "switches",
-      "id": "huano-aries-flawed-version",
+      "id": "huano-aries",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Aries (Flawed Version)",
@@ -111012,7 +110812,7 @@
       "source": "theremingoat",
       "sourceId": "30",
       "kind": "switches",
-      "id": "gateron-smd-black-ks-9",
+      "id": "gateron-ks-9-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Black",
@@ -111738,7 +111538,7 @@
       "source": "theremingoat",
       "sourceId": "3054",
       "kind": "switches",
-      "id": "hmx-snow-crash-overlubed-batch",
+      "id": "hmx-snow-crash",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "HMX Snow Crash (Overlubed Batch)",
@@ -112324,7 +112124,7 @@
       "source": "theremingoat",
       "sourceId": "31",
       "kind": "switches",
-      "id": "gateron-smd-red-ks-9",
+      "id": "gateron-ks-9-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Red",
@@ -112564,7 +112364,7 @@
       "source": "theremingoat",
       "sourceId": "3117",
       "kind": "switches",
-      "id": "gateron-fox-he",
+      "id": "gateron-ks-37b-magnetic-fox",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Fox HE",
@@ -113322,17 +113122,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "318",
-      "kind": "switches",
-      "id": "holy-invyr-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy Invyr Panda V1 (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3180",
       "kind": "switches",
       "id": "glorious-fox-heavy",
@@ -113376,17 +113165,6 @@
       "observed": {
         "name": "Wuque Studio Pearl",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "319",
-      "kind": "switches",
-      "id": "holy-invyr-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy Invyr Panda V1 (Clear Stem)",
-        "switchType": "tactile"
       }
     },
     {
@@ -113513,7 +113291,7 @@
       "source": "theremingoat",
       "sourceId": "32",
       "kind": "switches",
-      "id": "gateron-smd-brown-ks-9",
+      "id": "gateron-ks-9-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Brown",
@@ -113655,17 +113433,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "321",
-      "kind": "switches",
-      "id": "holy-gsus-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy GSUS Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3210",
       "kind": "switches",
       "id": "keygeek-briny",
@@ -113782,17 +113549,6 @@
         "name": "Keygeek Y1",
         "manufacturer": "Keygeek",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "322",
-      "kind": "switches",
-      "id": "holy-gsus-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy GSUS Panda (Clear Stem)",
-        "switchType": "tactile"
       }
     },
     {
@@ -114011,17 +113767,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "324",
-      "kind": "switches",
-      "id": "yok-holy-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Red Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3240",
       "kind": "switches",
       "id": "jixian-holy-cattle",
@@ -114123,17 +113868,6 @@
         "name": "KTT Silent Red",
         "manufacturer": "KTT",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "325",
-      "kind": "switches",
-      "id": "yok-holy-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Red Panda (Clear Stem)",
-        "switchType": "tactile"
       }
     },
     {
@@ -114387,17 +114121,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "327",
-      "kind": "switches",
-      "id": "yok-holy-mint-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Mint Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3270",
       "kind": "switches",
       "id": "huano-arctic-latte",
@@ -114510,17 +114233,6 @@
       "observed": {
         "name": "Qwertykeys QK OG",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "328",
-      "kind": "switches",
-      "id": "yok-holy-mint-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Mint Panda (Clear Stem)",
-        "switchType": "tactile"
       }
     },
     {
@@ -114780,7 +114492,7 @@
       "source": "theremingoat",
       "sourceId": "33",
       "kind": "switches",
-      "id": "gateron-smd-blue-ks-9",
+      "id": "gateron-ks-9-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Blue",
@@ -114788,17 +114500,6 @@
         "switchType": "clicky"
       },
       "notes": "KS-9"
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "330",
-      "kind": "switches",
-      "id": "yok-holy-trash-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Trash Panda (True Stem)",
-        "switchType": "tactile"
-      }
     },
     {
       "source": "theremingoat",
@@ -114917,17 +114618,6 @@
         "name": "G3MS Diamond",
         "manufacturer": "Grain Gold",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "331",
-      "kind": "switches",
-      "id": "yok-holy-trash-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Trash Panda (Clear Stem)",
-        "switchType": "tactile"
       }
     },
     {
@@ -115185,17 +114875,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "333",
-      "kind": "switches",
-      "id": "yok-holy-polar-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Polar Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3330",
       "kind": "switches",
       "id": "lcet-taro",
@@ -115307,17 +114986,6 @@
       "observed": {
         "name": "Mitarashi Dango",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "334",
-      "kind": "switches",
-      "id": "yok-holy-polar-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "YOK Holy Polar Panda (Clear Stem)",
-        "switchType": "tactile"
       }
     },
     {
@@ -115571,17 +115239,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "336",
-      "kind": "switches",
-      "id": "holy-bsun-clear-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN Clear Panda (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3360",
       "kind": "switches",
       "id": "hmx-sugar-rush",
@@ -115702,17 +115359,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "337",
-      "kind": "switches",
-      "id": "unholy-invyr-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Unholy Invyr Panda",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3370",
       "kind": "switches",
       "id": "hmx-joker",
@@ -115775,7 +115421,7 @@
       "source": "theremingoat",
       "sourceId": "3375",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-goldenrod-white",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Goldenrod White",
@@ -115787,7 +115433,7 @@
       "source": "theremingoat",
       "sourceId": "3376",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-goldenrod-red",
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Goldenrod Red",
@@ -115799,7 +115445,7 @@
       "source": "theremingoat",
       "sourceId": "3377",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-goldenrod-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Goldenrod Yellow",
@@ -115811,7 +115457,7 @@
       "source": "theremingoat",
       "sourceId": "3378",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-goldenrod-silver",
+      "id": "gateron-ks-9-g-pro-3-0-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Goldenrod Silver",
@@ -115823,7 +115469,7 @@
       "source": "theremingoat",
       "sourceId": "3379",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-goldenrod-brown",
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Goldenrod Brown",
@@ -115833,20 +115479,9 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "338",
-      "kind": "switches",
-      "id": "unholy-gsus-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Unholy GSUS Panda",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "3380",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-goldenrod-blue",
+      "id": "gateron-ks-9-g-pro-3-0-goldenrod-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron G Pro 3.0 Goldenrod Blue",
@@ -116096,7 +115731,7 @@
       "source": "theremingoat",
       "sourceId": "34",
       "kind": "switches",
-      "id": "gateron-smd-green-ks-9",
+      "id": "gateron-ks-9-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Green",
@@ -117346,7 +116981,7 @@
       "source": "theremingoat",
       "sourceId": "35",
       "kind": "switches",
-      "id": "gateron-smd-clear-ks-9",
+      "id": "gateron-ks-9-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Clear",
@@ -118515,7 +118150,7 @@
       "source": "theremingoat",
       "sourceId": "3599",
       "kind": "switches",
-      "id": "bsun-yellow-full-black-housing",
+      "id": "bsun-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Yellow (Full Black Housing)",
@@ -118527,7 +118162,7 @@
       "source": "theremingoat",
       "sourceId": "36",
       "kind": "switches",
-      "id": "gateron-smd-yellow-ks-9",
+      "id": "gateron-ks-9-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron 'SMD' Yellow",
@@ -118552,7 +118187,7 @@
       "source": "theremingoat",
       "sourceId": "3600",
       "kind": "switches",
-      "id": "bsun-green-full-black-housing",
+      "id": "bsun-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Green (Full Black Housing)",
@@ -118653,17 +118288,6 @@
       "observed": {
         "name": "Keychron KPro Silent White",
         "manufacturer": "Huano",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "3609",
-      "kind": "switches",
-      "id": "aristotle-black-oval-slot",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Aristotle Black (Oval Slot)",
         "switchType": "linear"
       }
     },
@@ -119019,7 +118643,7 @@
       "source": "theremingoat",
       "sourceId": "3637",
       "kind": "switches",
-      "id": "dareu-sky-blue-heavy",
+      "id": "dareu-sky-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "DareU Sky Blue Heavy",
@@ -119830,7 +119454,7 @@
       "source": "theremingoat",
       "sourceId": "37",
       "kind": "switches",
-      "id": "gateron-silent-black-ks-9",
+      "id": "gateron-ks-9-silent-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Black",
@@ -121036,7 +120660,7 @@
       "source": "theremingoat",
       "sourceId": "38",
       "kind": "switches",
-      "id": "gateron-silent-red-ks-9",
+      "id": "gateron-ks-9-silent-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Red",
@@ -122349,7 +121973,7 @@
       "source": "theremingoat",
       "sourceId": "39",
       "kind": "switches",
-      "id": "gateron-silent-brown-ks-9",
+      "id": "gateron-ks-9-silent-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Brown",
@@ -122769,7 +122393,7 @@
       "source": "theremingoat",
       "sourceId": "3931",
       "kind": "switches",
-      "id": "epicgear-purple-red-led",
+      "id": "epicgear-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Epicgear Purple (Red LED)",
@@ -124306,7 +123930,7 @@
       "source": "theremingoat",
       "sourceId": "4047",
       "kind": "switches",
-      "id": "hmx-cola-3-8mm",
+      "id": "hmx-cola",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "HMX Cola (3.8mm)",
@@ -124871,7 +124495,7 @@
       "source": "theremingoat",
       "sourceId": "4090",
       "kind": "switches",
-      "id": "gateron-milky-pro-pink",
+      "id": "gateron-ks-3x1-milky-pro-pink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Pro Pink",
@@ -124883,7 +124507,7 @@
       "source": "theremingoat",
       "sourceId": "4091",
       "kind": "switches",
-      "id": "gateron-milky-pro-purple",
+      "id": "gateron-ks-3x1-milky-pro-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Pro Purple",
@@ -124895,7 +124519,7 @@
       "source": "theremingoat",
       "sourceId": "4092",
       "kind": "switches",
-      "id": "gateron-milky-pro-yellow",
+      "id": "gateron-ks-3-milky-pro-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Milky Pro Yellow",
@@ -126145,7 +125769,7 @@
       "source": "theremingoat",
       "sourceId": "4187",
       "kind": "switches",
-      "id": "yumo-d-diffuser",
+      "id": "yumo-d",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Yumo D (Diffuser)",
@@ -127092,7 +126716,7 @@
       "source": "theremingoat",
       "sourceId": "44",
       "kind": "switches",
-      "id": "gateron-brown-optical",
+      "id": "gateron-optical-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Brown Optical",
@@ -127223,7 +126847,7 @@
       "source": "theremingoat",
       "sourceId": "45",
       "kind": "switches",
-      "id": "gateron-blue-optical",
+      "id": "gateron-optical-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Blue Optical",
@@ -127363,7 +126987,7 @@
       "source": "theremingoat",
       "sourceId": "46",
       "kind": "switches",
-      "id": "gateron-silver-optical",
+      "id": "gateron-optical-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silver Optical",
@@ -127460,7 +127084,7 @@
       "source": "theremingoat",
       "sourceId": "467",
       "kind": "switches",
-      "id": "hi-tek-725-lime-green-two-eye",
+      "id": "hi-tek-725-lime-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Lime Green (Two Eye)",
@@ -127472,7 +127096,7 @@
       "source": "theremingoat",
       "sourceId": "468",
       "kind": "switches",
-      "id": "hi-tek-725-tan-one-eye",
+      "id": "hi-tek-725-tan",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Tan (One Eye)",
@@ -127484,7 +127108,7 @@
       "source": "theremingoat",
       "sourceId": "469",
       "kind": "switches",
-      "id": "hi-tek-725-black-two-eye",
+      "id": "hi-tek-725-black-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Black Tactile (Two Eye)",
@@ -127509,7 +127133,7 @@
       "source": "theremingoat",
       "sourceId": "470",
       "kind": "switches",
-      "id": "hi-tek-725-sea-green-two-eye",
+      "id": "hi-tek-725-sea-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Sea Green (Two Eye)",
@@ -127522,7 +127146,7 @@
       "source": "theremingoat",
       "sourceId": "471",
       "kind": "switches",
-      "id": "hi-tek-725-grey-two-eye",
+      "id": "hi-tek-725-grey",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Grey Tactile (Two Eye)",
@@ -127534,7 +127158,7 @@
       "source": "theremingoat",
       "sourceId": "472",
       "kind": "switches",
-      "id": "hi-tek-725-black-clicky-two-eye",
+      "id": "hi-tek-725-black-clicky",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Black Clicky (Two Eye)",
@@ -127546,7 +127170,7 @@
       "source": "theremingoat",
       "sourceId": "473",
       "kind": "switches",
-      "id": "hi-tek-725-white-one-eye",
+      "id": "hi-tek-725-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 White Linear (One Eye)",
@@ -127558,7 +127182,7 @@
       "source": "theremingoat",
       "sourceId": "474",
       "kind": "switches",
-      "id": "hi-tek-725-white-two-eye",
+      "id": "hi-tek-725-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 White Linear (Two Eye)",
@@ -127570,7 +127194,7 @@
       "source": "theremingoat",
       "sourceId": "475",
       "kind": "switches",
-      "id": "hi-tek-725-white-one-eye-gundam",
+      "id": "hi-tek-725-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 White Linear (One Eye)",
@@ -127630,7 +127254,7 @@
       "source": "theremingoat",
       "sourceId": "48",
       "kind": "switches",
-      "id": "c3-tangerine-milky-bottom",
+      "id": "c3-tangerine",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "C3 Tangerine V1.5",
@@ -127760,7 +127384,7 @@
       "source": "theremingoat",
       "sourceId": "49",
       "kind": "switches",
-      "id": "c3-tangerine-black-bottom",
+      "id": "c3-tangerine",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "C3 Tangerine V1.5",
@@ -128411,7 +128035,7 @@
       "source": "theremingoat",
       "sourceId": "540",
       "kind": "switches",
-      "id": "hi-tek-725-dark-grey-one-eye",
+      "id": "hi-tek-725-dark-grey",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Dark Grey (One Eye)",
@@ -128455,17 +128079,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "544",
-      "kind": "switches",
-      "id": "holy-bsun-clear-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy BSUN Clear Panda (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "545",
       "kind": "switches",
       "id": "invyr-panda",
@@ -128476,28 +128089,6 @@
         "switchType": "linear"
       },
       "notes": "'Drop Pandas'"
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "546",
-      "kind": "switches",
-      "id": "holy-invyr-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy Invyr Panda V3 (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "547",
-      "kind": "switches",
-      "id": "holy-invyr-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Holy Invyr Panda V3 (Clear Stem)",
-        "switchType": "tactile"
-      }
     },
     {
       "source": "theremingoat",
@@ -128866,7 +128457,7 @@
       "source": "theremingoat",
       "sourceId": "580",
       "kind": "switches",
-      "id": "gateron-ks-3-black-silent",
+      "id": "gateron-ks-3-silent-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Black",
@@ -128879,7 +128470,7 @@
       "source": "theremingoat",
       "sourceId": "581",
       "kind": "switches",
-      "id": "gateron-silent-red-ks-3",
+      "id": "gateron-ks-3-silent-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Red",
@@ -129576,7 +129167,7 @@
       "source": "theremingoat",
       "sourceId": "633",
       "kind": "switches",
-      "id": "gateron-black-ks-3",
+      "id": "gateron-ks-3-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Black",
@@ -129589,7 +129180,7 @@
       "source": "theremingoat",
       "sourceId": "634",
       "kind": "switches",
-      "id": "gateron-red-ks-3",
+      "id": "gateron-ks-3-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Red",
@@ -129602,7 +129193,7 @@
       "source": "theremingoat",
       "sourceId": "635",
       "kind": "switches",
-      "id": "gateron-brown-ks-3",
+      "id": "gateron-ks-3-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Brown",
@@ -129615,7 +129206,7 @@
       "source": "theremingoat",
       "sourceId": "636",
       "kind": "switches",
-      "id": "gateron-blue-ks-3",
+      "id": "gateron-ks-3-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Blue",
@@ -129628,7 +129219,7 @@
       "source": "theremingoat",
       "sourceId": "637",
       "kind": "switches",
-      "id": "gateron-clear-ks-3",
+      "id": "gateron-ks-3-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Clear",
@@ -129641,7 +129232,7 @@
       "source": "theremingoat",
       "sourceId": "638",
       "kind": "switches",
-      "id": "gateron-yellow-ks-3",
+      "id": "gateron-ks-3-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Yellow",
@@ -130189,7 +129780,7 @@
       "source": "theremingoat",
       "sourceId": "681",
       "kind": "switches",
-      "id": "hi-tek-725-yellow-2-eye",
+      "id": "hi-tek-725-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Hi-Tek 725 Yellow (2 Eye)",
@@ -130601,7 +130192,7 @@
       "source": "theremingoat",
       "sourceId": "714",
       "kind": "switches",
-      "id": "gateron-green-ks-3",
+      "id": "gateron-ks-3-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Green",
@@ -130678,7 +130269,7 @@
       "source": "theremingoat",
       "sourceId": "722",
       "kind": "switches",
-      "id": "rantopad-orange",
+      "id": "rantopad-orange-gateron-ks-1",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Rantopad Orange",
@@ -131596,28 +131187,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "800",
-      "kind": "switches",
-      "id": "bsun-holy-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Holy Red Panda V1 (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "801",
-      "kind": "switches",
-      "id": "bsun-holy-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Holy Red Panda V1 (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "802",
       "kind": "switches",
       "id": "bsun-panda-red",
@@ -131625,39 +131194,6 @@
       "observed": {
         "name": "BSUN Red Panda V2",
         "manufacturer": "Tecsee",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "803",
-      "kind": "switches",
-      "id": "bsun-holy-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Holy Red Panda V2 (True Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "804",
-      "kind": "switches",
-      "id": "bsun-holy-red-panda",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Holy Red Panda V2 (Clear Stem)",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "805",
-      "kind": "switches",
-      "id": "bsun-unholy-panda-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Unholy Panda (V2 Stem)",
         "switchType": "linear"
       }
     },
@@ -131841,7 +131377,7 @@
       "source": "theremingoat",
       "sourceId": "821",
       "kind": "switches",
-      "id": "gateron-kangaroo-ink-nk-variant",
+      "id": "gateron-kangaroo-ink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Kangaroo Ink (NK Variant)",
@@ -131853,7 +131389,7 @@
       "source": "theremingoat",
       "sourceId": "824",
       "kind": "switches",
-      "id": "gateron-cap-yellow-yellow-top",
+      "id": "gateron-cap-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Yellow (Yellow Top) V1",
@@ -132571,7 +132107,7 @@
       "source": "theremingoat",
       "sourceId": "886",
       "kind": "switches",
-      "id": "gateron-cap-yellow-milky-top",
+      "id": "gateron-cap-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Yellow (Milky Top) V1",
@@ -132799,7 +132335,7 @@
       "source": "theremingoat",
       "sourceId": "904",
       "kind": "switches",
-      "id": "ffff-linear-replacement-top",
+      "id": "ffff-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "FFFF Linear (Replacement Top)",
@@ -132811,7 +132347,7 @@
       "source": "theremingoat",
       "sourceId": "905",
       "kind": "switches",
-      "id": "ffff-tactile-replacement-top",
+      "id": "ffff-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "FFFF Tactile (Replacement Top)",
@@ -133015,7 +132551,7 @@
       "source": "theremingoat",
       "sourceId": "920",
       "kind": "switches",
-      "id": "gateron-cap-brown-chocolate",
+      "id": "gateron-cap-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Brown (Chocolate) V1",
@@ -133512,7 +133048,7 @@
       "source": "theremingoat",
       "sourceId": "959",
       "kind": "switches",
-      "id": "gateron-pro-speed-silver-1-stage",
+      "id": "gateron-ks-9-g-pro-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Pro Speed Silver (1 Stage)",
@@ -133993,7 +133529,7 @@
       "source": "theremingoat",
       "sourceId": "995",
       "kind": "switches",
-      "id": "gateron-cap-yellow-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Yellow (Yellow) V2",
@@ -134006,7 +133542,7 @@
       "source": "theremingoat",
       "sourceId": "996",
       "kind": "switches",
-      "id": "gateron-cap-milky-yellow",
+      "id": "gateron-cap-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Yellow (Milky) V2",
@@ -134019,7 +133555,7 @@
       "source": "theremingoat",
       "sourceId": "997",
       "kind": "switches",
-      "id": "gateron-cap-brown-chocolate",
+      "id": "gateron-cap-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Cap Brown (Chocolate) V2",
@@ -134032,7 +133568,7 @@
       "source": "theremingoat",
       "sourceId": "998",
       "kind": "switches",
-      "id": "gateron-ks-1-black-black-housing",
+      "id": "gateron-ks-1-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron KS-1 Black (Black Housing)",
@@ -135107,7 +134643,7 @@
       "source": "theremingoatscores",
       "sourceId": "301e4a62b240",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron G Pro 3.0 Yellow",
@@ -137773,7 +137309,7 @@
       "source": "theremingoatscores",
       "sourceId": "af68a763e404",
       "kind": "switches",
-      "id": "gateron-kangaroo-inks",
+      "id": "gateron-kangaroo-ink",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Kangaroo Inks",
@@ -139108,7 +138644,7 @@
       "source": "theremingoatscores",
       "sourceId": "f113d2c90923",
       "kind": "switches",
-      "id": "gateron-dual-rail-magnetic-orange",
+      "id": "gateron-ks-20-dual-rail-magnetic-orange",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Gateron Dual-Rail Magnetic Orange",
@@ -141077,7 +140613,7 @@
       "source": "unikeys",
       "sourceId": "12234221814078",
       "kind": "switches",
-      "id": "hmx-cola-3-8mm",
+      "id": "hmx-cola",
       "url": "https://unikeyboards.com/products/hmx-cola-3-8mm-linear-switch-factory-lubed-10pcs",
       "observed": {
         "name": "HMX Cola 3.8MM Linear",
@@ -142748,7 +142284,7 @@
       "source": "unikeys",
       "sourceId": "8299534090558",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-white",
+      "id": "gateron-ks-9-g-pro-3-0-white",
       "url": "https://unikeyboards.com/products/gateron-g-pro-3-0-white-linear-switch-factory-lubed-edition",
       "observed": {
         "name": "GATERON G Pro 3.0 White Linear",
@@ -142760,7 +142296,7 @@
       "source": "unikeys",
       "sourceId": "8299608703294",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-brown",
+      "id": "gateron-ks-9-g-pro-3-0-brown",
       "url": "https://unikeyboards.com/products/gateron-g-pro-3-0-brown-switch-factory-lubed-edition-10pcs",
       "observed": {
         "name": "GATERON G Pro 3.0 Brown Tactile",
@@ -142772,7 +142308,7 @@
       "source": "unikeys",
       "sourceId": "8299690754366",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-red",
+      "id": "gateron-ks-9-g-pro-3-0-red",
       "url": "https://unikeyboards.com/products/gateron-g-pro-3-0-red-linear-switch-factory-lubed-edition-10pcs",
       "observed": {
         "name": "GATERON G Pro 3.0 Red Linear",
@@ -142784,7 +142320,7 @@
       "source": "unikeys",
       "sourceId": "8299743805758",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-yellow",
+      "id": "gateron-ks-9-g-pro-3-0-yellow",
       "url": "https://unikeyboards.com/products/gateron-g-pro-3-0-yellow-linear-switches-factory-lubed-edition",
       "observed": {
         "name": "GATERON G Pro 3.0 Yellow Linear",
@@ -142796,7 +142332,7 @@
       "source": "unikeys",
       "sourceId": "8299915051326",
       "kind": "switches",
-      "id": "gateron-g-pro-3-0-black",
+      "id": "gateron-ks-9-g-pro-3-0-black",
       "url": "https://unikeyboards.com/products/gateron-g-pro-3-0-black-linear-switch-factory-lubed-edition-10pcs",
       "observed": {
         "name": "GATERON G Pro 3.0 Black Linear",
