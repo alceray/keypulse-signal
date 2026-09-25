@@ -285,7 +285,7 @@
     "theremingoat:1557": "team-wolf-black",
     "theremingoat:1559": "team-wolf-blue",
     "theremingoat:1560": "team-wolf-x-manic-red",
-    "theremingoat:1546": "ktt-cabbage-tofu-opaque",
+    "theremingoat:1546": "ktt-cabbage-tofu",
     "theremingoat:1551": "ktt-lightning",
     "theremingoat:1555": "jerrzi-brown",
     "theremingoat:1677": "lcet-wujing-eva",
@@ -898,12 +898,12 @@
     "theremingoat:2991": "keybay-w1-white-diamond-purple",
     "theremingoat:2990": "keybay-w1-white-diamond-yellow",
     "theremingoat:2989": "keybay-w1-white-diamond-pink",
-    "theremingoat:2992": "keybay-w1-black-diamond-purple",
-    "theremingoat:2993": "keybay-w1-black-diamond-yellow",
-    "theremingoat:2996": "keybay-w1-black-diamond-red",
-    "theremingoat:2997": "keybay-w1-black-diamond-green",
-    "theremingoat:2995": "keybay-w1-black-diamond-blue",
-    "theremingoat:2998": "keybay-w1-black-diamond-silver",
+    "theremingoat:2992": "keybay-w1-black-diamond",
+    "theremingoat:2993": "keybay-w1-black-diamond",
+    "theremingoat:2996": "keybay-w1-black-diamond",
+    "theremingoat:2997": "keybay-w1-black-diamond",
+    "theremingoat:2995": "keybay-w1-black-diamond",
+    "theremingoat:2998": "keybay-w1-black-diamond",
     "theremingoat:2988": "hifi-fox-diamond-yellow-fruit",
     "theremingoat:3089": "akko-rosewood",
     "theremingoat:2970": "outemu-silent-peach",
@@ -942,7 +942,6 @@
     "theremingoat:3147": "haimu-blue-jade",
     "theremingoat:3146": "haimu-navy-jade",
     "theremingoat:3145": "haimu-gray-jade",
-    "theremingoat:3042": "dukharo-flamingo",
     "theremingoat:3121": "keebz-n-cables-ice-kachang-linear",
     "theremingoat:3063": "bsun-milktea-siam",
     "theremingoat:3120": "bsun-strawberry-cheesecake",
@@ -1073,17 +1072,17 @@
     "theremingoat:21": "gateron-ks-3-clear",
     "theremingoat:210": "jixian-black",
     "theremingoat:22": "gateron-ks-3-yellow",
-    "theremingoat:2285": "keychron-camo-camel",
-    "theremingoat:2289": "keychron-camo-camel",
+    "theremingoat:2285": "keychron-camo",
+    "theremingoat:2289": "keychron-camo",
     "theremingoat:23": "gateron-ks-1-black",
     "theremingoat:2347": "skyloong-chocolate-rose",
     "theremingoat:2379": "flower-shadow",
-    "theremingoat:2383": "ktt-macaron-red-chinajoy-edition",
+    "theremingoat:2383": "ktt-macaron-red",
     "theremingoat:2384": "ktt-macaron-orange-chinajoy-edition",
-    "theremingoat:2385": "ktt-macaron-yellow-chinajoy-edition",
-    "theremingoat:2386": "ktt-macaron-green-chinajoy-edition",
+    "theremingoat:2385": "ktt-macaron-yellow",
+    "theremingoat:2386": "ktt-macaron-green",
     "theremingoat:2387": "ktt-macaron-blue-chinajoy-edition",
-    "theremingoat:2388": "ktt-macaron-purple-chinajoy-edition",
+    "theremingoat:2388": "ktt-macaron-purple",
     "theremingoat:24": "gateron-ks-1-red",
     "theremingoat:2427": "content-blue",
     "theremingoat:25": "gateron-ks-1-brown",
@@ -1103,7 +1102,7 @@
     "theremingoat:31": "gateron-ks-9-red",
     "theremingoat:32": "gateron-ks-9-brown",
     "theremingoat:3235": "saybour-blue",
-    "theremingoat:3283": "jerrzi-blue-winglatch-full-black",
+    "theremingoat:3283": "jerrzi-blue",
     "theremingoat:33": "gateron-ks-9-blue",
     "theremingoat:3336": "flower-shadow",
     "theremingoat:3368": "gateron-longjing-tea",
@@ -1114,8 +1113,8 @@
     "theremingoat:37": "gateron-ks-9-silent-black",
     "theremingoat:38": "gateron-ks-9-silent-red",
     "theremingoat:39": "gateron-ks-9-silent-brown",
-    "theremingoat:40": "gateron-silent-yellow-ks-1",
-    "theremingoat:41": "gateron-silent-clear-ks-1",
+    "theremingoat:40": "gateron-ks-1-silent-yellow",
+    "theremingoat:41": "gateron-ks-1-silent-clear",
     "theremingoat:4216": "wingtree-matcha-cream-tactile",
     "theremingoat:4217": "wingtree-matcha-cream-tactile",
     "theremingoat:4227": "wingtree-matcha-cream-linear",
@@ -3303,7 +3302,7 @@
     "keychronswitches:7114732142681/variant/40106826137689": "gateron-ks-9-g-pro-2-0-white",
     "keychronswitches:7114732142681/variant/40106826924121": "gateron-ks-9-g-pro-2-0-silver",
     "keychronswitches:7116454723673/variant/40111600205913": "gateron-baby-kangaroo-2-0",
-    "keychronswitches:7118774829145/variant/40119400595545": "gateron-cj-light-blue",
+    "keychronswitches:7118774829145/variant/40119400595545": "gateron-cj",
     "keychronswitches:7119490449497/variant/41888434192473": "gateron-box-ink-pink",
     "keychronswitches:7119490449497/variant/41911702782041": "gateron-box-ink-black",
     "keychronswitches:7120050323545/variant/40122789920857": "gateron-ks-9-silent-red",
@@ -3336,10 +3335,10 @@
     "keychronswitches:7191387406425/variant/40339423461465": "kailh-pro-purple",
     "keychronswitches:7191387406425/variant/40339423494233": "kailh-pro-light-green",
     "keychronswitches:7233190428761": "gateron-baby-raccoon",
-    "keychronswitches:7295887343705/variant/40497568022617": "keychron-camo-green",
-    "keychronswitches:7295887343705/variant/40497568055385": "keychron-camo-light-green",
-    "keychronswitches:7295887343705/variant/40497568088153": "keychron-camo-camel",
-    "keychronswitches:7295887343705/variant/40497568120921": "keychron-camo-wheat",
+    "keychronswitches:7295887343705/variant/40497568022617": "keychron-camo",
+    "keychronswitches:7295887343705/variant/40497568055385": "keychron-camo",
+    "keychronswitches:7295887343705/variant/40497568088153": "keychron-camo",
+    "keychronswitches:7295887343705/variant/40497568120921": "keychron-camo",
     "keychronswitches:7303355170905/variant/40509382819929": "gateron-ks-9-g-pro-3-0-white",
     "keychronswitches:7303355170905/variant/40509382852697": "gateron-ks-9-g-pro-3-0-silver",
     "keychronswitches:7303355170905/variant/40749904953433": "gateron-ks-9-g-pro-3-0-blue",
@@ -3495,8 +3494,8 @@
     "cannonkeysswitches:6895612788847": "gateron-cap-yellow",
     "cannonkeysswitches:15029400797295": "gateron-chocolate-jelly",
     "cannonkeysswitches:6894095663215": "gateron-cj",
-    "gateron:7090129109081/variant/40041282142297": "gateron-cj-dark-blue",
-    "gateron:7090129109081/variant/40041282109529": "gateron-cj-light-blue",
+    "gateron:7090129109081/variant/40041282142297": "gateron-cj",
+    "gateron:7090129109081/variant/40041282109529": "gateron-cj",
     "cannonkeysswitches:7459650273391": "gateron-cm",
     "lumekeebsswitches:8257995014357/variant/45657636798677": "gateron-dual-rail-lunar-probe",
     "cannonkeysswitches:7093118697583": "gateron-ks-9-g-pro-2-0-yellow",
@@ -3816,7 +3815,7 @@
     "gateron:7066902954073/variant/39977308160089": "gateron-aliaz-silent",
     "gateron:7066902954073/variant/39977308192857": "gateron-aliaz-silent",
     "keebsforallswitches:6024346304670": "durock-pom",
-    "keebsforallswitches:7466470867163": "gateron-cj-pom",
+    "keebsforallswitches:7466470867163": "gateron-cj",
     "keebsforallswitches:7485540499675": "durock-shrimp-silent",
     "keebsforallswitches:7507508134107": "ttc-x-kbdfans-hey",
     "keebsforallswitches:7537331601627": "durock-daybreak",
@@ -4651,8 +4650,8 @@
     "theremingoat:2168": "kailh-box-marshmallow-linear",
     "switchoddities:9333263925532": "outemu-brown-actuation",
     "theremingoat:1388": "ttc-razer-dustproof-orange-type-b",
-    "switchoddities:8785885987100": "ktt-macaron-pink-chinajoy-edition",
-    "theremingoat:2389": "ktt-macaron-pink-chinajoy-edition",
+    "switchoddities:8785885987100": "ktt-macaron-pink",
+    "theremingoat:2389": "ktt-macaron-pink",
     "swagkeys:15332244226301": "swg-art",
     "swagkeys:15298994176253": "swg-feralis",
     "swagkeys:15283532857597": "swg-hypermix",
@@ -6483,10 +6482,10 @@
     "keychronswitches:7118692188249/variant/40119170433113": "gateron-kangaroo-box-ink",
     "keychronswitches:7186832687193/variant/40328603861081": "kailh-clione-limacina-linear",
     "keychronswitches:7186832687193/variant/40328603893849": "kailh-clione-limacina-tactile",
-    "switchoddities:8433767219484": "keychron-camo-camel",
+    "switchoddities:8433767219484": "keychron-camo",
     "theremingoat:2038": "keygeek-raw",
-    "theremingoat:2284": "keychron-camo-camel",
-    "theremingoat:2288": "keychron-camo-camel",
+    "theremingoat:2284": "keychron-camo",
+    "theremingoat:2288": "keychron-camo",
     "keychronswitches:7177725182041/variant/40303142961241": "kailh-box-jellyfish-x",
     "switchoddities:8281131254044": "ktt-cloud-blue",
     "theremingoat:1763": "gateron-cream-soda",
@@ -6699,7 +6698,65 @@
     "theremingoat:64": "mod-l-tactile",
     "theremingoat:65": "mod-m-tactile",
     "theremingoat:66": "mod-h-tactile",
-    "theremingoat:681": "hi-tek-725-yellow"
+    "theremingoat:681": "hi-tek-725-yellow",
+    "keychronswitches:7118774829145/variant/40119400857689": "gateron-cj",
+    "theremingoat:1008": "gateron-low-profile-red",
+    "theremingoat:1009": "gateron-low-profile-brown",
+    "theremingoat:1010": "gateron-low-profile-blue",
+    "theremingoat:1155": "gateron-cj",
+    "theremingoat:1294": "gateron-cj",
+    "theremingoat:1753": "gateron-cj",
+    "switchoddities:9919481839900": "jwh-dustproof-blue",
+    "theremingoat:1230": "huano-black",
+    "theremingoat:1233": "huano-purple",
+    "theremingoat:1235": "huano-hot-pink",
+    "theremingoat:1237": "huano-teal",
+    "theremingoat:1238": "huano-orange",
+    "theremingoat:177": "huano-blue",
+    "theremingoat:183": "jwh-dustproof-blue",
+    "theremingoat:2102": "huano-blue",
+    "theremingoat:2103": "huano-black",
+    "theremingoat:2104": "huano-brown",
+    "theremingoat:2105": "huano-dustproof-blue",
+    "theremingoat:2282": "keychron-camo",
+    "theremingoat:2286": "keychron-camo",
+    "theremingoat:2431": "jixian-dustproof-yellow",
+    "theremingoat:2433": "jixian-dustproof-silver",
+    "theremingoat:2834": "huano-dustproof-blue",
+    "theremingoat:442": "kaicheng-black",
+    "theremingoat:443": "kaicheng-red",
+    "theremingoat:444": "kaicheng-brown",
+    "theremingoat:445": "kaicheng-green",
+    "theremingoat:942": "huano-brown",
+    "switchoddities:8119070523676": "huano-dustproof-pink",
+    "switchoddities:8119068590364": "ktt-cabbage-tofu",
+    "switchoddities:8119068852508": "ktt-cabbage-tofu",
+    "switchoddities:8180594835740": "keyspensory-jwk-carol",
+    "switchoddities:8281294995740": "korbs",
+    "switchoddities:8785871077660": "ktt-macaron-red",
+    "switchoddities:8785877893404": "ktt-macaron-yellow",
+    "switchoddities:8785880056092": "ktt-macaron-green",
+    "switchoddities:8785888510236": "ktt-macaron-purple",
+    "switchoddities:8912455368988": "ktt-macaron-pink",
+    "theremingoat:1287": "korbs",
+    "theremingoat:1288": "korbs",
+    "theremingoat:1547": "ktt-cabbage-tofu",
+    "theremingoat:2283": "keychron-camo",
+    "theremingoat:2287": "keychron-camo",
+    "theremingoat:3505": "keyspensory-jwk-carol",
+    "switchoddities:8433765548316": "keychron-camo",
+    "switchoddities:8433766236444": "keychron-camo",
+    "switchoddities:8433768071452": "keychron-camo",
+    "switchoddities:9536132841756": "keybay-w1-black-diamond",
+    "switchoddities:9536133595420": "keybay-w1-black-diamond",
+    "switchoddities:9536134086940": "keybay-w1-black-diamond",
+    "switchoddities:9536134480156": "keybay-w1-black-diamond",
+    "switchoddities:9536135069980": "keybay-w1-black-diamond",
+    "switchoddities:9536135266588": "keybay-w1-black-diamond",
+    "switchoddities:9536135692572": "keybay-w1-black-diamond",
+    "switchoddities:9536136184092": "keybay-w1-black-diamond",
+    "theremingoat:2994": "keybay-w1-black-diamond",
+    "theremingoat:2999": "keybay-w1-black-diamond"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -7007,12 +7064,6 @@
     "switches/43-studios-popu": {
       "manufacturer": "JWK"
     },
-    "switches/korb": {
-      "manufacturer": "JWK"
-    },
-    "switches/korb-tiny-eyes": {
-      "manufacturer": "JWK"
-    },
     "switches/tsavorite": {
       "manufacturer": "JWK"
     },
@@ -7194,23 +7245,11 @@
     "switches/endless-summer": {
       "manufacturer": "JWK"
     },
-    "switches/ktt-macaron-red-chinajoy-edition": {
-      "name": "KTT Macaron Red (ChinaJoy Edition)"
-    },
     "switches/ktt-macaron-orange-chinajoy-edition": {
       "name": "KTT Macaron Orange (ChinaJoy Edition)"
     },
-    "switches/ktt-macaron-yellow-chinajoy-edition": {
-      "name": "KTT Macaron Yellow (ChinaJoy Edition)"
-    },
-    "switches/ktt-macaron-green-chinajoy-edition": {
-      "name": "KTT Macaron Green (ChinaJoy Edition)"
-    },
     "switches/ktt-macaron-blue-chinajoy-edition": {
       "name": "KTT Macaron Blue (ChinaJoy Edition)"
-    },
-    "switches/ktt-macaron-purple-chinajoy-edition": {
-      "name": "KTT Macaron Purple (ChinaJoy Edition)"
     },
     "switches/jwick-prism": {
       "manufacturer": "JWK"
@@ -7254,9 +7293,6 @@
       "brand": "43 Studio",
       "switchType": "linear"
     },
-    "switches/jerrzi-blue-winglatch-full-black": {
-      "name": "Jerrzi Blue (Winglatch, Full Black)"
-    },
     "switches/kbdfans-t1-clear-kbdfans-stock": {
       "manufacturer": "JWK"
     },
@@ -7270,9 +7306,6 @@
       "manufacturer": "JWK"
     },
     "switches/durock-smoky-t1-unbranded": {
-      "manufacturer": "JWK"
-    },
-    "switches/keyspensory-jwk-carol": {
       "manufacturer": "JWK"
     },
     "switches/designerstudio-barista": {
@@ -7313,12 +7346,6 @@
     },
     "switches/jwk-tinlan": {
       "manufacturer": "JWK"
-    },
-    "switches/gateron-silent-yellow-ks-1": {
-      "name": "Gateron Silent Yellow (KS-1)"
-    },
-    "switches/gateron-silent-clear-ks-1": {
-      "name": "Gateron Silent Clear (KS-1)"
     },
     "switches/dailyclack-redback": {
       "manufacturer": "JWK"
@@ -13118,19 +13145,14 @@
       "name": "Gateron CJ",
       "manufacturer": "Gateron",
       "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-cj-dark-blue": {
-      "name": "Gateron CJ - Dark Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
-    "switches/gateron-cj-light-blue": {
-      "name": "Gateron CJ Light Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Dark Blue / Dustproof",
+        "Light Blue"
+      ]
     },
     "switches/gateron-cm": {
       "name": "Gateron CM",
@@ -14242,12 +14264,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/gateron-cj-pom": {
-      "name": "Gateron CJ POM",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
     "switches/gateron-ef-cedar": {
       "name": "Gateron EF Cedar",
       "manufacturer": "Gateron",
@@ -15213,12 +15229,6 @@
     },
     "switches/kiki-meow-happy": {
       "name": "KiKi Meow Happy",
-      "switchType": "linear"
-    },
-    "switches/korbs": {
-      "name": "Korbs",
-      "manufacturer": "JWK",
-      "brand": "Durock",
       "switchType": "linear"
     },
     "switches/ktt-bad-sweetheart-silent": {
@@ -16859,11 +16869,6 @@
       "manufacturer": "TTC",
       "switchType": "tactile"
     },
-    "switches/ktt-macaron-pink-chinajoy-edition": {
-      "name": "KTT Macaron Pink ChinaJoy Edition",
-      "manufacturer": "KTT",
-      "switchType": "linear"
-    },
     "keycaps/tai-hao-black-on-white-128-keys": {
       "name": "Tai-Hao Black on White (128 Keys)",
       "brand": "Tai-Hao",
@@ -16949,19 +16954,6 @@
       "switchType": "linear",
       "name": "Huano Dustproof Black"
     },
-    "switches/jerrzi-blue": {
-      "name": "Jerrzi Blue",
-      "variants": [
-        "Clear Bottom",
-        "Full Black Housing / Winglatch"
-      ],
-      "manufacturer": "Jerrzi",
-      "brand": "Jerrzi",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/jixian-black": {
       "name": "Jixian Black",
       "variants": [
@@ -16974,36 +16966,6 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": null
-    },
-    "switches/ktt-macaron-blue": {
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "name": "KTT Macaron Blue"
-    },
-    "switches/ktt-macaron-green": {
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "name": "KTT Macaron Green"
-    },
-    "switches/ktt-macaron-orange": {
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "name": "KTT Macaron Orange"
-    },
-    "switches/ktt-macaron-purple": {
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "name": "KTT Macaron Purple"
-    },
-    "switches/ktt-macaron-red": {
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "name": "KTT Macaron Red"
-    },
-    "switches/ktt-macaron-yellow": {
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "name": "KTT Macaron Yellow"
     },
     "switches/ktt-phalaenopsis": {
       "name": "KTT Phalaenopsis",
@@ -17312,9 +17274,6 @@
     "switches/balhae-blue": {
       "switchType": "tactile"
     },
-    "switches/ball-bearing-lucy": {
-      "switchType": "linear"
-    },
     "switches/bolsa-clunked-corsas": {
       "switchType": "tactile"
     },
@@ -17551,9 +17510,6 @@
       "switchType": "linear"
     },
     "switches/drinkey-xuan-tie-magnetic": {
-      "switchType": "linear"
-    },
-    "switches/durock-korbs": {
       "switchType": "linear"
     },
     "switches/durock-magnetic-rock": {
@@ -17869,9 +17825,6 @@
     "switches/huano-american-rose-garden": {
       "switchType": "linear"
     },
-    "switches/huano-bipolar-blue": {
-      "switchType": "linear"
-    },
     "switches/huano-blue-dragon": {
       "switchType": "linear"
     },
@@ -17880,9 +17833,6 @@
     },
     "switches/huano-diamond": {
       "switchType": "linear"
-    },
-    "switches/huano-dustproof-pink-grey-bottom-swirl-logo": {
-      "switchType": "clicky"
     },
     "switches/huano-glass-jade": {
       "switchType": "linear"
@@ -18041,9 +17991,6 @@
     },
     "switches/jixian-yellow": {
       "switchType": "linear"
-    },
-    "switches/jwh-dustproof-blue": {
-      "switchType": "clicky"
     },
     "switches/jwick-nylon-black": {
       "switchType": "linear"
@@ -18224,21 +18171,6 @@
     "switches/kemove-gateron-brown": {
       "switchType": "tactile"
     },
-    "switches/keybay-w1-black-diamond-black": {
-      "switchType": "linear"
-    },
-    "switches/keybay-w1-black-diamond-pink": {
-      "switchType": "linear"
-    },
-    "switches/keychron-camo-green": {
-      "switchType": "linear"
-    },
-    "switches/keychron-camo-light-green": {
-      "switchType": "linear"
-    },
-    "switches/keychron-camo-wheat": {
-      "switchType": "linear"
-    },
     "switches/keychron-gateron-phantom-blue": {
       "switchType": "clicky"
     },
@@ -18274,9 +18206,6 @@
     },
     "switches/ktt-blue-flutter": {
       "switchType": "tactile"
-    },
-    "switches/ktt-cabbage-tofu-transparent-top": {
-      "switchType": "linear"
     },
     "switches/ktt-chalk": {
       "switchType": "linear"
@@ -18567,9 +18496,6 @@
     },
     "switches/onestar-traffic-light-yellow": {
       "switchType": "linear"
-    },
-    "switches/outelo-x-green": {
-      "switchType": "clicky"
     },
     "switches/outemu-advance-brown": {
       "switchType": "tactile"
@@ -21756,19 +21682,6 @@
         "V2"
       ],
       "manufacturer": "Tecsee",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/ktt-cabbage-tofu": {
-      "name": "KTT Cabbage Tofu",
-      "variants": [
-        "V1",
-        "V2"
-      ],
-      "manufacturer": "KTT",
       "brand": null,
       "designer": null,
       "switchType": "linear",
@@ -30840,16 +30753,6 @@
       "isLowProfile": null,
       "variants": null
     },
-    "switches/keychron-camo-camel": {
-      "name": "Keychron Camo Camel",
-      "manufacturer": "Huano",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": null
-    },
     "switches/keygeek-raw": {
       "name": "Keygeek Raw",
       "manufacturer": "Keygeek",
@@ -32678,16 +32581,6 @@
       "isLowProfile": null,
       "variants": null
     },
-    "switches/rantopad-orange-gateron-ks-1": {
-      "name": "Rantopad Orange (Gateron KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Rantopad",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": null
-    },
     "switches/gugu-ice-linear": {
       "name": "Gugu Ice Linear",
       "manufacturer": null,
@@ -32934,6 +32827,404 @@
         "V3",
         "V3 / Heavy",
         "V4"
+      ]
+    },
+    "switches/gateron-low-profile-blue": {
+      "name": "Gateron Low Profile Blue",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-low-profile-brown": {
+      "name": "Gateron Low Profile Brown",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-low-profile-red": {
+      "name": "Gateron Low Profile Red",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/gateron-ks-1-silent-clear": {
+      "name": "Gateron KS-1 Silent Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-1-silent-yellow": {
+      "name": "Gateron KS-1 Silent Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/rantopad-orange-gateron-ks-1": {
+      "name": "Rantopad Orange Gateron KS-1",
+      "manufacturer": "Gateron",
+      "brand": "Rantopad",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-black": {
+      "name": "Huano Black",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
+    },
+    "switches/huano-blue": {
+      "name": "Huano Blue",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
+    },
+    "switches/huano-brown": {
+      "name": "Huano Brown",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
+    },
+    "switches/huano-dustproof-blue": {
+      "name": "Huano Dustproof Blue",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
+    },
+    "switches/jerrzi-blue": {
+      "name": "Jerrzi Blue",
+      "manufacturer": "Jerrzi",
+      "brand": "Jerrzi",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Bottom",
+        "Full Black Housing / Winglatch"
+      ]
+    },
+    "switches/jwh-dustproof-blue": {
+      "name": "JWH Dustproof Blue",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/jixian-dustproof-silver": {
+      "name": "Jixian Dustproof Silver",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/jixian-dustproof-yellow": {
+      "name": "Jixian Dustproof Yellow",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/kaicheng-black": {
+      "name": "Kaicheng Black",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/kaicheng-brown": {
+      "name": "Kaicheng Brown",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/kaicheng-green": {
+      "name": "Kaicheng Green",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/kaicheng-red": {
+      "name": "Kaicheng Red",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-hot-pink": {
+      "name": "Huano Hot Pink",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-orange": {
+      "name": "Huano 'Orange'",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-purple": {
+      "name": "Huano Purple",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-teal": {
+      "name": "Huano Teal",
+      "manufacturer": "Huano",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/huano-dustproof-pink": {
+      "name": "Huano Dustproof Pink",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/keyspensory-jwk-carol": {
+      "name": "Keyspensory JWK Carol",
+      "manufacturer": "JWK",
+      "brand": "Keyspensory",
+      "designer": "Keyspensory",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/korbs": {
+      "name": "Korbs",
+      "manufacturer": "JWK",
+      "brand": "Durock",
+      "designer": "Tiny",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-cabbage-tofu": {
+      "name": "KTT Cabbage Tofu",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1 / Opaque Top",
+        "V1 / Transparent Top",
+        "V2"
+      ]
+    },
+    "switches/ktt-macaron-green": {
+      "name": "KTT Macaron Green",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
+    },
+    "switches/ktt-macaron-pink": {
+      "name": "KTT Macaron Pink",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
+    },
+    "switches/ktt-macaron-purple": {
+      "name": "KTT Macaron Purple",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
+    },
+    "switches/ktt-macaron-red": {
+      "name": "KTT Macaron Red",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
+    },
+    "switches/ktt-macaron-yellow": {
+      "name": "KTT Macaron Yellow",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
+    },
+    "switches/ktt-macaron-blue": {
+      "name": "KTT Macaron Blue",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-macaron-orange": {
+      "name": "KTT Macaron Orange",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/keychron-camo": {
+      "name": "Keychron Camo",
+      "manufacturer": "Huano",
+      "brand": "Keychron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Camel",
+        "Green",
+        "Light Green",
+        "Wheat"
+      ]
+    },
+    "switches/keybay-w1-black-diamond": {
+      "name": "Keybay W1 Black Diamond",
+      "manufacturer": "W.P.J",
+      "brand": "Keybay",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Black",
+        "Blue",
+        "Green",
+        "Pink",
+        "Purple",
+        "Red",
+        "Silver",
+        "Yellow"
       ]
     }
   },
@@ -34115,6 +34406,15 @@
     "theremingoat:804": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
     "theremingoat:805": "Non-factory frankenswitch recipe or collector assembly; excluded at user request. Keep separately identified manufactured products.",
     "theremingoat:1474": "Unresolved switch identity/manufacturing status; removed at user request after frankenswitch review.",
-    "theremingoat:2751": "Unresolved switch identity/manufacturing status; removed at user request after frankenswitch review."
+    "theremingoat:2751": "Unresolved switch identity/manufacturing status; removed at user request after frankenswitch review.",
+    "theremingoat:1115": "Double-quoted collector label: commercial product identity not verified in the catalog review; excluded at user request.",
+    "theremingoat:1946": "Double-quoted collector label: commercial product identity not verified in the catalog review; excluded at user request.",
+    "theremingoat:2678": "Double-quoted collector label: commercial product identity not verified in the catalog review; excluded at user request.",
+    "theremingoat:3093": "Double-quoted collector label: commercial product identity not verified in the catalog review; excluded at user request.",
+    "switchoddities:10788933075228": "No independent bulk retail, manufacturer release, or production-keyboard evidence found for Huano \"BiPolar Blue\"; SwitchOddities sample sales do not qualify.",
+    "switchoddities:8940606259484": "Ball Bearing \"Lucy\" is a seller-named limited specimen; no independent bulk retail or manufacturer release established for this exact switch. Do not conflate with XCJZ/WEKT Lucy silent switches.",
+    "switchoddities:9585716429084": "Dukharo \"Flamingo\" is a seller nickname without independently verified bulk retail, manufacturer release, or production-keyboard evidence; distinct from Epomaker/Momoka Flamingo.",
+    "switchoddities:9919497273628": "Outelo \"X\" Green is documented as a specimen and historical AliExpress purchase, but bulk sale or production-keyboard use remains unverified; SwitchOddities sample sales do not qualify.",
+    "theremingoat:3042": "Dukharo \"Flamingo\" is a seller nickname without independently verified bulk retail, manufacturer release, or production-keyboard evidence; distinct from Epomaker/Momoka Flamingo."
   }
 }

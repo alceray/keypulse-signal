@@ -11868,7 +11868,7 @@
       "source": "gateron",
       "sourceId": "7090129109081/variant/40041282109529",
       "kind": "switches",
-      "id": "gateron-cj-light-blue",
+      "id": "gateron-cj",
       "url": "https://www.gateron.co/products/gateron-cj-linear-switch-set",
       "observed": {
         "name": "Gateron CJ Linear - Light Blue",
@@ -11880,7 +11880,7 @@
       "source": "gateron",
       "sourceId": "7090129109081/variant/40041282142297",
       "kind": "switches",
-      "id": "gateron-cj-dark-blue",
+      "id": "gateron-cj",
       "url": "https://www.gateron.co/products/gateron-cj-linear-switch-set",
       "observed": {
         "name": "Gateron CJ Linear - Dark Blue",
@@ -15358,7 +15358,7 @@
       "source": "keebsforallswitches",
       "sourceId": "7466470867163",
       "kind": "switches",
-      "id": "gateron-cj-pom",
+      "id": "gateron-cj",
       "url": "https://keebsforall.com/products/gateron-cj-pom-linear-switches",
       "observed": {
         "name": "Gateron CJ POM Linear",
@@ -38722,7 +38722,7 @@
       "source": "keychronswitches",
       "sourceId": "7118774829145/variant/40119400595545",
       "kind": "switches",
-      "id": "gateron-cj-light-blue",
+      "id": "gateron-cj",
       "url": "https://www.keychron.com/products/gateron-cj-switch",
       "observed": {
         "name": "Gateron CJ - Light Blue"
@@ -38732,7 +38732,7 @@
       "source": "keychronswitches",
       "sourceId": "7118774829145/variant/40119400857689",
       "kind": "switches",
-      "id": "gateron-cj-dark-blue",
+      "id": "gateron-cj",
       "url": "https://www.keychron.com/products/gateron-cj-switch",
       "observed": {
         "name": "Gateron CJ - Dark Blue"
@@ -39641,7 +39641,7 @@
       "source": "keychronswitches",
       "sourceId": "7295887343705/variant/40497568022617",
       "kind": "switches",
-      "id": "keychron-camo-green",
+      "id": "keychron-camo",
       "url": "https://www.keychron.com/products/keychron-camo-switch",
       "observed": {
         "name": "Keychron Camo - Green"
@@ -39651,7 +39651,7 @@
       "source": "keychronswitches",
       "sourceId": "7295887343705/variant/40497568055385",
       "kind": "switches",
-      "id": "keychron-camo-light-green",
+      "id": "keychron-camo",
       "url": "https://www.keychron.com/products/keychron-camo-switch",
       "observed": {
         "name": "Keychron Camo - Light Green"
@@ -39661,7 +39661,7 @@
       "source": "keychronswitches",
       "sourceId": "7295887343705/variant/40497568088153",
       "kind": "switches",
-      "id": "keychron-camo-camel",
+      "id": "keychron-camo",
       "url": "https://www.keychron.com/products/keychron-camo-switch",
       "observed": {
         "name": "Keychron Camo - Camel"
@@ -39671,7 +39671,7 @@
       "source": "keychronswitches",
       "sourceId": "7295887343705/variant/40497568120921",
       "kind": "switches",
-      "id": "keychron-camo-wheat",
+      "id": "keychron-camo",
       "url": "https://www.keychron.com/products/keychron-camo-switch",
       "observed": {
         "name": "Keychron Camo - Wheat"
@@ -67947,16 +67947,6 @@
     },
     {
       "source": "switchoddities",
-      "sourceId": "10788933075228",
-      "kind": "switches",
-      "id": "huano-bipolar-blue",
-      "url": "https://switchoddities.com/products/huano-bipolar-blue",
-      "observed": {
-        "name": "Huano \"BiPolar Blue\""
-      }
-    },
-    {
-      "source": "switchoddities",
       "sourceId": "10788933533980",
       "kind": "switches",
       "id": "huano-glass-jade",
@@ -69569,7 +69559,7 @@
       "source": "switchoddities",
       "sourceId": "8119068590364",
       "kind": "switches",
-      "id": "ktt-cabbage-tofu-opaque",
+      "id": "ktt-cabbage-tofu",
       "url": "https://switchoddities.com/products/ktt-cabbage-tofu-opaque",
       "observed": {
         "name": "KTT Cabbage Tofu Opaque"
@@ -69579,7 +69569,7 @@
       "source": "switchoddities",
       "sourceId": "8119068852508",
       "kind": "switches",
-      "id": "ktt-cabbage-tofu-transparent-top",
+      "id": "ktt-cabbage-tofu",
       "url": "https://switchoddities.com/products/ktt-cabbage-tofu-transparent-top",
       "observed": {
         "name": "KTT Cabbage Tofu Transparent Top"
@@ -69639,7 +69629,7 @@
       "source": "switchoddities",
       "sourceId": "8119070523676",
       "kind": "switches",
-      "id": "huano-dustproof-pink-grey-bottom-swirl-logo",
+      "id": "huano-dustproof-pink",
       "url": "https://switchoddities.com/products/huano-dustproof-pink-grey-bottom-swirl-logo",
       "observed": {
         "name": "Huano Dustproof Pink - Grey Bottom - Swirl Logo"
@@ -72772,7 +72762,7 @@
       "source": "switchoddities",
       "sourceId": "8180594835740",
       "kind": "switches",
-      "id": "keyspensory-jwk-carol-tsavorite",
+      "id": "keyspensory-jwk-carol",
       "url": "https://switchoddities.com/products/keyspensory-jwk-carol-tsavorite",
       "observed": {
         "name": "KeysPensory JWK Carol (Tsavorite)",
@@ -73838,7 +73828,7 @@
       "source": "switchoddities",
       "sourceId": "8281294995740",
       "kind": "switches",
-      "id": "durock-korbs",
+      "id": "korbs",
       "url": "https://switchoddities.com/products/durock-korbs",
       "observed": {
         "name": "Durock Korbs"
@@ -75537,7 +75527,7 @@
       "source": "switchoddities",
       "sourceId": "8433765548316",
       "kind": "switches",
-      "id": "keychron-camo-wheat",
+      "id": "keychron-camo",
       "url": "https://switchoddities.com/products/keychron-camo-wheat",
       "observed": {
         "name": "Keychron Camo Wheat"
@@ -75547,7 +75537,7 @@
       "source": "switchoddities",
       "sourceId": "8433766236444",
       "kind": "switches",
-      "id": "keychron-camo-light-green",
+      "id": "keychron-camo",
       "url": "https://switchoddities.com/products/keychron-camo-light-green",
       "observed": {
         "name": "Keychron Camo Light Green"
@@ -75557,7 +75547,7 @@
       "source": "switchoddities",
       "sourceId": "8433767219484",
       "kind": "switches",
-      "id": "keychron-camo-camel",
+      "id": "keychron-camo",
       "url": "https://switchoddities.com/products/keychron-camo-camel",
       "observed": {
         "name": "Keychron Camo Camel"
@@ -75567,7 +75557,7 @@
       "source": "switchoddities",
       "sourceId": "8433768071452",
       "kind": "switches",
-      "id": "keychron-camo-green",
+      "id": "keychron-camo",
       "url": "https://switchoddities.com/products/keychron-camo-green",
       "observed": {
         "name": "Keychron Camo Green"
@@ -78048,7 +78038,7 @@
       "source": "switchoddities",
       "sourceId": "8785871077660",
       "kind": "switches",
-      "id": "ktt-macaron-red-chinajoy-edition",
+      "id": "ktt-macaron-red",
       "url": "https://switchoddities.com/products/ktt-macaron-red",
       "observed": {
         "name": "KTT Macaron Red (ChinaJoy Edition)"
@@ -78068,7 +78058,7 @@
       "source": "switchoddities",
       "sourceId": "8785877893404",
       "kind": "switches",
-      "id": "ktt-macaron-yellow-chinajoy-edition",
+      "id": "ktt-macaron-yellow",
       "url": "https://switchoddities.com/products/ktt-macaron-yellow-chinajoy-edition",
       "observed": {
         "name": "KTT Macaron Yellow (ChinaJoy Edition)"
@@ -78078,7 +78068,7 @@
       "source": "switchoddities",
       "sourceId": "8785880056092",
       "kind": "switches",
-      "id": "ktt-macaron-green-chinajoy-edition",
+      "id": "ktt-macaron-green",
       "url": "https://switchoddities.com/products/ktt-macaron-green-chinajoy-edition",
       "observed": {
         "name": "KTT Macaron Green (ChinaJoy Edition)"
@@ -78098,7 +78088,7 @@
       "source": "switchoddities",
       "sourceId": "8785885987100",
       "kind": "switches",
-      "id": "ktt-macaron-pink-chinajoy-edition",
+      "id": "ktt-macaron-pink",
       "url": "https://switchoddities.com/products/ktt-macaron-pink-chinajoy-edition",
       "observed": {
         "name": "KTT Macaron Pink (ChinaJoy Edition)"
@@ -78108,7 +78098,7 @@
       "source": "switchoddities",
       "sourceId": "8785888510236",
       "kind": "switches",
-      "id": "ktt-macaron-purple-chinajoy-edition",
+      "id": "ktt-macaron-purple",
       "url": "https://switchoddities.com/products/ktt-macaron-purple-chinajoy-edition",
       "observed": {
         "name": "KTT Macaron Purple (ChinaJoy Edition)"
@@ -79184,16 +79174,6 @@
       "url": "https://switchoddities.com/products/ball-bearing-pink",
       "observed": {
         "name": "Ball Bearing Pink"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "8940606259484",
-      "kind": "switches",
-      "id": "ball-bearing-lucy",
-      "url": "https://switchoddities.com/products/ball-bearing-lucy",
-      "observed": {
-        "name": "Ball Bearing \"Lucy\""
       }
     },
     {
@@ -83581,7 +83561,7 @@
       "source": "switchoddities",
       "sourceId": "9536132841756",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-purple",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-purple",
       "observed": {
         "name": "Keybay W1 Black Diamond Purple"
@@ -83591,7 +83571,7 @@
       "source": "switchoddities",
       "sourceId": "9536133595420",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-yellow",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-yellow",
       "observed": {
         "name": "Keybay W1 Black Diamond Yellow"
@@ -83601,7 +83581,7 @@
       "source": "switchoddities",
       "sourceId": "9536134086940",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-pink",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-pink",
       "observed": {
         "name": "Keybay W1 Black Diamond Pink"
@@ -83611,7 +83591,7 @@
       "source": "switchoddities",
       "sourceId": "9536134480156",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-red",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-red",
       "observed": {
         "name": "Keybay W1 Black Diamond Red"
@@ -83621,7 +83601,7 @@
       "source": "switchoddities",
       "sourceId": "9536135069980",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-green",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-green",
       "observed": {
         "name": "Keybay W1 Black Diamond Green"
@@ -83631,7 +83611,7 @@
       "source": "switchoddities",
       "sourceId": "9536135266588",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-blue",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-blue",
       "observed": {
         "name": "Keybay W1 Black Diamond Blue"
@@ -83641,7 +83621,7 @@
       "source": "switchoddities",
       "sourceId": "9536135692572",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-black",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-black",
       "observed": {
         "name": "Keybay W1 Black Diamond Black"
@@ -83651,7 +83631,7 @@
       "source": "switchoddities",
       "sourceId": "9536136184092",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-silver",
+      "id": "keybay-w1-black-diamond",
       "url": "https://switchoddities.com/products/keybay-w1-black-diamond-silver",
       "observed": {
         "name": "Keybay W1 Black Diamond Silver"
@@ -84189,16 +84169,6 @@
       "observed": {
         "name": "HaiMu Gray Jade Tactile",
         "switchType": "tactile"
-      }
-    },
-    {
-      "source": "switchoddities",
-      "sourceId": "9585716429084",
-      "kind": "switches",
-      "id": "dukharo-flamingo",
-      "url": "https://switchoddities.com/products/dukharo-flamingo",
-      "observed": {
-        "name": "Dukharo \"Flamingo\""
       }
     },
     {
@@ -85479,16 +85449,6 @@
     },
     {
       "source": "switchoddities",
-      "sourceId": "9919497273628",
-      "kind": "switches",
-      "id": "outelo-x-green",
-      "url": "https://switchoddities.com/products/outelo-x-green",
-      "observed": {
-        "name": "Outelo \"X\" Green"
-      }
-    },
-    {
-      "source": "switchoddities",
       "sourceId": "9919516082460",
       "kind": "switches",
       "id": "f-switch-red",
@@ -86524,7 +86484,7 @@
       "source": "theremingoat",
       "sourceId": "1008",
       "kind": "switches",
-      "id": "gateron-low-profile-red-wide",
+      "id": "gateron-low-profile-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Low Profile Red (Wide)",
@@ -86536,7 +86496,7 @@
       "source": "theremingoat",
       "sourceId": "1009",
       "kind": "switches",
-      "id": "gateron-low-profile-brown-wide",
+      "id": "gateron-low-profile-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Low Profile Brown (Wide)",
@@ -86560,7 +86520,7 @@
       "source": "theremingoat",
       "sourceId": "1010",
       "kind": "switches",
-      "id": "gateron-low-profile-blue-wide",
+      "id": "gateron-low-profile-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Low Profile Blue (Wide)",
@@ -87780,18 +87740,6 @@
         "manufacturer": "Durock/JWK",
         "switchType": "linear"
       }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1115",
-      "kind": "switches",
-      "id": "white-dustproof-glaze",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "White Dustproof \"Glaze\"",
-        "switchType": "linear"
-      },
-      "notes": "Real name of 落霞"
     },
     {
       "source": "theremingoat",
@@ -89219,7 +89167,7 @@
       "source": "theremingoat",
       "sourceId": "1230",
       "kind": "switches",
-      "id": "huano-black-clear-black-bottom",
+      "id": "huano-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Black (Clear/Black Bottom)",
@@ -89255,7 +89203,7 @@
       "source": "theremingoat",
       "sourceId": "1233",
       "kind": "switches",
-      "id": "huano-purple-white-bottom",
+      "id": "huano-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Purple (White Bottom)",
@@ -89279,7 +89227,7 @@
       "source": "theremingoat",
       "sourceId": "1235",
       "kind": "switches",
-      "id": "huano-hot-pink-white-bottom",
+      "id": "huano-hot-pink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Hot Pink (White Bottom)",
@@ -89303,7 +89251,7 @@
       "source": "theremingoat",
       "sourceId": "1237",
       "kind": "switches",
-      "id": "huano-teal-white-bottom",
+      "id": "huano-teal",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Teal (White Bottom)",
@@ -89315,7 +89263,7 @@
       "source": "theremingoat",
       "sourceId": "1238",
       "kind": "switches",
-      "id": "huano-orange-white-bottom",
+      "id": "huano-orange",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano 'Orange' (White Bottom)",
@@ -89849,7 +89797,7 @@
       "source": "theremingoat",
       "sourceId": "1287",
       "kind": "switches",
-      "id": "korb",
+      "id": "korbs",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Korb",
@@ -89861,7 +89809,7 @@
       "source": "theremingoat",
       "sourceId": "1288",
       "kind": "switches",
-      "id": "korb-tiny-eyes",
+      "id": "korbs",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Korb (Tiny Eyes)",
@@ -89946,7 +89894,7 @@
       "source": "theremingoat",
       "sourceId": "1294",
       "kind": "switches",
-      "id": "gateron-cj-dustproof",
+      "id": "gateron-cj",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron CJ (Dustproof)",
@@ -93145,7 +93093,7 @@
       "source": "theremingoat",
       "sourceId": "1546",
       "kind": "switches",
-      "id": "ktt-cabbage-tofu-opaque",
+      "id": "ktt-cabbage-tofu",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Cabbage Tofu (Opaque)",
@@ -93157,7 +93105,7 @@
       "source": "theremingoat",
       "sourceId": "1547",
       "kind": "switches",
-      "id": "ktt-cabbage-tofu-transparent",
+      "id": "ktt-cabbage-tofu",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Cabbage Tofu (Transparent)",
@@ -95596,7 +95544,7 @@
       "source": "theremingoat",
       "sourceId": "1753",
       "kind": "switches",
-      "id": "gateron-cj-light-blue",
+      "id": "gateron-cj",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron CJ Light Blue",
@@ -96564,7 +96512,7 @@
       "source": "theremingoat",
       "sourceId": "183",
       "kind": "switches",
-      "id": "jwh-dustproof-blue-abs-value",
+      "id": "jwh-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "JWH Dustproof Blue (Abs. Value)",
@@ -97928,17 +97876,6 @@
       "observed": {
         "name": "MMD Green Tactile",
         "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1946",
-      "kind": "switches",
-      "id": "mmd-strawberry",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "MMD \"Strawberry\"",
-        "switchType": "linear"
       }
     },
     {
@@ -99818,7 +99755,7 @@
       "source": "theremingoat",
       "sourceId": "2102",
       "kind": "switches",
-      "id": "huano-blue-white-huano-np",
+      "id": "huano-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Blue (White/Huano NP)",
@@ -99830,7 +99767,7 @@
       "source": "theremingoat",
       "sourceId": "2103",
       "kind": "switches",
-      "id": "huano-black-white-huano-np",
+      "id": "huano-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Black (White/Huano NP)",
@@ -99842,7 +99779,7 @@
       "source": "theremingoat",
       "sourceId": "2104",
       "kind": "switches",
-      "id": "huano-brown-white-huano-np",
+      "id": "huano-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Brown (White/Huano NP)",
@@ -99854,7 +99791,7 @@
       "source": "theremingoat",
       "sourceId": "2105",
       "kind": "switches",
-      "id": "huano-dp-blue-white-huano-np",
+      "id": "huano-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano DP Blue (White/Huano NP)",
@@ -102054,7 +101991,7 @@
       "source": "theremingoat",
       "sourceId": "2282",
       "kind": "switches",
-      "id": "keychron-camo-green-pattern-1",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Green (Pattern 1)",
@@ -102066,7 +102003,7 @@
       "source": "theremingoat",
       "sourceId": "2283",
       "kind": "switches",
-      "id": "keychron-camo-green-pattern-2",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Green (Pattern 2)",
@@ -102078,7 +102015,7 @@
       "source": "theremingoat",
       "sourceId": "2284",
       "kind": "switches",
-      "id": "keychron-camo-camel",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Camel (Patt. 1)",
@@ -102090,7 +102027,7 @@
       "source": "theremingoat",
       "sourceId": "2285",
       "kind": "switches",
-      "id": "keychron-camo-camel",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Camel (Patt. 2)",
@@ -102102,7 +102039,7 @@
       "source": "theremingoat",
       "sourceId": "2286",
       "kind": "switches",
-      "id": "keychron-camo-l-green-patt-1",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo L. Green (Patt. 1)",
@@ -102114,7 +102051,7 @@
       "source": "theremingoat",
       "sourceId": "2287",
       "kind": "switches",
-      "id": "keychron-camo-l-green-patt-2",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo L. Green (Patt. 2)",
@@ -102126,7 +102063,7 @@
       "source": "theremingoat",
       "sourceId": "2288",
       "kind": "switches",
-      "id": "keychron-camo-camel",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron T. Camo Camel (Patt. 1)",
@@ -102138,7 +102075,7 @@
       "source": "theremingoat",
       "sourceId": "2289",
       "kind": "switches",
-      "id": "keychron-camo-camel",
+      "id": "keychron-camo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keychron Camo Camel (Patt. 2)",
@@ -103190,7 +103127,7 @@
       "source": "theremingoat",
       "sourceId": "2383",
       "kind": "switches",
-      "id": "ktt-macaron-red-chinajoy-edition",
+      "id": "ktt-macaron-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Red",
@@ -103216,7 +103153,7 @@
       "source": "theremingoat",
       "sourceId": "2385",
       "kind": "switches",
-      "id": "ktt-macaron-yellow-chinajoy-edition",
+      "id": "ktt-macaron-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Yellow",
@@ -103229,7 +103166,7 @@
       "source": "theremingoat",
       "sourceId": "2386",
       "kind": "switches",
-      "id": "ktt-macaron-green-chinajoy-edition",
+      "id": "ktt-macaron-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Green",
@@ -103255,7 +103192,7 @@
       "source": "theremingoat",
       "sourceId": "2388",
       "kind": "switches",
-      "id": "ktt-macaron-purple-chinajoy-edition",
+      "id": "ktt-macaron-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macaron Purple",
@@ -103268,7 +103205,7 @@
       "source": "theremingoat",
       "sourceId": "2389",
       "kind": "switches",
-      "id": "ktt-macaron-pink-chinajoy-edition",
+      "id": "ktt-macaron-pink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Macron Pink",
@@ -103840,7 +103777,7 @@
       "source": "theremingoat",
       "sourceId": "2431",
       "kind": "switches",
-      "id": "jixian-dustproof-yellow-white-b",
+      "id": "jixian-dustproof-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Jixian Dustproof Yellow (White B)",
@@ -103862,7 +103799,7 @@
       "source": "theremingoat",
       "sourceId": "2433",
       "kind": "switches",
-      "id": "jixian-dustproof-silver-white-b",
+      "id": "jixian-dustproof-silver",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Jixian Dustproof Silver (White B)",
@@ -106763,17 +106700,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "2678",
-      "kind": "switches",
-      "id": "lcet-green-something",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "LCET Green \"Something\"",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2679",
       "kind": "switches",
       "id": "everfree-curry",
@@ -108639,7 +108565,7 @@
       "source": "theremingoat",
       "sourceId": "2834",
       "kind": "switches",
-      "id": "huano-dustproof-blue-clear-black",
+      "id": "huano-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Dustproof Blue (Clear/Black)",
@@ -110712,7 +110638,7 @@
       "source": "theremingoat",
       "sourceId": "2992",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-purple",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keybay W1 Black Diamond Purple",
@@ -110723,7 +110649,7 @@
       "source": "theremingoat",
       "sourceId": "2993",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-yellow",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keybay W1 Black Diamond Yellow",
@@ -110734,7 +110660,7 @@
       "source": "theremingoat",
       "sourceId": "2994",
       "kind": "switches",
-      "id": "keyback-w1-black-diamond-pink",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keyback W1 Black Diamond Pink",
@@ -110745,7 +110671,7 @@
       "source": "theremingoat",
       "sourceId": "2995",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-blue",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keybay W1 Black Diamond Blue",
@@ -110756,7 +110682,7 @@
       "source": "theremingoat",
       "sourceId": "2996",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-red",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keybay W1 Black Diamond Red",
@@ -110767,7 +110693,7 @@
       "source": "theremingoat",
       "sourceId": "2997",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-green",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keybay W1 Black Diamond Green",
@@ -110778,7 +110704,7 @@
       "source": "theremingoat",
       "sourceId": "2998",
       "kind": "switches",
-      "id": "keybay-w1-black-diamond-silver",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keybay W1 Black Diamond Silver",
@@ -110789,7 +110715,7 @@
       "source": "theremingoat",
       "sourceId": "2999",
       "kind": "switches",
-      "id": "keyback-w1-black-diamond-black",
+      "id": "keybay-w1-black-diamond",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Keyback W1 Black Diamond Black",
@@ -111377,18 +111303,6 @@
       "observed": {
         "name": "SWK Ripple",
         "manufacturer": "SWK",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "3042",
-      "kind": "switches",
-      "id": "dukharo-flamingo",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Dukharo Flamingo",
-        "manufacturer": "Haimu",
         "switchType": "linear"
       }
     },
@@ -112038,17 +111952,6 @@
       "observed": {
         "name": "LCET \"Holy Panda\"",
         "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "3093",
-      "kind": "switches",
-      "id": "lcet-cloud",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "LCET \"Cloud\"",
-        "switchType": "linear"
       }
     },
     {
@@ -114276,7 +114179,7 @@
       "source": "theremingoat",
       "sourceId": "3283",
       "kind": "switches",
-      "id": "jerrzi-blue-winglatch-full-black",
+      "id": "jerrzi-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Jerrzi Blue",
@@ -123293,7 +123196,7 @@
       "source": "theremingoat",
       "sourceId": "40",
       "kind": "switches",
-      "id": "gateron-silent-yellow-ks-1",
+      "id": "gateron-ks-1-silent-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Yellow",
@@ -124617,7 +124520,7 @@
       "source": "theremingoat",
       "sourceId": "41",
       "kind": "switches",
-      "id": "gateron-silent-clear-ks-1",
+      "id": "gateron-ks-1-silent-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Silent Clear",
@@ -126751,7 +126654,7 @@
       "source": "theremingoat",
       "sourceId": "442",
       "kind": "switches",
-      "id": "kaicheng-black-black-bottom",
+      "id": "kaicheng-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Kaicheng Black (Black Bottom)",
@@ -126762,7 +126665,7 @@
       "source": "theremingoat",
       "sourceId": "443",
       "kind": "switches",
-      "id": "kaicheng-red-white-bottom",
+      "id": "kaicheng-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Kaicheng Red (White Bottom)",
@@ -126773,7 +126676,7 @@
       "source": "theremingoat",
       "sourceId": "444",
       "kind": "switches",
-      "id": "kaicheng-brown-white-bottom",
+      "id": "kaicheng-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Kaicheng Brown (White Bottom)",
@@ -126784,7 +126687,7 @@
       "source": "theremingoat",
       "sourceId": "445",
       "kind": "switches",
-      "id": "kaicheng-green-white-bottom",
+      "id": "kaicheng-green",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Kaicheng Green (White Bottom)",

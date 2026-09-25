@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 67,
-  "totalCount": 4735,
+  "catalogVersion": 73,
+  "totalCount": 4689,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -2679,12 +2679,6 @@
     {
       "id": "ball-bearing-grey",
       "name": "Ball Bearing Grey",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ball-bearing-lucy",
-      "name": "Ball Bearing \"Lucy\"",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -7097,13 +7091,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "dukharo-flamingo",
-      "name": "Dukharo \"Flamingo\"",
-      "manufacturer": "Haimu",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "dukharo-mo-green",
       "name": "Dukharo MO Green",
       "manufacturer": "Haimu",
@@ -7270,14 +7257,6 @@
         "62g",
         "67g"
       ]
-    },
-    {
-      "id": "durock-korbs",
-      "name": "Durock Korbs",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "durock-l1-creamy-yellow",
@@ -9818,39 +9797,11 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cj-dark-blue",
-      "name": "Gateron CJ - Dark Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cj-dustproof",
-      "name": "Gateron CJ (Dustproof)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cj-light-blue",
-      "name": "Gateron CJ Light Blue",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-cj-pom",
-      "name": "Gateron CJ POM",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Dark Blue / Dustproof",
+        "Light Blue"
+      ]
     },
     {
       "id": "gateron-cm",
@@ -10563,6 +10514,22 @@
         "Black Housing",
         "Milky Housing"
       ]
+    },
+    {
+      "id": "gateron-ks-1-silent-clear",
+      "name": "Gateron KS-1 Silent Clear",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "gateron-ks-1-silent-yellow",
+      "name": "Gateron KS-1 Silent Yellow",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "MX"
     },
     {
       "id": "gateron-ks-1-yellow",
@@ -11391,8 +11358,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-low-profile-blue-wide",
-      "name": "Gateron Low Profile Blue (Wide)",
+      "id": "gateron-low-profile-blue",
+      "name": "Gateron Low Profile Blue",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "clicky",
@@ -11400,8 +11367,8 @@
       "isLowProfile": true
     },
     {
-      "id": "gateron-low-profile-brown-wide",
-      "name": "Gateron Low Profile Brown (Wide)",
+      "id": "gateron-low-profile-brown",
+      "name": "Gateron Low Profile Brown",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "tactile",
@@ -11409,8 +11376,8 @@
       "isLowProfile": true
     },
     {
-      "id": "gateron-low-profile-red-wide",
-      "name": "Gateron Low Profile Red (Wide)",
+      "id": "gateron-low-profile-red",
+      "name": "Gateron Low Profile Red",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -12308,14 +12275,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-silent-clear-ks-1",
-      "name": "Gateron Silent Clear (KS-1)",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "gateron-silent-ink",
       "name": "Gateron Silent Ink",
       "manufacturer": "Gateron",
@@ -12346,14 +12305,6 @@
     {
       "id": "gateron-silent-yellow",
       "name": "Gateron Silent - Yellow",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "gateron-silent-yellow-ks-1",
-      "name": "Gateron Silent Yellow (KS-1)",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -16312,43 +16263,31 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-bipolar-blue",
-      "name": "Huano \"BiPolar Blue\"",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-black-clear-black-bottom",
-      "name": "Huano Black (Clear/Black Bottom)",
+      "id": "huano-black",
+      "name": "Huano Black",
       "manufacturer": "Huano",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-black-white-huano-np",
-      "name": "Huano Black (White/Huano NP)",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
     },
     {
       "id": "huano-blue",
       "name": "Huano Blue",
       "manufacturer": "Huano",
       "switchType": "clicky",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
     },
     {
       "id": "huano-blue-dragon",
       "name": "Huano Blue Dragon",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-blue-white-huano-np",
-      "name": "Huano Blue (White/Huano NP)",
-      "manufacturer": "Huano",
-      "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
@@ -16362,14 +16301,11 @@
       "name": "Huano Brown",
       "manufacturer": "Huano",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-brown-white-huano-np",
-      "name": "Huano Brown (White/Huano NP)",
-      "manufacturer": "Huano",
-      "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
     },
     {
       "id": "huano-budapest",
@@ -16448,13 +16384,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-dp-blue-white-huano-np",
-      "name": "Huano DP Blue (White/Huano NP)",
-      "manufacturer": "Huano",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "huano-dustproof-black",
       "name": "Huano Dustproof Black",
       "manufacturer": "Huano",
@@ -16462,11 +16391,15 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-dustproof-blue-clear-black",
-      "name": "Huano Dustproof Blue (Clear/Black)",
+      "id": "huano-dustproof-blue",
+      "name": "Huano Dustproof Blue",
       "manufacturer": "Huano",
       "switchType": "clicky",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Clear Top / White Bottom"
+      ]
     },
     {
       "id": "huano-dustproof-brown",
@@ -16487,8 +16420,8 @@
       ]
     },
     {
-      "id": "huano-dustproof-pink-grey-bottom",
-      "name": "Huano Dustproof Pink - Grey Bottom",
+      "id": "huano-dustproof-pink",
+      "name": "Huano Dustproof Pink",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -16560,8 +16493,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-hot-pink-white-bottom",
-      "name": "Huano Hot Pink (White Bottom)",
+      "id": "huano-hot-pink",
+      "name": "Huano Hot Pink",
       "manufacturer": "Huano",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -16694,8 +16627,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-orange-white-bottom",
-      "name": "Huano 'Orange' (White Bottom)",
+      "id": "huano-orange",
+      "name": "Huano 'Orange'",
       "manufacturer": "Huano",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -16741,8 +16674,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-purple-white-bottom",
-      "name": "Huano Purple (White Bottom)",
+      "id": "huano-purple",
+      "name": "Huano Purple",
       "manufacturer": "Huano",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -16918,8 +16851,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-teal-white-bottom",
-      "name": "Huano Teal (White Bottom)",
+      "id": "huano-teal",
+      "name": "Huano Teal",
       "manufacturer": "Huano",
       "switchType": "clicky",
       "switchFamily": "MX"
@@ -17523,14 +17456,6 @@
       ]
     },
     {
-      "id": "jerrzi-blue-winglatch-full-black",
-      "name": "Jerrzi Blue (Winglatch, Full Black)",
-      "manufacturer": "Jerrzi",
-      "brand": "Jerrzi",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "jerrzi-blueberry-mini",
       "name": "Jerrzi Blueberry Mini",
       "manufacturer": "Jerrzi",
@@ -18065,14 +17990,14 @@
       "switchFamily": "Optical"
     },
     {
-      "id": "jixian-dustproof-silver-white-b",
-      "name": "Jixian Dustproof Silver (White B)",
+      "id": "jixian-dustproof-silver",
+      "name": "Jixian Dustproof Silver",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "jixian-dustproof-yellow-white-b",
-      "name": "Jixian Dustproof Yellow (White B)",
+      "id": "jixian-dustproof-yellow",
+      "name": "Jixian Dustproof Yellow",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -18208,12 +18133,6 @@
     {
       "id": "jwh-dustproof-blue",
       "name": "JWH Dustproof Blue",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "jwh-dustproof-blue-abs-value",
-      "name": "JWH Dustproof Blue (Abs. Value)",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -18571,8 +18490,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "kaicheng-black-black-bottom",
-      "name": "Kaicheng Black (Black Bottom)",
+      "id": "kaicheng-black",
+      "name": "Kaicheng Black",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -18583,8 +18502,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "kaicheng-brown-white-bottom",
-      "name": "Kaicheng Brown (White Bottom)",
+      "id": "kaicheng-brown",
+      "name": "Kaicheng Brown",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -18595,14 +18514,14 @@
       "switchFamily": "MX"
     },
     {
-      "id": "kaicheng-green-white-bottom",
-      "name": "Kaicheng Green (White Bottom)",
+      "id": "kaicheng-green",
+      "name": "Kaicheng Green",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
-      "id": "kaicheng-red-white-bottom",
-      "name": "Kaicheng Red (White Bottom)",
+      "id": "kaicheng-red",
+      "name": "Kaicheng Red",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -20914,64 +20833,22 @@
       "switchFamily": "MX"
     },
     {
-      "id": "keyback-w1-black-diamond-black",
-      "name": "Keyback W1 Black Diamond Black",
+      "id": "keybay-w1-black-diamond",
+      "name": "Keybay W1 Black Diamond",
+      "manufacturer": "W.P.J",
+      "brand": "Keybay",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keyback-w1-black-diamond-pink",
-      "name": "Keyback W1 Black Diamond Pink",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-black",
-      "name": "Keybay W1 Black Diamond Black",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-blue",
-      "name": "Keybay W1 Black Diamond Blue",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-green",
-      "name": "Keybay W1 Black Diamond Green",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-pink",
-      "name": "Keybay W1 Black Diamond Pink",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-purple",
-      "name": "Keybay W1 Black Diamond Purple",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-red",
-      "name": "Keybay W1 Black Diamond Red",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-silver",
-      "name": "Keybay W1 Black Diamond Silver",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keybay-w1-black-diamond-yellow",
-      "name": "Keybay W1 Black Diamond Yellow",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Black",
+        "Blue",
+        "Green",
+        "Pink",
+        "Purple",
+        "Red",
+        "Silver",
+        "Yellow"
+      ]
     },
     {
       "id": "keybay-w1-white-diamond-pink",
@@ -21010,57 +20887,18 @@
       "switchFamily": "MX"
     },
     {
-      "id": "keychron-camo-camel",
-      "name": "Keychron Camo Camel",
+      "id": "keychron-camo",
+      "name": "Keychron Camo",
       "manufacturer": "Huano",
+      "brand": "Keychron",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-green",
-      "name": "Keychron Camo Green",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-green-pattern-1",
-      "name": "Keychron Camo Green (Pattern 1)",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-green-pattern-2",
-      "name": "Keychron Camo Green (Pattern 2)",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-l-green-patt-1",
-      "name": "Keychron Camo L. Green (Patt. 1)",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-l-green-patt-2",
-      "name": "Keychron Camo L. Green (Patt. 2)",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-light-green",
-      "name": "Keychron Camo Light Green",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keychron-camo-wheat",
-      "name": "Keychron Camo Wheat",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Camel",
+        "Green",
+        "Light Green",
+        "Wheat"
+      ]
     },
     {
       "id": "keychron-dustproof-brown",
@@ -22380,14 +22218,6 @@
       "name": "Keyspensory JWK Carol",
       "manufacturer": "JWK",
       "brand": "Keyspensory",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "keyspensory-jwk-carol-tsavorite",
-      "name": "Keyspensory JWK Carol (Tsavorite)",
-      "manufacturer": "JWK",
-      "brand": "Keyspensory",
       "designer": "Keyspensory",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -22801,24 +22631,11 @@
       "switchFamily": "MX"
     },
     {
-      "id": "korb",
-      "name": "Korb",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "korb-tiny-eyes",
-      "name": "Korb (Tiny Eyes)",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "korbs",
       "name": "Korbs",
       "manufacturer": "JWK",
       "brand": "Durock",
+      "designer": "Tiny",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -23004,29 +22821,10 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "V1",
+        "V1 / Opaque Top",
+        "V1 / Transparent Top",
         "V2"
       ]
-    },
-    {
-      "id": "ktt-cabbage-tofu-opaque",
-      "name": "KTT Cabbage Tofu Opaque",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-cabbage-tofu-transparent",
-      "name": "KTT Cabbage Tofu (Transparent)",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-cabbage-tofu-transparent-top",
-      "name": "KTT Cabbage Tofu Transparent Top",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "ktt-carpinteria",
@@ -23316,7 +23114,7 @@
       "id": "ktt-macaron-blue",
       "name": "KTT Macaron Blue",
       "manufacturer": "KTT",
-      "switchType": "linear",
+      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -23331,20 +23129,17 @@
       "name": "KTT Macaron Green",
       "manufacturer": "KTT",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-macaron-green-chinajoy-edition",
-      "name": "KTT Macaron Green (ChinaJoy Edition)",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
     },
     {
       "id": "ktt-macaron-orange",
       "name": "KTT Macaron Orange",
       "manufacturer": "KTT",
-      "switchType": "linear",
+      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -23359,56 +23154,44 @@
       "name": "KTT Macaron Pink",
       "manufacturer": "KTT",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-macaron-pink-chinajoy-edition",
-      "name": "KTT Macaron Pink ChinaJoy Edition",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
     },
     {
       "id": "ktt-macaron-purple",
       "name": "KTT Macaron Purple",
       "manufacturer": "KTT",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-macaron-purple-chinajoy-edition",
-      "name": "KTT Macaron Purple (ChinaJoy Edition)",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
     },
     {
       "id": "ktt-macaron-red",
       "name": "KTT Macaron Red",
       "manufacturer": "KTT",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-macaron-red-chinajoy-edition",
-      "name": "KTT Macaron Red (ChinaJoy Edition)",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
     },
     {
       "id": "ktt-macaron-yellow",
       "name": "KTT Macaron Yellow",
       "manufacturer": "KTT",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ktt-macaron-yellow-chinajoy-edition",
-      "name": "KTT Macaron Yellow (ChinaJoy Edition)",
-      "manufacturer": "KTT",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "ChinaJoy Edition",
+        "Standard"
+      ]
     },
     {
       "id": "ktt-magnetic-axis",
@@ -24156,12 +23939,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lcet-cloud",
-      "name": "LCET \"Cloud\"",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "lcet-cloudy-white-pink-stem",
       "name": "LCET Cloudy/White Pink Stem",
       "switchType": "tactile",
@@ -24219,12 +23996,6 @@
       "id": "lcet-green-pink-pink-stem",
       "name": "LCET Green/Pink Pink Stem",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-green-something",
-      "name": "LCET Green \"Something\"",
-      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -26138,13 +25909,6 @@
       ]
     },
     {
-      "id": "mmd-strawberry",
-      "name": "MMD \"Strawberry\"",
-      "brand": "MMD",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "mmd-vivian",
       "name": "MMD Vivian",
       "brand": "MMD",
@@ -27807,12 +27571,6 @@
       "id": "outelo-black",
       "name": "Outelo Black",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outelo-x-green",
-      "name": "Outelo \"X\" Green",
-      "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
@@ -30030,7 +29788,7 @@
     },
     {
       "id": "rantopad-orange-gateron-ks-1",
-      "name": "Rantopad Orange (Gateron KS-1)",
+      "name": "Rantopad Orange Gateron KS-1",
       "manufacturer": "Gateron",
       "brand": "Rantopad",
       "switchType": "linear",
@@ -35612,12 +35370,6 @@
       "id": "whale-works-x-illusion-illusion",
       "name": "Whale Works x Illusion Illusion",
       "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "white-dustproof-glaze",
-      "name": "White Dustproof \"Glaze\"",
       "switchType": "linear",
       "switchFamily": "MX"
     },
