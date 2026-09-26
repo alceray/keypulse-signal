@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 73,
-  "totalCount": 4689,
+  "catalogVersion": 79,
+  "totalCount": 4633,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -7666,13 +7666,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "dustproof-banana-split",
-      "name": "Dustproof Banana Split",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "dustproof-outemu-ocean-s",
       "name": "Dustproof Outemu Ocean S.",
       "manufacturer": "Outemu",
@@ -7691,13 +7684,6 @@
       "name": "Dustproof SP Star Meteor Grey",
       "manufacturer": "SP-Star",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dustproof-sp-star-meteor-orange",
-      "name": "Dustproof SP Star Meteor Orange",
-      "manufacturer": "SP-Star",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -12239,6 +12225,7 @@
       "name": "Gateron Root Beer Float",
       "manufacturer": "Gateron",
       "brand": "Gateron",
+      "designer": "Punkshoo",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -15621,26 +15608,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hmx-sillyworks-hyacinth",
-      "name": "HMX SILLYWORKS Hyacinth",
-      "manufacturer": "HMX",
-      "brand": "HMX",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "hmx-sillyworks-hyacinth-v2u",
-      "name": "HMX SILLYWORKS Hyacinth V2U",
-      "manufacturer": "HMX",
-      "brand": "HMX",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "hmx-snow-crash",
       "name": "HMX Snow Crash",
       "manufacturer": "HMX",
@@ -16064,8 +16031,8 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "37g Actuation / 43g Bottom-out",
-        "45g Actuation / 53g Bottom-out"
+        "43g",
+        "53g"
       ]
     },
     {
@@ -16834,6 +16801,7 @@
     {
       "id": "huano-swirl-brown",
       "name": "Huano Swirl Brown",
+      "manufacturer": "Huano",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -21865,6 +21833,14 @@
       ]
     },
     {
+      "id": "keygeek-mz-z1",
+      "name": "Keygeek MZ Z1",
+      "manufacturer": "Keygeek",
+      "brand": "MZ",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
       "id": "keygeek-night-zephyr",
       "name": "Keygeek Night Zephyr",
       "manufacturer": "Keygeek",
@@ -24117,12 +24093,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lcet-purple-top-yellow",
-      "name": "LCET Purple Top Yellow",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "lcet-red",
       "name": "LCET Red",
       "switchType": "linear",
@@ -24210,8 +24180,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lcet-yellow-purple-over-white",
-      "name": "LCET Yellow (Purple over White)",
+      "id": "lcet-yellow",
+      "name": "LCET Yellow",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -24291,18 +24261,18 @@
       "switchFamily": "MX"
     },
     {
+      "id": "leobog-black",
+      "name": "LEOBOG Black",
+      "manufacturer": "SOAI",
+      "brand": "LEOBOG",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
       "id": "leobog-black-crystal",
       "name": "LEOBOG Black Crystal",
       "brand": "LEOBOG",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "leobog-black-white-bottom",
-      "name": "LEOBOG Black (White Bottom)",
-      "manufacturer": "SOAI",
-      "brand": "LEOBOG",
-      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -24329,12 +24299,16 @@
       "switchFamily": "MX"
     },
     {
-      "id": "leobog-chive-leek",
-      "name": "LEOBOG Chive (Leek)",
+      "id": "leobog-chive",
+      "name": "LEOBOG Chive",
       "manufacturer": "SOAI",
       "brand": "LEOBOG",
       "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "V1",
+        "V2"
+      ]
     },
     {
       "id": "leobog-crystal",
@@ -24465,18 +24439,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "leobog-leek-chive",
-      "name": "LEOBOG Leek (Chive)",
-      "manufacturer": "SOAI",
-      "brand": "LEOBOG",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
       "id": "leobog-light-feather",
       "name": "LEOBOG Light Feather",
       "manufacturer": "SOAI",
@@ -24502,21 +24464,6 @@
     {
       "id": "leobog-nimbus",
       "name": "LEOBOG Nimbus",
-      "manufacturer": "SOAI",
-      "brand": "LEOBOG",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V3.1",
-        "V3.2"
-      ]
-    },
-    {
-      "id": "leobog-nimbus-split-clip",
-      "name": "LEOBOG Nimbus (Split Clip)",
       "manufacturer": "SOAI",
       "brand": "LEOBOG",
       "switchType": "linear",
@@ -24955,12 +24902,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lk-black-all-black-housing",
-      "name": "LK Black (All-Black Housing)",
-      "switchType": "linear",
-      "switchFamily": "Optical"
-    },
-    {
       "id": "lk-black-optical",
       "name": "LK Black Optical",
       "switchType": "linear",
@@ -25303,28 +25244,11 @@
       "name": "Marshmallow",
       "manufacturer": "JWK",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "marshmallow-cn-version",
-      "name": "Marshmallow (CN Version)",
-      "manufacturer": "JWK",
-      "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
         "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "marshmallow-us-version",
-      "name": "Marshmallow (US Version)",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
+        "V2 / CN",
+        "V2 / US"
       ]
     },
     {
@@ -25382,14 +25306,13 @@
     {
       "id": "matias-quiet-click",
       "name": "Matias Quiet Click",
+      "brand": "Matias",
       "switchType": "tactile",
-      "switchFamily": "Alps"
-    },
-    {
-      "id": "matias-quiet-click-early-run-white",
-      "name": "Matias Quiet Click (Early Run White)",
-      "switchType": "clicky",
-      "switchFamily": "Alps"
+      "switchFamily": "Alps",
+      "variants": [
+        "Early / White",
+        "Grey"
+      ]
     },
     {
       "id": "mauve",
@@ -26173,29 +26096,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "morandi-macaron-he-blue-diff",
-      "name": "Morandi Macaron HE (Blue Diff)",
-      "manufacturer": "Haimu",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "morandi-macaron-he-green-diff",
-      "name": "Morandi Macaron HE (Green Diff)",
-      "manufacturer": "Haimu",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "morandi-macaron-he-pink-diff",
-      "name": "Morandi Macaron HE (Pink Diff)",
-      "manufacturer": "Haimu",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "morandi-macaron-he-yellow-diff",
-      "name": "Morandi Macaron HE (Yellow Diff)",
+      "id": "morandi-macaron-he",
+      "name": "Morandi Macaron HE",
       "manufacturer": "Haimu",
       "switchType": "linear",
       "switchFamily": "HE"
@@ -26323,12 +26225,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "mx-mount-smk-usw-lmbu01-blue",
-      "name": "MX Mount SMK UsW LMBU01 (Blue)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "mz-peripherals-industrial-orange",
       "name": "MZ Peripherals Industrial Orange",
       "switchType": "tactile",
@@ -26341,9 +26237,9 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "28g Actuation / 36g Bottom-out",
-        "42g Actuation / 48g Bottom-out",
-        "49g Actuation / 57g Bottom-out"
+        "36g",
+        "48g",
+        "57g"
       ]
     },
     {
@@ -26362,29 +26258,19 @@
     {
       "id": "mz-z1",
       "name": "MZ Z1",
-      "brand": "Keygeek",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "32g",
-        "40g"
-      ]
-    },
-    {
-      "id": "mz-z1-actuation",
-      "name": "MZ Z1 ( Actuation)",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "40g",
-        "42g"
+        "32g Actuation",
+        "40g Actuation",
+        "42g Actuation"
       ]
     },
     {
       "id": "naevies-ec",
       "name": "Naevies EC",
       "manufacturer": "Tecsee",
-      "designer": "Keyboard treehouse. Sold in packs of 35.",
+      "designer": "Keyboard Treehouse",
       "switchType": "tactile",
       "switchFamily": "EC",
       "variants": [
@@ -26628,12 +26514,18 @@
       ]
     },
     {
-      "id": "nk-cream-plus-no-insert",
-      "name": "NK Cream+ (No Insert)",
+      "id": "nk-cream-plus",
+      "name": "NK Cream+",
       "manufacturer": "Kailh",
       "brand": "NovelKeys",
       "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Copper Insert",
+        "No Insert",
+        "Silicone Insert",
+        "Titanium Insert"
+      ]
     },
     {
       "id": "nk-dream-cream",
@@ -27020,30 +26912,6 @@
       "manufacturer": "Kailh",
       "brand": "NovelKeys",
       "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "novelkeys-cream-plus",
-      "name": "NK Cream+",
-      "manufacturer": "Kailh",
-      "brand": "NovelKeys",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "novelkeys-cream-plus-copper-insert",
-      "name": "NK Cream+ (Copper Insert)",
-      "manufacturer": "Kailh",
-      "brand": "NovelKeys",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "novelkeys-cream-plus-titanium-insert",
-      "name": "NK Cream+ (Titanium Insert)",
-      "manufacturer": "Kailh",
-      "brand": "NovelKeys",
-      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -27739,24 +27607,16 @@
       "switchFamily": "HE"
     },
     {
-      "id": "outemu-brown-actuation",
-      "name": "Outemu Brown ( actuation)",
+      "id": "outemu-brown",
+      "name": "Outemu Brown",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
-        "45g",
-        "55g"
+        "45g Actuation",
+        "55g Actuation"
       ]
-    },
-    {
-      "id": "outemu-brown-white-bottom",
-      "name": "Outemu Brown (White Bottom)",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "tactile",
-      "switchFamily": "MX"
     },
     {
       "id": "outemu-butterfly",
@@ -27907,8 +27767,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "outemu-dark-purple-white-bottom",
-      "name": "Outemu Dark Purple (White Bottom)",
+      "id": "outemu-dark-purple",
+      "name": "Outemu Dark Purple",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -27928,32 +27788,28 @@
       ]
     },
     {
-      "id": "outemu-dustproof-black-white-bottom",
-      "name": "Outemu Dustproof Black (White Bottom)",
+      "id": "outemu-dustproof-black",
+      "name": "Outemu Dustproof Black",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "outemu-dustproof-blue-rounded",
-      "name": "Outemu Dustproof Blue (Rounded)",
+      "id": "outemu-dustproof-blue",
+      "name": "Outemu Dustproof Blue",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Rounded",
+        "Squared"
+      ]
     },
     {
-      "id": "outemu-dustproof-blue-squared",
-      "name": "Outemu Dustproof Blue (Squared)",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outemu-dustproof-brown-white-bottom",
-      "name": "Outemu Dustproof Brown (White Bottom)",
+      "id": "outemu-dustproof-brown",
+      "name": "Outemu Dustproof Brown",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -27976,8 +27832,8 @@
       "switchFamily": "Optical"
     },
     {
-      "id": "outemu-dustproof-red-white-bottom",
-      "name": "Outemu Dustproof Red (White Bottom)",
+      "id": "outemu-dustproof-red",
+      "name": "Outemu Dustproof Red",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "linear",
@@ -28048,8 +27904,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "outemu-extra-light-purple-white-bottom",
-      "name": "Outemu Extra Light Purple (White Bottom)",
+      "id": "outemu-extra-light-purple",
+      "name": "Outemu Extra Light Purple",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -28088,19 +27944,19 @@
       "switchFamily": "MX"
     },
     {
+      "id": "outemu-gold",
+      "name": "Outemu Gold",
+      "manufacturer": "Outemu",
+      "brand": "Outemu",
+      "switchType": "clicky",
+      "switchFamily": "MX"
+    },
+    {
       "id": "outemu-gold-pink",
       "name": "Outemu Gold Pink",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outemu-gold-white-bottom",
-      "name": "Outemu Gold (White Bottom)",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
@@ -28120,8 +27976,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "outemu-grey-white-bottom",
-      "name": "Outemu Grey (White Bottom)",
+      "id": "outemu-grey",
+      "name": "Outemu Grey",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
@@ -28190,30 +28046,11 @@
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outemu-ice-dustproof-blue-rounded-off",
-      "name": "Outemu ICE Dustproof Blue (Rounded Off)",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "clicky",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "outemu-ice-dustproof-blue-squared-off",
-      "name": "Outemu ICE Dustproof Blue (Squared Off)",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
+        "V1 / Squared",
+        "V2 / Rounded",
+        "V2 / Squared"
       ]
     },
     {
@@ -28385,8 +28222,8 @@
       ]
     },
     {
-      "id": "outemu-light-purple-white-bottom",
-      "name": "Outemu Light Purple (White Bottom)",
+      "id": "outemu-light-purple",
+      "name": "Outemu Light Purple",
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "linear",
@@ -28567,15 +28404,11 @@
       "manufacturer": "Outemu",
       "brand": "Outemu",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outemu-panda-dark",
-      "name": "Outemu Panda (Dark)",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Dark",
+        "Standard"
+      ]
     },
     {
       "id": "outemu-panda-silent-he",
@@ -28683,32 +28516,8 @@
       "switchFamily": "MX",
       "variants": [
         "Black Housing",
-        "White Bottom"
+        "Clear Top / White Bottom"
       ]
-    },
-    {
-      "id": "outemu-red-1",
-      "name": "Outemu Red 1",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outemu-red-2",
-      "name": "Outemu Red 2",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "outemu-red-clear-top-white-bottom",
-      "name": "Outemu Red Clear Top White Bottom",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "outemu-silent-honey-peach-pro",
@@ -29006,7 +28815,7 @@
       "name": "Owlab Latte",
       "manufacturer": "SWK",
       "brand": "Owlab",
-      "designer": "Owlab ( qwertykeys )",
+      "designer": "Owlab (Qwertykeys)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -29015,7 +28824,7 @@
       "name": "Owlab London Fog",
       "manufacturer": "BSUN",
       "brand": "Owlab",
-      "designer": "Owlab ( qwertykeys )",
+      "designer": "Owlab (Qwertykeys)",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
@@ -29028,7 +28837,7 @@
       "name": "Owlab Neon",
       "manufacturer": "SWK",
       "brand": "Owlab",
-      "designer": "Owlab ( qwertykeys )",
+      "designer": "Owlab (Qwertykeys)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -29059,7 +28868,7 @@
       "name": "Owlab Tungsten",
       "manufacturer": "JWK",
       "brand": "Owlab",
-      "designer": "Owlab ( qwertykeys )",
+      "designer": "Owlab (Qwertykeys)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -29505,20 +29314,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "punkshoo-root-beer-float-new-leaf",
-      "name": "Punkshoo Root Beer Float (New Leaf)",
-      "brand": "Punkshoo",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "punkshoo-root-beer-float-old-leaf",
-      "name": "Punkshoo Root Beer Float (Old Leaf)",
-      "brand": "Punkshoo",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "punkshoo-runner",
       "name": "Punkshoo Runner",
       "manufacturer": "Aflion",
@@ -29632,7 +29427,7 @@
       "id": "raeds-he-original",
       "name": "Raeds HE - Original",
       "manufacturer": "Tecsee",
-      "designer": "Keyboard treehouse. Sold in packs of 35.",
+      "designer": "Keyboard Treehouse",
       "switchType": "linear",
       "switchFamily": "HE"
     },
@@ -29640,7 +29435,7 @@
       "id": "raeds-he-rgb",
       "name": "Raeds HE - RGB",
       "manufacturer": "Tecsee",
-      "designer": "Keyboard treehouse. Sold in packs of 35.",
+      "designer": "Keyboard Treehouse",
       "switchType": "linear",
       "switchFamily": "HE"
     },
@@ -29711,26 +29506,14 @@
     {
       "id": "raininkeys-karman",
       "name": "Raininkeys Karman",
+      "manufacturer": "Keygeek",
+      "brand": "Raininkeys",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "raininkeys-karman-line-blue",
-      "name": "Raininkeys Karman Line Blue",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "raininkeys-karman-line-raw",
-      "name": "Raininkeys Karman Line Raw",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "raininkeys-karman-undyed",
-      "name": "Raininkeys Karman (undyed)",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Blue",
+        "Undyed"
+      ]
     },
     {
       "id": "rajoa-dustproof-blue",
@@ -29860,14 +29643,9 @@
       "switchFamily": "Optical"
     },
     {
-      "id": "razer-optical-purple-grey",
-      "name": "Razer Optical Purple (Grey)",
-      "switchType": "clicky",
-      "switchFamily": "Optical"
-    },
-    {
       "id": "razer-purple-optical",
       "name": "Razer Purple Optical",
+      "brand": "Razer",
       "switchType": "clicky",
       "switchFamily": "Optical"
     },
@@ -29961,8 +29739,9 @@
       "switchFamily": "HE"
     },
     {
-      "id": "redragon-brown-white-bottom",
-      "name": "Redragon Brown (White Bottom)",
+      "id": "redragon-brown",
+      "name": "Redragon Brown",
+      "brand": "Redragon",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -30734,51 +30513,14 @@
     {
       "id": "sillyworks-hyacinth",
       "name": "Sillyworks Hyacinth",
-      "manufacturer": "KTT",
+      "manufacturer": "HMX",
       "brand": "Sillyworks",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
+        "V2",
+        "V2U"
       ]
-    },
-    {
-      "id": "sillyworks-hyacinth-3-4mm",
-      "name": "Sillyworks Hyacinth (3.4mm)",
-      "brand": "Sillyworks",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "sillyworks-hyacinth-unity",
-      "name": "Sillyworks Hyacinth Unity",
-      "brand": "Sillyworks",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "sillyworks-hyacinth-v2u",
-      "name": "Sillyworks Hyacinth V2U",
-      "manufacturer": "KTT",
-      "brand": "Sillyworks",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "sillyworks-hyacinth-v2u-4-0mm",
-      "name": "Sillyworks Hyacinth V2U (4.0mm)",
-      "brand": "Sillyworks",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "sillyworks-x-hmx-sonja",
@@ -31531,16 +31273,13 @@
       "name": "SP-Star Meteor Orange",
       "manufacturer": "SP-Star",
       "brand": "SP-Star",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "sp-star-meteor-orange-grey-housing",
-      "name": "SP-Star Meteor Orange (Grey Housing)",
-      "manufacturer": "SP-Star",
-      "brand": "SP-Star",
       "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Blue Housing",
+        "Dustproof",
+        "Grey Housing"
+      ]
     },
     {
       "id": "sp-star-meteor-purple",
@@ -31974,15 +31713,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "swirl-brown-white-bottom",
-      "name": "Swirl Brown (White Bottom)",
-      "manufacturer": "Huano",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "swirl-dustproof-black-grey-bot",
-      "name": "Swirl Dustproof Black (Grey Bot)",
+      "id": "swirl-dustproof-black",
+      "name": "Swirl Dustproof Black",
       "manufacturer": "Huano",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -32572,14 +32304,6 @@
       ]
     },
     {
-      "id": "tecsee-ice-candy-branded",
-      "name": "Tecsee Ice Candy (Branded)",
-      "manufacturer": "Tecsee",
-      "brand": "Tecsee",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "tecsee-ice-grape",
       "name": "Tecsee Ice Grape",
       "brand": "Tecsee",
@@ -33023,7 +32747,7 @@
     },
     {
       "id": "tkc-banana-split-dustproof",
-      "name": "TKC Banana Split (Dustproof)",
+      "name": "TKC Banana Split Dustproof",
       "manufacturer": "JWK",
       "designer": "TheKey.Company",
       "switchType": "linear",
@@ -33277,16 +33001,6 @@
       ]
     },
     {
-      "id": "ttc-ace-silver-pins",
-      "name": "TTC Ace (Silver Pins)",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
       "id": "ttc-azure-dragon-rgb",
       "name": "TTC Azure Dragon RGB",
       "manufacturer": "TTC",
@@ -33335,32 +33049,9 @@
       "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "ttc-bluish-white-full-silent",
-      "name": "TTC Bluish White (Full Silent)",
-      "manufacturer": "TTC",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-bluish-white-semi-silent",
-      "name": "TTC Bluish White Semi-Silent",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-bluish-white-silent",
-      "name": "TTC Bluish White Silent",
-      "brand": "TTC",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
+        "V1 / Semi-Silent",
+        "V2 / Full Silent",
+        "V2 / Semi-Silent"
       ]
     },
     {
@@ -33379,18 +33070,6 @@
         "V1",
         "V2"
       ]
-    },
-    {
-      "id": "ttc-brother-gold-blue",
-      "name": "TTC Brother (Gold-Blue)",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-brother-silent-clicky",
-      "name": "TTC Brother Silent Clicky",
-      "switchType": "clicky",
-      "switchFamily": "MX"
     },
     {
       "id": "ttc-brown",
@@ -33449,27 +33128,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-dp-razer-green-clear-top",
-      "name": "TTC DP Razer Green (Clear Top)",
-      "manufacturer": "TTC",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-dp-razer-yellow-clear-top",
-      "name": "TTC DP Razer Yellow (Clear Top)",
-      "manufacturer": "TTC",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-dustproof-razer-orange",
-      "name": "TTC Dustproof Razer Orange",
-      "manufacturer": "TTC",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ttc-fast-silver-hifi",
       "name": "TTC Fast Silver HIFI",
       "brand": "TTC",
@@ -33502,17 +33160,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-flame-purple",
-      "name": "TTC Flame Purple",
-      "manufacturer": "TTC",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
       "id": "ttc-flame-red",
       "name": "TTC Flame Red",
       "manufacturer": "TTC",
@@ -33537,10 +33184,15 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-flaming-purple-pok-stem",
-      "name": "TTC Flaming Purple (POK Stem)",
+      "id": "ttc-flaming-purple",
+      "name": "TTC Flaming Purple",
+      "manufacturer": "TTC",
       "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "V1 / POK Stem",
+        "V2 / PC Stem"
+      ]
     },
     {
       "id": "ttc-flaming-snow",
@@ -33631,19 +33283,7 @@
       "variants": [
         "V1",
         "V2",
-        "V2.1",
         "V3"
-      ]
-    },
-    {
-      "id": "ttc-gold-pink-integrated-cond",
-      "name": "TTC Gold Pink (Integrated Cond.)",
-      "manufacturer": "TTC",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
       ]
     },
     {
@@ -34177,30 +33817,10 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-razer-dustproof-green",
-      "name": "TTC Razer Dustproof Green",
-      "manufacturer": "TTC",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-razer-dustproof-orange-type-b",
-      "name": "TTC Razer Dustproof Orange Type B",
-      "manufacturer": "TTC",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "ttc-razer-dustproof-yellow-type-b",
-      "name": "TTC Razer Dustproof Yellow (Type B)",
-      "manufacturer": "TTC",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ttc-razer-green",
       "name": "TTC Razer Green",
       "manufacturer": "TTC",
+      "brand": "Razer",
       "switchType": "clicky",
       "switchFamily": "MX",
       "variants": [
@@ -34212,6 +33832,8 @@
     {
       "id": "ttc-razer-orange",
       "name": "TTC Razer Orange",
+      "manufacturer": "TTC",
+      "brand": "Razer",
       "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
@@ -34223,6 +33845,8 @@
     {
       "id": "ttc-razer-yellow",
       "name": "TTC Razer Yellow",
+      "manufacturer": "TTC",
+      "brand": "Razer",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
@@ -34238,7 +33862,7 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "Clear Top Housing (Version Unspecified)",
+        "Clear Top Housing",
         "V2"
       ]
     },
@@ -34572,13 +34196,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ttc-yellow-top-brown-lightbar",
-      "name": "TTC Yellow Top Brown (Lightbar)",
-      "manufacturer": "TTC",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ttr-y-red",
       "name": "TTR&Y Red",
       "switchType": "linear",
@@ -34792,6 +34409,12 @@
       "manufacturer": "Greetech",
       "switchType": "linear",
       "switchFamily": "MX"
+    },
+    {
+      "id": "usw-lmbu01",
+      "name": "USw LMBU01",
+      "switchType": "linear",
+      "switchFamily": "Legacy"
     },
     {
       "id": "usw-lmbw02",
@@ -36716,14 +36339,14 @@
       "switchFamily": "MX"
     },
     {
-      "id": "xinda-blue-black-bottom",
-      "name": "Xinda Blue (Black Bottom)",
+      "id": "xinda-blue",
+      "name": "Xinda Blue",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
-      "id": "xinda-brown-white-bottom",
-      "name": "Xinda Brown (White Bottom)",
+      "id": "xinda-brown",
+      "name": "Xinda Brown",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -37116,40 +36739,9 @@
     {
       "id": "zeal-clickiez",
       "name": "Zeal Clickiez",
+      "manufacturer": "Gateron",
+      "brand": "Zeal",
       "switchType": "clicky",
-      "switchFamily": "MX",
-      "variants": [
-        "40g",
-        "75g"
-      ]
-    },
-    {
-      "id": "zeal-clickiez-clicky",
-      "name": "Zeal Clickiez (Clicky)",
-      "manufacturer": "Gateron",
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "variants": [
-        "40g",
-        "75g"
-      ]
-    },
-    {
-      "id": "zeal-clickiez-linear",
-      "name": "Zeal Clickiez Linear",
-      "manufacturer": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "40g",
-        "75g"
-      ]
-    },
-    {
-      "id": "zeal-clickiez-tactile",
-      "name": "Zeal Clickiez Tactile",
-      "manufacturer": "Gateron",
-      "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
         "40g",
