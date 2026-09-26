@@ -580,7 +580,7 @@
     "theremingoat:1195": "zealio-redux",
     "theremingoat:1196": "zealio-redux",
     "theremingoat:2290": "bolsa-supply-laguna-blue",
-    "theremingoat:2466": "dareu-mahjong-blank",
+    "theremingoat:2466": "dareu-mahjong",
     "theremingoat:2468": "dareu-sky-blue",
     "theremingoat:2469": "dareu-dream-encounter",
     "theremingoat:2467": "dareu-firefly",
@@ -1009,8 +1009,8 @@
     "theremingoat:1323": "leobog-pig-synapse",
     "theremingoat:3277": "lcet-christmas-star",
     "theremingoat:195": "tomato-black",
-    "theremingoat:3271": "huano-ajazz-gift-milky",
-    "theremingoat:3272": "huano-ajazz-gift-opaque",
+    "theremingoat:3271": "ajazz-gift",
+    "theremingoat:3272": "ajazz-gift",
     "theremingoat:3268": "huano-qilian-mountain",
     "theremingoat:3269": "huano-arctic-latte",
     "theremingoat:3270": "huano-arctic-latte",
@@ -4117,16 +4117,10 @@
     "theremingoat:2547": "hm-soft-green",
     "theremingoat:2557": "lichicx-raw-big",
     "theremingoat:2569": "mz-z1",
-    "theremingoat:258": "durock-tan-stem",
-    "theremingoat:259": "durock-maroon-stem",
-    "theremingoat:260": "durock-yellow-stem",
-    "theremingoat:261": "durock-black-stem",
-    "theremingoat:262": "durock-red-stem",
-    "theremingoat:263": "smoky-durock-tan-stem",
-    "theremingoat:264": "smoky-durock-maroon-stem",
-    "theremingoat:265": "smoky-durock-yellow-stem",
-    "theremingoat:266": "smoky-durock-black-stem",
-    "theremingoat:267": "smoky-durock-red-stem",
+    "theremingoat:261": "durock-l7",
+    "theremingoat:262": "durock-l6",
+    "theremingoat:266": "durock-l7",
+    "theremingoat:267": "durock-l6",
     "theremingoat:2765": "everfree-grayish",
     "theremingoat:2801": "dangkeebs-lychee-milk",
     "theremingoat:308": "outemu-sky-silent",
@@ -4739,8 +4733,8 @@
     "kbdfans:7715699130507": "pbtfans-1984",
     "kbdfans:8012817924235": "gmk-noel",
     "keebsforallswitches:7727733899483": "gateron-north-pole",
-    "keebsforallswitches:8205990822107/variant/44616409055451": "durock-l7-smokey-l7",
-    "keebsforallswitches:8205990822107/variant/44616409088219": "durock-l7-smokey-l7",
+    "keebsforallswitches:8205990822107/variant/44616409055451": "durock-l7",
+    "keebsforallswitches:8205990822107/variant/44616409088219": "durock-l7",
     "keebsforallswitches:8290960998619": "gateron-new-north-pole",
     "keebsforallswitches:8313024086235": "cherry-mx2a-blue",
     "keycaplendar:04XVzmk6rQn58ihcVXF1": "sa-laser",
@@ -5320,7 +5314,7 @@
     "theremingoat:205": "zorro-purple",
     "theremingoat:2050": "flashquark-quark",
     "theremingoat:2051": "lumia-duhuk-bitter-tea",
-    "theremingoat:2054": "giant",
+    "theremingoat:2054": "panghu-giant",
     "theremingoat:2106": "cherry-mx-ergo-clear",
     "theremingoat:2118": "leobog-kayking",
     "theremingoat:216": "zealio",
@@ -5348,11 +5342,7 @@
     "theremingoat:231": "zilent",
     "theremingoat:232": "zilent",
     "theremingoat:233": "zilent",
-    "theremingoat:234": "branded-stealio",
-    "theremingoat:235": "branded-stealio",
     "theremingoat:2353": "jerrzi-blue",
-    "theremingoat:236": "branded-stealio",
-    "theremingoat:237": "branded-stealio",
     "theremingoat:2370": "rapoo-black",
     "theremingoat:2372": "rapoo-brown",
     "theremingoat:2373": "rapoo-blue",
@@ -5371,16 +5361,8 @@
     "theremingoat:247": "aqua-zilent",
     "theremingoat:2476": "outemu-red",
     "theremingoat:2477": "outemu-blue",
-    "theremingoat:248": "durock-zealio",
-    "theremingoat:249": "durock-zealio",
     "theremingoat:2490": "redragon-dustproof-red",
     "theremingoat:2491": "bsun-dustproof-brown",
-    "theremingoat:250": "durock-zealio",
-    "theremingoat:251": "durock-zealio",
-    "theremingoat:253": "smoky-durock-zealio",
-    "theremingoat:254": "smoky-durock-zealio",
-    "theremingoat:255": "smoky-durock-zealio",
-    "theremingoat:256": "smoky-durock-zealio",
     "theremingoat:2573": "mmd-vivian",
     "theremingoat:2574": "bsun-agarwood",
     "theremingoat:2575": "bsun-agarwood",
@@ -5630,7 +5612,7 @@
     "theremingoat:796": "zilent-ac",
     "theremingoat:799": "bsun-red-panda",
     "theremingoat:80": "ttc-brown",
-    "theremingoat:818": "giant",
+    "theremingoat:818": "jwk-giant",
     "theremingoat:825": "alpaca",
     "theremingoat:827": "ktt-red-wine",
     "theremingoat:828": "everglide-coral-red",
@@ -6093,7 +6075,7 @@
     "theremingoat:1024": "c3-tangerine",
     "theremingoat:1057": "marshmallow",
     "theremingoat:1058": "marshmallow",
-    "theremingoat:1149": "giant-frosties",
+    "theremingoat:1149": "jwk-giant",
     "theremingoat:1241": "panghu-giant",
     "theremingoat:128": "ttc-orange",
     "theremingoat:129": "ttc-orange",
@@ -6132,14 +6114,11 @@
     "theremingoat:2210": "aflion-iceberg-teal",
     "theremingoat:2212": "aflion-iceberg-purple",
     "theremingoat:2213": "aflion-iceberg-pink",
-    "theremingoat:238": "branded-stealio-tealio",
     "theremingoat:240": "sakurio",
     "theremingoat:241": "roselio",
     "theremingoat:2447": "akko-cream-black-pro",
     "theremingoat:245": "zealio",
-    "theremingoat:252": "durock-tealio",
     "theremingoat:2545": "monka-blue",
-    "theremingoat:257": "smoky-durock-tealio",
     "theremingoat:2580": "bsun-bubble",
     "theremingoat:2615": "ggboy-mw-fire-phoenix",
     "theremingoat:2703": "ttc-quick-silver",
@@ -6229,7 +6208,7 @@
     "theremingoat:56": "gateron-silent-ink",
     "theremingoat:57": "gateron-red-ink",
     "theremingoat:59": "gateron-yellow-ink",
-    "theremingoat:597": "zilent-cloudy-top",
+    "theremingoat:597": "zilent",
     "theremingoat:601": "outemu-ice-dustproof-blue",
     "theremingoat:607": "outemu-ice-teal",
     "theremingoat:609": "outemu-ice-dark-purple-tactile",
@@ -6253,7 +6232,7 @@
     "theremingoat:844": "nk-dry-red",
     "theremingoat:845": "nk-dry-yellow",
     "theremingoat:856": "bobagum",
-    "theremingoat:876": "polished-top-alpaca",
+    "theremingoat:876": "alpaca",
     "theremingoat:88": "everglide-amber-orange-tactile",
     "theremingoat:886": "gateron-cap-yellow",
     "theremingoat:92": "everglide-dark-blue-optical",
@@ -6828,7 +6807,58 @@
     "theremingoat:1789": "ttc-bluish-white",
     "switchoddities:8871965032732": "outemu-red",
     "switchoddities:8871965917468": "outemu-red",
-    "switchoddities:8871973126428": "outemu-red"
+    "switchoddities:8871973126428": "outemu-red",
+    "theremingoat:366": "aristotle-yellow",
+    "theremingoat:961": "aristotle-yellow",
+    "switchoddities:8613054218524": "dareu-mahjong",
+    "switchoddities:8613060477212": "dareu-mahjong",
+    "switchoddities:8613064048924": "dareu-mahjong",
+    "switchoddities:8613070078236": "dareu-mahjong",
+    "switchoddities:8613075091740": "dareu-mahjong",
+    "switchoddities:8613082890524": "dareu-mahjong",
+    "switchoddities:8613092524316": "dareu-mahjong",
+    "switchoddities:8613097767196": "dareu-mahjong",
+    "switchoddities:8613105303836": "dareu-mahjong",
+    "switchoddities:8613122998556": "dareu-mahjong",
+    "switchoddities:8613127782684": "dareu-mahjong",
+    "theremingoat:2156": "dareu-mahjong",
+    "theremingoat:2157": "dareu-mahjong",
+    "theremingoat:2158": "dareu-mahjong",
+    "theremingoat:2159": "dareu-mahjong",
+    "theremingoat:2160": "dareu-mahjong",
+    "theremingoat:2161": "dareu-mahjong",
+    "theremingoat:2162": "dareu-mahjong",
+    "theremingoat:2163": "dareu-mahjong",
+    "theremingoat:2164": "dareu-mahjong",
+    "theremingoat:2165": "dareu-mahjong",
+    "theremingoatscores:724b6bf81345": "dareu-mahjong",
+    "switchoddities:8119114760476": "gypsophila-2-purple-green",
+    "switchoddities:8119115120924": "gypsophila-6-purple-cream",
+    "switchoddities:8119116005660": "gypsophila-4-pink-white",
+    "switchoddities:8119116333340": "gypsophila-5-pink-red",
+    "theremingoat:1813": "gypsophila-2-purple-green",
+    "theremingoat:1815": "gypsophila-4-pink-white",
+    "theremingoat:1816": "gypsophila-5-pink-red",
+    "theremingoat:1817": "gypsophila-6-purple-cream",
+    "switchoddities:8119114367260": "gypsophila-1-purple-pink",
+    "switchoddities:8119115579676": "gypsophila-3-clear-white",
+    "theremingoat:1812": "gypsophila-1-purple-pink",
+    "theremingoat:1814": "gypsophila-3-clear-white",
+    "theremingoat:2441": "ajazz-blue",
+    "theremingoat:1392": "outemu-dustproof-teal",
+    "switchoddities:9920526352668": "jerrzi-blue",
+    "switchoddities:8602347700508": "durock-l7",
+    "theremingoat:1055": "konpeitou",
+    "theremingoat:1056": "konpeitou",
+    "theremingoatscores:de74043e7720": "konpeitou",
+    "theremingoat:1178": "lcet-ice-world",
+    "theremingoat:1179": "lcet-pink-sweet-heart",
+    "keebsforallswitches:7485537681627": "jwick-t1",
+    "switchoddities:8119084056860": "jwick-t1",
+    "switchoddities:8119097262364": "jwick-t1",
+    "switchoddities:9954429403420": "ajazz-gift",
+    "switchoddities:9954430812444": "ajazz-gift",
+    "theremingoat:706": "jwk-giant"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -7060,12 +7090,6 @@
       "manufacturer": "JWK"
     },
     "switches/designer-studio-white-jade": {
-      "manufacturer": "JWK"
-    },
-    "switches/konpeitou-jx-stem": {
-      "manufacturer": "JWK"
-    },
-    "switches/konpeitou-pom-stem": {
       "manufacturer": "JWK"
     },
     "switches/joininkeys-matcha": {
@@ -7479,9 +7503,6 @@
       "manufacturer": "JWK"
     },
     "switches/43-studios-obsidian": {
-      "manufacturer": "JWK"
-    },
-    "switches/transparent-jwk-giant": {
       "manufacturer": "JWK"
     },
     "switches/moyu-black": {
@@ -14120,12 +14141,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/durock-black-stem": {
-      "manufacturer": "JWK",
-      "name": "Durock Black Stem",
-      "brand": "Durock",
-      "switchType": "linear"
-    },
     "switches/durock-blue-lotus-t1": {
       "name": "Durock Blue Lotus T1",
       "manufacturer": "JWK",
@@ -14187,39 +14202,15 @@
       "designer": "Durock",
       "switchType": "tactile"
     },
-    "switches/durock-maroon-stem": {
-      "manufacturer": "JWK",
-      "name": "Durock Maroon Stem",
-      "brand": "Durock",
-      "switchType": "tactile"
-    },
     "switches/durock-pom": {
       "name": "Durock POM",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "linear"
     },
-    "switches/durock-red-stem": {
-      "manufacturer": "JWK",
-      "name": "Durock Red Stem",
-      "brand": "Durock",
-      "switchType": "linear"
-    },
-    "switches/durock-tan-stem": {
-      "manufacturer": "JWK",
-      "name": "Durock Tan Stem",
-      "brand": "Durock",
-      "switchType": "tactile"
-    },
     "switches/durock-white-lotus": {
       "name": "Durock White Lotus",
       "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile"
-    },
-    "switches/durock-yellow-stem": {
-      "manufacturer": "JWK",
-      "name": "Durock Yellow Stem",
       "brand": "Durock",
       "switchType": "tactile"
     },
@@ -15523,31 +15514,6 @@
       "manufacturer": "JWK",
       "name": "Shaka",
       "brand": "Durock",
-      "switchType": "tactile"
-    },
-    "switches/smoky-durock-black-stem": {
-      "manufacturer": "JWK",
-      "name": "Smoky Durock Black Stem",
-      "switchType": "linear"
-    },
-    "switches/smoky-durock-maroon-stem": {
-      "manufacturer": "JWK",
-      "name": "Smoky Durock Maroon Stem",
-      "switchType": "tactile"
-    },
-    "switches/smoky-durock-red-stem": {
-      "manufacturer": "JWK",
-      "name": "Smoky Durock Red Stem",
-      "switchType": "linear"
-    },
-    "switches/smoky-durock-tan-stem": {
-      "manufacturer": "JWK",
-      "name": "Smoky Durock Tan Stem",
-      "switchType": "tactile"
-    },
-    "switches/smoky-durock-yellow-stem": {
-      "manufacturer": "JWK",
-      "name": "Smoky Durock Yellow Stem",
       "switchType": "tactile"
     },
     "switches/soulcat-x-spm-lychee-silent": {
@@ -17203,24 +17169,6 @@
     "switches/aula-wooden-blue": {
       "switchType": "clicky"
     },
-    "switches/baby-s-breath-clear-white-gypsophila-3": {
-      "switchType": "tactile"
-    },
-    "switches/baby-s-breath-pink-red-gypsophila-5": {
-      "switchType": "linear"
-    },
-    "switches/baby-s-breath-pink-white-gypsophila-4": {
-      "switchType": "linear"
-    },
-    "switches/baby-s-breath-purple-cream-gypsophila-6": {
-      "switchType": "linear"
-    },
-    "switches/baby-s-breath-purple-green-gypsophila-2": {
-      "switchType": "linear"
-    },
-    "switches/baby-s-breath-purple-pink-gypsophila-1": {
-      "switchType": "tactile"
-    },
     "switches/backspace-studios-gateron-black-jade-he": {
       "switchType": "linear"
     },
@@ -17391,36 +17339,6 @@
       "switchType": "clicky"
     },
     "switches/dareu-cloud": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-a": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-b": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-c": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-d": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-e": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-f": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-g": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-h": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-i": {
-      "switchType": "linear"
-    },
-    "switches/dareu-mahjong-j": {
       "switchType": "linear"
     },
     "switches/dareu-master-magnetic": {
@@ -17873,9 +17791,6 @@
     "switches/invokeys-pea-flower": {
       "switchType": "clicky"
     },
-    "switches/jerrzi-black-housing-blue": {
-      "switchType": "clicky"
-    },
     "switches/jerrzi-blueberry-silent-low-profile": {
       "switchType": "linear"
     },
@@ -17944,12 +17859,6 @@
     },
     "switches/jwick-nylon-black": {
       "switchType": "linear"
-    },
-    "switches/jwick-nylon-t1": {
-      "switchType": "tactile"
-    },
-    "switches/jwick-t1-transparent-top": {
-      "switchType": "tactile"
     },
     "switches/jwick-taro-milk": {
       "switchType": "tactile"
@@ -19337,9 +19246,6 @@
     "switches/hmx-volume-0-silent-tactile": {
       "switchType": "tactile"
     },
-    "switches/jwk-jwick-black-t1": {
-      "switchType": "tactile"
-    },
     "switches/naevies-ec-45g-original": {
       "switchType": "tactile"
     },
@@ -20000,19 +19906,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/alpaca": {
-      "name": "Alpaca",
-      "variants": [
-        "V1",
-        "V2"
-      ],
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/alps-skcm-blue": {
       "name": "Alps SKCM Blue",
       "variants": [
@@ -20400,19 +20293,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/durock-l7-smokey-l7": {
-      "name": "Durock L7 Smokey L7",
-      "variants": [
-        "62g",
-        "67g"
-      ],
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/ev-01": {
       "name": "EV-01",
       "variants": [
@@ -20760,23 +20640,6 @@
       "designer": null,
       "switchType": "linear",
       "switchFamily": "HE",
-      "isLowProfile": null
-    },
-    "switches/giant": {
-      "name": "Giant",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4",
-        "V5",
-        "V6"
-      ],
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
       "isLowProfile": null
     },
     "switches/grain-gold-neon": {
@@ -22094,19 +21957,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/outemu-dustproof-teal": {
-      "name": "Outemu Dustproof Teal",
-      "variants": [
-        "Black Bottom",
-        "White Bottom"
-      ],
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
     "switches/outemu-ice-brown": {
       "name": "Outemu ICE Brown",
       "variants": [
@@ -22207,36 +22057,6 @@
         "Black Housing",
         "Clear Top / White Bottom"
       ]
-    },
-    "switches/outemu-silent-lemon": {
-      "name": "Outemu Silent Lemon",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V3.1"
-      ],
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/outemu-silent-peach": {
-      "name": "Outemu Silent Peach",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V3.1"
-      ],
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
     },
     "switches/outemu-sky-silent": {
       "name": "Outemu Sky Silent",
@@ -22759,25 +22579,6 @@
       "brand": null,
       "designer": null,
       "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/zilent": {
-      "name": "Zilent",
-      "variants": [
-        "V1 / 62g",
-        "V1 / 65g",
-        "V1 / 67g",
-        "V1 / 78g",
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
-      ],
-      "manufacturer": "Gateron",
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
       "switchFamily": "MX",
       "isLowProfile": null
     },
@@ -24750,34 +24551,6 @@
         "V2"
       ]
     },
-    "switches/branded-stealio": {
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Branded Stealio",
-      "variants": [
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
-      ]
-    },
-    "switches/branded-stealio-tealio": {
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Branded Stealio (Tealio)",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
     "switches/bsun-aniya": {
       "manufacturer": "BSUN",
       "brand": null,
@@ -25074,34 +24847,6 @@
         "65g",
         "67g",
         "78g"
-      ]
-    },
-    "switches/durock-tealio": {
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Durock 'Tealio '",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/durock-zealio": {
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Durock 'Zealio '",
-      "variants": [
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
       ]
     },
     "switches/emt": {
@@ -25686,21 +25431,6 @@
         "V1",
         "V2",
         "V3"
-      ]
-    },
-    "switches/giant-frosties": {
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Giant 'Frosties'",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4"
       ]
     },
     "switches/glove-studio-chocolate-donut-blue": {
@@ -27254,22 +26984,6 @@
         "V3"
       ]
     },
-    "switches/panghu-giant": {
-      "manufacturer": "Tecsee",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Panghu Giant",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4",
-        "V5"
-      ]
-    },
     "switches/phoenix-manual-declaw": {
       "manufacturer": "Outemu",
       "brand": null,
@@ -27289,19 +27003,6 @@
       "isLowProfile": null,
       "name": "Phoenix Retooled Base",
       "variants": null
-    },
-    "switches/polished-top-alpaca": {
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Polished Top Alpaca",
-      "variants": [
-        "V1",
-        "V2"
-      ]
     },
     "switches/raeds-he-rgb": {
       "manufacturer": "Tecsee",
@@ -27393,34 +27094,6 @@
       "variants": [
         "V1",
         "V2"
-      ]
-    },
-    "switches/smoky-durock-tealio": {
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Smoky Durock 'Tealio '",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    "switches/smoky-durock-zealio": {
-      "manufacturer": "JWK",
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Smoky Durock 'Zealio '",
-      "variants": [
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
       ]
     },
     "switches/snow-leopard-blue": {
@@ -28504,16 +28177,6 @@
         "V2 / 67g",
         "V2 / 78g"
       ]
-    },
-    "switches/zilent-cloudy-top": {
-      "manufacturer": "Gateron",
-      "brand": null,
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Zilent Cloudy Top",
-      "variants": null
     },
     "switches/zuoce-rococo": {
       "manufacturer": "Haimu",
@@ -32478,19 +32141,6 @@
         "Clear Top / White Bottom"
       ]
     },
-    "switches/jerrzi-blue": {
-      "name": "Jerrzi Blue",
-      "manufacturer": "Jerrzi",
-      "brand": "Jerrzi",
-      "designer": null,
-      "switchType": "clicky",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "Clear Bottom",
-        "Full Black Housing / Winglatch"
-      ]
-    },
     "switches/jwh-dustproof-blue": {
       "name": "JWH Dustproof Blue",
       "manufacturer": null,
@@ -33360,6 +33010,289 @@
       "variants": [
         "40g",
         "75g"
+      ]
+    },
+    "switches/outemu-silent-peach": {
+      "name": "Outemu Silent Peach",
+      "manufacturer": "Outemu",
+      "brand": "Outemu",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1",
+        "V2",
+        "V3"
+      ]
+    },
+    "switches/outemu-silent-lemon": {
+      "name": "Outemu Silent Lemon",
+      "manufacturer": "Outemu",
+      "brand": "Outemu",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1",
+        "V2",
+        "V3"
+      ]
+    },
+    "switches/aristotle-yellow": {
+      "name": "Aristotle Yellow",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/dareu-mahjong": {
+      "name": "DareU Mahjong",
+      "manufacturer": "Huano",
+      "brand": "DareU",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gypsophila-1-purple-pink": {
+      "name": "Gypsophila 1 (Purple-Pink)",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gypsophila-2-purple-green": {
+      "name": "Gypsophila 2 (Purple-Green)",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gypsophila-3-clear-white": {
+      "name": "Gypsophila 3 (Clear-White)",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gypsophila-4-pink-white": {
+      "name": "Gypsophila 4 (Pink-White)",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gypsophila-5-pink-red": {
+      "name": "Gypsophila 5 (Pink-Red)",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gypsophila-6-purple-cream": {
+      "name": "Gypsophila 6 (Purple-Cream)",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ajazz-blue": {
+      "name": "Ajazz Blue",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/outemu-dustproof-teal": {
+      "name": "Outemu Dustproof Teal",
+      "manufacturer": "Outemu",
+      "brand": "Outemu",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Black Bottom",
+        "White Bottom"
+      ]
+    },
+    "switches/jerrzi-blue": {
+      "name": "Jerrzi Blue",
+      "manufacturer": "Jerrzi",
+      "brand": "Jerrzi",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Bottom",
+        "Full Black Housing / Winglatch"
+      ]
+    },
+    "switches/durock-l7": {
+      "name": "Durock L7",
+      "manufacturer": "JWK",
+      "brand": "Durock",
+      "designer": "Durock",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "62g",
+        "67g",
+        "78g"
+      ]
+    },
+    "switches/durock-l6": {
+      "name": "Durock L6",
+      "manufacturer": "JWK",
+      "brand": "Durock",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/zilent": {
+      "name": "Zilent",
+      "manufacturer": "Gateron",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V1 / 62g",
+        "V1 / 65g",
+        "V1 / 67g",
+        "V1 / 78g",
+        "V2 / 62g",
+        "V2 / 65g",
+        "V2 / 67g",
+        "V2 / 78g"
+      ]
+    },
+    "switches/konpeitou": {
+      "name": "Konpeitou",
+      "manufacturer": "JWK",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "JX",
+        "POM"
+      ]
+    },
+    "switches/alpaca": {
+      "name": "Alpaca",
+      "manufacturer": "JWK",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/lcet-ice-world": {
+      "name": "LCET Ice World",
+      "manufacturer": "LCET",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/lcet-pink-sweet-heart": {
+      "name": "LCET Pink Sweet Heart",
+      "manufacturer": "LCET",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/jwick-t1": {
+      "name": "JWICK T1",
+      "manufacturer": "JWK",
+      "brand": "JWICK",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Full Black Housing"
+      ]
+    },
+    "switches/ajazz-gift": {
+      "name": "Ajazz Gift",
+      "manufacturer": "Huano",
+      "brand": "Ajazz",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "Milky",
+        "Opaque"
+      ]
+    },
+    "switches/jwk-giant": {
+      "name": "JWK Giant",
+      "manufacturer": "JWK",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V2",
+        "V3",
+        "V4"
+      ]
+    },
+    "switches/panghu-giant": {
+      "name": "Panghu Giant",
+      "manufacturer": "Tecsee",
+      "brand": null,
+      "designer": "Panghu",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "V5",
+        "V6"
       ]
     }
   },
@@ -34550,6 +34483,30 @@
     "switchoddities:8940606259484": "Ball Bearing \"Lucy\" is a seller-named limited specimen; no independent bulk retail or manufacturer release established for this exact switch. Do not conflate with XCJZ/WEKT Lucy silent switches.",
     "switchoddities:9585716429084": "Dukharo \"Flamingo\" is a seller nickname without independently verified bulk retail, manufacturer release, or production-keyboard evidence; distinct from Epomaker/Momoka Flamingo.",
     "switchoddities:9919497273628": "Outelo \"X\" Green is documented as a specimen and historical AliExpress purchase, but bulk sale or production-keyboard use remains unverified; SwitchOddities sample sales do not qualify.",
-    "theremingoat:3042": "Dukharo \"Flamingo\" is a seller nickname without independently verified bulk retail, manufacturer release, or production-keyboard evidence; distinct from Epomaker/Momoka Flamingo."
+    "theremingoat:3042": "Dukharo \"Flamingo\" is a seller nickname without independently verified bulk retail, manufacturer release, or production-keyboard evidence; distinct from Epomaker/Momoka Flamingo.",
+    "theremingoat:234": "Counterfeit Zealio/Tealio specimen, historically called Branded Stealio; excluded from the commercial product catalog at user request.",
+    "theremingoat:235": "Counterfeit Zealio/Tealio specimen, historically called Branded Stealio; excluded from the commercial product catalog at user request.",
+    "theremingoat:236": "Counterfeit Zealio/Tealio specimen, historically called Branded Stealio; excluded from the commercial product catalog at user request.",
+    "theremingoat:237": "Counterfeit Zealio/Tealio specimen, historically called Branded Stealio; excluded from the commercial product catalog at user request.",
+    "theremingoat:238": "Counterfeit Zealio/Tealio specimen, historically called Branded Stealio; excluded from the commercial product catalog at user request.",
+    "theremingoat:248": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:249": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:250": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:251": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:252": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:253": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:254": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:255": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:256": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:257": "Unbranded Durock factory sample recorded under a collector Zealio/Tealio alias; no independently established commercial identity under that name. L2/L5 notes do not resolve the exact product.",
+    "theremingoat:1182": "Unresolved LCET housing/stem-color specimen; no verified commercial identity or safe merge target. Removed at user request.",
+    "theremingoat:1181": "Unresolved LCET housing/stem-color specimen; no verified commercial identity or safe merge target. Removed at user request.",
+    "theremingoat:1180": "Unresolved LCET housing/stem-color specimen; no verified commercial identity or safe merge target. Removed at user request.",
+    "theremingoat:259": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
+    "theremingoat:258": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
+    "theremingoat:260": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
+    "theremingoat:264": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
+    "theremingoat:263": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
+    "theremingoat:265": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established."
   }
 }

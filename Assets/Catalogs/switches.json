@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 79,
-  "totalCount": 4633,
+  "catalogVersion": 86,
+  "totalCount": 4575,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -723,8 +723,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "ajazz-blue-black-bottom",
-      "name": "Ajazz Blue (Black Bottom)",
+      "id": "ajazz-blue",
+      "name": "Ajazz Blue",
       "switchType": "clicky",
       "switchFamily": "MX"
     },
@@ -807,6 +807,18 @@
       "manufacturer": "Huano",
       "switchType": "linear",
       "switchFamily": "MX"
+    },
+    {
+      "id": "ajazz-gift",
+      "name": "Ajazz Gift",
+      "manufacturer": "Huano",
+      "brand": "Ajazz",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "Milky",
+        "Opaque"
+      ]
     },
     {
       "id": "ajazz-green-plum",
@@ -1795,11 +1807,7 @@
       "name": "Alpaca",
       "manufacturer": "JWK",
       "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
+      "switchFamily": "MX"
     },
     {
       "id": "alps-bamboo-white-skbm-simplified",
@@ -2235,12 +2243,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "aristotle-yellow-2",
-      "name": "Aristotle Yellow 2",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "aruz-blue",
       "name": "Aruz Blue",
       "switchType": "clicky",
@@ -2530,42 +2532,6 @@
     {
       "id": "b-stone-dark-eyes",
       "name": "B. Stone Dark Eyes",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "baby-s-breath-clear-white-gypsophila-3",
-      "name": "Baby's Breath Clear-White (Gypsophila 3)",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "baby-s-breath-pink-red-gypsophila-5",
-      "name": "Baby's Breath Pink-Red (Gypsophila 5)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "baby-s-breath-pink-white-gypsophila-4",
-      "name": "Baby's Breath Pink-White (Gypsophila 4)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "baby-s-breath-purple-cream-gypsophila-6",
-      "name": "Baby's Breath Purple-Cream (Gypsophila 6)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "baby-s-breath-purple-green-gypsophila-2",
-      "name": "Baby's Breath Purple-Green (Gypsophila 2)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "baby-s-breath-purple-pink-gypsophila-1",
-      "name": "Baby's Breath Purple-Pink (Gypsophila 1)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -3097,30 +3063,6 @@
       "name": "Bowl x Gateron Lanes",
       "switchType": "tactile",
       "switchFamily": "MX"
-    },
-    {
-      "id": "branded-stealio",
-      "name": "Branded Stealio",
-      "manufacturer": "JWK",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
-      ]
-    },
-    {
-      "id": "branded-stealio-tealio",
-      "name": "Branded Stealio (Tealio)",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
     },
     {
       "id": "brazilian-iron-switch",
@@ -6180,164 +6122,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "dareu-mahjong-a",
-      "name": "DareU Mahjong A",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-b",
-      "name": "DareU Mahjong B",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-blank",
-      "name": "DareU Mahjong Blank",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-blue-1",
-      "name": "DareU Mahjong Blue 1",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-blue-2",
-      "name": "DareU Mahjong Blue 2",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-blue-3",
-      "name": "DareU Mahjong Blue 3",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-blue-4",
-      "name": "DareU Mahjong Blue 4",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-blue-5",
-      "name": "DareU Mahjong Blue 5",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-c",
-      "name": "DareU Mahjong C",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-d",
-      "name": "DareU Mahjong D",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-e",
-      "name": "DareU Mahjong E",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-f",
-      "name": "DareU Mahjong F",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-g",
-      "name": "DareU Mahjong G",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-green-1",
-      "name": "DareU Mahjong Green 1",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-green-2",
-      "name": "DareU Mahjong Green 2",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-green-3",
-      "name": "DareU Mahjong Green 3",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-h",
-      "name": "DareU Mahjong H",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-i",
-      "name": "DareU Mahjong I",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-j",
-      "name": "DareU Mahjong J",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-red-1",
-      "name": "DareU Mahjong Red 1",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "dareu-mahjong-red-2",
-      "name": "DareU Mahjong Red 2",
-      "manufacturer": "Huano",
-      "brand": "DareU",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "dareu-master-he",
       "name": "DareU Master HE",
       "manufacturer": "Co-Gain / XUDA",
@@ -7124,14 +6908,6 @@
       ]
     },
     {
-      "id": "durock-black-stem",
-      "name": "Durock Black Stem",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "durock-blue-lotus-t1",
       "name": "Durock Blue Lotus T1",
       "manufacturer": "JWK",
@@ -7381,24 +7157,25 @@
       "switchFamily": "MX"
     },
     {
-      "id": "durock-l7-black-smokey",
-      "name": "Durock L7 Black - Smokey",
+      "id": "durock-l6",
+      "name": "Durock L6",
       "manufacturer": "JWK",
       "brand": "Durock",
-      "designer": "Durock",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "durock-l7-smokey-l7",
-      "name": "Durock L7 Smokey L7",
+      "id": "durock-l7",
+      "name": "Durock L7",
       "manufacturer": "JWK",
       "brand": "Durock",
+      "designer": "Durock",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
         "62g",
-        "67g"
+        "67g",
+        "78g"
       ]
     },
     {
@@ -7434,14 +7211,6 @@
       "brand": "Durock",
       "designer": "Durock",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "durock-maroon-stem",
-      "name": "Durock Maroon Stem",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -7494,14 +7263,6 @@
     {
       "id": "durock-pom",
       "name": "Durock POM",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "durock-red-stem",
-      "name": "Durock Red Stem",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "linear",
@@ -7609,54 +7370,12 @@
       "switchFamily": "MX"
     },
     {
-      "id": "durock-tan-stem",
-      "name": "Durock Tan Stem",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "durock-tealio",
-      "name": "Durock 'Tealio '",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
       "id": "durock-white-lotus",
       "name": "Durock White Lotus",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "tactile",
       "switchFamily": "MX"
-    },
-    {
-      "id": "durock-yellow-stem",
-      "name": "Durock Yellow Stem",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "durock-zealio",
-      "name": "Durock 'Zealio '",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
-      ]
     },
     {
       "id": "dusk-panda",
@@ -12884,34 +12603,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "giant",
-      "name": "Giant",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4",
-        "V5",
-        "V6"
-      ]
-    },
-    {
-      "id": "giant-frosties",
-      "name": "Giant 'Frosties'",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4"
-      ]
-    },
-    {
       "id": "glarses-cherry-mx-purple",
       "name": "Glarses Cherry MX Purple",
       "switchType": "tactile",
@@ -13728,38 +13419,38 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gypsophilia-1",
-      "name": "Gypsophilia 1",
+      "id": "gypsophila-1-purple-pink",
+      "name": "Gypsophila 1 (Purple-Pink)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
-      "id": "gypsophilia-2",
-      "name": "Gypsophilia 2",
+      "id": "gypsophila-2-purple-green",
+      "name": "Gypsophila 2 (Purple-Green)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gypsophilia-3",
-      "name": "Gypsophilia 3",
+      "id": "gypsophila-3-clear-white",
+      "name": "Gypsophila 3 (Clear-White)",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
-      "id": "gypsophilia-4",
-      "name": "Gypsophilia 4",
+      "id": "gypsophila-4-pink-white",
+      "name": "Gypsophila 4 (Pink-White)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gypsophilia-5",
-      "name": "Gypsophilia 5",
+      "id": "gypsophila-5-pink-red",
+      "name": "Gypsophila 5 (Pink-Red)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
-      "id": "gypsophilia-6",
-      "name": "Gypsophilia 6",
+      "id": "gypsophila-6-purple-cream",
+      "name": "Gypsophila 6 (Purple-Cream)",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -16185,20 +15876,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-ajazz-gift-milky",
-      "name": "Huano/Ajazz Gift Milky",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-ajazz-gift-opaque",
-      "name": "Huano/Ajazz Gift Opaque",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "huano-american-rose-garden",
       "name": "Huano American Rose Garden",
       "switchType": "linear",
@@ -17404,14 +17081,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "jerrzi-black-housing-blue",
-      "name": "Jerrzi Black Housing Blue",
-      "manufacturer": "Jerrzi",
-      "brand": "Jerrzi",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "jerrzi-blue",
       "name": "Jerrzi Blue",
       "manufacturer": "Jerrzi",
@@ -18157,14 +17826,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "jwick-nylon-t1",
-      "name": "JWICK Nylon T1",
-      "manufacturer": "JWK",
-      "brand": "JWICK",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "jwick-prism",
       "name": "JWICK Prism",
       "manufacturer": "JWK",
@@ -18189,12 +17850,16 @@
       "switchFamily": "MX"
     },
     {
-      "id": "jwick-t1-transparent-top",
-      "name": "JWICK T1 Transparent Top",
+      "id": "jwick-t1",
+      "name": "JWICK T1",
       "manufacturer": "JWK",
       "brand": "JWICK",
       "switchType": "tactile",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "Clear Top / Black Bottom",
+        "Full Black Housing"
+      ]
     },
     {
       "id": "jwick-taro",
@@ -18333,19 +17998,23 @@
       "switchFamily": "MX"
     },
     {
+      "id": "jwk-giant",
+      "name": "JWK Giant",
+      "manufacturer": "JWK",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "variants": [
+        "V2",
+        "V3",
+        "V4"
+      ]
+    },
+    {
       "id": "jwk-jwick-black",
       "name": "JWK Jwick Black",
       "manufacturer": "JWK",
       "brand": "Durock",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "jwk-jwick-black-t1",
-      "name": "JWK Jwick Black T1",
-      "manufacturer": "JWK",
-      "brand": "Durock",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -22590,21 +22259,11 @@
       "name": "Konpeitou",
       "manufacturer": "JWK",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "konpeitou-jx-stem",
-      "name": "Konpeitou JX Stem",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "konpeitou-pom-stem",
-      "name": "Konpeitou POM Stem",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
+      "switchFamily": "MX",
+      "variants": [
+        "JX",
+        "POM"
+      ]
     },
     {
       "id": "korbs",
@@ -23878,12 +23537,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lcet-blue-grey-orange-stem",
-      "name": "LCET Blue/Grey Orange Stem",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "lcet-blue-white-blue",
       "name": "LCET Blue/White/Blue",
       "manufacturer": "LCET",
@@ -23906,18 +23559,6 @@
       "id": "lcet-christmas-star",
       "name": "LCET Christmas Star",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-clear-white-stem",
-      "name": "LCET Clear, White Stem",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-cloudy-white-pink-stem",
-      "name": "LCET Cloudy/White Pink Stem",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -23957,21 +23598,9 @@
       "switchFamily": "MX"
     },
     {
-      "id": "lcet-green-grey-orange-stem",
-      "name": "LCET Green/Grey Orange Stem",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "lcet-green-marsh-matcha",
       "name": "LCET Green Marsh (Matcha)",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lcet-green-pink-pink-stem",
-      "name": "LCET Green/Pink Pink Stem",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -23984,6 +23613,13 @@
     {
       "id": "lcet-ice-clear",
       "name": "LCET Ice Clear",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "lcet-ice-world",
+      "name": "LCET Ice World",
+      "manufacturer": "LCET",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -24071,6 +23707,13 @@
     {
       "id": "lcet-passion",
       "name": "LCET Passion",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "lcet-pink-sweet-heart",
+      "name": "LCET Pink Sweet Heart",
+      "manufacturer": "LCET",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -27860,14 +27503,6 @@
       ]
     },
     {
-      "id": "outemu-dustproof-teal-black-bot",
-      "name": "Outemu Dustproof Teal Black Bot.",
-      "manufacturer": "Outemu",
-      "brand": "Outemu",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "outemu-dustproof-teal-ice",
       "name": "Outemu Dustproof Teal ICE",
       "manufacturer": "Outemu",
@@ -28542,8 +28177,7 @@
       "variants": [
         "V1",
         "V2",
-        "V3",
-        "V3.1"
+        "V3"
       ]
     },
     {
@@ -28582,8 +28216,7 @@
       "variants": [
         "V1",
         "V2",
-        "V3",
-        "V3.1"
+        "V3"
       ]
     },
     {
@@ -28900,14 +28533,12 @@
       "id": "panghu-giant",
       "name": "Panghu Giant",
       "manufacturer": "Tecsee",
+      "designer": "Panghu",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V4",
-        "V5"
+        "V5",
+        "V6"
       ]
     },
     {
@@ -29150,17 +28781,6 @@
       "designer": "pkkeyboards",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "polished-top-alpaca",
-      "name": "Polished Top Alpaca",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
     },
     {
       "id": "popcorn",
@@ -30926,13 +30546,6 @@
       "switchFamily": "Legacy"
     },
     {
-      "id": "smoky-durock-black-stem",
-      "name": "Smoky Durock Black Stem",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "smoky-durock-geekmaker-light-blue",
       "name": "Smoky Durock 'Geekmaker' Light Blue",
       "manufacturer": "JWK",
@@ -30959,58 +30572,6 @@
       "manufacturer": "JWK",
       "switchType": "linear",
       "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-durock-maroon-stem",
-      "name": "Smoky Durock Maroon Stem",
-      "manufacturer": "JWK",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-durock-red-stem",
-      "name": "Smoky Durock Red Stem",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-durock-tan-stem",
-      "name": "Smoky Durock Tan Stem",
-      "manufacturer": "JWK",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-durock-tealio",
-      "name": "Smoky Durock 'Tealio '",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "V1",
-        "V2"
-      ]
-    },
-    {
-      "id": "smoky-durock-yellow-stem",
-      "name": "Smoky Durock Yellow Stem",
-      "manufacturer": "JWK",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-durock-zealio",
-      "name": "Smoky Durock 'Zealio '",
-      "manufacturer": "JWK",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "V2 / 62g",
-        "V2 / 65g",
-        "V2 / 67g",
-        "V2 / 78g"
-      ]
     },
     {
       "id": "smoky-huano-pink",
@@ -32938,13 +32499,6 @@
     {
       "id": "transmit-toy",
       "name": "Transmit Toy",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "transparent-jwk-giant",
-      "name": "Transparent JWK Giant",
-      "manufacturer": "JWK",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -36889,13 +36443,6 @@
         "V2 / 67g",
         "V2 / 78g"
       ]
-    },
-    {
-      "id": "zilent-cloudy-top",
-      "name": "Zilent Cloudy Top",
-      "manufacturer": "Gateron",
-      "switchType": "tactile",
-      "switchFamily": "MX"
     },
     {
       "id": "zoch-flame-shadow",
