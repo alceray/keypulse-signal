@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 71,
-  "totalCount": 2416,
+  "catalogVersion": 72,
+  "totalCount": 2414,
   "entries": [
     {
       "id": "80retros-1990s-blush",
@@ -11914,7 +11914,12 @@
       "brand": "GMK",
       "designer": "Mugen & Manu",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Standard Galactic Alphas",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-night-runner",
@@ -12183,7 +12188,14 @@
       "brand": "GMK",
       "designer": "DeltaKeyCo & Stellaidoscope",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Alphas",
+        "Novelties",
+        "Extension",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-paperwork",
@@ -12391,7 +12403,14 @@
       "brand": "GMK",
       "designer": "CTRL.VLC",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Alphas",
+        "Accents",
+        "International",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-posh",
@@ -12551,15 +12570,6 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Shower_king",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-ramune-tkl",
-      "name": "GMK Ramune TKL",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Hatoworks",
       "profile": "Cherry",
       "material": "ABS"
     },
@@ -19963,22 +19973,20 @@
       "material": "PBT"
     },
     {
-      "id": "mtnu-graphite-tkl",
-      "name": "MTNU Graphite TKL",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "NovelKeys",
-      "profile": "MTNU",
-      "material": "PBT"
-    },
-    {
       "id": "mtnu-just",
       "name": "MTNU JUST",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "GMK",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Modern Base",
+        "Modern TKL Base",
+        "Vintage Base",
+        "Vintage TKL Base",
+        "Alphas"
+      ]
     },
     {
       "id": "mtnu-mictlan-rebirth",
@@ -20084,7 +20092,13 @@
       "brand": "GMK",
       "designer": "madmax13",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Extension",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "mtnu-wob",
@@ -20110,7 +20124,13 @@
       "brand": "GMK",
       "designer": "BeesKeys",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Grand Base",
+        "TKL Base",
+        "Extension",
+        "International"
+      ]
     },
     {
       "id": "mv-synth",

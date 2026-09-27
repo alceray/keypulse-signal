@@ -21095,19 +21095,6 @@
     },
     {
       "source": "keycaplendar",
-      "sourceId": "BZIN0J188Ua0oKnhyv6d",
-      "kind": "keycaps",
-      "id": "mtnu-graphite-tkl",
-      "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=Te2r-O2Fli",
-      "observed": {
-        "name": "MTNU Graphite TKL",
-        "designer": "NovelKeys",
-        "profile": "MTNU"
-      },
-      "notes": "Upstream category: MTNU; icDate: 2024-05-22; gbLaunch: 2024-05-22; gbEnd: 2024-06-22; details: https://novelkeys.com/products/gmk-mtnu-graphite-keycaps"
-    },
-    {
-      "source": "keycaplendar",
       "sourceId": "Be2EQVbCMb3Gf6PXh1Mr",
       "kind": "keycaps",
       "id": "pbtfans-cool-kids",
@@ -31420,18 +31407,6 @@
         "designer": "Fox & Walker"
       },
       "notes": "Upstream category: GMK; icDate: 2019-04-29; gbLaunch: 2020-01-30; gbEnd: 2020-03-06; details: https://geekhack.org/index.php?topic=104486.0"
-    },
-    {
-      "source": "keycaplendar",
-      "sourceId": "hPWdYopIk5qmTCla1pdD",
-      "kind": "keycaps",
-      "id": "gmk-ramune-tkl",
-      "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=RaKsK9ChkV",
-      "observed": {
-        "name": "GMK Ramune TKL",
-        "designer": "Hatoworks"
-      },
-      "notes": "Upstream category: GMK; icDate: 2026-05-14; gbLaunch: 2026-05-15; gbEnd: 2026-06-05; details: https://hatoworks.com/collections"
     },
     {
       "source": "keycaplendar",

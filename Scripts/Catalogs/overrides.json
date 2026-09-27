@@ -14134,9 +14134,6 @@
       "profile": "Cherry",
       "material": "ABS"
     },
-    "keycaps/mtnu-graphite-tkl": {
-      "brand": "GMK"
-    },
     "keycaps/sa-2600": {
       "name": "SA 2600",
       "variants": [
@@ -40966,6 +40963,8 @@
     "switchoddities:10788932747548": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
     "theremingoat:1139": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
     "theremingoat:1386": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
-    "theremingoat:3834": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established."
+    "theremingoat:3834": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
+    "keycaplendar:BZIN0J188Ua0oKnhyv6d": "MTNU Graphite TKL is not a distinct release; TKL is a kit within MTNU Graphite itself. Removed at user request.",
+    "keycaplendar:hPWdYopIk5qmTCla1pdD": "GMK Ramune TKL is not a distinct release from GMK Ramune. Removed at user request; no separate base Ramune entry exists to merge into."
   }
 }
