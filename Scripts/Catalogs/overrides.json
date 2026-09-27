@@ -38,7 +38,7 @@
     "matrix:docs/gmk-keycaps/Classic-Beige.md": "gmk-cyl-classic-beige",
     "matrix:docs/gmk-keycaps/HammerHead.md": "gmk-cyl-hammerhead",
     "matrix:docs/gmk-keycaps/Momo-Yume.md": "gmk-momo-yume",
-    "matrix:docs/gmk-keycaps/Noire.md": "gmk-noire-2020",
+    "matrix:docs/gmk-keycaps/Noire.md": "gmk-cyl-noire",
     "switchoddities:8119087071516": "ktt-phalaenopsis",
     "switchoddities:8281145344284": "ktt-matcha",
     "switchoddities:8615784415516": "ttc-speed-silver",
@@ -1300,7 +1300,7 @@
     "keycaplendar:57LUjnedAmi1G2vUUi7e": "gmk-red-alert",
     "keycaplendar:5Nsg98aCcAr5vyM0cnCg": "dcs-good-morning",
     "keycaplendar:5SAWi2Qx5u5pNyftYzKG": "gmk-indigo",
-    "keycaplendar:5tk884YxwrjlDAJwIfEQ": "gmk-cyl-ada-2025",
+    "keycaplendar:5tk884YxwrjlDAJwIfEQ": "gmk-cyl-ada",
     "keycaplendar:68ArgA7KY1AK4uYGsX6g": "gmk-arch",
     "keycaplendar:68fatQ0mzPtDzaFg56fm": "kkb-shirasagi",
     "keycaplendar:6C3z144dsTWnaGBjl7TJ": "dcs-superweld",
@@ -1442,7 +1442,7 @@
     "keycaplendar:NATVb7i2MyiHj7Mx9oUN": "gmk-camping",
     "keycaplendar:NJM0n0Ed5QnGhWUSiNXC": "gmk-bordeaux",
     "keycaplendar:NK6nw5asxtP2KmsFmJJc": "dcs-orange-on-beige",
-    "keycaplendar:NWgpM9pcEieeAtgVQY2r": "gmk-noire-2020",
+    "keycaplendar:NWgpM9pcEieeAtgVQY2r": "gmk-cyl-noire",
     "keycaplendar:NkgtWp8Z33roTb9IgH6C": "dcs-clown",
     "keycaplendar:NsJh0MdL5uysKG6NzCKW": "jtk-illusion",
     "keycaplendar:O7eCes1lsvY6Hd4yQJNZ": "gmk-crimson-cadet",
@@ -1469,7 +1469,7 @@
     "keycaplendar:Qiq5oSYNasKuu1toZajT": "gmk-midnight-rainbow",
     "keycaplendar:QvQ5tr7DiEcwFhf5VVje": "gmk-chaos-theory",
     "keycaplendar:R1mKt865KunyDSzM4GiK": "gmk-cyl-green-alert",
-    "keycaplendar:RDAqpe6jGneoTzkRrDav": "gmk-cosmos-2024",
+    "keycaplendar:RDAqpe6jGneoTzkRrDav": "gmk-cosmos",
     "keycaplendar:RLW5tdQfwNwA6KL3Dxfi": "gmk-dark",
     "keycaplendar:RSqBFpGhhBZitY9BIb7W": "gmk-higanbana",
     "keycaplendar:RmA6bozr2Yf4TcIoA1aU": "keykobo-riddim",
@@ -1624,7 +1624,7 @@
     "keycaplendar:iKuvAYaIC7tde1IyMsXS": "pbtfans-spark",
     "keycaplendar:iUf9n1dkCz0pK4VT9pqw": "gmk-rouge",
     "keycaplendar:ife84mnuR56VhujQBuTh": "dcs-sanctuary",
-    "keycaplendar:j2QHMHSJ9eia5mvdXARF": "gmk-ta-neo-paulgali",
+    "keycaplendar:j2QHMHSJ9eia5mvdXARF": "gmk-cyl-ta-neo",
     "keycaplendar:jT02HHOn1VTwFacPSFcE": "gmk-toxic",
     "keycaplendar:jZTaaLuZT6zfil9qdMOX": "keykobo-beige",
     "keycaplendar:jkWdKx3YBoZW3OYN8XP5": "gmk-cyl-8008",
@@ -1742,7 +1742,7 @@
     "keycaplendar:xWuBOFFUHZQv50LPPoGq": "gmk-sandstorm",
     "keycaplendar:xiVh22YZLE67nQmtB99m": "gmk-cyl-ishtar",
     "keycaplendar:xpOa1B0TiW3wDnAwRIOD": "gmk-swiss-addon",
-    "keycaplendar:xwNR87HDfqWnQEcMQZXL": "gmk-ledzep",
+    "keycaplendar:xwNR87HDfqWnQEcMQZXL": "gmk-led-zep",
     "keycaplendar:xzOs49uEoyWFocL7wBxF": "gmk-modern-dolch-light",
     "keycaplendar:y1gSYCxE4H5HEmw1oetU": "gmk-villanelle",
     "keycaplendar:y4XOfiEGE4x4XR5nI8kG": "gmk-metaverse",
@@ -2461,7 +2461,7 @@
     "novelkeys:10107053572263": "gmk-cyl-prussian-alert",
     "novelkeys:10925673414823": "gmk-cyl-masterpiece",
     "novelkeys:11042579873959": "dcs-mudbeam",
-    "novelkeys:11050243293351": "gmk-2-pack",
+    "novelkeys:11050243293351": "gmk-cyl-2pack",
     "novelkeys:11054574534823": "gmk-cyl-analog-dreams",
     "novelkeys:11055348908199": "gmk-cyl-finer-things",
     "novelkeys:11066181517479": "gmk-cyl-noire",
@@ -2677,13 +2677,13 @@
     "matrix:docs/gmk-keycaps/DualShot-R1.md": "gmk-cyl-dualshot",
     "matrix:docs/gmk-keycaps/Yuri-R1.md": "gmk-cyl-yuri",
     "dcswiki:47": "dcs-toxic",
-    "matrix:docs/gmk-keycaps/Oblivion-V3.1-Hagoromo.md": "gmk-oblivion-hagoromo-alphas",
+    "matrix:docs/gmk-keycaps/Oblivion-V3.1-Hagoromo.md": "gmk-cyl-oblivion",
     "dailyclack:6609918623799": "gmk-cyl-dracula",
     "novelkeys:8742669418663": "gmk-cyl-taiga",
     "omnitype:4708709466186": "gmk-cyl-minimal",
     "kbdfans:8081088086155": "gmk-cyl-hammerhead",
     "kbdfans:8347403059339": "gmk-cyl-noire",
-    "novelkeys:8629883732135": "gmk-cyl-ada-2025",
+    "novelkeys:8629883732135": "gmk-cyl-ada",
     "novelkeys:8154095124647": "gmk-cyl-creme",
     "matrix:docs/gmk-keycaps/3.md": "gmk-cubed",
     "matrix:docs/gmk-keycaps/Beige-WoB-uwu-Add-on.md": "gmk-beige-wob-uwu-macro-addon",
@@ -2714,7 +2714,7 @@
     "matrix:docs/gmk-keycaps/Triumph-Adler.md": "gmk-triumph-adler",
     "matrix:docs/gmk-keycaps/Triumph-Adler-90.md": "gmk-triumph-adler-90",
     "kbdfans:8150761373835": "kkb-shirasagi",
-    "dailyclack:4617611149367": "gmk-noire-2020",
+    "dailyclack:4617611149367": "gmk-cyl-noire",
     "switchoddities:8119098278172": "zepsody-bluebonnet",
     "switchoddities:9100467142940": "lcet-blue",
     "switchoddities:9100475924764": "lcet-glacier-brown",
@@ -3036,7 +3036,7 @@
     "prototypist:7151176286274": "mw-satellite",
     "prototypist:7133501358146": "sa-ascii",
     "prototypist:7101943382082": "epbt-travelling",
-    "prototypist:7100874522690": "gmk-tik-addon",
+    "prototypist:7100874522690": "gmk-tik",
     "prototypist:7095774740546": "gmk-cyl-ascii",
     "prototypist:7078981828674": "pbtfans-retro-100",
     "prototypist:7078968721474": "kat-great-wave",
@@ -4652,8 +4652,8 @@
     "keebsforallswitches:8157885989083/variant/44448620413147": "cupid-spring",
     "keebsforallswitches:8157885989083/variant/44448620445915": "cupid-spring",
     "keebsforallswitches:8157885989083/variant/44448620478683": "cupid-spring",
-    "mechanicalkeyboards:8874584998188": "tai-hao-black-on-white-128-keys",
-    "mechanicalkeyboards:8874626122028": "tai-hao-black-on-white-150-keys",
+    "mechanicalkeyboards:8874584998188": "tai-hao-black-on-white",
+    "mechanicalkeyboards:8874626122028": "tai-hao-black-on-white",
     "keychronswitches:7181514440793/variant/40313324208217": "kailh-midnight-pro-silent-linear",
     "keychronswitches:7181514440793/variant/40313324470361": "kailh-midnight-pro-silent-tactile",
     "switchoddities:10071144628508": "sillyworks-x-napworks",
@@ -5792,14 +5792,14 @@
     "keycaplendar:HgIZ4HPD2eQwZjL8g008": "pbtfans-twist",
     "keycaplendar:HvDpjlZdjxe7V21IwqoM": "gmk-led-zep",
     "keycaplendar:J8VuK7zE4ueneTOdMYTN": "pbtfans-no-signal",
-    "keycaplendar:L60aPWkBgd5FuXf4tP8S": "gmk-tik-addon",
+    "keycaplendar:L60aPWkBgd5FuXf4tP8S": "gmk-tik",
     "keycaplendar:LlhZkq3ieMAhFdm78KV1": "gmk-terminal",
     "keycaplendar:MZebYpsqo0tj2D02tfjQ": "dcs-red-alert",
     "keycaplendar:OBJzo6lu4jjWdURytMpE": "dsa-bluebird",
     "keycaplendar:RRQsFHcNiu7iglby63lN": "sa-danger-zone",
     "keycaplendar:RU4WUDjWzy4jCqZX4KYT": "jtk-classic-fc",
     "keycaplendar:T0RAPtkwb2x2z25Fs7mf": "kam-blanks",
-    "keycaplendar:W1Js0K4Zv1xMiRVuPU8y": "gmk-oblivion-hagoromo-alphas",
+    "keycaplendar:W1Js0K4Zv1xMiRVuPU8y": "gmk-cyl-oblivion",
     "keycaplendar:WO8G2YmFZaYotJ67xTtz": "pbs-black-on-black",
     "keycaplendar:XuE0j3nOJ5ljW4FEgnKK": "jtk-classic-fc",
     "keycaplendar:YVDWx3nkKMzGygfMzuuJ": "pbtfans-resonance",
@@ -5906,7 +5906,7 @@
     "matrix:docs/gmk-keycaps/Monochrome.md": "gmk-monochrome",
     "matrix:docs/gmk-keycaps/Monokai-Material.md": "gmk-cyl-monokai-material",
     "matrix:docs/gmk-keycaps/Mr-Sleeves-R2.md": "gmk-cyl-mr-sleeves",
-    "matrix:docs/gmk-keycaps/OG-Spacekeys-R1.md": "gmk-og-spacekeys-l9-cc-cr-split-spacebars",
+    "matrix:docs/gmk-keycaps/OG-Spacekeys-R1.md": "gmk-og-spacekeys",
     "matrix:docs/gmk-keycaps/OG-Spacekeys-R2.md": "gmk-og-spacekeys",
     "matrix:docs/gmk-keycaps/Phantom-R2.md": "gmk-cyl-phantom",
     "matrix:docs/gmk-keycaps/Phantom.md": "gmk-cyl-phantom",
@@ -6892,7 +6892,36 @@
     "switchoddities:8119066525980": "team-wolf-yellow-tan-optical-2-0",
     "switchoddities:9998905377052": "huano-red",
     "theremingoat:4164": "unionwell-extreme-magnetic-ice-obsidian",
-    "theremingoatscores:954e30c6b0bd": "mmd-honey"
+    "theremingoatscores:954e30c6b0bd": "mmd-honey",
+    "cannonkeys:6970534756463": "cannoncaps-zero",
+    "divinikey:7925337489473": "gmk-cyl-ta-neo",
+    "kbdfans:8310975758475": "gmk-cyl-2pack",
+    "keycaplendar:8woC7lvMXtgCbYOAjFGA": "gmk-cyl-2pack",
+    "keycaplendar:ObLm6QN8cqpaC6PSvbJk": "cannoncaps-zero",
+    "keycaplendar:kl1EycWBrrMEYADVAMKe": "dmk-third-space",
+    "keychron:6698821976153": "keychron-iso-oem-retro",
+    "keygem:8004717641996": "dmk-third-space",
+    "matrix:docs/gmk-keycaps/International-Kit-Addon.md": "gmk-tik",
+    "matrix:docs/gmk-keycaps/LedZep.md": "gmk-led-zep",
+    "mechanicalkeyboards:8874552197420": "tex-film-never-dies",
+    "mechanicalkeyboards:8874552295724": "tex-film-never-dies",
+    "mechanicalkeyboards:8933222547756": "tex-film-never-dies",
+    "mechanicalkeyboards:9032503197996": "pbtfans-retro-100",
+    "mechanicalkeyboards:9032503787820": "pbtfans-retro-100",
+    "mechanicalkeyboards:9032503853356": "pbtfans-retro-100",
+    "mechanicalkeyboards:9032503951660": "pbtfans-retro-100",
+    "mechanicalkeyboards:9032504344876": "pbtfans-retro-100",
+    "mechanicalkeyboards:9032504574252": "pbtfans-retro-100",
+    "keycaplendar:2pdnJunglOmI7OwHq2uC": "work-louder-wrk",
+    "keycaplendar:JorfdDLx3RXbQHNRITov": "soulcat-waon",
+    "keycaplendar:LHyw63SQuLrxEcaD9C20": "hipro-ec-topre-commander-two-tone",
+    "keycaplendar:dvmDCB2GICqu9CV5dSeW": "hipro-ec-bow",
+    "keycaplendar:edhOdVkt0DYftj73zXr4": "hipro-ec-renso",
+    "keycaplendar:uhSNyZznEEAijdbVDCkN": "hipro-ec-topre-commander-monotone",
+    "keycaplendar:umK9vdi4p9G8WiBINMkq": "soulcat-meow",
+    "keygem:8661994602764": "work-louder-wrk",
+    "matrix:docs/gmk-keycaps/Mictlan.md": "gmk-mictlan",
+    "mechanicalkeyboards:10399049154860": "pbtfans-twist"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -6915,10 +6944,6 @@
     },
     "keycaps/gmk-momo-yume": {
       "name": "GMK Momo Yume"
-    },
-    "keycaps/gmk-noire-2020": {
-      "name": "GMK Noire (2020)",
-      "designer": "gasp"
     },
     "keycaps/keykobo-cross-impact": {
       "manufacturer": "Keykobo",
@@ -8138,10 +8163,6 @@
       "name": "GMK Greek Beige Add-on",
       "designer": "LightiningXI"
     },
-    "keycaps/gmk-cyl-ta-neo": {
-      "name": "GMK CYL TA Neo",
-      "designer": "masje"
-    },
     "keycaps/gmk-oni": {
       "designer": "BapoDonu"
     },
@@ -8154,9 +8175,6 @@
     },
     "keycaps/gmk-cyl-green-alert": {
       "name": "GMK CYL Green Alert"
-    },
-    "keycaps/gmk-cosmos-2024": {
-      "name": "GMK Cosmos (2024)"
     },
     "keycaps/keykobo-riddim": {
       "name": "Keykobo Riddim"
@@ -8386,9 +8404,6 @@
     "keycaps/gmk-yugo": {
       "designer": "constexpr"
     },
-    "keycaps/gmk-ta-neo-paulgali": {
-      "name": "GMK TA Neo (paulgali)"
-    },
     "keycaps/gmk-toxic": {
       "name": "GMK Toxic",
       "designer": "T0mb3ry"
@@ -8557,9 +8572,6 @@
     },
     "keycaps/gmk-sandstorm": {
       "name": "GMK SandStorm"
-    },
-    "keycaps/gmk-ledzep": {
-      "name": "GMK LedZep"
     },
     "keycaps/gmk-modern-dolch-light": {
       "designer": "janglad"
@@ -9440,14 +9452,17 @@
       "brand": "CannonKeys"
     },
     "keycaps/osume-tsukimi": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume tsukimi",
+      "manufacturer": "osume",
       "brand": "osume",
       "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
-        "Novelty Kit"
+        "Base / Hiragana",
+        "Base / Standard",
+        "Novelty Kit / Special",
+        "Novelty Kit / Standard"
       ]
     },
     "keycaps/dcs-red-crab-sublimination": {
@@ -9767,17 +9782,6 @@
       "material": "PBT",
       "brand": "Keyreative"
     },
-    "keycaps/pbtfans-retro-100": {
-      "name": "PBTfans Retro 100",
-      "variants": [
-        "Numpad"
-      ],
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "Mars",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
     "keycaps/epbt-bow-hangul": {
       "material": "PBT",
       "profile": "Cherry"
@@ -10013,15 +10017,15 @@
     },
     "keycaps/nicepbt-bow": {
       "name": "NicePBT BoW",
-      "variants": [
-        "V1",
-        "Bakeneko Kit"
-      ],
       "manufacturer": "NicePBT",
       "brand": "CannonKeys",
       "designer": null,
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Bakeneko Kit",
+        "V1"
+      ]
     },
     "keycaps/kbm-mv-synth": {
       "brand": "KeyBee Manufacturing",
@@ -10091,10 +10095,6 @@
     "keycaps/dcs-hangul-bow-wob": {
       "brand": "Signature Plastics"
     },
-    "keycaps/dmk-third-space": {
-      "profile": "Cherry",
-      "material": "ABS"
-    },
     "keycaps/kbm-love-detective": {
       "brand": "KeyBee Manufacturing",
       "manufacturer": "KeyBee Manufacturing",
@@ -10147,9 +10147,6 @@
     "keycaps/kat-cat-s-eye": {
       "material": "PBT",
       "brand": "Keyreative"
-    },
-    "keycaps/zero-g-studio-x-dmk-abs-keycaps-third-space": {
-      "profile": "Cherry"
     },
     "keycaps/mt3-abs-cyber": {
       "manufacturer": "Drop",
@@ -10663,13 +10660,6 @@
       "profile": "Cherry",
       "brand": "Keyreative"
     },
-    "keycaps/cannoncaps-zero": {
-      "brand": "CannonKeys",
-      "profile": "Cherry",
-      "material": "PBT",
-      "designer": "Rensuya",
-      "manufacturer": "CannonCaps"
-    },
     "keycaps/cannoncaps-denim-nouveau": {
       "material": "PBT",
       "manufacturer": "CannonCaps",
@@ -10687,16 +10677,18 @@
     },
     "keycaps/osume-sakura": {
       "name": "osume sakura",
-      "variants": [
-        "R1",
-        "R2",
-        "Novelty Kit"
-      ],
       "manufacturer": "osume",
       "brand": "osume",
       "designer": "osume",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
+        "Novelty Kit",
+        "R1",
+        "R2"
+      ]
     },
     "keycaps/fbb-s9000": {
       "profile": "Cherry"
@@ -11561,13 +11553,14 @@
       "profile": "Cherry"
     },
     "keycaps/osume-dusk": {
-      "manufacturer": "osume",
       "name": "osume Dusk",
-      "material": "PBT",
-      "profile": "Cherry",
+      "manufacturer": "osume",
       "brand": "osume",
       "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -11976,13 +11969,15 @@
       "profile": "Cherry"
     },
     "keycaps/osume-matcha": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume matcha",
+      "manufacturer": "osume",
       "brand": "osume",
       "designer": "osume",
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -12208,7 +12203,8 @@
       "name": "Keychron XDA Retro"
     },
     "keycaps/keychron-oem-retro": {
-      "name": "Keychron OEM Retro"
+      "name": "Keychron OEM Retro",
+      "variants": null
     },
     "keycaps/keychron-osa-retro": {
       "name": "Keychron OSA Retro"
@@ -12331,10 +12327,12 @@
       "name": "Ducky Cherry Tuxedo"
     },
     "keycaps/keychron-blue": {
-      "name": "Keychron Blue"
+      "name": "Keychron Blue",
+      "variants": null
     },
     "keycaps/keychron-carbon": {
-      "name": "Keychron Carbon"
+      "name": "Keychron Carbon",
+      "variants": null
     },
     "keycaps/tai-hao-pine-green-gradient": {
       "name": "Tai-Hao Pine Green Gradient"
@@ -12377,206 +12375,266 @@
       "name": "Tai-Hao Hygge"
     },
     "keycaps/osume-bloom": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume bloom",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Cangjie",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-cafe": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume café",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Hangul",
+        "Base / Standard",
+        "Extras Kit / Roasted Brown",
+        "Extras Kit / Spring Green",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-cafe-rose": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume café rose",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Hangul",
+        "Base / Standard",
+        "Extras Kit / Caramel Brown",
+        "Extras Kit / Macaron Pink",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-cafe-rose-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume café rose marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Standard",
+        "Extras Kit / Caramel Brown",
+        "Extras Kit / Macaron Pink",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-dalgona": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume dalgona",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hangul",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-dalgona-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume dalgona marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-konbini-green": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume konbini green",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-lilac-dreams": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume lilac dreams",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-lilac-dreams-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume lilac dreams marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-little-ghost": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume little ghost",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-matcha-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume matcha marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-mocha": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume mocha",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-mocha-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume mocha marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-mochi": {
       "name": "osume mochi",
-      "variants": [
-        "accent kit"
-      ],
       "manufacturer": "osume",
       "brand": "osume",
       "designer": null,
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Accent Kit / All Colors",
+        "Accent Kit / Chocolate",
+        "Accent Kit / Mango",
+        "Accent Kit / Melon",
+        "Accent Kit / Strawberry",
+        "Accent Kit / Taro",
+        "Accent Kit / Vanilla",
+        "Base / Hangul",
+        "Base / Hiragana",
+        "Base / Standard"
+      ]
     },
     "keycaps/osume-mori": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume mori",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-night-market": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume night market",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Cangjie",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-rainy-day": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume rainy day",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-strawberry-milk": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume strawberry milk",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hangul",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-strawberry-milk-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume strawberry milk marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-year-of-the-horse": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume year of the horse",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Cangjie",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -12586,84 +12644,115 @@
       "profile": "Cherry"
     },
     "keycaps/osume-cafe-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume café marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Standard",
+        "Extras Kit / Roasted Brown",
+        "Extras Kit / Spring Green",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-horoscope": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume horoscope",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
-        "Novelty Kit"
+        "Base / Standard",
+        "Novelty Kit / Aquarius",
+        "Novelty Kit / Aries",
+        "Novelty Kit / Cancer",
+        "Novelty Kit / Capricorn",
+        "Novelty Kit / Gemini",
+        "Novelty Kit / Leo",
+        "Novelty Kit / Libra",
+        "Novelty Kit / Pisces",
+        "Novelty Kit / Sagittarius",
+        "Novelty Kit / Scorpio",
+        "Novelty Kit / Taurus",
+        "Novelty Kit / Virgo"
       ]
     },
     "keycaps/osume-kanagawa": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume kanagawa",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-konbini-blue": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume konbini blue",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-momo-neko-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume momo neko marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-winterglow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume winterglow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Eve Novelty Kit",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-zen": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Cherry",
       "name": "osume zen",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Cherry",
+      "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
     "keycaps/osume-zen-marshmallow": {
-      "manufacturer": "osume",
-      "material": "PBT",
-      "profile": "Marshmallow",
       "name": "osume zen marshmallow",
+      "manufacturer": "osume",
       "brand": "osume",
+      "designer": null,
+      "profile": "Marshmallow",
+      "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16732,18 +16821,6 @@
       "brand": "Kailh",
       "switchType": "linear"
     },
-    "keycaps/tai-hao-black-on-white-128-keys": {
-      "name": "Tai-Hao Black on White (128 Keys)",
-      "brand": "Tai-Hao",
-      "profile": "Cubic",
-      "material": "ABS"
-    },
-    "keycaps/tai-hao-black-on-white-150-keys": {
-      "name": "Tai-Hao Black on White (150 Keys)",
-      "brand": "Tai-Hao",
-      "profile": "Cubic",
-      "material": "ABS"
-    },
     "switches/kailh-midnight-pro-silent-linear": {
       "name": "Kailh Midnight Pro Silent Linear",
       "manufacturer": "Kailh",
@@ -16762,7 +16839,17 @@
       "brand": "Signature Plastics",
       "designer": "Carter",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alert",
+        "Base",
+        "Dark Alphas",
+        "Dark Spacebars",
+        "Extensions",
+        "Novelties",
+        "Numpad",
+        "Relegendables"
+      ]
     },
     "keycaps/swg-art": {
       "name": "SWG Art"
@@ -19343,11 +19430,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "40s Addon",
+        "Ortho & Vim",
         "R1",
         "R2",
-        "R3",
-        "40s Addon",
-        "Ortho & Vim"
+        "R3"
       ]
     },
     "keycaps/gmk-delta": {
@@ -19534,18 +19621,18 @@
     },
     "keycaps/pbtfans-klein-blue": {
       "name": "PBTfans Klein Blue",
-      "variants": [
-        "R1",
-        "R2",
-        "R3",
-        "International Kit Translucent",
-        "Numpad Kit Translucent"
-      ],
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "PBTfans",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "International Kit Translucent",
+        "Numpad Kit Translucent",
+        "R1",
+        "R2",
+        "R3"
+      ]
     },
     "keycaps/pbtfans-rim": {
       "name": "PBTfans Rim",
@@ -22544,12 +22631,6 @@
       "name": "KBParadise MX V60 Black Blank",
       "variants": null
     },
-    "keycaps/keychron-iso-q1-q1-pro-v1-k2-k2-pro": {
-      "name": "Keychron ISO Q1 & Q1 Pro & V1 & K2 & K2 Pro",
-      "variants": [
-        "V1"
-      ]
-    },
     "keycaps/sa-r3-1976": {
       "name": "SA-R3 1976",
       "variants": [
@@ -22931,19 +23012,6 @@
         "R2"
       ]
     },
-    "keycaps/dcs-klaxxon-red-alert": {
-      "manufacturer": "Signature Plastics",
-      "brand": "Signature Plastics",
-      "designer": "tjcaustin",
-      "profile": "DCS",
-      "material": "ABS",
-      "name": "DCS Klaxxon (Red Alert )",
-      "variants": [
-        "R1",
-        "R2",
-        "R2.5"
-      ]
-    },
     "keycaps/dcs-miami-twice": {
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
@@ -23222,18 +23290,6 @@
         "R2"
       ]
     },
-    "keycaps/gmk-led-zep": {
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "thesiscamper",
-      "profile": "Cherry",
-      "material": "ABS",
-      "name": "GMK Led Zep",
-      "variants": [
-        "R1",
-        "R2"
-      ]
-    },
     "keycaps/gmk-mecha-01": {
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -23270,43 +23326,6 @@
         "R2"
       ]
     },
-    "keycaps/gmk-oblivion-hagoromo-alphas": {
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oblotzky",
-      "profile": "Cherry",
-      "material": "ABS",
-      "name": "GMK Oblivion Hagoromo Alphas",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V3.1"
-      ]
-    },
-    "keycaps/gmk-og-spacekeys-l9-cc-cr-split-spacebars": {
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "hineybush",
-      "profile": "Cherry",
-      "material": "ABS",
-      "name": "GMK OG Spacekeys (L9/CC/CR split spacebars)",
-      "variants": [
-        "R1"
-      ]
-    },
-    "keycaps/gmk-og-spacekeys": {
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "hineybush",
-      "profile": "Cherry",
-      "material": "ABS",
-      "name": "GMK OG Spacekeys",
-      "variants": [
-        "R1",
-        "R2"
-      ]
-    },
     "keycaps/gmk-red-alert": {
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -23320,26 +23339,25 @@
       ]
     },
     "keycaps/gmk-rgbyk": {
+      "name": "GMK RGBYK",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "adxlk & hineybush",
       "profile": "Cherry",
       "material": "ABS",
-      "name": "GMK RGBYK",
       "variants": [
-        "R1"
+        "R1",
+        "R2"
       ]
     },
     "keycaps/gmk-skidata-plus": {
+      "name": "GMK SKIDATA+",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Karura",
       "profile": "Cherry",
       "material": "ABS",
-      "name": "GMK SKIDATA+",
-      "variants": [
-        "R1"
-      ]
+      "variants": null
     },
     "keycaps/gmk-skiidata": {
       "manufacturer": "GMK",
@@ -23360,18 +23378,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "name": "GMK >Terminal_",
-      "variants": [
-        "R1",
-        "R2"
-      ]
-    },
-    "keycaps/gmk-tik-addon": {
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "The International Kit",
-      "profile": "Cherry",
-      "material": "ABS",
-      "name": "GMK TIK Addon",
       "variants": [
         "R1",
         "R2"
@@ -23583,20 +23589,20 @@
       ]
     },
     "keycaps/pbtfans-kabuki-cho": {
+      "name": "PBTfans Kabuki-Cho",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "oay",
       "profile": "Cherry",
       "material": null,
-      "name": "PBTfans Kabuki-Cho",
       "variants": [
-        "R1",
-        "R2",
         "40s Kit",
         "Alphas Kit",
         "Icon Numpad Kit",
         "International Kit",
-        "Numpad Kit"
+        "Numpad Kit",
+        "R1",
+        "R2"
       ]
     },
     "keycaps/pbtfans-neon": {
@@ -23674,31 +23680,31 @@
       ]
     },
     "keycaps/pbtfans-resonance": {
+      "name": "PBTfans Resonance",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "ok-c & openkeydesign",
       "profile": "Cherry",
       "material": null,
-      "name": "PBTfans Resonance",
       "variants": [
-        "R1",
-        "R2",
         "40s Kit",
         "International Kit",
-        "Numpad Kit"
+        "Numpad Kit",
+        "R1",
+        "R2"
       ]
     },
     "keycaps/pbtfans-retro-dark-lights": {
+      "name": "PBTfans Retro Dark Lights",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "Jr.Mars & Mars",
       "profile": "Cherry",
       "material": null,
-      "name": "PBTfans Retro Dark Lights",
       "variants": [
+        "40s Kit",
         "R1",
         "R2",
-        "40s Kit",
         "RGBY Kit",
         "RGBY Text Kit"
       ]
@@ -23769,22 +23775,6 @@
       "variants": [
         "R1",
         "R2"
-      ]
-    },
-    "keycaps/pbtfans-twist": {
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "biip",
-      "profile": "Cherry",
-      "material": "PBT",
-      "name": "PBTfans Twist",
-      "variants": [
-        "R1",
-        "R2",
-        "R3",
-        "40s Kit",
-        "International Kit",
-        "Numpad Kit"
       ]
     },
     "keycaps/pbtfans-x-ray": {
@@ -28048,14 +28038,6 @@
         "R2"
       ]
     },
-    "keycaps/gmk-cyl-ada-2025": {
-      "name": "GMK CYL ADA (2025)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "brunosan & Dafraz117",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
     "keycaps/gmk-cyl-alt-grrrrr": {
       "variants": null,
       "name": "GMK CYL Alt Grrrrr",
@@ -28238,8 +28220,8 @@
       "variants": [
         "R1",
         "R2",
-        "R3",
-        "R2.5"
+        "R2.5",
+        "R3"
       ]
     },
     "keycaps/gmk-cyl-burgundy": {
@@ -28328,8 +28310,6 @@
       "variants": [
         "R1",
         "R2",
-        "R3",
-        "R4",
         "R5",
         "R5X"
       ]
@@ -28432,9 +28412,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "Accent Kit",
         "R1",
-        "R2",
-        "Accent Kit"
+        "R2"
       ]
     },
     "keycaps/gmk-cyl-extended-2048": {
@@ -28647,9 +28627,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "NorDeUK Addon",
         "R1",
-        "R2",
-        "NorDeUK Addon"
+        "R2"
       ]
     },
     "keycaps/gmk-cyl-mictlan-rebirth": {
@@ -28720,9 +28700,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "NorDeUK Addon",
         "V1",
-        "V2",
-        "NorDeUK Addon"
+        "V2"
       ]
     },
     "keycaps/gmk-cyl-motif": {
@@ -28785,18 +28765,6 @@
       "profile": "Cherry",
       "material": "ABS"
     },
-    "keycaps/gmk-cyl-noire": {
-      "name": "GMK CYL Noire",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "apiarykeyboards",
-      "profile": "Cherry",
-      "material": "ABS",
-      "variants": [
-        "R1",
-        "R2"
-      ]
-    },
     "keycaps/gmk-cyl-nord": {
       "name": "GMK CYL Nord",
       "manufacturer": "GMK",
@@ -28823,22 +28791,6 @@
       "variants": [
         "R1",
         "R2"
-      ]
-    },
-    "keycaps/gmk-cyl-oblivion": {
-      "name": "GMK CYL Oblivion",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oblotzky",
-      "profile": "Cherry",
-      "material": "ABS",
-      "variants": [
-        "R1",
-        "R2",
-        "V1",
-        "V2",
-        "V3",
-        "V3.1"
       ]
     },
     "keycaps/gmk-cyl-og-extensions": {
@@ -29096,9 +29048,7 @@
       "designer": "biip",
       "profile": "Cherry",
       "material": "ABS",
-      "variants": [
-        "Add-on"
-      ]
+      "variants": null
     },
     "keycaps/gmk-mictlan": {
       "name": "GMK Mictlan",
@@ -29108,7 +29058,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "NorDeUK Addon"
+        "Base",
+        "Noche Base",
+        "NorDeUK Addon",
+        "Novelties",
+        "Spacebars"
       ]
     },
     "switches/outemu-sky": {
@@ -30388,9 +30342,6 @@
     },
     "keycaps/trifl-alpha": {
       "profile": "TRIFL"
-    },
-    "keycaps/work-louder-wrk": {
-      "brand": "Work Louder"
     },
     "switches/ktt-bamboo-gleam": {
       "name": "KTT Bamboo Gleam",
@@ -33427,6 +33378,389 @@
       "switchFamily": "MX",
       "isLowProfile": null,
       "variants": null
+    },
+    "keycaps/gmk-led-zep": {
+      "name": "GMK Led Zep",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "thesiscamper",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": [
+        "R1",
+        "R2"
+      ]
+    },
+    "keycaps/gmk-og-spacekeys": {
+      "name": "GMK OG Spacekeys",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "hineybush",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": [
+        "R1",
+        "R2"
+      ]
+    },
+    "keycaps/dmk-third-space": {
+      "name": "DMK Third Space",
+      "manufacturer": "Domikey",
+      "brand": "Domikey",
+      "designer": "Zero-G Studio",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": null
+    },
+    "keycaps/gmk-cyl-noire": {
+      "name": "GMK CYL Noire",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "apiarykeyboards",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": [
+        "R1",
+        "R2"
+      ]
+    },
+    "keycaps/gmk-cyl-ta-neo": {
+      "name": "GMK CYL TA Neo",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "masje & baul",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "DE Extension",
+        "Extension",
+        "International",
+        "Row 5"
+      ]
+    },
+    "keycaps/gmk-cyl-2pack": {
+      "name": "GMK CYL 2Pack",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "DONKEY",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": null
+    },
+    "keycaps/cannoncaps-zero": {
+      "name": "CannonCaps ZeRo",
+      "manufacturer": "CannonCaps",
+      "brand": "CannonKeys",
+      "designer": "Rensuya",
+      "profile": "Cherry",
+      "material": "PBT",
+      "variants": null
+    },
+    "keycaps/gmk-cosmos": {
+      "name": "GMK Cosmos",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "Kaptain Mike",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": null
+    },
+    "keycaps/gmk-cyl-ada": {
+      "name": "GMK CYL ADA",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "brunosan & Dafraz117",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": null
+    },
+    "keycaps/dcs-klaxxon-red-alert": {
+      "name": "DCS Klaxxon (Red Alert)",
+      "manufacturer": "Signature Plastics",
+      "brand": "Signature Plastics",
+      "designer": "tjcaustin",
+      "profile": "DCS",
+      "material": "ABS",
+      "variants": [
+        "R1",
+        "R2",
+        "R2.5"
+      ]
+    },
+    "keycaps/gmk-tik": {
+      "name": "GMK TIK",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "The International Kit",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": [
+        "R1",
+        "R2 / Classic",
+        "R2 / Classic Marble",
+        "R2 / Galaxy",
+        "R2 / Green",
+        "R2 / Rocky Brown"
+      ]
+    },
+    "keycaps/tex-film-never-dies": {
+      "name": "Tex Film Never Dies",
+      "manufacturer": null,
+      "brand": "Tex",
+      "designer": null,
+      "profile": "ADA",
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extra",
+        "Novelty"
+      ]
+    },
+    "keycaps/pbtfans-retro-100": {
+      "name": "PBTfans Retro 100",
+      "manufacturer": "PBTfans",
+      "brand": "PBTfans",
+      "designer": "Mars",
+      "profile": "Cherry",
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Icon Base",
+        "Icon Modifiers",
+        "International",
+        "Numpad",
+        "Relegendables",
+        "Spacebars",
+        "Text Base",
+        "Text Modifiers"
+      ]
+    },
+    "keycaps/keychron-iso-oem-retro": {
+      "name": "Keychron ISO OEM Retro",
+      "manufacturer": null,
+      "brand": "Keychron",
+      "designer": null,
+      "profile": "OEM",
+      "material": "PBT",
+      "variants": [
+        "DE-ISO",
+        "ESP-ISO",
+        "FR-ISO",
+        "IT-ISO",
+        "Nordic-ISO",
+        "UK-ISO"
+      ]
+    },
+    "keycaps/berry-trackday": {
+      "name": "Berry Trackday",
+      "manufacturer": "KeyTok",
+      "brand": "NuPhy",
+      "designer": "biip",
+      "profile": "Berry",
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Extra"
+      ]
+    },
+    "keycaps/ncc-baja": {
+      "name": "NCC Baja",
+      "manufacturer": "NovusCaps",
+      "brand": "NovusCaps",
+      "designer": "Aeternus",
+      "profile": "Cherry",
+      "material": "PBT",
+      "variants": null
+    },
+    "keycaps/pff-wob": {
+      "name": "PFF WoB",
+      "manufacturer": "Keyreative",
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "profile": "PFF",
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Bullet Train",
+        "Ortho/40s Base"
+      ]
+    },
+    "keycaps/tk-chalk": {
+      "name": "TK Chalk",
+      "manufacturer": null,
+      "brand": "TerraKeycaps",
+      "designer": "TerraKeycaps",
+      "profile": null,
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelty",
+        "Numpad",
+        "Spacebars"
+      ]
+    },
+    "keycaps/doys-pc-blanks": {
+      "name": "Doys PC Blanks",
+      "manufacturer": null,
+      "brand": "Deadline Studio",
+      "designer": "Deadline Studio",
+      "profile": "DOYS",
+      "material": "PC",
+      "variants": null
+    },
+    "keycaps/ursa-black-blue-red": {
+      "name": "URSA Black/Blue/Red",
+      "manufacturer": "Keyreative",
+      "brand": "FKcaps",
+      "designer": "23_Andreas",
+      "profile": "URSA",
+      "material": null,
+      "variants": null
+    },
+    "keycaps/ursa-classic": {
+      "name": "URSA Classic",
+      "manufacturer": "Keyreative",
+      "brand": "FKcaps",
+      "designer": "23_Andreas",
+      "profile": "URSA",
+      "material": null,
+      "variants": null
+    },
+    "keycaps/ursa-minicom": {
+      "name": "URSA MiniCom",
+      "manufacturer": "Keyreative",
+      "brand": "FKcaps",
+      "designer": "biip & 23_Andreas",
+      "profile": "URSA",
+      "material": null,
+      "variants": null
+    },
+    "keycaps/tai-hao-black-on-white": {
+      "name": "Tai-Hao Black on White",
+      "manufacturer": null,
+      "brand": "Tai-Hao",
+      "designer": null,
+      "profile": "Cubic",
+      "material": "ABS",
+      "variants": [
+        "128 Keys",
+        "150 Keys"
+      ]
+    },
+    "keycaps/work-louder-wrk": {
+      "name": "Work Louder Wrk.",
+      "manufacturer": null,
+      "brand": "Work Louder",
+      "designer": null,
+      "profile": "WRK",
+      "material": null,
+      "variants": [
+        "Blind",
+        "Cartridge",
+        "Daily",
+        "Dime",
+        "Icon",
+        "Legend",
+        "Pure",
+        "Pure Dozen"
+      ]
+    },
+    "keycaps/pbtfans-twist": {
+      "name": "PBTfans Twist",
+      "manufacturer": "PBTfans",
+      "brand": "PBTfans",
+      "designer": "biip",
+      "profile": "Cherry",
+      "material": "PBT",
+      "variants": [
+        "40s Kit",
+        "Base / Japanese Sublegends",
+        "International Kit",
+        "Numpad Kit",
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    "keycaps/gmk-cyl-oblivion": {
+      "name": "GMK CYL Oblivion",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "Oblotzky",
+      "profile": "Cherry",
+      "material": "ABS",
+      "variants": [
+        "V1",
+        "V2",
+        "V3.1 / 40bit Base",
+        "V3.1 / ASCII",
+        "V3.1 / Colevrak",
+        "V3.1 / Extension",
+        "V3.1 / Git Base",
+        "V3.1 / Hagoromo ANSI",
+        "V3.1 / Hagoromo NorDe",
+        "V3.1 / International",
+        "V3.1 / Macros",
+        "V3.1 / Monochrome Base",
+        "V3.1 / Regular Base",
+        "V3.1 / Spacebars",
+        "V3.1 / VIM"
+      ]
+    },
+    "keycaps/soulcat-meow": {
+      "name": "SoulCat Meow",
+      "manufacturer": null,
+      "brand": "SoulCat",
+      "designer": "SoulCat",
+      "profile": null,
+      "material": "PBT",
+      "variants": null
+    },
+    "keycaps/soulcat-waon": {
+      "name": "SoulCat Waon",
+      "manufacturer": null,
+      "brand": "SoulCat",
+      "designer": "SoulCat",
+      "profile": null,
+      "material": "PBT",
+      "variants": null
+    },
+    "keycaps/hipro-ec-bow": {
+      "name": "HiPro EC BoW",
+      "manufacturer": null,
+      "brand": "KBDfans",
+      "designer": "KBDfans",
+      "profile": null,
+      "material": null,
+      "variants": null
+    },
+    "keycaps/hipro-ec-renso": {
+      "name": "HiPro EC Renso",
+      "manufacturer": null,
+      "brand": "KBDfans",
+      "designer": "Fredington",
+      "profile": null,
+      "material": null,
+      "variants": null
+    },
+    "keycaps/hipro-ec-topre-commander-monotone": {
+      "name": "HiPro EC Topre Commander, Monotone",
+      "manufacturer": null,
+      "brand": "KBDfans",
+      "designer": "KBDfans",
+      "profile": null,
+      "material": null,
+      "variants": null
+    },
+    "keycaps/hipro-ec-topre-commander-two-tone": {
+      "name": "HiPro EC Topre Commander, Two Tone",
+      "manufacturer": null,
+      "brand": "KBDfans",
+      "designer": "KBDfans",
+      "profile": null,
+      "material": null,
+      "variants": null
     }
   },
   "excluded": {
@@ -34646,6 +34980,7 @@
     "theremingoat:1687": "Unresolved commercial identity; no reliable bulk retail or production-keyboard evidence found.",
     "theremingoat:1921": "Unresolved BSUN clicky specimen; Light Sakura is a different silent linear product.",
     "theremingoat:1922": "Unresolved BSUN clicky specimen; unrelated fake Holy Panda listings do not establish this model.",
-    "theremingoat:2616": "Unresolved commercial identity; generic GGBOY listings do not establish this specific model."
+    "theremingoat:2616": "Unresolved commercial identity; generic GGBOY listings do not establish this specific model.",
+    "novelkeys:8543461048487": "Mixed-set clearance storefront, not a distinct keycap set. Product options span unrelated GMK and MTNU sets. https://novelkeys.com/products/gmk-child-kits"
   }
 }

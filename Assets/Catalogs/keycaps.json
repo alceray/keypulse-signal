@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 49,
-  "totalCount": 2437,
+  "catalogVersion": 50,
+  "totalCount": 2416,
   "entries": [
     {
       "id": "80retros-1990s-blush",
@@ -511,7 +511,15 @@
     {
       "id": "berry-trackday",
       "name": "Berry Trackday",
-      "designer": "biip"
+      "manufacturer": "KeyTok",
+      "brand": "NuPhy",
+      "designer": "biip",
+      "profile": "Berry",
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Extra"
+      ]
     },
     {
       "id": "birthday-celebration-moa-profile",
@@ -683,11 +691,6 @@
       "name": "Capybaras daily lifer",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "cc-zero",
-      "name": "CC ZeRo",
-      "designer": "Rensuya"
     },
     {
       "id": "cerakey-fullset",
@@ -2003,7 +2006,17 @@
       "brand": "Signature Plastics",
       "designer": "Carter",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alert",
+        "Base",
+        "Dark Alphas",
+        "Dark Spacebars",
+        "Extensions",
+        "Novelties",
+        "Numpad",
+        "Relegendables"
+      ]
     },
     {
       "id": "dcs-doraemon",
@@ -2232,7 +2245,7 @@
     },
     {
       "id": "dcs-klaxxon-red-alert",
-      "name": "DCS Klaxxon (Red Alert )",
+      "name": "DCS Klaxxon (Red Alert)",
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "tjcaustin",
@@ -3660,7 +3673,10 @@
     {
       "id": "doys-pc-blanks",
       "name": "Doys PC Blanks",
-      "designer": "Deadline Studio"
+      "brand": "Deadline Studio",
+      "designer": "Deadline Studio",
+      "profile": "DOYS",
+      "material": "PC"
     },
     {
       "id": "dsa-2077",
@@ -5612,24 +5628,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-2-pack",
-      "name": "GMK 2 Pack",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "DONKEY",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "gmk-2pack-add-on",
-      "name": "GMK 2Pack Add-on",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "DONKEY",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-3run",
       "name": "GMK 3Run",
       "manufacturer": "GMK",
@@ -5651,11 +5649,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "40s Addon",
+        "Ortho & Vim",
         "R1",
         "R2",
-        "R3",
-        "40s Addon",
-        "Ortho & Vim"
+        "R3"
       ]
     },
     {
@@ -6068,14 +6066,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-child-kits",
-      "name": "GMK Child Kits",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-cinder",
       "name": "GMK Cinder",
       "manufacturer": "GMK",
@@ -6253,8 +6243,8 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cosmos-2024",
-      "name": "GMK Cosmos (2024)",
+      "id": "gmk-cosmos",
+      "name": "GMK Cosmos",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "Kaptain Mike",
@@ -6328,6 +6318,15 @@
       "material": "ABS"
     },
     {
+      "id": "gmk-cyl-2pack",
+      "name": "GMK CYL 2Pack",
+      "manufacturer": "GMK",
+      "brand": "GMK",
+      "designer": "DONKEY",
+      "profile": "Cherry",
+      "material": "ABS"
+    },
+    {
       "id": "gmk-cyl-8008",
       "name": "GMK CYL 8008",
       "manufacturer": "GMK",
@@ -6349,8 +6348,8 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-cyl-ada-2025",
-      "name": "GMK CYL ADA (2025)",
+      "id": "gmk-cyl-ada",
+      "name": "GMK CYL ADA",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "brunosan & Dafraz117",
@@ -6596,8 +6595,8 @@
       "variants": [
         "R1",
         "R2",
-        "R3",
-        "R2.5"
+        "R2.5",
+        "R3"
       ]
     },
     {
@@ -6756,8 +6755,6 @@
       "variants": [
         "R1",
         "R2",
-        "R3",
-        "R4",
         "R5",
         "R5X"
       ]
@@ -6797,9 +6794,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "Accent Kit",
         "R1",
-        "R2",
-        "Accent Kit"
+        "R2"
       ]
     },
     {
@@ -6888,10 +6885,7 @@
       "brand": "GMK",
       "designer": "biip",
       "profile": "Cherry",
-      "material": "ABS",
-      "variants": [
-        "Add-on"
-      ]
+      "material": "ABS"
     },
     {
       "id": "gmk-cyl-gonzales",
@@ -7125,9 +7119,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "NorDeUK Addon",
         "R1",
-        "R2",
-        "NorDeUK Addon"
+        "R2"
       ]
     },
     {
@@ -7214,9 +7208,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "NorDeUK Addon",
         "V1",
-        "V2",
-        "NorDeUK Addon"
+        "V2"
       ]
     },
     {
@@ -7357,12 +7351,21 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
-        "R2",
         "V1",
         "V2",
-        "V3",
-        "V3.1"
+        "V3.1 / 40bit Base",
+        "V3.1 / ASCII",
+        "V3.1 / Colevrak",
+        "V3.1 / Extension",
+        "V3.1 / Git Base",
+        "V3.1 / Hagoromo ANSI",
+        "V3.1 / Hagoromo NorDe",
+        "V3.1 / International",
+        "V3.1 / Macros",
+        "V3.1 / Monochrome Base",
+        "V3.1 / Regular Base",
+        "V3.1 / Spacebars",
+        "V3.1 / VIM"
       ]
     },
     {
@@ -7619,9 +7622,16 @@
       "name": "GMK CYL TA Neo",
       "manufacturer": "GMK",
       "brand": "GMK",
-      "designer": "masje",
+      "designer": "masje & baul",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "DE Extension",
+        "Extension",
+        "International",
+        "Row 5"
+      ]
     },
     {
       "id": "gmk-cyl-taiga",
@@ -8520,14 +8530,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-international-kit-addon",
-      "name": "GMK International Kit Addon",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-inukuma",
       "name": "GMK Inukuma",
       "manufacturer": "GMK",
@@ -8681,15 +8683,6 @@
         "R1",
         "R2"
       ]
-    },
-    {
-      "id": "gmk-ledzep",
-      "name": "GMK LedZep",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "thesiscamper",
-      "profile": "Cherry",
-      "material": "ABS"
     },
     {
       "id": "gmk-lilac-on-black",
@@ -8907,7 +8900,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "NorDeUK Addon"
+        "Base",
+        "Noche Base",
+        "NorDeUK Addon",
+        "Novelties",
+        "Spacebars"
       ]
     },
     {
@@ -9303,15 +9300,6 @@
       ]
     },
     {
-      "id": "gmk-noire-2020",
-      "name": "GMK Noire (2020)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "gasp",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-norse",
       "name": "GMK Norse",
       "manufacturer": "GMK",
@@ -9328,21 +9316,6 @@
       "designer": "krugerlive",
       "profile": "Cherry",
       "material": "ABS"
-    },
-    {
-      "id": "gmk-oblivion-hagoromo-alphas",
-      "name": "GMK Oblivion Hagoromo Alphas",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "Oblotzky",
-      "profile": "Cherry",
-      "material": "ABS",
-      "variants": [
-        "V1",
-        "V2",
-        "V3",
-        "V3.1"
-      ]
     },
     {
       "id": "gmk-ocean-dolch",
@@ -9364,18 +9337,6 @@
       "variants": [
         "R1",
         "R2"
-      ]
-    },
-    {
-      "id": "gmk-og-spacekeys-l9-cc-cr-split-spacebars",
-      "name": "GMK OG Spacekeys (L9/CC/CR split spacebars)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "hineybush",
-      "profile": "Cherry",
-      "material": "ABS",
-      "variants": [
-        "R1"
       ]
     },
     {
@@ -9859,7 +9820,8 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1"
+        "R1",
+        "R2"
       ]
     },
     {
@@ -10050,10 +10012,7 @@
       "brand": "GMK",
       "designer": "Karura",
       "profile": "Cherry",
-      "material": "ABS",
-      "variants": [
-        "R1"
-      ]
+      "material": "ABS"
     },
     {
       "id": "gmk-skidolcha",
@@ -10261,15 +10220,6 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-ta-neo-paulgali",
-      "name": "GMK TA Neo (paulgali)",
-      "manufacturer": "GMK",
-      "brand": "GMK",
-      "designer": "paulgali",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
       "id": "gmk-ta-royal-alpha-610-typewriter",
       "name": "GMK TA Royal Alpha 610 Typewriter",
       "manufacturer": "GMK",
@@ -10389,8 +10339,8 @@
       "material": "ABS"
     },
     {
-      "id": "gmk-tik-addon",
-      "name": "GMK TIK Addon",
+      "id": "gmk-tik",
+      "name": "GMK TIK",
       "manufacturer": "GMK",
       "brand": "GMK",
       "designer": "The International Kit",
@@ -10398,7 +10348,11 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Classic",
+        "R2 / Classic Marble",
+        "R2 / Galaxy",
+        "R2 / Green",
+        "R2 / Rocky Brown"
       ]
     },
     {
@@ -10928,21 +10882,25 @@
     {
       "id": "hipro-ec-bow",
       "name": "HiPro EC BoW",
+      "brand": "KBDfans",
       "designer": "KBDfans"
     },
     {
       "id": "hipro-ec-renso",
       "name": "HiPro EC Renso",
+      "brand": "KBDfans",
       "designer": "Fredington"
     },
     {
       "id": "hipro-ec-topre-commander-monotone",
       "name": "HiPro EC Topre Commander, Monotone",
+      "brand": "KBDfans",
       "designer": "KBDfans"
     },
     {
       "id": "hipro-ec-topre-commander-two-tone",
       "name": "HiPro EC Topre Commander, Two Tone",
+      "brand": "KBDfans",
       "designer": "KBDfans"
     },
     {
@@ -13174,13 +13132,18 @@
       "material": "PBT"
     },
     {
-      "id": "keychron-iso-q1-q1-pro-v1-k2-k2-pro",
-      "name": "Keychron ISO Q1 & Q1 Pro & V1 & K2 & K2 Pro",
+      "id": "keychron-iso-oem-retro",
+      "name": "Keychron ISO OEM Retro",
       "brand": "Keychron",
       "profile": "OEM",
       "material": "PBT",
       "variants": [
-        "V1"
+        "DE-ISO",
+        "ESP-ISO",
+        "FR-ISO",
+        "IT-ISO",
+        "Nordic-ISO",
+        "UK-ISO"
       ]
     },
     {
@@ -14477,16 +14440,6 @@
       "material": "PBT"
     },
     {
-      "id": "meow-meow-pbt",
-      "name": "Meow Meow PBT",
-      "designer": "SoulCat"
-    },
-    {
-      "id": "meow-waon-pbt",
-      "name": "Meow Waon PBT",
-      "designer": "SoulCat"
-    },
-    {
       "id": "mg-ember",
       "name": "MG Ember",
       "manufacturer": "MelGeek",
@@ -15772,7 +15725,11 @@
     {
       "id": "ncc-baja",
       "name": "NCC Baja",
-      "designer": "Aeternus"
+      "manufacturer": "NovusCaps",
+      "brand": "NovusCaps",
+      "designer": "Aeternus",
+      "profile": "Cherry",
+      "material": "PBT"
     },
     {
       "id": "nicepbt-1928",
@@ -15861,8 +15818,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "V1",
-        "Bakeneko Kit"
+        "Bakeneko Kit",
+        "V1"
       ]
     },
     {
@@ -16369,6 +16326,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Cangjie",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16380,7 +16339,10 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Hangul",
+        "Base / Standard",
+        "Extras Kit / Roasted Brown",
+        "Extras Kit / Spring Green",
         "Novelty Kit"
       ]
     },
@@ -16392,7 +16354,9 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Standard",
+        "Extras Kit / Roasted Brown",
+        "Extras Kit / Spring Green",
         "Novelty Kit"
       ]
     },
@@ -16404,7 +16368,10 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Hangul",
+        "Base / Standard",
+        "Extras Kit / Caramel Brown",
+        "Extras Kit / Macaron Pink",
         "Novelty Kit"
       ]
     },
@@ -16416,7 +16383,9 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Extras Kit",
+        "Base / Standard",
+        "Extras Kit / Caramel Brown",
+        "Extras Kit / Macaron Pink",
         "Novelty Kit"
       ]
     },
@@ -16428,6 +16397,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hangul",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16439,6 +16410,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16451,6 +16423,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16462,7 +16435,19 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Novelty Kit"
+        "Base / Standard",
+        "Novelty Kit / Aquarius",
+        "Novelty Kit / Aries",
+        "Novelty Kit / Cancer",
+        "Novelty Kit / Capricorn",
+        "Novelty Kit / Gemini",
+        "Novelty Kit / Leo",
+        "Novelty Kit / Libra",
+        "Novelty Kit / Pisces",
+        "Novelty Kit / Sagittarius",
+        "Novelty Kit / Scorpio",
+        "Novelty Kit / Taurus",
+        "Novelty Kit / Virgo"
       ]
     },
     {
@@ -16473,6 +16458,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16484,6 +16471,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16495,6 +16484,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16506,6 +16497,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16517,6 +16509,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16528,6 +16521,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16540,6 +16534,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16551,6 +16547,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16562,6 +16559,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16573,6 +16571,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16584,7 +16583,16 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "accent kit"
+        "Accent Kit / All Colors",
+        "Accent Kit / Chocolate",
+        "Accent Kit / Mango",
+        "Accent Kit / Melon",
+        "Accent Kit / Strawberry",
+        "Accent Kit / Taro",
+        "Accent Kit / Vanilla",
+        "Base / Hangul",
+        "Base / Hiragana",
+        "Base / Standard"
       ]
     },
     {
@@ -16595,6 +16603,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16606,6 +16615,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16617,6 +16628,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Cangjie",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16628,6 +16641,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16640,9 +16655,11 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
+        "Novelty Kit",
         "R1",
-        "R2",
-        "Novelty Kit"
+        "R2"
       ]
     },
     {
@@ -16653,6 +16670,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hangul",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16664,6 +16683,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16676,7 +16696,10 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Novelty Kit"
+        "Base / Hiragana",
+        "Base / Standard",
+        "Novelty Kit / Special",
+        "Novelty Kit / Standard"
       ]
     },
     {
@@ -16687,6 +16710,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Eve Novelty Kit",
         "Novelty Kit"
       ]
@@ -16699,6 +16723,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Cangjie",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16725,6 +16751,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Base / Hiragana",
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -16736,6 +16764,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
+        "Base / Standard",
         "Novelty Kit"
       ]
     },
@@ -17495,13 +17524,13 @@
       "designer": "oay",
       "profile": "Cherry",
       "variants": [
-        "R1",
-        "R2",
         "40s Kit",
         "Alphas Kit",
         "Icon Numpad Kit",
         "International Kit",
-        "Numpad Kit"
+        "Numpad Kit",
+        "R1",
+        "R2"
       ]
     },
     {
@@ -17522,11 +17551,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "International Kit Translucent",
+        "Numpad Kit Translucent",
         "R1",
         "R2",
-        "R3",
-        "International Kit Translucent",
-        "Numpad Kit Translucent"
+        "R3"
       ]
     },
     {
@@ -17741,11 +17770,11 @@
       "designer": "ok-c & openkeydesign",
       "profile": "Cherry",
       "variants": [
-        "R1",
-        "R2",
         "40s Kit",
         "International Kit",
-        "Numpad Kit"
+        "Numpad Kit",
+        "R1",
+        "R2"
       ]
     },
     {
@@ -17766,51 +17795,16 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Numpad"
+        "40s",
+        "Icon Base",
+        "Icon Modifiers",
+        "International",
+        "Numpad",
+        "Relegendables",
+        "Spacebars",
+        "Text Base",
+        "Text Modifiers"
       ]
-    },
-    {
-      "id": "pbtfans-retro-100-40s",
-      "name": "PBTfans Retro 100 40s",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "profile": "Cherry"
-    },
-    {
-      "id": "pbtfans-retro-100-icon",
-      "name": "PBTfans Retro 100 Icon",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "profile": "Cherry",
-      "material": "PBT"
-    },
-    {
-      "id": "pbtfans-retro-100-icon-modifiers",
-      "name": "PBTfans Retro 100 Icon Modifiers",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "profile": "Cherry"
-    },
-    {
-      "id": "pbtfans-retro-100-international",
-      "name": "PBTfans Retro 100 International",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "profile": "Cherry"
-    },
-    {
-      "id": "pbtfans-retro-100-modifiers",
-      "name": "PBTfans Retro 100 Modifiers",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "profile": "Cherry"
-    },
-    {
-      "id": "pbtfans-retro-100-relegendable",
-      "name": "PBTfans Retro 100 Relegendable",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "profile": "Cherry"
     },
     {
       "id": "pbtfans-retro-dark-lights",
@@ -17820,9 +17814,9 @@
       "designer": "Jr.Mars & Mars",
       "profile": "Cherry",
       "variants": [
+        "40s Kit",
         "R1",
         "R2",
-        "40s Kit",
         "RGBY Kit",
         "RGBY Text Kit"
       ]
@@ -18040,22 +18034,14 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "40s Kit",
+        "Base / Japanese Sublegends",
+        "International Kit",
+        "Numpad Kit",
         "R1",
         "R2",
-        "R3",
-        "40s Kit",
-        "International Kit",
-        "Numpad Kit"
+        "R3"
       ]
-    },
-    {
-      "id": "pbtfans-twist-base-with-japanese-sub-legends",
-      "name": "PBTfans Twist Base with Japanese Sub-legends",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "BIIP",
-      "profile": "Cherry",
-      "material": "PBT"
     },
     {
       "id": "pbtfans-umbra",
@@ -18155,7 +18141,16 @@
     {
       "id": "pff-wob",
       "name": "PFF WoB",
-      "designer": "CannonKeys"
+      "manufacturer": "Keyreative",
+      "brand": "CannonKeys",
+      "designer": "CannonKeys",
+      "profile": "PFF",
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Bullet Train",
+        "Ortho/40s Base"
+      ]
     },
     {
       "id": "pga-circus",
@@ -19117,6 +19112,13 @@
       "material": "PC"
     },
     {
+      "id": "soulcat-meow",
+      "name": "SoulCat Meow",
+      "brand": "SoulCat",
+      "designer": "SoulCat",
+      "material": "PBT"
+    },
+    {
       "id": "soulcat-strawberry-milk",
       "name": "SoulCat Strawberry Milk",
       "manufacturer": "SoulCat",
@@ -19124,6 +19126,13 @@
       "designer": "SoulCat",
       "profile": "Cherry",
       "material": "PC"
+    },
+    {
+      "id": "soulcat-waon",
+      "name": "SoulCat Waon",
+      "brand": "SoulCat",
+      "designer": "SoulCat",
+      "material": "PBT"
     },
     {
       "id": "sp-dcs-richat",
@@ -19437,18 +19446,15 @@
       "material": "PBT"
     },
     {
-      "id": "tai-hao-black-on-white-128-keys",
-      "name": "Tai-Hao Black on White (128 Keys)",
+      "id": "tai-hao-black-on-white",
+      "name": "Tai-Hao Black on White",
       "brand": "Tai-Hao",
       "profile": "Cubic",
-      "material": "ABS"
-    },
-    {
-      "id": "tai-hao-black-on-white-150-keys",
-      "name": "Tai-Hao Black on White (150 Keys)",
-      "brand": "Tai-Hao",
-      "profile": "Cubic",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "128 Keys",
+        "150 Keys"
+      ]
     },
     {
       "id": "tai-hao-black-tht-backlit",
@@ -19942,21 +19948,12 @@
       "name": "Tex Film Never Dies",
       "brand": "Tex",
       "profile": "ADA",
-      "material": "ABS"
-    },
-    {
-      "id": "tex-film-never-dies-extra",
-      "name": "Tex Film Never Dies Extra",
-      "brand": "Tex",
-      "profile": "ADA",
-      "material": "ABS"
-    },
-    {
-      "id": "tex-film-never-dies-novelty",
-      "name": "Tex Film Never Dies Novelty",
-      "brand": "Tex",
-      "profile": "ADA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extra",
+        "Novelty"
+      ]
     },
     {
       "id": "tfue",
@@ -19974,7 +19971,15 @@
     {
       "id": "tk-chalk",
       "name": "TK Chalk",
-      "designer": "TerraKeycaps"
+      "brand": "TerraKeycaps",
+      "designer": "TerraKeycaps",
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelty",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "tmt-pink-lightning",
@@ -20254,17 +20259,26 @@
     {
       "id": "ursa-black-blue-red",
       "name": "URSA Black/Blue/Red",
-      "designer": "23_Andreas"
+      "manufacturer": "Keyreative",
+      "brand": "FKcaps",
+      "designer": "23_Andreas",
+      "profile": "URSA"
     },
     {
       "id": "ursa-classic",
       "name": "URSA Classic",
-      "designer": "23_Andreas"
+      "manufacturer": "Keyreative",
+      "brand": "FKcaps",
+      "designer": "23_Andreas",
+      "profile": "URSA"
     },
     {
       "id": "ursa-minicom",
       "name": "URSA MiniCom",
-      "designer": "biip & 23_Andreas"
+      "manufacturer": "Keyreative",
+      "brand": "FKcaps",
+      "designer": "biip & 23_Andreas",
+      "profile": "URSA"
     },
     {
       "id": "varmilo-blue-green-grey-rivulet",
@@ -20490,12 +20504,17 @@
       "id": "work-louder-wrk",
       "name": "Work Louder Wrk.",
       "brand": "Work Louder",
-      "designer": "Biip"
-    },
-    {
-      "id": "wrk-cartridge",
-      "name": "WRK Cartridge",
-      "designer": "biip"
+      "profile": "WRK",
+      "variants": [
+        "Blind",
+        "Cartridge",
+        "Daily",
+        "Dime",
+        "Icon",
+        "Legend",
+        "Pure",
+        "Pure Dozen"
+      ]
     },
     {
       "id": "ws-abs-akuamarin",
@@ -20751,14 +20770,6 @@
     {
       "id": "zero-g-fantasy-land",
       "name": "Zero-G “Fantasy Land”",
-      "manufacturer": "Domikey",
-      "designer": "Zero-G Studio",
-      "profile": "Cherry",
-      "material": "ABS"
-    },
-    {
-      "id": "zero-g-studio-x-dmk-abs-keycaps-third-space",
-      "name": "Zero-G Studio X DMK ABS Keycaps \"THIRD SPACE\"",
       "manufacturer": "Domikey",
       "designer": "Zero-G Studio",
       "profile": "Cherry",
