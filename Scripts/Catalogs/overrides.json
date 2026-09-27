@@ -247,7 +247,6 @@
     "theremingoat:3829": "huano-ink-s",
     "theremingoat:3828": "huano-ink-t",
     "theremingoat:3836": "huano-omega",
-    "theremingoat:3834": "huano-white-marble",
     "theremingoat:3922": "rapoo-low-profile-red",
     "theremingoat:3801": "yusya-green-grace",
     "theremingoat:3851": "yusya-taomeng",
@@ -6921,7 +6920,9 @@
     "keycaplendar:umK9vdi4p9G8WiBINMkq": "soulcat-meow",
     "keygem:8661994602764": "work-louder-wrk",
     "matrix:docs/gmk-keycaps/Mictlan.md": "gmk-mictlan",
-    "mechanicalkeyboards:10399049154860": "pbtfans-twist"
+    "mechanicalkeyboards:10399049154860": "pbtfans-twist",
+    "theremingoat:1378": "huano-smoky-white",
+    "theremingoat:1379": "huano-smoky-pink"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -38534,6 +38535,12 @@
         "TKL Modifiers",
         "Top Stripe"
       ]
+    },
+    "switches/huano-smoky-white": {
+      "name": "Huano Smoky White"
+    },
+    "switches/huano-smoky-pink": {
+      "name": "Huano Smoky Pink"
     }
   },
   "excluded": {
@@ -39754,6 +39761,10 @@
     "theremingoat:1921": "Unresolved BSUN clicky specimen; Light Sakura is a different silent linear product.",
     "theremingoat:1922": "Unresolved BSUN clicky specimen; unrelated fake Holy Panda listings do not establish this model.",
     "theremingoat:2616": "Unresolved commercial identity; generic GGBOY listings do not establish this specific model.",
-    "novelkeys:8543461048487": "Mixed-set clearance storefront, not a distinct keycap set. Product options span unrelated GMK and MTNU sets. https://novelkeys.com/products/gmk-child-kits"
+    "novelkeys:8543461048487": "Mixed-set clearance storefront, not a distinct keycap set. Product options span unrelated GMK and MTNU sets. https://novelkeys.com/products/gmk-child-kits",
+    "switchoddities:10788932747548": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
+    "theremingoat:1139": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
+    "theremingoat:1386": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
+    "theremingoat:3834": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established."
   }
 }

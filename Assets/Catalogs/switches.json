@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 91,
-  "totalCount": 4543,
+  "catalogVersion": 92,
+  "totalCount": 4540,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -16259,6 +16259,20 @@
       "switchFamily": "MX"
     },
     {
+      "id": "huano-smoky-pink",
+      "name": "Huano Smoky Pink",
+      "manufacturer": "Huano",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "huano-smoky-white",
+      "name": "Huano Smoky White",
+      "manufacturer": "Huano",
+      "switchType": "tactile",
+      "switchFamily": "MX"
+    },
+    {
       "id": "huano-speed-yellow-pro",
       "name": "Huano Speed Yellow Pro",
       "manufacturer": "Huano",
@@ -16408,27 +16422,6 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": true
-    },
-    {
-      "id": "huano-white-black-housing",
-      "name": "Huano White (Black Housing)",
-      "manufacturer": "Huano",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-white-clear-housing",
-      "name": "Huano White (Clear Housing)",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "huano-white-marble",
-      "name": "Huano White Marble",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "huano-wu-yue-tan",
@@ -30407,20 +30400,6 @@
       "name": "Smoky Durock 'Geekmaker' Pink",
       "manufacturer": "JWK",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-huano-pink",
-      "name": "Smoky Huano Pink",
-      "manufacturer": "Huano",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "smoky-huano-white",
-      "name": "Smoky Huano White",
-      "manufacturer": "Huano",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {

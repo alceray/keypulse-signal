@@ -70514,16 +70514,6 @@
     },
     {
       "source": "switchoddities",
-      "sourceId": "10788932747548",
-      "kind": "switches",
-      "id": "huano-white-marble",
-      "url": "https://switchoddities.com/products/huano-white-marble",
-      "observed": {
-        "name": "Huano White Marble"
-      }
-    },
-    {
-      "source": "switchoddities",
       "sourceId": "10788933533980",
       "kind": "switches",
       "id": "huano-glass-jade",
@@ -90563,18 +90553,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "1139",
-      "kind": "switches",
-      "id": "huano-white-black-housing",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Huano White (Black Housing)",
-        "manufacturer": "Huano",
-        "switchType": "clicky"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "114",
       "kind": "switches",
       "id": "kailh-choc-low-profile-burnt-orange",
@@ -93516,7 +93494,7 @@
       "source": "theremingoat",
       "sourceId": "1378",
       "kind": "switches",
-      "id": "smoky-huano-white",
+      "id": "huano-smoky-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Smoky Huano White",
@@ -93528,7 +93506,7 @@
       "source": "theremingoat",
       "sourceId": "1379",
       "kind": "switches",
-      "id": "smoky-huano-pink",
+      "id": "huano-smoky-pink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Smoky Huano Pink",
@@ -93613,18 +93591,6 @@
       "observed": {
         "name": "Gugu Ice (Tactile)",
         "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1386",
-      "kind": "switches",
-      "id": "huano-white-clear-housing",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Huano White (Clear Housing)",
-        "manufacturer": "Huano",
-        "switchType": "linear"
       }
     },
     {
@@ -123597,18 +123563,6 @@
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Huano Elf",
-        "manufacturer": "Huano",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "3834",
-      "kind": "switches",
-      "id": "huano-white-marble",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Huano White Marble",
         "manufacturer": "Huano",
         "switchType": "linear"
       }

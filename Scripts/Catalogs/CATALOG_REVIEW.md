@@ -7,6 +7,7 @@ Cleanup decisions grouped by method. Exact names and options live in the catalog
 ## Names and metadata
 
 - Normalize spelling, aliases, spacing, and round/version capitalization; match IDs and import bindings to accepted names. Prefer GMK CYL only when the product line is documented.
+- Order names manufacturer-first, descriptor-last, normalizing Smoky Huano White to Huano Smoky White.
 - Move selectable releases, kits, weights, and component options out of names. Remove redundant Switch/Series suffixes, profile text, sales copy, imported field labels, measurement notes, and incidental housing annotations. Keep Cherry in the profile field and meaningful mechanism/model codes in names.
 - Replace collector descriptions with verified commercial identities. A color match alone is insufficient; check construction and mechanism before renaming or merging.
 - Fill manufacturer, brand, designer, material, profile, and mechanism from product evidence. Keep credits scoped to the actual contribution; do not infer factories from retailers or assign one manufacturer/material across conflicting editions.
@@ -25,7 +26,7 @@ Cleanup decisions grouped by method. Exact names and options live in the catalog
 ## Identity boundaries and exceptions
 
 - **Keycap numbering:** CRP rounds remain separate, with only that round's verified kits; standalone projects stay separate when their round is unknown. C64 rounds retain BUGER.WORK credit. Sculpt rows, SA-R3 profiles, KBParadise V60/V80 compatibility, and historical DCS project titles are not release ranges. CRP's early kit coverage remains incomplete.
-- **Switch mechanisms:** retain distinctions such as Jellyfish X/Y, Huano White's different mechanisms, KTT Macaron Blue/Orange retail versus ChinaJoy mechanisms, and mechanical/optical/magnetic families. User-modified Clickiez modes are not factory variants.
+- **Switch mechanisms:** retain distinctions such as Jellyfish X/Y, KTT Macaron Blue/Orange retail versus ChinaJoy mechanisms, and mechanical/optical/magnetic families. User-modified Clickiez modes are not factory variants.
 - **Gateron models:** preserve KS codes in names/IDs and keep KS-3/8/9, G Pro generations, legacy, low-profile, and optical compatibility families separate. Merge confirmed aliases within those boundaries; KS-22 does not imply invented V1/V2 options or compatibility with KS-15. [Gateron FAQ](https://www.gateron.co/pages/faq).
 - **Manufacturer changes:** separate Giant's Gateron origin, JWK V2-V4, and Tecsee/Panghu V5-V6. Do not transfer versions across factories. Keep earlier KTT Hyacinth distinct from HMX Hyacinth and older MZ Z1 distinct from Keygeek MZ Z1. Mixed-manufacturer parents retain no unsupported shared factory. [Giant history](https://www.theremingoat.com/blog/emt-v2-switch-review).
 - **Collector labels:** Alpaca mold changes are not official V1/V2 releases; arbitrary Mahjong indices and seller-invented decimal revisions remain provenance only. [PrimeKB clarification](https://www.primekb.com/products/alpaca-linears).
