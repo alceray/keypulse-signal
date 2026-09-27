@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 63,
+  "catalogVersion": 71,
   "totalCount": 2416,
   "entries": [
     {
@@ -6647,7 +6647,12 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Magenta",
+        "Purple",
+        "Red"
+      ]
     },
     {
       "id": "gmk-accent-keys-two",
@@ -6655,7 +6660,12 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Calm Green",
+        "Eraser Pink",
+        "Ocean Blue"
+      ]
     },
     {
       "id": "gmk-aegyptus",
@@ -6702,7 +6712,14 @@
       "brand": "GMK",
       "designer": "Gregoli",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Ascents",
+        "Base",
+        "NorDeUk",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-alter",
@@ -6790,7 +6807,13 @@
       "brand": "GMK",
       "designer": "Tyson",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Ashes",
+        "Caldera",
+        "Ghost",
+        "Lahar"
+      ]
     },
     {
       "id": "gmk-astral-light",
@@ -6846,7 +6869,12 @@
       "brand": "GMK",
       "designer": "shota_irl",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Beta",
+        "RAMA",
+        "Single Key"
+      ]
     },
     {
       "id": "gmk-baltic",
@@ -6887,7 +6915,12 @@
       "brand": "GMK",
       "designer": "Mito",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Decorations",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-bingsu",
@@ -7035,7 +7068,15 @@
       "brand": "GMK",
       "designer": "RedSuns",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Nishi",
+        "Novelties",
+        "Novelties Text",
+        "Pure Hiragana",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-boho",
@@ -7134,7 +7175,12 @@
       "brand": "GMK",
       "designer": "CalmB4tehPwn",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Assembly",
+        "Base",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-camping",
@@ -7218,7 +7264,17 @@
       "brand": "GMK",
       "designer": "twgecko02",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Brass Mods",
+        "Novelties",
+        "RAMA Brass Parthenon",
+        "RAMA Great Wall",
+        "RAMA White Parthenon",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-classic-arabic",
@@ -7243,7 +7299,14 @@
       "brand": "GMK",
       "designer": "ARSLOCK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base1",
+        "Base2",
+        "RAMA O",
+        "RAMA X",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-classic-bow",
@@ -7297,7 +7360,13 @@
       "brand": "GMK",
       "designer": "xiaodian317",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "1800",
+        "ISO",
+        "GeekHack"
+      ]
     },
     {
       "id": "gmk-classic-retro-zhuyin",
@@ -7334,7 +7403,11 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "CMYK Set V1",
+        "CMYW Set V2"
+      ]
     },
     {
       "id": "gmk-cobalt",
@@ -7435,7 +7508,11 @@
       "brand": "GMK",
       "designer": "CE9111[458]",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelty"
+      ]
     },
     {
       "id": "gmk-cosmos",
@@ -7517,7 +7594,13 @@
       "brand": "GMK",
       "designer": "feng",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Add-On 1",
+        "Add-On 2",
+        "Base",
+        "LED"
+      ]
     },
     {
       "id": "gmk-cyan-2d",
@@ -7580,7 +7663,13 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "3A",
+        "3C",
+        "BoW",
+        "WoB"
+      ]
     },
     {
       "id": "gmk-cyl-ada",
@@ -7598,7 +7687,12 @@
       "brand": "GMK",
       "designer": "bagri",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "WoB / Beige",
+        "Evil Dolch",
+        "Dolch"
+      ]
     },
     {
       "id": "gmk-cyl-alter-redux",
@@ -8227,7 +8321,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Novelty",
+        "R1 / Spacebar",
         "R2 / Accent",
         "R2 / Addition",
         "R2 / Aesthetic (Accent Spacebars)",
@@ -8304,7 +8400,14 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "3A",
+        "3C",
+        "WS1",
+        "R02",
+        "BL29"
+      ]
     },
     {
       "id": "gmk-cyl-foundation",
@@ -8330,7 +8433,14 @@
       "brand": "GMK",
       "designer": "Dotnick",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Combat Training",
+        "The Recruits",
+        "Decorum",
+        "Boomsticks",
+        "HIBI Artisan"
+      ]
     },
     {
       "id": "gmk-cyl-ftro",
@@ -8510,7 +8620,11 @@
       "brand": "GMK",
       "designer": "hineybush",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "HIBI Artisan"
+      ]
     },
     {
       "id": "gmk-cyl-honor",
@@ -8746,10 +8860,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
-        "R2",
         "R2 / Accents",
         "R1 / Base",
+        "R1 / Icon",
+        "R1 / Spacebar",
         "R2 / International",
         "R2 / Mac"
       ]
@@ -8896,7 +9010,11 @@
       "brand": "GMK",
       "designer": "maxvoltar",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Salvun Artisan"
+      ]
     },
     {
       "id": "gmk-cyl-n16",
@@ -8967,7 +9085,12 @@
       "brand": "GMK",
       "designer": "Oblotzky",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "WoB",
+        "Dolch",
+        "Beige"
+      ]
     },
     {
       "id": "gmk-cyl-ntd",
@@ -9034,7 +9157,15 @@
       "brand": "GMK",
       "designer": "busytimmy",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Beige",
+        "Dolch",
+        "WOB",
+        "Beige XT",
+        "Dolch XT",
+        "WOB XT"
+      ]
     },
     {
       "id": "gmk-cyl-olivia",
@@ -9291,7 +9422,22 @@
       "brand": "GMK",
       "designer": "Surostu",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "CR Black-10",
+        "CR Black-20",
+        "WS1 White-10",
+        "WS1 White-20",
+        "N9 Dolch-10",
+        "N9 Dolch-20",
+        "U9 Beige-10",
+        "U9 Beige-20",
+        "L9 Beige-10",
+        "L9 Beige-20",
+        "Front Print CR Black",
+        "Front Print U9 Beige",
+        "HIBI Metal Artisan"
+      ]
     },
     {
       "id": "gmk-cyl-royal-cadet",
@@ -9385,7 +9531,14 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "3A",
+        "3C",
+        "WS1",
+        "R02",
+        "BL29"
+      ]
     },
     {
       "id": "gmk-cyl-symbiote",
@@ -9575,7 +9728,14 @@
       "brand": "GMK",
       "designer": "mcmcmc",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "beige 2000s",
+        "dimple",
+        "snack pack",
+        "vintage bottom",
+        "wob 2000s"
+      ]
     },
     {
       "id": "gmk-cyl-windbreaker",
@@ -9684,9 +9844,12 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
         "R2 / Base",
         "R1 / Base",
+        "R1 / Spliffs",
+        "R1 / RAMA Leaf",
+        "R1 / RAMA 420",
+        "R1 / Salvun",
         "Spacebars"
       ]
     },
@@ -9697,7 +9860,12 @@
       "brand": "GMK",
       "designer": "BeesKeys",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension",
+        "Salvun Artisan"
+      ]
     },
     {
       "id": "gmk-cyrillic",
@@ -9714,7 +9882,11 @@
       "brand": "GMK",
       "designer": "ttom",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Cyrillic WoB",
+        "Cyrillic Beige"
+      ]
     },
     {
       "id": "gmk-daifuku",
@@ -9723,7 +9895,13 @@
       "brand": "GMK",
       "designer": "vndytran",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alphas",
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "gmk-dandy",
@@ -9747,7 +9925,13 @@
       "brand": "GMK",
       "designer": "roostrc0gburn",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Deviant",
+        "Icons",
+        "Numpad"
+      ]
     },
     {
       "id": "gmk-darskel",
@@ -9755,7 +9939,11 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Lime"
+      ]
     },
     {
       "id": "gmk-deep-navy",
@@ -9864,7 +10052,14 @@
       "brand": "GMK",
       "designer": "ItszBrian",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "RAMA Penlight",
+        "RAMA Rose",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-diner",
@@ -9873,7 +10068,14 @@
       "brand": "GMK",
       "designer": "mvkb",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Macro Novelties",
+        "Modifier Novelties",
+        "NorDe",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-dogethink-novelty",
@@ -9891,7 +10093,14 @@
       "brand": "GMK",
       "designer": "kekkon",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Cyan Mod",
+        "Cyan Spacebar",
+        "Magenta Spacebar",
+        "Miami Accent"
+      ]
     },
     {
       "id": "gmk-dragon-witch",
@@ -9939,7 +10148,17 @@
       "brand": "GMK",
       "designer": "T0mb3ry",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Core",
+        "Novelties",
+        "Numpad",
+        "Orange Accent",
+        "Pale Blue Accent",
+        "Purple Accent",
+        "SpaceBars"
+      ]
     },
     {
       "id": "gmk-electric",
@@ -9968,7 +10187,11 @@
       "brand": "GMK",
       "designer": "billnye",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Electric Bluegaloo Mod",
+        "Escape Pack"
+      ]
     },
     {
       "id": "gmk-escape-pack",
@@ -9976,7 +10199,11 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Set V1",
+        "Set V2"
+      ]
     },
     {
       "id": "gmk-euler",
@@ -10096,7 +10323,12 @@
       "brand": "GMK",
       "designer": "otanishock",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-flare",
@@ -10159,7 +10391,12 @@
       "brand": "GMK",
       "designer": "The_Royal",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Cashier",
+        "SHoppe",
+        "Sprinkles"
+      ]
     },
     {
       "id": "gmk-frost-witch",
@@ -10170,7 +10407,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
         "R2",
         "R1 / Accent",
         "R1 / Base",
@@ -10293,7 +10529,14 @@
       "brand": "GMK",
       "designer": "Mito",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Armstrong Base",
+        "Columbia GMK",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-grand-prix",
@@ -10469,7 +10712,12 @@
       "brand": "GMK",
       "designer": "Mito",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Decorations",
+        "Numpad"
+      ]
     },
     {
       "id": "gmk-hero",
@@ -10478,7 +10726,12 @@
       "brand": "GMK",
       "designer": "mklfox44",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Adventurer",
+        "Legend",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-higanbana",
@@ -10504,7 +10757,13 @@
       "brand": "GMK",
       "designer": "GingGing",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Hiragana",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-honey",
@@ -10536,7 +10795,14 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Honey & Co Accent",
+        "Honeywell",
+        "Mild Pink Accent",
+        "OG Red Accent",
+        "Turf Green Accent"
+      ]
     },
     {
       "id": "gmk-hooty",
@@ -10576,7 +10842,12 @@
       "brand": "GMK",
       "designer": "jchan94",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-hyperfuse",
@@ -10726,7 +10997,14 @@
       "brand": "GMK",
       "designer": "2Moons",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extensions",
+        "Spacebars",
+        "JIS Screwdriver Artisan",
+        "JIS Emergency Exit Artisan"
+      ]
     },
     {
       "id": "gmk-jukebox",
@@ -10735,7 +11013,12 @@
       "brand": "GMK",
       "designer": "livingspeedbump",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "TKL Base",
+        "International"
+      ]
     },
     {
       "id": "gmk-ka-2019-valentine",
@@ -10813,7 +11096,20 @@
       "brand": "GMK",
       "designer": "Dotnick",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Bouquet Novelties",
+        "Lavender Base",
+        "Petals Numpad",
+        "RAMA 01 SEQ2 Round Tray",
+        "RAMA 02 SEQ2 Round Tray",
+        "RAMA Enter",
+        "Rabenda Base",
+        "Roots International",
+        "Salvun Artisan",
+        "Sprigs Spacebars",
+        "Trimmings 40s"
+      ]
     },
     {
       "id": "gmk-lazurite",
@@ -10863,7 +11159,14 @@
       "brand": "GMK",
       "designer": "Sax_______",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alt Alphas",
+        "Base",
+        "HIBI Artisan",
+        "NorDeUK",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-lime",
@@ -10885,7 +11188,14 @@
       "brand": "GMK",
       "designer": "Moridin",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alphas",
+        "Assembly",
+        "Core",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-lux",
@@ -11028,7 +11338,13 @@
       "brand": "GMK",
       "designer": "Fu11.Meta1",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelty",
+        "Prototype Alphas",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-mecha-01",
@@ -11039,7 +11355,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
         "R2",
         "R1 / Base",
         "R1 / Berserk",
@@ -11070,7 +11385,11 @@
       "brand": "GMK",
       "designer": "MechMerlin",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Wizardry"
+      ]
     },
     {
       "id": "gmk-metaverse",
@@ -11171,7 +11490,11 @@
       "brand": "GMK",
       "designer": "Livingspeedbump",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extras"
+      ]
     },
     {
       "id": "gmk-missing-keys",
@@ -11205,7 +11528,15 @@
       "brand": "GMK",
       "designer": "pol139",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Alu Artisan",
+        "Base",
+        "Brass Artisan",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-modern-dolch-light",
@@ -11472,7 +11803,11 @@
       "brand": "GMK",
       "designer": "maxvoltar",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Salvun Artisan"
+      ]
     },
     {
       "id": "gmk-n6tu1-cr",
@@ -11526,7 +11861,15 @@
       "brand": "GMK",
       "designer": "Zambumon",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Core",
+        "Extension",
+        "Forties",
+        "ISO",
+        "Novelties",
+        "Spacekeys"
+      ]
     },
     {
       "id": "gmk-necro",
@@ -11552,7 +11895,17 @@
       "brand": "GMK",
       "designer": "Manu & LoobedSwitches & Baionlenja",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "AIGLATSON Artisan 1",
+        "AIGLATSON Artisan 2",
+        "Acero Base",
+        "NEBULA Artisan 1",
+        "NEBULA Artisan 2",
+        "Neon Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "gmk-nervewrecker",
@@ -11877,7 +12230,12 @@
       "brand": "GMK",
       "designer": "Rensuya",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Spacebars",
+        "40s"
+      ]
     },
     {
       "id": "gmk-peaches-n-cream-lite",
@@ -11902,7 +12260,11 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Penumbra",
+        "Solarized"
+      ]
     },
     {
       "id": "gmk-perestroika",
@@ -11911,7 +12273,13 @@
       "brand": "GMK",
       "designer": "koenoe",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Modern",
+        "Unusual",
+        "Usual"
+      ]
     },
     {
       "id": "gmk-pharaoh",
@@ -11950,7 +12318,13 @@
       "brand": "GMK",
       "designer": "Moridin",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Core",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-pink-on-navy",
@@ -12003,7 +12377,12 @@
       "brand": "GMK",
       "designer": "NathanAlphaMan",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Carpet",
+        "RAMA",
+        "Redaction"
+      ]
     },
     {
       "id": "gmk-pompeii",
@@ -12038,7 +12417,15 @@
       "brand": "GMK",
       "designer": "HungHingDaiLo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Overruns",
+        "Poster Alphas",
+        "Separation",
+        "Tradition"
+      ]
     },
     {
       "id": "gmk-pretty-in-pink",
@@ -12089,7 +12476,20 @@
       "brand": "GMK",
       "designer": "MiTo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Arabic",
+        "Base",
+        "Ergo",
+        "Euro",
+        "Hangul",
+        "Keyluminatti",
+        "Micons",
+        "Minibars",
+        "Mitolet",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-purple-ish",
@@ -12098,7 +12498,14 @@
       "brand": "GMK",
       "designer": "Kight",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Monokei Artisan",
+        "Novelties",
+        "Spacebars",
+        "THOK Artisan"
+      ]
     },
     {
       "id": "gmk-purple-mod",
@@ -12224,7 +12631,13 @@
       "brand": "GMK",
       "designer": "RedSuns",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "1800",
+        "65%",
+        "Ortholinear",
+        "TKL"
+      ]
     },
     {
       "id": "gmk-reforged",
@@ -12375,7 +12788,12 @@
       "brand": "GMK",
       "designer": "Zambumon",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Core",
+        "Extension",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-seafarer",
@@ -12524,7 +12942,11 @@
       "brand": "GMK",
       "designer": "cocobrais",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-sixes",
@@ -12564,7 +12986,14 @@
       "brand": "GMK",
       "designer": "Karura",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Colour Pack",
+        "Grey Spacebars",
+        "Orange Spacebars",
+        "Relegendables"
+      ]
     },
     {
       "id": "gmk-skidolcha",
@@ -12601,7 +13030,11 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Accent R1",
+        "Accent R2"
+      ]
     },
     {
       "id": "gmk-sky-modo",
@@ -12609,7 +13042,13 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Solarized",
+        "Wyse",
+        "Yellow"
+      ]
     },
     {
       "id": "gmk-slasher",
@@ -12633,7 +13072,13 @@
       "brand": "GMK",
       "designer": "rainb1ood",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Color",
+        "Ergodox",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-soware",
@@ -12680,7 +13125,14 @@
       "brand": "GMK",
       "designer": "crusader_alex",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Dual Greek",
+        "Mono Greek",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-spirit",
@@ -12689,7 +13141,13 @@
       "brand": "GMK",
       "designer": "Kingnestea",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelty",
+        "Numpad",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-splash",
@@ -12815,7 +13273,13 @@
       "brand": "GMK",
       "designer": "archerypro459",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Mono Alphas",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-swiss-addon",
@@ -12824,7 +13288,11 @@
       "brand": "GMK",
       "designer": "Bregoli",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Black on White",
+        "White on Black"
+      ]
     },
     {
       "id": "gmk-ta-royal-alpha-610-typewriter",
@@ -12923,7 +13391,14 @@
       "brand": "GMK",
       "designer": "Rensuya",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Rama Golden",
+        "Rama Green",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-terror",
@@ -12976,7 +13451,11 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "The Child",
+        "The Mandalorian"
+      ]
     },
     {
       "id": "gmk-thinkcaps",
@@ -13044,7 +13523,13 @@
       "brand": "GMK",
       "designer": "T0mb3ry",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Desolator",
+        "Novelties",
+        "Toxic Mods"
+      ]
     },
     {
       "id": "gmk-trader",
@@ -13053,7 +13538,15 @@
       "brand": "GMK",
       "designer": "Mito",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Boomer",
+        "Cmd",
+        "Compact",
+        "Extended",
+        "Hobbyist",
+        "Zoomer"
+      ]
     },
     {
       "id": "gmk-triumph-adler",
@@ -13071,7 +13564,14 @@
       "brand": "GMK",
       "designer": "Drclick",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Icon",
+        "NORDE",
+        "R0 Number",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-true-olivetti",
@@ -13088,7 +13588,13 @@
       "brand": "GMK",
       "designer": "Bonobo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Latin",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-umbra",
@@ -13158,7 +13664,15 @@
       "brand": "GMK",
       "designer": "NathanAlphaMan",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Cub",
+        "Novelties",
+        "Paddington",
+        "RAMA",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-valentine",
@@ -13247,7 +13761,13 @@
       "brand": "GMK",
       "designer": "hineybush",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Purple Alphas",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-violet-tendencies",
@@ -13256,7 +13776,12 @@
       "brand": "GMK",
       "designer": "Voxicles",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Accent",
+        "Base",
+        "Spacebar"
+      ]
     },
     {
       "id": "gmk-voyage",
@@ -13265,7 +13790,12 @@
       "brand": "GMK",
       "designer": "nasp",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-wasabi",
@@ -13306,7 +13836,14 @@
       "brand": "GMK",
       "designer": "EnjoyMyInSec",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Kobe",
+        "Novelty",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-white-blue",
@@ -13315,7 +13852,11 @@
       "brand": "GMK",
       "designer": "LifeZ",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Blue Mod"
+      ]
     },
     {
       "id": "gmk-wild",
@@ -13355,7 +13896,12 @@
       "brand": "GMK",
       "designer": "briano1905",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Micons"
+      ]
     },
     {
       "id": "gmk-wob-katakana",
@@ -13395,7 +13941,11 @@
       "brand": "GMK",
       "designer": "RETRUNISO",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Black",
+        "White"
+      ]
     },
     {
       "id": "gmk-yeeti",
@@ -13420,7 +13970,12 @@
       "brand": "GMK",
       "designer": "constexpr",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Cabrio",
+        "Capitalism",
+        "Yugo 45"
+      ]
     },
     {
       "id": "gmk-yuru",
@@ -13477,7 +14032,11 @@
       "brand": "GMK",
       "designer": "HoodrowThrillson",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Black on White",
+        "White on Black"
+      ]
     },
     {
       "id": "gmk-zimo",
@@ -19277,7 +19836,20 @@
       "brand": "GMK",
       "designer": "pwade3 & Nephlock",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "R1 / Base",
+        "R1 / Japanese",
+        "R1 / Novelties",
+        "R1 / Numpad & ISO",
+        "R1 / Spacebars",
+        "R2 / Accents",
+        "R2 / Analog Dreams",
+        "R2 / Digital Nightmares",
+        "R2 / Minibars",
+        "R2 / Novelties",
+        "R2 / Salvun"
+      ]
     },
     {
       "id": "mtnu-beige",
@@ -19303,7 +19875,12 @@
       "brand": "GMK",
       "designer": "fatboycarney",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "mtnu-darling",
@@ -19337,7 +19914,17 @@
       "manufacturer": "GMK",
       "brand": "GMK",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "R1 / Base",
+        "R1 / Color",
+        "R1 / Space",
+        "R2 / Base",
+        "R5 / Base",
+        "R5 / Extension",
+        "R5 / Hangul",
+        "R5 / RAMA"
+      ]
     },
     {
       "id": "mtnu-foundation",
@@ -23849,8 +24436,9 @@
       "profile": "SA",
       "material": "ABS",
       "variants": [
-        "R1",
-        "R2",
+        "R1 / Alphas",
+        "R1 / Modifiers",
+        "R1 / 40s",
         "R2 / Base",
         "R2 / Concierge",
         "R2 / Ergo",
@@ -24404,8 +24992,15 @@
       "designer": "kingnestea",
       "profile": "SA",
       "variants": [
-        "R1",
-        "R2",
+        "R1 / TKL Base",
+        "R1 / Numpad",
+        "R1 / Tsagun",
+        "R1 / Novelties",
+        "R1 / Forums",
+        "R1 / ISO",
+        "R1 / YG Spacebars",
+        "R1 / RA Spacebars",
+        "R1 / Planck Atomic",
         "R2 / Base",
         "R2 / Novelties",
         "R2 / Spacebars",
