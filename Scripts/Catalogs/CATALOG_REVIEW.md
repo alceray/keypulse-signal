@@ -14,6 +14,7 @@ Cleanup decisions grouped by method. Exact names and options live in the catalog
 ## Merges and variants
 
 - Keep the existing schema with an optional flat variants list. Merge aliases, redundant material labels, retroactive model names, and child kits into established parents; retain distinct generations, mechanisms, and incompatible products separately.
+- Use Base for a single base choice; qualify it only when multiple base options need distinguishing.
 - Combine related attributes into observed configurations, such as V2 / 62g. Never generate combinations or earlier switch versions from a later number alone. Reviewed variant overrides take precedence over automatic release expansion. Omit singleton selectors and shared properties such as Linear.
 - Preserve meaningful housing, material, weight, and construction choices. Remove collector numbering, mold revisions, defects, replacement parts, LED/diffuser options, and through-hole/SMD/OG labels as independent selectors.
 - Remove pin counts from names/IDs. Keep them in variants only when every option has known pin information and both 3-pin and 5-pin choices occur.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 50,
+  "catalogVersion": 51,
   "totalCount": 2416,
   "entries": [
     {
@@ -16354,7 +16354,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Extras Kit / Roasted Brown",
         "Extras Kit / Spring Green",
         "Novelty Kit"
@@ -16383,7 +16383,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Extras Kit / Caramel Brown",
         "Extras Kit / Macaron Pink",
         "Novelty Kit"
@@ -16410,7 +16410,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16423,7 +16423,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16435,7 +16435,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit / Aquarius",
         "Novelty Kit / Aries",
         "Novelty Kit / Cancer",
@@ -16497,7 +16497,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16509,7 +16509,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16521,7 +16521,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16547,7 +16547,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16559,7 +16559,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16571,7 +16571,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16603,7 +16603,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16683,7 +16683,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
@@ -16710,7 +16710,7 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Eve Novelty Kit",
         "Novelty Kit"
       ]
@@ -16764,7 +16764,7 @@
       "profile": "Marshmallow",
       "material": "PBT",
       "variants": [
-        "Base / Standard",
+        "Base",
         "Novelty Kit"
       ]
     },
