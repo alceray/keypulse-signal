@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 72,
+  "catalogVersion": 78,
   "totalCount": 2414,
   "entries": [
     {
@@ -24120,14 +24120,26 @@
       "id": "sa-128k-for-ae",
       "name": "SA 128k for Ae",
       "designer": "hoq",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Base",
+        "Korean Alphas",
+        "Japanese Alphas"
+      ]
     },
     {
       "id": "sa-128k-ps-ai",
       "name": "SA 128K Ps & Ai",
       "designer": "hoq",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base-Ps",
+        "Base-Ai",
+        "Numpad-Ps",
+        "Numpad-Ai",
+        "Spacebars"
+      ]
     },
     {
       "id": "sa-2600",
@@ -24191,7 +24203,21 @@
       "brand": "Domikey",
       "designer": "Glove Studio",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "APES-W",
+        "APES-D",
+        "Color",
+        "Mod Plus",
+        "Numpad",
+        "UK",
+        "SB-W3",
+        "SB-D3",
+        "SB-W2",
+        "SB-W5",
+        "SB-D5"
+      ]
     },
     {
       "id": "sa-arcane",
@@ -24199,7 +24225,14 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "Oblotzky & Gregor",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Specialties",
+        "Novelties",
+        "Alternate Color"
+      ]
     },
     {
       "id": "sa-ascii",
@@ -24217,7 +24250,19 @@
       "brand": "Domikey",
       "designer": "RivieraS",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Icon-Y",
+        "Plus",
+        "Numb",
+        "Color",
+        "ISO",
+        "Icon-G",
+        "Space-L",
+        "Space-Y",
+        "Space-W"
+      ]
     },
     {
       "id": "sa-bee",
@@ -24288,7 +24333,16 @@
       "id": "sa-calm-depths",
       "name": "SA Calm Depths",
       "designer": "CalmB4tehPwn",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Alphas",
+        "Mods",
+        "Numpad",
+        "ISO+",
+        "Tsangan+",
+        "Ergodox",
+        "Gamer Set"
+      ]
     },
     {
       "id": "sa-camping",
@@ -24363,7 +24417,16 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "Mechsupply",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Base",
+        "Num-Pad",
+        "Novelty",
+        "Specialties",
+        "NorDe",
+        "Ortho",
+        "Ergo"
+      ]
     },
     {
       "id": "sa-dualshot",
@@ -24490,7 +24553,13 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "cocobrais",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Base",
+        "Horizontal R3",
+        "Numpad",
+        "Spacebar"
+      ]
     },
     {
       "id": "sa-hunter-killua",
@@ -24546,7 +24615,24 @@
       "id": "sa-leviathan",
       "name": "SA Leviathan",
       "designer": "OneCreativeMind",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Base",
+        "Alts",
+        "Numpad",
+        "GK64/660",
+        "Mac",
+        "Novelties",
+        "Ergo Blanks",
+        "40 Blanks",
+        "Spacebar (Blue)",
+        "Spacebar (Green)",
+        "ISO",
+        "Ortho 40/50",
+        "Ortho + Alpha",
+        "Ergo + Alpha",
+        "40 Blanks + Alpha"
+      ]
     },
     {
       "id": "sa-lime",
@@ -24612,7 +24698,25 @@
       "id": "sa-mechanist",
       "name": "SA Mechanist",
       "designer": "hoq",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Alphas",
+        "Frozen Alphas",
+        "TKL Adapter",
+        "Non-Standard",
+        "Numpad",
+        "Dvorak/Colemak",
+        "Ortholinear",
+        "40%",
+        "Ergonomics",
+        "UHK/Minila",
+        "ISO",
+        "Mecha Tools",
+        "Gears",
+        "Spacekeys",
+        "Spacebars",
+        "Arrows"
+      ]
     },
     {
       "id": "sa-mercury-rocketeer",
@@ -24624,7 +24728,15 @@
       "id": "sa-metaverse",
       "name": "SA Metaverse",
       "designer": "DeadEncryption",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Latin Base",
+        "Gaijin Base",
+        "Numpad",
+        "Ortho",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "sa-ming",
@@ -24654,7 +24766,21 @@
       "id": "sa-nantucket-selectric",
       "name": "SA Nantucket Selectric",
       "designer": "skullydazed",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "TKL",
+        "Planck",
+        "Ergodox",
+        "Numpad",
+        "Homing",
+        "Dvorak/Colemak",
+        "ISO",
+        "European",
+        "Mac",
+        "Specialty",
+        "Cape Cod",
+        "Amity Island"
+      ]
     },
     {
       "id": "sa-nautilus",
@@ -24701,7 +24827,11 @@
       "name": "SA Ocean Dolch",
       "designer": "Mama & hoq",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Dolch Cyan"
+      ]
     },
     {
       "id": "sa-olivia",
@@ -24725,7 +24855,15 @@
       "id": "sa-polyclear",
       "name": "SA Polyclear",
       "designer": "Achromous",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Alphas",
+        "Mods",
+        "40s",
+        "F Row",
+        "Numpad",
+        "Bars"
+      ]
     },
     {
       "id": "sa-prism",
@@ -24773,13 +24911,53 @@
       "id": "sa-r3-danger-zone",
       "name": "SA-R3 Danger Zone",
       "designer": "Data",
-      "profile": "SA-R3"
+      "profile": "SA-R3",
+      "variants": [
+        "R1 / Base",
+        "R1 / Alternate F",
+        "R1 / Numpad",
+        "R1 / AeroDox",
+        "R1 / JD40",
+        "R1 / Planck",
+        "R1 / Arrows",
+        "R1 / Dogfighter",
+        "R1 / Maverick",
+        "R1 / RAF",
+        "R1 / Wingman",
+        "R1 / Spacebars",
+        "R1 / Goose",
+        "R2 / Alphas",
+        "R2 / Modifiers",
+        "R2 / Numpad",
+        "R2 / Specialties",
+        "R2 / UK ISO",
+        "R2 / AeroDox",
+        "R2 / Ortholinear",
+        "R2 / Wingman",
+        "R2 / Arrows",
+        "R2 / Alternate Function",
+        "R2 / Space Force",
+        "R2 / BFU Spacebars",
+        "R2 / YY Spacebars"
+      ]
     },
     {
       "id": "sa-r3-geoma",
       "name": "SA-R3 Geoma",
       "designer": "olihaimar",
-      "profile": "SA-R3"
+      "profile": "SA-R3",
+      "variants": [
+        "Light Alphas",
+        "Dark Alphas",
+        "Light Mods",
+        "Dark Mods",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "NorDeUK",
+        "Hibi Dark Artisan",
+        "Hibi Teal Artisan"
+      ]
     },
     {
       "id": "sa-r3-maestro",
@@ -24788,7 +24966,15 @@
       "brand": "Signature Plastics",
       "designer": "HungHingDaiLo",
       "profile": "SA-R3",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Uniform R3 Base",
+        "Sculpted TKL",
+        "Numpad",
+        "Arrows",
+        "Pedals",
+        "Monokei R3 Artisan"
+      ]
     },
     {
       "id": "sa-r3-mizu",
@@ -24825,14 +25011,25 @@
       "name": "SA-R3 Teletype",
       "designer": "Piperaceae",
       "profile": "SA-R3",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s Monokit",
+        "Full Size Adaptor"
+      ]
     },
     {
       "id": "sa-r3-uniform-bliss",
       "name": "SA-R3 Uniform Bliss",
       "designer": "Minterly",
       "profile": "SA-R3",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars",
+        "Novelties",
+        "ISO"
+      ]
     },
     {
       "id": "sa-ramses",
@@ -24904,7 +25101,19 @@
       "id": "sa-rocket",
       "name": "SA Rocket",
       "designer": "Rise",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Alphas",
+        "Modifiers",
+        "Extension",
+        "Numpad",
+        "Novelties",
+        "ISO",
+        "40s",
+        "Ortho",
+        "Spacebars",
+        "Ergo"
+      ]
     },
     {
       "id": "sa-royal-navy",
@@ -24942,7 +25151,20 @@
       "name": "SA Sculpted Bliss",
       "designer": "Minterly",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alphas",
+        "Pink Alphas",
+        "UwU Alphas",
+        "Modifiers",
+        "Pink Modifiers",
+        "Numpad",
+        "Spacebars",
+        "UwU Novelties",
+        "UK",
+        "NorDe",
+        "Bundle"
+      ]
     },
     {
       "id": "sa-semiconductor",
@@ -25068,7 +25290,21 @@
       "brand": "Signature Plastics",
       "designer": "Zambumon",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "BaseAlphas",
+        "Modifiers",
+        "Numpad",
+        "Novelties",
+        "40%",
+        "Ergodox",
+        "Tsangan",
+        "Dvorak",
+        "UK",
+        "Community",
+        "International",
+        "Raffle M"
+      ]
     },
     {
       "id": "sa-tiger",
@@ -25077,7 +25313,23 @@
       "brand": "Domikey",
       "designer": "Glove Studio",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "BASE-Y",
+        "ALPHA-W",
+        "COLOR-W",
+        "TIGER-Y",
+        "TIGER-T",
+        "TAIL-B",
+        "TAIL-Y",
+        "BASE-W",
+        "ALPHA-B",
+        "TIGER-W",
+        "COLOR-Y",
+        "TAIL-W",
+        "Yellow Tiger All-in-one",
+        "White Tiger All-in-one"
+      ]
     },
     {
       "id": "sa-troubled-minds",
@@ -25137,7 +25389,23 @@
       "id": "sa-yuri",
       "name": "SA Yuri",
       "designer": "T0mb3ry",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Alphas",
+        "Cyrillics",
+        "Cosmos",
+        "Dual Cosmos",
+        "Modifiers",
+        "Cyrillic Modifiers",
+        "Dual Modifiers",
+        "Numpad",
+        "40%",
+        "Novelties",
+        "6.25u Spacebars",
+        "7u Spacebars",
+        "Spacekeys",
+        "DCS Yuri (Alps Only)"
+      ]
     },
     {
       "id": "senmei-ick-la-vie-en-rose",
