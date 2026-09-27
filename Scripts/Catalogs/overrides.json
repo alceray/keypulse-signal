@@ -7951,7 +7951,12 @@
     },
     "keycaps/gmk-storm": {
       "name": "GMK Storm",
-      "designer": "sp.people"
+      "designer": "sp.people",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/keykobo-bloom": {
       "name": "Keykobo Bloom",
@@ -7972,7 +7977,11 @@
     "keycaps/gmk-coral": {
       "name": "GMK Coral",
       "variants": [
-        "R1",
+        "R1 / 40s/Ortho",
+        "R1 / Base",
+        "R1 / Coral Relief",
+        "R1 / Novelties",
+        "R1 / Spacebars",
         "R2 / Base",
         "R2 / Coral Base",
         "R2 / Novelties",
@@ -7988,7 +7997,12 @@
       "name": "GMK WoB KATAKANA"
     },
     "keycaps/gmk-bread": {
-      "name": "GMK Bread"
+      "name": "GMK Bread",
+      "variants": [
+        "Base",
+        "Extension",
+        "Novelties"
+      ]
     },
     "keycaps/dcs-input": {
       "designer": "MechVault (Cain)",
@@ -7999,7 +8013,12 @@
       "brand": "Signature Plastics"
     },
     "keycaps/gmk-pacific": {
-      "designer": "yoniwolf1202"
+      "designer": "yoniwolf1202",
+      "variants": [
+        "Base",
+        "Propeller (Novelties)",
+        "Wings (Spacebars)"
+      ]
     },
     "keycaps/dcs-hangul-pbt": {
       "designer": "Sunnyd, Kyle",
@@ -8007,10 +8026,23 @@
     },
     "keycaps/gmk-bleached": {
       "name": "GMK Bleached",
-      "designer": "botallu"
+      "designer": "botallu",
+      "variants": [
+        "Base",
+        "NumISO",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-black-lotus": {
-      "name": "GMK Black Lotus"
+      "name": "GMK Black Lotus",
+      "variants": [
+        "40s",
+        "Base",
+        "Hiragana Alphas",
+        "Modifiers",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-godspeed": {
       "name": "GMK GodSpeed",
@@ -8047,7 +8079,14 @@
     },
     "keycaps/gmk-apollo": {
       "name": "GMK Apollo",
-      "designer": "octix"
+      "designer": "octix",
+      "variants": [
+        "Base",
+        "Lunar Module - Novelties",
+        "Propellant Module - 40s / Ortho",
+        "Space Module - Spacebars",
+        "Telemetry Module - Numpad"
+      ]
     },
     "keycaps/gmk-cyl-evil-lime": {
       "name": "GMK CYL Evil Lime",
@@ -8146,7 +8185,18 @@
     },
     "keycaps/dcs-cafe": {
       "designer": "yuukou_ / Langelandia",
-      "brand": "Signature Plastics"
+      "brand": "Signature Plastics",
+      "variants": [
+        "10u Spacebars",
+        "40s",
+        "Alt Alphas",
+        "Base",
+        "Extension",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "Text Mods"
+      ]
     },
     "keycaps/gmk-mercury": {
       "name": "GMK Mercury",
@@ -8186,7 +8236,15 @@
     },
     "keycaps/dcs-guardian": {
       "designer": "Sax_______",
-      "brand": "Signature Plastics"
+      "brand": "Signature Plastics",
+      "variants": [
+        "10u Bar",
+        "Alt Mods",
+        "Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-cyl-combobreaker": {
       "name": "GMK CYL Combobreaker",
@@ -8285,16 +8343,28 @@
     },
     "keycaps/gmk-shark-bait": {
       "name": "GMK Shark Bait",
-      "designer": "WAVES_D0NT_DIE"
+      "designer": "WAVES_D0NT_DIE",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-classic-red": {
-      "name": "GMK Classic Red"
+      "name": "GMK Classic Red",
+      "variants": [
+        "Base",
+        "Red Alphas",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-striker": {
       "name": "GMK Striker",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Macro Expansion",
+        "R2 / Spacebars"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -8369,12 +8439,19 @@
       "name": "GMK Denim"
     },
     "keycaps/gmk-honey": {
-      "name": "GMK Honey"
+      "name": "GMK Honey",
+      "variants": [
+        "Alternate Alphas",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-electric": {
       "name": "GMK Electric",
       "variants": [
         "Base",
+        "Colevrak",
         "Dark Alphas",
         "Extension",
         "NorDeUK",
@@ -8394,28 +8471,48 @@
       ]
     },
     "keycaps/gmk-sumi": {
-      "name": "GMK Sumi"
+      "name": "GMK Sumi",
+      "variants": [
+        "40s/Ortho",
+        "Base",
+        "Hiragana Alphas",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-greek-beige-add-on": {
       "name": "GMK Greek Beige Add-on",
       "designer": "LightiningXI"
     },
     "keycaps/gmk-oni": {
-      "designer": "BapoDonu"
+      "designer": "BapoDonu",
+      "variants": [
+        "Accents",
+        "Base",
+        "Extension",
+        "Hiragana",
+        "Novelties",
+        "UwU"
+      ]
     },
     "keycaps/gmk-daifuku": {
       "designer": "vndytran"
     },
     "keycaps/gmk-midnight-rainbow": {
       "name": "GMK Midnight Rainbow",
-      "designer": "Jae-3soteric"
+      "designer": "Jae-3soteric",
+      "variants": [
+        "Base",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-cyl-green-alert": {
       "name": "GMK CYL Green Alert",
       "variants": [
         "Accent Row",
         "Base",
-        "Extension"
+        "Extension",
+        "US-International Alphas"
       ]
     },
     "keycaps/keykobo-riddim": {
@@ -8518,7 +8615,14 @@
       ]
     },
     "keycaps/gmk-retrowave": {
-      "designer": "SwitchKeys"
+      "designer": "SwitchKeys",
+      "variants": [
+        "Aesthetic",
+        "Base",
+        "Import",
+        "Small",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-reforged": {
       "designer": "fatboycarney",
@@ -8531,6 +8635,7 @@
     "keycaps/gmk-classic-arabic": {
       "name": "GMK Classic Arabic",
       "variants": [
+        "40s",
         "Base",
         "Blue Accents",
         "Greek Addon",
@@ -8539,7 +8644,13 @@
     },
     "keycaps/gmk-fox": {
       "name": "GMK Fox",
-      "designer": "boneandbee"
+      "designer": "boneandbee",
+      "variants": [
+        "Alt Mods",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/dcs-honeywell": {
       "designer": "mcmcmc",
@@ -8569,7 +8680,12 @@
     },
     "keycaps/gmk-watermelon": {
       "name": "GMK Watermelon",
-      "designer": "ogWalker"
+      "designer": "ogWalker",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-pulse": {
       "name": "GMK Pulse"
@@ -8591,7 +8707,12 @@
       "name": "GMK Olive",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Dark Base",
+        "R2 / Extension",
+        "R2 / ISO",
+        "R2 / Light Base",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -8615,6 +8736,7 @@
         "40s",
         "Base",
         "Materia",
+        "NorDeUK",
         "Novelties",
         "Numpad",
         "Spacebars",
@@ -8655,10 +8777,19 @@
     },
     "keycaps/gmk-pixel": {
       "name": "GMK Pixel",
-      "designer": "MitTo"
+      "designer": "MitTo",
+      "variants": [
+        "Base",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-underworld": {
-      "name": "GMK Underworld"
+      "name": "GMK Underworld",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-nines": {
       "name": "GMK Nines",
@@ -8706,6 +8837,7 @@
         "Accent - Spacebars",
         "Base",
         "Dragon - Novelties",
+        "Micro",
         "Zhuyin - Alt Alphas"
       ]
     },
@@ -8714,7 +8846,12 @@
       "designer": "otanishock"
     },
     "keycaps/gmk-inukuma": {
-      "designer": "Influnced"
+      "designer": "Influnced",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-cyl-arcade": {
       "name": "GMK CYL Arcade",
@@ -8888,7 +9025,12 @@
     "keycaps/gmk-firefly": {
       "name": "GMK Firefly",
       "variants": [
-        "R1",
+        "R1 / (DE) Accent",
+        "R1 / 40s",
+        "R1 / Base",
+        "R1 / Icon",
+        "R1 / NorDeUK",
+        "R1 / Numpad",
         "R2 / 40s",
         "R2 / Accents",
         "R2 / Base",
@@ -8934,7 +9076,12 @@
       "designer": "Kingnestea"
     },
     "keycaps/gmk-moon-dust": {
-      "name": "GMK Moon Dust"
+      "name": "GMK Moon Dust",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-classic-blue": {
       "designer": "ARSLOCK"
@@ -8949,7 +9096,12 @@
     },
     "keycaps/gmk-thai-tea": {
       "name": "GMK Thai Tea",
-      "designer": "pyade3"
+      "designer": "pyade3",
+      "variants": [
+        "Alphas",
+        "Base",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-cyl-orange-alert": {
       "name": "GMK CYL Orange Alert",
@@ -9032,19 +9184,25 @@
     },
     "keycaps/gmk-grand-prix": {
       "name": "GMK Grand Prix",
-      "designer": "zekth"
+      "designer": "zekth",
+      "variants": [
+        "40s",
+        "Accents",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-crimson-cadet": {
       "name": "GMK Crimson Cadet",
       "variants": [
-        "Base",
-        "R1",
+        "R1 / Base",
+        "R1 / Spacebars",
+        "R1 / Symbols",
         "R2 / Base",
         "R2 / Spacebars",
         "R2 / Symbols",
-        "R3",
-        "Spacebars",
-        "Symbols"
+        "R3"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -9054,7 +9212,13 @@
     },
     "keycaps/gmk-aurora-polaris": {
       "name": "GMK Aurora Polaris",
-      "designer": "S3LQ"
+      "designer": "S3LQ",
+      "variants": [
+        "Base",
+        "Mod",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/pbtfans-blood-night": {
       "designer": "Mars"
@@ -9071,14 +9235,30 @@
       ]
     },
     "keycaps/gmk-amethyst": {
-      "name": "GMK Amethyst"
+      "name": "GMK Amethyst",
+      "variants": [
+        "Base",
+        "Dark Base",
+        "Extension",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-phosphorous": {
       "name": "GMK Phosphorous"
     },
     "keycaps/gmk-sixes": {
       "name": "GMK Sixes",
-      "designer": "Emir"
+      "designer": "Emir",
+      "variants": [
+        "Base",
+        "Calc (Numpad)",
+        "ISO",
+        "Makeup (Accents)",
+        "Ogre (Ergo)",
+        "Smol (40s)",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-wavez": {
       "name": "GMK Wavez"
@@ -9150,9 +9330,14 @@
       "designer": "janglad",
       "variants": [
         "Accents",
+        "Addition",
+        "Aesthetic",
         "Base",
         "International",
-        "Mac"
+        "Mac",
+        "Modern",
+        "Numbers",
+        "Obscure"
       ]
     },
     "keycaps/dcs-intro-wob": {
@@ -9266,7 +9451,14 @@
       "name": "PBTfans Valhalla"
     },
     "keycaps/gmk-cafe": {
-      "name": "GMK Cafe"
+      "name": "GMK Cafe",
+      "variants": [
+        "Base",
+        "Dark - Alphas",
+        "Extra Shots - Spacebars",
+        "Special Blends - 40s / Ortho",
+        "Sugar - Numpad / ISO"
+      ]
     },
     "keycaps/jtk-shuten-doji": {
       "name": "JTK Shuten-Doji"
@@ -9280,13 +9472,30 @@
       ]
     },
     "keycaps/gmk-yutousu": {
-      "name": "GMK Yutousu"
+      "name": "GMK Yutousu",
+      "variants": [
+        "Base",
+        "Latin Alphas",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-hanok": {
-      "name": "GMK Hanok"
+      "name": "GMK Hanok",
+      "variants": [
+        "Base",
+        "Gray Mods",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-patisserie": {
-      "name": "GMK Patisserie"
+      "name": "GMK Patisserie",
+      "variants": [
+        "Base",
+        "Nom",
+        "Novelties"
+      ]
     },
     "keycaps/gmk-zimo": {
       "name": "GMK Zimo",
@@ -9485,7 +9694,9 @@
       "name": "GMK Rouge",
       "variants": [
         "R1",
-        "R2"
+        "R2 / 40s",
+        "R2 / Base",
+        "R2 / Numpad"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -9520,7 +9731,11 @@
       ]
     },
     "keycaps/gmk-serenity": {
-      "designer": "Mito"
+      "designer": "Mito",
+      "variants": [
+        "Base",
+        "Compact"
+      ]
     },
     "keycaps/dcs-dark-sky": {
       "designer": "Puddsy",
@@ -9942,13 +10157,20 @@
       ]
     },
     "keycaps/gmk-cluck": {
-      "designer": "MIGHTY CHICKEN"
+      "designer": "MIGHTY CHICKEN",
+      "variants": [
+        "Alt Alphas (Cluck)",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/gmk-terror-below": {
       "designer": "Afresh",
       "variants": [
         "Alphas",
         "Base",
+        "NorDe",
         "Novelties",
         "Spacebars"
       ]
@@ -10175,7 +10397,15 @@
       ]
     },
     "keycaps/pbtfans-umbra": {
-      "designer": "Pachriksu"
+      "designer": "Pachriksu",
+      "variants": [
+        "40s",
+        "Base",
+        "Hiragana",
+        "International",
+        "Numpad",
+        "OG Mod"
+      ]
     },
     "keycaps/sa-jadeite": {
       "designer": "HoodrowThrillson & OneCreativeMind",
@@ -10243,7 +10473,7 @@
         "40s Mods",
         "Alphas",
         "Bars",
-        "CYMK",
+        "CMYK",
         "Ergo Mods",
         "Macro",
         "NorDe",
@@ -10269,7 +10499,13 @@
       "name": "GMK Black Mod Addon"
     },
     "keycaps/gmk-classic-bow": {
-      "name": "GMK Classic BoW"
+      "name": "GMK Classic BoW",
+      "variants": [
+        "40s",
+        "Limited Base",
+        "Spacebars",
+        "True Classic Base"
+      ]
     },
     "keycaps/gmk-cubed": {
       "name": "GMK ³ (Cubed)",
@@ -10322,10 +10558,13 @@
       "name": "MW Alhambra",
       "variants": [
         "R1",
+        "R2 / Alphas",
         "R2 / Base",
+        "R2 / Light Mods",
         "R2 / NorDe",
         "R2 / Novelties",
-        "R2 / Numpad"
+        "R2 / Numpad",
+        "R2 / Spacebars"
       ],
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
@@ -10343,7 +10582,13 @@
     "keycaps/sa-recall": {
       "brand": "Signature Plastics",
       "manufacturer": "Signature Plastics",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alts+ISO",
+        "Base",
+        "Numpad",
+        "Ortho"
+      ]
     },
     "keycaps/mt3-abs-solarized-dark": {
       "brand": "Drop",
@@ -10370,7 +10615,49 @@
     },
     "keycaps/kat-napoleonic": {
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s Mods - French Indigo",
+        "40s Mods - Russian Green",
+        "Belgian & Apple French (Marie Louise)",
+        "Blank Ergo Ortho",
+        "BÉPO (Bépoleon Nonaparte)",
+        "Canadian French (Chateauguay)",
+        "Cherokee (Sequoyah)",
+        "Colemak+ (Jonathan Strange)",
+        "Default US English (Jefferson)",
+        "Dvorak (Mr Norrell)",
+        "Ergo Mods - French Indigo",
+        "Ergo Mods - Russian Green",
+        "EurKEY (Blücher)",
+        "French for Windows (Joséphine)",
+        "German (Metternich)",
+        "Hungarian & South Slavic (Doppelkaiser)",
+        "Japanese (Nagasaki)",
+        "Mac",
+        "Madness",
+        "Nordic (Bernadotte)",
+        "Novelties",
+        "Numpad - Austrian White",
+        "Numpad - French Indigo",
+        "Numpad - Russian Green",
+        "Ortho Mods - Austrian White",
+        "Ortho Mods - French Indigo",
+        "Ortho Mods - Russian Green",
+        "Polish & Lithuanian (Uhlan)",
+        "Russian (Alexander)",
+        "South Slavic Cyrillic (Karađorđe)",
+        "Spacebars",
+        "Spanish (Agustina)",
+        "Swiss (Act of Mediation)",
+        "TKL Mods - Austrian White",
+        "TKL Mods - British Navy",
+        "TKL Mods - French Indigo",
+        "TKL Mods - Russian Green",
+        "Tamil (Pondicherry)",
+        "UK English & Irish (Wellington)",
+        "US Int'l & Netherlands (Waterloo)"
+      ]
     },
     "keycaps/dsa-otaku-kiibodo": {
       "material": "PBT"
@@ -10607,7 +10894,13 @@
       "brand": "Awekeys",
       "profile": "Cherry",
       "manufacturer": "Awekeys",
-      "name": "Awekeys The Copper Eagle"
+      "name": "Awekeys The Copper Eagle",
+      "variants": [
+        "7u Spacebars",
+        "Alice",
+        "Base",
+        "Novelties"
+      ]
     },
     "keycaps/dcx-garnet": {
       "brand": "Drop",
@@ -10645,7 +10938,16 @@
       "manufacturer": "Infinikey"
     },
     "keycaps/mw-norse": {
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Dark Base + Novelties",
+        "Dark Numpad",
+        "Light Alphas",
+        "Light Base + Novelties",
+        "Light Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/dcs-toxic": {
       "name": "DCS Toxic",
@@ -10668,7 +10970,14 @@
     "keycaps/deadline-air-hutt": {
       "brand": "Deadline Studio",
       "manufacturer": "Deadline Studio",
-      "name": "Deadline Air-Hutt"
+      "name": "Deadline Air-Hutt",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/tut-shape": {
       "profile": "Cherry",
@@ -10971,7 +11280,14 @@
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
       "name": "Deadline Air-Mallche",
-      "material": "PC"
+      "material": "PC",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/wda-white-dew": {
       "profile": "WDA",
@@ -11103,7 +11419,13 @@
     "keycaps/pbs-retro-s-m-ag": {
       "manufacturer": "Keyreative",
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s Base",
+        "Alphas",
+        "General Base",
+        "Numpad"
+      ]
     },
     "keycaps/dcd-harry-potter-slytherin": {
       "brand": "Drop",
@@ -11114,7 +11436,14 @@
     "keycaps/deadline-air-pitaya": {
       "brand": "Deadline Studio",
       "manufacturer": "Deadline Studio",
-      "name": "Deadline Air-Pitaya"
+      "name": "Deadline Air-Pitaya",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/iv-kanketsu": {
       "profile": "Cherry",
@@ -11221,17 +11550,43 @@
       "manufacturer": "Keyreative",
       "material": "PBT",
       "brand": "Keyreative",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Base (DE)",
+        "International",
+        "Katakana",
+        "Lamp",
+        "Mega",
+        "Mega (DE)",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/kat-overgrown": {
       "material": "PBT",
       "brand": "Keyreative",
       "variants": [
+        "Abandoned 40s Mods",
         "Abandoned Alphas",
+        "Abandoned Bortho Mods",
+        "Abandoned Numpad",
         "Abandoned TKL",
+        "All Accents",
+        "Constructed 40s Mods",
         "Constructed Alphas",
         "Constructed Base",
-        "Overgrown Base"
+        "Constructed Bortho Mods",
+        "Constructed Numpad",
+        "Constructed TKL Mods",
+        "Novelties",
+        "Overgrown Base",
+        "Reclaimed 40s Mods",
+        "Reclaimed Alphas",
+        "Reclaimed Bortho Mods",
+        "Reclaimed Numpad",
+        "Reclaimed TKL Mods"
       ]
     },
     "keycaps/keymaze-geometric-fairytale": {
@@ -11294,7 +11649,18 @@
     },
     "keycaps/kam-little-pilot": {
       "material": "PBT",
-      "brand": "Keyreative"
+      "brand": "Keyreative",
+      "variants": [
+        "40s",
+        "Alphas",
+        "Base Mods",
+        "Ergo",
+        "Exotic",
+        "Homing",
+        "ISO UK",
+        "Numpad",
+        "Ortho"
+      ]
     },
     "keycaps/mt3-abs-dusk": {
       "manufacturer": "Drop",
@@ -11331,12 +11697,22 @@
       "material": "PBT",
       "brand": "Keyreative",
       "variants": [
+        "40s",
         "Alienese Alphas",
+        "Colevrak",
+        "Ergo",
+        "Ergo Blanks",
+        "French",
         "Icon Mods",
         "Latin Alphas",
         "Latin/ Alienese Alphas",
+        "Neon Spacebars",
         "NorDeUK",
+        "Novelties",
+        "Numpad",
+        "Ortho",
         "Pink Spacebars",
+        "South",
         "Spacebars",
         "Text & Icon Mods"
       ]
@@ -11453,7 +11829,14 @@
       "manufacturer": "TomatoCaps",
       "brand": "TomatoCaps",
       "profile": "Cherry",
-      "designer": "shawnlyx"
+      "designer": "shawnlyx",
+      "variants": [
+        "Alt Alphas",
+        "Alt Mods",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/kam-80s-after-dark": {
       "brand": "Keyreative",
@@ -11540,8 +11923,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Bakeneko Kit",
-        "V1"
+        "V1",
+        "Version unspecified / Bakeneko"
       ]
     },
     "keycaps/kbm-mv-synth": {
@@ -11635,19 +12018,19 @@
     "keycaps/dcs-midnight": {
       "name": "DCS Midnight",
       "variants": [
-        "7u Spacebars - Dark Gray (GB)",
-        "7u Spacebars - Light Gray (GUG)",
-        "7u Spacebars - Teal",
-        "Additional Mods",
-        "Additional Mods (Twilight)",
-        "Base",
-        "ISO",
-        "Numpad Midnight",
-        "Numpad Twilight",
         "R1",
         "R2",
-        "Twilight Base",
-        "WASD and Arrows"
+        "Round unspecified / 7u Spacebars - Dark Gray (GB)",
+        "Round unspecified / 7u Spacebars - Light Gray (GUG)",
+        "Round unspecified / 7u Spacebars - Teal",
+        "Round unspecified / Additional Mods",
+        "Round unspecified / Additional Mods (Twilight)",
+        "Round unspecified / Base",
+        "Round unspecified / ISO",
+        "Round unspecified / Numpad Midnight",
+        "Round unspecified / Numpad Twilight",
+        "Round unspecified / Twilight Base",
+        "Round unspecified / WASD and Arrows"
       ],
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
@@ -11697,7 +12080,22 @@
     },
     "keycaps/kat-lich": {
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Alphas",
+        "Colevrak+",
+        "Ergo",
+        "Ergo - Legends",
+        "French",
+        "Mods",
+        "North",
+        "Novelties",
+        "Numpad",
+        "Ortho",
+        "South",
+        "Spacebars"
+      ]
     },
     "keycaps/dcs-lily": {
       "brand": "Signature Plastics"
@@ -11719,7 +12117,32 @@
     },
     "keycaps/kat-cat-s-eye": {
       "material": "PBT",
-      "brand": "Keyreative"
+      "brand": "Keyreative",
+      "variants": [
+        "40s",
+        "Alphas Dark",
+        "Alphas Light",
+        "Alternate Color",
+        "Colevrak Dark",
+        "Colevrak Light",
+        "Ergo Dark",
+        "Ergo Light",
+        "ISO Dark",
+        "ISO Light",
+        "Mac",
+        "Modifiers Dark",
+        "Modifiers Light",
+        "Modifiers Plus",
+        "North Dark",
+        "North Light",
+        "Novelties",
+        "Numpad Dark",
+        "Numpad Light",
+        "Ortho Dark",
+        "Ortho Light",
+        "Space Dark",
+        "Space Light"
+      ]
     },
     "keycaps/mt3-abs-cyber": {
       "manufacturer": "Drop",
@@ -11747,7 +12170,22 @@
     },
     "keycaps/epbt-kon-momo": {
       "material": "PBT",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Anti-Color Addon",
+        "Arrow",
+        "Base",
+        "Color Addon",
+        "Icon",
+        "MINI Addon",
+        "Nomad",
+        "Numpad",
+        "Short Bar 1",
+        "Short Bar 2",
+        "Short Bar 3",
+        "Short Bar 4",
+        "Short Bar 5"
+      ]
     },
     "keycaps/kap-disconnected-dark": {
       "profile": "Cherry",
@@ -11770,7 +12208,13 @@
       "manufacturer": "KeyBee Manufacturing",
       "material": "PBT",
       "profile": "Cherry",
-      "brand": "KeyBee Manufacturing"
+      "brand": "KeyBee Manufacturing",
+      "variants": [
+        "40s",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/dss-after-school-1992": {
       "brand": "Signature Plastics"
@@ -11807,7 +12251,21 @@
     },
     "keycaps/kat-eternal": {
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s/Ortho Icon",
+        "40s/Ortho Text",
+        "60 - TKL Icon",
+        "60 - TKL Text",
+        "Alphas",
+        "Colevrak",
+        "Ergodox",
+        "French",
+        "International",
+        "Novelties",
+        "Numpad",
+        "UK"
+      ]
     },
     "keycaps/dss-honeywell-40-fix-kit": {
       "material": "ABS",
@@ -12056,7 +12514,12 @@
       "name": "ePBT Cool Kids",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Backpack",
+        "R2 / Base",
+        "R2 / Numpad",
+        "R2 / Pencils",
+        "R2 / Rubbers",
+        "R2 / Smileys"
       ],
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
@@ -12193,14 +12656,27 @@
     "keycaps/sa-skyriter": {
       "manufacturer": "Signature Plastics",
       "material": "ABS",
-      "brand": "Signature Plastics"
+      "brand": "Signature Plastics",
+      "variants": [
+        "Alphas",
+        "ISO",
+        "Novelties",
+        "Numpad",
+        "Ortho/40s",
+        "Spacekeys",
+        "TKL/Specialty"
+      ]
     },
     "keycaps/hsa-white-on-black-hsa-beige-on-brown": {
       "material": "ABS",
       "brand": "JTK"
     },
     "keycaps/dcs-root-beer": {
-      "brand": "Signature Plastics"
+      "brand": "Signature Plastics",
+      "variants": [
+        "Base",
+        "Extension"
+      ]
     },
     "keycaps/mt3-abs-jasmine": {
       "manufacturer": "Drop",
@@ -12291,14 +12767,26 @@
     "keycaps/epbt-creative-studio": {
       "material": "PBT",
       "variants": [
+        "AI Modern",
+        "AI Modifiers",
+        "AI Nomad",
+        "AI Novelties",
+        "AI Numpad",
+        "Base",
+        "Base without Sublegends",
+        "French-Belgian",
+        "Italian-Spanish-Portuguese",
+        "Neutral Modern",
         "Neutral Modifiers",
         "Neutral Nomad",
         "Neutral Numpad",
         "NorDe++",
+        "PS Modern",
         "PS Modifiers",
         "PS Nomad",
         "PS Novelties",
-        "PS Numpad"
+        "PS Numpad",
+        "Spacebars"
       ]
     },
     "keycaps/dsa-scientific": {
@@ -12312,7 +12800,12 @@
       "manufacturer": "Infinikey",
       "name": "IFK Doggie",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Ortho/40/ISO"
+      ]
     },
     "keycaps/nicepbt-r-beige": {
       "brand": "CannonKeys",
@@ -12410,11 +12903,11 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Base / Hiragana",
-        "Base / Standard",
-        "Novelty Kit",
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / Base / Hiragana",
+        "Round unspecified / Base / Standard",
+        "Round unspecified / Novelty"
       ]
     },
     "keycaps/fbb-s9000": {
@@ -12450,7 +12943,19 @@
       "brand": "Signature Plastics"
     },
     "keycaps/dsa-petrikeys": {
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s/Ortho",
+        "Alphas",
+        "Alphas Spacebars",
+        "Ergo",
+        "Homing",
+        "International",
+        "Mod Spacebars",
+        "Novelties",
+        "Numpad",
+        "TKL"
+      ]
     },
     "keycaps/sw-calm-beige-pbt": {
       "profile": "Cherry"
@@ -12585,7 +13090,18 @@
     },
     "keycaps/kat-hyperfuse": {
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Alphas",
+        "Modifiers (Icon)",
+        "Modifiers (Text)",
+        "Novelties",
+        "Purple Accent (Icon)",
+        "Purple Accent (Text)",
+        "Spacebars",
+        "Teal Accent (Icon)",
+        "Teal Accent (Text)"
+      ]
     },
     "keycaps/dcx-hyperfuse": {
       "profile": "DCX",
@@ -12641,7 +13157,12 @@
     },
     "keycaps/dcs-delftware": {
       "brand": "Signature Plastics",
-      "name": "DCS Delftware"
+      "name": "DCS Delftware",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     "keycaps/dmk-choco-donuts": {
       "name": "DMK Choco Donuts",
@@ -12706,7 +13227,11 @@
       "brand": "CannonKeys",
       "material": "PBT",
       "manufacturer": "NicePBT",
-      "name": "NicePBT Noel"
+      "name": "NicePBT Noel",
+      "variants": [
+        "R3 / Base - Hiragana",
+        "R3 / Base - Latin"
+      ]
     },
     "keycaps/dcs-otd-red-alert-rebel-2-0-plus-2-1": {
       "brand": "Signature Plastics"
@@ -13006,7 +13531,11 @@
       "material": "PBT"
     },
     "keycaps/mtnu-foundation": {
-      "brand": "GMK"
+      "brand": "GMK",
+      "variants": [
+        "Accents",
+        "Base"
+      ]
     },
     "keycaps/sa-motorsport-selectric": {
       "material": "ABS",
@@ -13064,7 +13593,30 @@
     },
     "keycaps/kat-lala": {
       "material": "PBT",
-      "brand": "Keyreative"
+      "brand": "Keyreative",
+      "variants": [
+        "Alternate",
+        "Base (Dark)",
+        "Base (Light)",
+        "Ergo (Dark)",
+        "Ergo (Light)",
+        "Ergo (White)",
+        "ISO (Dark)",
+        "ISO (Light)",
+        "ISO (White)",
+        "Mac",
+        "Modifiers",
+        "NorDe (Dark)",
+        "NorDe (Light)",
+        "NorDe (White)",
+        "Novelties",
+        "Numpad (Dark)",
+        "Numpad (Light)",
+        "Spacebars (Dark)",
+        "Spacebars (Light)",
+        "Spacebars (White)",
+        "White Alphas"
+      ]
     },
     "keycaps/hsa-wob": {
       "brand": "JTK"
@@ -13091,7 +13643,26 @@
     },
     "keycaps/kat-comet": {
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s/Ortho",
+        "Alphas",
+        "Alt Alphas",
+        "Alt Hiragana",
+        "Alt Numpad",
+        "Alt TKL",
+        "Colevrak+",
+        "Ergo",
+        "French",
+        "Hiragana",
+        "Icon Mods",
+        "North",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "TKL",
+        "Text Mods"
+      ]
     },
     "keycaps/nicepbt-cadet-sublegend-classic-beige": {
       "brand": "CannonKeys",
@@ -13160,7 +13731,14 @@
     "keycaps/deadline-air-wave": {
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "name": "Deadline Air-Wave"
+      "name": "Deadline Air-Wave",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/mtnu-800-os2-0": {
       "brand": "GMK",
@@ -13243,7 +13821,12 @@
     "keycaps/pbs-crispin": {
       "brand": "Keyreative",
       "material": "PBT",
-      "manufacturer": "Keyreative"
+      "manufacturer": "Keyreative",
+      "variants": [
+        "40s/Ortho Base",
+        "Mac",
+        "Regular Base"
+      ]
     },
     "keycaps/nicepbt-japanese-sublegend-classic-beige": {
       "manufacturer": "NicePBT",
@@ -13340,7 +13923,14 @@
     },
     "keycaps/deadline-air-anchor": {
       "manufacturer": "Deadline Studio",
-      "brand": "Deadline Studio"
+      "brand": "Deadline Studio",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/dcs-america": {
       "brand": "Signature Plastics"
@@ -13361,7 +13951,14 @@
       "brand": "Geekark"
     },
     "keycaps/dcs-alps-pingmaster": {
-      "brand": "Signature Plastics"
+      "brand": "Signature Plastics",
+      "variants": [
+        "40s/Spacebars",
+        "Accent",
+        "Base",
+        "JIS & MacOS",
+        "Relegendable"
+      ]
     },
     "keycaps/sa-sculpted-bliss": {
       "material": "ABS"
@@ -13478,15 +14075,26 @@
       "manufacturer": "NicePBT"
     },
     "keycaps/mtnu-beige": {
-      "brand": "GMK"
+      "brand": "GMK",
+      "variants": [
+        "3A/3C Accents",
+        "Addon",
+        "Base",
+        "International",
+        "Orange Accents",
+        "Typist"
+      ]
     },
     "keycaps/kam-sewing-tin": {
       "material": "PBT",
       "brand": "Keyreative",
       "variants": [
         "Alphas",
+        "Alternate Numrow",
         "Base - Mixed",
         "Base - Novelties",
+        "Colevrak",
+        "Ergo",
         "Extras - Buttons",
         "Extras - Cookies",
         "ISO",
@@ -13732,13 +14340,15 @@
     "keycaps/dcs-smrt": {
       "brand": "Signature Plastics",
       "variants": [
-        "10u Spacebars",
-        "40s-Ortho",
-        "Accents",
-        "Alternates",
-        "Base",
-        "Ergo",
-        "Numpad"
+        "R2 / LED",
+        "R2 / Split Spacebars",
+        "Round unspecified / 10u Spacebars",
+        "Round unspecified / 40s-Ortho",
+        "Round unspecified / Accents",
+        "Round unspecified / Alternates",
+        "Round unspecified / Base",
+        "Round unspecified / Ergo",
+        "Round unspecified / Numpad"
       ]
     },
     "keycaps/dcs-rainbow": {
@@ -13762,7 +14372,15 @@
       "profile": "Cherry"
     },
     "keycaps/kkb-outer-bounds": {
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Accents",
+        "Base",
+        "Dark Alphas",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/dmk-deicide": {
       "material": "PBT",
@@ -14144,7 +14762,17 @@
     },
     "keycaps/kam-command": {
       "brand": "Keyreative",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s + Ortho Modifiers",
+        "Alphas",
+        "Blank Alphas",
+        "Ergo",
+        "Modifiers",
+        "Numpad",
+        "Spacebars",
+        "UK"
+      ]
     },
     "keycaps/dmk-seven-elements-slime": {
       "material": "ABS",
@@ -14380,7 +15008,15 @@
       ]
     },
     "keycaps/mtnu-susu": {
-      "brand": "GMK"
+      "brand": "GMK",
+      "variants": [
+        "Base",
+        "Extras",
+        "International",
+        "Mad Typist",
+        "Monotone",
+        "Numpad"
+      ]
     },
     "keycaps/dmk-hx-20": {
       "material": "ABS",
@@ -14496,7 +15132,12 @@
       "brand": "Signature Plastics"
     },
     "keycaps/dcs-olivetti": {
-      "brand": "Signature Plastics"
+      "brand": "Signature Plastics",
+      "variants": [
+        "Base",
+        "Extension",
+        "Numpad"
+      ]
     },
     "keycaps/sl-pbt-melon-milk": {
       "profile": "Cherry"
@@ -14556,28 +15197,28 @@
     "keycaps/dsa-granite": {
       "name": "DSA Granite",
       "variants": [
-        "Apple",
-        "Bonus Pack",
-        "Common/Alphas",
-        "Ergo",
-        "Extreme Modifiers (Icon Legends)",
-        "Extreme Modifiers (Text Legends)",
-        "Homing",
-        "ISO",
-        "International",
-        "Mono Legends",
-        "Numpad",
-        "Pro Modifiers (Icon Legends)",
-        "Pro Modifiers (Text Legends)",
         "R1",
         "R2",
-        "RGB(YO) (Icon Legends)",
-        "RGB(YO) (Text Legends)",
-        "Secondary Legends",
-        "TKL Modifiers (Icon Legends)",
-        "TKL Modifiers (Text Legends)",
-        "UK",
-        "Windows"
+        "Round unspecified / Apple",
+        "Round unspecified / Bonus Pack",
+        "Round unspecified / Common/Alphas",
+        "Round unspecified / Ergo",
+        "Round unspecified / Extreme Modifiers (Icon Legends)",
+        "Round unspecified / Extreme Modifiers (Text Legends)",
+        "Round unspecified / Homing",
+        "Round unspecified / ISO",
+        "Round unspecified / International",
+        "Round unspecified / Mono Legends",
+        "Round unspecified / Numpad",
+        "Round unspecified / Pro Modifiers (Icon Legends)",
+        "Round unspecified / Pro Modifiers (Text Legends)",
+        "Round unspecified / RGB(YO) (Icon Legends)",
+        "Round unspecified / RGB(YO) (Text Legends)",
+        "Round unspecified / Secondary Legends",
+        "Round unspecified / TKL Modifiers (Icon Legends)",
+        "Round unspecified / TKL Modifiers (Text Legends)",
+        "Round unspecified / UK",
+        "Round unspecified / Windows"
       ],
       "manufacturer": null,
       "brand": null,
@@ -14589,7 +15230,13 @@
       "profile": "Cherry"
     },
     "keycaps/kkb-khonsu": {
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/dcs-10u-spacebars": {
       "brand": "Signature Plastics",
@@ -14638,13 +15285,25 @@
       "brand": "Signature Plastics"
     },
     "keycaps/mtnu-800": {
-      "brand": "GMK"
+      "brand": "GMK",
+      "variants": [
+        "Base",
+        "Module A",
+        "Module B",
+        "Module C"
+      ]
     },
     "keycaps/kkb-retro-mixed-lights": {
       "name": "KKB Retro Mixed Lights",
       "variants": [
         "R1",
-        "R2"
+        "R2 / 40s",
+        "R2 / Alphas",
+        "R2 / Base",
+        "R2 / Dark Alphas",
+        "R2 / Numpad",
+        "R2 / Relegendables",
+        "R2 / Spacebars"
       ],
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
@@ -14656,7 +15315,12 @@
       "material": "ABS"
     },
     "keycaps/kkb-poltergeist": {
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/epbt-pink-on-black": {
       "material": "ABS"
@@ -14885,6 +15549,7 @@
       "designer": "SxM Designs",
       "variants": [
         "Base",
+        "International",
         "Macros",
         "Novelties",
         "Numpad",
@@ -14898,7 +15563,13 @@
       "name": "GMK Originative"
     },
     "keycaps/gmk-seafarer": {
-      "designer": "iinko_mk"
+      "designer": "iinko_mk",
+      "variants": [
+        "40s",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     "keycaps/tai-hao-hygge": {
       "name": "Tai-Hao Hygge"
@@ -15297,7 +15968,11 @@
       "material": "PBT"
     },
     "keycaps/keykobo-rainbow-accent": {
-      "name": "KKB RainBoW Accent"
+      "name": "KKB RainBoW Accent",
+      "variants": [
+        "RainBoW Icon",
+        "RainBoW Text"
+      ]
     },
     "keycaps/kfapbt-pink-robin": {
       "material": "PBT"
@@ -15337,7 +16012,12 @@
       "profile": null
     },
     "keycaps/dsyk-lumberjacks": {
-      "name": "DSYK Lumberjacks"
+      "name": "DSYK Lumberjacks",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     "keycaps/winmix-sa-chalk": {
       "name": "WINMIX SA Chalk",
@@ -15373,7 +16053,14 @@
       "profile": "Cherry"
     },
     "keycaps/epbt-firearm": {
-      "name": "ePBT Firearm"
+      "name": "ePBT Firearm",
+      "variants": [
+        "Base",
+        "Gray",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/kfapbt-moss": {
       "name": "kfaPBT Moss",
@@ -15405,7 +16092,11 @@
       "name": "Doys Dat.1",
       "manufacturer": "Deadline Studio",
       "profile": "DOYS",
-      "material": "PC"
+      "material": "PC",
+      "variants": [
+        "Base",
+        "Numpad"
+      ]
     },
     "keycaps/kfapbt-black-on-white": {
       "material": "PBT"
@@ -15431,12 +16122,21 @@
       "manufacturer": "MAXKEY"
     },
     "keycaps/kat-alpha": {
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Base",
+        "Ergo"
+      ]
     },
     "keycaps/kbdfans-extended-2048-ec": {
       "name": "KBDfans Extended 2048 EC",
       "brand": "KBDfans",
-      "designer": "biip"
+      "designer": "biip",
+      "variants": [
+        "Base",
+        "Icono"
+      ]
     },
     "keycaps/ws-yamanote-line": {
       "name": "WS Yamanote Line"
@@ -15563,12 +16263,14 @@
     "keycaps/mw-kaworu": {
       "profile": "Cherry",
       "variants": [
+        "Alphas",
         "Hiragana Base",
         "Icon Base",
         "Katakana Base",
         "NorDe",
         "Novelties",
-        "Spacebars"
+        "Spacebars",
+        "White Alphas"
       ]
     },
     "keycaps/mw-underland": {
@@ -15616,6 +16318,7 @@
       "variants": [
         "Alt Alphas",
         "Base",
+        "NorDeUK",
         "Novelties",
         "Numpad",
         "Spacebars"
@@ -15713,6 +16416,7 @@
       "variants": [
         "Base",
         "HHKB",
+        "Latin Alphas",
         "Numpad",
         "Spacebars"
       ]
@@ -15761,17 +16465,34 @@
       "designer": "Shipkie"
     },
     "keycaps/gmk-pink-on-navy": {
-      "name": "GMK Pink on Navy"
+      "name": "GMK Pink on Navy",
+      "variants": [
+        "Base",
+        "Spacebars"
+      ]
     },
     "keycaps/dsa-berry-yogurt": {
-      "designer": "misononyan"
+      "designer": "misononyan",
+      "variants": [
+        "Base",
+        "Blueberry Accent",
+        "Ergo",
+        "International",
+        "Novelties",
+        "Numpad",
+        "Strawberry Accent"
+      ]
     },
     "keycaps/dcs-white-on-black-kfa": {
       "name": "DCS White on Black (KFA)",
       "brand": "KeebsForAll",
       "manufacturer": "Signature Plastics",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension"
+      ]
     },
     "keycaps/gmk-cyl-bow": {
       "name": "GMK CYL BoW",
@@ -22056,7 +22777,11 @@
       "name": "80Retros Game 1989",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "R3 / Base - EN",
+        "R3 / Base - JP",
+        "R3 / Extension",
+        "R3 / Novelties"
       ],
       "manufacturer": null,
       "brand": "80Retros",
@@ -22200,18 +22925,20 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "40s Addon",
-        "Ortho & Vim",
         "R1",
         "R2",
-        "R3"
+        "R3",
+        "Standalone / 40s Addon",
+        "Standalone / Ortho & Vim"
       ]
     },
     "keycaps/gmk-delta": {
       "name": "GMK Delta",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -22267,7 +22994,13 @@
       "name": "GMK Nautilus",
       "variants": [
         "R1",
-        "R2"
+        "R2 / 40s",
+        "R2 / Base",
+        "R2 / Explorer",
+        "R2 / International",
+        "R2 / Mac",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -22278,7 +23011,10 @@
     "keycaps/gmk-noel": {
       "name": "GMK Noel",
       "variants": [
-        "R1",
+        "R1 / 40s/Ortho/Spacebars (Extension)",
+        "R1 / Base",
+        "R1 / Hiragana Alphas",
+        "R1 / Novelties",
         "R2 / Base",
         "R2 / Hiragana Alphas",
         "R2 / Novelties"
@@ -22305,7 +23041,10 @@
       "name": "GMK Shoko",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Hiragana",
+        "R2 / Obscure",
+        "R2 / Spacebars"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -22353,7 +23092,13 @@
       "name": "GMK Taro",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Boba Alphas",
+        "R2 / Extra Straws (Spacebars)",
+        "R2 / Extra Toppings (Accent)",
+        "R2 / Milk Tea Mods",
+        "R2 / Side Snacks (Novelties)",
+        "R2 / Small Portion (40s)"
       ],
       "manufacturer": "GMK",
       "brand": "GMK",
@@ -22418,8 +23163,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "International Translucent",
-        "Numpad Translucent",
         "R1",
         "R2 / 40s",
         "R2 / Base",
@@ -22430,7 +23173,9 @@
         "R3 / Blue Spacebars",
         "R3 / Numpad",
         "R3 / Semi-transparent Base",
-        "R3 / White Spacebars"
+        "R3 / White Spacebars",
+        "Round unspecified / International Translucent",
+        "Round unspecified / Numpad Translucent"
       ]
     },
     "keycaps/pbtfans-rim": {
@@ -22490,14 +23235,14 @@
     "keycaps/sa-grand-budapest": {
       "name": "SA Grand Budapest",
       "variants": [
-        "Base",
-        "Concierge",
-        "Ergo",
-        "Novelties",
-        "Numpad",
         "R1",
         "R2",
-        "Zero"
+        "Round unspecified / Base",
+        "Round unspecified / Concierge",
+        "Round unspecified / Ergo",
+        "Round unspecified / Novelties",
+        "Round unspecified / Numpad",
+        "Round unspecified / Zero"
       ],
       "manufacturer": null,
       "brand": null,
@@ -22544,8 +23289,14 @@
     "keycaps/sa-oblivion": {
       "name": "SA Oblivion",
       "variants": [
-        "R1",
-        "R2"
+        "V1",
+        "V2 / Git Modifiers",
+        "V2 / Hagoromo ASCII Alphas",
+        "V2 / Oblivion ASCII Alphas",
+        "V2 / Oblivion Alphas",
+        "V2 / Oblivion Modifiers",
+        "V2 / Oblivion Numpad",
+        "V2 / Vim"
       ],
       "manufacturer": null,
       "brand": null,
@@ -22570,7 +23321,11 @@
       "name": "SA Strong Spirit",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / Base",
+        "Round unspecified / Novelties",
+        "Round unspecified / Spacebars",
+        "Round unspecified / Spirit"
       ],
       "manufacturer": null,
       "brand": null,
@@ -25443,22 +26198,22 @@
     "keycaps/sa-r3-1976": {
       "name": "SA-R3 1976",
       "variants": [
-        "60% / Alphas",
-        "7u Spacebars",
-        "Alternate",
-        "Alternate Gradient",
-        "Arrows",
-        "Colevrak",
-        "Colors",
-        "Ergo",
-        "Ergo Redox Add-ons",
-        "ISO",
-        "Novelties",
-        "Numpad",
-        "Ortho",
         "R1",
         "R2",
-        "TKL Add-ons"
+        "Round unspecified / 60% / Alphas",
+        "Round unspecified / 7u Spacebars",
+        "Round unspecified / Alternate",
+        "Round unspecified / Alternate Gradient",
+        "Round unspecified / Arrows",
+        "Round unspecified / Colevrak",
+        "Round unspecified / Colors",
+        "Round unspecified / Ergo",
+        "Round unspecified / Ergo Redox Add-ons",
+        "Round unspecified / ISO",
+        "Round unspecified / Novelties",
+        "Round unspecified / Numpad",
+        "Round unspecified / Ortho",
+        "Round unspecified / TKL Add-ons"
       ],
       "profile": "SA-R3"
     },
@@ -26123,7 +26878,11 @@
       "name": "GMK Frost Witch",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / Accent",
+        "Round unspecified / Base",
+        "Round unspecified / Novelties",
+        "Round unspecified / Spacebars"
       ]
     },
     "keycaps/gmk-jamon": {
@@ -26135,7 +26894,9 @@
       "name": "GMK Jamon",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Macro Expansion",
+        "R2 / Novelties"
       ]
     },
     "keycaps/gmk-mecha-01": {
@@ -26147,7 +26908,12 @@
       "name": "GMK Mecha-01",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / Base",
+        "Round unspecified / Berserk",
+        "Round unspecified / Extras",
+        "Round unspecified / Novelties",
+        "Round unspecified / Spacebars"
       ]
     },
     "keycaps/gmk-metaverse": {
@@ -26188,7 +26954,10 @@
       "name": "GMK Red Alert",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Crimson Cyrillic",
+        "R2 / Extension - Classic Compute",
+        "R2 / Num Row"
       ]
     },
     "keycaps/gmk-rgbyk": {
@@ -26273,15 +27042,15 @@
       "material": "PBT",
       "name": "GOM Salmon Reborn",
       "variants": [
-        "40s",
-        "Accent",
-        "Base",
-        "Caviar",
-        "Grey Alphas",
-        "Numpad",
-        "Pink Alphas",
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / 40s",
+        "Round unspecified / Accent",
+        "Round unspecified / Base",
+        "Round unspecified / Caviar",
+        "Round unspecified / Grey Alphas",
+        "Round unspecified / Numpad",
+        "Round unspecified / Pink Alphas"
       ]
     },
     "keycaps/gom-winter-breath": {
@@ -26397,15 +27166,14 @@
       "material": "ABS",
       "name": "KKB Shirasagi",
       "variants": [
-        "Base",
-        "Hiragana",
-        "Hiragana UK",
-        "Novelties",
-        "Numpad",
-        "R1",
-        "R2",
-        "Spacebars",
-        "UK"
+        "R1 / Base",
+        "R1 / Hiragana",
+        "R1 / Hiragana UK",
+        "R1 / Novelties",
+        "R1 / Numpad",
+        "R1 / Spacebars",
+        "R1 / UK",
+        "R2"
       ]
     },
     "keycaps/keychron-knight": {
@@ -26447,12 +27215,16 @@
       "material": "PBT",
       "name": "MW Poker",
       "variants": [
-        "Alphas",
-        "Base",
-        "Novelties",
-        "R1",
-        "R2",
-        "Spacebars"
+        "R1 / Alphas",
+        "R1 / Base",
+        "R1 / Novelties",
+        "R1 / Spacebars",
+        "R2 / Alphas",
+        "R2 / Base",
+        "R2 / Novelties",
+        "R2 / Numpad",
+        "R2 / Relegendables",
+        "R2 / Spacebars"
       ]
     },
     "keycaps/pbs-black-on-black": {
@@ -26463,10 +27235,10 @@
       "material": "PBT",
       "name": "PBS Black on Black",
       "variants": [
-        "Base",
-        "Modi",
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / Base",
+        "Round unspecified / Modi"
       ]
     },
     "keycaps/pbtfans-abs-atomic-purple": {
@@ -26511,12 +27283,11 @@
       "profile": "Cherry",
       "material": null,
       "variants": [
-        "40s Kit",
-        "Alphas Kit",
-        "Icon Numpad Kit",
-        "International Kit",
-        "Numpad Kit",
-        "R1",
+        "R1 / 40s",
+        "R1 / Alphas",
+        "R1 / Icon Numpad",
+        "R1 / International",
+        "R1 / Numpad",
         "R2"
       ]
     },
@@ -26528,10 +27299,10 @@
       "material": "ABS",
       "name": "PBTfans Neon",
       "variants": [
-        "40s",
         "R1",
         "R2",
-        "Spacebars - Yellow"
+        "Round unspecified / 40s",
+        "Round unspecified / Spacebars - Yellow"
       ]
     },
     "keycaps/pbtfans-abs-pelican": {
@@ -26557,18 +27328,17 @@
       "material": "ABS",
       "name": "PBTfans ABS Poco",
       "variants": [
-        "40s",
-        "Alphas",
-        "Base",
-        "International",
-        "Numpad",
-        "R1",
+        "R1 / 40s",
+        "R1 / Alphas",
+        "R1 / Base",
+        "R1 / International",
+        "R1 / Numpad",
+        "R1 / Spacebars",
         "R2 / 40s",
         "R2 / Base",
         "R2 / International",
         "R2 / Numpad",
-        "R2 / Spacebars",
-        "Spacebars"
+        "R2 / Spacebars"
       ]
     },
     "keycaps/pbtfans-purpolch": {
@@ -26624,10 +27394,9 @@
       "profile": "Cherry",
       "material": null,
       "variants": [
-        "40s Kit",
-        "International Kit",
-        "Numpad Kit",
-        "R1",
+        "R1 / 40s",
+        "R1 / International",
+        "R1 / Numpad",
         "R2"
       ]
     },
@@ -26639,8 +27408,9 @@
       "profile": "Cherry",
       "material": null,
       "variants": [
-        "40s",
-        "R1",
+        "R1 / 40s",
+        "R1 / RGBY",
+        "R1 / RGBY Text",
         "R2 / 40s",
         "R2 / Base",
         "R2 / International",
@@ -26648,9 +27418,7 @@
         "R2 / Pure Alphas",
         "R2 / Rainbow",
         "R2 / Relegendables",
-        "R2 / Spacebars",
-        "RGBY",
-        "RGBY Text"
+        "R2 / Spacebars"
       ]
     },
     "keycaps/pbtfans-abs-ronin": {
@@ -26660,7 +27428,13 @@
       "profile": "Cherry",
       "material": "ABS",
       "name": "PBTfans ABS Ronin",
-      "variants": null
+      "variants": [
+        "40s",
+        "Base",
+        "Base Sublegend",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     "keycaps/pbtfans-abs-soul-blossom": {
       "manufacturer": "PBTfans",
@@ -26724,7 +27498,6 @@
       "name": "PBTfans Spark",
       "variants": [
         "R1",
-        "R2",
         "R2 / 40s",
         "R3 / Base",
         "R3 / Blue Modifiers",
@@ -26775,18 +27548,17 @@
       "material": "ABS",
       "name": "SA Bliss - Sculpted",
       "variants": [
-        "Alphas",
-        "Modifiers",
-        "NorDe",
-        "Numpad",
-        "Pink Alphas",
-        "Pink Modifiers",
         "R1",
-        "R2",
-        "Spacebars",
-        "UK",
-        "UwU Alphas",
-        "UwUlties - Novelties"
+        "R2 / Alphas",
+        "R2 / Modifiers",
+        "R2 / NorDe",
+        "R2 / Numpad",
+        "R2 / Pink Alphas",
+        "R2 / Pink Modifiers",
+        "R2 / Spacebars",
+        "R2 / UK",
+        "R2 / UwU Alphas",
+        "R2 / UwUlties - Novelties"
       ]
     },
     "keycaps/sa-danger-zone": {
@@ -31154,7 +31926,12 @@
       "material": "ABS",
       "variants": [
         "R1",
+        "R2 / Chopsticks",
+        "R2 / Latin",
         "R2 / Revival Base",
+        "R2 / Sakana",
+        "R2 / Salmon",
+        "R2 / Seafood",
         "R2 / Traditional Base"
       ]
     },
@@ -31251,10 +32028,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Novelties",
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Novelties"
       ]
     },
     "keycaps/gmk-cyl-botanical": {
@@ -31285,17 +32061,16 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Alternate Alphas",
-        "Base",
-        "Exotic",
-        "Novelties",
-        "R1",
+        "R1 / Alternate Alphas",
+        "R1 / Base",
+        "R1 / Exotic",
+        "R1 / Novelties",
         "R2 / Base",
         "R2 / Green Alphas",
         "R2 / Novelties",
         "R2 / Simple Base",
         "R2 / Spacebars",
-        "R2.5",
+        "R2.5 / Base",
         "R3"
       ]
     },
@@ -31307,12 +32082,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Hangul",
         "R1",
         "R2",
         "R3",
-        "R4"
+        "R4 / Base",
+        "R4 / Hangul"
       ]
     },
     "keycaps/gmk-cyl-carbon": {
@@ -31343,6 +32117,7 @@
         "Cherish Extension",
         "Cherry Blanks",
         "Essence Base",
+        "International",
         "Paramour Alt Alphas"
       ]
     },
@@ -31363,8 +32138,11 @@
     },
     "keycaps/gmk-cyl-classic-beige": {
       "variants": [
+        "3A Accent",
+        "3C Accent",
         "70% Base",
         "Command",
+        "Cyrillic Alphas",
         "Grande Base",
         "Hangul Alphas",
         "Hiragana Alphas",
@@ -31420,7 +32198,9 @@
       "variants": [
         "R1",
         "R2",
-        "R5",
+        "R5 / Base",
+        "R5 / Extension",
+        "R5 / Hangul",
         "R5X / Base",
         "R5X / Extension",
         "R5X / Hangul"
@@ -31490,13 +32270,12 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Classic Base",
-        "International",
-        "Latin Base",
-        "Novelties",
         "R1",
-        "R2",
-        "Spacebars"
+        "R2 / Classic Base",
+        "R2 / International",
+        "R2 / Latin Base",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ]
     },
     "keycaps/gmk-cyl-divinapapaya": {
@@ -31582,7 +32361,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Accent",
         "R1",
         "R2 / Accent",
         "R2 / Addition",
@@ -31594,7 +32372,8 @@
         "R2 / Novelties",
         "R2 / Obscure (40s)",
         "R2 / Split Spacebars",
-        "R2 / Standard (Base)"
+        "R2 / Standard (Base)",
+        "Round unspecified / Accent"
       ]
     },
     "keycaps/gmk-cyl-extended-2048": {
@@ -31644,7 +32423,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / NorDeUK",
+        "R1 / Novelties",
+        "R1 / Relegendables",
         "R2 / Accents",
         "R2 / Base"
       ]
@@ -31692,7 +32474,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Extension",
+        "R1 / Novelties",
+        "R1 / Spacebars",
         "R2 / Base",
         "R2 / Novelties"
       ]
@@ -31718,7 +32503,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Base Light Alphas",
+        "R1 / Extras",
+        "R1 / Novelties",
         "R2"
       ]
     },
@@ -31789,7 +32577,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Kuro",
+        "R1 / Novelties",
+        "R1 / Spacebars",
         "R2 / Alphas",
         "R2 / Base",
         "R2 / Novelties",
@@ -31852,7 +32643,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Clarity",
+        "R1 / Preserving",
+        "R1 / West",
         "R2 / Numpad",
         "R2 / Origin TKL",
         "R2 / Preserving",
@@ -31867,14 +32661,14 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "NorDeUK Addon",
         "R1",
         "R2 / Base",
         "R2 / Blocks",
         "R2 / Compact",
         "R2 / Midnight Base",
         "R2 / Signs",
-        "R2 / Turnpike"
+        "R2 / Turnpike",
+        "Standalone / NorDeUK Addon"
       ]
     },
     "keycaps/gmk-cyl-mictlan-rebirth": {
@@ -31926,12 +32720,12 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Accents",
-        "Base",
-        "International",
-        "Mac",
         "R1",
-        "R2"
+        "R2",
+        "Round unspecified / Accents",
+        "Round unspecified / Base",
+        "Round unspecified / International",
+        "Round unspecified / Mac"
       ]
     },
     "keycaps/gmk-cyl-modern-materials": {
@@ -31942,11 +32736,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Accents",
-        "Concrete - Base",
         "R1",
         "R2",
-        "Stone - Base"
+        "Round unspecified / Accents",
+        "Round unspecified / Concrete - Base",
+        "Round unspecified / Stone - Base"
       ]
     },
     "keycaps/gmk-cyl-mono": {
@@ -31969,10 +32763,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "NorDeUK",
         "V1 / Git Base",
         "V1 / Git Extension",
-        "V2 / Base"
+        "V2 / Base",
+        "Version unspecified / NorDeUK"
       ]
     },
     "keycaps/gmk-cyl-motif": {
@@ -32221,6 +33015,7 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "Addition (Numpad + ISO)",
         "Aesthetic (Spacebars)",
         "Alternate (Accents)",
         "Base",
@@ -32299,7 +33094,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Baby Sloth - 40s",
+        "R1 / Base",
+        "R1 / Branches - Spacebars",
+        "R1 / Slovelties - Novelties",
         "R2"
       ]
     },
@@ -32317,6 +33115,7 @@
         "Membrane (Accents)",
         "Metamorphosis (Extension)",
         "Mutation (Macro)",
+        "Protomodifier",
         "Sequence (Icon Novelties)",
         "Standard Galactic (Alt Alphas)"
       ]
@@ -32329,11 +33128,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Extension",
-        "R1",
-        "R2",
-        "Spacebars"
+        "R1 / Base",
+        "R1 / Extension",
+        "R1 / Spacebars",
+        "R2"
       ]
     },
     "keycaps/gmk-cyl-tako": {
@@ -32398,6 +33196,7 @@
       "material": "ABS",
       "variants": [
         "Base",
+        "Extension",
         "Lanterns (Spacebars)",
         "Mooncakes (Novelties)"
       ]
@@ -32473,10 +33272,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
         "R1",
-        "R2",
-        "Spacebars"
+        "R2 / Base",
+        "Round unspecified / Base",
+        "Round unspecified / Spacebars"
       ]
     },
     "keycaps/gmk-cyl-centinela-extension-kit": {
@@ -33815,7 +34614,12 @@
     },
     "keycaps/pff-verdant-retro": {
       "profile": "PFF",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s Base",
+        "Base",
+        "Bullet Train Base"
+      ]
     },
     "keycaps/pga-circus": {
       "profile": "PGA",
@@ -36929,9 +37733,8 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Novelties",
-        "R1",
+        "R1 / Base",
+        "R1 / Novelties",
         "R2"
       ]
     },
@@ -36975,7 +37778,12 @@
       "designer": "Kaptain Mike",
       "profile": "Cherry",
       "material": "ABS",
-      "variants": null
+      "variants": [
+        "Base",
+        "Blanks",
+        "Extension",
+        "International"
+      ]
     },
     "keycaps/gmk-cyl-ada": {
       "name": "GMK CYL ADA",
@@ -37185,11 +37993,10 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "40s",
-        "Base / Japanese Sublegends",
-        "International",
-        "Numpad",
-        "R1",
+        "R1 / 40s",
+        "R1 / Base / Japanese Sublegends",
+        "R1 / International",
+        "R1 / Numpad",
         "R2",
         "R3 / Accents",
         "R3 / Base",
@@ -37280,7 +38087,12 @@
     },
     "keycaps/cherry-milkshake": {
       "variants": [
+        "Addons",
         "Base",
+        "Fruit",
+        "International",
+        "Nomad",
+        "Spacebars",
         "Weirdo Base"
       ]
     },
@@ -37295,12 +38107,20 @@
     "keycaps/dmk-ghost": {
       "variants": [
         "Base",
+        "Extension",
+        "Novelties",
         "Numpad"
       ]
     },
     "keycaps/dsa-milkshake": {
       "variants": [
+        "Addons",
         "Base",
+        "Ergo",
+        "Fruit",
+        "International",
+        "Nomad",
+        "Spacebars",
         "Weirdo Base"
       ]
     },
@@ -37585,6 +38405,7 @@
     "keycaps/jtk-dreaming-girl": {
       "variants": [
         "Alt Alphas",
+        "Alt Mods",
         "Base",
         "Latin Alphas",
         "Novelties",
@@ -38179,7 +39000,8 @@
         "Base",
         "Dark Alphas",
         "Novelties",
-        "Numpad"
+        "Numpad",
+        "Spacebars"
       ]
     },
     "keycaps/gmk-kitsune": {
@@ -38252,7 +39074,9 @@
     "keycaps/gmk-tenshi": {
       "variants": [
         "Base",
-        "Novelties"
+        "Latin",
+        "Novelties",
+        "Spacebars"
       ]
     },
     "keycaps/kkb-skidata-neo": {
@@ -38289,6 +39113,7 @@
       "variants": [
         "Base",
         "Extension",
+        "International",
         "Mono Hiragana",
         "Novelties",
         "Spacebars"
@@ -38541,6 +39366,382 @@
     },
     "switches/huano-smoky-pink": {
       "name": "Huano Smoky Pink"
+    },
+    "keycaps/epbt-ivory": {
+      "variants": [
+        "Base",
+        "Icon",
+        "Nomad",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
+    },
+    "keycaps/epbt-origami": {
+      "variants": [
+        "40s",
+        "Accents",
+        "Base - Hiragana",
+        "Base - Latin",
+        "International",
+        "Modern",
+        "Novelties",
+        "Numpad"
+      ]
+    },
+    "keycaps/epbt-simple-hangul": {
+      "variants": [
+        "40s Accent",
+        "40s Mods",
+        "Accents",
+        "Base",
+        "Extra Alphas",
+        "Latin Alphas",
+        "Mono Hangul Alphas",
+        "Numpad",
+        "Simple Hangul",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-aegyptus": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-avanguardia": {
+      "variants": [
+        "Base",
+        "Love Darkness",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "White Alphas"
+      ]
+    },
+    "keycaps/gmk-bkre": {
+      "variants": [
+        "Base",
+        "Original"
+      ]
+    },
+    "keycaps/gmk-cobalt": {
+      "variants": [
+        "Base",
+        "Blue Base",
+        "Extension",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-deep-navy": {
+      "variants": [
+        "Addition",
+        "Base"
+      ]
+    },
+    "keycaps/gmk-deepwell": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-deku": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars",
+        "The 40s",
+        "The Latin"
+      ]
+    },
+    "keycaps/gmk-fleuriste": {
+      "variants": [
+        "40s",
+        "Accent",
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
+    },
+    "keycaps/gmk-fundamentals": {
+      "variants": [
+        "Accents",
+        "Base",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-fuyu": {
+      "variants": [
+        "Base",
+        "Icon Mods",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-gateway": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-haku": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-hallyu": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-hanami-dango": {
+      "variants": [
+        "Base",
+        "Hiragana",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-iceberg": {
+      "variants": [
+        "40s",
+        "Base",
+        "Inuktitut",
+        "NorDeUK",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-kouhai": {
+      "variants": [
+        "Base",
+        "Extension",
+        "Katakana",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-maestro": {
+      "variants": [
+        "Base",
+        "Golden Accents",
+        "Novelties"
+      ]
+    },
+    "keycaps/gmk-monarch": {
+      "variants": [
+        "Base",
+        "Core",
+        "Extras",
+        "Novelties"
+      ]
+    },
+    "keycaps/gmk-norse": {
+      "variants": [
+        "Base",
+        "International",
+        "Latin Alphas (Alternate)",
+        "Novelties",
+        "Obscure",
+        "Spacebars (Aesthetic)"
+      ]
+    },
+    "keycaps/gmk-prussian-blue": {
+      "variants": [
+        "Base",
+        "Compatibility",
+        "German Mods",
+        "NorDeUK"
+      ]
+    },
+    "keycaps/gmk-retrocast": {
+      "variants": [
+        "Base",
+        "Batteries",
+        "Colors",
+        "Novelties"
+      ]
+    },
+    "keycaps/gmk-shaded": {
+      "variants": [
+        "Black on Grey / Base",
+        "Black on Grey / Extension",
+        "Black on Grey / Modi",
+        "Grey on Black / Base",
+        "Grey on Black / Extension",
+        "Grey on Black / Modi"
+      ]
+    },
+    "keycaps/gmk-star": {
+      "variants": [
+        "40s",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-stealth": {
+      "variants": [
+        "Base",
+        "Blackout Alphas",
+        "Extension",
+        "NorDeUK",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-thinkcaps": {
+      "variants": [
+        "Accent",
+        "Extension",
+        "Icon Mods",
+        "NorDeUK",
+        "Novelties",
+        "Numpad",
+        "RGB Mods",
+        "Spacebars",
+        "TKL Base"
+      ]
+    },
+    "keycaps/gmk-umbra": {
+      "variants": [
+        "Base",
+        "Hiragana",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-universe": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-violet-alert": {
+      "variants": [
+        "Base",
+        "Non-Alert",
+        "Spacebars"
+      ]
+    },
+    "keycaps/gmk-yuru": {
+      "variants": [
+        "40s/Ortho/Spacebars (Extension)",
+        "Emote (≧◡≦)",
+        "Hiragana Base",
+        "Latin Base",
+        "Novelties"
+      ]
+    },
+    "keycaps/jtk-avocado": {
+      "variants": [
+        "Coffee Modifiers",
+        "Coffee Spacebars",
+        "Green Alphas",
+        "Green Spacebars",
+        "Yellow Alphas",
+        "Yellow Spacebars"
+      ]
+    },
+    "keycaps/jtk-formidable": {
+      "variants": [
+        "Base",
+        "Doubleshot Alphas"
+      ]
+    },
+    "keycaps/jtk-illusion": {
+      "variants": [
+        "Base",
+        "Purple Spacebars",
+        "White Spacebars"
+      ]
+    },
+    "keycaps/jtk-nightsakura": {
+      "variants": [
+        "Base",
+        "Doubleshot Latin Alphas",
+        "Gray Mods",
+        "Novelties",
+        "Spacebars - Gray",
+        "Spacebars - Pink"
+      ]
+    },
+    "keycaps/jtk-suited-assassin": {
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars - Dark",
+        "Spacebars - Gold",
+        "Tripleshot Cyrillic Alphas"
+      ]
+    },
+    "keycaps/kkb-rainwob": {
+      "variants": [
+        "RGBY WoB Icon",
+        "RGBY WoB Text",
+        "Rain WoB Icon",
+        "Rain WoB Text"
+      ]
+    },
+    "keycaps/pbtfans-deep-sea-predator": {
+      "variants": [
+        "40s",
+        "Base - Hoshoku",
+        "Base - Predator",
+        "Hiragana Alphas",
+        "International",
+        "Latin Alphas",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
+    },
+    "keycaps/sa-espresso": {
+      "variants": [
+        "Alphas",
+        "Ergo",
+        "ISO",
+        "NorDe",
+        "Novelties",
+        "Numpad",
+        "Ortho/40s",
+        "Spacebars",
+        "Specialities",
+        "TKL"
+      ]
+    },
+    "keycaps/sa-sunday-morning": {
+      "variants": [
+        "40s/Ortho Icon",
+        "60 - TKL Text",
+        "Maroon Alphas",
+        "Novelties",
+        "Numpad",
+        "Peach Alphas",
+        "Spacebars"
+      ]
+    },
+    "keycaps/swg-evil-eye": {
+      "variants": [
+        "Base",
+        "Numpad"
+      ]
+    },
+    "keycaps/swg-hazakura-light": {
+      "variants": [
+        "Base",
+        "Latin Alphas",
+        "Novelties",
+        "Numpad"
+      ]
     }
   },
   "excluded": {

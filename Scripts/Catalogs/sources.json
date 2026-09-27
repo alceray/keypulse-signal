@@ -984,7 +984,8 @@
       "url": "https://cannonkeys.com/products/nicepbt-bow",
       "observed": {
         "name": "NicePBT BoW"
-      }
+      },
+      "notes": "Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "cannonkeys",
@@ -1897,7 +1898,7 @@
       "observed": {
         "name": "PBS Black on Black"
       },
-      "notes": "Kit options reviewed 2026-09-26 from PBS Black on Black: Base; Modi."
+      "notes": "Kit options reviewed 2026-09-26 from PBS Black on Black: Base; Modi. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "cannonkeys",
@@ -3967,7 +3968,7 @@
         "manufacturer": "Signature Plastics",
         "profile": "SA"
       },
-      "notes": "Kit options reviewed 2026-09-26 from SA Bliss R2 - Sculpted: Alphas; Pink Alphas; UwU Alphas; Modifiers; Pink Modifiers; Numpad; Spacebars; UwUlties - Novelties; UK; NorDe."
+      "notes": "Kit options reviewed 2026-09-26 from SA Bliss R2 - Sculpted: Alphas; Pink Alphas; UwU Alphas; Modifiers; Pink Modifiers; Numpad; Spacebars; UwUlties - Novelties; UK; NorDe. Release/kit normalization reviewed 2026-09-27. Retailer source explicitly names R2 Sculpted."
     },
     {
       "source": "dailyclack",
@@ -4061,7 +4062,7 @@
         "designer": "Apiary",
         "manufacturer": "GMK"
       },
-      "notes": "Kit options reviewed 2026-09-26 from GMK Noire: Base; Novelties."
+      "notes": "Kit options reviewed 2026-09-26 from GMK Noire: Base; Novelties. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
     },
     {
       "source": "dailyclack",
@@ -7548,7 +7549,7 @@
         "brand": "PBTfans™",
         "profile": "Cherry"
       },
-      "notes": "Kit options reviewed 2026-09-26 from PBTfans Klein Blue R3 Keycap Set: R3 / Semi-transparent Base; R3 / Base; R3 / Numpad; R3 / Blue Spacebars; R3 / White Spacebars."
+      "notes": "Kit options reviewed 2026-09-26 from PBTfans Klein Blue R3 Keycap Set: R3 / Semi-transparent Base; R3 / Base; R3 / Numpad; R3 / Blue Spacebars; R3 / White Spacebars. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "divinikey",
@@ -7708,7 +7709,7 @@
         "profile": "Cherry",
         "material": "PBT"
       },
-      "notes": "Kit options reviewed 2026-09-26 from MW Poker Keycap Set: Base; Novelties; Spacebars; Alphas."
+      "notes": "Kit options reviewed 2026-09-26 from MW Poker Keycap Set: Base; Novelties; Spacebars; Alphas. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
     },
     {
       "source": "divinikey",
@@ -8004,7 +8005,7 @@
         "profile": "Cherry",
         "material": "PBT"
       },
-      "notes": "Kit options reviewed 2026-09-26 from GOM Salmon Reborn Keycaps: Base; Grey Alphas; Pink Alphas; Caviar; Accent; Numpad; 40s."
+      "notes": "Kit options reviewed 2026-09-26 from GOM Salmon Reborn Keycaps: Base; Grey Alphas; Pink Alphas; Caviar; Accent; Numpad; 40s. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "divinikey",
@@ -13128,7 +13129,7 @@
         "designer": "BIIP",
         "profile": "Cherry"
       },
-      "notes": "Kit options reviewed 2026-09-26 from PBTfans Spark R3: R3 / Base; R3 / Colorful Modifiers; R3 / Blue Modifiers; R3 / Numpad; R3 / Spacebars; R2 / 40s."
+      "notes": "Kit options reviewed 2026-09-26 from PBTfans Spark R3: R3 / Base; R3 / Colorful Modifiers; R3 / Blue Modifiers; R3 / Numpad; R3 / Spacebars; R2 / 40s. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "kbdfans",
@@ -13226,7 +13227,7 @@
         "profile": "Cherry",
         "material": "ABS"
       },
-      "notes": "Kit options reviewed 2026-09-26 from PBTfans Poco R2: R2 / Base; R2 / Numpad; R2 / Spacebars; R2 / 40s; R2 / International."
+      "notes": "Kit options reviewed 2026-09-26 from PBTfans Poco R2: R2 / Base; R2 / Numpad; R2 / Spacebars; R2 / 40s; R2 / International. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
     },
     {
       "source": "kbdfans",
@@ -13555,7 +13556,7 @@
         "profile": "Cherry",
         "material": "PBT"
       },
-      "notes": "Kit options reviewed 2026-09-26 from PBTfans Twist R3: R3 / Base; R3 / Base (Alphas Tripleshot); R3 / Numpad; R3 / Spacebars; R3 / Accents; R3 / International."
+      "notes": "Kit options reviewed 2026-09-26 from PBTfans Twist R3: R3 / Base; R3 / Base (Alphas Tripleshot); R3 / Numpad; R3 / Spacebars; R3 / Accents; R3 / International. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
     },
     {
       "source": "kbdfans",
@@ -14569,7 +14570,7 @@
         "profile": "Cherry",
         "material": "ABS"
       },
-      "notes": "Kit options reviewed 2026-09-26 from Key Kobo Shirasagi: Base; Hiragana; Novelties; Spacebars; Numpad; UK; Hiragana UK."
+      "notes": "Kit options reviewed 2026-09-26 from Key Kobo Shirasagi: Base; Hiragana; Novelties; Spacebars; Numpad; UK; Hiragana UK. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
     },
     {
       "source": "kbdfans",
@@ -14950,7 +14951,7 @@
         "name": "PBT Doggie",
         "profile": "Cherry"
       },
-      "notes": "Kit options: Base Kit; Novelties Kit; Ortho/40/ISO"
+      "notes": "Kit options: Base Kit; Novelties Kit; Ortho/40/ISO Kit options reviewed 2026-09-27 from PBT Doggie Keycaps: Base; Novelties; Ortho/40/ISO."
     },
     {
       "source": "keebsforall",
@@ -14971,7 +14972,7 @@
       "observed": {
         "name": "DCS White on Black"
       },
-      "notes": "Kit options: Base Kit; Extension Kit"
+      "notes": "Kit options: Base Kit; Extension Kit Kit options reviewed 2026-09-27 from DCS White on Black Keycaps: Base; Extension."
     },
     {
       "source": "keebsforall",
@@ -14994,7 +14995,7 @@
       "observed": {
         "name": "KBDfans x BIIP Extended-2048 EC"
       },
-      "notes": "Kit options: Base; Icono"
+      "notes": "Kit options: Base; Icono Kit options reviewed 2026-09-27 from KBDfans x BIIP Extended-2048 EC Keycap Set: Base; Icono."
     },
     {
       "source": "keebsforall",
@@ -15075,7 +15076,7 @@
         "profile": "Cherry",
         "material": "PBT"
       },
-      "notes": "Kit options: Base Kit; Numpad; Novelties"
+      "notes": "Kit options: Base Kit; Numpad; Novelties Kit options reviewed 2026-09-27 from DSYK LOGGING THEME PBT KEYCAPS SET: Base; Numpad; Novelties."
     },
     {
       "source": "keebsforall",
@@ -15158,7 +15159,7 @@
       "observed": {
         "name": "Keykobo Retro Mixed Lights R2"
       },
-      "notes": "Kit options: Base Kit; Numpad Kit; Spacebar Kit; Dark Alpha Kit; Alpha Kit; 40s Kit; Relegendables Kit"
+      "notes": "Kit options: Base Kit; Numpad Kit; Spacebar Kit; Dark Alpha Kit; Alpha Kit; 40s Kit; Relegendables Kit Kit options reviewed 2026-09-27 from Keykobo Retro Mixed Lights R2 Keycap Set: R2 / Base; R2 / Numpad; R2 / Spacebars; R2 / Dark Alphas; R2 / Alphas; R2 / 40s; R2 / Relegendables."
     },
     {
       "source": "keebsforall",
@@ -15204,7 +15205,7 @@
       "observed": {
         "name": "PBTFans Ronin"
       },
-      "notes": "Kit options: Base Kit; Base Sublegend Kit; Numpad Kit; 40s Kit; Spacebar Kit"
+      "notes": "Kit options: Base Kit; Base Sublegend Kit; Numpad Kit; 40s Kit; Spacebar Kit Kit options reviewed 2026-09-27 from PBTFans Ronin Keycap Set Doubleshot ABS: Base; Base Sublegend; Numpad; 40s; Spacebars."
     },
     {
       "source": "keebsforall",
@@ -15317,7 +15318,7 @@
       "observed": {
         "name": "Deadline Air-Hutt PC"
       },
-      "notes": "Kit options: Base Kit; Numpad Kit; Spacebar Kit; Mac Kit; Novelties Kit"
+      "notes": "Kit options: Base Kit; Numpad Kit; Spacebar Kit; Mac Kit; Novelties Kit Kit options reviewed 2026-09-27 from Deadline Air-Hutt PC Keycaps: Base; Numpad; Spacebars; Mac; Novelties."
     },
     {
       "source": "keebsforall",
@@ -15329,7 +15330,7 @@
         "name": "Deadline Air-mallche PC",
         "profile": "Cherry"
       },
-      "notes": "Kit options: Base Kit; Novelties; Numpad; Mac; Spacebar Kit"
+      "notes": "Kit options: Base Kit; Novelties; Numpad; Mac; Spacebar Kit Kit options reviewed 2026-09-27 from Deadline Air-mallche PC Keycaps: Base; Novelties; Numpad; Mac; Spacebars."
     },
     {
       "source": "keebsforall",
@@ -15351,7 +15352,7 @@
       "observed": {
         "name": "Keykobo RainBoW"
       },
-      "notes": "Kit options: RainBoW Text; RainBoW Icon"
+      "notes": "Kit options: RainBoW Text; RainBoW Icon Kit options reviewed 2026-09-27 from Keykobo RainBoW Keycaps: RainBoW Text; RainBoW Icon."
     },
     {
       "source": "keebsforall",
@@ -15362,7 +15363,7 @@
       "observed": {
         "name": "Keykobo RainWoB"
       },
-      "notes": "Kit options: Rain WoB Text; Rain WoB Icon; RGBY WoB Text; RGBY WoB Icon"
+      "notes": "Kit options: Rain WoB Text; Rain WoB Icon; RGBY WoB Text; RGBY WoB Icon Kit options reviewed 2026-09-27 from Keykobo RainWoB Keycaps: Rain WoB Text; Rain WoB Icon; RGBY WoB Text; RGBY WoB Icon."
     },
     {
       "source": "keebsforall",
@@ -15393,7 +15394,7 @@
       "observed": {
         "name": "ALOHAKB EPBT Firearm Cherry Profile"
       },
-      "notes": "Kit options: Base; Novelties; Numpad; Gray; Spacebars"
+      "notes": "Kit options: Base; Novelties; Numpad; Gray; Spacebars Kit options reviewed 2026-09-27 from ALOHAKB EPBT Firearm Cherry Profile Keycaps Set: Base; Novelties; Numpad; Gray; Spacebars."
     },
     {
       "source": "keebsforall",
@@ -15404,7 +15405,7 @@
       "observed": {
         "name": "KKB Outer Bounds"
       },
-      "notes": "Kit options: Base Kit; Numpad Kit; Spacebars Kit; Accents; Dark Alphas; Novelties"
+      "notes": "Kit options: Base Kit; Numpad Kit; Spacebars Kit; Accents; Dark Alphas; Novelties Kit options reviewed 2026-09-27 from KKB Outer Bounds Keycaps: Base; Numpad; Spacebars; Accents; Dark Alphas; Novelties."
     },
     {
       "source": "keebsforall",
@@ -15426,7 +15427,7 @@
       "observed": {
         "name": "AIR Wave Keycaps by Deadline Studio"
       },
-      "notes": "Kit options: Base; Novelties; Numpad; Mac; Spacebar"
+      "notes": "Kit options: Base; Novelties; Numpad; Mac; Spacebar Kit options reviewed 2026-09-27 from AIR Wave Keycaps by Deadline Studio: Base; Novelties; Numpad; Mac; Spacebars."
     },
     {
       "source": "keebsforall",
@@ -15437,7 +15438,7 @@
       "observed": {
         "name": "Awekeys Metal Keycaps Set - Copper Eagle"
       },
-      "notes": "Kit options: Base Kit; 7U Spacebar Kit; Alice Kit; Novelties; All In One Kit"
+      "notes": "Kit options: Base Kit; 7U Spacebar Kit; Alice Kit; Novelties; All In One Kit Kit options reviewed 2026-09-27 from Awekeys Metal Keycaps Set - Copper Eagle: Base; 7u Spacebars; Alice; Novelties."
     },
     {
       "source": "keebsforall",
@@ -15510,7 +15511,7 @@
       "observed": {
         "name": "Deadline Air Pitaya"
       },
-      "notes": "Kit options: Base Kit; Novelties; Numpad; Mac; Spacebar Kit"
+      "notes": "Kit options: Base Kit; Novelties; Numpad; Mac; Spacebar Kit Kit options reviewed 2026-09-27 from Deadline Air Pitaya Keycaps: Base; Novelties; Numpad; Mac; Spacebars."
     },
     {
       "source": "keebsforall",
@@ -15521,7 +15522,7 @@
       "observed": {
         "name": "DOYS DAT.1 by Deadline Studio"
       },
-      "notes": "Kit options: Base Kit; Numpad"
+      "notes": "Kit options: Base Kit; Numpad Kit options reviewed 2026-09-27 from DOYS DAT.1 by Deadline Studio: Base; Numpad."
     },
     {
       "source": "keebsforall",
@@ -15543,7 +15544,7 @@
       "observed": {
         "name": "KAT Alpha"
       },
-      "notes": "Kit options: Base Kit; 40s Kit; Ergo Kit"
+      "notes": "Kit options: Base Kit; 40s Kit; Ergo Kit Kit options reviewed 2026-09-27 from KAT Alpha Keycap Set Dye-Sub PBT: Base; 40s; Ergo."
     },
     {
       "source": "keebsforall",
@@ -24671,7 +24672,7 @@
         "name": "GMK 9009 Ortho & Vim",
         "designer": "G Bur"
       },
-      "notes": "Upstream category: GMK; icDate: 2018-02-27; gbLaunch: 2018-03-24; gbEnd: 2018-04-14; details: https://geekhack.org/index.php?topic=95007"
+      "notes": "Upstream category: GMK; icDate: 2018-02-27; gbLaunch: 2018-03-24; gbEnd: 2018-04-14; details: https://geekhack.org/index.php?topic=95007 Release/kit normalization reviewed 2026-09-27. Separately organized addon release, not assigned to a numbered base-set round."
     },
     {
       "source": "keycaplendar",
@@ -28376,7 +28377,7 @@
         "name": "PBTfans Resonance",
         "designer": "openkeydesign"
       },
-      "notes": "Upstream category: PBTfans; icDate: 2022-03-31; gbLaunch: 2022-09-02; gbEnd: 2022-09-09; details: https://geekhack.org/index.php?topic=116743.0"
+      "notes": "Upstream category: PBTfans; icDate: 2022-03-31; gbLaunch: 2022-09-02; gbEnd: 2022-09-09; details: https://geekhack.org/index.php?topic=116743.0 Release/kit normalization reviewed 2026-09-27. Original PBT child-kit listings are separate from the recorded ABS R2 release."
     },
     {
       "source": "keycaplendar",
@@ -33198,7 +33199,7 @@
         "designer": "oay",
         "material": "ABS"
       },
-      "notes": "Upstream category: PBTfans ABS; icDate: 2023-10-20; gbLaunch: 2024-05-01; gbEnd: 2024-05-31; details: https://kbdfans.com/collections/interest-checks/products/pbtfans-kabuki-cho-r2"
+      "notes": "Upstream category: PBTfans ABS; icDate: 2023-10-20; gbLaunch: 2024-05-01; gbEnd: 2024-05-31; details: https://kbdfans.com/collections/interest-checks/products/pbtfans-kabuki-cho-r2 Release/kit normalization reviewed 2026-09-27. Original PBT child-kit listings are separate from the recorded ABS R2 release."
     },
     {
       "source": "keycaplendar",
@@ -40525,7 +40526,7 @@
         "profile": "Cherry",
         "material": "ABS"
       },
-      "notes": "Kit options reviewed 2026-09-26 from PBTfans Neon: 40s; Spacebars - Yellow."
+      "notes": "Kit options reviewed 2026-09-26 from PBTfans Neon: 40s; Spacebars - Yellow. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "keygem",
@@ -57932,7 +57933,7 @@
         "name": "GMK CYL Metropolis R2",
         "designer": "Nephlock."
       },
-      "notes": "Kit options reviewed 2026-09-26 from CYL Metropolis R2: R2 / Base; R2 / Midnight Base; R2 / Compact; R2 / Blocks; R2 / Signs; R2 / Turnpike."
+      "notes": "Kit options reviewed 2026-09-26 from CYL Metropolis R2: R2 / Base; R2 / Midnight Base; R2 / Compact; R2 / Blocks; R2 / Signs; R2 / Turnpike. Release/kit normalization reviewed 2026-09-27. Separately organized addon release, not assigned to a numbered base-set round."
     },
     {
       "source": "novelkeys",
@@ -57953,7 +57954,7 @@
       "observed": {
         "name": "GMK CYL Zooted"
       },
-      "notes": "Kit options reviewed 2026-09-26 from CYL Zooted: Base; Spacebars."
+      "notes": "Kit options reviewed 2026-09-26 from CYL Zooted: Base; Spacebars. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination. ProtoTypist explicitly confirms R2 Base."
     },
     {
       "source": "novelkeys",
@@ -58405,7 +58406,7 @@
       "observed": {
         "name": "GMK CYL Modern Materials"
       },
-      "notes": "Kit options reviewed 2026-09-26 from CYL Modern Materials: Concrete - Base; Stone - Base; Accents."
+      "notes": "Kit options reviewed 2026-09-26 from CYL Modern Materials: Concrete - Base; Stone - Base; Accents. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "novelkeys",
@@ -58604,7 +58605,7 @@
       "observed": {
         "name": "GMK CYL Darling"
       },
-      "notes": "Kit options reviewed 2026-09-26 from CYL Darling: Classic Base; Latin Base; Spacebars; Novelties; International."
+      "notes": "Kit options reviewed 2026-09-26 from CYL Darling: Classic Base; Latin Base; Spacebars; Novelties; International. Release/kit normalization reviewed 2026-09-27. NovelKeys explicitly identifies the listing as round 2."
     },
     {
       "source": "novelkeys",
@@ -58648,7 +58649,7 @@
       "observed": {
         "name": "SA Grand Budapest"
       },
-      "notes": "Kit options reviewed 2026-09-26 from SA Grand Budapest: Base; Concierge; Novelties; Numpad; Zero; Ergo."
+      "notes": "Kit options reviewed 2026-09-26 from SA Grand Budapest: Base; Concierge; Novelties; Numpad; Zero; Ergo. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "novelkeys",
@@ -58691,7 +58692,7 @@
       "observed": {
         "name": "GMK CYL Boneyard"
       },
-      "notes": "Kit options reviewed 2026-09-26 from CYL Boneyard: Base; Novelties."
+      "notes": "Kit options reviewed 2026-09-26 from CYL Boneyard: Base; Novelties. Release/kit normalization reviewed 2026-09-27. Retailer URL matches the recorded R2 launch URL."
     },
     {
       "source": "novelkeys",
@@ -59248,7 +59249,7 @@
       "observed": {
         "name": "GMK CYL DUALSHOT® 2"
       },
-      "notes": "Kit options reviewed 2026-09-26 from GMK DUALSHOT® 2 (CYL): R2 / Standard (Base); R2 / Katakana (Base); R2 / Accent; R2 / Novelties; R2 / Split Spacebars; R2 / Aesthetic (Accent Spacebars); R2 / Addition; R2 / Macro; R2 / Obscure (40s); R2 / Command (Mac); R2 / International."
+      "notes": "Kit options reviewed 2026-09-26 from GMK DUALSHOT® 2 (CYL): R2 / Standard (Base); R2 / Katakana (Base); R2 / Accent; R2 / Novelties; R2 / Split Spacebars; R2 / Aesthetic (Accent Spacebars); R2 / Addition; R2 / Macro; R2 / Obscure (40s); R2 / Command (Mac); R2 / International. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "omnitype",
@@ -59476,7 +59477,7 @@
       "observed": {
         "name": "GMK CYL Burgundy"
       },
-      "notes": "Kit options reviewed 2026-09-26 from GMK Burgundy (CYL): Base; Hangul."
+      "notes": "Kit options reviewed 2026-09-26 from GMK Burgundy (CYL): Base; Hangul. Release/kit normalization reviewed 2026-09-27. Omnitype product URL matches the recorded R4 launch URL."
     },
     {
       "source": "omnitype",
@@ -59487,7 +59488,7 @@
       "observed": {
         "name": "GMK CYL Modern Dolch®"
       },
-      "notes": "Kit options reviewed 2026-09-26 from GMK Modern Dolch® (CYL): Base; Mac; Accents; International."
+      "notes": "Kit options reviewed 2026-09-26 from GMK Modern Dolch® (CYL): Base; Mac; Accents; International. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "omnitype",
@@ -59609,7 +59610,7 @@
         "name": "osume sakura",
         "brand": "osume"
       },
-      "notes": "Kit options: standard; hiragana"
+      "notes": "Kit options: standard; hiragana Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
     },
     {
       "source": "osume",
@@ -60719,7 +60720,7 @@
         "profile": "Cherry",
         "material": "ABS"
       },
-      "notes": "Kit options: PBTfans Retro Dark Lights R2 -  Base Kit; PBTfans Retro Dark Lights R2 -  Rainbow Kit; PBTfans Retro Dark Lights R2 -  Pure Alpha Kit; PBTfans Retro Dark Lights R2 -  Spacebar Kit; PBTfans Retro Dark Lights R2 -  Numpad Kit; PBTfans Retro Dark Lights R2 -  40s Kit; PBTfans Retro Dark Lights R2 -  International Kit; PBTfans Retro Dark Lights R2 -  Relegendables Kit; PBTfans Retro Dark Lights R2 -  Metal Keycap Kit options reviewed 2026-09-26 from (In Stock) PBTfans Retro Dark Lights R2 Keycaps: R2 / Base; R2 / Rainbow; R2 / Pure Alphas; R2 / Spacebars; R2 / Numpad; R2 / 40s; R2 / International; R2 / Relegendables."
+      "notes": "Kit options: PBTfans Retro Dark Lights R2 -  Base Kit; PBTfans Retro Dark Lights R2 -  Rainbow Kit; PBTfans Retro Dark Lights R2 -  Pure Alpha Kit; PBTfans Retro Dark Lights R2 -  Spacebar Kit; PBTfans Retro Dark Lights R2 -  Numpad Kit; PBTfans Retro Dark Lights R2 -  40s Kit; PBTfans Retro Dark Lights R2 -  International Kit; PBTfans Retro Dark Lights R2 -  Relegendables Kit; PBTfans Retro Dark Lights R2 -  Metal Keycap Kit options reviewed 2026-09-26 from (In Stock) PBTfans Retro Dark Lights R2 Keycaps: R2 / Base; R2 / Rainbow; R2 / Pure Alphas; R2 / Spacebars; R2 / Numpad; R2 / 40s; R2 / International; R2 / Relegendables. Release/kit normalization reviewed 2026-09-27. Original PBT child-kit listings are separate from the recorded ABS R2 release."
     },
     {
       "source": "prototypist",
@@ -61426,7 +61427,7 @@
         "manufacturer": "GMK",
         "material": "ABS"
       },
-      "notes": "Kit options: GMK CYL Hammerhead - Base Kit"
+      "notes": "Kit options: GMK CYL Hammerhead - Base Kit Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
     },
     {
       "source": "prototypist",
@@ -61694,7 +61695,7 @@
         "manufacturer": "GMK",
         "profile": "Cherry"
       },
-      "notes": "Kit options: GMK British Racing Green R2.5 - Simple Base Kit"
+      "notes": "Kit options: GMK British Racing Green R2.5 - Simple Base Kit Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds. ProtoTypist R2.5 lists a single Simple Base kit, normalized to Base."
     },
     {
       "source": "prototypist",
@@ -61867,7 +61868,7 @@
         "designer": "Biip",
         "profile": "Cherry"
       },
-      "notes": "Kit options: Base Kit; Backpack Kit; Numpad Kit; Pencils Kit; Smileys Kit; Rubbers Kit"
+      "notes": "Kit options: Base Kit; Backpack Kit; Numpad Kit; Pencils Kit; Smileys Kit; Rubbers Kit Release/kit normalization reviewed 2026-09-27. ProtoTypist explicitly lists these six R2 kits. Unscoped retailer aliases are replaced by that verified R2 inventory; R1 remains unresolved."
     },
     {
       "source": "prototypist",
@@ -64664,7 +64665,7 @@
       "kind": "keycaps",
       "id": "gmk-cyl-monokai-material",
       "url": "https://oblotzky.industries/products/gmk-cyl-monokai-material-v1-and-v2",
-      "notes": "Kit options reviewed 2026-09-26 from GMK CYL Monokai Material V1 & V2: V1 / Git Base; V1 / Git Extension; V2 / Regular Base; NorDeUK.",
+      "notes": "Kit options reviewed 2026-09-26 from GMK CYL Monokai Material V1 & V2: V1 / Git Base; V1 / Git Extension; V2 / Regular Base; NorDeUK. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination.",
       "observed": {
         "name": "GMK CYL Monokai Material",
         "variants": [
@@ -64681,7 +64682,7 @@
       "kind": "keycaps",
       "id": "gmk-crimson-cadet",
       "url": "https://oblotzky.industries/products/gmk-cyl-crimson-cadet",
-      "notes": "Kit options reviewed 2026-09-26 from GMK CYL Crimson Cadet: Base; Symbols; Spacebars.",
+      "notes": "Kit options reviewed 2026-09-26 from GMK CYL Crimson Cadet: Base; Symbols; Spacebars. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds.",
       "observed": {
         "name": "GMK Crimson Cadet",
         "variants": [
@@ -64911,7 +64912,7 @@
       "kind": "keycaps",
       "id": "gmk-cyl-taiga",
       "url": "https://oblotzky.industries/products/gmk-cyl-taiga",
-      "notes": "Kit options reviewed 2026-09-26 from GMK CYL Taiga: Base; Extension; Spacebars.",
+      "notes": "Kit options reviewed 2026-09-26 from GMK CYL Taiga: Base; Extension; Spacebars. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds.",
       "observed": {
         "name": "GMK CYL Taiga",
         "variants": [
@@ -65789,7 +65790,7 @@
       "kind": "keycaps",
       "id": "sa-r3-1976",
       "url": "https://spkeyboards.com/products/sa-1976-keycaps",
-      "notes": "Kit options reviewed 2026-09-26 from SA 1976: 60% / Alphas; TKL Add-ons; Alternate Gradient; Alternate; Arrows; Colevrak; Colors; Ergo Redox Add-ons; Ergo; ISO; Numpad; Ortho; Novelties; 7u Spacebars.",
+      "notes": "Kit options reviewed 2026-09-26 from SA 1976: 60% / Alphas; TKL Add-ons; Alternate Gradient; Alternate; Arrows; Colevrak; Colors; Ergo Redox Add-ons; Ergo; ISO; Numpad; Ortho; Novelties; 7u Spacebars. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination.",
       "observed": {
         "name": "SA-R3 1976",
         "variants": [
@@ -65866,7 +65867,7 @@
       "kind": "keycaps",
       "id": "dcs-midnight",
       "url": "https://spkeyboards.com/products/dcs-midnight",
-      "notes": "Kit options reviewed 2026-09-26 from DCS Midnight - Price Reduced!: Base; Twilight Base; Numpad Midnight; Numpad Twilight; Additional Mods; Additional Mods (Twilight); WASD and Arrows; ISO; 7u Spacebars - Light Gray (GUG); 7u Spacebars - Teal; 7u Spacebars - Dark Gray (GB).",
+      "notes": "Kit options reviewed 2026-09-26 from DCS Midnight - Price Reduced!: Base; Twilight Base; Numpad Midnight; Numpad Twilight; Additional Mods; Additional Mods (Twilight); WASD and Arrows; ISO; 7u Spacebars - Light Gray (GUG); 7u Spacebars - Teal; 7u Spacebars - Dark Gray (GB). Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination.",
       "observed": {
         "name": "DCS Midnight",
         "variants": [
@@ -65910,7 +65911,7 @@
       "kind": "keycaps",
       "id": "dsa-granite",
       "url": "https://spkeyboards.com/products/dsa-granite",
-      "notes": "Kit options reviewed 2026-09-26 from DSA Granite: Common/Alphas; TKL Modifiers (Text Legends); TKL Modifiers (Icon Legends); Pro Modifiers (Text Legends); Pro Modifiers (Icon Legends); Numpad; Extreme Modifiers (Text Legends); Extreme Modifiers (Icon Legends); Bonus Pack; Apple; Windows; Ergo; Homing; International; UK; ISO; Mono Legends; RGB(YO) (Icon Legends); RGB(YO) (Text Legends); Secondary Legends.",
+      "notes": "Kit options reviewed 2026-09-26 from DSA Granite: Common/Alphas; TKL Modifiers (Text Legends); TKL Modifiers (Icon Legends); Pro Modifiers (Text Legends); Pro Modifiers (Icon Legends); Numpad; Extreme Modifiers (Text Legends); Extreme Modifiers (Icon Legends); Bonus Pack; Apple; Windows; Ergo; Homing; International; UK; ISO; Mono Legends; RGB(YO) (Icon Legends); RGB(YO) (Text Legends); Secondary Legends. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination.",
       "observed": {
         "name": "DSA Granite",
         "variants": [
@@ -65971,7 +65972,7 @@
       "kind": "keycaps",
       "id": "dcs-smrt",
       "url": "https://spkeyboards.com/products/dcs-smrt-keycaps",
-      "notes": "Kit options reviewed 2026-09-26 from DCS SMRT: A Wise Choice - Price Reduced!: Base; Alternates; Accents; Numpad; Ergo; 40s-Ortho; 10u Spacebars.",
+      "notes": "Kit options reviewed 2026-09-26 from DCS SMRT: A Wise Choice - Price Reduced!: Base; Alternates; Accents; Numpad; Ergo; 40s-Ortho; 10u Spacebars. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination.",
       "observed": {
         "name": "DCS SMRT",
         "variants": [
@@ -144798,6 +144799,3035 @@
         "brand": "MMD",
         "switchType": "linear"
       }
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7524082090066-80retros-game-1989",
+      "kind": "keycaps",
+      "id": "80retros-game-1989",
+      "url": "https://ilumkb.com/products/in-stock-80retros-x-tutkeys-game-1989-r3-keycap",
+      "observed": {
+        "name": "80Retros Game 1989",
+        "variants": [
+          "R3 / Base - EN",
+          "R3 / Base - JP",
+          "R3 / Novelties",
+          "R3 / Extension"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] 80Retros Game 1989 R3 Keycap: R3 / Base - EN; R3 / Base - JP; R3 / Novelties; R3 / Extension."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6751644876866-cherry-milkshake",
+      "kind": "keycaps",
+      "id": "cherry-milkshake",
+      "url": "https://www.deskhero.ca/products/cherry-milkshake-extras",
+      "observed": {
+        "name": "Cherry Milkshake",
+        "variants": [
+          "Spacebars",
+          "Nomad",
+          "International",
+          "Fruit",
+          "Addons"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from Cherry Milkshake Keycaps: Spacebars; Nomad; International; Fruit; Addons."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6801986781250-dcs-alps-pingmaster",
+      "kind": "keycaps",
+      "id": "dcs-alps-pingmaster",
+      "url": "https://www.deskhero.ca/products/dcs-alps-pingmaster-extras",
+      "observed": {
+        "name": "DCS Alps Pingmaster",
+        "variants": [
+          "Base",
+          "JIS & MacOS",
+          "40s/Spacebars",
+          "Relegendable",
+          "Accent"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from DCS Alps Pingmaster Keycaps: Base; JIS & MacOS; 40s/Spacebars; Relegendable; Accent."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7436366938178-dcs-cafe",
+      "kind": "keycaps",
+      "id": "dcs-cafe",
+      "url": "https://www.deskhero.ca/products/sp-dcs-cafe-keycaps",
+      "observed": {
+        "name": "DCS Cafe",
+        "variants": [
+          "Base",
+          "Alt Alphas",
+          "Numpad",
+          "Text Mods",
+          "Novelties",
+          "10u Spacebars",
+          "Extension",
+          "Spacebars",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from SP DCS Cafe Keycaps: Base; Alt Alphas; Numpad; Text Mods; Novelties; 10u Spacebars; Extension; Spacebars; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6680679186510-dcs-delftware",
+      "kind": "keycaps",
+      "id": "dcs-delftware",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-dcs-delftware",
+      "observed": {
+        "name": "DCS Delftware",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP DCS Delftware: Base; Novelties; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7050143400002-dcs-guardian",
+      "kind": "keycaps",
+      "id": "dcs-guardian",
+      "url": "https://www.deskhero.ca/products/dcs-guardian-keycaps",
+      "observed": {
+        "name": "DCS Guardian",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Numpad",
+          "Alt Mods",
+          "Spacebars",
+          "10u Bar"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from DCS Guardian Keycaps: Base; Novelties; Numpad; Alt Mods; Spacebars; 10u Bar."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7577306300498-dcs-olivetti",
+      "kind": "keycaps",
+      "id": "dcs-olivetti",
+      "url": "https://ilumkb.com/products/dcs-olivetti",
+      "observed": {
+        "name": "DCS Olivetti",
+        "variants": [
+          "Base",
+          "Extension",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [Pre-Order] DCS Olivetti: Base; Extension; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10527546540347-dcs-root-beer",
+      "kind": "keycaps",
+      "id": "dcs-root-beer",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-dcs-root-beer",
+      "observed": {
+        "name": "DCS Root Beer",
+        "variants": [
+          "Base",
+          "Extension"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP DCS Root Beer: Base; Extension."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7661345308754-dcs-smrt",
+      "kind": "keycaps",
+      "id": "dcs-smrt",
+      "url": "https://ilumkb.com/products/group-buy-dcs-smrt-r2",
+      "observed": {
+        "name": "DCS SMRT",
+        "variants": [
+          "R2 / Split Spacebars",
+          "R2 / LED"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [Group Buy] DCS SMRT R2: R2 / Split Spacebars; R2 / LED."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7438159872082-deadline-air-anchor",
+      "kind": "keycaps",
+      "id": "deadline-air-anchor",
+      "url": "https://ilumkb.com/products/deadline-air-anchor-keycap",
+      "observed": {
+        "name": "Deadline AIR-Anchor",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Mac",
+          "Numpad",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] Deadline Air Anchor Keycap: Base; Novelties; Mac; Numpad; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6831708962894-dmk-ghost",
+      "kind": "keycaps",
+      "id": "dmk-ghost",
+      "url": "https://en.zfrontier.com/products/in-stock-domikey-ghost",
+      "observed": {
+        "name": "DMK Ghost",
+        "variants": [
+          "Extension",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] Domikey Ghost: Extension; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6771437240398-dsa-berry-yogurt",
+      "kind": "keycaps",
+      "id": "dsa-berry-yogurt",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-dsa-berry-yogurt",
+      "observed": {
+        "name": "DSA Berry Yogurt",
+        "variants": [
+          "Base",
+          "Numpad",
+          "Novelties",
+          "Ergo",
+          "International",
+          "Blueberry Accent",
+          "Strawberry Accent"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP DSA Berry Yogurt: Base; Numpad; Novelties; Ergo; International; Blueberry Accent; Strawberry Accent."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6751648186434-dsa-milkshake",
+      "kind": "keycaps",
+      "id": "dsa-milkshake",
+      "url": "https://www.deskhero.ca/products/dsa-milkshake-extras",
+      "observed": {
+        "name": "DSA Milkshake",
+        "variants": [
+          "Spacebars",
+          "Nomad",
+          "International",
+          "Fruit",
+          "Ergo",
+          "Addons"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from DSA Milkshake Keycaps: Spacebars; Nomad; International; Fruit; Ergo; Addons."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8487390609723-dsa-petrikeys",
+      "kind": "keycaps",
+      "id": "dsa-petrikeys",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-dsa-petrikeys",
+      "observed": {
+        "name": "DSA PetriKeys",
+        "variants": [
+          "Alphas",
+          "TKL",
+          "Numpad",
+          "Ergo",
+          "40s/Ortho",
+          "Novelties",
+          "Alphas Spacebars",
+          "Mod Spacebars",
+          "International",
+          "Homing"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP DSA PetriKeys: Alphas; TKL; Numpad; Ergo; 40s/Ortho; Novelties; Alphas Spacebars; Mod Spacebars; International; Homing."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4771671048258-epbt-cool-kids",
+      "kind": "keycaps",
+      "id": "epbt-cool-kids",
+      "url": "https://www.deskhero.ca/products/epbt-cool-kids-extras",
+      "observed": {
+        "name": "ePBT Cool Kids",
+        "variants": [
+          "Base",
+          "Rubbers - Extra Split/Small Spacebars",
+          "Backpack - 40s",
+          "Pencils - Spacebars",
+          "Smileys - Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from ePBT Cool Kids - Extras: Base; Rubbers - Extra Split/Small Spacebars; Backpack - 40s; Pencils - Spacebars; Smileys - Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7151546695746-epbt-creative-studio",
+      "kind": "keycaps",
+      "id": "epbt-creative-studio",
+      "url": "https://www.deskhero.ca/products/epbt-creative-studio-keycaps-group-buy",
+      "observed": {
+        "name": "ePBT Creative Studio",
+        "variants": [
+          "Base",
+          "Base without Sublegends",
+          "AI Modifiers",
+          "AI Numpad",
+          "French-Belgian",
+          "AI Novelties",
+          "Neutral Modern",
+          "PS Modern",
+          "AI Modern",
+          "AI Nomad",
+          "Italian-Spanish-Portuguese",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from ePBT Creative Studio Keycaps [Group Buy]: Base; Base without Sublegends; AI Modifiers; AI Numpad; French-Belgian; AI Novelties; Neutral Modern; PS Modern; AI Modern; AI Nomad; Italian-Spanish-Portuguese; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6601248505922-epbt-ivory",
+      "kind": "keycaps",
+      "id": "epbt-ivory",
+      "url": "https://www.deskhero.ca/products/epbt-ivory-extras",
+      "observed": {
+        "name": "ePBT Ivory",
+        "variants": [
+          "Base",
+          "Numpad",
+          "Icon",
+          "Novelties",
+          "Spacebars",
+          "Nomad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from EPBT Ivory Keycaps: Base; Numpad; Icon; Novelties; Spacebars; Nomad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4629834760258-epbt-kon-momo",
+      "kind": "keycaps",
+      "id": "epbt-kon-momo",
+      "url": "https://www.deskhero.ca/products/epbt-kon-momo",
+      "observed": {
+        "name": "ePBT KON MOMO",
+        "variants": [
+          "Base",
+          "Numpad",
+          "Icon",
+          "Color Addon",
+          "Anti-Color Addon",
+          "MINI Addon",
+          "Arrow",
+          "Short Bar 1",
+          "Short Bar 2",
+          "Short Bar 3",
+          "Short Bar 4",
+          "Short Bar 5",
+          "Nomad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from ePBT Kon Momo: Base; Numpad; Icon; Color Addon; Anti-Color Addon; MINI Addon; Arrow; Short Bar 1; Short Bar 2; Short Bar 3; Short Bar 4; Short Bar 5; Nomad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6825532653634-epbt-origami",
+      "kind": "keycaps",
+      "id": "epbt-origami",
+      "url": "https://www.deskhero.ca/products/epbt-origami-extras",
+      "observed": {
+        "name": "ePBT Origami",
+        "variants": [
+          "Base - Latin",
+          "Base - Hiragana",
+          "Novelties",
+          "Accents",
+          "40s",
+          "Modern",
+          "International",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from ePBT Origami Keycaps: Base - Latin; Base - Hiragana; Novelties; Accents; 40s; Modern; International; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7033354289218-epbt-simple-hangul",
+      "kind": "keycaps",
+      "id": "epbt-simple-hangul",
+      "url": "https://www.deskhero.ca/products/epbt-simple-hangul-keycaps",
+      "observed": {
+        "name": "ePBT Simple Hangul",
+        "variants": [
+          "Base",
+          "Accents",
+          "Spacebars",
+          "Numpad",
+          "40s Accent",
+          "40s Mods",
+          "Extra Alphas",
+          "Mono Hangul Alphas",
+          "Simple Hangul",
+          "Latin Alphas"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from ePBT Simple Hangul Keycaps: Base; Accents; Spacebars; Numpad; 40s Accent; 40s Mods; Extra Alphas; Mono Hangul Alphas; Simple Hangul; Latin Alphas."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7245357252674-gmk-abyssal",
+      "kind": "keycaps",
+      "id": "gmk-abyssal",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-abyssal-keycaps",
+      "observed": {
+        "name": "GMK Abyssal",
+        "variants": [
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Abyssal Keycaps: Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7168603357266-gmk-aegyptus",
+      "kind": "keycaps",
+      "id": "gmk-aegyptus",
+      "url": "https://ilumkb.com/products/in-stock-gmk-cyl-aegyptus",
+      "observed": {
+        "name": "GMK Aegyptus",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL Aegyptus: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-6895479291986-gmk-amethyst",
+      "kind": "keycaps",
+      "id": "gmk-amethyst",
+      "url": "https://ilumkb.com/products/instock-gmk-amethyst",
+      "observed": {
+        "name": "GMK Amethyst",
+        "variants": [
+          "Base",
+          "Dark Base",
+          "Novelties",
+          "Extension",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Amethyst Keycap: Base; Dark Base; Novelties; Extension; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6641267408962-gmk-apollo",
+      "kind": "keycaps",
+      "id": "gmk-apollo",
+      "url": "https://www.deskhero.ca/products/gmk-apollo-extras",
+      "observed": {
+        "name": "GMK Apollo",
+        "variants": [
+          "Telemetry Module - Numpad",
+          "Base",
+          "Lunar Module - Novelties",
+          "Space Module - Spacebars",
+          "Propellant Module - 40s / Ortho"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Apollo Keycaps: Telemetry Module - Numpad; Base; Lunar Module - Novelties; Space Module - Spacebars; Propellant Module - 40s / Ortho."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6727195328578-gmk-aurora-polaris",
+      "kind": "keycaps",
+      "id": "gmk-aurora-polaris",
+      "url": "https://www.deskhero.ca/products/gmk-aurora-polaris-extras",
+      "observed": {
+        "name": "GMK Aurora Polaris",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars",
+          "Mod"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Aurora Polaris Keycaps: Base; Novelties; Spacebars; Mod."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6791097647170-gmk-avanguardia",
+      "kind": "keycaps",
+      "id": "gmk-avanguardia",
+      "url": "https://www.deskhero.ca/products/gmk-avanguardia-extras",
+      "observed": {
+        "name": "GMK Avanguardia",
+        "variants": [
+          "Base",
+          "White Alphas",
+          "Novelties",
+          "Numpad",
+          "Love Darkness",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Avanguardia Keycaps: Base; White Alphas; Novelties; Numpad; Love Darkness; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7525154259026-gmk-bkre",
+      "kind": "keycaps",
+      "id": "gmk-bkre",
+      "url": "https://ilumkb.com/products/gmk-cyl-bkre",
+      "observed": {
+        "name": "GMK BKRE",
+        "variants": [
+          "Base",
+          "Original"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL BKRE: Base; Original."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6645770813506-gmk-black-lotus",
+      "kind": "keycaps",
+      "id": "gmk-black-lotus",
+      "url": "https://www.deskhero.ca/products/gmk-black-lotus-extras",
+      "observed": {
+        "name": "GMK Black Lotus",
+        "variants": [
+          "Modifiers",
+          "Novelties",
+          "Spacebars",
+          "Base",
+          "Hiragana Alphas",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Black Lotus Keycaps: Modifiers; Novelties; Spacebars; Base; Hiragana Alphas; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6539012407362-gmk-bleached",
+      "kind": "keycaps",
+      "id": "gmk-bleached",
+      "url": "https://www.deskhero.ca/products/gmk-bleached-extras",
+      "observed": {
+        "name": "GMK Bleached",
+        "variants": [
+          "Base",
+          "NumISO",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Bleached Keycaps: Base; NumISO; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6684660826178-gmk-bread",
+      "kind": "keycaps",
+      "id": "gmk-bread",
+      "url": "https://www.deskhero.ca/products/gmk-bread-extras",
+      "observed": {
+        "name": "GMK Bread",
+        "variants": [
+          "Base",
+          "Extension",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Bread Keycaps: Base; Extension; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-3422396547138-gmk-cafe",
+      "kind": "keycaps",
+      "id": "gmk-cafe",
+      "url": "https://www.deskhero.ca/products/gmk-cafe",
+      "observed": {
+        "name": "GMK Cafe",
+        "variants": [
+          "Sugar - Numpad / ISO",
+          "Base",
+          "Dark - Alphas",
+          "Extra Shots - Spacebars",
+          "Special Blends - 40s / Ortho"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Café Keycaps: Sugar - Numpad / ISO; Base; Dark - Alphas; Extra Shots - Spacebars; Special Blends - 40s / Ortho."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6952664006722-gmk-classic-arabic",
+      "kind": "keycaps",
+      "id": "gmk-classic-arabic",
+      "url": "https://www.deskhero.ca/products/gmk-classic-arabic-keycaps",
+      "observed": {
+        "name": "GMK Classic Arabic",
+        "variants": [
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Classic Arabic Keycaps: 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6935820533826-gmk-classic-bow",
+      "kind": "keycaps",
+      "id": "gmk-classic-bow",
+      "url": "https://www.deskhero.ca/products/gmk-classic-bow-keycaps",
+      "observed": {
+        "name": "GMK Classic BoW",
+        "variants": [
+          "Limited Base",
+          "Spacebars",
+          "True Classic Base",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Classic BoW Keycaps: Limited Base; Spacebars; True Classic Base; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-4587550867516-gmk-classic-red",
+      "kind": "keycaps",
+      "id": "gmk-classic-red",
+      "url": "https://mekibo.com/products/gmk-classic-red",
+      "observed": {
+        "name": "GMK Classic Red",
+        "variants": [
+          "Base",
+          "Red Alphas",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Classic Red (In-stock): Base; Red Alphas; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7433751855170-gmk-cluck",
+      "kind": "keycaps",
+      "id": "gmk-cluck",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-cluck-k-eycaps",
+      "observed": {
+        "name": "GMK Cluck",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars",
+          "Alt Alphas (Cluck)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Cluck Keycaps: Base; Novelties; Spacebars; Alt Alphas (Cluck)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7213477789762-gmk-cobalt",
+      "kind": "keycaps",
+      "id": "gmk-cobalt",
+      "url": "https://www.deskhero.ca/products/gmk-cobalt-keycaps",
+      "observed": {
+        "name": "GMK Cobalt",
+        "variants": [
+          "Base",
+          "Blue Base",
+          "Novelties",
+          "Extension",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Cobalt Keycaps: Base; Blue Base; Novelties; Extension; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-4631919657020-gmk-coral",
+      "kind": "keycaps",
+      "id": "gmk-coral",
+      "url": "https://mekibo.com/products/gmk-coral",
+      "observed": {
+        "name": "GMK Coral",
+        "variants": [
+          "R1 / Base",
+          "R1 / Coral Relief",
+          "R1 / Novelties",
+          "R1 / 40s/Ortho",
+          "R1 / Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Coral. Original-release retailer listing predates the second round; preserve its kit inventory separately: R1 / Base; R1 / Coral Relief; R1 / Novelties; R1 / 40s/Ortho; R1 / Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7477855191106-gmk-cosmos",
+      "kind": "keycaps",
+      "id": "gmk-cosmos",
+      "url": "https://www.deskhero.ca/products/gmk-cosmos-keycaps-pre-order-copy",
+      "observed": {
+        "name": "GMK Cosmos",
+        "variants": [
+          "Base",
+          "Extension",
+          "Blanks",
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Cosmos Keycaps: Base; Extension; Blanks; International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-9037412630843-gmk-cream-matcha",
+      "kind": "keycaps",
+      "id": "gmk-cream-matcha",
+      "url": "https://en.zfrontier.com/products/en-route-gmk-cream-matcha",
+      "observed": {
+        "name": "GMK Cream Matcha",
+        "variants": [
+          "NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Cream Matcha: NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6920141766722-gmk-cyl-bento",
+      "kind": "keycaps",
+      "id": "gmk-cyl-bento",
+      "url": "https://www.deskhero.ca/products/gmk-bento-r2-keycaps",
+      "observed": {
+        "name": "GMK CYL Bentō",
+        "variants": [
+          "R2 / Latin",
+          "R2 / Salmon",
+          "R2 / Seafood",
+          "R2 / Sakana",
+          "R2 / Chopsticks"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Bento r2 Keycaps: R2 / Latin; R2 / Salmon; R2 / Seafood; R2 / Sakana; R2 / Chopsticks."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7727556231234-gmk-cyl-cherry-love",
+      "kind": "keycaps",
+      "id": "gmk-cyl-cherry-love",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-cherry-love-keycaps",
+      "observed": {
+        "name": "GMK CYL Cherry Love",
+        "variants": [
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Cherry Love Keycaps: International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7495925399634-gmk-cyl-classic-beige",
+      "kind": "keycaps",
+      "id": "gmk-cyl-classic-beige",
+      "url": "https://ilumkb.com/products/in-stock-gmk-cyl-classic-beige",
+      "observed": {
+        "name": "GMK CYL Classic Beige",
+        "variants": [
+          "Cyrillic Alphas",
+          "3A Accent",
+          "3C Accent"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL Classic Beige: Cyrillic Alphas; 3A Accent; 3C Accent."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6751639502914-gmk-cyl-dolch",
+      "kind": "keycaps",
+      "id": "gmk-cyl-dolch",
+      "url": "https://www.deskhero.ca/products/gmk-dolch-r5-extras",
+      "observed": {
+        "name": "GMK CYL Dolch",
+        "variants": [
+          "R5 / Base",
+          "R5 / Extension",
+          "R5 / Hangul"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Dolch R5 Keycaps: R5 / Base; R5 / Extension; R5 / Hangul."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6899779010626-gmk-cyl-foundation",
+      "kind": "keycaps",
+      "id": "gmk-cyl-foundation",
+      "url": "https://www.deskhero.ca/products/gmk-foundation-keycaps-in-stock-extras",
+      "observed": {
+        "name": "GMK CYL Foundation",
+        "variants": [
+          "R1 / Base",
+          "R1 / Novelties",
+          "R1 / Relegendables",
+          "R1 / NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Foundation Keycaps. Original-release retailer listing predates the second round; preserve its kit inventory separately: R1 / Base; R1 / Novelties; R1 / Relegendables; R1 / NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-8262811320386-gmk-cyl-green-alert",
+      "kind": "keycaps",
+      "id": "gmk-cyl-green-alert",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-green-alert-keycaps",
+      "observed": {
+        "name": "GMK CYL Green Alert",
+        "variants": [
+          "US-International Alphas"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Green Alert Keycaps: US-International Alphas."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-4696210538556-gmk-cyl-gregory",
+      "kind": "keycaps",
+      "id": "gmk-cyl-gregory",
+      "url": "https://mekibo.com/products/gmk-gregory",
+      "observed": {
+        "name": "GMK CYL Gregory",
+        "variants": [
+          "R1 / Base",
+          "R1 / Spacebars",
+          "R1 / Novelties",
+          "R1 / Extension"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Gregory (In-stock). Original-release retailer listing predates the second round; preserve its kit inventory separately: R1 / Base; R1 / Spacebars; R1 / Novelties; R1 / Extension."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6684651946050-gmk-cyl-hammerhead",
+      "kind": "keycaps",
+      "id": "gmk-cyl-hammerhead",
+      "url": "https://www.deskhero.ca/products/gmk-hammerhead-extras",
+      "observed": {
+        "name": "GMK CYL Hammerhead",
+        "variants": [
+          "Base",
+          "Base Light Alphas",
+          "Novelties",
+          "Extras"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Hammerhead Keycaps: Base; Base Light Alphas; Novelties; Extras."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6695090716738-gmk-cyl-ishtar",
+      "kind": "keycaps",
+      "id": "gmk-cyl-ishtar",
+      "url": "https://www.deskhero.ca/products/gmk-isthar-unvaulted",
+      "observed": {
+        "name": "GMK CYL Ishtar",
+        "variants": [
+          "R1 / Base",
+          "R1 / Kuro",
+          "R1 / Novelties",
+          "R1 / Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Ishtar Keycaps. Original-release retailer listing predates the second round; preserve its kit inventory separately: R1 / Base; R1 / Kuro; R1 / Novelties; R1 / Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6737262313538-gmk-cyl-masterpiece",
+      "kind": "keycaps",
+      "id": "gmk-cyl-masterpiece",
+      "url": "https://www.deskhero.ca/products/gmk-masterpiece-unvaulted",
+      "observed": {
+        "name": "GMK CYL Masterpiece",
+        "variants": [
+          "R1 / Base",
+          "R1 / Preserving",
+          "R1 / Clarity",
+          "R1 / West"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Masterpiece Keycaps. Original-release retailer listing predates the second round; preserve its kit inventory separately: R1 / Base; R1 / Preserving; R1 / Clarity; R1 / West."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6909653483586-gmk-cyl-red-line",
+      "kind": "keycaps",
+      "id": "gmk-cyl-red-line",
+      "url": "https://www.deskhero.ca/products/gmk-redline-keycaps-in-stock-extras",
+      "observed": {
+        "name": "GMK CYL Red Line",
+        "variants": [
+          "Addition (Numpad + ISO)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Redline Keycaps: Addition (Numpad + ISO)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6711169515586-gmk-cyl-sloth",
+      "kind": "keycaps",
+      "id": "gmk-cyl-sloth",
+      "url": "https://www.deskhero.ca/products/gmk-sloth-extras",
+      "observed": {
+        "name": "GMK CYL Sloth",
+        "variants": [
+          "Baby Sloth - 40s",
+          "Branches - Spacebars",
+          "Slovelties - Novelties",
+          "Lazy AF - Base"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Sloth Keycaps: Baby Sloth - 40s; Branches - Spacebars; Slovelties - Novelties; Lazy AF - Base. Release/kit normalization reviewed 2026-09-27. Kit assignment inferred from the distinct original-release retailer listing and the separate later-release records; no kits copied across rounds."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7066974388290-gmk-cyl-symbiote",
+      "kind": "keycaps",
+      "id": "gmk-cyl-symbiote",
+      "url": "https://www.deskhero.ca/products/gmk-symbiote-keycaps",
+      "observed": {
+        "name": "GMK CYL Symbiote",
+        "variants": [
+          "Protomodifier"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Symbiote Keycaps: Protomodifier."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7130773094482-gmk-cyl-tuzi",
+      "kind": "keycaps",
+      "id": "gmk-cyl-tuzi",
+      "url": "https://ilumkb.com/products/in-stock-gmk-tuzi-keycap-set",
+      "observed": {
+        "name": "GMK CYL Tuzi",
+        "variants": [
+          "Extension"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL TUZI: Extension."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6663978647618-gmk-deep-navy",
+      "kind": "keycaps",
+      "id": "gmk-deep-navy",
+      "url": "https://www.deskhero.ca/products/gmk-deep-navy-extras-unvaulted",
+      "observed": {
+        "name": "GMK Deep Navy",
+        "variants": [
+          "Base",
+          "Addition"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Deep Navy Keycaps: Base; Addition."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6882463187010-gmk-deepwell",
+      "kind": "keycaps",
+      "id": "gmk-deepwell",
+      "url": "https://www.deskhero.ca/products/gmk-deepwell-keycap-extras",
+      "observed": {
+        "name": "GMK Deepwell",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Deepwell Keycaps: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6695084425282-gmk-deku",
+      "kind": "keycaps",
+      "id": "gmk-deku",
+      "url": "https://www.deskhero.ca/products/gmk-deku-unvaulted",
+      "observed": {
+        "name": "GMK Deku",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars",
+          "The 40s",
+          "The Latin"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Deku Keycaps: Base; Novelties; Spacebars; The 40s; The Latin."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7442129813570-gmk-delta",
+      "kind": "keycaps",
+      "id": "gmk-delta",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-delta-r2-keycaps",
+      "observed": {
+        "name": "GMK Delta",
+        "variants": [
+          "R2 / Base",
+          "R2 / Novelties",
+          "R2 / Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Delta R2 Keycaps: R2 / Base; R2 / Novelties; R2 / Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8594083217723-gmk-electric",
+      "kind": "keycaps",
+      "id": "gmk-electric",
+      "url": "https://en.zfrontier.com/products/in-stock-gmk-electric",
+      "observed": {
+        "name": "GMK Electric",
+        "variants": [
+          "Colevrak"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Electric: Colevrak."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4696570069058-gmk-firefly",
+      "kind": "keycaps",
+      "id": "gmk-firefly",
+      "url": "https://www.deskhero.ca/products/gmk-firefly-extras",
+      "observed": {
+        "name": "GMK Firefly",
+        "variants": [
+          "R1 / Base",
+          "R1 / (DE) Accent",
+          "R1 / Numpad",
+          "R1 / 40s",
+          "R1 / Icon",
+          "R1 / NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Firefly R1 Keycaps: R1 / Base; R1 / (DE) Accent; R1 / Numpad; R1 / 40s; R1 / Icon; R1 / NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7014204407874-gmk-fleuriste",
+      "kind": "keycaps",
+      "id": "gmk-fleuriste",
+      "url": "https://www.deskhero.ca/products/gmk-fleuriste-keycaps",
+      "observed": {
+        "name": "GMK Fleuriste",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Accent",
+          "Numpad",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Fleuriste Keycaps: Base; Novelties; Accent; Numpad; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6857507373122-gmk-fox",
+      "kind": "keycaps",
+      "id": "gmk-fox",
+      "url": "https://www.deskhero.ca/products/gmk-fox-extras",
+      "observed": {
+        "name": "GMK Fox",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Alt Mods",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Fox Keycaps: Base; Novelties; Alt Mods; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6646541942850-gmk-frost-witch",
+      "kind": "keycaps",
+      "id": "gmk-frost-witch",
+      "url": "https://www.deskhero.ca/products/gmk-frost-witch-extras",
+      "observed": {
+        "name": "GMK Frost Witch",
+        "variants": [
+          "Base",
+          "Spacebars",
+          "Novelties",
+          "Accent"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Frost Witch Keycaps: Base; Spacebars; Novelties; Accent. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-6964556464210-gmk-fundamentals",
+      "kind": "keycaps",
+      "id": "gmk-fundamentals",
+      "url": "https://ilumkb.com/products/in-stock-gmk-fundamentals",
+      "observed": {
+        "name": "GMK Fundamentals",
+        "variants": [
+          "Accents",
+          "Base",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Fundamentals: Accents; Base; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4741222826050-gmk-fuyu",
+      "kind": "keycaps",
+      "id": "gmk-fuyu",
+      "url": "https://www.deskhero.ca/products/gmk-fuyu-extras",
+      "observed": {
+        "name": "GMK Fuyu",
+        "variants": [
+          "Base",
+          "Icon Mods",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Fuyu Keycaps: Base; Icon Mods; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6825525313602-gmk-gateway",
+      "kind": "keycaps",
+      "id": "gmk-gateway",
+      "url": "https://www.deskhero.ca/products/gmk-gateway-extras",
+      "observed": {
+        "name": "GMK Gateway",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Gateway Keycaps: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6971812905026-gmk-gladiator",
+      "kind": "keycaps",
+      "id": "gmk-gladiator",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-gladiator-keycaps",
+      "observed": {
+        "name": "GMK Gladiator",
+        "variants": [
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Gladiator Keycaps: International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6714605731918-gmk-grand-prix",
+      "kind": "keycaps",
+      "id": "gmk-grand-prix",
+      "url": "https://en.zfrontier.com/products/in-stock-gmk-grand-prix",
+      "observed": {
+        "name": "GMK Grand Prix",
+        "variants": [
+          "Base",
+          "Accents",
+          "40s",
+          "Spacebars",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Grand Prix: Base; Accents; 40s; Spacebars; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6880330448962-gmk-haku",
+      "kind": "keycaps",
+      "id": "gmk-haku",
+      "url": "https://www.deskhero.ca/products/gmk-haku-keycaps-extras",
+      "observed": {
+        "name": "GMK Haku",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Haku Keycaps: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6746258931778-gmk-hallyu",
+      "kind": "keycaps",
+      "id": "gmk-hallyu",
+      "url": "https://www.deskhero.ca/products/gmk-hallyu-keycaps-instock-extras",
+      "observed": {
+        "name": "GMK Hallyu",
+        "variants": [
+          "Novelties",
+          "Spacebars",
+          "Base"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Hallyu Keycaps: Novelties; Spacebars; Base."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6853235802178-gmk-hanami-dango",
+      "kind": "keycaps",
+      "id": "gmk-hanami-dango",
+      "url": "https://www.deskhero.ca/products/gmk-hanami-dango-extras",
+      "observed": {
+        "name": "GMK Hanami Dango",
+        "variants": [
+          "Base",
+          "Hiragana",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Hanami Dango Keycaps: Base; Hiragana; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6932277821506-gmk-hanok",
+      "kind": "keycaps",
+      "id": "gmk-hanok",
+      "url": "https://www.deskhero.ca/products/gmk-hanok-keycaps",
+      "observed": {
+        "name": "GMK Hanok",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars",
+          "Gray Mods"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Hanok Keycaps: Base; Novelties; Spacebars; Gray Mods."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6563667148866-gmk-honey",
+      "kind": "keycaps",
+      "id": "gmk-honey",
+      "url": "https://www.deskhero.ca/products/gmk-honey-extras",
+      "observed": {
+        "name": "GMK Honey",
+        "variants": [
+          "Base",
+          "Alternate Alphas",
+          "Spacebars",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Honey Keycaps: Base; Alternate Alphas; Spacebars; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6863970664514-gmk-iceberg",
+      "kind": "keycaps",
+      "id": "gmk-iceberg",
+      "url": "https://www.deskhero.ca/products/gmk-iceberg-extras",
+      "observed": {
+        "name": "GMK Iceberg",
+        "variants": [
+          "Base",
+          "Inuktitut",
+          "40s",
+          "Novelties",
+          "NorDeUK",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Iceberg Keycaps: Base; Inuktitut; 40s; Novelties; NorDeUK; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-6917404754002-gmk-inukuma",
+      "kind": "keycaps",
+      "id": "gmk-inukuma",
+      "url": "https://ilumkb.com/products/instock-gmk-inukuma",
+      "observed": {
+        "name": "GMK Inukuma",
+        "variants": [
+          "Base",
+          "Numpad",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK INUKUMA: Base; Numpad; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6882436382786-gmk-kouhai",
+      "kind": "keycaps",
+      "id": "gmk-kouhai",
+      "url": "https://www.deskhero.ca/products/gmk-kouhai-keycaps-extras",
+      "observed": {
+        "name": "GMK Kouhai",
+        "variants": [
+          "Base",
+          "Katakana",
+          "Spacebars",
+          "Extension"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Kouhai Keycaps: Base; Katakana; Spacebars; Extension."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6849800142914-gmk-maestro",
+      "kind": "keycaps",
+      "id": "gmk-maestro",
+      "url": "https://www.deskhero.ca/products/gmk-maestro-keycaps-extras",
+      "observed": {
+        "name": "GMK Maestro",
+        "variants": [
+          "Base",
+          "Golden Accents",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Maestro Keycaps: Base; Golden Accents; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6688035340354-gmk-mecha-01",
+      "kind": "keycaps",
+      "id": "gmk-mecha-01",
+      "url": "https://www.deskhero.ca/products/gmk-mecha-01-extras",
+      "observed": {
+        "name": "GMK Mecha-01",
+        "variants": [
+          "Berserk",
+          "Novelties",
+          "Spacebars",
+          "Extras",
+          "Base"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Mecha-01 Keycaps: Berserk; Novelties; Spacebars; Extras; Base. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6637926383682-gmk-midnight-rainbow",
+      "kind": "keycaps",
+      "id": "gmk-midnight-rainbow",
+      "url": "https://www.deskhero.ca/products/gmk-midnight-rainbow-extras",
+      "observed": {
+        "name": "GMK Midnight Rainbow",
+        "variants": [
+          "Base",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Midnight Rainbow: Base; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-6720332759122-gmk-modern-dolch-light",
+      "kind": "keycaps",
+      "id": "gmk-modern-dolch-light",
+      "url": "https://ilumkb.com/products/extra-gmk-modern-dolch-light",
+      "observed": {
+        "name": "GMK Modern Dolch Light",
+        "variants": [
+          "Addition",
+          "Numbers",
+          "Aesthetic",
+          "Modern",
+          "Obscure"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Modern Dolch Light: Addition; Numbers; Aesthetic; Alternate; Modern; Obscure. Alternate is the already-cataloged Accents kit."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7052659654722-gmk-modern-ink",
+      "kind": "keycaps",
+      "id": "gmk-modern-ink",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-modern-ink-keycaps",
+      "observed": {
+        "name": "GMK Modern Ink",
+        "variants": [
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Modern Ink Keycaps: International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8079935242555-gmk-modern-japanese-desko",
+      "kind": "keycaps",
+      "id": "gmk-modern-japanese-desko",
+      "url": "https://en.zfrontier.com/products/in-stock-gmk-modern-japanese-desko",
+      "observed": {
+        "name": "GMK Modern Japanese Desko",
+        "variants": [
+          "Latin Alphas"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Modern Japanese Desko: Latin Alphas."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6886160236610-gmk-monarch",
+      "kind": "keycaps",
+      "id": "gmk-monarch",
+      "url": "https://www.deskhero.ca/products/gmk-monarch-keycaps-in-stock-extras",
+      "observed": {
+        "name": "GMK Monarch",
+        "variants": [
+          "Base",
+          "Core",
+          "Novelties",
+          "Extras"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Monarch Keycaps: Base; Core; Novelties; Extras."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4775808335938-gmk-moon-dust",
+      "kind": "keycaps",
+      "id": "gmk-moon-dust",
+      "url": "https://www.deskhero.ca/products/gmk-moondust-extras",
+      "observed": {
+        "name": "GMK Moon Dust",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Moondust Keycaps: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4772588978242-gmk-noel",
+      "kind": "keycaps",
+      "id": "gmk-noel",
+      "url": "https://www.deskhero.ca/products/gmk-noel-extras",
+      "observed": {
+        "name": "GMK Noel",
+        "variants": [
+          "R1 / Base",
+          "R1 / Hiragana Alphas",
+          "R1 / Novelties",
+          "R1 / 40s/Ortho/Spacebars (Extension)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Noel Keycaps. Original-release retailer listing predates the second round; preserve its kit inventory separately: R1 / Base; R1 / Hiragana Alphas; R1 / Novelties; R1 / 40s/Ortho/Spacebars (Extension)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6849795522626-gmk-norse",
+      "kind": "keycaps",
+      "id": "gmk-norse",
+      "url": "https://www.deskhero.ca/products/gmk-norse-extras",
+      "observed": {
+        "name": "GMK Norse",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars (Aesthetic)",
+          "Latin Alphas (Alternate)",
+          "Obscure",
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Norse Keycaps: Base; Novelties; Spacebars (Aesthetic); Latin Alphas (Alternate); Obscure; International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-6917401837650-gmk-olive",
+      "kind": "keycaps",
+      "id": "gmk-olive",
+      "url": "https://ilumkb.com/products/instock-gmk-olive-r2",
+      "observed": {
+        "name": "GMK Olive",
+        "variants": [
+          "R2 / Light Base",
+          "R2 / Spacebars",
+          "R2 / Dark Base",
+          "R2 / ISO",
+          "R2 / Extension",
+          "R2 / Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL OLIVE R2: R2 / Light Base; R2 / Spacebars; R2 / Dark Base; R2 / ISO; R2 / Extension; R2 / Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6820450304066-gmk-oni",
+      "kind": "keycaps",
+      "id": "gmk-oni",
+      "url": "https://www.deskhero.ca/products/gmk-oni-extras",
+      "observed": {
+        "name": "GMK Oni",
+        "variants": [
+          "Base",
+          "Hiragana",
+          "Novelties",
+          "Extension",
+          "Accents",
+          "UwU"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Oni Keycaps: Base; Hiragana; Novelties; Extension; Accents; UwU."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7115481055314-gmk-pacific",
+      "kind": "keycaps",
+      "id": "gmk-pacific",
+      "url": "https://ilumkb.com/products/gmk-pacific-keycap-set",
+      "observed": {
+        "name": "GMK Pacific",
+        "variants": [
+          "Base",
+          "Propeller (Novelties)",
+          "Wings (Spacebars)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK PACIFIC: Base; Propeller (Novelties); Wings (Spacebars)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6869648113730-gmk-patisserie",
+      "kind": "keycaps",
+      "id": "gmk-patisserie",
+      "url": "https://www.deskhero.ca/products/gmk-patisserie-keyset-extras",
+      "observed": {
+        "name": "GMK Patisserie",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Nom"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Patisserie Keycaps: Base; Novelties; Nom."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6787424878658-gmk-pink-on-navy",
+      "kind": "keycaps",
+      "id": "gmk-pink-on-navy",
+      "url": "https://www.deskhero.ca/products/gmk-pink-on-navy-extras",
+      "observed": {
+        "name": "GMK Pink on Navy",
+        "variants": [
+          "Base",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Pink on Navy Keycaps: Base; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10126804812091-gmk-pixel",
+      "kind": "keycaps",
+      "id": "gmk-pixel",
+      "url": "https://en.zfrontier.com/products/in-stock-gmk-pixel",
+      "observed": {
+        "name": "GMK Pixel",
+        "variants": [
+          "Base",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Pixel: Base; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7456213925954-gmk-prussian-blue",
+      "kind": "keycaps",
+      "id": "gmk-prussian-blue",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-prussian-blue-keycaps",
+      "observed": {
+        "name": "GMK Prussian Blue",
+        "variants": [
+          "Base",
+          "Compatibility",
+          "German Mods",
+          "NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Prussian Blue Keycaps: Base; Compatibility; German Mods; NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6886155681858-gmk-red-alert",
+      "kind": "keycaps",
+      "id": "gmk-red-alert",
+      "url": "https://www.deskhero.ca/products/gmk-red-alert-keycaps-in-stock-extras",
+      "observed": {
+        "name": "GMK Red Alert",
+        "variants": [
+          "Crimson Cyrillic",
+          "Base",
+          "Extension - Classic Compute",
+          "Num Row"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Red Alert Keycaps: Crimson Cyrillic; Base; Extension - Classic Compute; Num Row. Release/kit normalization reviewed 2026-09-27. Designer 2021 group buy identifies Base, OG Number, Classic Compute and Crimson Cyrillic; this is the catalog R2 release."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7080398028882-gmk-red-dragon",
+      "kind": "keycaps",
+      "id": "gmk-red-dragon",
+      "url": "https://ilumkb.com/products/gmk-red-dragon-1",
+      "observed": {
+        "name": "GMK Red Dragon",
+        "variants": [
+          "Micro"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Red Dragon: Micro."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6798487191630-gmk-retrocast",
+      "kind": "keycaps",
+      "id": "gmk-retrocast",
+      "url": "https://en.zfrontier.com/products/in-stock-gmk-retrocast",
+      "observed": {
+        "name": "GMK Retrocast",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Colors",
+          "Batteries"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Retrocast: Base; Novelties; Colors; Batteries."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6914386067522-gmk-retrowave",
+      "kind": "keycaps",
+      "id": "gmk-retrowave",
+      "url": "https://www.deskhero.ca/products/gmk-retrowave-in-stock-extras",
+      "observed": {
+        "name": "GMK Retrowave",
+        "variants": [
+          "Base",
+          "Import",
+          "Aesthetic",
+          "Small",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Retrowave Keycaps: Base; Import; Aesthetic; Small; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7041157693506-gmk-rouge",
+      "kind": "keycaps",
+      "id": "gmk-rouge",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-rouge-r2-keycaps",
+      "observed": {
+        "name": "GMK Rouge",
+        "variants": [
+          "R2 / Base",
+          "R2 / Numpad",
+          "R2 / 40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Rouge R2 Keycaps: R2 / Base; R2 / Numpad; R2 / 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7059288588370-gmk-seafarer",
+      "kind": "keycaps",
+      "id": "gmk-seafarer",
+      "url": "https://ilumkb.com/products/in-stock-gmk-seafarer",
+      "observed": {
+        "name": "GMK Seafarer",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL Seafarer: Base; Novelties; Spacebars; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10126797570363-gmk-serenity",
+      "kind": "keycaps",
+      "id": "gmk-serenity",
+      "url": "https://en.zfrontier.com/products/in-stock-gmk-serenity",
+      "observed": {
+        "name": "GMK Serenity",
+        "variants": [
+          "Base",
+          "Compact"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Serenity: Base; Compact."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7673497223234-gmk-shaded",
+      "kind": "keycaps",
+      "id": "gmk-shaded",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-shaded-keycaps",
+      "observed": {
+        "name": "GMK Shaded",
+        "variants": [
+          "Black on Grey / Base",
+          "Black on Grey / Extension",
+          "Black on Grey / Modi",
+          "Grey on Black / Base",
+          "Grey on Black / Extension",
+          "Grey on Black / Modi"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Shaded Keycaps: Black on Grey / Base; Black on Grey / Extension; Black on Grey / Modi; Grey on Black / Base; Grey on Black / Extension; Grey on Black / Modi."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4325295456322-gmk-shark-bait",
+      "kind": "keycaps",
+      "id": "gmk-shark-bait",
+      "url": "https://www.deskhero.ca/products/gmk-sharkbait",
+      "observed": {
+        "name": "GMK Shark Bait",
+        "variants": [
+          "Spacebars",
+          "Base",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Sharkbait Keycaps: Spacebars; Base; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6713171345474-gmk-shoko",
+      "kind": "keycaps",
+      "id": "gmk-shoko",
+      "url": "https://www.deskhero.ca/products/gmk-shoko-r2-extras",
+      "observed": {
+        "name": "GMK Shoko",
+        "variants": [
+          "R2 / Base",
+          "R2 / Hiragana",
+          "R2 / Spacebars",
+          "R2 / Obscure"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Shoko r2 Keycaps: R2 / Base; R2 / Hiragana; R2 / Spacebars; R2 / Obscure."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-6583383294012-gmk-sixes",
+      "kind": "keycaps",
+      "id": "gmk-sixes",
+      "url": "https://mekibo.com/products/gmk-sixes",
+      "observed": {
+        "name": "GMK Sixes",
+        "variants": [
+          "Base",
+          "Calc (Numpad)",
+          "Makeup (Accents)",
+          "Spacebars",
+          "ISO",
+          "Smol (40s)",
+          "Ogre (Ergo)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Sixes (In-stock): Base; Calc (Numpad); Makeup (Accents); Spacebars; ISO; Smol (40s); Ogre (Ergo)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6869664235586-gmk-star",
+      "kind": "keycaps",
+      "id": "gmk-star",
+      "url": "https://www.deskhero.ca/products/gmk-star-keyset-extras",
+      "observed": {
+        "name": "GMK Star",
+        "variants": [
+          "Base",
+          "Novelties",
+          "40s",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Star Keycaps: Base; Novelties; 40s; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6896329457730-gmk-stealth",
+      "kind": "keycaps",
+      "id": "gmk-stealth",
+      "url": "https://www.deskhero.ca/products/gmk-stealth-keycaps-in-stock-extras",
+      "observed": {
+        "name": "GMK Stealth",
+        "variants": [
+          "Numpad",
+          "Extension",
+          "Base",
+          "Blackout Alphas",
+          "Novelties",
+          "Spacebars",
+          "NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Stealth Keycaps: Numpad; Extension; Base; Blackout Alphas; Novelties; Spacebars; NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6791103643714-gmk-storm",
+      "kind": "keycaps",
+      "id": "gmk-storm",
+      "url": "https://www.deskhero.ca/products/gmk-storm-extras",
+      "observed": {
+        "name": "GMK Storm",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Storm Keycaps: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6924343181378-gmk-sumi",
+      "kind": "keycaps",
+      "id": "gmk-sumi",
+      "url": "https://www.deskhero.ca/products/gmk-sumi-keycaps-extras",
+      "observed": {
+        "name": "GMK Sumi",
+        "variants": [
+          "Base",
+          "Hiragana Alphas",
+          "Novelties",
+          "Spacebars",
+          "40s/Ortho"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Sumi Keycaps: Base; Hiragana Alphas; Novelties; Spacebars; 40s/Ortho."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7030443704386-gmk-tenshi",
+      "kind": "keycaps",
+      "id": "gmk-tenshi",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-tenshi-keycaps",
+      "observed": {
+        "name": "GMK Tenshi",
+        "variants": [
+          "Latin",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Tenshi Keycaps: Latin; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6954191421506-gmk-terror-below",
+      "kind": "keycaps",
+      "id": "gmk-terror-below",
+      "url": "https://www.deskhero.ca/products/gmk-terror-below-keycaps",
+      "observed": {
+        "name": "GMK Terror Below",
+        "variants": [
+          "NorDe"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Terror Below Keycaps: NorDe."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6770325422146-gmk-thai-tea",
+      "kind": "keycaps",
+      "id": "gmk-thai-tea",
+      "url": "https://www.deskhero.ca/products/gmk-thai-tea-extras",
+      "observed": {
+        "name": "GMK Thai Tea",
+        "variants": [
+          "Base",
+          "Alphas",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Thai Tea Keycaps: Base; Alphas; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6767100035138-gmk-thinkcaps",
+      "kind": "keycaps",
+      "id": "gmk-thinkcaps",
+      "url": "https://www.deskhero.ca/products/gmk-thinkcaps-extras",
+      "observed": {
+        "name": "GMK ThinkCaps",
+        "variants": [
+          "TKL Base",
+          "Numpad",
+          "Extension",
+          "Icon Mods",
+          "RGB Mods",
+          "Novelties",
+          "Spacebars",
+          "Accent",
+          "NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL ThinkCaps Keycaps: TKL Base; Numpad; Extension; Icon Mods; RGB Mods; Novelties; Spacebars; Accent; NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4655893643330-gmk-umbra",
+      "kind": "keycaps",
+      "id": "gmk-umbra",
+      "url": "https://www.deskhero.ca/products/gmk-umbra-extras",
+      "observed": {
+        "name": "GMK Umbra",
+        "variants": [
+          "Base",
+          "Hiragana",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Umbra - Extras: Base; Hiragana; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-8607054168352-gmk-underworld",
+      "kind": "keycaps",
+      "id": "gmk-underworld",
+      "url": "https://mekibo.com/products/gmk-underworld",
+      "observed": {
+        "name": "GMK Underworld",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Underworld (In-stock): Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7193012699218-gmk-universe",
+      "kind": "keycaps",
+      "id": "gmk-universe",
+      "url": "https://ilumkb.com/products/instock-gmk-universe-keycap-set",
+      "observed": {
+        "name": "GMK Universe",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK Universe: Base; Novelties; Spacebars; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7493832409170-gmk-violet-alert",
+      "kind": "keycaps",
+      "id": "gmk-violet-alert",
+      "url": "https://ilumkb.com/products/group-buy-gmk-cyl-violet-alert",
+      "observed": {
+        "name": "GMK Violet Alert",
+        "variants": [
+          "Base",
+          "Non-Alert",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK CYL Violet Alert: Base; Non-Alert; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-6542555316284-gmk-watermelon",
+      "kind": "keycaps",
+      "id": "gmk-watermelon",
+      "url": "https://mekibo.com/products/gmk-watermelon",
+      "observed": {
+        "name": "GMK Watermelon",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK Watermelon (In-stock): Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6698436919362-gmk-yuru",
+      "kind": "keycaps",
+      "id": "gmk-yuru",
+      "url": "https://www.deskhero.ca/products/deskmat-gmk-yuru",
+      "observed": {
+        "name": "GMK Yuru",
+        "variants": [
+          "Novelties",
+          "Hiragana Base",
+          "40s/Ortho/Spacebars (Extension)",
+          "Emote (≧◡≦)",
+          "Latin Base"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Yuru Keycaps: Novelties; Hiragana Base; 40s/Ortho/Spacebars (Extension); Emote (≧◡≦); Latin Base."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7004252045378-gmk-yutousu",
+      "kind": "keycaps",
+      "id": "gmk-yutousu",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-yutousu-keycaps",
+      "observed": {
+        "name": "GMK Yutousu",
+        "variants": [
+          "Base",
+          "Latin Alphas",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK CYL Yutousu Keycaps: Base; Latin Alphas; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6828807389262-jtk-avocado",
+      "kind": "keycaps",
+      "id": "jtk-avocado",
+      "url": "https://en.zfrontier.com/products/in-stock-jtk-avocado",
+      "observed": {
+        "name": "JTK Avocado",
+        "variants": [
+          "Yellow Alphas",
+          "Green Alphas",
+          "Coffee Modifiers",
+          "Green Spacebars",
+          "Yellow Spacebars",
+          "Coffee Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] JTK Avocado: Yellow Alphas; Green Alphas; Coffee Modifiers; Green Spacebars; Yellow Spacebars; Coffee Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8320554271035-jtk-dreaming-girl",
+      "kind": "keycaps",
+      "id": "jtk-dreaming-girl",
+      "url": "https://en.zfrontier.com/products/in-stock-jtk-dreaming-girl",
+      "observed": {
+        "name": "JTK Dreaming Girl",
+        "variants": [
+          "Alt Mods"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] JTK Dreaming Girl: Alt Mods."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6771422232654-jtk-formidable",
+      "kind": "keycaps",
+      "id": "jtk-formidable",
+      "url": "https://en.zfrontier.com/products/in-stock-jtk-formidable",
+      "observed": {
+        "name": "JTK Formidable",
+        "variants": [
+          "Base",
+          "Doubleshot Alphas"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] JTK Formidable: Base; Doubleshot Alphas."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6808121933890-jtk-illusion",
+      "kind": "keycaps",
+      "id": "jtk-illusion",
+      "url": "https://www.deskhero.ca/products/jtk-illusion-extras",
+      "observed": {
+        "name": "JTK Illusion",
+        "variants": [
+          "Base",
+          "White Spacebars",
+          "Purple Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from JTK Illusion Keycaps: Base; White Spacebars; Purple Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6756383326274-jtk-nightsakura",
+      "kind": "keycaps",
+      "id": "jtk-nightsakura",
+      "url": "https://www.deskhero.ca/products/jtk-night-sakura-extras",
+      "observed": {
+        "name": "JTK NightSakura",
+        "variants": [
+          "Base",
+          "Doubleshot Latin Alphas",
+          "Novelties",
+          "Gray Mods",
+          "Spacebars - Pink",
+          "Spacebars - Gray"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from JTK Night Sakura Keycaps: Base; Doubleshot Latin Alphas; Novelties; Gray Mods; Spacebars - Pink; Spacebars - Gray."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6586595967042-jtk-suited-assassin",
+      "kind": "keycaps",
+      "id": "jtk-suited-assassin",
+      "url": "https://www.deskhero.ca/products/jtk-suited-assassin",
+      "observed": {
+        "name": "JTK Suited Assassin",
+        "variants": [
+          "Base",
+          "Tripleshot Cyrillic Alphas",
+          "Novelties",
+          "Spacebars - Gold",
+          "Spacebars - Dark"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from JTK Suited Assassin Keycaps: Base; Tripleshot Cyrillic Alphas; Novelties; Spacebars - Gold; Spacebars - Dark."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8431212396859-kam-command",
+      "kind": "keycaps",
+      "id": "kam-command",
+      "url": "https://en.zfrontier.com/products/in-stock-kam-command",
+      "observed": {
+        "name": "KAM Command",
+        "variants": [
+          "Alphas",
+          "Blank Alphas",
+          "Modifiers",
+          "40s + Ortho Modifiers",
+          "Ergo",
+          "Numpad",
+          "Spacebars",
+          "UK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAM Command: Alphas; Blank Alphas; Modifiers; 40s + Ortho Modifiers; Ergo; Numpad; Spacebars; UK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4359371522114-kam-little-pilot",
+      "kind": "keycaps",
+      "id": "kam-little-pilot",
+      "url": "https://www.deskhero.ca/products/kam-little-pilot",
+      "observed": {
+        "name": "KAM Little Pilot",
+        "variants": [
+          "Alphas",
+          "Base Mods",
+          "Numpad",
+          "ISO UK",
+          "Ortho",
+          "Exotic",
+          "40s",
+          "Ergo",
+          "Homing"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KAM Little Pilot: Alphas; Base Mods; Numpad; ISO UK; Ortho; Exotic; 40s; Ergo; Homing."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8503295607099-kam-sewing-tin",
+      "kind": "keycaps",
+      "id": "kam-sewing-tin",
+      "url": "https://en.zfrontier.com/products/in-stock-kam-sewing-tin",
+      "observed": {
+        "name": "KAM Sewing Tin",
+        "variants": [
+          "Ergo",
+          "Alternate Numrow",
+          "Colevrak"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAM Sewing Tin: Ergo; Alternate Numrow; Colevrak."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7780188094530-kap-ghost",
+      "kind": "keycaps",
+      "id": "kap-ghost",
+      "url": "https://www.deskhero.ca/products/kap-ghost-keycaps",
+      "observed": {
+        "name": "KAP Ghost",
+        "variants": [
+          "Base",
+          "Base (DE)",
+          "Katakana",
+          "Mega",
+          "Mega (DE)",
+          "Novelties",
+          "Numpad",
+          "Lamp",
+          "Spacebars",
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KAP Ghost Keycaps: Base; Base (DE); Katakana; Mega; Mega (DE); Novelties; Numpad; Lamp; Spacebars; International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4717418414146-kat-cat-s-eye",
+      "kind": "keycaps",
+      "id": "kat-cat-s-eye",
+      "url": "https://www.deskhero.ca/products/kat-cats-eye",
+      "observed": {
+        "name": "KAT Cat's Eye",
+        "variants": [
+          "Alphas Dark",
+          "Alphas Light",
+          "Modifiers Dark",
+          "Modifiers Light",
+          "Modifiers Plus",
+          "Novelties",
+          "Numpad Dark",
+          "Numpad Light",
+          "Alternate Color",
+          "Mac",
+          "ISO Dark",
+          "ISO Light",
+          "Colevrak Dark",
+          "Colevrak Light",
+          "Ergo Dark",
+          "Ergo Light",
+          "40s",
+          "North Dark",
+          "North Light",
+          "Ortho Dark",
+          "Ortho Light",
+          "Space Dark",
+          "Space Light"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KAT Cat's Eye Keycaps: Alphas Dark; Alphas Light; Modifiers Dark; Modifiers Light; Modifiers Plus; Novelties; Numpad Dark; Numpad Light; Alternate Color; Mac; ISO Dark; ISO Light; Colevrak Dark; Colevrak Light; Ergo Dark; Ergo Light; 40s; North Dark; North Light; Ortho Dark; Ortho Light; Space Dark; Space Light."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6981339152450-kat-comet",
+      "kind": "keycaps",
+      "id": "kat-comet",
+      "url": "https://www.deskhero.ca/products/kat-comet-keycaps",
+      "observed": {
+        "name": "KAT Comet",
+        "variants": [
+          "40s/Ortho",
+          "Alphas",
+          "Alt Alphas",
+          "Alt Hiragana",
+          "Alt Numpad",
+          "Alt TKL",
+          "Colevrak+",
+          "Ergo",
+          "French",
+          "Hiragana",
+          "Icon Mods",
+          "Novelties",
+          "Numpad",
+          "North",
+          "Spacebars",
+          "Text Mods",
+          "TKL"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KAT Comet Keycaps: 40s/Ortho; Alphas; Alt Alphas; Alt Hiragana; Alt Numpad; Alt TKL; Colevrak+; Ergo; French; Hiragana; Icon Mods; Novelties; Numpad; North; Spacebars; Text Mods; TKL."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6536060338242-kat-eternal",
+      "kind": "keycaps",
+      "id": "kat-eternal",
+      "url": "https://www.deskhero.ca/products/kat-eternal-extras",
+      "observed": {
+        "name": "KAT Eternal",
+        "variants": [
+          "Alphas",
+          "60 - TKL Icon",
+          "60 - TKL Text",
+          "40s/Ortho Icon",
+          "40s/Ortho Text",
+          "Novelties",
+          "Numpad",
+          "UK",
+          "International",
+          "French",
+          "Colevrak",
+          "Ergodox"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KAT Eternal Keycaps: Alphas; 60 - TKL Icon; 60 - TKL Text; 40s/Ortho Icon; 40s/Ortho Text; Novelties; Numpad; UK; International; French; Colevrak; Ergodox."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6737762713678-kat-hyperfuse",
+      "kind": "keycaps",
+      "id": "kat-hyperfuse",
+      "url": "https://en.zfrontier.com/products/in-stock-kat-hyperfuse",
+      "observed": {
+        "name": "KAT Hyperfuse",
+        "variants": [
+          "Alphas",
+          "Modifiers (Icon)",
+          "Modifiers (Text)",
+          "Novelties",
+          "Purple Accent (Icon)",
+          "Purple Accent (Text)",
+          "Spacebars",
+          "Teal Accent (Icon)",
+          "Teal Accent (Text)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAT Hyperfuse: Alphas; Modifiers (Icon); Modifiers (Text); Novelties; Purple Accent (Icon); Purple Accent (Text); Spacebars; Teal Accent (Icon); Teal Accent (Text)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6782075535438-kat-lala",
+      "kind": "keycaps",
+      "id": "kat-lala",
+      "url": "https://en.zfrontier.com/products/in-stock-kat-lala",
+      "observed": {
+        "name": "KAT LALA",
+        "variants": [
+          "Base (Dark)",
+          "Base (Light)",
+          "White Alphas",
+          "Modifiers",
+          "Novelties",
+          "Alternate",
+          "Mac",
+          "Ergo (Dark)",
+          "Ergo (Light)",
+          "Ergo (White)",
+          "ISO (Dark)",
+          "ISO (Light)",
+          "ISO (White)",
+          "NorDe (Dark)",
+          "NorDe (Light)",
+          "NorDe (White)",
+          "Spacebars (Dark)",
+          "Spacebars (Light)",
+          "Spacebars (White)",
+          "Numpad (Dark)",
+          "Numpad (Light)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAT Lala: Base (Dark); Base (Light); White Alphas; Modifiers; Novelties; Alternate; Mac; Ergo (Dark); Ergo (Light); Ergo (White); ISO (Dark); ISO (Light); ISO (White); NorDe (Dark); NorDe (Light); NorDe (White); Spacebars (Dark); Spacebars (Light); Spacebars (White); Numpad (Dark); Numpad (Light)."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-4425002156098-kat-lich",
+      "kind": "keycaps",
+      "id": "kat-lich",
+      "url": "https://www.deskhero.ca/products/kat-lich",
+      "observed": {
+        "name": "KAT Lich",
+        "variants": [
+          "Alphas",
+          "Mods",
+          "40s",
+          "Ortho",
+          "Ergo",
+          "Ergo - Legends",
+          "Numpad",
+          "Novelties",
+          "Spacebars",
+          "North",
+          "South",
+          "French",
+          "Colevrak+"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KAT Lich: Alphas; Mods; 40s; Ortho; Ergo; Ergo - Legends; Numpad; Novelties; Spacebars; North; South; French; Colevrak+."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-9698634826043-kat-napoleonic",
+      "kind": "keycaps",
+      "id": "kat-napoleonic",
+      "url": "https://en.zfrontier.com/products/in-stock-kat-napoleonic-1",
+      "observed": {
+        "name": "KAT Napoleonic",
+        "variants": [
+          "Default US English (Jefferson)",
+          "Belgian & Apple French (Marie Louise)",
+          "BÉPO (Bépoleon Nonaparte)",
+          "Canadian French (Chateauguay)",
+          "Cherokee (Sequoyah)",
+          "Colemak+ (Jonathan Strange)",
+          "Dvorak (Mr Norrell)",
+          "EurKEY (Blücher)",
+          "French for Windows (Joséphine)",
+          "German (Metternich)",
+          "Hungarian & South Slavic (Doppelkaiser)",
+          "Japanese (Nagasaki)",
+          "Nordic (Bernadotte)",
+          "Polish & Lithuanian (Uhlan)",
+          "Russian (Alexander)",
+          "South Slavic Cyrillic (Karađorđe)",
+          "Spanish (Agustina)",
+          "Swiss (Act of Mediation)",
+          "Tamil (Pondicherry)",
+          "UK English & Irish (Wellington)",
+          "US Int'l & Netherlands (Waterloo)",
+          "TKL Mods - French Indigo",
+          "TKL Mods - Russian Green",
+          "TKL Mods - Austrian White",
+          "TKL Mods - British Navy",
+          "Numpad - French Indigo",
+          "Numpad - Russian Green",
+          "Numpad - Austrian White",
+          "Ortho Mods - French Indigo",
+          "Ortho Mods - Russian Green",
+          "Ortho Mods - Austrian White",
+          "40s Mods - French Indigo",
+          "40s Mods - Russian Green",
+          "Ergo Mods - French Indigo",
+          "Ergo Mods - Russian Green",
+          "Spacebars",
+          "Novelties",
+          "Mac",
+          "Blank Ergo Ortho",
+          "Madness"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAT Napoleonic: Default US English (Jefferson); Belgian & Apple French (Marie Louise); BÉPO (Bépoleon Nonaparte); Canadian French (Chateauguay); Cherokee (Sequoyah); Colemak+ (Jonathan Strange); Dvorak (Mr Norrell); EurKEY (Blücher); French for Windows (Joséphine); German (Metternich); Hungarian & South Slavic (Doppelkaiser); Japanese (Nagasaki); Nordic (Bernadotte); Polish & Lithuanian (Uhlan); Russian (Alexander); South Slavic Cyrillic (Karađorđe); Spanish (Agustina); Swiss (Act of Mediation); Tamil (Pondicherry); UK English & Irish (Wellington); US Int'l & Netherlands (Waterloo); TKL Mods - French Indigo; TKL Mods - Russian Green; TKL Mods - Austrian White; TKL Mods - British Navy; Numpad - French Indigo; Numpad - Russian Green; Numpad - Austrian White; Ortho Mods - French Indigo; Ortho Mods - Russian Green; Ortho Mods - Austrian White; 40s Mods - French Indigo; 40s Mods - Russian Green; Ergo Mods - French Indigo; Ergo Mods - Russian Green; Spacebars; Novelties; Mac; Blank Ergo Ortho; Madness."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-9699248800059-kat-overgrown",
+      "kind": "keycaps",
+      "id": "kat-overgrown",
+      "url": "https://en.zfrontier.com/products/in-stock-kat-overgrown",
+      "observed": {
+        "name": "KAT Overgrown",
+        "variants": [
+          "Reclaimed Alphas",
+          "Constructed TKL Mods",
+          "Reclaimed TKL Mods",
+          "Constructed 40s Mods",
+          "Abandoned 40s Mods",
+          "Reclaimed 40s Mods",
+          "Constructed Bortho Mods",
+          "Abandoned Bortho Mods",
+          "Reclaimed Bortho Mods",
+          "Constructed Numpad",
+          "Abandoned Numpad",
+          "Reclaimed Numpad",
+          "All Accents",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAT Overgrown: Reclaimed Alphas; Constructed TKL Mods; Reclaimed TKL Mods; Constructed 40s Mods; Abandoned 40s Mods; Reclaimed 40s Mods; Constructed Bortho Mods; Abandoned Bortho Mods; Reclaimed Bortho Mods; Constructed Numpad; Abandoned Numpad; Reclaimed Numpad; All Accents; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-9045295628603-kat-slurp",
+      "kind": "keycaps",
+      "id": "kat-slurp",
+      "url": "https://en.zfrontier.com/products/in-stock-kat-slurp",
+      "observed": {
+        "name": "KAT Slurp",
+        "variants": [
+          "40s",
+          "Ortho",
+          "Ergo Blanks",
+          "Ergo",
+          "Numpad",
+          "Novelties",
+          "Neon Spacebars",
+          "Colevrak",
+          "French",
+          "South"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KAT Slurp: 40s; Ortho; Ergo Blanks; Ergo; Numpad; Novelties; Neon Spacebars; Colevrak; French; South."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6812225601602-kbm-fairy",
+      "kind": "keycaps",
+      "id": "kbm-fairy",
+      "url": "https://www.deskhero.ca/products/kbm-fairy",
+      "observed": {
+        "name": "KBM Fairy",
+        "variants": [
+          "Base",
+          "40s",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from KBM Fairy: Base; 40s; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10212415275323-kkb-khonsu",
+      "kind": "keycaps",
+      "id": "kkb-khonsu",
+      "url": "https://en.zfrontier.com/products/in-stock-keykobo-khonsu",
+      "observed": {
+        "name": "KKB Khonsu",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Numpad",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] KeyKobo Khonsu: Base; Novelties; Numpad; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7054275969090-kkb-poltergeist",
+      "kind": "keycaps",
+      "id": "kkb-poltergeist",
+      "url": "https://www.deskhero.ca/products/keykobo-poltergeist-keycaps",
+      "observed": {
+        "name": "KKB Poltergeist",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from Keykobo Poltergeist Keycaps: Base; Novelties; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7200615465026-mtnu-800",
+      "kind": "keycaps",
+      "id": "mtnu-800",
+      "url": "https://www.deskhero.ca/products/gmk-mtnu-800-keycaps",
+      "observed": {
+        "name": "MTNU 800",
+        "variants": [
+          "Base",
+          "Module A",
+          "Module B",
+          "Module C"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK MTNU 800 Keycaps: Base; Module A; Module B; Module C."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7054773026882-mtnu-beige",
+      "kind": "keycaps",
+      "id": "mtnu-beige",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-mtnu-beige-keycaps",
+      "observed": {
+        "name": "MTNU Beige",
+        "variants": [
+          "Base",
+          "Addon",
+          "Typist",
+          "International",
+          "3A/3C Accents",
+          "Orange Accents"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK MTNU Beige Keycaps: Base; Addon; Typist; International; 3A/3C Accents; Orange Accents."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7523042787410-mtnu-foundation",
+      "kind": "keycaps",
+      "id": "mtnu-foundation",
+      "url": "https://ilumkb.com/products/gmk-mtnu-foundation",
+      "observed": {
+        "name": "MTNU Foundation",
+        "variants": [
+          "Base",
+          "Accents"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] GMK MTNU Foundation: Base; Accents."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7054779908162-mtnu-susu",
+      "kind": "keycaps",
+      "id": "mtnu-susu",
+      "url": "https://www.deskhero.ca/products/gmk-cyl-mtnu-susu-keycaps",
+      "observed": {
+        "name": "MTNU Susu",
+        "variants": [
+          "Base",
+          "Extras",
+          "Numpad",
+          "Monotone",
+          "Mad Typist",
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from GMK MTNU Susu Keycaps: Base; Extras; Numpad; Monotone; Mad Typist; International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10276837785915-mw-alhambra",
+      "kind": "keycaps",
+      "id": "mw-alhambra",
+      "url": "https://en.zfrontier.com/products/in-stock-mw-alhambra-r2",
+      "observed": {
+        "name": "MW Alhambra",
+        "variants": [
+          "R2 / Alphas",
+          "R2 / Light Mods",
+          "R2 / Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] MW Alhambra R2: R2 / Alphas; R2 / Light Mods; R2 / Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-9546088907067-mw-kaworu",
+      "kind": "keycaps",
+      "id": "mw-kaworu",
+      "url": "https://en.zfrontier.com/products/in-stock-mw-kaworu",
+      "observed": {
+        "name": "MW Kaworu",
+        "variants": [
+          "Alphas",
+          "White Alphas"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] MW Kaworu: Alphas; White Alphas."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-8263560757314-mw-meteor-dreams",
+      "kind": "keycaps",
+      "id": "mw-meteor-dreams",
+      "url": "https://www.deskhero.ca/products/mw-meteor-dreams-keycaps",
+      "observed": {
+        "name": "MW Meteor Dreams",
+        "variants": [
+          "NorDeUK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from MW Meteor Dreams Keycaps: NorDeUK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-8310736355394-mw-norse",
+      "kind": "keycaps",
+      "id": "mw-norse",
+      "url": "https://www.deskhero.ca/products/mw-norse-keycaps",
+      "observed": {
+        "name": "MW Norse",
+        "variants": [
+          "Dark Base + Novelties",
+          "Light Base + Novelties",
+          "Light Alphas",
+          "Dark Numpad",
+          "Light Numpad",
+          "Spacebars",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from MW Norse Keycaps: Dark Base + Novelties; Light Base + Novelties; Light Alphas; Dark Numpad; Light Numpad; Spacebars; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10275718824251-mw-poker",
+      "kind": "keycaps",
+      "id": "mw-poker",
+      "url": "https://en.zfrontier.com/products/in-stock-mw-poker-r2",
+      "observed": {
+        "name": "MW Poker",
+        "variants": [
+          "R2 / Base",
+          "R2 / Novelties",
+          "R2 / Alphas",
+          "R2 / Spacebars",
+          "R2 / Numpad",
+          "R2 / Relegendables"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] MW Poker R2: R2 / Numpad; R2 / Relegendables. R2 listing also confirms Base, Novelties, Alphas and Spacebars; older unscoped observations remain unassigned."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6911595053122-nicepbt-noel",
+      "kind": "keycaps",
+      "id": "nicepbt-noel",
+      "url": "https://www.deskhero.ca/products/nicepbt-noel-r3-keycaps",
+      "observed": {
+        "name": "NicePBT Noel",
+        "variants": [
+          "R3 / Base - Latin",
+          "R3 / Base - Hiragana"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from NicePBT Noel R3 Keycaps: R3 / Base - Latin; R3 / Base - Hiragana."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7510740959314-pbs-crispin",
+      "kind": "keycaps",
+      "id": "pbs-crispin",
+      "url": "https://ilumkb.com/products/pbs-crispin",
+      "observed": {
+        "name": "PBS Crispin",
+        "variants": [
+          "Regular Base",
+          "40s/Ortho Base",
+          "Mac"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] PBS Crispin: Regular Base; 40s/Ortho Base; Mac."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-ilumkb-7569385816146-pbs-retro-s-m-ag",
+      "kind": "keycaps",
+      "id": "pbs-retro-s-m-ag",
+      "url": "https://ilumkb.com/products/pbs-retro-s-m-ag",
+      "observed": {
+        "name": "PBS Retro S.M AG",
+        "variants": [
+          "General Base",
+          "Alphas",
+          "40s Base",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [Pre-Order] PBS-Retro S.M AG: General Base; Alphas; 40s Base; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6906975453250-pbtfans-deep-sea-predator",
+      "kind": "keycaps",
+      "id": "pbtfans-deep-sea-predator",
+      "url": "https://www.deskhero.ca/products/pbtfans-deep-sea-predator-keycaps-in-stock-extras",
+      "observed": {
+        "name": "PBTfans Deep Sea Predator",
+        "variants": [
+          "Base - Predator",
+          "Base - Hoshoku",
+          "Latin Alphas",
+          "Hiragana Alphas",
+          "Numpad",
+          "40s",
+          "Novelties",
+          "Spacebars",
+          "International"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from PBTFans Deep Sea Predator Keycaps: Base - Predator; Base - Hoshoku; Latin Alphas; Hiragana Alphas; Numpad; 40s; Novelties; Spacebars; International."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-8230892437792-pbtfans-umbra",
+      "kind": "keycaps",
+      "id": "pbtfans-umbra",
+      "url": "https://mekibo.com/products/pbtfans-umbra-in-stock",
+      "observed": {
+        "name": "PBTfans Umbra",
+        "variants": [
+          "Base",
+          "Hiragana",
+          "Numpad",
+          "OG Mod",
+          "International",
+          "40s"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from PBTfans Umbra (In-stock): Base; Hiragana; Numpad; OG Mod; International; 40s."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10511212020027-pff-verdant-retro",
+      "kind": "keycaps",
+      "id": "pff-verdant-retro",
+      "url": "https://en.zfrontier.com/products/in-stock-pff-verdant-retro",
+      "observed": {
+        "name": "PFF Verdant Retro",
+        "variants": [
+          "Base",
+          "40s Base",
+          "Bullet Train Base"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] PFF Verdant Retro: Base; 40s Base; Bullet Train Base."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8242651889979-sa-espresso",
+      "kind": "keycaps",
+      "id": "sa-espresso",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-sa-espresso",
+      "observed": {
+        "name": "SA Espresso",
+        "variants": [
+          "Alphas",
+          "TKL",
+          "Specialities",
+          "Ortho/40s",
+          "Spacebars",
+          "Numpad",
+          "ISO",
+          "NorDe",
+          "Ergo",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP SA Espresso: Alphas; TKL; Specialities; Ortho/40s; Spacebars; Numpad; ISO; NorDe; Ergo; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-10128680714555-sa-oblivion",
+      "kind": "keycaps",
+      "id": "sa-oblivion",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-sa-oblivion-v2",
+      "observed": {
+        "name": "SA Oblivion",
+        "variants": [
+          "V2 / Oblivion Alphas",
+          "V2 / Oblivion ASCII Alphas",
+          "V2 / Hagoromo ASCII Alphas",
+          "V2 / Git Modifiers",
+          "V2 / Oblivion Modifiers",
+          "V2 / Oblivion Numpad",
+          "V2 / Vim"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP SA Oblivion V2: V2 / Oblivion Alphas; V2 / Oblivion ASCII Alphas; V2 / Hagoromo ASCII Alphas; V2 / Git Modifiers; V2 / Oblivion Modifiers; V2 / Oblivion Numpad; V2 / Vim."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6778483343438-sa-recall",
+      "kind": "keycaps",
+      "id": "sa-recall",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-sa-recall",
+      "observed": {
+        "name": "SA Recall",
+        "variants": [
+          "Base",
+          "Alts+ISO",
+          "Numpad",
+          "Ortho"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP SA Recall: Base; Alts+ISO; Numpad; Ortho."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6601235726402-sa-skyriter",
+      "kind": "keycaps",
+      "id": "sa-skyriter",
+      "url": "https://www.deskhero.ca/products/sa-skyriter-extras",
+      "observed": {
+        "name": "SA Skyriter",
+        "variants": [
+          "Alphas",
+          "TKL/Specialty",
+          "Numpad",
+          "ISO",
+          "Ortho/40s",
+          "Spacekeys",
+          "Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from SA Skyriter Keycaps: Alphas; TKL/Specialty; Numpad; ISO; Ortho/40s; Spacekeys; Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-8436224753979-sa-spectra",
+      "kind": "keycaps",
+      "id": "sa-spectra",
+      "url": "https://en.zfrontier.com/products/in-stock-sp-sa-spectra",
+      "observed": {
+        "name": "SA Spectra",
+        "variants": [
+          "CMYK"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP SA Spectra: CMYK."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-zfrontier-6834736627790-sa-strong-spirit",
+      "kind": "keycaps",
+      "id": "sa-strong-spirit",
+      "url": "https://en.zfrontier.com/products/copy-of-group-buy-sp-sa-strong-spirit",
+      "observed": {
+        "name": "SA Strong Spirit",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Spirit",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from [In Stock] SP SA Strong Spirit: Base; Novelties; Spirit; Spacebars. Release/kit normalization reviewed 2026-09-27. Existing kit evidence does not establish a numbered release; preserve the kit with an explicit unspecified-release label rather than inventing a round/kit combination."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-7184119889986-sa-sunday-morning",
+      "kind": "keycaps",
+      "id": "sa-sunday-morning",
+      "url": "https://www.deskhero.ca/products/sa-sunday-morning-keycaps",
+      "observed": {
+        "name": "SA Sunday Morning",
+        "variants": [
+          "Peach Alphas",
+          "Maroon Alphas",
+          "60 - TKL Text",
+          "Novelties",
+          "Numpad",
+          "40s/Ortho Icon",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from SA Sunday Morning Keycaps: Peach Alphas; Maroon Alphas; 60 - TKL Text; Novelties; Numpad; 40s/Ortho Icon; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-10534286721312-swg-evil-eye",
+      "kind": "keycaps",
+      "id": "swg-evil-eye",
+      "url": "https://mekibo.com/products/swg-evil-eye",
+      "observed": {
+        "name": "SWG Evil Eye",
+        "variants": [
+          "Base",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from SWG Evil Eye (Pre-order): Base; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-mekibo-10529102430496-swg-hazakura-light",
+      "kind": "keycaps",
+      "id": "swg-hazakura-light",
+      "url": "https://mekibo.com/products/swg-hazakura-light",
+      "observed": {
+        "name": "SWG Hazakura Light",
+        "variants": [
+          "Base",
+          "Latin Alphas",
+          "Novelties",
+          "Numpad"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from SWG Hazakura Light (Pre-order): Base; Latin Alphas; Novelties; Numpad."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-deskhero-6922407346242-tmt-story",
+      "kind": "keycaps",
+      "id": "tmt-story",
+      "url": "https://www.deskhero.ca/products/tmt-story-in-stock-extras",
+      "observed": {
+        "name": "TMT Story",
+        "variants": [
+          "Base",
+          "Novelties",
+          "Alt Alphas",
+          "Alt Mods",
+          "Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from TMT Story Keycaps: Base; Novelties; Alt Alphas; Alt Mods; Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-designer-gmk-nautilus-gmk-nautilus",
+      "kind": "keycaps",
+      "id": "gmk-nautilus",
+      "url": "https://zambumon.com/portfolio/nautilus-2/",
+      "observed": {
+        "name": "GMK Nautilus",
+        "variants": [
+          "R2 / Base",
+          "R2 / Explorer",
+          "R2 / 40s",
+          "R2 / International",
+          "R2 / Mac",
+          "R2 / Novelties",
+          "R2 / Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from gmk-nautilus: R2 / Base; R2 / Explorer; R2 / 40s; R2 / International; R2 / Mac; R2 / Novelties; R2 / Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-designer-gmk-striker-gmk-striker",
+      "kind": "keycaps",
+      "id": "gmk-striker",
+      "url": "https://zambumon.com/striker/",
+      "observed": {
+        "name": "GMK Striker",
+        "variants": [
+          "R2 / Base",
+          "R2 / Macro Expansion",
+          "R2 / Spacebars"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from gmk-striker: R2 / Base; R2 / Macro Expansion; R2 / Spacebars."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-designer-gmk-jamon-gmk-jamon",
+      "kind": "keycaps",
+      "id": "gmk-jamon",
+      "url": "https://zambumon.com/jamon-2/",
+      "observed": {
+        "name": "GMK Jamon",
+        "variants": [
+          "R2 / Base",
+          "R2 / Macro Expansion",
+          "R2 / Novelties"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from gmk-jamon: R2 / Base; R2 / Macro Expansion; R2 / Novelties."
+    },
+    {
+      "source": "reviewedkeycaps",
+      "sourceId": "kits-20260927-designer-gmk-taro-gmk-taro",
+      "kind": "keycaps",
+      "id": "gmk-taro",
+      "url": "https://www.reddit.com/r/mechmarket/comments/fpw2wp",
+      "observed": {
+        "name": "GMK Taro",
+        "variants": [
+          "R2 / Base",
+          "R2 / Boba Alphas",
+          "R2 / Milk Tea Mods",
+          "R2 / Side Snacks (Novelties)",
+          "R2 / Extra Straws (Spacebars)",
+          "R2 / Extra Toppings (Accent)",
+          "R2 / Small Portion (40s)"
+        ]
+      },
+      "notes": "Kit options reviewed 2026-09-27 from gmk-taro: R2 / Base; R2 / Boba Alphas; R2 / Milk Tea Mods; R2 / Side Snacks (Novelties); R2 / Extra Straws (Spacebars); R2 / Extra Toppings (Accent); R2 / Small Portion (40s). Extra Sugar/Ergo was cancelled and is excluded."
     }
   ]
 }

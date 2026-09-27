@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 52,
+  "catalogVersion": 63,
   "totalCount": 2416,
   "entries": [
     {
@@ -25,7 +25,11 @@
       "profile": "Cherry",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "R3 / Base - EN",
+        "R3 / Base - JP",
+        "R3 / Extension",
+        "R3 / Novelties"
       ]
     },
     {
@@ -514,7 +518,13 @@
       "manufacturer": "Awekeys",
       "brand": "Awekeys",
       "designer": "Daniel Mitchell",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "7u Spacebars",
+        "Alice",
+        "Base",
+        "Novelties"
+      ]
     },
     {
       "id": "awekeys-viking-antique",
@@ -870,7 +880,12 @@
       "designer": "biip",
       "profile": "Cherry",
       "variants": [
+        "Addons",
         "Base",
+        "Fruit",
+        "International",
+        "Nomad",
+        "Spacebars",
         "Weirdo Base"
       ]
     },
@@ -1828,7 +1843,14 @@
       "brand": "Signature Plastics",
       "designer": "Fredington",
       "profile": "DCS",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s/Spacebars",
+        "Accent",
+        "Base",
+        "JIS & MacOS",
+        "Relegendable"
+      ]
     },
     {
       "id": "dcs-alps-wob",
@@ -1958,7 +1980,18 @@
       "brand": "Signature Plastics",
       "designer": "yuukou_ / Langelandia",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "10u Spacebars",
+        "40s",
+        "Alt Alphas",
+        "Base",
+        "Extension",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "Text Mods"
+      ]
     },
     {
       "id": "dcs-cherry-replica",
@@ -2052,7 +2085,12 @@
       "brand": "Signature Plastics",
       "designer": "Zephyraeon",
       "profile": "DCS",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "dcs-delta-blues",
@@ -2268,7 +2306,15 @@
       "brand": "Signature Plastics",
       "designer": "Sax_______",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "10u Bar",
+        "Alt Mods",
+        "Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dcs-handarbeit",
@@ -2479,8 +2525,6 @@
         "ISO",
         "Numpad Midnight",
         "Numpad Twilight",
-        "R1",
-        "R2",
         "Twilight Base",
         "WASD and Arrows"
       ]
@@ -2550,7 +2594,12 @@
       "brand": "Signature Plastics",
       "designer": "mcmcmc",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension",
+        "Numpad"
+      ]
     },
     {
       "id": "dcs-orange-on-beige",
@@ -2789,7 +2838,11 @@
       "brand": "Signature Plastics",
       "designer": "Boku, DN",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension"
+      ]
     },
     {
       "id": "dcs-round-1",
@@ -2854,13 +2907,21 @@
       "profile": "DCS",
       "material": "ABS",
       "variants": [
-        "10u Spacebars",
-        "40s-Ortho",
-        "Accents",
-        "Alternates",
-        "Base",
-        "Ergo",
-        "Numpad"
+        "R1 / 10u Spacebars",
+        "R1 / 40s-Ortho",
+        "R1 / Accents",
+        "R1 / Alternates",
+        "R1 / Base",
+        "R1 / Ergo",
+        "R1 / Numpad",
+        "R2 / Base",
+        "R2 / Accent",
+        "R2 / Numpad",
+        "R2 / 40s",
+        "R2 / LED",
+        "R2 / Split Spacebars",
+        "R2 / 10U",
+        "R2 / UKISO"
       ]
     },
     {
@@ -3059,7 +3120,11 @@
       "manufacturer": "Signature Plastics",
       "brand": "KeebsForAll",
       "profile": "DCS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension"
+      ]
     },
     {
       "id": "dcs-windbreaker",
@@ -3430,14 +3495,28 @@
       "name": "Deadline AIR-Anchor",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "deadline-air-hutt",
       "name": "Deadline Air-Hutt",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "deadline-air-mallche",
@@ -3446,14 +3525,28 @@
       "brand": "Deadline Studio",
       "designer": "Deadline Studio",
       "profile": "Cherry",
-      "material": "PC"
+      "material": "PC",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "deadline-air-pitaya",
       "name": "Deadline Air-Pitaya",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "deadline-air-ratio",
@@ -3467,7 +3560,14 @@
       "name": "Deadline Air-Wave",
       "manufacturer": "Deadline Studio",
       "brand": "Deadline Studio",
-      "designer": "Deadline Studio"
+      "designer": "Deadline Studio",
+      "variants": [
+        "Base",
+        "Mac",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "deadline-hmc",
@@ -3658,6 +3758,8 @@
       "material": "ABS",
       "variants": [
         "Base",
+        "Extension",
+        "Novelties",
         "Numpad"
       ]
     },
@@ -3980,7 +4082,11 @@
       "manufacturer": "Deadline Studio",
       "designer": "Deadline Studio",
       "profile": "DOYS",
-      "material": "PC"
+      "material": "PC",
+      "variants": [
+        "Base",
+        "Numpad"
+      ]
     },
     {
       "id": "doys-pc-blanks",
@@ -4011,7 +4117,16 @@
       "name": "DSA Berry Yogurt",
       "manufacturer": "Signature Plastics",
       "designer": "misononyan",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "Base",
+        "Blueberry Accent",
+        "Ergo",
+        "International",
+        "Novelties",
+        "Numpad",
+        "Strawberry Accent"
+      ]
     },
     {
       "id": "dsa-bluebird",
@@ -4058,6 +4173,8 @@
       "profile": "DSA",
       "material": "PBT",
       "variants": [
+        "R1",
+        "R2",
         "Apple",
         "Bonus Pack",
         "Common/Alphas",
@@ -4071,8 +4188,6 @@
         "Numpad",
         "Pro Modifiers (Icon Legends)",
         "Pro Modifiers (Text Legends)",
-        "R1",
-        "R2",
         "RGB(YO) (Icon Legends)",
         "RGB(YO) (Text Legends)",
         "Secondary Legends",
@@ -4153,7 +4268,13 @@
       "designer": "biip",
       "profile": "DSA",
       "variants": [
+        "Addons",
         "Base",
+        "Ergo",
+        "Fruit",
+        "International",
+        "Nomad",
+        "Spacebars",
         "Weirdo Base"
       ]
     },
@@ -4197,7 +4318,19 @@
       "name": "DSA PetriKeys",
       "designer": "yooj.key",
       "profile": "DSA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s/Ortho",
+        "Alphas",
+        "Alphas Spacebars",
+        "Ergo",
+        "Homing",
+        "International",
+        "Mod Spacebars",
+        "Novelties",
+        "Numpad",
+        "TKL"
+      ]
     },
     {
       "id": "dsa-red-velvet",
@@ -4499,7 +4632,12 @@
       "manufacturer": "KBDfans",
       "designer": "kakasa",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "ducky-black-backlit",
@@ -5064,7 +5202,12 @@
       "material": "PBT",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Backpack",
+        "R2 / Base",
+        "R2 / Numpad",
+        "R2 / Pencils",
+        "R2 / Rubbers",
+        "R2 / Smileys"
       ]
     },
     {
@@ -5076,14 +5219,26 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "AI Modern",
+        "AI Modifiers",
+        "AI Nomad",
+        "AI Novelties",
+        "AI Numpad",
+        "Base",
+        "Base without Sublegends",
+        "French-Belgian",
+        "Italian-Spanish-Portuguese",
+        "Neutral Modern",
         "Neutral Modifiers",
         "Neutral Nomad",
         "Neutral Numpad",
         "NorDe++",
+        "PS Modern",
         "PS Modifiers",
         "PS Nomad",
         "PS Novelties",
-        "PS Numpad"
+        "PS Numpad",
+        "Spacebars"
       ]
     },
     {
@@ -5162,7 +5317,14 @@
       "name": "ePBT Firearm",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "BA54"
+      "designer": "BA54",
+      "variants": [
+        "Base",
+        "Gray",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "epbt-flaming-ice",
@@ -5230,7 +5392,15 @@
       "name": "ePBT Ivory",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Pachriksu"
+      "designer": "Pachriksu",
+      "variants": [
+        "Base",
+        "Icon",
+        "Nomad",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "epbt-kavala",
@@ -5261,7 +5431,22 @@
       "brand": "EnjoyPBT",
       "designer": "York Chan",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Anti-Color Addon",
+        "Arrow",
+        "Base",
+        "Color Addon",
+        "Icon",
+        "MINI Addon",
+        "Nomad",
+        "Numpad",
+        "Short Bar 1",
+        "Short Bar 2",
+        "Short Bar 3",
+        "Short Bar 4",
+        "Short Bar 5"
+      ]
     },
     {
       "id": "epbt-kuro-shiro",
@@ -5304,7 +5489,17 @@
       "name": "ePBT Origami",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Nukz"
+      "designer": "Nukz",
+      "variants": [
+        "40s",
+        "Accents",
+        "Base - Hiragana",
+        "Base - Latin",
+        "International",
+        "Modern",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "epbt-ping",
@@ -5437,7 +5632,19 @@
       "name": "ePBT Simple Hangul",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Swishy"
+      "designer": "Swishy",
+      "variants": [
+        "40s Accent",
+        "40s Mods",
+        "Accents",
+        "Base",
+        "Extra Alphas",
+        "Latin Alphas",
+        "Mono Hangul Alphas",
+        "Numpad",
+        "Simple Hangul",
+        "Spacebars"
+      ]
     },
     {
       "id": "epbt-simpleja",
@@ -6394,11 +6601,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "40s Addon",
-        "Ortho & Vim",
         "R1",
         "R2",
-        "R3"
+        "R3",
+        "Standalone / 40s Addon",
+        "Standalone / Ortho & Vim"
       ]
     },
     {
@@ -6430,7 +6637,8 @@
         "Base",
         "Dark Alphas",
         "Novelties",
-        "Numpad"
+        "Numpad",
+        "Spacebars"
       ]
     },
     {
@@ -6456,7 +6664,12 @@
       "brand": "GMK",
       "designer": "savageastr0naut",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-aero",
@@ -6512,7 +6725,14 @@
       "brand": "GMK",
       "designer": "wynects",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Dark Base",
+        "Extension",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-apollo",
@@ -6521,7 +6741,14 @@
       "brand": "GMK",
       "designer": "octix",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Lunar Module - Novelties",
+        "Propellant Module - 40s / Ortho",
+        "Space Module - Spacebars",
+        "Telemetry Module - Numpad"
+      ]
     },
     {
       "id": "gmk-arch",
@@ -6587,7 +6814,13 @@
       "brand": "GMK",
       "designer": "S3LQ",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Mod",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-avanguardia",
@@ -6596,7 +6829,15 @@
       "brand": "GMK",
       "designer": "raz",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Love Darkness",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "White Alphas"
+      ]
     },
     {
       "id": "gmk-b",
@@ -6691,7 +6932,11 @@
       "brand": "GMK",
       "designer": "Hongoo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Original"
+      ]
     },
     {
       "id": "gmk-black-gold",
@@ -6717,7 +6962,15 @@
       "brand": "GMK",
       "designer": "potatobot",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Hiragana Alphas",
+        "Modifiers",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-black-mod-addon",
@@ -6753,7 +7006,12 @@
       "brand": "GMK",
       "designer": "botallu",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "NumISO",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-blossom",
@@ -6832,7 +7090,12 @@
       "brand": "GMK",
       "designer": "GergWorst",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-bushido",
@@ -6855,7 +7118,14 @@
       "brand": "GMK",
       "designer": "Langelandia",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Dark - Alphas",
+        "Extra Shots - Spacebars",
+        "Special Blends - 40s / Ortho",
+        "Sugar - Numpad / ISO"
+      ]
     },
     {
       "id": "gmk-calm-depths",
@@ -6959,6 +7229,7 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "40s",
         "Base",
         "Blue Accents",
         "Greek Addon",
@@ -6981,7 +7252,13 @@
       "brand": "GMK",
       "designer": "Upas",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Limited Base",
+        "Spacebars",
+        "True Classic Base"
+      ]
     },
     {
       "id": "gmk-classic-red",
@@ -6990,7 +7267,12 @@
       "brand": "GMK",
       "designer": "Warrenified",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Red Alphas",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-classic-retro",
@@ -7038,7 +7320,13 @@
       "brand": "GMK",
       "designer": "MIGHTY CHICKEN",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alt Alphas (Cluck)",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-cmyk-cmyw",
@@ -7055,7 +7343,14 @@
       "brand": "GMK",
       "designer": "fatboycarney",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Blue Base",
+        "Extension",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-cocogoat",
@@ -7122,7 +7417,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / 40s/Ortho",
+        "R1 / Base",
+        "R1 / Coral Relief",
+        "R1 / Novelties",
+        "R1 / Spacebars",
         "R2 / Base",
         "R2 / Coral Base",
         "R2 / Novelties",
@@ -7145,7 +7444,13 @@
       "brand": "GMK",
       "designer": "Kaptain Mike",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Blanks",
+        "Extension",
+        "International"
+      ]
     },
     {
       "id": "gmk-cream-matcha",
@@ -7158,6 +7463,7 @@
       "variants": [
         "Alt Alphas",
         "Base",
+        "NorDeUK",
         "Novelties",
         "Numpad",
         "Spacebars"
@@ -7172,14 +7478,13 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "R1",
+        "R1 / Base",
+        "R1 / Spacebars",
+        "R1 / Symbols",
         "R2 / Base",
         "R2 / Spacebars",
         "R2 / Symbols",
-        "R3",
-        "Spacebars",
-        "Symbols"
+        "R3"
       ]
     },
     {
@@ -7461,7 +7766,12 @@
       "material": "ABS",
       "variants": [
         "R1",
+        "R2 / Chopsticks",
+        "R2 / Latin",
         "R2 / Revival Base",
+        "R2 / Sakana",
+        "R2 / Salmon",
+        "R2 / Seafood",
         "R2 / Traditional Base"
       ]
     },
@@ -7564,10 +7874,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Novelties",
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Novelties"
       ]
     },
     {
@@ -7619,17 +7928,16 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Alternate Alphas",
-        "Base",
-        "Exotic",
-        "Novelties",
-        "R1",
+        "R1 / Alternate Alphas",
+        "R1 / Base",
+        "R1 / Exotic",
+        "R1 / Novelties",
         "R2 / Base",
         "R2 / Green Alphas",
         "R2 / Novelties",
         "R2 / Simple Base",
         "R2 / Spacebars",
-        "R2.5",
+        "R2.5 / Base",
         "R3"
       ]
     },
@@ -7642,12 +7950,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Hangul",
         "R1",
         "R2",
         "R3",
-        "R4"
+        "R4 / Base",
+        "R4 / Hangul"
       ]
     },
     {
@@ -7693,6 +8000,7 @@
         "Cherish Extension",
         "Cherry Blanks",
         "Essence Base",
+        "International",
         "Paramour Alt Alphas"
       ]
     },
@@ -7721,8 +8029,11 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "3A Accent",
+        "3C Accent",
         "70% Base",
         "Command",
+        "Cyrillic Alphas",
         "Grande Base",
         "Hangul Alphas",
         "Hiragana Alphas",
@@ -7787,13 +8098,12 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Classic Base",
-        "International",
-        "Latin Base",
-        "Novelties",
         "R1",
-        "R2",
-        "Spacebars"
+        "R2 / Classic Base",
+        "R2 / International",
+        "R2 / Latin Base",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -7856,7 +8166,9 @@
       "variants": [
         "R1",
         "R2",
-        "R5",
+        "R5 / Base",
+        "R5 / Extension",
+        "R5 / Hangul",
         "R5X / Base",
         "R5X / Extension",
         "R5X / Hangul"
@@ -7915,7 +8227,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Accent",
         "R1",
         "R2 / Accent",
         "R2 / Addition",
@@ -8004,7 +8315,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / NorDeUK",
+        "R1 / Novelties",
+        "R1 / Relegendables",
         "R2 / Accents",
         "R2 / Base"
       ]
@@ -8082,7 +8396,8 @@
       "variants": [
         "Accent Row",
         "Base",
-        "Extension"
+        "Extension",
+        "US-International Alphas"
       ]
     },
     {
@@ -8094,7 +8409,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Extension",
+        "R1 / Novelties",
+        "R1 / Spacebars",
         "R2 / Base",
         "R2 / Novelties"
       ]
@@ -8137,7 +8455,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Base Light Alphas",
+        "R1 / Extras",
+        "R1 / Novelties",
         "R2"
       ]
     },
@@ -8245,7 +8566,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Kuro",
+        "R1 / Novelties",
+        "R1 / Spacebars",
         "R2 / Alphas",
         "R2 / Base",
         "R2 / Novelties",
@@ -8340,7 +8664,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Base",
+        "R1 / Clarity",
+        "R1 / Preserving",
+        "R1 / West",
         "R2 / Numpad",
         "R2 / Origin TKL",
         "R2 / Preserving",
@@ -8356,14 +8683,14 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "NorDeUK Addon",
         "R1",
         "R2 / Base",
         "R2 / Blocks",
         "R2 / Compact",
         "R2 / Midnight Base",
         "R2 / Signs",
-        "R2 / Turnpike"
+        "R2 / Turnpike",
+        "Standalone / NorDeUK Addon"
       ]
     },
     {
@@ -8419,12 +8746,12 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Accents",
-        "Base",
-        "International",
-        "Mac",
         "R1",
-        "R2"
+        "R2",
+        "R2 / Accents",
+        "R1 / Base",
+        "R2 / International",
+        "R2 / Mac"
       ]
     },
     {
@@ -8438,8 +8765,6 @@
       "variants": [
         "Accents",
         "Concrete - Base",
-        "R1",
-        "R2",
         "Stone - Base"
       ]
     },
@@ -8488,10 +8813,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "NorDeUK",
         "V1 / Git Base",
         "V1 / Git Extension",
-        "V2 / Base"
+        "V2 / Base",
+        "Version unspecified / NorDeUK"
       ]
     },
     {
@@ -8613,9 +8938,8 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Novelties",
-        "R1",
+        "R1 / Base",
+        "R1 / Novelties",
         "R2"
       ]
     },
@@ -8922,6 +9246,7 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
+        "Addition (Numpad + ISO)",
         "Aesthetic (Spacebars)",
         "Alternate (Accents)",
         "Base",
@@ -9020,7 +9345,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / Baby Sloth - 40s",
+        "R1 / Base",
+        "R1 / Branches - Spacebars",
+        "R1 / Slovelties - Novelties",
         "R2"
       ]
     },
@@ -9074,6 +9402,7 @@
         "Membrane (Accents)",
         "Metamorphosis (Extension)",
         "Mutation (Macro)",
+        "Protomodifier",
         "Sequence (Icon Novelties)",
         "Standard Galactic (Alt Alphas)"
       ]
@@ -9103,11 +9432,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Extension",
-        "R1",
-        "R2",
-        "Spacebars"
+        "R1 / Base",
+        "R1 / Extension",
+        "R1 / Spacebars",
+        "R2"
       ]
     },
     {
@@ -9190,6 +9518,7 @@
       "material": "ABS",
       "variants": [
         "Base",
+        "Extension",
         "Lanterns (Spacebars)",
         "Mooncakes (Novelties)"
       ]
@@ -9355,9 +9684,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
         "R1",
-        "R2",
+        "R2 / Base",
+        "R1 / Base",
         "Spacebars"
       ]
     },
@@ -9435,7 +9764,11 @@
       "brand": "GMK",
       "designer": "ttom",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Addition",
+        "Base"
+      ]
     },
     {
       "id": "gmk-deep-space",
@@ -9453,7 +9786,12 @@
       "brand": "GMK",
       "designer": "Tyson",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-deku",
@@ -9462,7 +9800,14 @@
       "brand": "GMK",
       "designer": "Scucka",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars",
+        "The 40s",
+        "The Latin"
+      ]
     },
     {
       "id": "gmk-delta",
@@ -9474,7 +9819,9 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -9604,6 +9951,7 @@
       "material": "ABS",
       "variants": [
         "Base",
+        "Colevrak",
         "Dark Alphas",
         "Extension",
         "NorDeUK",
@@ -9728,7 +10076,12 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / (DE) Accent",
+        "R1 / 40s",
+        "R1 / Base",
+        "R1 / Icon",
+        "R1 / NorDeUK",
+        "R1 / Numpad",
         "R2 / 40s",
         "R2 / Accents",
         "R2 / Base",
@@ -9761,7 +10114,14 @@
       "brand": "GMK",
       "designer": "Jebus",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Accent",
+        "Base",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "gmk-fox",
@@ -9770,7 +10130,13 @@
       "brand": "GMK",
       "designer": "boneandbee",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alt Mods",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-fright-club",
@@ -9805,7 +10171,11 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "R1 / Accent",
+        "R1 / Base",
+        "R1 / Novelties",
+        "R1 / Spacebars"
       ]
     },
     {
@@ -9832,7 +10202,12 @@
       "brand": "GMK",
       "designer": "Tyson",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Accents",
+        "Base",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-future-funk",
@@ -9858,7 +10233,12 @@
       "brand": "GMK",
       "designer": "Mcnos",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Icon Mods",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-galaxy",
@@ -9882,7 +10262,12 @@
       "brand": "GMK",
       "designer": "SMOKEY",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-gladiator",
@@ -9894,6 +10279,7 @@
       "material": "ABS",
       "variants": [
         "Base",
+        "International",
         "Macros",
         "Novelties",
         "Numpad",
@@ -9916,7 +10302,14 @@
       "brand": "GMK",
       "designer": "zekth",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Accents",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-greek-beige-add-on",
@@ -9959,7 +10352,12 @@
       "brand": "GMK",
       "designer": "Tomn",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-hallyu",
@@ -9968,7 +10366,12 @@
       "brand": "GMK",
       "designer": "Bidulomachin",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-hanami-dango",
@@ -9977,7 +10380,13 @@
       "brand": "GMK",
       "designer": "hectellian",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Hiragana",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-handarbeige-plus",
@@ -10015,7 +10424,13 @@
       "brand": "GMK",
       "designer": "JKKEEBS",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Gray Mods",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-harvest",
@@ -10098,7 +10513,13 @@
       "brand": "GMK",
       "designer": "Holicalis",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alternate Alphas",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-honeywell",
@@ -10200,7 +10621,15 @@
       "brand": "GMK",
       "designer": "Nathan_",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Inuktitut",
+        "NorDeUK",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-indigo",
@@ -10243,7 +10672,12 @@
       "brand": "GMK",
       "designer": "Influnced",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-iris",
@@ -10280,7 +10714,9 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Macro Expansion",
+        "R2 / Novelties"
       ]
     },
     {
@@ -10349,7 +10785,13 @@
       "brand": "GMK",
       "designer": "Bachoo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Extension",
+        "Katakana",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-laser",
@@ -10480,7 +10922,12 @@
       "brand": "GMK",
       "designer": "HungHingDaiLo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Golden Accents",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-magenta-devotion",
@@ -10593,7 +11040,12 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "R1 / Base",
+        "R1 / Berserk",
+        "R1 / Extras",
+        "R1 / Novelties",
+        "R1 / Spacebars"
       ]
     },
     {
@@ -10682,7 +11134,11 @@
       "brand": "GMK",
       "designer": "Jae-3soteric",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-mika",
@@ -10761,9 +11217,14 @@
       "material": "ABS",
       "variants": [
         "Accents",
+        "Addition",
+        "Aesthetic",
         "Base",
         "International",
-        "Mac"
+        "Mac",
+        "Modern",
+        "Numbers",
+        "Obscure"
       ]
     },
     {
@@ -10777,6 +11238,7 @@
       "variants": [
         "Base",
         "Extension",
+        "International",
         "Mono Hiragana",
         "Novelties",
         "Spacebars"
@@ -10793,6 +11255,7 @@
       "variants": [
         "Base",
         "HHKB",
+        "Latin Alphas",
         "Numpad",
         "Spacebars"
       ]
@@ -10820,7 +11283,13 @@
       "brand": "GMK",
       "designer": "Scucka",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Core",
+        "Extras",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-mondrian",
@@ -10881,7 +11350,12 @@
       "brand": "GMK",
       "designer": "Hisui",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-moonlight",
@@ -11036,7 +11510,13 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / 40s",
+        "R2 / Base",
+        "R2 / Explorer",
+        "R2 / International",
+        "R2 / Mac",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -11163,7 +11643,10 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "R1",
+        "R1 / 40s/Ortho/Spacebars (Extension)",
+        "R1 / Base",
+        "R1 / Hiragana Alphas",
+        "R1 / Novelties",
         "R2 / Base",
         "R2 / Hiragana Alphas",
         "R2 / Novelties"
@@ -11176,7 +11659,15 @@
       "brand": "GMK",
       "designer": "Skok",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "International",
+        "Latin Alphas (Alternate)",
+        "Novelties",
+        "Obscure",
+        "Spacebars (Aesthetic)"
+      ]
     },
     {
       "id": "gmk-november-fog",
@@ -11226,7 +11717,12 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Dark Base",
+        "R2 / Extension",
+        "R2 / ISO",
+        "R2 / Light Base",
+        "R2 / Novelties",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -11245,7 +11741,15 @@
       "brand": "GMK",
       "designer": "BapoDonu",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Accents",
+        "Base",
+        "Extension",
+        "Hiragana",
+        "Novelties",
+        "UwU"
+      ]
     },
     {
       "id": "gmk-orange-boi",
@@ -11297,7 +11801,12 @@
       "brand": "GMK",
       "designer": "yoniwolf1202",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Propeller (Novelties)",
+        "Wings (Spacebars)"
+      ]
     },
     {
       "id": "gmk-panda",
@@ -11339,7 +11848,12 @@
       "brand": "GMK",
       "designer": "Agilr",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Nom",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-peach-blossom",
@@ -11445,7 +11959,11 @@
       "brand": "GMK",
       "designer": "Walker",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-pink-valentine-cherry-ka-2017",
@@ -11463,7 +11981,11 @@
       "brand": "GMK",
       "designer": "MitTo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-plum",
@@ -11552,7 +12074,13 @@
       "brand": "GMK",
       "designer": "NoPunIn10Did",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Compatibility",
+        "German Mods",
+        "NorDeUK"
+      ]
     },
     {
       "id": "gmk-pulse",
@@ -11638,7 +12166,10 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Crimson Cyrillic",
+        "R2 / Extension - Classic Compute",
+        "R2 / Num Row"
       ]
     },
     {
@@ -11653,6 +12184,7 @@
         "Accent - Spacebars",
         "Base",
         "Dragon - Novelties",
+        "Micro",
         "Zhuyin - Alt Alphas"
       ]
     },
@@ -11730,7 +12262,13 @@
       "brand": "GMK",
       "designer": "Plopmk",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Batteries",
+        "Colors",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-retrowave",
@@ -11739,7 +12277,14 @@
       "brand": "GMK",
       "designer": "SwitchKeys",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Aesthetic",
+        "Base",
+        "Import",
+        "Small",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-rgby",
@@ -11790,7 +12335,9 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / 40s",
+        "R2 / Base",
+        "R2 / Numpad"
       ]
     },
     {
@@ -11837,7 +12384,13 @@
       "brand": "GMK",
       "designer": "iinko_mk",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-serenity",
@@ -11846,7 +12399,11 @@
       "brand": "GMK",
       "designer": "Mito",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Compact"
+      ]
     },
     {
       "id": "gmk-serika",
@@ -11874,7 +12431,15 @@
       "brand": "GMK",
       "designer": "Chippy",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Black on Grey / Base",
+        "Black on Grey / Extension",
+        "Black on Grey / Modi",
+        "Grey on Black / Base",
+        "Grey on Black / Extension",
+        "Grey on Black / Modi"
+      ]
     },
     {
       "id": "gmk-shadow",
@@ -11914,7 +12479,12 @@
       "brand": "GMK",
       "designer": "WAVES_D0NT_DIE",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-shashin",
@@ -11941,7 +12511,10 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Hiragana",
+        "R2 / Obscure",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -11960,7 +12533,16 @@
       "brand": "GMK",
       "designer": "Emir",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Calc (Numpad)",
+        "ISO",
+        "Makeup (Accents)",
+        "Ogre (Ergo)",
+        "Smol (40s)",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-skeletor",
@@ -12132,7 +12714,13 @@
       "brand": "GMK",
       "designer": "Paputcher",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-star-wars-boba-fett",
@@ -12164,7 +12752,16 @@
       "brand": "GMK",
       "designer": "FaKe_VirTual",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Blackout Alphas",
+        "Extension",
+        "NorDeUK",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-storm",
@@ -12173,7 +12770,12 @@
       "brand": "GMK",
       "designer": "sp.people",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-striker",
@@ -12185,7 +12787,9 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Macro Expansion",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -12195,7 +12799,14 @@
       "brand": "GMK",
       "designer": "FaKe_VirTual",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s/Ortho",
+        "Base",
+        "Hiragana Alphas",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-sunset-surfing",
@@ -12254,7 +12865,13 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / Base",
+        "R2 / Boba Alphas",
+        "R2 / Extra Straws (Spacebars)",
+        "R2 / Extra Toppings (Accent)",
+        "R2 / Milk Tea Mods",
+        "R2 / Side Snacks (Novelties)",
+        "R2 / Small Portion (40s)"
       ]
     },
     {
@@ -12267,7 +12884,9 @@
       "material": "ABS",
       "variants": [
         "Base",
-        "Novelties"
+        "Latin",
+        "Novelties",
+        "Spacebars"
       ]
     },
     {
@@ -12332,6 +12951,7 @@
       "variants": [
         "Alphas",
         "Base",
+        "NorDe",
         "Novelties",
         "Spacebars"
       ]
@@ -12343,7 +12963,12 @@
       "brand": "GMK",
       "designer": "pyade3",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alphas",
+        "Base",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-the-mandalorian",
@@ -12360,7 +12985,18 @@
       "brand": "GMK",
       "designer": "voodoo6k",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Accent",
+        "Extension",
+        "Icon Mods",
+        "NorDeUK",
+        "Novelties",
+        "Numpad",
+        "RGB Mods",
+        "Spacebars",
+        "TKL Base"
+      ]
     },
     {
       "id": "gmk-tik",
@@ -12461,7 +13097,12 @@
       "brand": "GMK",
       "designer": "Pachriksu",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Hiragana",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-umka",
@@ -12479,7 +13120,12 @@
       "brand": "GMK",
       "designer": "Bachoo",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-uniqey-blue",
@@ -12497,7 +13143,13 @@
       "brand": "GMK",
       "designer": "Zetina",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-ursa",
@@ -12581,7 +13233,12 @@
       "brand": "GMK",
       "designer": "Zetina",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Non-Alert",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-violet-on-cream",
@@ -12635,7 +13292,12 @@
       "brand": "GMK",
       "designer": "ogWalker",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-wavez",
@@ -12767,7 +13429,14 @@
       "brand": "GMK",
       "designer": "Agilr",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s/Ortho/Spacebars (Extension)",
+        "Emote (≧◡≦)",
+        "Hiragana Base",
+        "Latin Base",
+        "Novelties"
+      ]
     },
     {
       "id": "gmk-yutousu",
@@ -12776,7 +13445,13 @@
       "brand": "GMK",
       "designer": "imivanh",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Latin Alphas",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "gmk-zen-pond",
@@ -12827,15 +13502,15 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "R1",
+        "R2",
         "40s",
         "Accent",
         "Base",
         "Caviar",
         "Grey Alphas",
         "Numpad",
-        "Pink Alphas",
-        "R1",
-        "R2"
+        "Pink Alphas"
       ]
     },
     {
@@ -13162,7 +13837,12 @@
       "brand": "Infinikey",
       "designer": "Nhils",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Ortho/40/ISO"
+      ]
     },
     {
       "id": "ifk-faeries-of-eldraine",
@@ -13547,7 +14227,15 @@
       "brand": "JTK",
       "designer": "xiaoxiaoQAQ",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Coffee Modifiers",
+        "Coffee Spacebars",
+        "Green Alphas",
+        "Green Spacebars",
+        "Yellow Alphas",
+        "Yellow Spacebars"
+      ]
     },
     {
       "id": "jtk-azure",
@@ -13613,6 +14301,7 @@
       "material": "ABS",
       "variants": [
         "Alt Alphas",
+        "Alt Mods",
         "Base",
         "Latin Alphas",
         "Novelties",
@@ -13673,7 +14362,11 @@
       "brand": "JTK",
       "designer": "tiengalaxy",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Doubleshot Alphas"
+      ]
     },
     {
       "id": "jtk-griseann",
@@ -13767,7 +14460,12 @@
       "brand": "JTK",
       "designer": "freather",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Purple Spacebars",
+        "White Spacebars"
+      ]
     },
     {
       "id": "jtk-nightsakura",
@@ -13776,7 +14474,15 @@
       "brand": "JTK",
       "designer": "Rifen",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Doubleshot Latin Alphas",
+        "Gray Mods",
+        "Novelties",
+        "Spacebars - Gray",
+        "Spacebars - Pink"
+      ]
     },
     {
       "id": "jtk-not-essential",
@@ -13846,7 +14552,14 @@
       "brand": "JTK",
       "designer": "Rifen",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars - Dark",
+        "Spacebars - Gold",
+        "Tripleshot Cyrillic Alphas"
+      ]
     },
     {
       "id": "jtk-tianwen",
@@ -14024,7 +14737,17 @@
       "brand": "Keyreative",
       "designer": "MVKB",
       "profile": "KAM",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s + Ortho Modifiers",
+        "Alphas",
+        "Blank Alphas",
+        "Ergo",
+        "Modifiers",
+        "Numpad",
+        "Spacebars",
+        "UK"
+      ]
     },
     {
       "id": "kam-ghost",
@@ -14112,7 +14835,18 @@
       "brand": "Keyreative",
       "designer": "kema",
       "profile": "KAM",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Alphas",
+        "Base Mods",
+        "Ergo",
+        "Exotic",
+        "Homing",
+        "ISO UK",
+        "Numpad",
+        "Ortho"
+      ]
     },
     {
       "id": "kam-lucid",
@@ -14200,8 +14934,11 @@
       "material": "PBT",
       "variants": [
         "Alphas",
+        "Alternate Numrow",
         "Base - Mixed",
         "Base - Novelties",
+        "Colevrak",
+        "Ergo",
         "Extras - Buttons",
         "Extras - Cookies",
         "ISO",
@@ -14369,7 +15106,19 @@
       "brand": "Keyreative",
       "designer": "York Chan",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Base (DE)",
+        "International",
+        "Katakana",
+        "Lamp",
+        "Mega",
+        "Mega (DE)",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "kap-grey-alert",
@@ -14490,7 +15239,12 @@
       "name": "KAT Alpha",
       "manufacturer": "Keyreative",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Base",
+        "Ergo"
+      ]
     },
     {
       "id": "kat-arctic",
@@ -14569,7 +15323,32 @@
       "brand": "Keyreative",
       "designer": "SP People",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Alphas Dark",
+        "Alphas Light",
+        "Alternate Color",
+        "Colevrak Dark",
+        "Colevrak Light",
+        "Ergo Dark",
+        "Ergo Light",
+        "ISO Dark",
+        "ISO Light",
+        "Mac",
+        "Modifiers Dark",
+        "Modifiers Light",
+        "Modifiers Plus",
+        "North Dark",
+        "North Light",
+        "Novelties",
+        "Numpad Dark",
+        "Numpad Light",
+        "Ortho Dark",
+        "Ortho Light",
+        "Space Dark",
+        "Space Light"
+      ]
     },
     {
       "id": "kat-comet",
@@ -14578,7 +15357,26 @@
       "brand": "Keyreative",
       "designer": "Chuttau",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s/Ortho",
+        "Alphas",
+        "Alt Alphas",
+        "Alt Hiragana",
+        "Alt Numpad",
+        "Alt TKL",
+        "Colevrak+",
+        "Ergo",
+        "French",
+        "Hiragana",
+        "Icon Mods",
+        "North",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "TKL",
+        "Text Mods"
+      ]
     },
     {
       "id": "kat-crusader",
@@ -14664,7 +15462,21 @@
       "brand": "Keyreative",
       "designer": "Minterly",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s/Ortho Icon",
+        "40s/Ortho Text",
+        "60 - TKL Icon",
+        "60 - TKL Text",
+        "Alphas",
+        "Colevrak",
+        "Ergodox",
+        "French",
+        "International",
+        "Novelties",
+        "Numpad",
+        "UK"
+      ]
     },
     {
       "id": "kat-explosion",
@@ -14762,7 +15574,18 @@
       "brand": "Keyreative",
       "designer": "JSaintS",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Alphas",
+        "Modifiers (Icon)",
+        "Modifiers (Text)",
+        "Novelties",
+        "Purple Accent (Icon)",
+        "Purple Accent (Text)",
+        "Spacebars",
+        "Teal Accent (Icon)",
+        "Teal Accent (Text)"
+      ]
     },
     {
       "id": "kat-iron",
@@ -14811,7 +15634,30 @@
       "brand": "Keyreative",
       "designer": "SP People",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Alternate",
+        "Base (Dark)",
+        "Base (Light)",
+        "Ergo (Dark)",
+        "Ergo (Light)",
+        "Ergo (White)",
+        "ISO (Dark)",
+        "ISO (Light)",
+        "ISO (White)",
+        "Mac",
+        "Modifiers",
+        "NorDe (Dark)",
+        "NorDe (Light)",
+        "NorDe (White)",
+        "Novelties",
+        "Numpad (Dark)",
+        "Numpad (Light)",
+        "Spacebars (Dark)",
+        "Spacebars (Light)",
+        "Spacebars (White)",
+        "White Alphas"
+      ]
     },
     {
       "id": "kat-lich",
@@ -14820,7 +15666,22 @@
       "brand": "Keyreative",
       "designer": "eskimojo",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Alphas",
+        "Colevrak+",
+        "Ergo",
+        "Ergo - Legends",
+        "French",
+        "Mods",
+        "North",
+        "Novelties",
+        "Numpad",
+        "Ortho",
+        "South",
+        "Spacebars"
+      ]
     },
     {
       "id": "kat-lucky-jade",
@@ -14987,7 +15848,49 @@
       "brand": "Keyreative",
       "designer": "NoPunIn10Did",
       "profile": "KAT",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s Mods - French Indigo",
+        "40s Mods - Russian Green",
+        "Belgian & Apple French (Marie Louise)",
+        "Blank Ergo Ortho",
+        "BÉPO (Bépoleon Nonaparte)",
+        "Canadian French (Chateauguay)",
+        "Cherokee (Sequoyah)",
+        "Colemak+ (Jonathan Strange)",
+        "Default US English (Jefferson)",
+        "Dvorak (Mr Norrell)",
+        "Ergo Mods - French Indigo",
+        "Ergo Mods - Russian Green",
+        "EurKEY (Blücher)",
+        "French for Windows (Joséphine)",
+        "German (Metternich)",
+        "Hungarian & South Slavic (Doppelkaiser)",
+        "Japanese (Nagasaki)",
+        "Mac",
+        "Madness",
+        "Nordic (Bernadotte)",
+        "Novelties",
+        "Numpad - Austrian White",
+        "Numpad - French Indigo",
+        "Numpad - Russian Green",
+        "Ortho Mods - Austrian White",
+        "Ortho Mods - French Indigo",
+        "Ortho Mods - Russian Green",
+        "Polish & Lithuanian (Uhlan)",
+        "Russian (Alexander)",
+        "South Slavic Cyrillic (Karađorđe)",
+        "Spacebars",
+        "Spanish (Agustina)",
+        "Swiss (Act of Mediation)",
+        "TKL Mods - Austrian White",
+        "TKL Mods - British Navy",
+        "TKL Mods - French Indigo",
+        "TKL Mods - Russian Green",
+        "Tamil (Pondicherry)",
+        "UK English & Irish (Wellington)",
+        "US Int'l & Netherlands (Waterloo)"
+      ]
     },
     {
       "id": "kat-oasis",
@@ -15034,11 +15937,25 @@
       "profile": "KAT",
       "material": "PBT",
       "variants": [
+        "Abandoned 40s Mods",
         "Abandoned Alphas",
+        "Abandoned Bortho Mods",
+        "Abandoned Numpad",
         "Abandoned TKL",
+        "All Accents",
+        "Constructed 40s Mods",
         "Constructed Alphas",
         "Constructed Base",
-        "Overgrown Base"
+        "Constructed Bortho Mods",
+        "Constructed Numpad",
+        "Constructed TKL Mods",
+        "Novelties",
+        "Overgrown Base",
+        "Reclaimed 40s Mods",
+        "Reclaimed Alphas",
+        "Reclaimed Bortho Mods",
+        "Reclaimed Numpad",
+        "Reclaimed TKL Mods"
       ]
     },
     {
@@ -15118,12 +16035,22 @@
       "profile": "KAT",
       "material": "PBT",
       "variants": [
+        "40s",
         "Alienese Alphas",
+        "Colevrak",
+        "Ergo",
+        "Ergo Blanks",
+        "French",
         "Icon Mods",
         "Latin Alphas",
         "Latin/ Alienese Alphas",
+        "Neon Spacebars",
         "NorDeUK",
+        "Novelties",
+        "Numpad",
+        "Ortho",
         "Pink Spacebars",
+        "South",
         "Spacebars",
         "Text & Icon Mods"
       ]
@@ -15302,7 +16229,11 @@
       "id": "kbdfans-extended-2048-ec",
       "name": "KBDfans Extended 2048 EC",
       "brand": "KBDfans",
-      "designer": "biip"
+      "designer": "biip",
+      "variants": [
+        "Base",
+        "Icono"
+      ]
     },
     {
       "id": "kbdfans-ma-black",
@@ -15380,7 +16311,13 @@
       "brand": "KeyBee Manufacturing",
       "designer": "Wintea",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "kbm-golden-locket",
@@ -16955,7 +17892,11 @@
       "brand": "KeyKobo",
       "designer": "Jr.Mars",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "RainBoW Icon",
+        "RainBoW Text"
+      ]
     },
     {
       "id": "keykobo-retro-rc-759",
@@ -17272,7 +18213,13 @@
       "brand": "KeyKobo",
       "designer": "mori",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "kkb-lilies-of-the-valley",
@@ -17393,7 +18340,15 @@
       "brand": "KeyKobo",
       "designer": "keepoto",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Accents",
+        "Base",
+        "Dark Alphas",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "kkb-pandora",
@@ -17410,7 +18365,12 @@
       "brand": "KeyKobo",
       "designer": "SxM Designs",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "kkb-r-w-b",
@@ -17425,7 +18385,13 @@
       "name": "KKB RainWoB",
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "RGBY WoB Icon",
+        "RGBY WoB Text",
+        "Rain WoB Icon",
+        "Rain WoB Text"
+      ]
     },
     {
       "id": "kkb-retro-mixed-lights",
@@ -17437,7 +18403,13 @@
       "material": "ABS",
       "variants": [
         "R1",
-        "R2"
+        "R2 / 40s",
+        "R2 / Alphas",
+        "R2 / Base",
+        "R2 / Dark Alphas",
+        "R2 / Numpad",
+        "R2 / Relegendables",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -17449,15 +18421,14 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Hiragana",
-        "Hiragana UK",
-        "Novelties",
-        "Numpad",
-        "R1",
-        "R2",
-        "Spacebars",
-        "UK"
+        "R1 / Base",
+        "R1 / Hiragana",
+        "R1 / Hiragana UK",
+        "R1 / Novelties",
+        "R1 / Numpad",
+        "R1 / Spacebars",
+        "R1 / UK",
+        "R2"
       ]
     },
     {
@@ -18277,7 +19248,13 @@
       "brand": "GMK",
       "designer": "Nephlock",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Module A",
+        "Module B",
+        "Module C"
+      ]
     },
     {
       "id": "mtnu-800-os2-0",
@@ -18309,7 +19286,15 @@
       "brand": "GMK",
       "designer": "Matt3o",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "3A/3C Accents",
+        "Addon",
+        "Base",
+        "International",
+        "Orange Accents",
+        "Typist"
+      ]
     },
     {
       "id": "mtnu-copper",
@@ -18361,7 +19346,11 @@
       "brand": "GMK",
       "designer": "HungHingDaiLo",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Accents",
+        "Base"
+      ]
     },
     {
       "id": "mtnu-granite",
@@ -18491,7 +19480,15 @@
       "brand": "GMK",
       "designer": "Matt3o",
       "profile": "MTNU",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Extras",
+        "International",
+        "Mad Typist",
+        "Monotone",
+        "Numpad"
+      ]
     },
     {
       "id": "mtnu-welles",
@@ -18600,10 +19597,13 @@
       "material": "PBT",
       "variants": [
         "R1",
+        "R2 / Alphas",
         "R2 / Base",
+        "R2 / Light Mods",
         "R2 / NorDe",
         "R2 / Novelties",
-        "R2 / Numpad"
+        "R2 / Numpad",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -19017,12 +20017,14 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "Alphas",
         "Hiragana Base",
         "Icon Base",
         "Katakana Base",
         "NorDe",
         "Novelties",
-        "Spacebars"
+        "Spacebars",
+        "White Alphas"
       ]
     },
     {
@@ -19078,6 +20080,7 @@
         "40s",
         "Base",
         "Materia",
+        "NorDeUK",
         "Novelties",
         "Numpad",
         "Spacebars",
@@ -19090,7 +20093,16 @@
       "manufacturer": "Milkyway Keys",
       "brand": "Milkyway Keys",
       "designer": "Skok & Milkyway Keys",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Dark Base + Novelties",
+        "Dark Numpad",
+        "Light Alphas",
+        "Light Base + Novelties",
+        "Light Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "mw-pancoon",
@@ -19177,12 +20189,16 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Alphas",
-        "Base",
-        "Novelties",
-        "R1",
-        "R2",
-        "Spacebars"
+        "R1 / Alphas",
+        "R1 / Base",
+        "R1 / Novelties",
+        "R1 / Spacebars",
+        "R2 / Alphas",
+        "R2 / Base",
+        "R2 / Novelties",
+        "R2 / Numpad",
+        "R2 / Relegendables",
+        "R2 / Spacebars"
       ]
     },
     {
@@ -19570,8 +20586,8 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "Bakeneko Kit",
-        "V1"
+        "V1",
+        "Version unspecified / Bakeneko"
       ]
     },
     {
@@ -19792,7 +20808,11 @@
       "brand": "CannonKeys",
       "designer": "Agilr",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "R3 / Base - Hiragana",
+        "R3 / Base - Latin"
+      ]
     },
     {
       "id": "nicepbt-november-fog",
@@ -20413,11 +21433,11 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
+        "R1",
+        "R2",
         "Base / Hiragana",
         "Base / Standard",
-        "Novelty Kit",
-        "R1",
-        "R2"
+        "Novelty"
       ]
     },
     {
@@ -20576,9 +21596,7 @@
       "material": "PBT",
       "variants": [
         "Base",
-        "Modi",
-        "R1",
-        "R2"
+        "Modi"
       ]
     },
     {
@@ -20605,7 +21623,12 @@
       "brand": "Keyreative",
       "designer": "keebibi",
       "profile": "PBS",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s/Ortho Base",
+        "Mac",
+        "Regular Base"
+      ]
     },
     {
       "id": "pbs-galaxy",
@@ -20684,7 +21707,13 @@
       "brand": "Keyreative",
       "designer": "Jr.Mars",
       "profile": "PBS",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s Base",
+        "Alphas",
+        "General Base",
+        "Numpad"
+      ]
     },
     {
       "id": "pbs-strawberry-milk",
@@ -20902,18 +21931,17 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "40s",
-        "Alphas",
-        "Base",
-        "International",
-        "Numpad",
-        "R1",
+        "R1 / 40s",
+        "R1 / Alphas",
+        "R1 / Base",
+        "R1 / International",
+        "R1 / Numpad",
+        "R1 / Spacebars",
         "R2 / 40s",
         "R2 / Base",
         "R2 / International",
         "R2 / Numpad",
-        "R2 / Spacebars",
-        "Spacebars"
+        "R2 / Spacebars"
       ]
     },
     {
@@ -20953,7 +21981,14 @@
       "brand": "PBTfans",
       "designer": "SxM Designs",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40s",
+        "Base",
+        "Base Sublegend",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "pbtfans-abs-soul-blossom",
@@ -21323,7 +22358,18 @@
       "name": "PBTfans Deep Sea Predator",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "oay"
+      "designer": "oay",
+      "variants": [
+        "40s",
+        "Base - Hoshoku",
+        "Base - Predator",
+        "Hiragana Alphas",
+        "International",
+        "Latin Alphas",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "pbtfans-dolch",
@@ -21485,12 +22531,11 @@
       "designer": "oay",
       "profile": "Cherry",
       "variants": [
-        "40s Kit",
-        "Alphas Kit",
-        "Icon Numpad Kit",
-        "International Kit",
-        "Numpad Kit",
-        "R1",
+        "R1 / 40s",
+        "R1 / Alphas",
+        "R1 / Icon Numpad",
+        "R1 / International",
+        "R1 / Numpad",
         "R2"
       ]
     },
@@ -21518,8 +22563,6 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "International Translucent",
-        "Numpad Translucent",
         "R1",
         "R2 / 40s",
         "R2 / Base",
@@ -21530,7 +22573,9 @@
         "R3 / Blue Spacebars",
         "R3 / Numpad",
         "R3 / Semi-transparent Base",
-        "R3 / White Spacebars"
+        "R3 / White Spacebars",
+        "International Translucent",
+        "Numpad Translucent"
       ]
     },
     {
@@ -21677,9 +22722,9 @@
       "profile": "Cherry",
       "material": "ABS",
       "variants": [
-        "40s",
         "R1",
         "R2",
+        "40s",
         "Spacebars - Yellow"
       ]
     },
@@ -21838,10 +22883,10 @@
       "designer": "ok-c & openkeydesign",
       "profile": "Cherry",
       "variants": [
-        "40s Kit",
-        "International Kit",
-        "Numpad Kit",
-        "R1",
+        "R1 / Base",
+        "R1 / 40s",
+        "R1 / International",
+        "R1 / Numpad",
         "R2"
       ]
     },
@@ -21882,8 +22927,13 @@
       "designer": "Jr.Mars & Mars",
       "profile": "Cherry",
       "variants": [
-        "40s",
-        "R1",
+        "R1 / 40s",
+        "R1 / RGBY",
+        "R1 / RGBY Text",
+        "R1 / Base",
+        "R1 / Numpad",
+        "R1 / International",
+        "R1 / Relegendables",
         "R2 / 40s",
         "R2 / Base",
         "R2 / International",
@@ -21891,9 +22941,7 @@
         "R2 / Pure Alphas",
         "R2 / Rainbow",
         "R2 / Relegendables",
-        "R2 / Spacebars",
-        "RGBY",
-        "RGBY Text"
+        "R2 / Spacebars"
       ]
     },
     {
@@ -22019,8 +23067,15 @@
       "material": "PBT",
       "variants": [
         "R1",
-        "R2",
         "R2 / 40s",
+        "R2 / Base",
+        "R2 / Base Katakana",
+        "R2 / Numpad",
+        "R2 / International",
+        "R2 / Colorful Modifiers",
+        "R2 / Blue Modifiers",
+        "R2 / Spacebars",
+        "R2 / LED Indicator",
         "R3 / Base",
         "R3 / Blue Modifiers",
         "R3 / Colorful Modifiers",
@@ -22177,11 +23232,10 @@
       "profile": "Cherry",
       "material": "PBT",
       "variants": [
-        "40s",
-        "Base / Japanese Sublegends",
-        "International",
-        "Numpad",
-        "R1",
+        "R1 / 40s",
+        "R1 / Base / Japanese Sublegends",
+        "R1 / International",
+        "R1 / Numpad",
         "R2",
         "R3 / Accents",
         "R3 / Base",
@@ -22198,7 +23252,15 @@
       "brand": "PBTfans",
       "designer": "Pachriksu",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s",
+        "Base",
+        "Hiragana",
+        "International",
+        "Numpad",
+        "OG Mod"
+      ]
     },
     {
       "id": "pbtfans-valhalla",
@@ -22324,7 +23386,12 @@
       "name": "PFF Verdant Retro",
       "designer": "OrinNYC",
       "profile": "PFF",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "40s Base",
+        "Base",
+        "Bullet Train Base"
+      ]
     },
     {
       "id": "pff-wob",
@@ -22580,18 +23647,17 @@
       "profile": "SA",
       "material": "ABS",
       "variants": [
-        "Alphas",
-        "Modifiers",
-        "NorDe",
-        "Numpad",
-        "Pink Alphas",
-        "Pink Modifiers",
         "R1",
-        "R2",
-        "Spacebars",
-        "UK",
-        "UwU Alphas",
-        "UwUlties - Novelties"
+        "R2 / Alphas",
+        "R2 / Modifiers",
+        "R2 / NorDe",
+        "R2 / Numpad",
+        "R2 / Pink Alphas",
+        "R2 / Pink Modifiers",
+        "R2 / Spacebars",
+        "R2 / UK",
+        "R2 / UwU Alphas",
+        "R2 / UwUlties - Novelties"
       ]
     },
     {
@@ -22702,7 +23768,19 @@
       "id": "sa-espresso",
       "name": "SA Espresso",
       "designer": "JPoc",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "Alphas",
+        "Ergo",
+        "ISO",
+        "NorDe",
+        "Novelties",
+        "Numpad",
+        "Ortho/40s",
+        "Spacebars",
+        "Specialities",
+        "TKL"
+      ]
     },
     {
       "id": "sa-fledgling",
@@ -22771,14 +23849,14 @@
       "profile": "SA",
       "material": "ABS",
       "variants": [
-        "Base",
-        "Concierge",
-        "Ergo",
-        "Novelties",
-        "Numpad",
         "R1",
         "R2",
-        "Zero"
+        "R2 / Base",
+        "R2 / Concierge",
+        "R2 / Ergo",
+        "R2 / Novelties",
+        "R2 / Numpad",
+        "R2 / Zero"
       ]
     },
     {
@@ -22883,6 +23961,8 @@
       "designer": "zslane",
       "profile": "SA",
       "variants": [
+        "R1 / Base",
+        "R1 / International",
         "R2 / Base",
         "R2 / International",
         "R2 / Numpad"
@@ -22998,8 +24078,14 @@
       "designer": "Oblotzky",
       "profile": "SA",
       "variants": [
-        "R1",
-        "R2"
+        "V1",
+        "V2 / Git Modifiers",
+        "V2 / Hagoromo ASCII Alphas",
+        "V2 / Oblivion ASCII Alphas",
+        "V2 / Oblivion Alphas",
+        "V2 / Oblivion Modifiers",
+        "V2 / Oblivion Numpad",
+        "V2 / Vim"
       ]
     },
     {
@@ -23072,8 +24158,6 @@
         "Novelties",
         "Numpad",
         "Ortho",
-        "R1",
-        "R2",
         "TKL Add-ons"
       ]
     },
@@ -23170,7 +24254,13 @@
       "brand": "Signature Plastics",
       "designer": "Langelandia & ThatTravL",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alts+ISO",
+        "Base",
+        "Numpad",
+        "Ortho"
+      ]
     },
     {
       "id": "sa-retro",
@@ -23276,7 +24366,16 @@
       "brand": "Signature Plastics",
       "designer": "cijanzen",
       "profile": "SA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alphas",
+        "ISO",
+        "Novelties",
+        "Numpad",
+        "Ortho/40s",
+        "Spacekeys",
+        "TKL/Specialty"
+      ]
     },
     {
       "id": "sa-spectra",
@@ -23290,7 +24389,7 @@
         "40s Mods",
         "Alphas",
         "Bars",
-        "CYMK",
+        "CMYK",
         "Ergo Mods",
         "Macro",
         "NorDe",
@@ -23306,14 +24405,27 @@
       "profile": "SA",
       "variants": [
         "R1",
-        "R2"
+        "R2",
+        "R2 / Base",
+        "R2 / Novelties",
+        "R2 / Spacebars",
+        "R2 / Spirit"
       ]
     },
     {
       "id": "sa-sunday-morning",
       "name": "SA Sunday Morning",
       "designer": "Abec13",
-      "profile": "SA"
+      "profile": "SA",
+      "variants": [
+        "40s/Ortho Icon",
+        "60 - TKL Text",
+        "Maroon Alphas",
+        "Novelties",
+        "Numpad",
+        "Peach Alphas",
+        "Spacebars"
+      ]
     },
     {
       "id": "sa-symbiosis",
@@ -23660,7 +24772,11 @@
       "name": "SWG Evil Eye",
       "manufacturer": "Swagkeys",
       "brand": "Swagkeys",
-      "designer": "ManoliVisuals"
+      "designer": "ManoliVisuals",
+      "variants": [
+        "Base",
+        "Numpad"
+      ]
     },
     {
       "id": "swg-feralis",
@@ -23681,7 +24797,13 @@
       "name": "SWG Hazakura Light",
       "manufacturer": "Swagkeys",
       "brand": "Swagkeys",
-      "designer": "Saku.works"
+      "designer": "Saku.works",
+      "variants": [
+        "Base",
+        "Latin Alphas",
+        "Novelties",
+        "Numpad"
+      ]
     },
     {
       "id": "swg-heartbreaker",
@@ -24459,7 +25581,14 @@
       "manufacturer": "TomatoCaps",
       "brand": "TomatoCaps",
       "designer": "shawnlyx",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Alt Alphas",
+        "Alt Mods",
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "tmt-taho",
