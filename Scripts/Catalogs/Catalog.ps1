@@ -264,9 +264,10 @@ function New-CatalogCandidate($State, [array]$Records) {
             } elseif ($values.Count -eq 1) { $entry[$field] = $values[0] }
         }
         $entries[$key] = Add-CatalogInferredFields (Get-NormalizedCatalogEntry $entry $kind) $kind
-        # A reviewed omission takes precedence over optional metadata from alias relationships.
+        # Reviewed choices and omissions take precedence over inferred releases and metadata.
         foreach ($field in $fieldsOverride.Keys) {
             if ($null -eq $fieldsOverride[$field]) { $entries[$key].Remove($field) }
+            elseif ($field -eq 'variants') { $entries[$key][$field] = $fieldsOverride[$field] }
         }
         if ($newKeys.ContainsKey($key)) { $report.additions += $key }
         elseif ((ConvertTo-CatalogJson $previous[$key]) -cne (ConvertTo-CatalogJson $entries[$key])) {

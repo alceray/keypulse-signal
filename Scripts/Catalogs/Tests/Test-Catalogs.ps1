@@ -806,6 +806,18 @@ Test-Case 'Variant labels reject nested data, empty labels, and duplicates' {
     $state.catalogs.switches.entries[0].isLowProfile = $false
     Assert-Throws { Test-CatalogState $state } 'Invalid isLowProfile'
 }
+Test-Case 'Reviewed keycap variants survive release inference and replay' {
+    $state = New-TestState
+    $entry = $state.catalogs.keycaps.entries[0]
+    $labels = @('R1', 'R5', 'V3.1 / Base', 'V3.1 / International')
+    $state.overrides.entries["keycaps/$($entry.id)"] = [ordered]@{ variants = $labels }
+    $next = (New-CatalogCandidate $state (New-TestRecords)).state
+    $actual = @($next.catalogs.keycaps.entries | Where-Object { $_.id -eq $entry.id })[0]
+    Assert (($actual.variants -join ',') -ceq ($labels -join ',')) 'Inferred releases changed reviewed kit choices.'
+    $again = (New-CatalogCandidate $next (New-TestRecords)).state
+    Assert ((ConvertTo-CatalogJson $again) -ceq (ConvertTo-CatalogJson $next)) 'Replay changed reviewed variants.'
+}
+
 Test-Case 'Source variant lists union without expanding combinations or losing retired labels' {
     $state = New-TestState
     $entry = $state.catalogs.switches.entries[0]
