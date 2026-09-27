@@ -7,13 +7,13 @@ Cleanup decisions grouped by method. Exact names and options live in the catalog
 ## Names and metadata
 
 - Normalize spelling, aliases, spacing, and round/version capitalization; match IDs and import bindings to accepted names. Prefer GMK CYL only when the product line is documented.
-- Move selectable releases, kits, weights, and component options out of names. Remove redundant profile text, sales copy, measurement notes, and incidental housing annotations. Keep Cherry in the profile field and meaningful mechanism/model codes in names.
+- Move selectable releases, kits, weights, and component options out of names. Remove redundant Switch/Series suffixes, profile text, sales copy, imported field labels, measurement notes, and incidental housing annotations. Keep Cherry in the profile field and meaningful mechanism/model codes in names.
 - Replace collector descriptions with verified commercial identities. A color match alone is insufficient; check construction and mechanism before renaming or merging.
 - Fill manufacturer, brand, designer, material, profile, and mechanism from product evidence. Keep credits scoped to the actual contribution; do not infer factories from retailers or assign one manufacturer/material across conflicting editions.
 
 ## Merges and variants
 
-- Keep the existing schema with an optional flat variants list. Merge aliases and child kits only into an established parent; retain independent extensions, incompatible products, and distinct mechanisms separately.
+- Keep the existing schema with an optional flat variants list. Merge aliases, redundant material labels, retroactive model names, and child kits into established parents; retain distinct generations, mechanisms, and incompatible products separately.
 - Combine related attributes into observed configurations, such as V2 / 62g. Never generate combinations or earlier switch versions from a later number alone. Omit singleton selectors and shared properties such as Linear.
 - Preserve meaningful housing, material, weight, and construction choices. Remove collector numbering, mold revisions, defects, replacement parts, LED/diffuser options, and through-hole/SMD/OG labels as independent selectors.
 - Remove pin counts from names/IDs. Keep them in variants only when every option has known pin information and both 3-pin and 5-pin choices occur.
@@ -31,8 +31,8 @@ Cleanup decisions grouped by method. Exact names and options live in the catalog
 
 ## Removals and evidence
 
-- Exclude requested open-slot/special specimens, counterfeit entries, unverified factory-sample aliases, custom frankenswitch recipes, and unresolved identities without safe merge targets. Removal for insufficient evidence does not prove a product never existed or was exclusively a sample.
-- Preserve identifiable manufactured derivatives and historical products. Lubing/filming, quotation marks, or unusual names alone are not grounds for removal.
+- Exclude requested open-slot/special specimens, counterfeit entries, unverified factory-sample aliases, custom frankenswitch recipes, unreleased prototypes, and unresolved identities without safe merge targets. Removal for insufficient evidence does not prove a product never existed or was exclusively a sample.
+- Preserve identifiable manufactured derivatives and historical products. Lubing/filming, quotation marks, or unusual names alone are not grounds for removal. Restore excluded entries when production or bulk-sale evidence establishes their identity.
 - Require manufacturer releases, bulk retail, or production-keyboard evidence for commercial identity. SwitchOddities and other single-switch sellers can describe specimens; collector lists and mirrors do not independently establish bulk availability.
 - Existing specimen-only choices, including some ChinaJoy and dustproof records, remain provisional where retained. Exclusion reasons identify explicit removals; do not infer a blanket purge from these rules.
 
@@ -41,7 +41,7 @@ Cleanup decisions grouped by method. Exact names and options live in the catalog
 - **Keycap identities:** GMK Child Kits has no established parent; GMK International Kit/TIK, CC ZeRo/CannonCaps ZeRo, WRK Cartridge/Work Louder Wrk., and Meow Meow/Meow Waon need alias or brand verification.
 - **Keycap specifications:** conflicting profiles remain for Akko Shiny Kitten and Steam Engine Cyrillic. Work Louder and URSA materials vary by edition; TRIFL's final material and Doys PC Blanks' own specifications remain unverified.
 - **Sparse historical metadata:** Berry Trackday, NCC Baja, PFF WoB, TK Chalk, HiPro EC BoW, Renso, and Topre Commander Monotone/Two Tone still need reliable details. Do not borrow accessory or related-product specifications.
-- **Switch identities:** Kaiche/Kaicheng Blue and Unionwell Extreme Magnetic Ice Obsidian/Light Blue lack confirmed alias relationships. DareU Low Profile Red, Jixian White's RGB bottom, and TTC Red's housing/version association remain unresolved.
+- **Switch identities:** Kaiche/Kaicheng Blue lacks a confirmed alias relationship. DareU Low Profile Red, Jixian White's RGB bottom, and TTC Red's housing/version association remain unresolved.
 - **Switch numbering:** KS-22 Low Pro Banana conflicts with documented optical usage; historical KS-1 Silent Clear/Yellow attribution remains uncertain. Do not assign KS-27/33 to unnumbered Gateron Low Profile colors, or invent versions for unversioned Healio and early KTT Wine Red weights.
 - **Retained uncertainty:** Gypsophila's manufacturer/bulk provenance, some Morandi Macaron HE and dustproof specimen claims, and KTT Bamboo Gleam's identity remain unverified. Removing an annotation does not resolve those questions.
 

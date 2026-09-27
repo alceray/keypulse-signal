@@ -2249,7 +2249,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "4605867884655",
       "kind": "switches",
-      "id": "cherry-mx-black-hyperglide",
+      "id": "cherry-mx-hyperglide-black",
       "url": "https://cannonkeys.com/products/cherry-mx-black-linear-switch",
       "observed": {
         "name": "Cherry MX Black Hyperglide Linear",
@@ -2693,7 +2693,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7028540014703",
       "kind": "switches",
-      "id": "cherry-mx-red-hyperglide",
+      "id": "cherry-mx-hyperglide-red",
       "url": "https://cannonkeys.com/products/cherry-mx-red-linear-switch",
       "observed": {
         "name": "Cherry MX Red Hyperglide Linear",
@@ -2717,7 +2717,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7039178702959/variant/41095930019951",
       "kind": "switches",
-      "id": "aurora-series-fog",
+      "id": "ws-aurora-fog",
       "url": "https://cannonkeys.com/products/aurora-series-fog-linear-switch",
       "observed": {
         "name": "Aurora Series Fog Linear",
@@ -2728,7 +2728,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7039178702959/variant/41095930052719",
       "kind": "switches",
-      "id": "aurora-series-fog",
+      "id": "ws-aurora-fog",
       "url": "https://cannonkeys.com/products/aurora-series-fog-linear-switch",
       "observed": {
         "name": "Aurora Series Fog Linear",
@@ -2739,7 +2739,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7039181586543/variant/41095929954415",
       "kind": "switches",
-      "id": "aurora-series-pink",
+      "id": "ws-aurora-pink",
       "url": "https://cannonkeys.com/products/aurora-series-pink-linear-switch",
       "observed": {
         "name": "Aurora Series Pink Linear",
@@ -2750,7 +2750,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7039181586543/variant/41095929987183",
       "kind": "switches",
-      "id": "aurora-series-pink",
+      "id": "ws-aurora-pink",
       "url": "https://cannonkeys.com/products/aurora-series-pink-linear-switch",
       "observed": {
         "name": "Aurora Series Pink Linear",
@@ -2761,7 +2761,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7039184568431/variant/41095929069679",
       "kind": "switches",
-      "id": "aurora-series-clear",
+      "id": "ws-aurora-clear",
       "url": "https://cannonkeys.com/products/aurora-series-clear-linear-switch",
       "observed": {
         "name": "Aurora Series Clear Linear",
@@ -2772,7 +2772,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7039184568431/variant/41095929233519",
       "kind": "switches",
-      "id": "aurora-series-clear",
+      "id": "ws-aurora-clear",
       "url": "https://cannonkeys.com/products/aurora-series-clear-linear-switch",
       "observed": {
         "name": "Aurora Series Clear Linear",
@@ -9147,7 +9147,7 @@
       "source": "divinikeyswitches",
       "sourceId": "4554051354689/variant/39807434620993",
       "kind": "switches",
-      "id": "cherry-mx1a-hyperglide-pcb-mount-black",
+      "id": "cherry-mx-hyperglide-black",
       "url": "https://divinikey.com/products/cherry-mx-pcb-mount-switches",
       "observed": {
         "name": "Cherry MX1A Hyperglide PCB Mount - Black",
@@ -9158,7 +9158,7 @@
       "source": "divinikeyswitches",
       "sourceId": "4554051354689/variant/39807434653761",
       "kind": "switches",
-      "id": "cherry-mx1a-hyperglide-pcb-mount-brown",
+      "id": "cherry-mx-hyperglide-brown",
       "url": "https://divinikey.com/products/cherry-mx-pcb-mount-switches",
       "observed": {
         "name": "Cherry MX1A Hyperglide PCB Mount - Brown",
@@ -16272,7 +16272,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8087643128027/variant/44265958047963",
       "kind": "switches",
-      "id": "chilkey-paw-65-series-sprout-green",
+      "id": "chilkey-sprout-green",
       "url": "https://keebsforall.com/products/chilkey-paw-65-switch-series-1",
       "observed": {
         "name": "Chilkey Paw 65 Series - Sprout Green Tactile",
@@ -16283,7 +16283,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8087643128027/variant/44265958080731",
       "kind": "switches",
-      "id": "chilkey-paw-65-series-pink-lotus",
+      "id": "chilkey-pink-lotus",
       "url": "https://keebsforall.com/products/chilkey-paw-65-switch-series-1",
       "observed": {
         "name": "Chilkey Paw 65 Series - Pink Lotus Linear",
@@ -16434,7 +16434,7 @@
       "source": "keebsforallswitches",
       "sourceId": "8199341605083",
       "kind": "switches",
-      "id": "gateron-magnetic-orange",
+      "id": "gateron-ks-20-magnetic-orange",
       "url": "https://keebsforall.com/products/gateron-magnetic-orange-linear-switches",
       "observed": {
         "name": "Gateron Magnetic Orange Linear",
@@ -41015,7 +41015,7 @@
       "source": "lumekeebsswitches",
       "sourceId": "7797881077973/variant/43398020006101",
       "kind": "switches",
-      "id": "cherry-mx-black-hyperglide",
+      "id": "cherry-mx-hyperglide-black",
       "url": "https://lumekeebs.com/products/cherry-mx-hyperglide-switches",
       "observed": {
         "name": "Cherry MX Hyperglide - Linear (Black)",
@@ -67519,7 +67519,7 @@
       "source": "switchoddities",
       "sourceId": "10750171578652",
       "kind": "switches",
-      "id": "marquadt-switch",
+      "id": "marquardt",
       "url": "https://switchoddities.com/products/marquadt",
       "observed": {
         "name": "Marquadt Switch"
@@ -69283,7 +69283,7 @@
       "source": "switchoddities",
       "sourceId": "8119054631196",
       "kind": "switches",
-      "id": "mengmoda-mmd-honey-ht-stock",
+      "id": "mmd-honey",
       "url": "https://switchoddities.com/products/mengmoda-mmd-honey-tactile-ht-stock",
       "observed": {
         "name": "Mengmoda (MMD) Honey Tactile HT (Stock)",
@@ -69334,7 +69334,7 @@
       "source": "switchoddities",
       "sourceId": "8119056498972",
       "kind": "switches",
-      "id": "mengmoda-mmd-x-tomsb-iceberg",
+      "id": "mmd-x-tomsb-iceberg",
       "url": "https://switchoddities.com/products/mengmoda-mmd-x-tomsb-iceberg",
       "observed": {
         "name": "Mengmoda (MMD) x TomSB Iceberg"
@@ -69489,7 +69489,7 @@
       "source": "switchoddities",
       "sourceId": "8119066525980",
       "kind": "switches",
-      "id": "team-wolf-yelllow-tan-optical-2-0",
+      "id": "team-wolf-yellow-tan-optical-2-0",
       "url": "https://switchoddities.com/products/team-wolf-yelllow-tan-optical-2-0",
       "observed": {
         "name": "Team Wolf Yelllow (Tan) Optical 2.0"
@@ -72206,7 +72206,7 @@
       "source": "switchoddities",
       "sourceId": "8119157621020",
       "kind": "switches",
-      "id": "tecsee-middle-switch-linear",
+      "id": "tecsee-medium-linear",
       "url": "https://switchoddities.com/products/tecsee-middle-switch-linear",
       "observed": {
         "name": "Tecsee Middle Switch Linear",
@@ -72217,7 +72217,7 @@
       "source": "switchoddities",
       "sourceId": "8119157883164",
       "kind": "switches",
-      "id": "tecsee-middle-switch-tactile",
+      "id": "tecsee-medium-tactile",
       "url": "https://switchoddities.com/products/tecsee-middle-switch-tactile",
       "observed": {
         "name": "Tecsee Middle Switch Tactile",
@@ -79561,7 +79561,7 @@
       "source": "switchoddities",
       "sourceId": "8941199589660",
       "kind": "switches",
-      "id": "gateron-hall-effect-magnetic-white",
+      "id": "gateron-magnetic-white",
       "url": "https://switchoddities.com/products/gateron-hall-effect-magnetic-white",
       "observed": {
         "name": "Gateron Hall Effect Magnetic White"
@@ -79571,7 +79571,7 @@
       "source": "switchoddities",
       "sourceId": "8941200671004",
       "kind": "switches",
-      "id": "gateron-hall-effect-magnetic-orange",
+      "id": "gateron-ks-20-magnetic-orange",
       "url": "https://switchoddities.com/products/gateron-hall-effect-magnetic-orange",
       "observed": {
         "name": "Gateron Hall Effect Magnetic Orange"
@@ -83277,7 +83277,7 @@
       "source": "switchoddities",
       "sourceId": "9507483844892",
       "kind": "switches",
-      "id": "lofree-ghost-low-profile-pom-switch",
+      "id": "lofree-ghost",
       "url": "https://switchoddities.com/products/lofree-ghost-low-profile-pom-switch",
       "observed": {
         "name": "Lofree Ghost Low Profile POM Switch"
@@ -83287,7 +83287,7 @@
       "source": "switchoddities",
       "sourceId": "9507490332956",
       "kind": "switches",
-      "id": "lofree-phantom-low-profile-pom-switch",
+      "id": "lofree-phantom",
       "url": "https://switchoddities.com/products/lofree-phantom-low-profile-pom-switch",
       "observed": {
         "name": "Lofree Phantom Low Profile POM Switch"
@@ -83297,7 +83297,7 @@
       "source": "switchoddities",
       "sourceId": "9507493544220",
       "kind": "switches",
-      "id": "lofree-wizard-low-profile-pom-switch",
+      "id": "lofree-wizard",
       "url": "https://switchoddities.com/products/lofree-wizard-low-profile-pom-switch",
       "observed": {
         "name": "Lofree Wizard Low Profile POM Switch"
@@ -83509,7 +83509,7 @@
       "source": "switchoddities",
       "sourceId": "9508941529372",
       "kind": "switches",
-      "id": "hyperx-linear-switch",
+      "id": "hyperx-linear",
       "url": "https://switchoddities.com/products/hyperx-linear-switch",
       "observed": {
         "name": "HyperX Linear Switch",
@@ -83520,7 +83520,7 @@
       "source": "switchoddities",
       "sourceId": "9508942315804",
       "kind": "switches",
-      "id": "hyperx-tactile-switch",
+      "id": "hyperx-tactile",
       "url": "https://switchoddities.com/products/hyperx-tactile-switch",
       "observed": {
         "name": "HyperX Tactile Switch",
@@ -86104,7 +86104,7 @@
       "source": "switchoddities",
       "sourceId": "9998905377052",
       "kind": "switches",
-      "id": "huano-red-nylon",
+      "id": "huano-red",
       "url": "https://switchoddities.com/products/huano-red-nylon",
       "observed": {
         "name": "Huano Red (Nylon)"
@@ -86652,7 +86652,7 @@
       "source": "theremingoat",
       "sourceId": "1020",
       "kind": "switches",
-      "id": "snag-switch",
+      "id": "snag",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Snag Switch",
@@ -93117,7 +93117,7 @@
       "source": "theremingoat",
       "sourceId": "1548",
       "kind": "switches",
-      "id": "mmd-honey-pom",
+      "id": "mmd-honey",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "MMD Honey Tactile POM",
@@ -94818,7 +94818,7 @@
       "source": "theremingoat",
       "sourceId": "1688",
       "kind": "switches",
-      "id": "black-geon-switch",
+      "id": "geon-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Black Geon Switch",
@@ -94830,7 +94830,7 @@
       "source": "theremingoat",
       "sourceId": "1689",
       "kind": "switches",
-      "id": "black-geon-switch",
+      "id": "geon-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Black Geon Switch",
@@ -94853,7 +94853,7 @@
       "source": "theremingoat",
       "sourceId": "1690",
       "kind": "switches",
-      "id": "clear-geon-switch",
+      "id": "geon-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Clear Geon Switch",
@@ -99010,7 +99010,7 @@
       "source": "theremingoat",
       "sourceId": "2039",
       "kind": "switches",
-      "id": "tecsee-middle-switch-linear",
+      "id": "tecsee-medium-linear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Tecsee Middle Switch Linear",
@@ -99033,7 +99033,7 @@
       "source": "theremingoat",
       "sourceId": "2040",
       "kind": "switches",
-      "id": "tecsee-middle-switch-tactile",
+      "id": "tecsee-medium-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Tecsee Middle Switch Tactile",
@@ -103011,7 +103011,7 @@
       "source": "theremingoat",
       "sourceId": "2374",
       "kind": "switches",
-      "id": "gateron-hall-effect-orange",
+      "id": "gateron-ks-20-magnetic-orange",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Hall Effect Orange",
@@ -105634,7 +105634,7 @@
       "source": "theremingoat",
       "sourceId": "2592",
       "kind": "switches",
-      "id": "spring-switch",
+      "id": "bsun-spring",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Spring Switch",
@@ -106086,7 +106086,7 @@
       "source": "theremingoat",
       "sourceId": "2626",
       "kind": "switches",
-      "id": "gateron-magnetic-switch-white",
+      "id": "gateron-magnetic-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Gateron Magnetic Switch White",
@@ -116244,7 +116244,7 @@
       "source": "theremingoat",
       "sourceId": "3446",
       "kind": "switches",
-      "id": "sillyworks-x-napworks-hmx-nap-switch",
+      "id": "sillyworks-x-napworks-hmx-nap",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Sillyworks x Napworks HMX Nap Switch (37g)",
@@ -116256,7 +116256,7 @@
       "source": "theremingoat",
       "sourceId": "3447",
       "kind": "switches",
-      "id": "sillyworks-x-napworks-hmx-nap-switch",
+      "id": "sillyworks-x-napworks-hmx-nap",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Sillyworks x Napworks HMX Nap Switch (45g)",
@@ -116836,7 +116836,7 @@
       "source": "theremingoat",
       "sourceId": "3496",
       "kind": "switches",
-      "id": "the-preference-switch",
+      "id": "knc-keys-the-preference",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "The Preference Switch",
@@ -125391,7 +125391,7 @@
       "source": "theremingoat",
       "sourceId": "4164",
       "kind": "switches",
-      "id": "unionwell-extreme-magnetic-ice-obsidian-light-blue",
+      "id": "unionwell-extreme-magnetic-ice-obsidian",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Unionwell Extreme Magnetic Ice Obsidian (Light Blue)",
@@ -131880,7 +131880,7 @@
       "source": "theremingoat",
       "sourceId": "875",
       "kind": "switches",
-      "id": "43-studios-toy-switch",
+      "id": "43-studio-toy",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "43 Studios Toy Switch",
@@ -135266,7 +135266,7 @@
       "source": "theremingoatscores",
       "sourceId": "4f1797d5cd2e",
       "kind": "switches",
-      "id": "spring-switch",
+      "id": "bsun-spring",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Spring Switch",
@@ -135554,7 +135554,7 @@
       "source": "theremingoatscores",
       "sourceId": "60b47d0f9a19",
       "kind": "switches",
-      "id": "black-geon-switch",
+      "id": "geon-black",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Black Geon Switch",
@@ -136628,7 +136628,7 @@
       "source": "theremingoatscores",
       "sourceId": "919f4a876873",
       "kind": "switches",
-      "id": "tecsee-middle-switch-tactile",
+      "id": "tecsee-medium-tactile",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Tecsee Middle Switch Tactile",
@@ -139889,7 +139889,7 @@
       "source": "unikeys",
       "sourceId": "11987623149886/variant/52188752838974",
       "kind": "switches",
-      "id": "wingtree-yunie-tactile-operating-force",
+      "id": "wingtree-yunie-tactile",
       "url": "https://unikeyboards.com/products/wingtree-yunie-tactile-switch-factory-lubed-10pcs",
       "observed": {
         "name": "WINGTREE Yunie Tactile - 50g Operating Force/60g Bottom Out",
@@ -139902,7 +139902,7 @@
       "source": "unikeys",
       "sourceId": "11987623149886/variant/52188752871742",
       "kind": "switches",
-      "id": "wingtree-yunie-tactile-operating-force",
+      "id": "wingtree-yunie-tactile",
       "url": "https://unikeyboards.com/products/wingtree-yunie-tactile-switch-factory-lubed-10pcs",
       "observed": {
         "name": "WINGTREE Yunie Tactile - 57g Operating Force/63.5g Bottom Out",
@@ -139915,7 +139915,7 @@
       "source": "unikeys",
       "sourceId": "11987627376958/variant/52188744384830",
       "kind": "switches",
-      "id": "wingtree-yunie-linear-operating-force",
+      "id": "wingtree-yunie-linear",
       "url": "https://unikeyboards.com/products/wingtree-yunie-linear-switch-factory-lubed-10pcs",
       "observed": {
         "name": "WINGTREE Yunie Linear - 40g Operating Force/50g Bottom Out",
@@ -139928,7 +139928,7 @@
       "source": "unikeys",
       "sourceId": "11987627376958/variant/52188744417598",
       "kind": "switches",
-      "id": "wingtree-yunie-linear-operating-force",
+      "id": "wingtree-yunie-linear",
       "url": "https://unikeyboards.com/products/wingtree-yunie-linear-switch-factory-lubed-10pcs",
       "observed": {
         "name": "WINGTREE Yunie Linear - 45g Operating Force/60g Bottom Out",

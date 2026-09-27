@@ -409,8 +409,8 @@
     "theremingoat:2031": "moondrop-x-g-square-tessence",
     "theremingoat:2043": "drop-holy-panda-x-clear",
     "theremingoat:2044": "drop-holy-panda-x-clear",
-    "theremingoat:2039": "tecsee-middle-switch-linear",
-    "theremingoat:2040": "tecsee-middle-switch-tactile",
+    "theremingoat:2039": "tecsee-medium-linear",
+    "theremingoat:2040": "tecsee-medium-tactile",
     "theremingoat:2014": "lcet-blue-and-purple",
     "theremingoat:2009": "akko-orange",
     "theremingoat:1585": "mk-holy-llama",
@@ -1938,7 +1938,7 @@
     "theremingoatscores:4d3293aa4aaa": "hmx-valerian",
     "theremingoatscores:4e650641e2de": "ktt-blueberry-ice-cream",
     "theremingoatscores:4e6d4151f6e7": "noppoo-brown",
-    "theremingoatscores:4f1797d5cd2e": "spring-switch",
+    "theremingoatscores:4f1797d5cd2e": "bsun-spring",
     "theremingoatscores:4f83cdf1dc6e": "kailh-box-navy",
     "theremingoatscores:4f8d80d039b2": "gateron-azure-dragon",
     "theremingoatscores:5040156be3b2": "cherry-mx-northern-light",
@@ -1961,7 +1961,7 @@
     "theremingoatscores:5cf6ee3076a0": "leobog-nimbus",
     "theremingoatscores:5f8122ec7650": "leobog-standardbrown",
     "theremingoatscores:60216763af11": "keygeek-sunflower",
-    "theremingoatscores:60b47d0f9a19": "black-geon-switch",
+    "theremingoatscores:60b47d0f9a19": "geon-black",
     "theremingoatscores:60d367eb836f": "invokeys-black-sesame",
     "theremingoatscores:61f8c02bc26f": "greetech-razer-orange",
     "theremingoatscores:6218c2351a3a": "hmx-crisp",
@@ -2040,7 +2040,7 @@
     "theremingoatscores:91166be60ff4": "gateron-magnetic-jade-emerald",
     "theremingoatscores:912ae4708177": "gateron-x",
     "theremingoatscores:9191c1406f1f": "kailh-autumn",
-    "theremingoatscores:919f4a876873": "tecsee-middle-switch-tactile",
+    "theremingoatscores:919f4a876873": "tecsee-medium-tactile",
     "theremingoatscores:91d328048a5f": "akko-cs-rose-red",
     "theremingoatscores:9310037c8d92": "tkc-blackberry",
     "theremingoatscores:93abf2704f34": "opgrey",
@@ -2246,10 +2246,10 @@
     "theremingoat:3215/9daab1fad830": "keygeek-raw",
     "theremingoatscores:436d7227c8e8": "kfa-pink-robin",
     "switchoddities:8119108174108": "kinetic-labs-penguin",
-    "theremingoat:1688": "black-geon-switch",
+    "theremingoat:1688": "geon-black",
     "theremingoat:2335": "black-sesame",
     "theremingoat:2327": "blueberry-chiffon",
-    "theremingoat:1690": "clear-geon-switch",
+    "theremingoat:1690": "geon-clear",
     "unikeys:10874721468734/variant/49951214240062": "cherry-mx2a-purple",
     "theremingoat:1692": "invokeys-blueberry-chiffon",
     "theremingoat:1693": "invokeys-blueberry-chiffon",
@@ -3168,9 +3168,9 @@
     "cannonkeysswitches:4378792427631": "lilac-tactile",
     "cannonkeysswitches:4590469480559": "lilac-linear",
     "cannonkeysswitches:6904476008559/variant/43040353452143": "gateron-x-36",
-    "cannonkeysswitches:7039178702959/variant/41095930052719": "aurora-series-fog",
-    "cannonkeysswitches:7039181586543/variant/41095929987183": "aurora-series-pink",
-    "cannonkeysswitches:7039184568431/variant/41095929233519": "aurora-series-clear",
+    "cannonkeysswitches:7039178702959/variant/41095930052719": "ws-aurora-fog",
+    "cannonkeysswitches:7039181586543/variant/41095929987183": "ws-aurora-pink",
+    "cannonkeysswitches:7039184568431/variant/41095929233519": "ws-aurora-clear",
     "cannonkeysswitches:7065672777839": "sunny-side-up",
     "cannonkeysswitches:7065708101743": "chocolate-toffee",
     "cannonkeysswitches:7122284478575": "shaka",
@@ -3674,7 +3674,7 @@
     "cannonkeysswitches:4405679226991": "gateron-ks-3-brown",
     "cannonkeysswitches:4565355233391": "ws-original-aspiration-oa",
     "cannonkeysswitches:4590493106287": "gateron-full-nylon-yellow",
-    "cannonkeysswitches:4605867884655": "cherry-mx-black-hyperglide",
+    "cannonkeysswitches:4605867884655": "cherry-mx-hyperglide-black",
     "cannonkeysswitches:4618219978863": "seal",
     "cannonkeysswitches:6553093865583": "aeboards-raed",
     "cannonkeysswitches:6578324242543": "cerulean",
@@ -3691,11 +3691,11 @@
     "cannonkeysswitches:6981479006319/variant/41095930708079": "fl-cmmk-ice-mint",
     "cannonkeysswitches:7011388260463": "gateron-pro-milky-yellow-1-0",
     "cannonkeysswitches:7023524282479": "gateron-pro-north-pole",
-    "cannonkeysswitches:7028540014703": "cherry-mx-red-hyperglide",
+    "cannonkeysswitches:7028540014703": "cherry-mx-hyperglide-red",
     "cannonkeysswitches:7028544864367": "cherry-mx-clear",
-    "cannonkeysswitches:7039178702959/variant/41095930019951": "aurora-series-fog",
-    "cannonkeysswitches:7039181586543/variant/41095929954415": "aurora-series-pink",
-    "cannonkeysswitches:7039184568431/variant/41095929069679": "aurora-series-clear",
+    "cannonkeysswitches:7039178702959/variant/41095930019951": "ws-aurora-fog",
+    "cannonkeysswitches:7039181586543/variant/41095929954415": "ws-aurora-pink",
+    "cannonkeysswitches:7039184568431/variant/41095929069679": "ws-aurora-clear",
     "cannonkeysswitches:7048772616303": "haimu-heartbeat-silent",
     "cannonkeysswitches:7048786280559": "haimu-whisper-silent",
     "cannonkeysswitches:7089242210415": "blush-light",
@@ -3848,11 +3848,11 @@
     "keebsforallswitches:8071088177371": "gateron-ks-9-g-pro-3-0-yellow",
     "keebsforallswitches:8080553148635": "flower-shadow",
     "keebsforallswitches:8080557146331/variant/44668877504731": "sarokeys-bsun-bcp",
-    "keebsforallswitches:8087643128027/variant/44265958047963": "chilkey-paw-65-series-sprout-green",
-    "keebsforallswitches:8087643128027/variant/44265958080731": "chilkey-paw-65-series-pink-lotus",
+    "keebsforallswitches:8087643128027/variant/44265958047963": "chilkey-sprout-green",
+    "keebsforallswitches:8087643128027/variant/44265958080731": "chilkey-pink-lotus",
     "keebsforallswitches:8095563940059": "durock-white-lotus",
     "keebsforallswitches:8095564103899": "durock-blue-lotus-t1",
-    "keebsforallswitches:8199341605083": "gateron-magnetic-orange",
+    "keebsforallswitches:8199341605083": "gateron-ks-20-magnetic-orange",
     "keebsforallswitches:8205928300763": "durock-l1-creamy-yellow",
     "keebsforallswitches:8205952385243": "durock-l2-creamy-green",
     "keebsforallswitches:8205972406491": "durock-l4-creamy-purple",
@@ -3881,7 +3881,7 @@
     "keychronswitches:7284787150937/variant/40471102455897": "kailh-deep-sea-silent-pro-box-islet",
     "keychronswitches:7284787150937/variant/40471102488665": "kailh-deep-sea-silent-pro-box-whale",
     "keychronswitches:7808289669209/variant/41912924995673": "haimu-midnight",
-    "lumekeebsswitches:7797881077973/variant/43398020006101": "cherry-mx-black-hyperglide",
+    "lumekeebsswitches:7797881077973/variant/43398020006101": "cherry-mx-hyperglide-black",
     "lumekeebsswitches:7797881077973/variant/47347294634197": "cherry-mx-hyperglide-brown",
     "lumekeebsswitches:7834196050133/variant/43526235455701": "durock-sunflower-pom-t1",
     "lumekeebsswitches:7834198245589/variant/43526243975381": "durock-daybreak-silent",
@@ -4053,7 +4053,7 @@
     "switchoddities:10958619541788": "ktt-shadow-silent",
     "switchoddities:10973465215260": "hitune-bm10",
     "switchoddities:10973594059036": "jerrzi-golden-low-profile",
-    "switchoddities:8119054631196": "mengmoda-mmd-honey-ht-stock",
+    "switchoddities:8119054631196": "mmd-honey",
     "switchoddities:8119087792412": "gazzew-boba-lt",
     "switchoddities:8119096181020": "zuoce-studios-daibai-linear",
     "switchoddities:8119096443164": "zuoce-studios-daibai-linear",
@@ -4088,7 +4088,7 @@
     "switchoddities:9999393063196": "huano-kyubi-silent",
     "theremingoat:109": "flaretech-optical-purple",
     "theremingoat:1212": "emt",
-    "theremingoat:1548": "mmd-honey-pom",
+    "theremingoat:1548": "mmd-honey",
     "theremingoat:1554": "dustproof-outemu-ocean-s",
     "theremingoat:1589": "tecsee-ice-milk",
     "theremingoat:1729": "grain-gold-purple",
@@ -4111,7 +4111,6 @@
     "theremingoat:242": "clear-zealio",
     "theremingoat:243": "clear-zealio",
     "theremingoat:244": "clear-zealio",
-    "theremingoat:2497": "olive-switch",
     "theremingoat:2528": "hm-dustproof-blue",
     "theremingoat:2544": "wuque-studio-dark",
     "theremingoat:2547": "hm-soft-green",
@@ -4696,10 +4695,10 @@
     "lumekeebsswitches:7725026312405/variant/43198553325781": "ktt-strawberry",
     "theremingoat:4063": "wingtree-camellia",
     "theremingoat:4062": "wingtree-camellia",
-    "unikeys:11987627376958/variant/52188744384830": "wingtree-yunie-linear-operating-force",
-    "unikeys:11987627376958/variant/52188744417598": "wingtree-yunie-linear-operating-force",
-    "unikeys:11987623149886/variant/52188752838974": "wingtree-yunie-tactile-operating-force",
-    "unikeys:11987623149886/variant/52188752871742": "wingtree-yunie-tactile-operating-force",
+    "unikeys:11987627376958/variant/52188744384830": "wingtree-yunie-linear",
+    "unikeys:11987627376958/variant/52188744417598": "wingtree-yunie-linear",
+    "unikeys:11987623149886/variant/52188752838974": "wingtree-yunie-tactile",
+    "unikeys:11987623149886/variant/52188752871742": "wingtree-yunie-tactile",
     "akkogearswitches:8225085980871/variant/45060677435591": "akko-creamy-cyan",
     "cannonkeys:6727722991727": "nicepbt-bow",
     "cannonkeys:7498325688431": "nicepbt-bow",
@@ -5458,8 +5457,8 @@
     "theremingoat:3361": "xllab-x-haimu-rock",
     "theremingoat:3362": "xllab-x-haimu-rock",
     "theremingoat:339": "halo-clear",
-    "theremingoat:3446": "sillyworks-x-napworks-hmx-nap-switch",
-    "theremingoat:3447": "sillyworks-x-napworks-hmx-nap-switch",
+    "theremingoat:3446": "sillyworks-x-napworks-hmx-nap",
+    "theremingoat:3447": "sillyworks-x-napworks-hmx-nap",
     "theremingoat:3473": "huano-red",
     "theremingoat:3474": "rk-red",
     "theremingoat:3475": "huano-red",
@@ -6858,7 +6857,42 @@
     "switchoddities:8119097262364": "jwick-t1",
     "switchoddities:9954429403420": "ajazz-gift",
     "switchoddities:9954430812444": "ajazz-gift",
-    "theremingoat:706": "jwk-giant"
+    "theremingoat:706": "jwk-giant",
+    "divinikeyswitches:4554051354689/variant/39807434620993": "cherry-mx-hyperglide-black",
+    "divinikeyswitches:4554051354689/variant/39807434653761": "cherry-mx-hyperglide-brown",
+    "keebsforallswitches:7957539782875/variant/43926715662555": "geon-black",
+    "lumekeebsswitches:8846297923797/variant/50897556504789": "tecsee-medium-linear",
+    "lumekeebsswitches:8846297923797/variant/50897556537557": "tecsee-medium-tactile",
+    "switchoddities:10750171578652": "marquardt",
+    "switchoddities:8119157621020": "tecsee-medium-linear",
+    "switchoddities:8119157883164": "tecsee-medium-tactile",
+    "switchoddities:8763287175452": "knc-keys-the-preference",
+    "switchoddities:8941199589660": "gateron-magnetic-white",
+    "switchoddities:9116824994076": "ws-aurora-fog",
+    "switchoddities:9116826403100": "ws-aurora-pink",
+    "switchoddities:9373493231900": "chilkey-pink-lotus",
+    "switchoddities:9373493723420": "chilkey-sprout-green",
+    "switchoddities:9507483844892": "lofree-ghost",
+    "switchoddities:9507490332956": "lofree-phantom",
+    "switchoddities:9507493544220": "lofree-wizard",
+    "switchoddities:9508941529372": "hyperx-linear",
+    "switchoddities:9508942315804": "hyperx-tactile",
+    "theremingoat:1689": "geon-black",
+    "theremingoat:2592": "bsun-spring",
+    "theremingoat:2626": "gateron-magnetic-white",
+    "theremingoat:2964": "lofree-ghost",
+    "theremingoat:2965": "lofree-wizard",
+    "theremingoat:2966": "lofree-phantom",
+    "theremingoat:3496": "knc-keys-the-preference",
+    "theremingoat:875": "43-studio-toy",
+    "switchoddities:8941200671004": "gateron-ks-20-magnetic-orange",
+    "theremingoat:1020": "snag",
+    "theremingoat:2374": "gateron-ks-20-magnetic-orange",
+    "switchoddities:8119056498972": "mmd-x-tomsb-iceberg",
+    "switchoddities:8119066525980": "team-wolf-yellow-tan-optical-2-0",
+    "switchoddities:9998905377052": "huano-red",
+    "theremingoat:4164": "unionwell-extreme-magnetic-ice-obsidian",
+    "theremingoatscores:954e30c6b0bd": "mmd-honey"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -7054,14 +7088,6 @@
       "manufacturer": "Haimu",
       "name": "WS Aurora Blue"
     },
-    "switches/ws-aurora-fog": {
-      "manufacturer": "Haimu",
-      "name": "WS Aurora Fog"
-    },
-    "switches/ws-aurora-pink": {
-      "manufacturer": "Haimu",
-      "name": "WS Aurora Pink"
-    },
     "switches/keebz-n-cables-x-clickpig-mountain-king": {
       "manufacturer": "JWK"
     },
@@ -7179,9 +7205,6 @@
       "manufacturer": "JWK"
     },
     "switches/obsidian-pro": {
-      "manufacturer": "JWK"
-    },
-    "switches/a-switch-with-no-good-name": {
       "manufacturer": "JWK"
     },
     "switches/cotton-candy": {
@@ -7321,10 +7344,6 @@
     },
     "switches/chosfox-hanami-dango-pink": {
       "manufacturer": "JWK"
-    },
-    "switches/wuque-mm-switches": {
-      "manufacturer": "JWK",
-      "switchType": "linear"
     },
     "switches/jwk-pointworks-purple": {
       "manufacturer": "JWK"
@@ -7543,9 +7562,6 @@
       "manufacturer": "JWK"
     },
     "switches/original-aspiration-release": {
-      "manufacturer": "JWK"
-    },
-    "switches/43-studios-toy-switch": {
       "manufacturer": "JWK"
     },
     "switches/opblack": {
@@ -8907,12 +8923,6 @@
     },
     "switches/keygeek-avalon-3-8mm": {
       "name": "Keygeek Avalon 3.8mm"
-    },
-    "switches/black-geon-switch": {
-      "name": "Black Geon Switch"
-    },
-    "switches/clear-geon-switch": {
-      "name": "Clear Geon Switch"
     },
     "switches/cherry-mx2a-purple": {
       "name": "Cherry MX2A Purple",
@@ -13833,18 +13843,6 @@
       "brand": "Akko",
       "switchType": "tactile"
     },
-    "switches/aurora-series-clear": {
-      "name": "Aurora Series Clear",
-      "switchType": "linear"
-    },
-    "switches/aurora-series-fog": {
-      "name": "Aurora Series Fog",
-      "switchType": "linear"
-    },
-    "switches/aurora-series-pink": {
-      "name": "Aurora Series Pink",
-      "switchType": "linear"
-    },
     "switches/blush-light": {
       "name": "Blush Light",
       "manufacturer": "JWK",
@@ -14017,12 +14015,6 @@
       "brand": "Cherry",
       "switchType": "linear"
     },
-    "switches/cherry-mx-red-hyperglide": {
-      "name": "Cherry MX Red Hyperglide",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear"
-    },
     "switches/cherry-mx2a-black": {
       "name": "Cherry MX2A Black",
       "variants": [
@@ -14067,16 +14059,6 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": null
-    },
-    "switches/chilkey-paw-65-series-pink-lotus": {
-      "name": "Chilkey Paw 65 Series - Pink Lotus",
-      "brand": "Wuque Studio",
-      "switchType": "linear"
-    },
-    "switches/chilkey-paw-65-series-sprout-green": {
-      "name": "Chilkey Paw 65 Series - Sprout Green",
-      "brand": "Wuque Studio",
-      "switchType": "tactile"
     },
     "switches/chocolate-toffee": {
       "name": "Chocolate Toffee",
@@ -14426,12 +14408,6 @@
       "brand": "Gateron",
       "switchType": "linear"
     },
-    "switches/gateron-magnetic-orange": {
-      "name": "Gateron Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear"
-    },
     "switches/gateron-magnetic-orchid-hall-effect": {
       "name": "Gateron Magnetic Orchid Hall Effect",
       "manufacturer": "Gateron",
@@ -14571,11 +14547,6 @@
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear"
-    },
-    "switches/geon-clear": {
-      "name": "Geon Clear",
-      "brand": "Geon",
-      "switchType": "tactile"
     },
     "switches/geon-raw-zero": {
       "name": "Geon Raw ZERO",
@@ -15349,11 +15320,6 @@
       "name": "Matias Quiet",
       "switchType": "linear"
     },
-    "switches/mengmoda-mmd-honey-ht-stock": {
-      "name": "MMD (MMD) Honey HT (Stock)",
-      "brand": "MMD",
-      "switchType": "tactile"
-    },
     "switches/mera-mera-no-mi-mm-studio": {
       "name": "Mera Mera No Mi - MM Studio",
       "brand": "MM Studio",
@@ -15375,11 +15341,6 @@
     },
     "switches/mmd-green": {
       "name": "MMD Green",
-      "brand": "MMD",
-      "switchType": "tactile"
-    },
-    "switches/mmd-honey-pom": {
-      "name": "MMD Honey POM",
       "brand": "MMD",
       "switchType": "tactile"
     },
@@ -15528,10 +15489,6 @@
     },
     "switches/sunset-choc": {
       "name": "Sunset Choc",
-      "switchType": "tactile"
-    },
-    "switches/olive-switch": {
-      "name": "Olive Switch",
       "switchType": "tactile"
     },
     "switches/tecsee-blue-orange-stem": {
@@ -16020,13 +15977,6 @@
       "designer": "Wuque Studio",
       "switchType": "linear"
     },
-    "switches/ws-aurora-clear": {
-      "name": "WS Aurora Clear",
-      "manufacturer": "Haimu",
-      "brand": "Wuque Studio",
-      "designer": "Wuque Studio",
-      "switchType": "linear"
-    },
     "switches/ws-biglucky-linear": {
       "name": "WS Biglucky Linear",
       "manufacturer": "K2",
@@ -16335,12 +16285,6 @@
     },
     "switches/cherry-mx-black-clear-top-nixie": {
       "name": "Cherry MX Black Clear-Top \"Nixie\"",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear"
-    },
-    "switches/cherry-mx-black-hyperglide": {
-      "name": "Cherry MX Black Hyperglide",
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "switchType": "linear"
@@ -17509,12 +17453,6 @@
     "switches/gateron-goldenrod-pro-3-0-yellow": {
       "switchType": "linear"
     },
-    "switches/gateron-hall-effect-magnetic-orange": {
-      "switchType": "linear"
-    },
-    "switches/gateron-hall-effect-magnetic-white": {
-      "switchType": "linear"
-    },
     "switches/gateron-jade-gaming-he": {
       "switchType": "linear"
     },
@@ -17719,19 +17657,16 @@
     },
     "switches/huano-red": {
       "name": "Huano Red",
-      "variants": [
-        "Black Housing",
-        "Clear/White Housing"
-      ],
       "manufacturer": "Huano",
       "brand": null,
       "designer": null,
       "switchType": "linear",
       "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/huano-red-nylon": {
-      "switchType": "linear"
+      "isLowProfile": null,
+      "variants": [
+        "Black Housing",
+        "Clear/White Housing"
+      ]
     },
     "switches/huano-spirit-wind-lingfeng": {
       "switchType": "linear"
@@ -18275,31 +18210,16 @@
     "switches/lk-bloody-lightstrike-optical": {
       "switchType": "clicky"
     },
-    "switches/lofree-ghost-low-profile-pom-switch": {
-      "switchType": "linear"
-    },
-    "switches/lofree-phantom-low-profile-pom-switch": {
-      "switchType": "tactile"
-    },
-    "switches/lofree-wizard-low-profile-pom-switch": {
-      "switchType": "clicky"
-    },
     "switches/logitech-purple-yellow": {
       "switchType": "linear"
     },
     "switches/logitech-red-green": {
       "switchType": "linear"
     },
-    "switches/marquadt-switch": {
-      "switchType": "linear"
-    },
     "switches/matcha-bamboo-shoot": {
       "switchType": "linear"
     },
     "switches/mek-raw-studio-rawk-mk-01": {
-      "switchType": "linear"
-    },
-    "switches/mengmoda-mmd-x-tomsb-iceberg": {
       "switchType": "linear"
     },
     "switches/meow-claw-v3s": {
@@ -18659,9 +18579,6 @@
       "switchType": "linear"
     },
     "switches/team-wolf-green-optical-4-0": {
-      "switchType": "clicky"
-    },
-    "switches/team-wolf-yelllow-tan-optical-2-0": {
       "switchType": "clicky"
     },
     "switches/team-wolf-yellow-tan-optical-4-0": {
@@ -19126,12 +19043,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/cherry-mx1a-hyperglide-pcb-mount-black": {
-      "switchType": "linear"
-    },
-    "switches/cherry-mx1a-hyperglide-pcb-mount-brown": {
-      "switchType": "tactile"
-    },
     "switches/cherry-mx2a-blue": {
       "name": "Cherry MX2A Blue",
       "variants": [
@@ -19255,12 +19166,6 @@
     "switches/raeds-he-original": {
       "switchType": "linear",
       "designer": "Keyboard Treehouse"
-    },
-    "switches/tecsee-medium-linear": {
-      "switchType": "linear"
-    },
-    "switches/tecsee-medium-tactile": {
-      "switchType": "tactile"
     },
     "switches/tecsee-metal-coated-linear": {
       "switchType": "linear"
@@ -20106,32 +20011,6 @@
     "switches/cherry-m8-white": {
       "name": "Cherry M8 White",
       "variants": null,
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/cherry-mx-hyperglide-black": {
-      "name": "Cherry MX Hyperglide Black",
-      "variants": [
-        "3-pin",
-        "5-pin"
-      ],
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/cherry-mx-hyperglide-red": {
-      "name": "Cherry MX Hyperglide Red",
-      "variants": [
-        "3-pin",
-        "5-pin"
-      ],
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "designer": null,
@@ -22221,19 +22100,6 @@
         "45g"
       ],
       "manufacturer": null,
-      "brand": "Sillyworks",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/sillyworks-x-napworks-hmx-nap-switch": {
-      "name": "Sillyworks x Napworks HMX Nap Switch",
-      "variants": [
-        "37g",
-        "45g"
-      ],
-      "manufacturer": "HMX",
       "brand": "Sillyworks",
       "designer": null,
       "switchType": "linear",
@@ -28037,58 +27903,6 @@
         "V2 / 43g"
       ]
     },
-    "switches/wingtree-yunie-linear": {
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": null,
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Wingtree Yunie Linear",
-      "variants": [
-        "40g",
-        "45g"
-      ]
-    },
-    "switches/wingtree-yunie-linear-operating-force": {
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wingtree",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Wingtree Yunie Linear Operating Force",
-      "variants": [
-        "50g / 40g",
-        "60g / 45g"
-      ]
-    },
-    "switches/wingtree-yunie-tactile": {
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Wingtree Yunie Tactile",
-      "variants": [
-        "60g",
-        "63.5g"
-      ]
-    },
-    "switches/wingtree-yunie-tactile-operating-force": {
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wingtree",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "name": "Wingtree Yunie Tactile Operating Force",
-      "variants": [
-        "60g / 50g",
-        "63.5g / 57g"
-      ]
-    },
     "switches/wingtree-yuying-linear": {
       "manufacturer": "Wingtree",
       "brand": "Wingtree",
@@ -30617,19 +30431,6 @@
       "switchFamily": "MX",
       "isLowProfile": null,
       "variants": null
-    },
-    "switches/cherry-mx-hyperglide-brown": {
-      "name": "Cherry MX Hyperglide Brown",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "designer": null,
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "isLowProfile": null,
-      "variants": [
-        "3-pin",
-        "5-pin"
-      ]
     },
     "switches/bsun-brown": {
       "name": "BSUN Brown",
@@ -33294,6 +33095,338 @@
         "V5",
         "V6"
       ]
+    },
+    "switches/43-studio-toy": {
+      "name": "43 Studio Toy",
+      "manufacturer": "JWK",
+      "brand": "43 Studio",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/sillyworks-x-napworks-hmx-nap": {
+      "name": "Sillyworks x Napworks HMX Nap",
+      "manufacturer": "HMX",
+      "brand": "Sillyworks",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "37g",
+        "45g"
+      ]
+    },
+    "switches/hyperx-linear": {
+      "name": "HyperX Linear",
+      "manufacturer": null,
+      "brand": "HyperX",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hyperx-tactile": {
+      "name": "HyperX Tactile",
+      "manufacturer": null,
+      "brand": "HyperX",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-magnetic-white": {
+      "name": "Gateron Magnetic White",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/cherry-mx-hyperglide-black": {
+      "name": "Cherry MX Hyperglide Black",
+      "manufacturer": "Cherry",
+      "brand": "Cherry",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "3-pin",
+        "5-pin"
+      ]
+    },
+    "switches/cherry-mx-hyperglide-brown": {
+      "name": "Cherry MX Hyperglide Brown",
+      "manufacturer": "Cherry",
+      "brand": "Cherry",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "3-pin",
+        "5-pin"
+      ]
+    },
+    "switches/cherry-mx-hyperglide-red": {
+      "name": "Cherry MX Hyperglide Red",
+      "manufacturer": "Cherry",
+      "brand": "Cherry",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "3-pin",
+        "5-pin"
+      ]
+    },
+    "switches/lofree-ghost": {
+      "name": "Lofree Ghost",
+      "manufacturer": "Kailh",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/lofree-phantom": {
+      "name": "Lofree Phantom",
+      "manufacturer": "Kailh",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/lofree-wizard": {
+      "name": "Lofree Wizard",
+      "manufacturer": "Kailh",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": true,
+      "variants": null
+    },
+    "switches/tecsee-medium-linear": {
+      "name": "Tecsee Medium Linear",
+      "manufacturer": "Tecsee",
+      "brand": "Tecsee",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/tecsee-medium-tactile": {
+      "name": "Tecsee Medium Tactile",
+      "manufacturer": "Tecsee",
+      "brand": "Tecsee",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/knc-keys-the-preference": {
+      "name": "KNC Keys The Preference",
+      "manufacturer": "Aflion",
+      "brand": "KNC Keys",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/wingtree-yunie-linear": {
+      "name": "Wingtree Yunie Linear",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "50g",
+        "60g"
+      ]
+    },
+    "switches/wingtree-yunie-tactile": {
+      "name": "Wingtree Yunie Tactile",
+      "manufacturer": "Wingtree",
+      "brand": "Wingtree",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": [
+        "60g",
+        "63.5g"
+      ]
+    },
+    "switches/chilkey-pink-lotus": {
+      "name": "Chilkey Pink Lotus",
+      "manufacturer": "Haimu",
+      "brand": "Chilkey",
+      "designer": "Chilkey",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/chilkey-sprout-green": {
+      "name": "Chilkey Sprout Green",
+      "manufacturer": "Haimu",
+      "brand": "Chilkey",
+      "designer": "Chilkey",
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ws-aurora-clear": {
+      "name": "WS Aurora Clear",
+      "manufacturer": "Haimu",
+      "brand": "Wuque Studio",
+      "designer": "Wuque Studio",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ws-aurora-fog": {
+      "name": "WS Aurora Fog",
+      "manufacturer": "Haimu",
+      "brand": "Wuque Studio",
+      "designer": "Wuque Studio",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ws-aurora-pink": {
+      "name": "WS Aurora Pink",
+      "manufacturer": "Haimu",
+      "brand": "Wuque Studio",
+      "designer": "Wuque Studio",
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/geon-black": {
+      "name": "Geon Black",
+      "manufacturer": "Tecsee",
+      "brand": "Geon",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/geon-clear": {
+      "name": "Geon Clear",
+      "manufacturer": "Tecsee",
+      "brand": "Geon",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/bsun-spring": {
+      "name": "BSUN Spring",
+      "manufacturer": "BSUN",
+      "brand": "BSUN",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/wuque-mm-switches": {
+      "manufacturer": "JWK",
+      "switchType": "linear"
+    },
+    "switches/snag": {
+      "name": "Snag",
+      "manufacturer": "Tecsee",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/marquardt": {
+      "name": "Marquardt",
+      "manufacturer": "Marquardt",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Legacy",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/gateron-ks-20-magnetic-orange": {
+      "name": "Gateron KS-20 Magnetic Orange",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mmd-x-tomsb-iceberg": {
+      "name": "MMD x TomSB Iceberg",
+      "manufacturer": null,
+      "brand": "MMD",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/team-wolf-yellow-tan-optical-2-0": {
+      "name": "Team Wolf Yellow (Tan) Optical 2.0",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "Optical",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/unionwell-extreme-magnetic-ice-obsidian": {
+      "name": "Unionwell Extreme Magnetic Ice Obsidian",
+      "manufacturer": "Greetech",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/mmd-honey": {
+      "name": "MMD Honey",
+      "manufacturer": "Aflion",
+      "brand": "MMD",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     }
   },
   "excluded": {
@@ -34507,6 +34640,12 @@
     "theremingoat:260": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
     "theremingoat:264": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
     "theremingoat:263": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
-    "theremingoat:265": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established."
+    "theremingoat:265": "Unresolved Durock tactile stem-color specimen; no verified commercial model mapping or safe merge target. Removed at user request; sample-only status is not established.",
+    "theremingoat:2497": "Unresolved tactile Olive identity; the shared name alone does not establish that this specimen is BSUN Olive.",
+    "theremingoat:1328": "Unreleased prototype in the source notes; no established commercial release.",
+    "theremingoat:1687": "Unresolved commercial identity; no reliable bulk retail or production-keyboard evidence found.",
+    "theremingoat:1921": "Unresolved BSUN clicky specimen; Light Sakura is a different silent linear product.",
+    "theremingoat:1922": "Unresolved BSUN clicky specimen; unrelated fake Holy Panda listings do not establish this model.",
+    "theremingoat:2616": "Unresolved commercial identity; generic GGBOY listings do not establish this specific model."
   }
 }

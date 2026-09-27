@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 86,
-  "totalCount": 4575,
+  "catalogVersion": 91,
+  "totalCount": 4543,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -45,6 +45,14 @@
       ]
     },
     {
+      "id": "43-studio-toy",
+      "name": "43 Studio Toy",
+      "manufacturer": "JWK",
+      "brand": "43 Studio",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
       "id": "43-studios-caramel",
       "name": "43 Studio Caramel",
       "manufacturer": "JWK",
@@ -82,14 +90,6 @@
       "manufacturer": "JWK",
       "brand": "43 Studio",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "43-studios-toy-switch",
-      "name": "43 Studio Toy Switch",
-      "manufacturer": "JWK",
-      "brand": "43 Studio",
-      "switchType": "linear",
       "switchFamily": "MX"
     },
     {
@@ -214,13 +214,6 @@
         "V1",
         "V2"
       ]
-    },
-    {
-      "id": "a-switch-with-no-good-name",
-      "name": "'A Switch with No Good Name'",
-      "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "a1-white-alps-clone",
@@ -2495,24 +2488,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "aurora-series-clear",
-      "name": "Aurora Series Clear",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "aurora-series-fog",
-      "name": "Aurora Series Fog",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "aurora-series-pink",
-      "name": "Aurora Series Pink",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "ausdom-yellow",
       "name": "Ausdom Yellow",
       "switchType": "linear",
@@ -2810,13 +2785,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "black-geon-switch",
-      "name": "Black Geon Switch",
-      "manufacturer": "Tecsee",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "black-raspberry",
       "name": "Black Raspberry",
       "switchType": "tactile",
@@ -3065,12 +3033,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "brazilian-iron-switch",
-      "name": "Brazilian Iron Switch",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "bsun-agarwood",
       "name": "BSUN Agarwood",
       "manufacturer": "BSUN",
@@ -3308,13 +3270,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "bsun-fake-switch",
-      "name": "BSUN Fake Switch",
-      "manufacturer": "BSUN",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
       "id": "bsun-flash",
       "name": "BSUN Flash",
       "brand": "BSUN",
@@ -3446,13 +3401,6 @@
       "name": "BSUN Li",
       "manufacturer": "BSUN",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "bsun-light-switch",
-      "name": "BSUN Light Switch",
-      "manufacturer": "BSUN",
-      "switchType": "clicky",
       "switchFamily": "MX"
     },
     {
@@ -3760,6 +3708,14 @@
       "name": "BSUN Snow Diane",
       "manufacturer": "BSUN",
       "designer": "Easy Typing Innovation",
+      "switchType": "linear",
+      "switchFamily": "MX"
+    },
+    {
+      "id": "bsun-spring",
+      "name": "BSUN Spring",
+      "manufacturer": "BSUN",
+      "brand": "BSUN",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -4248,14 +4204,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "cherry-mx-black-hyperglide",
-      "name": "Cherry MX Black Hyperglide",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "cherry-mx-blossom",
       "name": "Cherry MX Blossom",
       "manufacturer": "Cherry",
@@ -4661,14 +4609,6 @@
       ]
     },
     {
-      "id": "cherry-mx-red-hyperglide",
-      "name": "Cherry MX Red Hyperglide",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "cherry-mx-rgb-black",
       "name": "Cherry MX RGB Black",
       "manufacturer": "Cherry",
@@ -4834,22 +4774,6 @@
       "manufacturer": "Cherry",
       "brand": "Cherry",
       "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "cherry-mx1a-hyperglide-pcb-mount-black",
-      "name": "Cherry MX1A Hyperglide PCB Mount - Black",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "cherry-mx1a-hyperglide-pcb-mount-brown",
-      "name": "Cherry MX1A Hyperglide PCB Mount - Brown",
-      "manufacturer": "Cherry",
-      "brand": "Cherry",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -5078,23 +5002,10 @@
       "switchFamily": "MX"
     },
     {
-      "id": "chilkey-paw-65-series-pink-lotus",
-      "name": "Chilkey Paw 65 Series - Pink Lotus",
-      "brand": "Wuque Studio",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "chilkey-paw-65-series-sprout-green",
-      "name": "Chilkey Paw 65 Series - Sprout Green",
-      "brand": "Wuque Studio",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "chilkey-pink-lotus",
       "name": "Chilkey Pink Lotus",
       "manufacturer": "Haimu",
+      "brand": "Chilkey",
       "designer": "Chilkey",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -5103,6 +5014,7 @@
       "id": "chilkey-sprout-green",
       "name": "Chilkey Sprout Green",
       "manufacturer": "Haimu",
+      "brand": "Chilkey",
       "designer": "Chilkey",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -5400,13 +5312,6 @@
       "name": "Clare-Pendar Series S880 Black",
       "switchType": "linear",
       "switchFamily": "Legacy"
-    },
-    {
-      "id": "clear-geon-switch",
-      "name": "Clear Geon Switch",
-      "manufacturer": "Tecsee",
-      "switchType": "tactile",
-      "switchFamily": "MX"
     },
     {
       "id": "clear-zealio",
@@ -9919,30 +9824,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "gateron-hall-effect-magnetic-orange",
-      "name": "Gateron Hall Effect Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-hall-effect-magnetic-white",
-      "name": "Gateron Hall Effect Magnetic White",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
-      "id": "gateron-hall-effect-orange",
-      "name": "Gateron Hall Effect Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
       "id": "gateron-harmonic",
       "name": "Gateron Harmonic",
       "manufacturer": "Gateron",
@@ -10255,6 +10136,14 @@
     {
       "id": "gateron-ks-20-dual-rail-magnetic-orange",
       "name": "Gateron KS-20 Dual-Rail Magnetic Orange",
+      "manufacturer": "Gateron",
+      "brand": "Gateron",
+      "switchType": "linear",
+      "switchFamily": "HE"
+    },
+    {
+      "id": "gateron-ks-20-magnetic-orange",
+      "name": "Gateron KS-20 Magnetic Orange",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -11346,14 +11235,6 @@
       "switchFamily": "HE"
     },
     {
-      "id": "gateron-magnetic-orange",
-      "name": "Gateron Magnetic Orange",
-      "manufacturer": "Gateron",
-      "brand": "Gateron",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
       "id": "gateron-magnetic-orchid",
       "name": "Gateron Magnetic Orchid",
       "manufacturer": "Gateron",
@@ -11386,8 +11267,8 @@
       "switchFamily": "HE"
     },
     {
-      "id": "gateron-magnetic-switch-white",
-      "name": "Gateron Magnetic Switch White",
+      "id": "gateron-magnetic-white",
+      "name": "Gateron Magnetic White",
       "manufacturer": "Gateron",
       "brand": "Gateron",
       "switchType": "linear",
@@ -12398,6 +12279,7 @@
     {
       "id": "geon-black",
       "name": "Geon Black",
+      "manufacturer": "Tecsee",
       "brand": "Geon",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -12405,6 +12287,7 @@
     {
       "id": "geon-clear",
       "name": "Geon Clear",
+      "manufacturer": "Tecsee",
       "brand": "Geon",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -12588,12 +12471,6 @@
         "V2",
         "V3"
       ]
-    },
-    {
-      "id": "ggboy-pink-white-switch",
-      "name": "GGBOY Pink White Switch",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "ghost",
@@ -16368,12 +16245,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "huano-red-nylon",
-      "name": "Huano Red (Nylon)",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
       "id": "huano-silent-red",
       "name": "Huano Silent Red",
       "manufacturer": "Huano",
@@ -16616,8 +16487,9 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hyperx-linear-switch",
-      "name": "HyperX Linear Switch",
+      "id": "hyperx-linear",
+      "name": "HyperX Linear",
+      "brand": "HyperX",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -16628,8 +16500,9 @@
       "switchFamily": "MX"
     },
     {
-      "id": "hyperx-tactile-switch",
-      "name": "HyperX Tactile Switch",
+      "id": "hyperx-tactile",
+      "name": "HyperX Tactile",
+      "brand": "HyperX",
       "switchType": "tactile",
       "switchFamily": "MX"
     },
@@ -22158,7 +22031,7 @@
       "id": "knc-keys-the-preference",
       "name": "KNC Keys The Preference",
       "manufacturer": "Aflion",
-      "designer": "Store Link",
+      "brand": "KNC Keys",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -24579,12 +24452,6 @@
       "name": "Lofree Ghost",
       "manufacturer": "Kailh",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lofree-ghost-low-profile-pom-switch",
-      "name": "Lofree Ghost Low Profile POM Switch",
-      "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": true
     },
@@ -24614,12 +24481,6 @@
       "name": "Lofree Phantom",
       "manufacturer": "Kailh",
       "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lofree-phantom-low-profile-pom-switch",
-      "name": "Lofree Phantom Low Profile POM Switch",
-      "switchType": "tactile",
       "switchFamily": "MX",
       "isLowProfile": true
     },
@@ -24627,12 +24488,6 @@
       "id": "lofree-wizard",
       "name": "Lofree Wizard",
       "manufacturer": "Kailh",
-      "switchType": "clicky",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "lofree-wizard-low-profile-pom-switch",
-      "name": "Lofree Wizard Low Profile POM Switch",
       "switchType": "clicky",
       "switchFamily": "MX",
       "isLowProfile": true
@@ -24877,8 +24732,9 @@
       "switchFamily": "MX"
     },
     {
-      "id": "marquadt-switch",
-      "name": "Marquadt Switch",
+      "id": "marquardt",
+      "name": "Marquardt",
+      "manufacturer": "Marquardt",
       "switchType": "linear",
       "switchFamily": "Legacy"
     },
@@ -25086,20 +24942,6 @@
       "id": "mengmoda-ice-cream",
       "name": "MMD Ice Cream",
       "manufacturer": "SOAI",
-      "brand": "MMD",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "mengmoda-mmd-honey-ht",
-      "name": "MMD (MMD) Honey HT",
-      "brand": "MMD",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "mengmoda-mmd-x-tomsb-iceberg",
-      "name": "MMD (MMD) x TomSB Iceberg",
       "brand": "MMD",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -25325,13 +25167,6 @@
       "switchFamily": "MX"
     },
     {
-      "id": "mmd-honey-pom",
-      "name": "MMD Honey POM",
-      "brand": "MMD",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
       "id": "mmd-ice",
       "name": "MMD 'Ice'",
       "brand": "MMD",
@@ -25486,6 +25321,13 @@
         "V2 / 43g",
         "V2 / 53g"
       ]
+    },
+    {
+      "id": "mmd-x-tomsb-iceberg",
+      "name": "MMD x TomSB Iceberg",
+      "brand": "MMD",
+      "switchType": "linear",
+      "switchFamily": "MX"
     },
     {
       "id": "mod-h-linear",
@@ -26821,12 +26663,6 @@
       "id": "old-tom-powder-edge",
       "name": "Old Tom Powder Edge",
       "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "olive-switch",
-      "name": "Olive Switch",
-      "switchType": "tactile",
       "switchFamily": "MX"
     },
     {
@@ -30176,8 +30012,8 @@
       ]
     },
     {
-      "id": "sillyworks-x-napworks-hmx-nap-switch",
-      "name": "Sillyworks x Napworks HMX Nap Switch",
+      "id": "sillyworks-x-napworks-hmx-nap",
+      "name": "Sillyworks x Napworks HMX Nap",
       "manufacturer": "HMX",
       "brand": "Sillyworks",
       "switchType": "linear",
@@ -30588,8 +30424,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "snag-switch",
-      "name": "Snag Switch",
+      "id": "snag",
+      "name": "Snag",
       "manufacturer": "Tecsee",
       "switchType": "linear",
       "switchFamily": "MX"
@@ -30981,13 +30817,6 @@
       "id": "splash-brothers",
       "name": "Splash Brothers",
       "manufacturer": "JWK",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "spring-switch",
-      "name": "Spring Switch",
-      "manufacturer": "BSUN",
       "switchType": "linear",
       "switchFamily": "MX"
     },
@@ -31596,8 +31425,8 @@
       "switchFamily": "MX"
     },
     {
-      "id": "team-wolf-yelllow-tan-optical-2-0",
-      "name": "Team Wolf Yelllow (Tan) Optical 2.0",
+      "id": "team-wolf-yellow-tan-optical-2-0",
+      "name": "Team Wolf Yellow (Tan) Optical 2.0",
       "switchType": "clicky",
       "switchFamily": "Optical"
     },
@@ -31928,14 +31757,16 @@
     },
     {
       "id": "tecsee-medium-linear",
-      "name": "Tecsee Medium - Linear",
+      "name": "Tecsee Medium Linear",
+      "manufacturer": "Tecsee",
       "brand": "Tecsee",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "tecsee-medium-tactile",
-      "name": "Tecsee Medium - Tactile",
+      "name": "Tecsee Medium Tactile",
+      "manufacturer": "Tecsee",
       "brand": "Tecsee",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -31950,22 +31781,6 @@
     {
       "id": "tecsee-metal-coated-tactile",
       "name": "Tecsee Metal Coated - Tactile",
-      "brand": "Tecsee",
-      "switchType": "tactile",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "tecsee-middle-switch-linear",
-      "name": "Tecsee Middle Switch Linear",
-      "manufacturer": "Tecsee",
-      "brand": "Tecsee",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "tecsee-middle-switch-tactile",
-      "name": "Tecsee Middle Switch Tactile",
-      "manufacturer": "Tecsee",
       "brand": "Tecsee",
       "switchType": "tactile",
       "switchFamily": "MX"
@@ -32265,13 +32080,6 @@
       "name": "TH-5160",
       "switchType": "linear",
       "switchFamily": "Legacy"
-    },
-    {
-      "id": "the-preference-switch",
-      "name": "The Preference Switch",
-      "manufacturer": "Aflion",
-      "switchType": "linear",
-      "switchFamily": "MX"
     },
     {
       "id": "this-switch-is-called",
@@ -33888,13 +33696,6 @@
       "switchFamily": "HE"
     },
     {
-      "id": "unionwell-extreme-magnetic-ice-obsidian-light-blue",
-      "name": "Unionwell Extreme Magnetic Ice Obsidian (Light Blue)",
-      "manufacturer": "Greetech",
-      "switchType": "linear",
-      "switchFamily": "HE"
-    },
-    {
       "id": "unionwell-extreme-magnetic-morning-dawn",
       "name": "Unionwell Extreme Magnetic Morning Dawn",
       "manufacturer": "Greetech",
@@ -34984,21 +34785,8 @@
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
-        "40g",
-        "45g"
-      ]
-    },
-    {
-      "id": "wingtree-yunie-linear-operating-force",
-      "name": "Wingtree Yunie Linear Operating Force",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wingtree",
-      "switchType": "linear",
-      "switchFamily": "MX",
-      "variants": [
-        "50g / 40g",
-        "60g / 45g"
+        "50g",
+        "60g"
       ]
     },
     {
@@ -35011,19 +34799,6 @@
       "variants": [
         "60g",
         "63.5g"
-      ]
-    },
-    {
-      "id": "wingtree-yunie-tactile-operating-force",
-      "name": "Wingtree Yunie Tactile Operating Force",
-      "manufacturer": "Wingtree",
-      "brand": "Wingtree",
-      "designer": "Wingtree",
-      "switchType": "tactile",
-      "switchFamily": "MX",
-      "variants": [
-        "60g / 50g",
-        "63.5g / 57g"
       ]
     },
     {
