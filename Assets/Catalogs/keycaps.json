@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 78,
+  "catalogVersion": 90,
   "totalCount": 2414,
   "entries": [
     {
@@ -3696,7 +3696,16 @@
       "brand": "Domikey",
       "designer": "iNKY",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Double-Shot Alpha",
+        "Triple-Shot Alpha",
+        "Novel",
+        "Numpad",
+        "ISO/UK",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-choco-donuts",
@@ -3727,7 +3736,12 @@
       "material": "PBT",
       "variants": [
         "Base-E",
-        "Base-ER"
+        "Base-R",
+        "Base-ER",
+        "Alpha-E",
+        "Alpha-R",
+        "Alpha-ER",
+        "Nov"
       ]
     },
     {
@@ -3737,7 +3751,21 @@
       "brand": "Domikey",
       "designer": "Mozano",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base - Eve",
+        "Base - Villa",
+        "Alpha - Villa",
+        "Alpha - Eve",
+        "Numpad",
+        "Novelties - Villa",
+        "Novelties - Eve",
+        "Spacebar-White",
+        "Spacebar-Pink",
+        "Shortbar-Pink",
+        "Shortbar-White",
+        "Shortbar-Black"
+      ]
     },
     {
       "id": "dmk-fantasy-land",
@@ -3746,7 +3774,17 @@
       "brand": "Domikey",
       "designer": "Zero-G Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base-A",
+        "Base-B",
+        "Alpha-A",
+        "Alpha-B",
+        "Alpha-C",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-ghost",
@@ -3770,7 +3808,22 @@
       "brand": "Domikey",
       "designer": "Zero-G Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base A Triple Shot",
+        "Base B Double Shot",
+        "Alpha Double Shot",
+        "Numpad",
+        "Mod Plus",
+        "ISO",
+        "Alt Color",
+        "Spacekeys",
+        "Spacebars",
+        "Novelty A - PW",
+        "Novelty B - BW",
+        "Novelty C - WP",
+        "Novelty D - WB"
+      ]
     },
     {
       "id": "dmk-great-artist-lotus",
@@ -3793,7 +3846,14 @@
       "name": "DMK In Former Days",
       "manufacturer": "Domikey",
       "brand": "Domikey",
-      "designer": "fullstop studio"
+      "designer": "fullstop studio",
+      "variants": [
+        "Base",
+        "Novel",
+        "Planck",
+        "ISO",
+        "Short Spacebar"
+      ]
     },
     {
       "id": "dmk-inazuma",
@@ -3802,14 +3862,35 @@
       "brand": "Domikey",
       "designer": "iNKY",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Triple-Shot Base",
+        "Double-Shot Base",
+        "Raiden Shogun",
+        "Yae Miko",
+        "Triple-Shot Alpha",
+        "Double-Shot Alpha",
+        "Numpad",
+        "ISO",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-jade",
       "name": "DMK Jade",
       "manufacturer": "Domikey",
       "brand": "Domikey",
-      "designer": "fullstop studio"
+      "designer": "fullstop studio",
+      "variants": [
+        "Base",
+        "Blind Box A",
+        "Blind Box B",
+        "Base - White",
+        "Novel",
+        "Numpad",
+        "Text Mod",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-link-fire",
@@ -3818,7 +3899,28 @@
       "brand": "Domikey",
       "designer": "Glove Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alpha B",
+        "Alpha K",
+        "Modifier",
+        "Mod Plus",
+        "Novel B",
+        "Novel W",
+        "Novel O",
+        "Novel D",
+        "Color B",
+        "Color W",
+        "Color O",
+        "Num + UK",
+        "Planck",
+        "Bar",
+        "Base W3",
+        "Base B3",
+        "Base O3",
+        "Base W2",
+        "Base B2"
+      ]
     },
     {
       "id": "dmk-midnight",
@@ -3847,7 +3949,11 @@
       "brand": "Domikey",
       "designer": "Zero-G Studio",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novel"
+      ]
     },
     {
       "id": "dmk-pbt-deicide",
@@ -3928,7 +4034,14 @@
       "brand": "Domikey",
       "designer": "Glove Studio",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Alpha-E",
+        "Alpha-M",
+        "Alpha-S",
+        "Nov"
+      ]
     },
     {
       "id": "dmk-red-bean",
@@ -3937,7 +4050,13 @@
       "brand": "Domikey",
       "designer": "HifiFox",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-red-velvet",
@@ -3946,7 +4065,15 @@
       "brand": "Domikey",
       "designer": "Zero-G Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Alpha-A",
+        "Alpha-B",
+        "Novel",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-relic",
@@ -3955,7 +4082,15 @@
       "brand": "Domikey",
       "designer": "jaekeyed",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Alternate",
+        "Icons",
+        "Relegendables",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-rubber",
@@ -3964,14 +4099,28 @@
       "brand": "Domikey",
       "designer": "Manu",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Mono Base",
+        "Tripleshot Base",
+        "Doubleshot Alt",
+        "Mono Alt",
+        "Tripleshot Alt",
+        "Novelties",
+        "Icons"
+      ]
     },
     {
       "id": "dmk-salt-lake",
       "name": "DMK Salt Lake",
       "manufacturer": "Domikey",
       "brand": "Domikey",
-      "designer": "fullstop studio"
+      "designer": "fullstop studio",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-seven-elements-slime",
@@ -3989,7 +4138,16 @@
       "brand": "Domikey",
       "designer": "iNKY",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novel",
+        "Alpha",
+        "LED Caps",
+        "Numpad",
+        "ISO/UK",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-silent-forest",
@@ -4020,7 +4178,16 @@
       "brand": "Domikey",
       "designer": "iNKY",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Double-Shot Base",
+        "Triple-Shot Base",
+        "Double-Shot Alpha",
+        "Novel",
+        "Numpad",
+        "ISO/UK",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-terrazzo",
@@ -4028,7 +4195,11 @@
       "manufacturer": "Domikey",
       "brand": "Domikey",
       "designer": "Fannie Wong",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties"
+      ]
     },
     {
       "id": "dmk-the-king",
@@ -4037,7 +4208,16 @@
       "brand": "Domikey",
       "designer": "Zero-G Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base-A",
+        "Base-B",
+        "Alpha-A",
+        "Alpha-B",
+        "Novel",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dmk-third-space",
@@ -4110,7 +4290,24 @@
       "id": "dsa-astrolokeys",
       "name": "DSA Astrolokeys",
       "designer": "sailorhg & cassidoo",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "Base",
+        "Alphas",
+        "Text Mods",
+        "Nonstandard Text Mods",
+        "Nonstandard Icon Mods",
+        "Ortho Text",
+        "Ortho Icon",
+        "40s Text",
+        "40s Icons",
+        "Ergodox",
+        "ISO",
+        "NorDE",
+        "Minibars",
+        "6.25u Spacebars",
+        "7u Spacebars"
+      ]
     },
     {
       "id": "dsa-berry-yogurt",
@@ -4149,7 +4346,30 @@
       "id": "dsa-deep-space",
       "name": "DSA Deep Space",
       "designer": "Booper",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "Core",
+        "Orion Mods",
+        "Polaris Mods",
+        "Orion 100%",
+        "Polaris 100%",
+        "Planck",
+        "JD40",
+        "Ergodox",
+        "Core Numpad",
+        "Orion Adders",
+        "Polaris Adders",
+        "Orion Planetary Pack",
+        "Polaris Planetary Pack",
+        "ISO",
+        "Grey F Row",
+        "Adapter",
+        "Orion & Polaris Stripes",
+        "Alternate Home Keys",
+        "WASD",
+        "Orion Win",
+        "Polaris Win"
+      ]
     },
     {
       "id": "dsa-dn",
@@ -4158,7 +4378,13 @@
       "brand": "Signature Plastics",
       "designer": "MikeTheTiger",
       "profile": "DSA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Starter Pack",
+        "Fanny Pack",
+        "20 Sack of DN",
+        "DSA ISO Enter Key"
+      ]
     },
     {
       "id": "dsa-galaxy-class",
@@ -4224,7 +4450,11 @@
       "id": "dsa-historic",
       "name": "DSA Historic",
       "designer": "Kokaloo",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "40's Base",
+        "60-65%"
+      ]
     },
     {
       "id": "dsa-kerokerokeys",
@@ -4254,13 +4484,47 @@
       "name": "DSA Mayora",
       "designer": "CactusSpace",
       "profile": "DSA",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Alphas",
+        "Spacebars"
+      ]
     },
     {
       "id": "dsa-miami-dolch",
       "name": "DSA Miami Dolch",
       "designer": "K Bares",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "Base",
+        "TKL Modifier",
+        "60% Modifier",
+        "Whitefox/65%/75% Modifier",
+        "Tsangan/Colemak/Minivan/JD45/WTF",
+        "Numpad",
+        "UK",
+        "Alt ISO Return",
+        "International",
+        "Ergodox",
+        "40% Ortho",
+        "Windows",
+        "Bonus",
+        "Accent - Miami",
+        "Accent - Vice",
+        "Novelty - Base",
+        "Novelty - Miami",
+        "Novelty - Vice",
+        "Macro",
+        "Homing",
+        "Forums",
+        "Blank",
+        "Spacebars",
+        "60% Layout",
+        "75% Layout",
+        "Planck Layout",
+        "Fullsize Layout"
+      ]
     },
     {
       "id": "dsa-milkshake",
@@ -4299,7 +4563,19 @@
       "name": "DSA Otaku Kiibodo",
       "designer": "Aaron Hong",
       "profile": "DSA",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base - Katakana",
+        "Base - Hiragana",
+        "Beige Tenkeyless Modifiers",
+        "Red Tenkeyless Modifiers",
+        "Numpad",
+        "ISO",
+        "Alternate/Nonstandard Layout (Tsangan)",
+        "Japanese Flag Home Cluster & Winkeys",
+        "Rising Sun Flag Home Cluster & Winkeys",
+        "Bars and Blanks (Individual)"
+      ]
     },
     {
       "id": "dsa-overcast",
@@ -4342,14 +4618,38 @@
       "id": "dsa-retro",
       "name": "DSA Retro",
       "designer": "Matt3o",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "Extended Alpha",
+        "TKL + Winkeyless + Capslock Switch",
+        "TKL Plum + Winkeyless + Capslock Switch",
+        "Numpad",
+        "ISO",
+        "C64 Nostalgia",
+        "1.0 Mods",
+        "1.25 Mods",
+        "1.5 Mods",
+        "1.75 Mods",
+        "Misc Mods",
+        "Extras"
+      ]
     },
     {
       "id": "dsa-scientific",
       "name": "DSA Scientific",
       "designer": "voodoo6k",
       "profile": "DSA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Alphas",
+        "TKL Specialty",
+        "Ortho 40s",
+        "Numpad",
+        "Novelties",
+        "ISO",
+        "NorDe",
+        "Colevrak"
+      ]
     },
     {
       "id": "dsa-scrabble",
@@ -4367,13 +4667,29 @@
       "name": "DSA Skull Squadron",
       "designer": "Matt3o",
       "profile": "DSA",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Additional Mods",
+        "60% Black Stripe",
+        "Numpad",
+        "ISO",
+        "Boring Joe's",
+        "Spacebars"
+      ]
     },
     {
       "id": "dsa-sunny-side-up",
       "name": "DSA Sunny Side Up",
       "designer": "Nhils",
-      "profile": "DSA"
+      "profile": "DSA",
+      "variants": [
+        "TKL Base",
+        "Mods",
+        "ISO",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dsa-white-on-lilac",
