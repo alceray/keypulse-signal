@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 90,
+  "catalogVersion": 92,
   "totalCount": 2414,
   "entries": [
     {
@@ -4750,7 +4750,12 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "TheBlackHammer & Pogos",
-      "profile": "DSS"
+      "profile": "DSS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "WASD/TFGH"
+      ]
     },
     {
       "id": "dss-bounty-hunter-40s-monokit",
@@ -4801,7 +4806,19 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "Mechsupply",
-      "profile": "DSS"
+      "profile": "DSS",
+      "variants": [
+        "Standard Alphanumerics",
+        "NorDe Alphanumerics",
+        "TKL Modifiers",
+        "Numpad",
+        "Ortho Mods",
+        "Ergodoxian Mods",
+        "Staggered 40s",
+        "Spacebars",
+        "Accents",
+        "Novelties"
+      ]
     },
     {
       "id": "dss-hail-satan",
@@ -4810,7 +4827,12 @@
       "brand": "Signature Plastics",
       "designer": "MikeTheTiger",
       "profile": "DSS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Normie",
+        "Novelties"
+      ]
     },
     {
       "id": "dss-hand-work",
@@ -4818,7 +4840,12 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "TheBlackHammer",
-      "profile": "DSS"
+      "profile": "DSS",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "dss-honeywell-40-fix-kit",
@@ -4827,7 +4854,11 @@
       "brand": "Signature Plastics",
       "designer": "MikeTheTiger",
       "profile": "DSS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "40% Fix",
+        "Nav"
+      ]
     },
     {
       "id": "dss-late-harvest",
@@ -4836,7 +4867,13 @@
       "brand": "Signature Plastics",
       "designer": "NoPunIn10Did",
       "profile": "DSS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Grey",
+        "NorDe",
+        "Novelties"
+      ]
     },
     {
       "id": "dss-lightcycle",
@@ -4844,7 +4881,22 @@
       "manufacturer": "Signature Plastics",
       "brand": "Signature Plastics",
       "designer": "evangs & Alas",
-      "profile": "DSS"
+      "profile": "DSS",
+      "variants": [
+        "Grey Alphas",
+        "Dark Alphas",
+        "60%/TKL Mods",
+        "Numpad",
+        "40%/Ortho Mods",
+        "Ergo Mods",
+        "Colevrak Alphas",
+        "ISO",
+        "Icon Novelties",
+        "Text Novelties",
+        "Blue Bars",
+        "Grey Bars",
+        "Black Bars"
+      ]
     },
     {
       "id": "dss-lights-out",
@@ -4940,7 +4992,11 @@
       "brand": "Signature Plastics",
       "designer": "Leviathan",
       "profile": "DSS",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "CMYK"
+      ]
     },
     {
       "id": "dsyk-lumberjacks",
@@ -14645,7 +14701,12 @@
       "brand": "Infinikey",
       "designer": "Langelandia & TTYlerDurden",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Support",
+        "Novelties"
+      ]
     },
     {
       "id": "ifk-aether",
@@ -14668,14 +14729,25 @@
       "name": "IFK Blacklight",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Ulliam"
+      "designer": "Ulliam",
+      "variants": [
+        "Core",
+        "Expansion",
+        "Alt Alphas"
+      ]
     },
     {
       "id": "ifk-bow-wob",
       "name": "IFK BoW/WoB",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "The Key Company"
+      "designer": "The Key Company",
+      "variants": [
+        "Standard WoB",
+        "Standard BoW",
+        "Apple WoB",
+        "Apple BoW"
+      ]
     },
     {
       "id": "ifk-cabernet",
@@ -14692,28 +14764,52 @@
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
       "designer": "spikedsynapse",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Combo",
+        "Numpad",
+        "Compatibility",
+        "Spacebars",
+        "Mana",
+        "Novelties"
+      ]
     },
     {
       "id": "ifk-comfy",
       "name": "IFK Comfy",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "ghstgrl"
+      "designer": "ghstgrl",
+      "variants": [
+        "Core",
+        "Add-On"
+      ]
     },
     {
       "id": "ifk-dark-cyrillic",
       "name": "IFK Dark Cyrillic",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Wongstongs"
+      "designer": "Wongstongs",
+      "variants": [
+        "Base",
+        "Red Alphas",
+        "Purple Alphas",
+        "Extensions"
+      ]
     },
     {
       "id": "ifk-delight",
       "name": "IFK Delight",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Hipyo"
+      "designer": "Hipyo",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "ifk-doggie",
@@ -14735,28 +14831,49 @@
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
       "designer": "spikedsynapse",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Compatibility",
+        "Cookie",
+        "Mythic Spacebars"
+      ]
     },
     {
       "id": "ifk-gr-n",
       "name": "IFK Græn",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Langelandia"
+      "designer": "Langelandia",
+      "variants": [
+        "Base",
+        "Mega Add-On"
+      ]
     },
     {
       "id": "ifk-hive",
       "name": "IFK Hive",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Walker"
+      "designer": "Walker",
+      "variants": [
+        "Mega",
+        "Core",
+        "Monochrome",
+        "Novelties"
+      ]
     },
     {
       "id": "ifk-islander",
       "name": "IFK Islander",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "Abec13"
+      "designer": "Abec13",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Expansion"
+      ]
     },
     {
       "id": "ifk-marshmallow",
@@ -14787,14 +14904,25 @@
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
       "designer": "spikedsynapse",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Compatibility",
+        "Mana"
+      ]
     },
     {
       "id": "ifk-musubi",
       "name": "IFK Musubi",
       "manufacturer": "Infinikey",
       "brand": "Infinikey",
-      "designer": "ertisan"
+      "designer": "ertisan",
+      "variants": [
+        "Base",
+        "Mega Add-On",
+        "Latin",
+        "Novelties"
+      ]
     },
     {
       "id": "ifk-neon-dynasty",
@@ -14834,7 +14962,11 @@
       "brand": "Infinikey",
       "designer": "Ashardalon",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Core",
+        "Add-On"
+      ]
     },
     {
       "id": "ifk-sanctuary-rebirth",
