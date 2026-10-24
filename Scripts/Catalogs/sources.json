@@ -18520,18 +18520,6 @@
     },
     {
       "source": "keycaplendar",
-      "sourceId": "2fpsJumhbHLTzpX1Qivr",
-      "kind": "keycaps",
-      "id": "pbtfans-tape-and-radio-35",
-      "url": "https://keycaplendar.firebaseapp.com/?keysetAlias=vIQt_ffNDU",
-      "observed": {
-        "name": "PBTfans Tape and Radio 35",
-        "designer": "Hongoo"
-      },
-      "notes": "Upstream category: PBTfans; icDate: 2023-06-18; gbLaunch: 2025-06-27; gbEnd: 2025-07-27; details: https://geekhack.org/index.php?topic=120607.0"
-    },
-    {
-      "source": "keycaplendar",
       "sourceId": "2frzaGkeeAlLHfeKk7Zm",
       "kind": "keycaps",
       "id": "dcx-key-man",

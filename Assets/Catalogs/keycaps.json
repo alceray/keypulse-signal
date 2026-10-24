@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 92,
-  "totalCount": 2414,
+  "catalogVersion": 97,
+  "totalCount": 2413,
   "entries": [
     {
       "id": "80retros-1990s-blush",
@@ -5418,7 +5418,17 @@
       "name": "ePBT Avilo",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Loquerish"
+      "designer": "Loquerish",
+      "variants": [
+        "Karulo - Base",
+        "Atlantiko - Blue Alphas",
+        "Kalkulo - Numpad",
+        "Salti - Spacebars",
+        "Malgranda - 40s",
+        "Aera - Novelties",
+        "Vojagi - International",
+        "Sparvojo - Macros"
+      ]
     },
     {
       "id": "epbt-axolotls",
@@ -5447,7 +5457,25 @@
       "name": "ePBT Be The One",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Zekth"
+      "designer": "Zekth",
+      "variants": [
+        "Base",
+        "Rainbow (Colored Mods)",
+        "Mono (Non-Colored Mods)",
+        "40s - Compact",
+        "Space - Astronaut",
+        "VIM + HHKB - Navigator",
+        "Numpad - Number One",
+        "Dvorak Colemak - Be AK",
+        "Bepo - Be Po",
+        "Cyrillic Sub Legends - Komrad",
+        "Hiragana Sub Legends - Weeb",
+        "Belgium - Waffle",
+        "French - Baguette",
+        "Norde - Frozen North",
+        "UK - Pudding",
+        "Italian - Spaghetti"
+      ]
     },
     {
       "id": "epbt-beige",
@@ -5618,7 +5646,21 @@
       "name": "ePBT Divine Plan",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "York Chan"
+      "designer": "York Chan",
+      "variants": [
+        "Base",
+        "Icon",
+        "Numpad",
+        "Accent",
+        "Novelties",
+        "Blue Divine Badge",
+        "White Divine Badge",
+        "Divine Badge",
+        "40s",
+        "Blue Bars",
+        "Pure Digimoji",
+        "1600"
+      ]
     },
     {
       "id": "epbt-dolch-ansi",
@@ -5640,7 +5682,17 @@
       "name": "ePBT Dreamscape",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "tsoiab10"
+      "designer": "tsoiab10",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Hangul Sublegends",
+        "Numpad",
+        "40s/Ortho",
+        "Spacebars",
+        "French ISO",
+        "NorDeUK"
+      ]
     },
     {
       "id": "epbt-duo",
@@ -5665,7 +5717,17 @@
       "name": "ePBT Extended 2048",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "biip"
+      "designer": "biip",
+      "variants": [
+        "Base",
+        "Torii - Katakana Sublegends",
+        "Calc - Numpad",
+        "Nomad - 40s",
+        "Icono - Novelties",
+        "Intl - NorDeUK",
+        "Six Pack - Spacebars",
+        "Nav - VIM/HHKB/Poker"
+      ]
     },
     {
       "id": "epbt-fall",
@@ -5739,7 +5801,14 @@
       "name": "ePBT Grand Tour",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "fedemito"
+      "designer": "fedemito",
+      "variants": [
+        "Base",
+        "40s",
+        "Spacebars",
+        "Ergo",
+        "Novelties"
+      ]
     },
     {
       "id": "epbt-hellas",
@@ -5838,7 +5907,17 @@
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "openkeydesign",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Extras",
+        "Spacebars",
+        "Novelties",
+        "Color Dots",
+        "Less",
+        "Cap Alphas"
+      ]
     },
     {
       "id": "epbt-modernja",
@@ -5846,7 +5925,15 @@
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
       "designer": "ai03",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars",
+        "Ortho",
+        "JIS/ISO",
+        "Function"
+      ]
     },
     {
       "id": "epbt-orange-russian",
@@ -5933,7 +6020,20 @@
       "name": "ePBT RamenStop",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Plopmk"
+      "designer": "Plopmk",
+      "variants": [
+        "Base",
+        "Spacebars",
+        "Colors",
+        "Localization",
+        "Nomad",
+        "Numbers",
+        "Garnish",
+        "Plain Novelties",
+        "Yolk Novelties",
+        "Kamaboko Novelties",
+        "Seaweed Novelties"
+      ]
     },
     {
       "id": "epbt-rin",
@@ -6041,7 +6141,15 @@
       "name": "ePBT Skadi",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "Sifo"
+      "designer": "Sifo",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Spacebars",
+        "Novelties",
+        "40s/Ortho",
+        "NorDeUK"
+      ]
     },
     {
       "id": "epbt-sniper",
@@ -6172,7 +6280,19 @@
       "name": "ePBT Wapuro",
       "manufacturer": "EnjoyPBT",
       "brand": "EnjoyPBT",
-      "designer": "zekth & MacGruber117"
+      "designer": "zekth & MacGruber117",
+      "variants": [
+        "Base",
+        "Text",
+        "40s",
+        "JIS",
+        "Kana",
+        "Numpad",
+        "Spacebar Alt",
+        "Spacebars",
+        "ISO UK",
+        "Windowed"
+      ]
     },
     {
       "id": "epbt-warrior-mk-iii",
@@ -6254,7 +6374,19 @@
       "brand": "EnjoyPBT",
       "designer": "York Chan",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Numpad",
+        "Icon",
+        "Spacebars",
+        "Graph",
+        "Mac",
+        "40s",
+        "Grey Shortbars",
+        "Black Shortbars",
+        "International"
+      ]
     },
     {
       "id": "epbt-x-gok-black-on-white",
@@ -19127,7 +19259,17 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "keepoto",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Arabic Base",
+        "Latin Base",
+        "Latin Alphas",
+        "Arabic Alphas",
+        "Numpad",
+        "Spacebars",
+        "Light Mods",
+        "Novelties"
+      ]
     },
     {
       "id": "kkb-c-o-l",
@@ -19270,7 +19412,11 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "nostyle_au",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "NorDeUK"
+      ]
     },
     {
       "id": "kkb-moon-rabbit",
@@ -19293,7 +19439,13 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "fullstop studio",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars",
+        "Numpad"
+      ]
     },
     {
       "id": "kkb-motosu",
@@ -19301,7 +19453,14 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "Amamiya Kana",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Scarf",
+        "Novelties",
+        "Numpad",
+        "Spacebars"
+      ]
     },
     {
       "id": "kkb-motosu-lake",
@@ -19330,7 +19489,15 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "kahlilnc",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Beige Alt Alphas",
+        "Beige Alt Latin Alphas",
+        "Dark Latin Alphas",
+        "Novelties",
+        "Spacebars"
+      ]
     },
     {
       "id": "kkb-ohm",
@@ -19339,7 +19506,15 @@
       "brand": "KeyKobo",
       "designer": "Jr.Mars",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Deep Green",
+        "Add-On",
+        "Semi-Transparent",
+        "Numbers",
+        "ISO-UK"
+      ]
     },
     {
       "id": "kkb-one-more-rep",
@@ -19373,7 +19548,13 @@
       "manufacturer": "KeyKobo",
       "brand": "KeyKobo",
       "designer": "snicket",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Greek Alphas",
+        "Spacebars"
+      ]
     },
     {
       "id": "kkb-poltergeist",
@@ -22933,7 +23114,15 @@
       "brand": "PBTfans",
       "designer": "Aiglatson Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Alphas",
+        "Numpad",
+        "40s",
+        "International"
+      ]
     },
     {
       "id": "pbtfans-abs-fairy",
@@ -23069,7 +23258,14 @@
       "brand": "PBTfans",
       "designer": "Aiglatson Studio",
       "profile": "Cherry",
-      "material": "ABS"
+      "material": "ABS",
+      "variants": [
+        "Base",
+        "40s",
+        "International",
+        "Alphas",
+        "Numpad"
+      ]
     },
     {
       "id": "pbtfans-absolute",
@@ -23096,7 +23292,14 @@
       "brand": "PBTfans",
       "designer": "Mighty Setup",
       "profile": "Cherry",
-      "material": "PBT"
+      "material": "PBT",
+      "variants": [
+        "Base",
+        "Novelties",
+        "Spacebars",
+        "Numpad",
+        "International"
+      ]
     },
     {
       "id": "pbtfans-antelope-canyon",
@@ -23200,7 +23403,12 @@
       "name": "PBTfans Block Game",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "oay"
+      "designer": "oay",
+      "variants": [
+        "Base",
+        "Spacebars",
+        "40s"
+      ]
     },
     {
       "id": "pbtfans-blood-night",
@@ -23576,7 +23784,23 @@
       "name": "PBTfans Inkdrop",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "SxM Designs"
+      "designer": "SxM Designs",
+      "variants": [
+        "Lowercase Alphas",
+        "Uppercase Alphas",
+        "Modifiers: Ink",
+        "Modifiers: Royal",
+        "40s: Ink",
+        "40s: Royal",
+        "Novelties: Ink",
+        "Novelties: Royal",
+        "International: Lowercase Alphas",
+        "International: Uppercase Alphas",
+        "Media & Macro: Ink",
+        "Media & Macro: Royal",
+        "Spacebars",
+        "Numpads"
+      ]
     },
     {
       "id": "pbtfans-kabuki-cho",
@@ -23639,7 +23863,22 @@
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
       "designer": "openkeydesign",
-      "profile": "Cherry"
+      "profile": "Cherry",
+      "variants": [
+        "Light Base",
+        "Dark Base",
+        "Light Numpad",
+        "Dark Numpad",
+        "Light Extras",
+        "Dark Extras",
+        "Light Novelties",
+        "Dark Novelties",
+        "Light Spacebars",
+        "Dark Spacebars",
+        "Less",
+        "Light Dots",
+        "Dark Dots"
+      ]
     },
     {
       "id": "pbtfans-lucy",
@@ -23854,7 +24093,15 @@
       "name": "PBTfans Origami",
       "manufacturer": "PBTfans",
       "brand": "PBTfans",
-      "designer": "Nukz"
+      "designer": "Nukz",
+      "variants": [
+        "Hiragana Base",
+        "Latin Base",
+        "Novelties",
+        "Numpad",
+        "Spacebars",
+        "40s"
+      ]
     },
     {
       "id": "pbtfans-overtime",
@@ -24208,14 +24455,6 @@
       "designer": "PBTfans",
       "profile": "Cherry",
       "material": "PBT"
-    },
-    {
-      "id": "pbtfans-tape-and-radio-35",
-      "name": "PBTfans Tape and Radio 35",
-      "manufacturer": "PBTfans",
-      "brand": "PBTfans",
-      "designer": "Hongoo",
-      "profile": "Cherry"
     },
     {
       "id": "pbtfans-tape-radio",
