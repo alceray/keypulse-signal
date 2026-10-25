@@ -6,17 +6,21 @@ function ConvertTo-CatalogMap($Value) {
     # PowerShell 5.1 may wrap strings from JSON arrays as PSCustomObject values.
     if ($Value -is [string] -or $Value -is [ValueType]) { return $Value }
     if ($Value -is [System.Collections.IDictionary]) { return $Value }
+    # Top-level JSON arrays can also carry a PSCustomObject wrapper in Windows PowerShell.
+    if ($Value -is [array]) { return ,@($Value | ForEach-Object { ConvertTo-CatalogMap $_ }) }
     if ($Value -is [pscustomobject]) {
         $map = [ordered]@{}
         foreach ($p in $Value.PSObject.Properties) { $map[$p.Name] = ConvertTo-CatalogMap $p.Value }
         return $map
     }
-    if ($Value -is [array]) { return ,@($Value | ForEach-Object { ConvertTo-CatalogMap $_ }) }
     return $Value
 }
 
 function Read-CatalogJson([string]$Path) {
-    ConvertTo-CatalogMap (ConvertFrom-Json -InputObject ([IO.File]::ReadAllText($Path)))
+    $options = @{}
+    # Recent PowerShell parses ISO timestamps as DateTime unless explicitly told to preserve strings.
+    if ((Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')) { $options.DateKind = 'String' }
+    ConvertTo-CatalogMap (ConvertFrom-Json -InputObject ([IO.File]::ReadAllText($Path)) @options)
 }
 
 # Most values need no escaping at all, so the common case skips the rewrite entirely.

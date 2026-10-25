@@ -23,11 +23,14 @@ function Test-Case([string]$Name, [scriptblock]$Action) {
 }
 function Copy-Value($Value) { ConvertTo-CatalogMap (ConvertFrom-Json (ConvertTo-CatalogJson $Value)) }
 function New-TestRecords {
-    @(
+    $records = @(
         (Convert-CatalogProduct (Read-CatalogJson "$PSScriptRoot/Fixtures/switches.json").products[0] 'switchoddities'),
         (Convert-CatalogProduct (Read-CatalogJson "$PSScriptRoot/Fixtures/products.json").products[0] 'divinikey'),
         (Convert-CatalogMatrix ([IO.File]::ReadAllText("$PSScriptRoot/Fixtures/matrix.md")) @{ sourcePath = 'docs/gmk-keycaps/Example-R2.md' } ('a' * 40))
     )
+    # Explicit fixture metadata; production imports still require a reviewed family.
+    foreach ($record in $records) { if ($record.kind -eq 'switches') { $record.entry.switchFamily = 'MX' } }
+    $records
 }
 function New-TestState { (New-CatalogCandidate (Read-CatalogState (Join-Path $testRoot 'empty')) (New-TestRecords)).state }
 function Save-TestFetch([string]$Run) {
@@ -98,6 +101,48 @@ function Save-TestFetch([string]$Run) {
         }
     }
     Write-CatalogJson (Join-Path $Run 'fetch.json') $manifest
+}
+
+function Save-TestCandidate([string]$Root, [string]$Run) {
+    $path = Join-Path $Root 'Scripts/Catalogs/overrides.json'
+    if (-not (Test-Path -LiteralPath $path)) {
+        $state = Read-CatalogState $Root
+        foreach ($record in (Read-CatalogFetch $Run)) {
+            if ($record.kind -eq 'switches' -and -not $record.excluded) {
+                $id = Get-CatalogSlug $record.entry.name
+                $state.overrides.entries["switches/$id"] = [ordered]@{ switchFamily = 'MX' }
+            }
+        }
+        Write-CatalogJson $path $state.overrides
+    }
+    Save-CatalogCandidate $Root $Run
+}
+
+Test-Case 'Timestamp strings survive JSON round trips in both PowerShell runtimes' {
+    $path = Join-Path $testRoot 'timestamp.json'
+    $text = '2026-09-09T01:02:03.1234567Z'
+    Write-CatalogJson $path ([ordered]@{ fetchedAt = $text })
+    $value = Read-CatalogJson $path
+    Assert ($value.fetchedAt -is [string] -and $value.fetchedAt -ceq $text) 'Timestamp changed type or precision.'
+    Write-CatalogJson $path $value
+}
+Test-Case 'Accepted switch families are required and search aliases are reproducible' {
+    $state = New-TestState
+    $state.catalogs.switches.entries[0].Remove('switchFamily')
+    Assert-Throws { Test-CatalogState $state } 'Missing switchFamily'
+    Write-CatalogJson (Join-Path $testRoot 'Assets/Catalogs/search-aliases.json') (Get-CatalogSearchAliases)
+    Test-CatalogSearchAliases $testRoot
+    Write-CatalogJson (Join-Path $testRoot 'Assets/Catalogs/search-aliases.json') @()
+    Assert-Throws { Test-CatalogSearchAliases $testRoot } 'stale'
+}
+
+Test-Case 'Search aliases omit case, spacing, and punctuation variants but retain abbreviations and exact-case rules' {
+    $aliases = @(Get-CatalogSearchAliases)
+    $redundant = @($aliases | Where-Object { -not $_.caseSensitive -and [string]::Equals(($_.alias -replace '[\s\p{P}]', ''), ($_.canonical -replace '[\s\p{P}]', ''), [StringComparison]::OrdinalIgnoreCase) })
+    Assert ($redundant.Count -eq 0) 'Generated search aliases contain redundant case, spacing, or punctuation variants.'
+    Assert (@($aliases | Where-Object { $_.alias -ceq 'KKB' -and $_.canonical -ceq 'KeyKobo' }).Count -eq 1) 'Company abbreviation was removed.'
+    Assert (@($aliases | Where-Object { $_.alias -ceq 'DK' -and $_.canonical -ceq 'Dangkeebs' -and $_.caseSensitive }).Count -eq 1) 'DK lost its exact-case mapping.'
+    Assert (@($aliases | Where-Object { $_.alias -ceq 'dk' -and $_.canonical -ceq 'Divinikey' -and $_.caseSensitive }).Count -eq 1) 'dk lost its exact-case mapping.'
 }
 
 Test-SwitchSources
@@ -447,18 +492,21 @@ Test-Case 'Promotion checks candidates, baselines, overrides, and complete state
     $root = Join-Path $testRoot 'promotion-root'
     $run = Join-Path $testRoot 'promotion-run'
     Save-TestFetch $run
-    Save-CatalogCandidate $root $run
+    Save-TestCandidate $root $run
     Publish-CatalogCandidate $root $run
     Test-CatalogState (Read-CatalogState $root)
     $provenance = Read-CatalogJson (Join-Path $root 'Scripts/Catalogs/sources.json')
     Assert ($provenance.sourceFetchDates.dcswiki -eq '2026-09-09T01:00:00Z' -and $provenance.sourceFetchDates.matrix -eq '2026-09-09T00:00:00Z') 'Individual source retrieval dates were lost.'
     Assert-Throws { Publish-CatalogCandidate $root $run } 'Accepted files changed'
-    Save-CatalogCandidate $root $run
+    Save-TestCandidate $root $run
     $file = Join-Path $run 'candidate/Assets/Catalogs/switches.json'
     [IO.File]::AppendAllText($file, ' ')
     Assert-Throws { Publish-CatalogCandidate $root $run } 'Candidate checksum mismatch'
-    Save-CatalogCandidate $root $run
-    Write-CatalogJson (Join-Path $root 'Scripts/Catalogs/overrides.json') (Read-CatalogState $root).overrides
+    Save-TestCandidate $root $run
+    $changedOverrides = (Read-CatalogState $root).overrides
+    $firstOverride = @($changedOverrides.entries.Keys)[0]
+    $changedOverrides.entries[$firstOverride].manufacturer = 'Reviewed fixture factory'
+    Write-CatalogJson (Join-Path $root 'Scripts/Catalogs/overrides.json') $changedOverrides
     Assert-Throws { Publish-CatalogCandidate $root $run } 'inputs or report changed'
 }
 Test-Case 'Traversal paths are rejected' {
@@ -517,22 +565,22 @@ Test-Case 'Failed replay invalidates earlier promotion receipt' {
     $root = Join-Path $testRoot 'failed-replay-root'
     $run = Join-Path $testRoot 'failed-replay-run'
     Save-TestFetch $run
-    Save-CatalogCandidate $root $run
+    Save-TestCandidate $root $run
     [IO.File]::AppendAllText((Join-Path $run 'raw/switchoddities/page-1.json'), ' ')
-    Assert-Throws { Save-CatalogCandidate $root $run } 'checksum mismatch'
+    Assert-Throws { Save-TestCandidate $root $run } 'checksum mismatch'
     Assert (-not (Test-Path -LiteralPath (Join-Path $run 'candidate/receipt.json'))) 'Stale receipt remained.'
 }
 Test-Case 'Ordinary promotion write failure restores earlier replacements' {
     $root = Join-Path $testRoot 'rollback-root'
     $run = Join-Path $testRoot 'rollback-run'
     Save-TestFetch $run
-    Save-CatalogCandidate $root $run
+    Save-TestCandidate $root $run
     Publish-CatalogCandidate $root $run
     $state = Read-CatalogState $root
     $id = $state.catalogs.switches.entries[0].id
     $state.overrides.entries["switches/$id"] = [ordered]@{ name = 'Changed switch name' }
     Write-CatalogJson (Join-Path $root 'Scripts/Catalogs/overrides.json') $state.overrides
-    Save-CatalogCandidate $root $run
+    Save-TestCandidate $root $run
     $switchPath = Join-Path $root 'Assets/Catalogs/switches.json'
     $keycapPath = Join-Path $root 'Assets/Catalogs/keycaps.json'
     $before = Get-CatalogHash $switchPath

@@ -48,7 +48,9 @@
       "aliases": [
         "Milkyway",
         "MW",
-        "MilkywayKeys",
+        "MilkywayKeys"
+      ],
+      "corrections": [
         "Milkway Keys"
       ],
       "namePrefix": "MW",
@@ -246,9 +248,7 @@
     },
     {
       "canonical": "Dangkeebs",
-      "aliases": [
-        "Dangkeeb"
-      ],
+      "aliases": [],
       "exactAliases": [
         "DK"
       ],
@@ -368,7 +368,9 @@
     {
       "canonical": "Tecsee",
       "aliases": [
-        "TECSEE",
+        "TECSEE"
+      ],
+      "corrections": [
         "Tescee"
       ]
     },
@@ -597,7 +599,9 @@
     {
       "canonical": "Gateron",
       "aliases": [
-        "GATERON",
+        "GATERON"
+      ],
+      "corrections": [
         "Gatron"
       ],
       "switchManufacturer": true,
@@ -608,33 +612,39 @@
     {
       "canonical": "Kailh",
       "aliases": [
-        "KAILH",
+        "KAILH"
+      ],
+      "corrections": [
         "Kalih"
       ],
       "switchManufacturer": true
     },
     {
       "canonical": "Jerrzi",
-      "aliases": [
+      "aliases": [],
+      "corrections": [
         "Jerzzi"
       ],
       "switchManufacturer": true
     },
     {
       "canonical": "Iqunix",
-      "aliases": [
+      "aliases": [],
+      "corrections": [
         "Iquinx"
       ]
     },
     {
       "canonical": "Womier",
-      "aliases": [
+      "aliases": [],
+      "corrections": [
         "Wormier"
       ]
     },
     {
       "canonical": "Yusya",
-      "aliases": [
+      "aliases": [],
+      "corrections": [
         "Yuysa"
       ],
       "switchManufacturer": true
@@ -642,14 +652,17 @@
     {
       "canonical": "IKEYX",
       "aliases": [
-        "Ikeyx",
+        "Ikeyx"
+      ],
+      "corrections": [
         "IKYEX",
         "Ikyex"
       ]
     },
     {
       "canonical": "Berserkeys",
-      "aliases": [
+      "aliases": [],
+      "corrections": [
         "BerseKeys",
         "Beserkeys",
         "BeserKeys"
@@ -657,7 +670,8 @@
     },
     {
       "canonical": "Qeeke",
-      "aliases": [
+      "aliases": [],
+      "corrections": [
         "Queeke"
       ]
     },
@@ -678,7 +692,9 @@
     {
       "canonical": "G3MS",
       "aliases": [
-        "g3ms",
+        "g3ms"
+      ],
+      "corrections": [
         "G3MX",
         "g3mx"
       ]

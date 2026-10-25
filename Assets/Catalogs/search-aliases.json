@@ -1,0 +1,212 @@
+[
+  {
+    "canonical": "KeyKobo",
+    "alias": "KKB",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "EnjoyPBT",
+    "alias": "ePBT",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Milkyway Keys",
+    "alias": "Milkyway",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Milkyway Keys",
+    "alias": "MW",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Keyboard Science",
+    "alias": "KBS",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "GoMaster",
+    "alias": "GOM",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "MMD",
+    "alias": "Mengmoda",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "NovelKeys",
+    "alias": "NK",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "NovelKeys",
+    "alias": "NK_",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Swagkeys",
+    "alias": "SWG",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Wuque Studio",
+    "alias": "Wuque",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Wuque Studio",
+    "alias": "WS",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "RAMA Works",
+    "alias": "Rama",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Geon",
+    "alias": "GEONWORKS",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Bolsa Supply",
+    "alias": "Bolsa",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Prime Keyboards",
+    "alias": "PrimeKB",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Moyu Studio",
+    "alias": "Moyu",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Royal Kludge",
+    "alias": "RK",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "43 Studio",
+    "alias": "43 Studios",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Domikey",
+    "alias": "DMK",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "JC Studio",
+    "alias": "JCS",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "C3Equalz",
+    "alias": "C3",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "C3Equalz",
+    "alias": "C³Equalz",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "C3Equalz",
+    "alias": "Equalz",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Glove Studio",
+    "alias": "Glove",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Grain Gold",
+    "alias": "Dongguan Grain Gold",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Dangkeebs",
+    "alias": "DK",
+    "caseSensitive": true
+  },
+  {
+    "canonical": "Divinikey",
+    "alias": "dk",
+    "caseSensitive": true
+  },
+  {
+    "canonical": "Drop",
+    "alias": "Massdrop",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "KeebsForAll",
+    "alias": "KFA",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "KeebsForAll",
+    "alias": "kfaPBT",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Durock",
+    "alias": "JWK Durock",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Mode",
+    "alias": "Mode Designs",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Glorious",
+    "alias": "Glorious PC",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Glorious",
+    "alias": "Glorious Gaming",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Philikey",
+    "alias": "Philikeys",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Owlab",
+    "alias": "Owlabs",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Wingtree / Lichicx",
+    "alias": "Wingtree X Lichicx",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "XMI",
+    "alias": "21KB",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "XMI",
+    "alias": "Xiami",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "TutKeys",
+    "alias": "TUT",
+    "caseSensitive": false
+  },
+  {
+    "canonical": "Vividkey",
+    "alias": "VVD",
+    "caseSensitive": false
+  }
+]

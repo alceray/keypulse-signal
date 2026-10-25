@@ -14,7 +14,8 @@ function Get-CatalogAliases {
     $profileDefaults = @{}
     $namePrefixes = @{ switches = @{}; keycaps = @{} }
     foreach ($group in $map.entities) {
-        foreach ($alias in @($group.canonical) + @($group.aliases)) {
+        $corrections = if ($group.Contains('corrections')) { @($group.corrections) } else { @() }
+        foreach ($alias in @($group.canonical) + @($group.aliases) + $corrections) {
             if (-not $alias -or $alias -cne (Get-CatalogName $alias)) { throw "Invalid catalog alias in $($group.canonical): '$alias'" }
             if ($entities.ContainsKey($alias) -and $entities[$alias] -cne $group.canonical) { throw "Conflicting catalog alias: $alias" }
             $entities[$alias] = $group.canonical

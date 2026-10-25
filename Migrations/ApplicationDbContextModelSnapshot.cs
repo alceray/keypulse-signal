@@ -15,11 +15,7 @@ namespace KeyPulse.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.1")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true);
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
             modelBuilder.Entity("KeyPulse.Models.ActivityProjection", b =>
                 {
@@ -78,6 +74,81 @@ namespace KeyPulse.Migrations
                         .HasDatabaseName("Idx_ActivitySnapshots_DeviceIdMinute");
 
                     b.ToTable("ActivitySnapshots", (string)null);
+                });
+
+            modelBuilder.Entity("KeyPulse.Models.CollectionItem", b =>
+                {
+                    b.Property<int>("CollectionItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Brand")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CatalogEntryId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Designer")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DetailsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("DetailsSchemaVersion")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(1);
+
+                    b.Property<Guid>("ItemKey")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PartKind")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantity")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(1);
+
+                    b.Property<string>("QuantityUnit")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("Revision")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(1L);
+
+                    b.HasKey("CollectionItemId");
+
+                    b.HasIndex("ItemKey")
+                        .IsUnique();
+
+                    b.HasIndex("PartKind", "CatalogEntryId")
+                        .IsUnique();
+
+                    b.ToTable("CollectionItems", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_CollectionItems_CatalogEntryId", "\"CatalogEntryId\" IS NULL OR length(trim(\"CatalogEntryId\")) > 0");
+
+                            t.HasCheckConstraint("CK_CollectionItems_Quantity", "\"Quantity\" >= 1 AND \"Quantity\" <= 1000000");
+                        });
                 });
 
             modelBuilder.Entity("KeyPulse.Models.DailyDeviceStat", b =>

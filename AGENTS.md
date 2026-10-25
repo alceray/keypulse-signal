@@ -71,7 +71,7 @@ Injection
     - See: `Services/DataRetentionService.cs`
 
 7. **ApplicationDbContext** (`DbContext`)
-    - Five EF tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, `DailyDeviceStats`, and `ActivityProjections` (per-minute projection checkpoints), plus the raw `AppMeta` key/value table created lazily outside EF
+    - Six EF tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, `DailyDeviceStats`, `ActivityProjections` (per-minute projection checkpoints), and `CollectionItems`, plus the raw `AppMeta` key/value table created lazily outside EF
     - Database stored at `%AppData%\KeyPulse Signal\keypulse-data.db` in Release and `%AppData%\KeyPulse Signal\Test\keypulse-data.db` in Debug/testing builds (folder name = `AppConstants.App.ProductName`, the assembly name)
     - Unique constraint on `DeviceEvents(DeviceId, EventTime, EventType)` prevents duplicate lifecycle events
     - Unique constraint on `ActivitySnapshots(DeviceId, Minute)` prevents duplicate minute buckets
@@ -92,6 +92,11 @@ Injection
     - See: `Services/Database/DatabaseSwitchService.cs`, `Services/Database/SqliteHistoryFile.cs`, `Data/ConfiguredDbContextFactory.cs`
 
 ### Data Persistence Model
+
+- **CollectionItems** = user-owned parts, with stable unique `ItemKey`, application-managed `Revision`, quantity, notes, and descriptive snapshots. `PartKind` selects Switch/Piece or Keycap/Kit; details use the explicit immutable `SwitchPartDetails` and `KeycapPartDetails` JSON records at schema version 1. Custom rows have SQL NULL catalog references; non-null `(PartKind, CatalogEntryId)` is unique. Retention never touches these rows.
+- **CatalogService / CollectionService** = lazy singletons for bundled catalogs and collection state. No catalog parsing occurs during startup preflight. On first consumer access, owned snapshots load independently, then each catalog loads asynchronously and matching IDs refresh in one transaction per kind. Missing IDs retain snapshots; custom rows remain custom. Catalog load failures and refresh failures are distinct and retryable. Unreadable details retain raw bytes and allow removal, but prevent edits/additions/refresh for that row.
+- Collection writes in `DataService.Collection.cs` serialize through one gate, check captured revisions, and return typed results. The committed immutable cache updates under that gate; a separate short cache lock keeps readers independent of database work. `CollectionService` dispatches notifications afterward. Stale edits/removals conflict without retry; no-op writes preserve revisions. Consumers read the latest cache on notification. Prepare search predicates with `CatalogSearch.CreateFilter` once per query change and reuse them for prepared rows. `StopAndDrainAsync` supports the future UI shutdown integration.
+- Database moves include every collection column except the generated integer row key. Verification orders by `ItemKey` and includes exact raw details, version, unit, revision, and UTC date ticks. A collection-only database counts as history. Source migrations remain read-only during transfer validation; migrate the active source before retrying a pending move.
 
 - **DeviceEvents** = immutable, append-only log of app/device lifecycle transitions (source of truth for connection
   history)
@@ -242,6 +247,15 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 ---
 
 ## Workflows & Commands
+
+### Skill Usage
+
+- Use `caveman` by default for concise user-facing responses, preserving technical facts and essential caveats. Honor requests for normal mode; keep code, comments, and documentation in plain prose.
+- Use `ui-ux-pro-max` when designing or implementing UI.
+- After substantial code changes, use `thermo-nuclear-code-quality-review` on the changed code before reporting completion.
+- Use `grilling` when reviewing a proposed plan before implementation.
+- Announce which skills are being used.
+- Prefer simple fixes. Do not introduce abstractions solely to satisfy a review recommendation.
 
 ### TODO Planning
 

@@ -39,6 +39,6 @@ if ($Reuse) {
 switch ($Action) {
     'Fetch' { Save-CatalogFetch $runPath $reusePath; Save-CatalogCandidate $root $runPath }
     'Replay' { Save-CatalogCandidate $root $runPath }
-    'Validate' { Test-CatalogState (Read-CatalogState $root); Write-Host 'Catalogs and mappings are valid.' }
+    'Validate' { Test-CatalogState (Read-CatalogState $root); Test-CatalogSearchAliases $root; Write-Host 'Catalogs and mappings are valid.' }
     'Promote' { Publish-CatalogCandidate $root $runPath }
 }

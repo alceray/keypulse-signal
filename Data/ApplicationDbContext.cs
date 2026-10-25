@@ -20,6 +20,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<ActivitySnapshot> ActivitySnapshots { get; set; }
     public DbSet<DailyDeviceStat> DailyDeviceStats { get; set; }
     public DbSet<ActivityProjection> ActivityProjections { get; set; }
+    public DbSet<CollectionItem> CollectionItems { get; set; }
 
     private static string GetDatabasePath()
     {
@@ -178,6 +179,27 @@ public class ApplicationDbContext : DbContext
             .HasDatabaseName("Idx_DailyDeviceStats_DeviceIdDay");
 
         modelBuilder.Entity<ActivityProjection>().ToTable("ActivityProjections");
+        var collection = modelBuilder.Entity<CollectionItem>();
+        collection.ToTable(
+            "CollectionItems",
+            table =>
+            {
+                table.HasCheckConstraint(
+                    "CK_CollectionItems_Quantity",
+                    "\"Quantity\" >= 1 AND \"Quantity\" <= 1000000"
+                );
+                table.HasCheckConstraint(
+                    "CK_CollectionItems_CatalogEntryId",
+                    "\"CatalogEntryId\" IS NULL OR length(trim(\"CatalogEntryId\")) > 0"
+                );
+            }
+        );
+        collection.HasIndex(x => x.ItemKey).IsUnique();
+        collection.HasIndex(x => new { x.PartKind, x.CatalogEntryId }).IsUnique();
+        collection.Property(x => x.Revision).IsConcurrencyToken().HasDefaultValue(1L);
+        collection.Property(x => x.DetailsSchemaVersion).HasDefaultValue(1);
+        collection.Property(x => x.Quantity).HasDefaultValue(1);
+        collection.Property(x => x.AddedAt).HasConversion(localToUtcConverter);
         modelBuilder.Entity<ActivityProjection>().Property(e => e.Minute).HasConversion(localToUtcConverter);
         modelBuilder
             .Entity<ActivityProjection>()

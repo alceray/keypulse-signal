@@ -88,6 +88,83 @@ namespace KeyPulse.Migrations.PostgreSql
                     b.ToTable("ActivitySnapshots", (string)null);
                 });
 
+            modelBuilder.Entity("KeyPulse.Models.CollectionItem", b =>
+                {
+                    b.Property<int>("CollectionItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CollectionItemId"));
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Brand")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CatalogEntryId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Designer")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DetailsJson")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("DetailsSchemaVersion")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
+
+                    b.Property<Guid>("ItemKey")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PartKind")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Quantity")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
+
+                    b.Property<string>("QuantityUnit")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<long>("Revision")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(1L);
+
+                    b.HasKey("CollectionItemId");
+
+                    b.HasIndex("ItemKey")
+                        .IsUnique();
+
+                    b.HasIndex("PartKind", "CatalogEntryId")
+                        .IsUnique();
+
+                    b.ToTable("CollectionItems", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_CollectionItems_CatalogEntryId", "\"CatalogEntryId\" IS NULL OR length(trim(\"CatalogEntryId\")) > 0");
+
+                            t.HasCheckConstraint("CK_CollectionItems_Quantity", "\"Quantity\" >= 1 AND \"Quantity\" <= 1000000");
+                        });
+                });
+
             modelBuilder.Entity("KeyPulse.Models.DailyDeviceStat", b =>
                 {
                     b.Property<int>("DailyDeviceStatId")

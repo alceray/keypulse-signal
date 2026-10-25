@@ -513,7 +513,9 @@ public sealed class DatabaseSwitchService
     {
         await ValidateKnownMigrationsAsync(source, cancellationToken);
         if ((await source.Database.GetPendingMigrationsAsync(cancellationToken)).Any())
-            throw new InvalidOperationException("The PostgreSQL history needs a schema update before it can be copied");
+            throw new InvalidOperationException(
+                "The PostgreSQL history needs a schema update before it can be copied. Cancel the pending switch, start this version with the source database active to migrate it, then retry the switch."
+            );
     }
 
     private static async Task ValidateKnownMigrationsAsync(
@@ -555,6 +557,7 @@ public sealed class DatabaseSwitchService
             );
         if (replaceExisting)
         {
+            await target.CollectionItems.ExecuteDeleteAsync(cancellationToken);
             await target.ActivityProjections.ExecuteDeleteAsync(cancellationToken);
             await target.DailyDeviceStats.ExecuteDeleteAsync(cancellationToken);
             await target.ActivitySnapshots.ExecuteDeleteAsync(cancellationToken);
@@ -567,6 +570,17 @@ public sealed class DatabaseSwitchService
         await CopyActivitySnapshotsAsync(source, target, cancellationToken);
         await CopyDailyStatsAsync(source, target, cancellationToken);
         await CopyActivityProjectionsAsync(source, target, cancellationToken);
+        await CopyInBatchesAsync(
+            source.CollectionItems.AsNoTracking().OrderBy(x => x.CollectionItemId),
+            batch =>
+            {
+                foreach (var row in batch)
+                    row.CollectionItemId = 0;
+                target.CollectionItems.AddRange(batch);
+            },
+            target,
+            cancellationToken
+        );
         foreach (var (key, value) in expectedMeta)
             AppMetaStore.Write(target, key, value);
 
@@ -594,6 +608,7 @@ public sealed class DatabaseSwitchService
         populated |= await context.ActivitySnapshots.AnyAsync(cancellationToken);
         populated |= await context.DailyDeviceStats.AnyAsync(cancellationToken);
         populated |= await context.ActivityProjections.AnyAsync(cancellationToken);
+        populated |= await context.CollectionItems.AnyAsync(cancellationToken);
         return populated;
     }
 

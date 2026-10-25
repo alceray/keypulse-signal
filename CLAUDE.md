@@ -17,7 +17,7 @@ dotnet csharpier .             # format (printWidth 120, see .csharpierrc.json)
 dotnet test "KeyPulse Signal.sln"   # run all tests (NOT bare `dotnet test` — see note below)
 
 # EF Core migrations (run from repo root). A schema change needs BOTH provider sets.
-dotnet ef migrations add <Name>                                                             # SQLite
+dotnet ef migrations add <Name> -c ApplicationDbContext -o Migrations                      # SQLite
 dotnet ef migrations add <Name> -c PostgreSqlApplicationDbContext -o Migrations/PostgreSql  # PostgreSQL
 dotnet ef migrations remove
 dotnet ef database update
@@ -27,7 +27,7 @@ dotnet ef database update
 
 - **Tests** live in `KeyPulse.Tests/` (xUnit + Shouldly). Run them via the solution: `dotnet test "KeyPulse Signal.sln"`. Bare `dotnet test` fails (`MSB1011`) because `KeyPulse.csproj` sits beside the `.sln` at the repo root — always name the `.sln` (or `KeyPulse.Tests`). Beyond unit-testing pure helpers, DB-backed tests use the `SqliteTestDatabase` fixture (throwaway file SQLite, real EF model). Behavior that needs the live WMI/Raw Input/WPF stack is still verified manually by running the app.
 - Migrations run automatically on startup via `DataService`; you usually only `add` a migration, not `database update` by hand.
-- **Two migration sets.** SQLite lives in `Migrations/` and PostgreSQL in `Migrations/PostgreSql/`, owned by `ApplicationDbContext` and `PostgreSqlApplicationDbContext` respectively. The bare `add` command targets SQLite because it is the default provider, so the PostgreSQL one always needs `-c` and `-o`. Any model change requires both, and skipping the PostgreSQL half fails at startup on that provider rather than at build time. `PostgreSqlDesignTimeDbContextFactory` is inside `#if DEBUG`, so run the command in a Debug configuration. Its connection string is a placeholder, so `add` needs no reachable server.
+- **Two migration sets.** SQLite lives in `Migrations/` and PostgreSQL in `Migrations/PostgreSql/`, owned by `ApplicationDbContext` and `PostgreSqlApplicationDbContext` respectively. Always select the context and output directory explicitly. Both providers have Debug-only design-time factories that pin migration generation to the correct provider. Any model change requires both, and skipping the PostgreSQL half fails at startup on that provider rather than at build time. `PostgreSqlDesignTimeDbContextFactory` is inside `#if DEBUG`, so run the command in a Debug configuration. Its connection string is a placeholder, so `add` needs no reachable server.
 - **Build fails if a KeyPulse instance is running** (locked `KeyPulse Signal.exe`/`.dll`) — stop it first. This also blocks `dotnet test`, since it rebuilds the app project.
 - `--tray` launch arg forces tray/background mode.
 
@@ -42,7 +42,9 @@ All services are **DI singletons** registered in `App.xaml.cs` (`OnStartup`). Th
 - **`DailyStatsService`** — write-through projector maintaining per-day per-device aggregates from `DeviceEvents` + `ActivitySnapshots`.
 - **`DataRetentionService`** — prunes per-minute detail (`ActivitySnapshots` + `ActivityProjections`) older than the user's retention setting. Invariants: never runs before the daily-stats backfill marker exists, drains the projector first, and deletes snapshots **before** their projection checkpoints.
 
-### Data model (five tables + `AppMeta`)
+### Data model (six tables + `AppMeta`)
+
+- **`CollectionItems`** — user-owned Switch/Piece and Keycap/Kit rows, stable `ItemKey`, optimistic `Revision`, quantity/notes, and versioned typed JSON descriptions. NULL catalog references identify custom items. Lazy catalog loading refreshes matching IDs only; missing or unreadable snapshots survive. `DataService.Collection` serializes writes and publishes committed state through `CollectionService`; transfers preserve all fields except the generated integer key. Retention excludes this table. UI consumers and shutdown draining are the next phase.
 
 - **`DeviceEvents`** — immutable append-only lifecycle log; the source of truth for connection history. Never pruned.
 - **`Devices`** — mutable fast-read snapshot for the UI (derived from the event log).

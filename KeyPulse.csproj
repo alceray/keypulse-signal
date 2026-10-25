@@ -27,6 +27,11 @@
 
   <!-- Expose internal types (classifiers, builders, transforms) to the test project. -->
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Catalogs\switches.json" LogicalName="KeyPulse.Catalogs.switches.json" />
+    <EmbeddedResource Include="Assets\Catalogs\keycaps.json" LogicalName="KeyPulse.Catalogs.keycaps.json" />
+    <EmbeddedResource Include="Assets\Catalogs\search-aliases.json" LogicalName="KeyPulse.Catalogs.search-aliases.json" />
+  </ItemGroup>
+  <ItemGroup>
     <InternalsVisibleTo Include="KeyPulse.Tests" />
   </ItemGroup>
 

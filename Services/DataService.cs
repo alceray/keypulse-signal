@@ -10,7 +10,7 @@ using Serilog;
 
 namespace KeyPulse.Services;
 
-public class DataService
+public partial class DataService
 {
     private readonly IDbContextFactory<ApplicationDbContext> _factory;
     private readonly DailyStatsService _dailyStats;
@@ -34,12 +34,14 @@ public class DataService
     public DataService(
         IDbContextFactory<ApplicationDbContext> factory,
         DailyStatsService dailyStats,
-        DatabaseInstanceLock databaseInstanceLock
+        DatabaseInstanceLock databaseInstanceLock,
+        CatalogService? catalogs = null
     )
     {
         _factory = factory;
         _dailyStats = dailyStats;
         _databaseInstanceLock = databaseInstanceLock;
+        _catalogs = catalogs ?? new CatalogService();
         InitializeDatabase();
     }
 

@@ -368,6 +368,8 @@ public partial class App
         services.AddSingleton(_ => databaseInstanceLock);
         services.AddSingleton<DailyStatsService>();
         services.AddSingleton<DataService>();
+        services.AddSingleton<CatalogService>();
+        services.AddSingleton<CollectionService>();
         services.AddSingleton<LogAccessService>();
         services.AddSingleton<StartupRegistrationService>();
         services.AddSingleton<UsbMonitorService>();

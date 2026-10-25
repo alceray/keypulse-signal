@@ -10,7 +10,8 @@ internal sealed record DatabaseHistoryFingerprint(
     HistoryTableFingerprint Events,
     HistoryTableFingerprint Snapshots,
     HistoryTableFingerprint DailyStats,
-    HistoryTableFingerprint Projections
+    HistoryTableFingerprint Projections,
+    HistoryTableFingerprint Collection
 )
 {
     internal static async Task<DatabaseHistoryFingerprint> ReadAsync(
@@ -88,6 +89,27 @@ internal sealed record DatabaseHistoryFingerprint(
             await ReadTableAsync(
                 context.ActivityProjections.AsNoTracking().OrderBy(x => x.ActivityProjectionId),
                 x => new { x.DeviceId, Minute = UtcTicks(x.Minute) },
+                cancellationToken
+            ),
+            await ReadTableAsync(
+                context.CollectionItems.AsNoTracking().OrderBy(x => x.ItemKey),
+                x => new
+                {
+                    x.ItemKey,
+                    x.PartKind,
+                    x.CatalogEntryId,
+                    x.Name,
+                    x.Manufacturer,
+                    x.Brand,
+                    x.Designer,
+                    x.DetailsSchemaVersion,
+                    x.DetailsJson,
+                    x.QuantityUnit,
+                    x.Revision,
+                    x.Quantity,
+                    x.Notes,
+                    AddedAt = UtcTicks(x.AddedAt),
+                },
                 cancellationToken
             )
         );

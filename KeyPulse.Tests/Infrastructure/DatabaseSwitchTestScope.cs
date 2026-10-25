@@ -63,6 +63,7 @@ internal sealed class DatabaseSwitchTestScope : IDisposable
         int eventCount = 4
     )
     {
+        SeedCollection(context);
         var minute = new DateTime(2025, 11, 2, 5, 30, 0, DateTimeKind.Utc);
         context.Devices.Add(
             new Device
@@ -133,6 +134,52 @@ internal sealed class DatabaseSwitchTestScope : IDisposable
             "2025-11-02T05:30:00.0000000Z"
         );
         AppMetaStore.Write(context, DatabaseSwitchService.ImportSwitchMetaKey, "previous-switch");
+    }
+
+    internal static void SeedCollection(ApplicationDbContext context)
+    {
+        context.CollectionItems.AddRange(
+            new CollectionItem
+            {
+                PartKind = "Switch",
+                CatalogEntryId = "retired-switch",
+                Name = "Stored switch",
+                Manufacturer = "Factory",
+                Brand = "Brand",
+                Designer = "Designer",
+                QuantityUnit = "Piece",
+                DetailsJson =
+                    "{ \"switchType\": \"linear\", \"switchFamily\": \"EC/HE\", \"isLowProfile\": true, \"variants\": [\"45g\",\"55g\"] }",
+                Quantity = 90,
+                Notes = "Keep these notes",
+                Revision = 12,
+                AddedAt = new DateTime(2025, 10, 1, 3, 4, 5, DateTimeKind.Utc),
+            },
+            new CollectionItem
+            {
+                PartKind = "Keycap",
+                Name = "Custom kit",
+                QuantityUnit = "Kit",
+                DetailsJson = "{\"profile\":\"Cherry\",\"material\":\"ABS\",\"variants\":[\"Base\",\"ISO\"]}",
+                Quantity = 2,
+                Notes = "Gift",
+                Revision = 3,
+                AddedAt = new DateTime(2025, 11, 2, 5, 30, 0, DateTimeKind.Utc),
+            },
+            new CollectionItem
+            {
+                PartKind = "Keycap",
+                CatalogEntryId = "unreadable",
+                Name = "Future payload",
+                QuantityUnit = "Kit",
+                DetailsSchemaVersion = 99,
+                DetailsJson = "{ \"unknown\" : [1, 2] }",
+                Quantity = 3,
+                Revision = 7,
+                AddedAt = new DateTime(2025, 11, 2, 6, 30, 0, DateTimeKind.Utc),
+            }
+        );
+        context.SaveChanges();
     }
 
     public void Dispose()

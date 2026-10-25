@@ -1,4 +1,32 @@
-$script:CatalogFiles = @('Assets/Catalogs/switches.json', 'Assets/Catalogs/keycaps.json', 'Scripts/Catalogs/sources.json')
+$script:CatalogFiles = @('Assets/Catalogs/switches.json', 'Assets/Catalogs/keycaps.json', 'Scripts/Catalogs/sources.json', 'Assets/Catalogs/search-aliases.json')
+
+function Get-CatalogSearchAliases {
+    $null = Get-CatalogAliases
+    $map = Read-CatalogJson $script:CatalogAliasesPath
+    $result = @()
+    foreach ($group in $map.entities) {
+        foreach ($alias in $group.aliases) {
+            # Search handles case, spacing, and punctuation; retain only actual alternate names.
+            if ([string]::Equals(($alias -replace '[\s\p{P}]', ''), ($group.canonical -replace '[\s\p{P}]', ''), [StringComparison]::OrdinalIgnoreCase)) { continue }
+            $result += [ordered]@{ canonical = $group.canonical; alias = $alias; caseSensitive = $false }
+        }
+        if ($group.Contains('exactAliases')) {
+            foreach ($alias in $group.exactAliases) {
+                $result += [ordered]@{ canonical = $group.canonical; alias = $alias; caseSensitive = $true }
+            }
+        }
+    }
+    # Case-only duplicates denote one search token, not multiple mappings.
+    $seen = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+    ,@($result | Where-Object { $seen.Add($(if ($_.caseSensitive) { 'exact:' + $_.alias } else { 'regular:' + $_.alias.ToLowerInvariant() })) })
+}
+
+function Test-CatalogSearchAliases([string]$Root) {
+    $path = Join-Path $Root 'Assets/Catalogs/search-aliases.json'
+    if ((ConvertTo-CatalogJson (Read-CatalogJson $path)) -cne (ConvertTo-CatalogJson (Get-CatalogSearchAliases))) {
+        throw 'Search aliases are stale. Replay and promote the catalogs.'
+    }
+}
 
 function Read-CatalogState([string]$Root) {
     $state = [ordered]@{ catalogs = [ordered]@{}; bindings = @(); overrides = [ordered]@{ schemaVersion = 1; bindings = [ordered]@{}; entries = [ordered]@{}; excluded = [ordered]@{} } }
@@ -22,7 +50,7 @@ function Test-CatalogState($State, [switch]$AllowEmpty) {
     $ids = @{}
     foreach ($kind in @('switches', 'keycaps')) {
         $catalog = $State.catalogs[$kind]
-        if ($catalog.schemaVersion -ne 1 -or $catalog.catalogVersion -isnot [int] -or $catalog.catalogVersion -lt $(if ($AllowEmpty) { 0 } else { 1 })) { throw "Invalid $kind version." }
+        if ($catalog.schemaVersion -ne 1 -or ($catalog.catalogVersion -isnot [int] -and $catalog.catalogVersion -isnot [long]) -or $catalog.catalogVersion -gt [int]::MaxValue -or $catalog.catalogVersion -lt $(if ($AllowEmpty) { 0 } else { 1 })) { throw "Invalid $kind version." }
         if ($catalog.entries -isnot [array] -or (-not $AllowEmpty -and $catalog.entries.Count -eq 0)) { throw "Empty or invalid $kind catalog." }
         if (@($catalog.Keys | Where-Object { $_ -notin @('schemaVersion', 'catalogVersion', 'totalCount', 'entries') }).Count) { throw "Unknown $kind envelope field." }
         foreach ($entry in $catalog.entries) {
@@ -32,6 +60,7 @@ function Test-CatalogState($State, [switch]$AllowEmpty) {
             if ($ids.ContainsKey($key)) { throw "Duplicate ID: $key" }
             $ids[$key] = $true
             if ($kind -eq 'switches' -and -not $entry.Contains('switchType')) { throw "Missing switchType on $key. Add a reviewed type override or exclude this entry, then Replay." }
+            if ($kind -eq 'switches' -and -not $entry.Contains('switchFamily')) { throw "Missing switchFamily on $key. Add a reviewed family override or exclude this entry, then Replay." }
             foreach ($field in $entry.Keys) {
                 if ($field -notin (Get-CatalogFields $kind)) { throw "Unsupported field '$field' on $key" }
                 if ($field -eq 'variants') {
@@ -51,7 +80,7 @@ function Test-CatalogState($State, [switch]$AllowEmpty) {
             if ($entry.Contains('switchType') -and $entry.switchType -cnotin @('linear', 'tactile', 'clicky', 'linear/clicky', 'latching')) { throw "Invalid switch type: $key" }
             if ($entry.Contains('switchFamily') -and $entry.switchFamily -cnotmatch '^(MX|Alps|Choc|HE|EC|Optical|Legacy|Other)(/(MX|Alps|Choc|HE|EC|Optical|Legacy|Other))*$') { throw "Invalid switch family: $key" }
         }
-        if (-not $catalog.Contains('totalCount') -or $catalog.totalCount -isnot [int] -or $catalog.totalCount -ne $catalog.entries.Count) { throw "Invalid $kind total count." }
+        if (-not $catalog.Contains('totalCount') -or ($catalog.totalCount -isnot [int] -and $catalog.totalCount -isnot [long]) -or $catalog.totalCount -ne $catalog.entries.Count) { throw "Invalid $kind total count." }
     }
     $seen = @{}
     $referenced = @{}
@@ -303,6 +332,7 @@ function Save-CatalogCandidate([string]$Root, [string]$Run) {
     $result = New-CatalogCandidate $state $records
     $receipt = [ordered]@{ schemaVersion = 1; baseline = [ordered]@{}; files = [ordered]@{}; fetchHash = Get-CatalogHash (Join-Path $Run 'fetch.json'); overridesHash = Get-CatalogHash (Join-Path $Root 'Scripts/Catalogs/overrides.json'); aliasesHash = Get-CatalogHash $script:CatalogAliasesPath }
     foreach ($kind in @('switches', 'keycaps')) { Write-CatalogJson (Join-Path $output "Assets/Catalogs/$kind.json") $result.state.catalogs[$kind] }
+    Write-CatalogJson (Join-Path $output 'Assets/Catalogs/search-aliases.json') (Get-CatalogSearchAliases)
     $fetch = Read-CatalogJson (Join-Path $Run 'fetch.json')
     $sourceFetchDates = [ordered]@{}
     foreach ($source in $script:CatalogSources.Keys) {
@@ -347,6 +377,7 @@ function Publish-CatalogCandidate([string]$Root, [string]$Run) {
     $candidate = Read-CatalogState $output
     $candidate.overrides = (Read-CatalogState $Root).overrides
     Test-CatalogState $candidate
+    Test-CatalogSearchAliases $output
     $written = @()
     try {
         foreach ($pair in $paths) {

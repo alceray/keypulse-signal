@@ -224,9 +224,9 @@ function Test-SwitchSources {
         $state = New-TestState
         $state.overrides.bindings['theremingoat:1'] = 'collection-mold-a'
         $state.overrides.bindings["theremingoat:$($records[1].sourceId)"] = 'collection-mold-b'
-        $state.overrides.entries['switches/collection-mold-a'] = @{ name = 'Collection Item Mold A' }
-        $state.overrides.entries['switches/collection-mold-b'] = @{ name = 'Collection Item Mold B' }
-        $state.overrides.entries['switches/collection-item-three'] = @{ switchType = 'linear' }
+        $state.overrides.entries['switches/collection-mold-a'] = @{ name = 'Collection Item Mold A'; switchFamily = 'MX' }
+        $state.overrides.entries['switches/collection-mold-b'] = @{ name = 'Collection Item Mold B'; switchFamily = 'MX' }
+        $state.overrides.entries['switches/collection-item-three'] = @{ switchType = 'linear'; switchFamily = 'MX' }
         $result = New-CatalogCandidate $state @((New-TestRecords) + $records)
         Assert ($result.report.duplicates.Count -eq 0 -and $result.report.conflicts.Count -eq 0) 'Explicit variant separation failed.'
         $a = @($result.state.bindings | Where-Object { $_.source -eq 'theremingoat' -and $_.sourceId -eq '1' })[0]

@@ -1,4 +1,16 @@
 function Test-CatalogAliases {
+    Test-Case 'Upstream spelling corrections remain import-only' {
+        $map = Read-CatalogJson $script:CatalogAliasesPath
+        $search = Get-CatalogSearchAliases
+        foreach ($group in $map.entities) {
+            if (-not $group.Contains('corrections')) { continue }
+            foreach ($typo in $group.corrections) {
+                Assert ((Get-CatalogEntityName $typo) -ceq $group.canonical) "Source typo was not corrected: $typo"
+                Assert (@($search | Where-Object alias -eq $typo).Count -eq 0) "Source typo leaked into search: $typo"
+            }
+        }
+        Assert ((Get-CatalogEntityName 'Kalih') -ceq 'Kailh') 'Kailh correction missing.'
+    }
     Test-Case 'Product prefixes use abbreviations while company fields retain full names' {
         foreach ($kind in @('switches', 'keycaps')) {
             $expected = if ($kind -eq 'switches') { 'KFA' } else { 'kfaPBT' }
@@ -59,10 +71,10 @@ function Test-CatalogAliases {
     }
     Test-Case 'Alias normalization retains product IDs and original source spellings' {
         $records = New-TestRecords
-        $records[0].entry = [ordered]@{ name = 'KEYGEEK Example 50g'; manufacturer = 'KEYGEEK'; switchType = 'linear' }
+        $records[0].entry = [ordered]@{ name = 'KEYGEEK Example 50g'; manufacturer = 'KEYGEEK'; switchType = 'linear'; switchFamily = 'MX' }
         $other = Copy-Value $records[0]
         $other.sourceId = 'alias-variant'
-        $other.entry = [ordered]@{ name = 'Keygeek Example 60g'; manufacturer = 'KeyGeek'; switchType = 'linear' }
+        $other.entry = [ordered]@{ name = 'Keygeek Example 60g'; manufacturer = 'KeyGeek'; switchType = 'linear'; switchFamily = 'MX' }
         $state = (New-CatalogCandidate (Read-CatalogState (Join-Path $testRoot 'alias-empty')) ($records + @($other))).state
         $beforeIds = @($state.catalogs.switches.entries.id)
         $records[0].entry.name = 'Keygeek Example 50g'
@@ -77,7 +89,7 @@ function Test-CatalogAliases {
     }
     Test-Case 'Explicit duplicate rebindings retire only an unreferenced duplicate' {
         $records = New-TestRecords
-        $records[0].entry = [ordered]@{ name = 'IKEYX Example'; switchType = 'linear' }
+        $records[0].entry = [ordered]@{ name = 'IKEYX Example'; switchType = 'linear'; switchFamily = 'MX' }
         $duplicate = Copy-Value $records[0]
         $duplicate.sourceId = 'spelling-duplicate'
         $duplicate.entry.name = 'IKYEX Example'
@@ -107,7 +119,7 @@ function Test-CatalogAliases {
     }
     Test-Case 'Reviewed metadata omissions take precedence over alias relationships' {
         $records = New-TestRecords
-        $records[0].entry = [ordered]@{ name = 'Durock Example'; switchType = 'linear' }
+        $records[0].entry = [ordered]@{ name = 'Durock Example'; switchType = 'linear'; switchFamily = 'MX' }
         $state = (New-CatalogCandidate (Read-CatalogState (Join-Path $testRoot 'omission-empty')) $records).state
         $state.overrides.entries['switches/durock-example'] = [ordered]@{ manufacturer = $null; brand = $null }
         $result = New-CatalogCandidate $state $records
@@ -226,7 +238,7 @@ function Test-CatalogAliases {
             $root = Join-Path $testRoot 'alias-receipt-root'
             $run = Join-Path $testRoot 'alias-receipt-run'
             Save-TestFetch $run
-            Save-CatalogCandidate $root $run
+            Save-TestCandidate $root $run
             [IO.File]::AppendAllText($temporaryPath, ' ')
             Assert-Throws { Publish-CatalogCandidate $root $run } 'alias map changed'
             Assert ((Get-CatalogMatchName 'IKYEX Example' -SourceIdentity) -ceq 'ikyexexample') 'Source digest followed display aliases.'
