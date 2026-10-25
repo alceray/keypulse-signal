@@ -42,7 +42,7 @@
     "switchoddities:8119087071516": "ktt-phalaenopsis",
     "switchoddities:8281145344284": "ktt-matcha",
     "switchoddities:8615784415516": "ttc-speed-silver",
-    "switchoddities:8871932461340": "skyloong-chocolate-rose-original",
+    "switchoddities:8871932461340": "skyloong-chocolate-rose",
     "switchoddities:9596032647452": "durock-ice-king-tactile",
     "switchoddities:9596033171740": "durock-ice-king-linear",
     "switchoddities:9678465073436": "outemu-brown",
@@ -858,7 +858,7 @@
     "theremingoat:2928": "douyu-barrage",
     "theremingoat:2894": "ajazz-flying-fish",
     "theremingoat:919": "ethereal-panda",
-    "theremingoat:2914": "bsun-dustproof-blue-condenser",
+    "theremingoat:2914": "bsun-dustproof-blue",
     "theremingoat:3052": "katano",
     "theremingoat:647": "kaicheng-blue",
     "theremingoat:3053": "mei-t-15",
@@ -1799,7 +1799,7 @@
     "keycaplendar:lGjUOoj1JlYXklqG3Xz4": "kch-war-maiden",
     "switchoddities:10012087255324": "berserkeys-wolf-warrior",
     "switchoddities:9957093671196": "g3ms-diamond",
-    "theremingoat:3311": "g3ms-onyx-no-condenser",
+    "theremingoat:3311": "g3ms-onyx",
     "theremingoat:2931": "ikeyx-purple-rabbit",
     "theremingoat:3855": "ikeyx-purple-rabbit",
     "theremingoat:3331": "ikeyx-zichuan-silver-lite",
@@ -2194,7 +2194,7 @@
     "theremingoatscores:f79bbed95f7c": "wingtree-jadeite",
     "theremingoatscores:f7ec7e22adc2": "hmx-black-cat",
     "theremingoatscores:f8678957755d": "jkdk-x-xcjz-hillstone",
-    "theremingoatscores:f8b843486176": "original-aspiration-release",
+    "theremingoatscores:f8b843486176": "ws-original-aspiration-oa",
     "theremingoatscores:fa2419d0c835": "keychron-silent-banana",
     "theremingoatscores:faec628dbdf6": "keygeek-full-nylon",
     "theremingoatscores:fb1ccdf2e679": "varmilo-ec-daisy",
@@ -4364,8 +4364,8 @@
     "theremingoat:1869": "banana-milk-linear",
     "switchoddities:8346168983836": "banana-milk-tactile",
     "theremingoat:2124": "banana-milk-tactile",
-    "switchoddities:8834661089564": "bbn-tactile",
-    "theremingoat:1746": "bbn-tactile",
+    "switchoddities:8834661089564": "builtbynim-bbn-tactile",
+    "theremingoat:1746": "builtbynim-bbn-tactile",
     "switchoddities:8346168000796": "blueberry-swirl",
     "theremingoatscores:156c4e419afb": "blueberry-swirl",
     "switchoddities:8346168328476": "cookies-n-cream",
@@ -4703,7 +4703,7 @@
     "cannonkeys:7498325688431": "nicepbt-bow",
     "cannonkeysswitches:6553082789999": "kailh-box-crystal-pink",
     "cannonkeysswitches:7209852076143": "gateron-melodic",
-    "cannonkeysswitches:7745310031983/variant/53822476320879": "naevies-ec",
+    "cannonkeysswitches:7745310031983/variant/53822476320879": "aeboards-naevy-ec",
     "dailyclack:4566788702263": "crp-r3",
     "dangkeebs:7938519204061": "pbtfans-dolch",
     "dcswiki:115": "dcs-cream-cheese-and-green",
@@ -6922,7 +6922,67 @@
     "matrix:docs/gmk-keycaps/Mictlan.md": "gmk-mictlan",
     "mechanicalkeyboards:10399049154860": "pbtfans-twist",
     "theremingoat:1378": "huano-smoky-white",
-    "theremingoat:1379": "huano-smoky-pink"
+    "theremingoat:1379": "huano-smoky-pink",
+    "cannonkeysswitches:7745310031983/variant/42833782898799": "aeboards-naevy-ec",
+    "switchoddities:8119043457308": "akko-orange",
+    "switchoddities:8119049322780": "krgd-red",
+    "switchoddities:8119050600732": "ttc-gold-pink",
+    "switchoddities:8119053582620": "ttc-bluish-white",
+    "switchoddities:8119074521372": "xiang-min-ksb-c-ivory",
+    "switchoddities:8119075012892": "aristotle-yellow",
+    "switchoddities:8119087202588": "jixian-blue",
+    "switchoddities:8119135240476": "akko-blue",
+    "switchoddities:8119150510364": "content-blue",
+    "switchoddities:8203801985308": "punkshoo-cream-soda",
+    "switchoddities:8548135829788": "ktt-strawberry",
+    "switchoddities:8994423243036": "gateron-north-pole-brown",
+    "switchoddities:9031722434844": "krgd-black",
+    "switchoddities:9031735574812": "lcet-glacier-red",
+    "switchoddities:9100466290972": "lcet-panda",
+    "switchoddities:9100467503388": "lcet-panda",
+    "switchoddities:9100468453660": "tecware",
+    "switchoddities:9100476317980": "tecware",
+    "switchoddities:9327409561884": "content-blue",
+    "switchoddities:9457273864476": "bsun-dustproof-blue",
+    "switchoddities:9685464842524": "leobog-shanyi",
+    "switchoddities:9957087576348": "g3ms-onyx",
+    "switchoddities:9957090296092": "g3ms-onyx",
+    "theremingoat:1084": "hyperx-blue",
+    "theremingoat:1085": "hyperx-aqua",
+    "theremingoat:1265": "ktt-halu-halo-red",
+    "theremingoat:1266": "ktt-halu-halo-blue",
+    "theremingoat:1267": "ktt-halu-halo-yellow",
+    "theremingoat:1283": "ktt-mallo",
+    "theremingoat:1311": "ttc-gold-pink",
+    "theremingoat:1313": "ttc-blueish-white",
+    "theremingoat:1415": "ttc-red",
+    "theremingoat:1416": "ttc-blue",
+    "theremingoat:162": "ttc-brown",
+    "theremingoat:163": "ttc-blue",
+    "theremingoat:2348": "ktt-strawberry",
+    "theremingoat:2750": "krgd-black",
+    "theremingoat:2755": "lcet-glacier-red",
+    "theremingoat:2756": "lcet-purple-red",
+    "theremingoat:2808": "ttc-ice",
+    "theremingoat:2900": "ktt-cabbage-tofu",
+    "theremingoat:2901": "ktt-pink-star",
+    "theremingoat:2902": "ktt-purple-moon",
+    "theremingoat:2920": "ktt-lavender",
+    "theremingoat:3300": "akko-piano-pro",
+    "theremingoat:3310": "g3ms-onyx",
+    "theremingoat:343": "kbdfans-t1-clear",
+    "theremingoat:344": "kbdfans-t1-clear",
+    "theremingoat:346": "durock-clear-t1",
+    "theremingoat:347": "durock-smoky-t1",
+    "theremingoat:3668": "ajazz-magnetic-yellow",
+    "theremingoat:3669": "ajazz-magnetic-yellow",
+    "theremingoat:3815": "logitech-long-hua-purple",
+    "theremingoat:383": "alps-skcl-grey",
+    "theremingoat:639": "ttc-red",
+    "theremingoat:640": "ttc-black",
+    "theremingoat:672": "alps-skcl-grey",
+    "theremingoat:808": "hyperx-red",
+    "theremingoat:874": "ws-original-aspiration-oa"
   },
   "entries": {
     "keycaps/dcs-dolch-2024": {
@@ -7040,12 +7100,6 @@
     },
     "switches/ktt-matcha": {
       "manufacturer": "KTT",
-      "switchType": "tactile"
-    },
-    "switches/skyloong-chocolate-rose-original": {
-      "name": "Skyloong Chocolate Rose (original)",
-      "manufacturer": "LCET",
-      "brand": "Skyloong",
       "switchType": "tactile"
     },
     "switches/prime-keyboards-cobalt": {
@@ -7491,19 +7545,7 @@
       "brand": "43 Studio",
       "switchType": "linear"
     },
-    "switches/kbdfans-t1-clear-kbdfans-stock": {
-      "manufacturer": "JWK"
-    },
-    "switches/kbdfans-t1-clear-novelkeys-stock": {
-      "manufacturer": "JWK"
-    },
     "switches/kbdfans-t1-night": {
-      "manufacturer": "JWK"
-    },
-    "switches/durock-clear-t1-unbranded": {
-      "manufacturer": "JWK"
-    },
-    "switches/durock-smoky-t1-unbranded": {
       "manufacturer": "JWK"
     },
     "switches/designerstudio-barista": {
@@ -7645,9 +7687,6 @@
       "name": "Penguin"
     },
     "switches/c3-dragonfruit": {
-      "manufacturer": "JWK"
-    },
-    "switches/original-aspiration-release": {
       "manufacturer": "JWK"
     },
     "switches/opblack": {
@@ -16534,14 +16573,17 @@
     },
     "switches/aeboards-blaeck": {
       "name": "AEBoards Blaeck",
-      "manufacturer": "AEBoards",
-      "brand": "AEBoards",
-      "switchType": "linear"
+      "manufacturer": null,
+      "brand": null,
+      "switchType": "linear",
+      "designer": "AEBoards"
     },
     "switches/aeboards-blaeck-r-2-1": {
       "name": "AEBoards Blaeck R 2.1",
-      "brand": "AEBoards",
-      "switchType": "linear"
+      "brand": null,
+      "switchType": "linear",
+      "designer": "AEBoards",
+      "manufacturer": null
     },
     "switches/akko-bittersweet": {
       "name": "Akko Bittersweet",
@@ -17354,9 +17396,9 @@
         "R2",
         "R2.1"
       ],
-      "manufacturer": "AEBoards",
-      "brand": "AEBoards",
-      "designer": null,
+      "manufacturer": null,
+      "brand": null,
+      "designer": "AEBoards",
       "switchType": "linear",
       "switchFamily": "MX",
       "isLowProfile": null
@@ -19359,7 +19401,11 @@
       "name": "WS Original Aspiration (OA)",
       "manufacturer": "JWK",
       "brand": "Wuque Studio",
-      "switchType": "linear"
+      "switchType": "linear",
+      "designer": null,
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     },
     "switches/wuque-studio-dark": {
       "name": "WS Dark",
@@ -19613,12 +19659,6 @@
       "manufacturer": "Tecsee",
       "brand": "Dangkeebs",
       "designer": "Dangkeebs",
-      "switchType": "tactile"
-    },
-    "switches/bbn-tactile": {
-      "name": "BBN (Tactile)",
-      "manufacturer": "Tecsee",
-      "designer": "BuiltByNim",
       "switchType": "tactile"
     },
     "switches/blueberry-swirl": {
@@ -20074,8 +20114,9 @@
     "switches/aeboards-raeds-he": {
       "name": "AEboards Raeds HE",
       "manufacturer": "Tecsee",
-      "brand": "AEBoards",
-      "switchType": "tactile"
+      "brand": null,
+      "switchType": "tactile",
+      "designer": "AEBoards"
     },
     "switches/clackbait-x-knc-keys-clackbits": {
       "name": "Clackbait x KNC Keys Clackbits",
@@ -20346,7 +20387,12 @@
     "switches/bsun-dustproof-blue": {
       "manufacturer": "BSUN",
       "switchType": "clicky",
-      "name": "BSUN Dustproof Blue"
+      "name": "BSUN Dustproof Blue",
+      "brand": null,
+      "designer": null,
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     },
     "switches/content-red": {
       "name": "Content Red",
@@ -20434,12 +20480,22 @@
     "switches/skyloong-chocolate-rose": {
       "brand": "Skyloong",
       "switchType": "tactile",
-      "name": "Skyloong Chocolate Rose"
+      "name": "Skyloong Chocolate Rose",
+      "manufacturer": "LCET",
+      "designer": null,
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     },
     "switches/ttc-ice": {
       "manufacturer": "TTC",
       "switchType": "linear",
-      "name": "TTC Ice"
+      "name": "TTC Ice",
+      "brand": null,
+      "designer": null,
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     },
     "switches/gateron-melodic": {
       "name": "Gateron Melodic",
@@ -20566,9 +20622,6 @@
     "switches/akko-astrolink": {
       "switchType": "linear"
     },
-    "switches/akko-blue-v2-desoldered": {
-      "switchType": "clicky"
-    },
     "switches/akko-flash": {
       "switchType": "linear"
     },
@@ -20600,9 +20653,6 @@
       "switchType": "linear"
     },
     "switches/akko-ocean-blue": {
-      "switchType": "tactile"
-    },
-    "switches/akko-orange-v2-desoldered": {
       "switchType": "tactile"
     },
     "switches/akko-radiant-red": {
@@ -20815,12 +20865,6 @@
     "switches/co-gain-sakura-silent-optical": {
       "switchType": "linear"
     },
-    "switches/content-blue-desoldered-with-condenser": {
-      "switchType": "clicky"
-    },
-    "switches/content-blue-non-desoldered": {
-      "switchType": "clicky"
-    },
     "switches/content-silver": {
       "name": "Content Silver",
       "variants": null,
@@ -20863,12 +20907,6 @@
     },
     "switches/dareu-sky-magnetic": {
       "switchType": "linear"
-    },
-    "switches/desoldered-aristotle-yellow": {
-      "switchType": "linear"
-    },
-    "switches/desoldered-xiang-min-ksb-c-ivory": {
-      "switchType": "clicky"
     },
     "switches/devoted": {
       "switchType": "tactile"
@@ -20975,9 +21013,6 @@
     "switches/g-rule-white": {
       "switchType": "clicky"
     },
-    "switches/g3ms-onyx-with-condenser": {
-      "switchType": "linear"
-    },
     "switches/g3ms-sapphire": {
       "switchType": "linear"
     },
@@ -21028,9 +21063,6 @@
     },
     "switches/gateron-magnetic-jade-sapphire": {
       "switchType": "linear"
-    },
-    "switches/gateron-north-pole-brown-v2-no-rubber-thingy": {
-      "switchType": "tactile"
     },
     "switches/gateron-smoothie-banana": {
       "switchType": "tactile"
@@ -21330,9 +21362,6 @@
       "switchFamily": "MX",
       "isLowProfile": null
     },
-    "switches/jixian-blue-desoldered": {
-      "switchType": "clicky"
-    },
     "switches/jixian-brown": {
       "name": "Jixian Brown",
       "variants": null,
@@ -21553,12 +21582,6 @@
     "switches/kinetic-labs-salmon": {
       "switchType": "tactile"
     },
-    "switches/krgd-black-w-condenser-d-stock": {
-      "switchType": "linear"
-    },
-    "switches/krgd-red-desoldered": {
-      "switchType": "linear"
-    },
     "switches/ktek-constellation-aquarius-magnetic": {
       "switchType": "linear"
     },
@@ -21603,9 +21626,6 @@
     },
     "switches/ktt-soot-ash": {
       "switchType": "tactile"
-    },
-    "switches/ktt-strawberry-with-logo": {
-      "switchType": "linear"
     },
     "switches/ktt-vaporwave": {
       "switchType": "linear"
@@ -21682,9 +21702,6 @@
     "switches/lcet-glacier-brown": {
       "switchType": "tactile"
     },
-    "switches/lcet-glacier-red-d-stock": {
-      "switchType": "linear"
-    },
     "switches/lcet-green-marsh-matcha": {
       "switchType": "linear"
     },
@@ -21694,17 +21711,18 @@
     "switches/lcet-north-panda": {
       "switchType": "linear"
     },
-    "switches/lcet-panda-f-stock": {
-      "switchType": "tactile"
-    },
-    "switches/lcet-panda-z-stock": {
-      "switchType": "tactile"
-    },
     "switches/lcet-pollen": {
       "switchType": "linear"
     },
     "switches/lcet-purple-red": {
-      "switchType": "linear"
+      "switchType": "linear",
+      "name": "LCET Purple/Red",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     },
     "switches/lcet-red": {
       "name": "LCET Red",
@@ -21972,9 +21990,6 @@
     "switches/protozoa-studio-nightcall": {
       "switchType": "linear"
     },
-    "switches/punkshoo-cream-soda-stock": {
-      "switchType": "linear"
-    },
     "switches/qtuo-studio-strawberry-shortcake": {
       "switchType": "linear"
     },
@@ -22157,9 +22172,6 @@
     "switches/tecsee-mango-ice": {
       "switchType": "tactile"
     },
-    "switches/tecware-f-stock": {
-      "switchType": "linear"
-    },
     "switches/tecware-wraith-brown": {
       "switchType": "tactile"
     },
@@ -22172,17 +22184,11 @@
     "switches/tecware-wraith-red": {
       "switchType": "linear"
     },
-    "switches/tecware-z-stock": {
-      "switchType": "linear"
-    },
     "switches/tja-clear": {
       "switchType": "tactile"
     },
     "switches/ttc-blue-dragon": {
       "switchType": "linear"
-    },
-    "switches/ttc-bluish-white-new-led-condenser": {
-      "switchType": "tactile"
     },
     "switches/ttc-breeze": {
       "switchType": "linear"
@@ -22191,9 +22197,6 @@
       "switchType": "linear"
     },
     "switches/ttc-flying-shark": {
-      "switchType": "linear"
-    },
-    "switches/ttc-gold-pink-new-led-condenser": {
       "switchType": "linear"
     },
     "switches/ttc-hey": {
@@ -22722,9 +22725,6 @@
       "switchType": "linear"
     },
     "switches/hmx-volume-0-silent-tactile": {
-      "switchType": "tactile"
-    },
-    "switches/naevies-ec-45g-original": {
       "switchType": "tactile"
     },
     "switches/outemu-cream-yellow-silent": {
@@ -23373,9 +23373,9 @@
         "R2",
         "R2.1"
       ],
-      "manufacturer": "AEBoards",
+      "manufacturer": null,
       "brand": null,
-      "designer": null,
+      "designer": "AEBoards",
       "switchType": "tactile",
       "switchFamily": "MX",
       "isLowProfile": null
@@ -23385,7 +23385,7 @@
       "variants": null,
       "manufacturer": "Tecsee",
       "brand": null,
-      "designer": null,
+      "designer": "AEBoards",
       "switchType": "tactile",
       "switchFamily": "HE",
       "isLowProfile": null
@@ -25318,19 +25318,6 @@
       "designer": null,
       "switchType": "linear",
       "switchFamily": "MX",
-      "isLowProfile": null
-    },
-    "switches/naevies-ec": {
-      "name": "Naevies EC",
-      "variants": [
-        "45G",
-        "55G"
-      ],
-      "manufacturer": "Tecsee",
-      "brand": null,
-      "designer": "Keyboard Treehouse",
-      "switchType": "tactile",
-      "switchFamily": "EC",
       "isLowProfile": null
     },
     "switches/naevy": {
@@ -39736,6 +39723,298 @@
         "Novelties",
         "Numpad"
       ]
+    },
+    "switches/aeboards-naevy-ec": {
+      "name": "AEBoards Naevy EC",
+      "manufacturer": "Tecsee",
+      "brand": null,
+      "designer": "AEBoards",
+      "switchType": "tactile",
+      "switchFamily": "EC",
+      "variants": [
+        "45G",
+        "55G"
+      ]
+    },
+    "switches/ktt-lavender": {
+      "name": "KTT Lavender",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ajazz-magnetic-yellow": {
+      "name": "Ajazz Magnetic Yellow",
+      "manufacturer": "Outemu",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "HE",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/builtbynim-bbn-tactile": {
+      "name": "BuiltByNim (BBN) Tactile",
+      "manufacturer": "Tecsee",
+      "brand": null,
+      "designer": "BuiltByNim",
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/tecware": {
+      "name": "Tecware",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-halu-halo-yellow": {
+      "name": "KTT Halu Halo Yellow",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/lcet-glacier-red": {
+      "name": "LCET Glacier Red",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/g3ms-onyx": {
+      "name": "G3MS Onyx",
+      "manufacturer": "Grain Gold",
+      "brand": "G3MS",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/alps-skcl-grey": {
+      "name": "Alps SKCL Grey",
+      "manufacturer": "Alps",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "Alps",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/krgd-red": {
+      "name": "KRGD Red",
+      "manufacturer": "SOAI",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-halu-halo-blue": {
+      "name": "KTT Halu Halo Blue",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-halu-halo-red": {
+      "name": "KTT Halu Halo Red",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hyperx-blue": {
+      "name": "HyperX Blue",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/logitech-long-hua-purple": {
+      "name": "Logitech Long Hua Purple",
+      "manufacturer": "Kailh",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/durock-clear-t1": {
+      "name": "Durock Clear T1",
+      "manufacturer": "JWK",
+      "brand": "Durock",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/lcet-panda": {
+      "name": "LCET 'Panda'",
+      "manufacturer": "LCET",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-purple-moon": {
+      "name": "KTT Purple Moon",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/punkshoo-cream-soda": {
+      "name": "Punkshoo Cream Soda",
+      "manufacturer": null,
+      "brand": "Punkshoo",
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hyperx-aqua": {
+      "name": "HyperX Aqua",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ttc-black": {
+      "name": "TTC Black",
+      "manufacturer": "TTC",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ktt-pink-star": {
+      "name": "KTT Pink Star",
+      "manufacturer": "KTT",
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/durock-smoky-t1": {
+      "name": "Durock Smoky T1",
+      "manufacturer": "JWK",
+      "brand": "Durock",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/krgd-black": {
+      "name": "KRGD Black",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ttc-blue": {
+      "name": "TTC Blue",
+      "manufacturer": "TTC",
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/xiang-min-ksb-c-ivory": {
+      "name": "Xiang Min KSB-C Ivory",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "Alps",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/ttc-blueish-white": {
+      "name": "TTC Blueish White",
+      "manufacturer": "TTC",
+      "brand": null,
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/kbdfans-t1-clear": {
+      "name": "KBDfans T1 Clear",
+      "manufacturer": "JWK",
+      "brand": "KBDfans",
+      "designer": null,
+      "switchType": "tactile",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/hyperx-red": {
+      "name": "HyperX Red",
+      "manufacturer": null,
+      "brand": null,
+      "designer": null,
+      "switchType": "linear",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
+    },
+    "switches/leobog-shanyi": {
+      "name": "LEOBOG Shanyi",
+      "manufacturer": "SOAI",
+      "brand": "LEOBOG",
+      "designer": null,
+      "switchType": "clicky",
+      "switchFamily": "MX",
+      "isLowProfile": null,
+      "variants": null
     }
   },
   "excluded": {
@@ -40963,6 +41242,9 @@
     "theremingoat:3834": "Unverified Huano White identity; collector lists and single-switch sellers do not establish a bulk retail or production-keyboard release. Removed at user request; sample-only status is not established.",
     "keycaplendar:BZIN0J188Ua0oKnhyv6d": "MTNU Graphite TKL is not a distinct release; TKL is a kit within MTNU Graphite itself. Removed at user request.",
     "keycaplendar:hPWdYopIk5qmTCla1pdD": "GMK Ramune TKL is not a distinct release from GMK Ramune. Removed at user request; no separate base Ramune entry exists to merge into.",
-    "keycaplendar:2fpsJumhbHLTzpX1Qivr": "PBTfans Tape and Radio 35 is a duplicate of PBTfans Tape & Radio. Removed at user request."
+    "keycaplendar:2fpsJumhbHLTzpX1Qivr": "PBTfans Tape and Radio 35 is a duplicate of PBTfans Tape & Radio. Removed at user request.",
+    "theremingoat:671": "Unidentified unbranded specimen removed in catalog cleanup 070c1b0; no verified commercial identity or safe merge target. Do not infer a manufacturer from color or profile alone.",
+    "theremingoat:751": "Unidentified unbranded specimen removed in catalog cleanup 070c1b0; no verified commercial identity or safe merge target. Do not infer a manufacturer from color or profile alone.",
+    "theremingoat:752": "Unidentified unbranded specimen removed in catalog cleanup 070c1b0; no verified commercial identity or safe merge target. Do not infer a manufacturer from color or profile alone."
   }
 }

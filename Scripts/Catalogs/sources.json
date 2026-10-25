@@ -3360,7 +3360,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7745310031983/variant/42833782898799",
       "kind": "switches",
-      "id": "naevies-ec-45g-original",
+      "id": "aeboards-naevy-ec",
       "url": "https://cannonkeys.com/products/naevies-ec-switches",
       "observed": {
         "name": "Naevies EC - 45G (Original)",
@@ -3372,7 +3372,7 @@
       "source": "cannonkeysswitches",
       "sourceId": "7745310031983/variant/53822476320879",
       "kind": "switches",
-      "id": "naevies-ec",
+      "id": "aeboards-naevy-ec",
       "url": "https://cannonkeys.com/products/naevies-ec-switches",
       "observed": {
         "name": "Naevies EC - 55G",
@@ -58794,16 +58794,6 @@
     },
     {
       "source": "novelkeys",
-      "sourceId": "8543461048487",
-      "kind": "keycaps",
-      "id": "gmk-child-kits",
-      "url": "https://novelkeys.com/products/gmk-child-kits",
-      "observed": {
-        "name": "GMK Child Kits"
-      }
-    },
-    {
-      "source": "novelkeys",
       "sourceId": "8549475877031",
       "kind": "keycaps",
       "id": "gmk-cyl-rainbow-6-siege-winner-s-circle",
@@ -71554,7 +71544,7 @@
       "source": "switchoddities",
       "sourceId": "8119043457308",
       "kind": "switches",
-      "id": "akko-orange-v2-desoldered",
+      "id": "akko-orange",
       "url": "https://switchoddities.com/products/akko-orange-v2-desoldered",
       "observed": {
         "name": "Akko Orange V2 *DESOLDERED"
@@ -71674,7 +71664,7 @@
       "source": "switchoddities",
       "sourceId": "8119049322780",
       "kind": "switches",
-      "id": "krgd-red-desoldered",
+      "id": "krgd-red",
       "url": "https://switchoddities.com/products/krgd-red-desoldered",
       "observed": {
         "name": "KRGD Red (Desoldered)"
@@ -71714,7 +71704,7 @@
       "source": "switchoddities",
       "sourceId": "8119050600732",
       "kind": "switches",
-      "id": "ttc-gold-pink-new-led-condenser",
+      "id": "ttc-gold-pink",
       "url": "https://switchoddities.com/products/ttc-gold-pink-new-led-condenser",
       "observed": {
         "name": "TTC Gold Pink (New LED Condenser)"
@@ -71784,7 +71774,7 @@
       "source": "switchoddities",
       "sourceId": "8119053582620",
       "kind": "switches",
-      "id": "ttc-bluish-white-new-led-condenser",
+      "id": "ttc-bluish-white",
       "url": "https://switchoddities.com/products/ttc-bluish-white-new-led-condenser",
       "observed": {
         "name": "TTC Bluish White (New LED Condenser)"
@@ -72290,7 +72280,7 @@
       "source": "switchoddities",
       "sourceId": "8119074521372",
       "kind": "switches",
-      "id": "desoldered-xiang-min-ksb-c-ivory",
+      "id": "xiang-min-ksb-c-ivory",
       "url": "https://switchoddities.com/products/desoldered-xiang-min-ksb-c-ivory",
       "observed": {
         "name": "*Desoldered* Xiang Min KSB-C Ivory"
@@ -72310,7 +72300,7 @@
       "source": "switchoddities",
       "sourceId": "8119075012892",
       "kind": "switches",
-      "id": "desoldered-aristotle-yellow",
+      "id": "aristotle-yellow",
       "url": "https://switchoddities.com/products/desoldered-aristotle-yellow",
       "observed": {
         "name": "*Desoldered* Aristotle Yellow"
@@ -72752,7 +72742,7 @@
       "source": "switchoddities",
       "sourceId": "8119087202588",
       "kind": "switches",
-      "id": "jixian-blue-desoldered",
+      "id": "jixian-blue",
       "url": "https://switchoddities.com/products/jixian-blue-desoldered",
       "observed": {
         "name": "Jixian Blue (Desoldered)"
@@ -74017,7 +74007,7 @@
       "source": "switchoddities",
       "sourceId": "8119135240476",
       "kind": "switches",
-      "id": "akko-blue-v2-desoldered",
+      "id": "akko-blue",
       "url": "https://switchoddities.com/products/akko-blue-v2-desoldered",
       "observed": {
         "name": "Akko Blue V2 (desoldered)"
@@ -74557,7 +74547,7 @@
       "source": "switchoddities",
       "sourceId": "8119150510364",
       "kind": "switches",
-      "id": "content-blue-desoldered-with-condenser",
+      "id": "content-blue",
       "url": "https://switchoddities.com/products/content-blue-desoldered-with-condenser",
       "observed": {
         "name": "Content Blue (Desoldered) with condenser"
@@ -75640,7 +75630,7 @@
       "source": "switchoddities",
       "sourceId": "8203801985308",
       "kind": "switches",
-      "id": "punkshoo-cream-soda-stock",
+      "id": "punkshoo-cream-soda",
       "url": "https://switchoddities.com/products/punkshoo-cream-soda-stock",
       "observed": {
         "name": "Punkshoo Cream Soda (stock)"
@@ -78730,7 +78720,7 @@
       "source": "switchoddities",
       "sourceId": "8548135829788",
       "kind": "switches",
-      "id": "ktt-strawberry-with-logo",
+      "id": "ktt-strawberry",
       "url": "https://switchoddities.com/products/ktt-strawberry-with-logo",
       "observed": {
         "name": "KTT Strawberry (With Logo)"
@@ -80756,7 +80746,7 @@
       "source": "switchoddities",
       "sourceId": "8834661089564",
       "kind": "switches",
-      "id": "bbn-tactile",
+      "id": "builtbynim-bbn-tactile",
       "url": "https://switchoddities.com/products/builtbynim-bbn-tactile",
       "observed": {
         "name": "BuiltByNim (BBN) Tactile",
@@ -80819,7 +80809,7 @@
       "source": "switchoddities",
       "sourceId": "8871932461340",
       "kind": "switches",
-      "id": "skyloong-chocolate-rose-original",
+      "id": "skyloong-chocolate-rose",
       "url": "https://switchoddities.com/products/skyloong-chocolate-rose-1",
       "observed": {
         "name": "Skyloong Chocolate Rose"
@@ -82642,7 +82632,7 @@
       "source": "switchoddities",
       "sourceId": "8994423243036",
       "kind": "switches",
-      "id": "gateron-north-pole-brown-v2-no-rubber-thingy",
+      "id": "gateron-north-pole-brown",
       "url": "https://switchoddities.com/products/gateron-north-pole-brown-v2-no-rubber-thingy",
       "observed": {
         "name": "Gateron North Pole Brown V2 (no rubber thingy)"
@@ -82915,7 +82905,7 @@
       "source": "switchoddities",
       "sourceId": "9031722434844",
       "kind": "switches",
-      "id": "krgd-black-w-condenser-d-stock",
+      "id": "krgd-black",
       "url": "https://switchoddities.com/products/krgd-black-w-condenser-d-stock",
       "observed": {
         "name": "KRGD Black w/ Condenser (D-Stock)"
@@ -82925,7 +82915,7 @@
       "source": "switchoddities",
       "sourceId": "9031735574812",
       "kind": "switches",
-      "id": "lcet-glacier-red-d-stock",
+      "id": "lcet-glacier-red",
       "url": "https://switchoddities.com/products/lcet-glacier-red-d-stock",
       "observed": {
         "name": "LCET Glacier Red (D-Stock)"
@@ -82995,7 +82985,7 @@
       "source": "switchoddities",
       "sourceId": "9100466290972",
       "kind": "switches",
-      "id": "lcet-panda-z-stock",
+      "id": "lcet-panda",
       "url": "https://switchoddities.com/products/lcet-panda-z-stock",
       "observed": {
         "name": "LCET Panda Z-Stock"
@@ -83015,7 +83005,7 @@
       "source": "switchoddities",
       "sourceId": "9100467503388",
       "kind": "switches",
-      "id": "lcet-panda-f-stock",
+      "id": "lcet-panda",
       "url": "https://switchoddities.com/products/lcet-panda-f-stock",
       "observed": {
         "name": "LCET Panda F-Stock"
@@ -83025,7 +83015,7 @@
       "source": "switchoddities",
       "sourceId": "9100468453660",
       "kind": "switches",
-      "id": "tecware-z-stock",
+      "id": "tecware",
       "url": "https://switchoddities.com/products/tecware-z-stock",
       "observed": {
         "name": "Tecware Z-Stock"
@@ -83045,7 +83035,7 @@
       "source": "switchoddities",
       "sourceId": "9100476317980",
       "kind": "switches",
-      "id": "tecware-f-stock",
+      "id": "tecware",
       "url": "https://switchoddities.com/products/tecware-f-stock",
       "observed": {
         "name": "Tecware F-Stock"
@@ -83752,7 +83742,7 @@
       "source": "switchoddities",
       "sourceId": "9327409561884",
       "kind": "switches",
-      "id": "content-blue-non-desoldered",
+      "id": "content-blue",
       "url": "https://switchoddities.com/products/content-blue-non-desoldered",
       "observed": {
         "name": "Content Blue (non-desoldered)"
@@ -85338,7 +85328,7 @@
       "source": "switchoddities",
       "sourceId": "9457273864476",
       "kind": "switches",
-      "id": "bsun-dustproof-blue-condenser",
+      "id": "bsun-dustproof-blue",
       "url": "https://switchoddities.com/products/bsun-dustproof-blue-condenser",
       "observed": {
         "name": "BSUN Dustproof Blue Condenser"
@@ -87501,7 +87491,7 @@
       "source": "switchoddities",
       "sourceId": "9685464842524",
       "kind": "switches",
-      "id": "leobog-shanyi-clicky",
+      "id": "leobog-shanyi",
       "url": "https://switchoddities.com/products/leobog-shanyi-clicky",
       "observed": {
         "name": "Leobog Shanyi (clicky)",
@@ -88293,7 +88283,7 @@
       "source": "switchoddities",
       "sourceId": "9957087576348",
       "kind": "switches",
-      "id": "g3ms-onyx-no-condenser",
+      "id": "g3ms-onyx",
       "url": "https://switchoddities.com/products/g3ms-onyx-no-condenser",
       "observed": {
         "name": "g3ms Onyx - No Condenser"
@@ -88303,7 +88293,7 @@
       "source": "switchoddities",
       "sourceId": "9957090296092",
       "kind": "switches",
-      "id": "g3ms-onyx-with-condenser",
+      "id": "g3ms-onyx",
       "url": "https://switchoddities.com/products/g3ms-onyx-with-condenser",
       "observed": {
         "name": "g3ms Onyx - With Condenser"
@@ -89921,7 +89911,7 @@
       "source": "theremingoat",
       "sourceId": "1084",
       "kind": "switches",
-      "id": "hyperx-blue-release",
+      "id": "hyperx-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "HyperX Blue (Release)",
@@ -89932,7 +89922,7 @@
       "source": "theremingoat",
       "sourceId": "1085",
       "kind": "switches",
-      "id": "hyperx-aqua-release",
+      "id": "hyperx-aqua",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "HyperX Aqua (Release)",
@@ -91031,39 +91021,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "1180",
-      "kind": "switches",
-      "id": "lcet-green-pink-pink-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "LCET Green/Pink Pink Stem",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1181",
-      "kind": "switches",
-      "id": "lcet-green-grey-orange-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "LCET Green/Grey Orange Stem",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1182",
-      "kind": "switches",
-      "id": "lcet-blue-grey-orange-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "LCET Blue/Grey Orange Stem",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "1183",
       "kind": "switches",
       "id": "mmd-holy-panda",
@@ -92142,7 +92099,7 @@
       "source": "theremingoat",
       "sourceId": "1265",
       "kind": "switches",
-      "id": "ktt-halu-halo-red-release",
+      "id": "ktt-halu-halo-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Halu Halo Red (Release)",
@@ -92155,7 +92112,7 @@
       "source": "theremingoat",
       "sourceId": "1266",
       "kind": "switches",
-      "id": "ktt-halu-halo-blue-release",
+      "id": "ktt-halu-halo-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Halu Halo Blue (Release)",
@@ -92168,7 +92125,7 @@
       "source": "theremingoat",
       "sourceId": "1267",
       "kind": "switches",
-      "id": "ktt-halu-halo-yellow-release",
+      "id": "ktt-halu-halo-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Halu Halo Yellow (Release)",
@@ -92304,7 +92261,7 @@
       "source": "theremingoat",
       "sourceId": "1283",
       "kind": "switches",
-      "id": "ktt-mallo-release",
+      "id": "ktt-mallo",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Mallo (Release)",
@@ -92639,7 +92596,7 @@
       "source": "theremingoat",
       "sourceId": "1311",
       "kind": "switches",
-      "id": "ttc-gold-pink-condensor",
+      "id": "ttc-gold-pink",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Gold Pink (Condensor)",
@@ -92663,7 +92620,7 @@
       "source": "theremingoat",
       "sourceId": "1313",
       "kind": "switches",
-      "id": "ttc-blueish-white-condensor",
+      "id": "ttc-blueish-white",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Blueish White (Condensor)",
@@ -92814,19 +92771,6 @@
         "manufacturer": "Durock/JWK",
         "switchType": "linear"
       }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1328",
-      "kind": "switches",
-      "id": "a-switch-with-no-good-name",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "'A Switch with No Good Name'",
-        "manufacturer": "Durock/JWK",
-        "switchType": "linear"
-      },
-      "notes": "Unreleased Prototype"
     },
     {
       "source": "theremingoat",
@@ -93946,7 +93890,7 @@
       "source": "theremingoat",
       "sourceId": "1415",
       "kind": "switches",
-      "id": "ttc-red-short-led",
+      "id": "ttc-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Red (Short LED)",
@@ -93958,7 +93902,7 @@
       "source": "theremingoat",
       "sourceId": "1416",
       "kind": "switches",
-      "id": "ttc-blue-short-led",
+      "id": "ttc-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Blue (Short LED)",
@@ -96546,7 +96490,7 @@
       "source": "theremingoat",
       "sourceId": "162",
       "kind": "switches",
-      "id": "ttc-brown-short-led",
+      "id": "ttc-brown",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Brown (Short LED)",
@@ -96655,7 +96599,7 @@
       "source": "theremingoat",
       "sourceId": "163",
       "kind": "switches",
-      "id": "ttc-blue-long-led",
+      "id": "ttc-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Blue (Long LED)",
@@ -97312,17 +97256,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "1687",
-      "kind": "switches",
-      "id": "brazilian-iron-switch",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Brazilian Iron Switch",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "1688",
       "kind": "switches",
       "id": "geon-black",
@@ -97972,7 +97905,7 @@
       "source": "theremingoat",
       "sourceId": "1746",
       "kind": "switches",
-      "id": "bbn-tactile",
+      "id": "builtbynim-bbn-tactile",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BBN (Tactile)",
@@ -100090,30 +100023,6 @@
         "name": "BSUN Crystal White",
         "manufacturer": "BSUN",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1921",
-      "kind": "switches",
-      "id": "bsun-light-switch",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Light Switch",
-        "manufacturer": "BSUN",
-        "switchType": "clicky"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "1922",
-      "kind": "switches",
-      "id": "bsun-fake-switch",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "BSUN Fake Switch",
-        "manufacturer": "BSUN",
-        "switchType": "clicky"
       }
     },
     {
@@ -105067,18 +104976,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "234",
-      "kind": "switches",
-      "id": "counterfeit-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Branded Stealio V2 (62g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2340",
       "kind": "switches",
       "id": "ajazz-as-101-yellow",
@@ -105177,7 +105074,7 @@
       "source": "theremingoat",
       "sourceId": "2348",
       "kind": "switches",
-      "id": "ktt-strawberry-v1-logo",
+      "id": "ktt-strawberry",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Strawberry V1 (Logo)",
@@ -105194,18 +105091,6 @@
       "observed": {
         "name": "Magegee Blue Whale",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "235",
-      "kind": "switches",
-      "id": "counterfeit-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Branded Stealio V2 (65g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
       }
     },
     {
@@ -105329,18 +105214,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "236",
-      "kind": "switches",
-      "id": "counterfeit-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Branded Stealio V2 (67g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2360",
       "kind": "switches",
       "id": "bsun-luminous",
@@ -105460,18 +105333,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "237",
-      "kind": "switches",
-      "id": "counterfeit-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Branded Stealio V2 (78g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2370",
       "kind": "switches",
       "id": "rapoo-black",
@@ -105581,18 +105442,6 @@
       "observed": {
         "name": "Flower Shadow",
         "manufacturer": "BSUN",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "238",
-      "kind": "switches",
-      "id": "counterfeit-tealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Branded Stealio V2 (Tealio)",
-        "manufacturer": "Durock/JWK",
         "switchType": "linear"
       }
     },
@@ -106892,19 +106741,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "248",
-      "kind": "switches",
-      "id": "durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock 'Zealio V2' (62g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      },
-      "notes": "Unbranded Stealio"
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2480",
       "kind": "switches",
       "id": "akko-x-gateron-white",
@@ -107018,19 +106854,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "249",
-      "kind": "switches",
-      "id": "durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock 'Zealio V2' (65g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      },
-      "notes": "Unbranded Stealio"
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2490",
       "kind": "switches",
       "id": "redragon-dustproof-red",
@@ -107089,17 +106912,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "2497",
-      "kind": "switches",
-      "id": "olive-switch",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Tactile Olive Switch",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "25",
       "kind": "switches",
       "id": "gateron-ks-1-brown",
@@ -107110,19 +106922,6 @@
         "switchType": "tactile"
       },
       "notes": "KS-1"
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "250",
-      "kind": "switches",
-      "id": "durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock 'Zealio V2' (67g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      },
-      "notes": "Unbranded Stealio"
     },
     {
       "source": "theremingoat",
@@ -107214,19 +107013,6 @@
         "manufacturer": "Kailh",
         "switchType": "linear"
       }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "251",
-      "kind": "switches",
-      "id": "durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock 'Zealio V2' (78g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      },
-      "notes": "Unbranded Stealio"
     },
     {
       "source": "theremingoat",
@@ -107348,19 +107134,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "252",
-      "kind": "switches",
-      "id": "durock-tealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock 'Tealio V2'",
-        "manufacturer": "Durock/JWK",
-        "switchType": "linear"
-      },
-      "notes": "Unbranded Stealio L2/L5"
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2520",
       "kind": "switches",
       "id": "tx-blue",
@@ -107445,18 +107218,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "253",
-      "kind": "switches",
-      "id": "smoky-durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock 'Zealio V2' (62g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2531",
       "kind": "switches",
       "id": "g-square-baby-blue",
@@ -107512,18 +107273,6 @@
       "observed": {
         "name": "ET Orange",
         "manufacturer": "Haimu",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "254",
-      "kind": "switches",
-      "id": "smoky-durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock 'Zealio V2' (65g.)",
-        "manufacturer": "Durock/JWK",
         "switchType": "tactile"
       }
     },
@@ -107585,18 +107334,6 @@
         "name": "G-Square Fully Clear",
         "manufacturer": "Haimu",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "255",
-      "kind": "switches",
-      "id": "smoky-durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock 'Zealio V2' (67g.)",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
       }
     },
     {
@@ -107704,18 +107441,6 @@
       "observed": {
         "name": "DK Creamery Birthday Cake Yellow",
         "manufacturer": "KTT",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "256",
-      "kind": "switches",
-      "id": "smoky-durock-zealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock 'Zealio V2' (78g.)",
-        "manufacturer": "Durock/JWK",
         "switchType": "tactile"
       }
     },
@@ -107839,19 +107564,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "257",
-      "kind": "switches",
-      "id": "smoky-durock-tealio",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock 'Tealio V2'",
-        "manufacturer": "Durock/JWK",
-        "switchType": "linear"
-      },
-      "notes": "L2/L5"
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2570",
       "kind": "switches",
       "id": "sillyworks-hyacinth",
@@ -107967,18 +107679,6 @@
         "name": "Caramel Chocoate",
         "manufacturer": "LICHICX",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "258",
-      "kind": "switches",
-      "id": "durock-tan-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock Tan Stem Tactile",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
       }
     },
     {
@@ -108099,18 +107799,6 @@
         "name": "BSUN Hifi",
         "manufacturer": "BSUN",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "259",
-      "kind": "switches",
-      "id": "durock-maroon-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock Maroon Stem Tactile",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
       }
     },
     {
@@ -108243,18 +107931,6 @@
         "switchType": "clicky"
       },
       "notes": "KS-1"
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "260",
-      "kind": "switches",
-      "id": "durock-yellow-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Durock Yellow Stem Tactile",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
     },
     {
       "source": "theremingoat",
@@ -108462,17 +108138,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "2616",
-      "kind": "switches",
-      "id": "ggboy-pink-white-switch",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "GGBOY Pink White Switch",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2617",
       "kind": "switches",
       "id": "ggboy-grule-translucency-black-red",
@@ -108639,18 +108304,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "263",
-      "kind": "switches",
-      "id": "smoky-durock-tan-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock Tan Stem Tactile",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2630",
       "kind": "switches",
       "id": "gateron-ks-22-low-pro-banana",
@@ -108768,18 +108421,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "264",
-      "kind": "switches",
-      "id": "smoky-durock-maroon-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock Maroon Stem Tactile",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "2640",
       "kind": "switches",
       "id": "ktt-baby-white",
@@ -108845,18 +108486,6 @@
       "observed": {
         "name": "Ball Bearing Grey",
         "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "265",
-      "kind": "switches",
-      "id": "smoky-durock-yellow-stem",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Smoky Durock Yellow Stem Tactile",
-        "manufacturer": "Durock/JWK",
-        "switchType": "tactile"
       }
     },
     {
@@ -110014,7 +109643,7 @@
       "source": "theremingoat",
       "sourceId": "2750",
       "kind": "switches",
-      "id": "krgd-black-with-condensor",
+      "id": "krgd-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KRGD Black with Condensor",
@@ -110060,7 +109689,7 @@
       "source": "theremingoat",
       "sourceId": "2755",
       "kind": "switches",
-      "id": "lcet-glacier-red-qc-reject",
+      "id": "lcet-glacier-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LCET Glacier Red (QC Reject)",
@@ -110071,7 +109700,7 @@
       "source": "theremingoat",
       "sourceId": "2756",
       "kind": "switches",
-      "id": "lcet-purple-red-qc-reject",
+      "id": "lcet-purple-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "LCET Purple Red (QC Reject)",
@@ -110730,7 +110359,7 @@
       "source": "theremingoat",
       "sourceId": "2808",
       "kind": "switches",
-      "id": "ttc-ice-small-condenser",
+      "id": "ttc-ice",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Ice (Small Condenser)",
@@ -111941,7 +111570,7 @@
       "source": "theremingoat",
       "sourceId": "2900",
       "kind": "switches",
-      "id": "ktt-cabbage-tofu-condenser",
+      "id": "ktt-cabbage-tofu",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Cabbage Tofu (Condenser)",
@@ -111953,7 +111582,7 @@
       "source": "theremingoat",
       "sourceId": "2901",
       "kind": "switches",
-      "id": "ktt-pink-star-condenser",
+      "id": "ktt-pink-star",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Pink Star (Condenser)",
@@ -111965,7 +111594,7 @@
       "source": "theremingoat",
       "sourceId": "2902",
       "kind": "switches",
-      "id": "ktt-purple-moon-condenser",
+      "id": "ktt-purple-moon",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Purple Moon (Condenser)",
@@ -112108,7 +111737,7 @@
       "source": "theremingoat",
       "sourceId": "2914",
       "kind": "switches",
-      "id": "bsun-dustproof-blue-condenser",
+      "id": "bsun-dustproof-blue",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "BSUN Dustproof Blue (Condenser)",
@@ -112193,7 +111822,7 @@
       "source": "theremingoat",
       "sourceId": "2920",
       "kind": "switches",
-      "id": "ktt-lavender-condenser",
+      "id": "ktt-lavender",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KTT Lavender (Condenser)",
@@ -116915,7 +116544,7 @@
       "source": "theremingoat",
       "sourceId": "3300",
       "kind": "switches",
-      "id": "akko-piano-pro-v3-condenser",
+      "id": "akko-piano-pro",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Akko Piano Pro V3 (Condenser)",
@@ -117034,7 +116663,7 @@
       "source": "theremingoat",
       "sourceId": "3310",
       "kind": "switches",
-      "id": "g3ms-onyx-condenser",
+      "id": "g3ms-onyx",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "G3MS Onyx (Condenser)",
@@ -117046,7 +116675,7 @@
       "source": "theremingoat",
       "sourceId": "3311",
       "kind": "switches",
-      "id": "g3ms-onyx-no-condenser",
+      "id": "g3ms-onyx",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "G3MX Onyx (No Condenser)",
@@ -118549,7 +118178,7 @@
       "source": "theremingoat",
       "sourceId": "343",
       "kind": "switches",
-      "id": "kbdfans-t1-clear-kbdfans-stock",
+      "id": "kbdfans-t1-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KBDFans T1 Clear (KBDFans Stock)",
@@ -118669,7 +118298,7 @@
       "source": "theremingoat",
       "sourceId": "344",
       "kind": "switches",
-      "id": "kbdfans-t1-clear-novelkeys-stock",
+      "id": "kbdfans-t1-clear",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "KBDFans T1 Clear (Novelkeys Stock)",
@@ -118919,7 +118548,7 @@
       "source": "theremingoat",
       "sourceId": "346",
       "kind": "switches",
-      "id": "durock-clear-t1-unbranded",
+      "id": "durock-clear-t1",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Durock Clear T1 (Unbranded)",
@@ -119051,7 +118680,7 @@
       "source": "theremingoat",
       "sourceId": "347",
       "kind": "switches",
-      "id": "durock-smoky-t1-unbranded",
+      "id": "durock-smoky-t1",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Durock Smoky T1 (Unbranded)",
@@ -121461,7 +121090,7 @@
       "source": "theremingoat",
       "sourceId": "3668",
       "kind": "switches",
-      "id": "ajazz-magnetic-yellow-hole",
+      "id": "ajazz-magnetic-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Ajazz Magnetic Yellow (Hole)",
@@ -121473,7 +121102,7 @@
       "source": "theremingoat",
       "sourceId": "3669",
       "kind": "switches",
-      "id": "ajazz-magnetic-yellow-no-hole",
+      "id": "ajazz-magnetic-yellow",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Ajazz Magnetic Yellow (No Hole)",
@@ -123283,7 +122912,7 @@
       "source": "theremingoat",
       "sourceId": "3815",
       "kind": "switches",
-      "id": "logitech-long-hua-purple-condenser",
+      "id": "logitech-long-hua-purple",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Logitech Long Hua Purple (Condenser)",
@@ -123475,7 +123104,7 @@
       "source": "theremingoat",
       "sourceId": "383",
       "kind": "switches",
-      "id": "alps-skcl-grey-no-bottom-logo",
+      "id": "alps-skcl-grey",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Alps SKCL Grey (No Bottom Logo)",
@@ -131643,7 +131272,7 @@
       "source": "theremingoat",
       "sourceId": "639",
       "kind": "switches",
-      "id": "ttc-red-long-led",
+      "id": "ttc-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Red (Long LED)",
@@ -131666,7 +131295,7 @@
       "source": "theremingoat",
       "sourceId": "640",
       "kind": "switches",
-      "id": "ttc-black-short-led",
+      "id": "ttc-black",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "TTC Black (Short LED)",
@@ -132049,20 +131678,9 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "671",
-      "kind": "switches",
-      "id": "unbranded-clicky-yellow-alps-clone",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Unbranded Clicky Yellow Alps Clone",
-        "switchType": "clicky"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "672",
       "kind": "switches",
-      "id": "alps-skcl-grey-bottom-logo",
+      "id": "alps-skcl-grey",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Alps SKCL Grey (Bottom Logo)",
@@ -132980,28 +132598,6 @@
     },
     {
       "source": "theremingoat",
-      "sourceId": "751",
-      "kind": "switches",
-      "id": "unbranded-low-profile-red",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Unbranded Low Profile Red",
-        "switchType": "linear"
-      }
-    },
-    {
-      "source": "theremingoat",
-      "sourceId": "752",
-      "kind": "switches",
-      "id": "unbranded-low-profile-blue",
-      "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
-      "observed": {
-        "name": "Unbranded Low Profile Blue",
-        "switchType": "clicky"
-      }
-    },
-    {
-      "source": "theremingoat",
       "sourceId": "753",
       "kind": "switches",
       "id": "gateron-black-ink",
@@ -133623,7 +133219,7 @@
       "source": "theremingoat",
       "sourceId": "808",
       "kind": "switches",
-      "id": "hyperx-red-release",
+      "id": "hyperx-red",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "HyperX Red (Release)",
@@ -134363,7 +133959,7 @@
       "source": "theremingoat",
       "sourceId": "874",
       "kind": "switches",
-      "id": "original-aspiration-release",
+      "id": "ws-original-aspiration-oa",
       "url": "https://drive.google.com/uc?export=download&id=1lEsJaTX4nwtxcx2WL1EcwuwokWyqnuDv",
       "observed": {
         "name": "Original Aspiration (Release)",
@@ -141354,7 +140950,7 @@
       "source": "theremingoatscores",
       "sourceId": "f8b843486176",
       "kind": "switches",
-      "id": "original-aspiration-release",
+      "id": "ws-original-aspiration-oa",
       "url": "https://raw.githubusercontent.com/ThereminGoat/switch-scores/refs/heads/master/1-Composite%20Overall%20Total%20Score%20Sheet.csv",
       "observed": {
         "name": "Original Aspiration (Release)",

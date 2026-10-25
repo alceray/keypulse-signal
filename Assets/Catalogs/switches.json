@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 92,
-  "totalCount": 4540,
+  "catalogVersion": 94,
+  "totalCount": 4538,
   "entries": [
     {
       "id": "1a54-green-alps-clone",
@@ -253,22 +253,21 @@
     {
       "id": "aeboards-blaeck",
       "name": "AEBoards Blaeck",
-      "manufacturer": "AEBoards",
-      "brand": "AEBoards",
+      "designer": "AEBoards",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "aeboards-blaeck-r-2-1",
       "name": "AEBoards Blaeck R 2.1",
-      "brand": "AEBoards",
+      "designer": "AEBoards",
       "switchType": "linear",
       "switchFamily": "MX"
     },
     {
       "id": "aeboards-naevy",
       "name": "AEBoards Naevy",
-      "manufacturer": "AEBoards",
+      "designer": "AEBoards",
       "switchType": "tactile",
       "switchFamily": "MX",
       "variants": [
@@ -282,14 +281,18 @@
       "id": "aeboards-naevy-ec",
       "name": "AEBoards Naevy EC",
       "manufacturer": "Tecsee",
+      "designer": "AEBoards",
       "switchType": "tactile",
-      "switchFamily": "EC"
+      "switchFamily": "EC",
+      "variants": [
+        "45G",
+        "55G"
+      ]
     },
     {
       "id": "aeboards-raed",
       "name": "AEBoards Raed",
-      "manufacturer": "AEBoards",
-      "brand": "AEBoards",
+      "designer": "AEBoards",
       "switchType": "linear",
       "switchFamily": "MX",
       "variants": [
@@ -303,6 +306,7 @@
       "id": "aeboards-raed-he-white",
       "name": "AEBoards Raed HE White",
       "manufacturer": "Tecsee",
+      "designer": "AEBoards",
       "switchType": "tactile",
       "switchFamily": "HE"
     },
@@ -310,7 +314,7 @@
       "id": "aeboards-raeds-he",
       "name": "AEboards Raeds HE",
       "manufacturer": "Tecsee",
-      "brand": "AEBoards",
+      "designer": "AEBoards",
       "switchType": "tactile",
       "switchFamily": "HE"
     },
@@ -25745,18 +25749,6 @@
       ]
     },
     {
-      "id": "naevies-ec",
-      "name": "Naevies EC",
-      "manufacturer": "Tecsee",
-      "designer": "Keyboard Treehouse",
-      "switchType": "tactile",
-      "switchFamily": "EC",
-      "variants": [
-        "45G",
-        "55G"
-      ]
-    },
-    {
       "id": "naevy",
       "name": "Naevy",
       "manufacturer": "Tecsee",
@@ -26752,13 +26744,6 @@
     {
       "id": "orange-red",
       "name": "Orange Red",
-      "switchType": "linear",
-      "switchFamily": "MX"
-    },
-    {
-      "id": "original-aspiration",
-      "name": "Original Aspiration",
-      "manufacturer": "JWK",
       "switchType": "linear",
       "switchFamily": "MX"
     },
