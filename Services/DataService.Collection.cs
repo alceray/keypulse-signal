@@ -62,7 +62,7 @@ public partial class DataService
     public CollectionResult AddCatalogCollectionItem(string kind, string id, int quantity) =>
         WriteCollection(context =>
         {
-            ValidateQuantity(quantity);
+            ValidateQuantity(kind, quantity);
             var catalog = _catalogs.GetState(kind);
             if (catalog.Status != CatalogLoadStatus.Loaded || !catalog.ById.TryGetValue(id, out var entry))
                 throw new ArgumentException("Choose an entry from a loaded catalog.");
@@ -70,7 +70,7 @@ public partial class DataService
             if (row != null)
             {
                 RequireReadable(row);
-                ValidateQuantity((long)row.Quantity + quantity);
+                ValidateQuantity(kind, (long)row.Quantity + quantity);
                 row.Quantity += quantity;
                 row.Revision = checked(row.Revision + 1);
             }
@@ -96,7 +96,7 @@ public partial class DataService
     ) =>
         WriteCollection(context =>
         {
-            ValidateQuantity(quantity);
+            ValidateQuantity(kind, quantity);
             ValidateNotes(notes);
             var row = new CollectionItem
             {
@@ -122,7 +122,7 @@ public partial class DataService
             var row = context.CollectionItems.SingleOrDefault(x => x.ItemKey == key);
             CheckRevision(row, revision);
             RequireReadable(row!);
-            ValidateQuantity(quantity);
+            ValidateQuantity(row!.PartKind, quantity);
             ValidateNotes(notes);
             if (customDescription != null)
             {
@@ -245,10 +245,11 @@ public partial class DataService
         row.Designer = description.Designer;
     }
 
-    private static void ValidateQuantity(long value)
+    private static void ValidateQuantity(string kind, long value)
     {
-        if (value is < 1 or > 1_000_000)
-            throw new ArgumentException("Enter a whole number from 1 to 1,000,000.");
+        var maximum = PartKinds.MaxQuantity(kind);
+        if (value < 1 || value > maximum)
+            throw new ArgumentException($"Enter a whole number from 1 to {maximum:N0}.");
     }
 
     private static void ValidateNotes(string? value)

@@ -45,7 +45,7 @@ public class CollectionPersistenceTests
         increased.Quantity.ShouldBe(100);
         increased.ItemKey.ShouldBe(original.ItemKey);
         increased.Revision.ShouldBe(2);
-        data.AddCatalogCollectionItem(PartKinds.Switch, "sample", 1_000_000)
+        data.AddCatalogCollectionItem(PartKinds.Switch, "sample", 10_000)
             .Status.ShouldBe(CollectionResultStatus.ValidationError);
         data.CollectionItems.Single().Quantity.ShouldBe(100);
         data.UpdateCollectionItem(original.ItemKey, original.Revision, 2, null)
@@ -139,6 +139,58 @@ public class CollectionPersistenceTests
         refreshed.CollectionItems.Length.ShouldBe(3);
         factory.FailRead = false;
         refreshed.ReadCollectionItems().Items.Length.ShouldBe(3);
+        await ExerciseQuantityLimits(source, databaseLock);
+    }
+
+    private static async Task ExerciseQuantityLimits(
+        IDbContextFactory<ApplicationDbContext> factory,
+        DatabaseInstanceLock databaseLock
+    )
+    {
+        var catalog = new CatalogService(name =>
+            CatalogServiceTests.StreamOf(
+                name.Contains("switches")
+                    ? CatalogServiceTests.SwitchJson.Replace("sample", "limit-test")
+                    : """{"schemaVersion":1,"catalogVersion":1,"totalCount":1,"entries":[{"id":"limit-test","name":"Limit test"}]}"""
+            )
+        );
+        using var timer = new AppTimerService();
+        using var daily = new DailyStatsService(factory, timer);
+        var data = new DataService(factory, daily, databaseLock, catalog);
+        data.ReadCollectionItems().Succeeded.ShouldBeTrue();
+        foreach (var (kind, maximum) in new[] { (PartKinds.Switch, 10_000), (PartKinds.Keycap, 100) })
+        {
+            (await catalog.LoadAsync(kind)).Status.ShouldBe(CatalogLoadStatus.Loaded);
+            PartDescription description = new(
+                "Quantity boundary",
+                null,
+                null,
+                null,
+                kind == PartKinds.Switch ? new SwitchPartDetails() : new KeycapPartDetails()
+            );
+            data.AddCustomCollectionItem(kind, description, maximum + 1, null)
+                .Status.ShouldBe(CollectionResultStatus.ValidationError);
+            data.AddCustomCollectionItem(kind, description, maximum, null).Succeeded.ShouldBeTrue();
+            data.AddCatalogCollectionItem(kind, "limit-test", maximum + 1)
+                .Status.ShouldBe(CollectionResultStatus.ValidationError);
+            data.AddCatalogCollectionItem(kind, "limit-test", maximum - 1).Succeeded.ShouldBeTrue();
+            data.AddCatalogCollectionItem(kind, "limit-test", 1).Succeeded.ShouldBeTrue();
+            var before = data.CollectionItems;
+            data.AddCatalogCollectionItem(kind, "limit-test", 1)
+                .Status.ShouldBe(CollectionResultStatus.ValidationError);
+            foreach (var item in before.Where(x => x.PartKind == kind && x.Quantity == maximum))
+            {
+                data.UpdateCollectionItem(item.ItemKey, item.Revision, maximum + 1, null)
+                    .Status.ShouldBe(CollectionResultStatus.ValidationError);
+                data.UpdateCollectionItem(item.ItemKey, item.Revision, 0, null)
+                    .Status.ShouldBe(CollectionResultStatus.ValidationError);
+            }
+            data.CollectionItems.ShouldBe(before);
+            data.ReadCollectionItems()
+                .Items.Where(x => x.PartKind == kind && x.Quantity == maximum)
+                .Count()
+                .ShouldBe(2);
+        }
     }
 
     internal static void ExerciseConstraints(IDbContextFactory<ApplicationDbContext> factory)

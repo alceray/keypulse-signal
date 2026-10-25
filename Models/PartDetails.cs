@@ -7,6 +7,14 @@ public static class PartKinds
     public const string Switch = "Switch";
     public const string Keycap = "Keycap";
 
+    public static int MaxQuantity(string kind) =>
+        kind switch
+        {
+            Switch => 10_000,
+            Keycap => 100,
+            _ => throw new ArgumentException("Unsupported part category."),
+        };
+
     public static string Unit(string kind) =>
         kind switch
         {
