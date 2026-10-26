@@ -64,11 +64,19 @@ public sealed class CollectionService
         };
     }
 
-    public Task<CollectionResult> LoadAsync(bool retry = false)
+    public Task<CollectionResult> ReloadAsync() => LoadAsync(retry: true, reload: true);
+
+    public Task<CollectionResult> LoadAsync(bool retry = false, bool reload = false)
     {
         lock (_sync)
         {
-            if (_load != null && !(retry && _load.IsCompletedSuccessfully && !_load.Result.Succeeded))
+            if (
+                _load != null
+                && (
+                    !_load.IsCompleted
+                    || (!reload && !(retry && _load.IsCompletedSuccessfully && !_load.Result.Succeeded))
+                )
+            )
                 return _load;
             if (!_accepting)
                 return Task.FromResult(Closing());

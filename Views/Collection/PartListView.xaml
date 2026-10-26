@@ -1,0 +1,771 @@
+<UserControl x:Class="KeyPulse.Views.Collection.PartListView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:KeyPulse.Views">
+  <UserControl.Resources>
+    <ControlTemplate x:Key="SectionExpanderTemplate" TargetType="Expander">
+      <StackPanel>
+        <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1">
+          <ToggleButton HorizontalAlignment="Stretch" Padding="4,0" BorderThickness="0" Background="{DynamicResource SurfaceBrush}" AutomationProperties.Name="{Binding Name}" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+            <ToggleButton.FocusVisualStyle>
+              <Style TargetType="Control">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="Control">
+                      <Rectangle Margin="2" Stroke="{DynamicResource PrimaryTextBrush}" StrokeThickness="1" StrokeDashArray="1,2" IsHitTestVisible="False" />
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </ToggleButton.FocusVisualStyle>
+            <ToggleButton.Template>
+              <ControlTemplate TargetType="ToggleButton">
+                <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="1" Padding="{TemplateBinding Padding}">
+                  <ContentPresenter />
+                </Border>
+              </ControlTemplate>
+            </ToggleButton.Template>
+            <StackPanel Orientation="Horizontal">
+              <StackPanel.RenderTransform>
+                <TranslateTransform X="{Binding HorizontalOffset, RelativeSource={RelativeSource AncestorType=ScrollViewer}}" />
+              </StackPanel.RenderTransform>
+              <TextBlock FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="4,0">
+                <TextBlock.Style>
+                  <Style TargetType="TextBlock">
+                    <Setter Property="Text" Value="" />
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding IsExpanded, RelativeSource={RelativeSource AncestorType=Expander}}" Value="True">
+                        <Setter Property="Text" Value="" />
+                      </DataTrigger>
+                    </Style.Triggers>
+                  </Style>
+                </TextBlock.Style>
+              </TextBlock>
+              <ContentPresenter Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" />
+            </StackPanel>
+          </ToggleButton>
+        </Border>
+        <ContentPresenter x:Name="SectionItems" ContentSource="Content" />
+      </StackPanel>
+      <ControlTemplate.Triggers>
+        <Trigger Property="IsExpanded" Value="False">
+          <Setter TargetName="SectionItems" Property="Visibility" Value="Collapsed" />
+        </Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <BooleanToVisibilityConverter x:Key="Bool" />
+    <Style x:Key="PartCellText" TargetType="TextBlock">
+      <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+      <Setter Property="ToolTip" Value="{Binding Text, RelativeSource={RelativeSource Self}}" />
+      <Setter Property="Margin" Value="6,5" />
+    </Style>
+    <Style x:Key="RowAction" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+      <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+      <Setter Property="Width" Value="30" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Margin" Value="1,2" />
+    </Style>
+  </UserControl.Resources>
+  <Grid Margin="12,8,12,12">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <DockPanel LastChildFill="True">
+      <Grid DockPanel.Dock="Right" Width="180" VerticalAlignment="Bottom" Margin="12,0,0,8">
+        <TextBox x:Name="SearchBox" Padding="28,3,28,3" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="Search parts" ToolTip="Search parts" />
+        <TextBlock FontFamily="Segoe MDL2 Assets" Text="" Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False" />
+        <Button Content="" FontFamily="Segoe MDL2 Assets" Width="24" Padding="0" Margin="1" HorizontalAlignment="Right" Click="ClearSearch" ToolTip="Clear search" AutomationProperties.Name="Clear search">
+          <Button.Style>
+            <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+              <Style.Triggers>
+                <DataTrigger Binding="{Binding Search}" Value="">
+                  <Setter Property="Visibility" Value="Collapsed" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </Button.Style>
+        </Button>
+      </Grid>
+      <WrapPanel>
+        <ItemsControl ItemsSource="{Binding Filters}" MaxWidth="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=WrapPanel}}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <WrapPanel />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Margin="0,0,8,8" Width="102">
+                <TextBlock Text="{Binding Label}" Margin="0,0,0,4" />
+                <ComboBox ItemsSource="{Binding Options}" SelectedItem="{Binding Selected}" AutomationProperties.Name="{Binding Label}" />
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button Content="Add custom item" Click="AddCustom" IsEnabled="{Binding CanMutate}" VerticalAlignment="Bottom" Margin="0,0,8,8" />
+        <Button Content="Clear filters" Command="{Binding ClearFiltersCommand}" VerticalAlignment="Bottom" Margin="0,0,0,8" />
+      </WrapPanel>
+    </DockPanel>
+    <StackPanel Grid.Row="1">
+      <TextBlock Text="{Binding CatalogMessage}" TextWrapping="Wrap">
+        <TextBlock.Style>
+          <Style TargetType="TextBlock">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding CatalogMessage}" Value="">
+                <Setter Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </TextBlock.Style>
+      </TextBlock>
+      <Button Content="Retry" Command="{Binding RetryCommand}" HorizontalAlignment="Left" Visibility="{Binding ShowRetry, Converter={StaticResource Bool}}" Margin="0,0,0,8" />
+    </StackPanel>
+    <Grid Grid.Row="2">
+      <DataGrid x:Name="PartsGrid" ItemsSource="{Binding Rows}" SelectedItem="{Binding Selected}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" CanUserResizeRows="False" EnableRowVirtualization="True" EnableColumnVirtualization="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.IsVirtualizingWhenGrouping="True" ScrollViewer.CanContentScroll="True" FrozenColumnCount="3" MouseDoubleClick="DoubleClick" PreviewKeyDown="GridKeyDown" Sorting="GridSorting" CellStyle="{StaticResource DeviceGridCellStyle}">
+        <DataGrid.GroupStyle>
+          <GroupStyle>
+            <GroupStyle.ContainerStyle>
+              <Style TargetType="GroupItem">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="GroupItem">
+                      <Expander Template="{StaticResource SectionExpanderTemplate}" Header="{Binding}" Foreground="{DynamicResource PrimaryTextBrush}" HorizontalContentAlignment="Stretch">
+                        <Expander.Style>
+                          <Style TargetType="Expander">
+                            <Setter Property="IsExpanded" Value="{Binding DataContext.IsCatalogExpanded, RelativeSource={RelativeSource AncestorType=DataGrid}, Mode=TwoWay}" />
+                            <Style.Triggers>
+                              <DataTrigger Binding="{Binding Name}" Value="Your collection">
+                                <Setter Property="IsExpanded" Value="{Binding DataContext.IsCollectionExpanded, RelativeSource={RelativeSource AncestorType=DataGrid}, Mode=TwoWay}" />
+                              </DataTrigger>
+                            </Style.Triggers>
+                          </Style>
+                        </Expander.Style>
+                        <Expander.HeaderTemplate>
+                          <DataTemplate>
+                            <Border Background="{DynamicResource SurfaceBrush}" Padding="8,8">
+                              <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                <TextBlock Text="{Binding ItemCount, StringFormat={} ({0:N0})}" Margin="4,0,0,0">
+                                  <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                      <Setter Property="Visibility" Value="Collapsed" />
+                                      <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Name}" Value="Your collection">
+                                          <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                      </Style.Triggers>
+                                    </Style>
+                                  </TextBlock.Style>
+                                </TextBlock>
+                              </StackPanel>
+                            </Border>
+                          </DataTemplate>
+                        </Expander.HeaderTemplate>
+                        <ItemsPresenter />
+                      </Expander>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </GroupStyle.ContainerStyle>
+          </GroupStyle>
+        </DataGrid.GroupStyle>
+        <DataGrid.RowStyle>
+          <Style TargetType="DataGridRow" BasedOn="{StaticResource DeviceGridRowStyle}">
+            <Setter Property="DetailsVisibility" Value="{Binding IsEditing, Converter={StaticResource Bool}}" />
+            <EventSetter Event="PreviewMouseRightButtonDown" Handler="RightClickRow" />
+            <Style.Triggers>
+              <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SelectionBrush}" />
+              </Trigger>
+              <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+        </DataGrid.RowStyle>
+        <DataGrid.RowDetailsTemplate>
+          <DataTemplate>
+            <StackPanel Visibility="{Binding IsEditing, Converter={StaticResource Bool}}" Margin="8,0">
+              <TextBlock Text="{Binding Editor.Error}" TextWrapping="Wrap">
+                <TextBlock.Style>
+                  <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding Editor.Error}" Value="">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                      </DataTrigger>
+                    </Style.Triggers>
+                  </Style>
+                </TextBlock.Style>
+              </TextBlock>
+              <TextBlock Text="{Binding Editor.Message}" TextWrapping="Wrap">
+                <TextBlock.Style>
+                  <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding Editor.Message}" Value="">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                      </DataTrigger>
+                    </Style.Triggers>
+                  </Style>
+                </TextBlock.Style>
+              </TextBlock>
+              <Button Content="Reload current values" Command="{Binding Editor.ReloadCommand}" HorizontalAlignment="Left" Visibility="{Binding Editor.HasConflict, Converter={StaticResource Bool}}" />
+            </StackPanel>
+          </DataTemplate>
+        </DataGrid.RowDetailsTemplate>
+        <DataGrid.ContextMenu>
+          <ContextMenu DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
+            <MenuItem Header="Edit notes" Click="Edit" IsEnabled="{Binding CanEdit}" />
+            <MenuItem Header="Remove" Click="Remove" IsEnabled="{Binding CanRemove}" />
+            <MenuItem Header="Copy name" Click="CopyName" />
+          </ContextMenu>
+        </DataGrid.ContextMenu>
+        <DataGrid.Columns>
+          <DataGridTemplateColumn x:Name="NameColumn" Header="Name" Width="200" SortMemberPath="Name">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Name}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Name" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="QuantityColumn" Header="Qty" Width="70" SortMemberPath="Quantity">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Grid Margin="3,2" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <TextBox Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="QuantityKeyDown" GotKeyboardFocus="QuantityFocused" AutomationProperties.Name="Quantity" ToolTip="{Binding QuantityError}">
+                    <TextBox.Style>
+                      <Style TargetType="TextBox">
+                        <Setter Property="IsEnabled" Value="{Binding CanEditQuantity}" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </TextBox.Style>
+                  </TextBox>
+                  <ContentControl Content="{Binding}">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <TextBox Text="{Binding Editor.Quantity.Text, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Draft quantity" />
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                </Grid>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn Header="" Width="142" CanUserSort="False">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <StackPanel Orientation="Horizontal" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl Content="{Binding}" Button.Click="Add">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding CanAdd}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Add to collection" AutomationProperties.Name="Add to collection" Content="" IsEnabled="True" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="Decrease">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding CanAdjust}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Decrease quantity" AutomationProperties.Name="Decrease quantity" Content="" IsEnabled="True" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="Increase">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding CanAdjust}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Increase quantity" AutomationProperties.Name="Increase quantity" Content="" IsEnabled="True" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="Edit">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding CanEdit}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Edit notes" AutomationProperties.Name="Edit notes" Content="" IsEnabled="True" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="Remove">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding CanRemove}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Remove item" AutomationProperties.Name="Remove item" Content="" IsEnabled="True" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="SaveQuantity">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding HasQuantityDraft}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Save quantity" AutomationProperties.Name="Save quantity" Content="" IsEnabled="{Binding CanSaveQuantity}" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="SaveEdit">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Save item" AutomationProperties.Name="Save item" Content="" IsEnabled="{Binding Editor.CanSave}" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                  <ContentControl Content="{Binding}" Button.Click="CancelEdit">
+                    <ContentControl.Style>
+                      <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                            <Setter Property="ContentTemplate">
+                              <Setter.Value>
+                                <DataTemplate>
+                                  <Button ToolTip="Cancel edit" AutomationProperties.Name="Cancel edit" Content="" IsEnabled="True" Style="{StaticResource RowAction}"></Button>
+                                </DataTemplate>
+                              </Setter.Value>
+                            </Setter>
+                            <Setter Property="Visibility" Value="Visible" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </ContentControl.Style>
+                  </ContentControl>
+                </StackPanel>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="NotesColumn" Header="Notes" Width="180" SortMemberPath="Notes">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Notes}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Notes, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Notes" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="ManufacturerColumn" Header="Manufacturer" Width="120" SortMemberPath="Manufacturer">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Manufacturer}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Manufacturer, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Manufacturer" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="BrandColumn" Header="Brand" Width="110" SortMemberPath="Brand">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Brand}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Brand, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Brand" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="DesignerColumn" Header="Designer" Width="110" SortMemberPath="Designer">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Designer}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Designer, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Designer" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="TypeColumn" Header="Type" Width="100" SortMemberPath="Type">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Type}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <ComboBox ItemsSource="{Binding Editor.Types}" SelectedItem="{Binding Editor.Type, UpdateSourceTrigger=PropertyChanged}" IsEditable="False" AutomationProperties.Name="Type" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="FamilyColumn" Header="Family" Width="85" SortMemberPath="Family">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Family}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <ComboBox ItemsSource="{Binding Editor.Families}" Text="{Binding Editor.Family, UpdateSourceTrigger=PropertyChanged}" IsEditable="True" AutomationProperties.Name="Family" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="LowProfileColumn" Header="Low profile" Width="85" SortMemberPath="LowProfile">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding LowProfile}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <ComboBox ItemsSource="{Binding Editor.LowProfileOptions}" SelectedItem="{Binding Editor.LowProfile, UpdateSourceTrigger=PropertyChanged}" IsEditable="False" AutomationProperties.Name="LowProfile" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="ProfileColumn" Header="Profile" Width="85" SortMemberPath="Profile">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Profile}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Profile, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Profile" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="MaterialColumn" Header="Material" Width="85" SortMemberPath="Material">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Material}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Material, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Material" Margin="3,2" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn x:Name="VariantsColumn" Header="Variants" Width="140" SortMemberPath="Variants">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                  <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                      <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding Variants}" Style="{StaticResource PartCellText}" />
+                          </DataTemplate>
+                        </Setter.Value>
+                      </Setter>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDescribing}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <TextBox Text="{Binding Editor.Variants, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Variants" Margin="3,2" AcceptsReturn="True" ToolTip="One variant per line" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ContentControl.Style>
+                </ContentControl>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTextColumn Header="Added" Binding="{Binding AddedAt, StringFormat=yyyy-MM-dd}" Width="90" ElementStyle="{StaticResource PartCellText}" />
+        </DataGrid.Columns>
+      </DataGrid>
+      <Border Background="{DynamicResource WindowBackgroundBrush}" Padding="24" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="420">
+        <Border.Style>
+          <Style TargetType="Border">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding EmptyText}" Value="">
+                <Setter Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Border.Style>
+        <TextBlock Text="{Binding EmptyText}" TextWrapping="Wrap" TextAlignment="Center" />
+      </Border>
+    </Grid>
+    <local:ToastMessagePanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="8" Panel.ZIndex="1" ToastMessage="{Binding ToastMessage}" ToastVisibility="{Binding ToastVisibility}" IsHitTestVisible="False" AutomationProperties.LiveSetting="Polite" />
+  </Grid>
+</UserControl>

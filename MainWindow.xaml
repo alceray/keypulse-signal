@@ -1,4 +1,4 @@
-﻿<Window
+<Window
   x:Class="KeyPulse.MainWindow"
   Style="{StaticResource AppWindowStyle}"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,6 +6,7 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:views="clr-namespace:KeyPulse.Views"
+  xmlns:collection="clr-namespace:KeyPulse.Views.Collection"
   mc:Ignorable="d"
   Height="1200"
   Width="1600"
@@ -22,6 +23,9 @@
       </TabItem>
       <TabItem Header="{Binding DataContext.DeviceTitleWithCount, ElementName=DeviceListViewControl}">
         <views:DeviceListView x:Name="DeviceListViewControl" />
+      </TabItem>
+      <TabItem Header="Collection">
+        <collection:CollectionView x:Name="Collection" />
       </TabItem>
       <TabItem Header="Settings">
         <views:SettingsView />

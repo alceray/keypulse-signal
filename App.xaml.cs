@@ -309,8 +309,14 @@ public partial class App
             if (_updateService != null)
                 _updateService.UpdateStatusChanged -= OnUpdateAvailable;
             DisposeActivationSignalResources();
-            DisposeMutexResources();
+            if (!_isSessionEnding)
+                ShutdownDispose.TryStep(
+                    () =>
+                        ServiceProvider?.GetService<CollectionService>()?.StopAndDrainAsync().GetAwaiter().GetResult(),
+                    "collection writes drain"
+                );
             DisposeServicesForExitPath();
+            DisposeMutexResources();
         }
         catch (Exception ex)
         {

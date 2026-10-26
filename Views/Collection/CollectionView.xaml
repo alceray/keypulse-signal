@@ -1,0 +1,88 @@
+<UserControl
+  x:Class="KeyPulse.Views.Collection.CollectionView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:collection="clr-namespace:KeyPulse.Views.Collection">
+  <UserControl.Resources>
+    <Style
+      x:Key="CategoryTab"
+      TargetType="TabItem">
+      <Setter
+        Property="Foreground"
+        Value="{DynamicResource PrimaryTextBrush}" />
+      <Setter
+        Property="Padding"
+        Value="14,6" />
+      <Setter
+        Property="Template">
+        <Setter.Value>
+          <ControlTemplate
+            TargetType="TabItem">
+            <Border
+              x:Name="Chrome"
+              Background="Transparent"
+              BorderBrush="Transparent"
+              CornerRadius="4,4,0,0"
+              BorderThickness="0,0,0,2"
+              Padding="{TemplateBinding Padding}">
+              <ContentPresenter
+                x:Name="Header"
+                ContentSource="Header"
+                RecognizesAccessKey="True" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger
+                Property="IsSelected"
+                Value="True">
+                <Setter
+                  TargetName="Chrome"
+                  Property="Background"
+                  Value="{DynamicResource SelectionBrush}" />
+                <Setter
+                  TargetName="Chrome"
+                  Property="BorderBrush"
+                  Value="{DynamicResource AccentBrush}" />
+                <Setter
+                  TargetName="Header"
+                  Property="TextElement.FontWeight"
+                  Value="SemiBold" />
+              </Trigger>
+              <Trigger
+                Property="IsMouseOver"
+                Value="True">
+                <Setter
+                  TargetName="Chrome"
+                  Property="Background"
+                  Value="{DynamicResource HoverBrush}" />
+              </Trigger>
+              <Trigger
+                Property="IsKeyboardFocused"
+                Value="True">
+                <Setter
+                  TargetName="Chrome"
+                  Property="Background"
+                  Value="{DynamicResource SelectionBrush}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+  <TabControl
+    x:Name="CategoryTabs"
+    SelectedIndex="0"
+    Margin="0"
+    BorderThickness="0"
+    Background="Transparent">
+    <TabItem
+      Header="{Binding Switches.Category}"
+      Style="{StaticResource CategoryTab}">
+      <collection:PartListView
+        DataContext="{Binding Switches}" />
+    </TabItem>
+    <TabItem
+      Header="{Binding Keycaps.Category}"
+      Style="{StaticResource CategoryTab}">
+      <collection:PartListView
+        DataContext="{Binding Keycaps}" />
+    </TabItem>
+  </TabControl>
+</UserControl>

@@ -1,4 +1,4 @@
-﻿# KeyPulse Signal
+# KeyPulse Signal
 
 **Know exactly which board or mouse you picked up today, and how hard you pushed it.**
 
@@ -39,6 +39,15 @@ KeyPulse Signal is a Windows desktop app that tracks how much you use each USB k
 - Use the device list context menu to hide a device from the dashboard and calendar, or to unhide it later.
 - Hidden devices keep tracking and remain accessible in the device list.
 - Pause tracking for the current session when needed.
+
+### Manage your collection
+
+- Open **Collection** and choose the Switches or Keycaps subtab. Owned items appear above the catalog in one list.
+- Search and filter both sections. Enter a total quantity and press Enter or Save to add or update a product; zero asks to remove ownership.
+- Add custom item inserts an editable row. Save the row to keep it in your database, or cancel to discard it.
+- Use row icons to add, remove, edit notes, or change quantity by 10 switches / 1 keycap kit. Custom descriptions edit in the table too. Removal asks for confirmation.
+- Quantities count individual switches (up to 10,000 per product) or keycap sets/kits (up to 100).
+- Collections persist across restarts and supported database transfers. Subtabs retain their search, filters, and selection while the app is open.
 
 ## Privacy and your data
 

@@ -1,6 +1,14 @@
-﻿# Changelog
+# Changelog
 
 All notable changes to this project are documented in this file.
+
+## [Unreleased]
+
+### Added
+
+- Collection tab with Switches/Keycaps subtabs, owned items grouped above the catalog, inline custom rows and notes, compact quantity actions, shared toasts, and aligned search/filters.
+- Item editing with conflict reload, confirmed removal, and per-product limits of 10,000 switches or 100 keycap sets/kits.
+- Retained collection subtab state and draining accepted collection writes on normal exit, restart, and updater exit.
 
 ## [1.4.0] - 2026-09-08
 

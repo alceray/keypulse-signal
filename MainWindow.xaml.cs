@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 
 namespace KeyPulse;
 
@@ -10,5 +10,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        Closed += (_, _) => Collection.Dispose();
     }
 }
