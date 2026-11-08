@@ -67,7 +67,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
     public bool IsSwitch => Kind == PartKinds.Switch;
     public string Category => IsSwitch ? "Switches" : "Keycaps";
     private bool _isCollectionExpanded = true,
-        _isCatalogExpanded = true;
+        _isCatalogExpanded;
     public bool IsCollectionExpanded
     {
         get => _isCollectionExpanded;
@@ -177,7 +177,19 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         _searchTimer.Stop();
         _searchFilter = _catalogs.Search.CreateFilter(Search);
         Rows.Refresh();
+        ExpandSearchMatches();
         Notify();
+    }
+
+    private void ExpandSearchMatches()
+    {
+        if (string.IsNullOrWhiteSpace(Search))
+            return;
+        var matches = Rows.Cast<PartRow>().Where(row => !row.IsNew);
+        if (matches.Any(row => row.Item != null))
+            IsCollectionExpanded = true;
+        if (matches.Any(row => row.Item == null))
+            IsCatalogExpanded = true;
     }
 
     public void ClearFilters()
@@ -453,6 +465,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         }
         _synchronizing = false;
         Rows.Refresh();
+        ExpandSearchMatches();
         _selected = _rows.FirstOrDefault(x => x.Identity == selectedId);
         Notify();
     }
@@ -481,6 +494,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         if (!_synchronizing && args.PropertyName == nameof(PartFilter.Selected))
         {
             Rows.Refresh();
+            ExpandSearchMatches();
             Notify();
         }
     }

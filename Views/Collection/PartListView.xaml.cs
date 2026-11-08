@@ -21,8 +21,7 @@ public partial class PartListView : UserControl
     }
 
     private PartListViewModel? Model => DataContext as PartListViewModel;
-    private double _verticalOffset,
-        _horizontalOffset,
+    private double _horizontalOffset,
         _collectionHeight;
     private bool _openingCollection;
 
@@ -33,12 +32,18 @@ public partial class PartListView : UserControl
         Loaded += (_, _) =>
         {
             ConfigureColumns();
+            if (Model is { } model)
+            {
+                model.IsCollectionExpanded = true;
+                model.IsCatalogExpanded = false;
+                model.ApplySearch();
+                OpenPinnedCollection(this, new RoutedEventArgs());
+            }
             Dispatcher.BeginInvoke(
                 DispatcherPriority.Loaded,
                 new Action(() =>
                 {
                     var scroll = FindScrollViewer(PartsGrid);
-                    scroll?.ScrollToVerticalOffset(_verticalOffset);
                     scroll?.ScrollToHorizontalOffset(_horizontalOffset);
                 })
             );
@@ -46,10 +51,36 @@ public partial class PartListView : UserControl
         Unloaded += (_, _) =>
         {
             var scroll = FindScrollViewer(PartsGrid);
-            _verticalOffset = scroll?.VerticalOffset ?? 0;
             _horizontalOffset = scroll?.HorizontalOffset ?? 0;
             Model?.DiscardPendingChanges();
         };
+    }
+
+    private void FilterMouseDownOutside(object sender, MouseButtonEventArgs e)
+    {
+        if (e.ChangedButton != MouseButton.Left || sender is not ComboBox current)
+            return;
+        e.Handled = SwitchFilterAt(current, e.GetPosition(this));
+    }
+
+    internal bool SwitchFilterAt(ComboBox current, Point position)
+    {
+        var target = FindAncestor<ComboBox>(InputHitTest(position) as DependencyObject);
+        if (target == null || target == current || target.DataContext is not PartFilter || !target.IsEnabled)
+            return false;
+        current.IsDropDownOpen = false;
+        // Finish the current mouse event and release the old popup's capture before opening another.
+        Dispatcher.BeginInvoke(
+            DispatcherPriority.Background,
+            new Action(() =>
+            {
+                if (!IsLoaded || !target.IsVisible || !target.IsEnabled)
+                    return;
+                target.Focus();
+                target.IsDropDownOpen = true;
+            })
+        );
+        return true;
     }
 
     private void ConfigureColumns()

@@ -14,6 +14,52 @@ namespace KeyPulse.Tests.ViewModels;
 
 public class PartsViewModelTests
 {
+    [Fact]
+    public void Search_ExpandsMatchingSectionsAndRespectsFilters() =>
+        Run(async () =>
+        {
+            using var scope = new Scope();
+            using var list = scope.List();
+            await list.InitializeAsync();
+            await scope.Collection.AddCustomAsync(
+                PartKinds.Switch,
+                new("Sample custom", "Custom maker", null, null, new SwitchPartDetails()),
+                10,
+                null
+            );
+            await Pump();
+
+            list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            list.Search = "sample";
+            list.ApplySearch();
+            list.IsCollectionExpanded.ShouldBeTrue();
+            list.IsCatalogExpanded.ShouldBeTrue();
+
+            list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            list.Search = "custom";
+            list.ApplySearch();
+            list.IsCollectionExpanded.ShouldBeTrue();
+            list.IsCatalogExpanded.ShouldBeFalse();
+
+            list.Search = "sample";
+            list.Filters.Single(filter => filter.Label == "Manufacturer").Selected = "Custom maker";
+            list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            list.ApplySearch();
+            list.IsCollectionExpanded.ShouldBeTrue();
+            list.IsCatalogExpanded.ShouldBeFalse();
+            list.Filters.Single(filter => filter.Label == "Manufacturer").Selected = PartFilter.Any;
+            list.IsCatalogExpanded.ShouldBeTrue();
+
+            list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            list.Search = "no matching item";
+            list.ApplySearch();
+            list.IsCollectionExpanded.ShouldBeFalse();
+            list.IsCatalogExpanded.ShouldBeFalse();
+            list.ClearFilters();
+            list.IsCollectionExpanded.ShouldBeFalse();
+            list.IsCatalogExpanded.ShouldBeFalse();
+        });
+
     [Theory]
     [InlineData("notes", false)]
     [InlineData("notes", true)]

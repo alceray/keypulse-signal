@@ -7,7 +7,7 @@
       <StackPanel>
         <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1">
           <Border.Style><Style TargetType="Border"><Style.Triggers><DataTrigger Binding="{Binding Name}" Value="My collection"><Setter Property="Visibility" Value="Collapsed" /></DataTrigger></Style.Triggers></Style></Border.Style>
-          <ToggleButton HorizontalAlignment="Stretch" Padding="4,0" BorderThickness="0" Background="{DynamicResource SurfaceBrush}" AutomationProperties.Name="{Binding Name}" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+          <ToggleButton Cursor="Hand" HorizontalAlignment="Stretch" Padding="4,0" BorderThickness="0" Background="{DynamicResource SurfaceBrush}" AutomationProperties.Name="{Binding Name}" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
             <ToggleButton.FocusVisualStyle>
               <Style TargetType="Control">
                 <Setter Property="Template">
@@ -110,7 +110,7 @@
           <DataTemplate>
             <StackPanel Margin="0,0,8,8" Width="102">
               <TextBlock Text="{Binding Label}" Margin="0,0,0,4" />
-              <ComboBox ItemsSource="{Binding Options}" SelectedItem="{Binding Selected}" AutomationProperties.Name="{Binding Label}" />
+              <ComboBox ItemsSource="{Binding Options}" SelectedItem="{Binding Selected}" AutomationProperties.Name="{Binding Label}" Mouse.PreviewMouseDownOutsideCapturedElement="FilterMouseDownOutside" />
             </StackPanel>
           </DataTemplate>
         </ItemsControl.ItemTemplate>
@@ -142,7 +142,7 @@
                       <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
                       <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /><RowDefinition Height="*" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
                       <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Row="0" />
-                      <ToggleButton Grid.Row="1" Grid.ColumnSpan="2" x:Name="PinnedCollectionHeader" IsChecked="{Binding IsCollectionExpanded, Mode=TwoWay}" Click="OpenPinnedCollection" HorizontalContentAlignment="Stretch" AutomationProperties.Name="My collection" Padding="12,8" Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource PrimaryTextBrush}">
+                      <ToggleButton Grid.Row="1" Grid.ColumnSpan="2" x:Name="PinnedCollectionHeader" Cursor="Hand" IsChecked="{Binding IsCollectionExpanded, Mode=TwoWay}" Click="OpenPinnedCollection" HorizontalContentAlignment="Stretch" AutomationProperties.Name="My collection" Padding="12,8" Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource PrimaryTextBrush}">
                         <ToggleButton.Template>
                           <ControlTemplate TargetType="ToggleButton">
                             <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1">
@@ -218,12 +218,6 @@
             <Setter Property="DetailsVisibility" Value="Collapsed" />
             <EventSetter Event="PreviewMouseRightButtonDown" Handler="RightClickRow" />
             <Style.Triggers>
-              <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SelectionBrush}" />
-              </Trigger>
-              <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
-              </Trigger>
               <DataTrigger Binding="{Binding IsPendingRemoval}" Value="True">
                 <Setter Property="Background" Value="{StaticResource PendingRemovalBackground}" />
                 <Setter Property="BorderBrush" Value="{StaticResource PendingRemovalBorder}" />

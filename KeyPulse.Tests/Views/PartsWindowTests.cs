@@ -83,6 +83,41 @@ public class PartsWindowTests
                 owner.Show();
                 await scope.Collection.InitializeAsync();
                 await PartsViewModelTests.Pump();
+                host.Switches.IsCollectionExpanded.ShouldBeTrue();
+                host.Switches.IsCatalogExpanded.ShouldBeFalse();
+                host.Switches.IsCatalogExpanded = true;
+                await PartsViewModelTests.Pump();
+                var filterMenus = Descendants<ComboBox>(host).Where(x => x.DataContext is PartFilter).ToArray();
+                var filterView = Descendants<PartListView>(host).Single();
+                try
+                {
+                    filterMenus[0].IsDropDownOpen = true;
+                    await PartsViewModelTests.Pump();
+                    var targetPosition = filterMenus[1]
+                        .TranslatePoint(
+                            new Point(filterMenus[1].ActualWidth / 2, filterMenus[1].ActualHeight / 2),
+                            filterView
+                        );
+                    filterView.SwitchFilterAt(filterMenus[0], targetPosition).ShouldBeTrue();
+                    // The new popup must not acquire capture during the old popup's mouse event.
+                    filterMenus[0].IsDropDownOpen.ShouldBeFalse();
+                    filterMenus[1].IsDropDownOpen.ShouldBeFalse();
+                    await PartsViewModelTests.Pump();
+                    filterMenus[0].IsDropDownOpen.ShouldBeFalse();
+                    filterMenus[1].IsDropDownOpen.ShouldBeTrue();
+                    var firstPosition = filterMenus[0].TranslatePoint(new Point(5, 5), filterView);
+                    filterView.SwitchFilterAt(filterMenus[1], firstPosition).ShouldBeTrue();
+                    filterMenus[0].IsDropDownOpen.ShouldBeFalse();
+                    await PartsViewModelTests.Pump();
+                    filterMenus[0].IsDropDownOpen.ShouldBeTrue();
+                    filterMenus[1].IsDropDownOpen.ShouldBeFalse();
+                    filterView.SwitchFilterAt(filterMenus[1], new Point(-1, -1)).ShouldBeFalse();
+                }
+                finally
+                {
+                    foreach (var menu in filterMenus)
+                        menu.IsDropDownOpen = false;
+                }
                 var performance = new List<string>();
                 var measuredGrid = Descendants<DataGrid>(host).Single();
                 var measuredScroll = Descendants<ScrollViewer>(measuredGrid).First();
@@ -149,6 +184,8 @@ public class PartsWindowTests
                 Save(owner, "keycaps-expanded-width", false);
                 sizingTabs.SelectedIndex = 0;
                 owner.Width = 1000;
+                await PartsViewModelTests.Pump();
+                host.Switches.IsCatalogExpanded = true;
                 await scope.Collection.AddCustomAsync(
                     PartKinds.Switch,
                     new(
@@ -407,6 +444,10 @@ public class PartsWindowTests
                 scope.Collection.FindOwned(PartKinds.Switch, row.Entry!.Id)!.Notes.ShouldBe("Click away saves notes");
                 tabs.SelectedIndex = 1;
                 await PartsViewModelTests.Pump();
+                host.Keycaps.IsCollectionExpanded.ShouldBeTrue();
+                host.Keycaps.IsCatalogExpanded.ShouldBeFalse();
+                host.Keycaps.IsCatalogExpanded = true;
+                await PartsViewModelTests.Pump();
                 var capRow = (PartRow)
                     Descendants<Button>(host)
                         .First(x =>
@@ -495,7 +536,8 @@ public class PartsWindowTests
                 host.Switches.IsCollectionExpanded = false;
                 tabs.SelectedIndex = 0;
                 await PartsViewModelTests.Pump();
-                Descendants<Expander>(host).ShouldAllBe(x => !x.IsExpanded);
+                host.Switches.IsCollectionExpanded.ShouldBeTrue();
+                host.Switches.IsCatalogExpanded.ShouldBeFalse();
                 var revealDraft = host.Switches.AddCustom()!;
                 host.Switches.IsCollectionExpanded.ShouldBeTrue();
                 host.Switches.IsCatalogExpanded.ShouldBeFalse();
