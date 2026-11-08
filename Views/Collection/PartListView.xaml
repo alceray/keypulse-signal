@@ -241,7 +241,7 @@
           </ContextMenu>
         </DataGrid.ContextMenu>
         <DataGrid.Columns>
-          <DataGridTemplateColumn x:Name="NameColumn" Header="Name" Width="200" SortMemberPath="Name">
+          <DataGridTemplateColumn x:Name="NameColumn" Header="Name" Width="200" MinWidth="200" SortMemberPath="Name">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -271,7 +271,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="QuantityColumn" Header="Qty" Width="70" SortMemberPath="Quantity">
+          <DataGridTemplateColumn x:Name="QuantityColumn" Header="Qty" Width="70" MinWidth="70" SortMemberPath="Quantity">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Grid Margin="3,2" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -280,7 +280,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn Header="" Width="142" CanUserSort="False">
+          <DataGridTemplateColumn Header="" Width="142" MinWidth="142" CanUserSort="False">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <StackPanel Orientation="Horizontal" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -402,7 +402,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="NotesColumn" Header="Notes" Width="180" SortMemberPath="Notes">
+          <DataGridTemplateColumn x:Name="NotesColumn" Header="Notes" Width="180" MinWidth="180" SortMemberPath="Notes">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}" TextBox.LostKeyboardFocus="NotesLostFocus" TextBox.PreviewKeyDown="NotesKeyDown">
@@ -432,7 +432,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="ManufacturerColumn" Header="Manufacturer" Width="120" SortMemberPath="Manufacturer">
+          <DataGridTemplateColumn x:Name="ManufacturerColumn" Header="Manufacturer" Width="120" MinWidth="120" SortMemberPath="Manufacturer">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -462,7 +462,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="BrandColumn" Header="Brand" Width="110" SortMemberPath="Brand">
+          <DataGridTemplateColumn x:Name="BrandColumn" Header="Brand" Width="110" MinWidth="110" SortMemberPath="Brand">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -492,7 +492,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="DesignerColumn" Header="Designer" Width="110" SortMemberPath="Designer">
+          <DataGridTemplateColumn x:Name="DesignerColumn" Header="Designer" Width="110" MinWidth="110" SortMemberPath="Designer">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -522,7 +522,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="TypeColumn" Header="Type" Width="100" SortMemberPath="Type">
+          <DataGridTemplateColumn x:Name="TypeColumn" Header="Type" Width="100" MinWidth="100" SortMemberPath="Type">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -552,7 +552,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="FamilyColumn" Header="Family" Width="85" SortMemberPath="Family">
+          <DataGridTemplateColumn x:Name="FamilyColumn" Header="Family" Width="85" MinWidth="85" SortMemberPath="Family">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -582,7 +582,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="LowProfileColumn" Header="Low profile" Width="85" SortMemberPath="LowProfile">
+          <DataGridTemplateColumn x:Name="LowProfileColumn" Header="Low profile" Width="85" MinWidth="85" SortMemberPath="LowProfile">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -612,7 +612,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="ProfileColumn" Header="Profile" Width="85" SortMemberPath="Profile">
+          <DataGridTemplateColumn x:Name="ProfileColumn" Header="Profile" Width="85" MinWidth="85" SortMemberPath="Profile">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -642,7 +642,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="MaterialColumn" Header="Material" Width="85" SortMemberPath="Material">
+          <DataGridTemplateColumn x:Name="MaterialColumn" Header="Material" Width="85" MinWidth="85" SortMemberPath="Material">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -672,7 +672,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTemplateColumn x:Name="VariantsColumn" Header="Variants" Width="140" SortMemberPath="Variants">
+          <DataGridTemplateColumn x:Name="VariantsColumn" Header="Variants" Width="140" MinWidth="140" SortMemberPath="Variants">
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
@@ -702,7 +702,7 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTextColumn Header="Added" Binding="{Binding AddedAt, StringFormat=yyyy-MM-dd}" Width="90" ElementStyle="{StaticResource PartCellText}" />
+          <DataGridTextColumn Header="Added" Binding="{Binding AddedAt, StringFormat=yyyy-MM-dd}" Width="90" MinWidth="90" ElementStyle="{StaticResource PartCellText}" />
         </DataGrid.Columns>
       </DataGrid>
       <Border Background="{DynamicResource WindowBackgroundBrush}" Padding="24" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="420">

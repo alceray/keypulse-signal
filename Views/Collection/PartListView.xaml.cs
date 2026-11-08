@@ -59,6 +59,26 @@ public partial class PartListView : UserControl
             column.Visibility = Model.IsSwitch ? Visibility.Visible : Visibility.Collapsed;
         foreach (var column in new[] { ProfileColumn, MaterialColumn })
             column.Visibility = Model.IsSwitch ? Visibility.Collapsed : Visibility.Visible;
+        FillColumnSpace();
+    }
+
+    private void FillColumnSpace()
+    {
+        if (FindScrollViewer(PartsGrid) is not { ViewportWidth: > 0 } scroll)
+            return;
+        var fixedWidth = PartsGrid
+            .Columns.Where(column =>
+                column.Visibility == Visibility.Visible && column != NameColumn && column != NotesColumn
+            )
+            .Sum(column => column.Width.Value);
+        var extra = Math.Max(0, scroll.ViewportWidth - fixedWidth - NameColumn.MinWidth - NotesColumn.MinWidth);
+        // Explicit pixel widths avoid WPF's grouped-grid star sizing squeezing other columns.
+        foreach (var column in new[] { NameColumn, NotesColumn })
+        {
+            var width = column.MinWidth + extra / 2;
+            if (Math.Abs(column.Width.Value - width) > 0.1)
+                column.Width = new DataGridLength(width);
+        }
     }
 
     private void OpenPinnedCollection(object sender, RoutedEventArgs e)
@@ -79,10 +99,12 @@ public partial class PartListView : UserControl
 
     private void TableScrolled(object sender, ScrollChangedEventArgs e)
     {
-        if (Model is not { IsCollectionExpanded: true } model)
-            return;
         var scroll = FindScrollViewer(PartsGrid);
-        if (!ReferenceEquals(e.OriginalSource, scroll) || model.Rows.Groups is not { Count: > 0 } groups)
+        if (!ReferenceEquals(e.OriginalSource, scroll))
+            return;
+        if (e.ViewportWidthChange != 0 || e.ExtentWidthChange != 0)
+            FillColumnSpace();
+        if (Model is not { IsCollectionExpanded: true } model || model.Rows.Groups is not { Count: > 0 } groups)
             return;
         // Virtualization can release the collection group once it leaves the viewport.
         if (PartsGrid.ItemContainerGenerator.ContainerFromItem(groups[0]) is GroupItem { ActualHeight: > 0 } group)

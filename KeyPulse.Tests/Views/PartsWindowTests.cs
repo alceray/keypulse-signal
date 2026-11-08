@@ -121,18 +121,33 @@ public class PartsWindowTests
                             .Y.ShouldBe(lastFilter.TranslatePoint(new Point(0, lastFilter.ActualHeight), owner).Y, 1);
                     }
                     var initialGrid = Descendants<DataGrid>(host).Single();
-                    foreach (var column in initialGrid.Columns.Where(x => x.Visibility == Visibility.Visible))
-                        column.ActualWidth.ShouldBe(column.Width.Value, 1);
+                    AssertColumnWidths(initialGrid);
                     host.Switches.IsCollectionExpanded = false;
                     host.Switches.IsCatalogExpanded = false;
                     await PartsViewModelTests.Pump();
                     host.Switches.IsCollectionExpanded = true;
                     host.Switches.IsCatalogExpanded = true;
                     await PartsViewModelTests.Pump();
-                    foreach (var column in initialGrid.Columns.Where(x => x.Visibility == Visibility.Visible))
-                        column.ActualWidth.ShouldBe(column.Width.Value, 1);
+                    AssertColumnWidths(initialGrid);
                 }
                 Save(owner, "empty-collection-wide", false);
+                var sizingTabs = Descendants<TabControl>(host).Single();
+                sizingTabs.SelectedIndex = 1;
+                foreach (var width in new[] { 1800, 800, 1800 })
+                {
+                    owner.Width = width;
+                    await PartsViewModelTests.Pump();
+                    AssertColumnWidths(Descendants<DataGrid>(host).Single());
+                    host.Keycaps.IsCollectionExpanded = false;
+                    host.Keycaps.IsCatalogExpanded = false;
+                    await PartsViewModelTests.Pump();
+                    AssertColumnWidths(Descendants<DataGrid>(host).Single());
+                    host.Keycaps.IsCollectionExpanded = true;
+                    host.Keycaps.IsCatalogExpanded = true;
+                    await PartsViewModelTests.Pump();
+                }
+                Save(owner, "keycaps-expanded-width", false);
+                sizingTabs.SelectedIndex = 0;
                 owner.Width = 1000;
                 await scope.Collection.AddCustomAsync(
                     PartKinds.Switch,
@@ -536,6 +551,19 @@ public class PartsWindowTests
                 app.Shutdown();
             }
         });
+    }
+
+    private static void AssertColumnWidths(DataGrid grid)
+    {
+        var columns = grid.Columns.Where(x => x.Visibility == Visibility.Visible).ToArray();
+        foreach (var column in columns)
+        {
+            column.ActualWidth.ShouldBeGreaterThanOrEqualTo(column.MinWidth);
+            column.ActualWidth.ShouldBe(column.Width.Value, 1);
+        }
+        var minimum = columns.Sum(column => column.MinWidth);
+        var viewport = Descendants<ScrollViewer>(grid).First().ViewportWidth;
+        columns.Sum(column => column.ActualWidth).ShouldBe(Math.Max(minimum, viewport), 2);
     }
 
     private static IEnumerable<T> Descendants<T>(DependencyObject parent)
