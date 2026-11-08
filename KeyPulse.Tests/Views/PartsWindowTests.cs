@@ -151,8 +151,10 @@ public class PartsWindowTests
                     {
                         var lastFilter = Descendants<ComboBox>(host).Last(x => x.DataContext is PartFilter);
                         var addCustom = Descendants<Button>(host).Single(x => Equals(x.Content, "Add custom item"));
-                        addCustom
-                            .TranslatePoint(new Point(0, addCustom.ActualHeight), owner)
+                        addCustom.Visibility.ShouldBe(Visibility.Collapsed);
+                        var clearFilters = Descendants<Button>(host).Single(x => Equals(x.Content, "Clear filters"));
+                        clearFilters
+                            .TranslatePoint(new Point(0, clearFilters.ActualHeight), owner)
                             .Y.ShouldBe(lastFilter.TranslatePoint(new Point(0, lastFilter.ActualHeight), owner).Y, 1);
                     }
                     var initialGrid = Descendants<DataGrid>(host).Single();

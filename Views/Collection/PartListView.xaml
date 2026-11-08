@@ -98,7 +98,7 @@
           <CompositeCollection>
             <CollectionContainer Collection="{Binding Source={StaticResource FilterOptions}}" />
             <Button Content="Clear filters" Command="{Binding ClearFiltersCommand}" VerticalAlignment="Bottom" Margin="0,0,8,8" />
-            <Button Content="Add custom item" Click="AddCustom" IsEnabled="{Binding CanMutate}" VerticalAlignment="Bottom" Margin="0,0,0,8" />
+            <Button Content="Add custom item" Visibility="Collapsed" Click="AddCustom" IsEnabled="{Binding CanMutate}" VerticalAlignment="Bottom" Margin="0,0,0,8" />
           </CompositeCollection>
         </ItemsControl.ItemsSource>
         <ItemsControl.ItemsPanel>

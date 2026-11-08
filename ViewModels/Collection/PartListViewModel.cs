@@ -177,13 +177,13 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         _searchTimer.Stop();
         _searchFilter = _catalogs.Search.CreateFilter(Search);
         Rows.Refresh();
-        ExpandSearchMatches();
+        ExpandMatchingSections();
         Notify();
     }
 
-    private void ExpandSearchMatches()
+    private void ExpandMatchingSections()
     {
-        if (string.IsNullOrWhiteSpace(Search))
+        if (string.IsNullOrWhiteSpace(Search) && Filters.All(filter => filter.Selected == PartFilter.Any))
             return;
         var matches = Rows.Cast<PartRow>().Where(row => !row.IsNew);
         if (matches.Any(row => row.Item != null))
@@ -465,7 +465,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         }
         _synchronizing = false;
         Rows.Refresh();
-        ExpandSearchMatches();
+        ExpandMatchingSections();
         _selected = _rows.FirstOrDefault(x => x.Identity == selectedId);
         Notify();
     }
@@ -494,7 +494,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         if (!_synchronizing && args.PropertyName == nameof(PartFilter.Selected))
         {
             Rows.Refresh();
-            ExpandSearchMatches();
+            ExpandMatchingSections();
             Notify();
         }
     }

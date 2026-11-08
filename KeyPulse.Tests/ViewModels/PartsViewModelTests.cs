@@ -15,7 +15,7 @@ namespace KeyPulse.Tests.ViewModels;
 public class PartsViewModelTests
 {
     [Fact]
-    public void Search_ExpandsMatchingSectionsAndRespectsFilters() =>
+    public void SearchAndFilters_ExpandMatchingSections() =>
         Run(async () =>
         {
             using var scope = new Scope();
@@ -51,6 +51,26 @@ public class PartsViewModelTests
             list.IsCatalogExpanded.ShouldBeTrue();
 
             list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            list.Search = "";
+            list.ApplySearch();
+            var manufacturer = list.Filters.Single(filter => filter.Label == "Manufacturer");
+            manufacturer.Selected = "Custom maker";
+            list.IsCollectionExpanded.ShouldBeTrue();
+            list.IsCatalogExpanded.ShouldBeFalse();
+
+            list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            manufacturer.Selected = manufacturer.Options.Single(option => option != PartFilter.Any && option != "Custom maker");
+            list.IsCollectionExpanded.ShouldBeFalse();
+            list.IsCatalogExpanded.ShouldBeTrue();
+
+            list.IsCollectionExpanded = list.IsCatalogExpanded = false;
+            manufacturer.Selected = "No matching maker";
+            list.IsCollectionExpanded.ShouldBeFalse();
+            list.IsCatalogExpanded.ShouldBeFalse();
+            list.ClearFilters();
+            list.IsCollectionExpanded.ShouldBeFalse();
+            list.IsCatalogExpanded.ShouldBeFalse();
+
             list.Search = "no matching item";
             list.ApplySearch();
             list.IsCollectionExpanded.ShouldBeFalse();
