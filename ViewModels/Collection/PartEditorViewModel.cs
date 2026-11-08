@@ -25,6 +25,49 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         _material = "",
         _message = "";
     private string _lowProfile = "Not listed";
+    private string[] _originalValues = [];
+    private string QuantityDraftValue =>
+        Quantity.Value?.ToString(System.Globalization.CultureInfo.InvariantCulture) ?? Quantity.Text;
+
+    private string[] DraftValues() =>
+        [
+            Name,
+            Manufacturer,
+            Brand,
+            Designer,
+            Variants,
+            Type,
+            Family,
+            LowProfile,
+            Profile,
+            Material,
+            QuantityDraftValue,
+        ];
+
+    public bool HasChanges =>
+        (_item == null && !string.IsNullOrWhiteSpace(Name))
+        || HasNotesChanges
+        || !DraftValues().SequenceEqual(_originalValues);
+    public bool HasNotesChanges => Notes != (_item?.Notes ?? "");
+    public bool HasQuantityChanges => QuantityDraftValue != _originalValues[^1];
+    public CollectionSnapshot? OriginalItem => _item;
+    public CollectionResult? LastResult { get; private set; }
+
+    public void ResetQuantity() => Quantity.Text = _originalValues[^1];
+
+    public void Refresh(CollectionSnapshot item)
+    {
+        if (!_busy && !HasChanges && !_conflict && _item?.Revision != item.Revision)
+            Reset(item);
+    }
+
+    public void Reset(CollectionSnapshot item)
+    {
+        _item = item;
+        _conflict = false;
+        _message = "";
+        Populate(item, "");
+    }
 
     public PartEditorViewModel(
         string kind,
@@ -227,6 +270,7 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         );
     public bool CanSave =>
         !_disposed
+        && HasChanges
         && !_busy
         && !_conflict
         && _collection.IsLoaded
@@ -253,10 +297,33 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         if (_disposed)
             return false;
         _busy = false;
+        LastResult = result;
         _conflict = result.Status == CollectionResultStatus.Conflict;
         _message = result.Message ?? "";
+        if (result.Succeeded && _item != null)
+            Reset(result.Items.Single(x => x.ItemKey == _item.ItemKey));
         Changed();
         return result.Succeeded;
+    }
+
+    public async Task<CollectionResult?> SaveNotesAsync()
+    {
+        if (_disposed || _busy || _conflict || _item == null || !HasNotesChanges || this[nameof(Notes)].Length > 0)
+            return null;
+        _busy = true;
+        Changed();
+        // Commit notes only; leave quantity and descriptive drafts untouched.
+        var result = await _collection.UpdateAsync(_item, _item.Quantity, Notes);
+        if (_disposed)
+            return result;
+        _busy = false;
+        LastResult = result;
+        _conflict = result.Status == CollectionResultStatus.Conflict;
+        _message = result.Message ?? "";
+        if (result.Succeeded)
+            _item = result.Items.Single(x => x.ItemKey == _item.ItemKey);
+        Changed();
+        return result;
     }
 
     public async Task ReloadAsync()
@@ -309,6 +376,7 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         _profile = (item?.Details as KeycapPartDetails)?.Profile ?? "";
         _material = (item?.Details as KeycapPartDetails)?.Material ?? "";
         Quantity.Reset(item?.Quantity);
+        _originalValues = DraftValues();
         Changed();
     }
 

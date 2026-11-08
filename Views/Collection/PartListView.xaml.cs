@@ -22,7 +22,8 @@ public partial class PartListView : UserControl
 
     private PartListViewModel? Model => DataContext as PartListViewModel;
     private double _verticalOffset,
-        _horizontalOffset;
+        _horizontalOffset,
+        _collectionHeight;
 
     public PartListView()
     {
@@ -46,6 +47,7 @@ public partial class PartListView : UserControl
             var scroll = FindScrollViewer(PartsGrid);
             _verticalOffset = scroll?.VerticalOffset ?? 0;
             _horizontalOffset = scroll?.HorizontalOffset ?? 0;
+            Model?.DiscardPendingChanges();
         };
     }
 
@@ -59,12 +61,41 @@ public partial class PartListView : UserControl
             column.Visibility = Model.IsSwitch ? Visibility.Collapsed : Visibility.Visible;
     }
 
-    private void Edit(object sender, RoutedEventArgs e)
+    private void OpenPinnedCollection(object sender, RoutedEventArgs e)
     {
-        if (Model is not { } model || ActionRow(sender) is not { } row)
+        if (Model?.IsCollectionExpanded != true)
             return;
-        model.Edit(row);
-        PartsGrid.ScrollIntoView(row, NotesColumn);
+        Dispatcher.BeginInvoke(
+            DispatcherPriority.Loaded,
+            new Action(() =>
+            {
+                if (Model?.Rows.Cast<PartRow>().FirstOrDefault(row => row.Item != null || row.IsNew) is { } first)
+                    PartsGrid.ScrollIntoView(first);
+                PartsGrid.UpdateLayout();
+                FindScrollViewer(PartsGrid)?.ScrollToTop();
+            })
+        );
+    }
+
+    private void TableScrolled(object sender, ScrollChangedEventArgs e)
+    {
+        if (Model is not { IsCollectionExpanded: true } model)
+            return;
+        var scroll = FindScrollViewer(PartsGrid);
+        if (!ReferenceEquals(e.OriginalSource, scroll) || model.Rows.Groups is not { Count: > 0 } groups)
+            return;
+        // Virtualization can release the collection group once it leaves the viewport.
+        if (PartsGrid.ItemContainerGenerator.ContainerFromItem(groups[0]) is GroupItem { ActualHeight: > 0 } group)
+            _collectionHeight = group.ActualHeight;
+        if (
+            e.VerticalChange <= 0
+            || e.ViewportHeightChange != 0
+            || _collectionHeight <= 0
+            || scroll.VerticalOffset < _collectionHeight
+        )
+            return;
+        model.IsCollectionExpanded = false;
+        scroll.ScrollToVerticalOffset(Math.Max(0, scroll.VerticalOffset - _collectionHeight));
     }
 
     private void AddCustom(object sender, RoutedEventArgs e)
@@ -78,10 +109,47 @@ public partial class PartListView : UserControl
     private PartRow? ActionRow(object sender) =>
         (sender as FrameworkElement)?.DataContext as PartRow ?? Model?.Selected;
 
-    private async void SaveEdit(object sender, RoutedEventArgs e)
+    private async void SaveRow(object sender, RoutedEventArgs e)
     {
         if (Model is { } model && ActionRow(sender) is { } row)
-            await model.SaveEditAsync(row);
+        {
+            if (row.QuantityError.Length > 0)
+                model.ShowMessage(row.QuantityError);
+            else if (row.QuantityValue == 0 && row.Item != null || row.Editor == null)
+                SaveQuantity(sender, e);
+            else if (row.Editor.Error.Length > 0)
+                model.ShowMessage(row.Editor.Error);
+            else
+                await model.SaveEditAsync(row);
+        }
+    }
+
+    private async void NotesLostFocus(object sender, KeyboardFocusChangedEventArgs e)
+    {
+        if (e.NewFocus is Button { Name: "CancelRowButton" or "SaveRowButton" })
+            return;
+        if (Model is { } model && ActionRow(sender) is { } row && IsLoaded)
+        {
+            await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.Background);
+            if (IsLoaded)
+                await model.SaveNotesAsync(row);
+        }
+    }
+
+    private async void NotesKeyDown(object sender, KeyEventArgs e)
+    {
+        if (Model is not { } model || ActionRow(sender) is not { } row)
+            return;
+        if (e.Key == Key.Enter)
+        {
+            e.Handled = true;
+            await model.SaveNotesAsync(row);
+        }
+        else if (e.Key == Key.Escape)
+        {
+            e.Handled = true;
+            model.CancelEdit(row);
+        }
     }
 
     private void CancelEdit(object sender, RoutedEventArgs e)
@@ -98,43 +166,35 @@ public partial class PartListView : UserControl
 
     private void StepQuantity(object sender, RoutedEventArgs e, int direction)
     {
-        if (
-            Model is not { } model
-            || ActionRow(sender) is not { } row
-            || !model.CanChangeQuantity(row)
-            || row.HasQuantityDraft
-        )
+        if (Model is not { } model || ActionRow(sender) is not { } row || !model.CanChangeQuantity(row))
             return;
-        var quantity = Math.Max(0, row.Quantity + direction * (model.IsSwitch ? 10 : 1));
+        if (row.QuantityValue is not int current)
+        {
+            model.ShowMessage(row.QuantityError);
+            return;
+        }
+        var quantity = Math.Max(0, current + direction * (model.IsSwitch ? 10 : 1));
         if (quantity > PartKinds.MaxQuantity(model.Kind))
         {
             model.ShowMessage($"Maximum quantity is {PartKinds.MaxQuantity(model.Kind):N0}.");
             return;
         }
         row.QuantityText = quantity.ToString(System.Globalization.CultureInfo.InvariantCulture);
-        SaveQuantity(sender, e);
     }
 
-    private async void Remove(object sender, RoutedEventArgs e)
+    private void Remove(object sender, RoutedEventArgs e)
     {
-        if (Model is not { CanMutate: true } model || ActionRow(sender) is not { CanRemove: true, Item: { } item })
+        if (Model is not { CanMutate: true } || ActionRow(sender) is not { CanRemove: true } row)
             return;
-        var owner = Window.GetWindow(this);
-        if (!ConfirmRemoval(item))
+        row.QuantityText = "0";
+    }
+
+    private async void ReloadRow(object sender, RoutedEventArgs e)
+    {
+        if (Model is not { CanMutate: true, Selected: { } row } model)
             return;
-        var result = await model.RemoveAsync(item);
-        if (
-            result?.Status == CollectionResultStatus.Conflict
-            && IsLoaded
-            && MessageBox.Show(
-                owner,
-                "This item changed. Reload current values? Review them before requesting removal again.",
-                "Collection changed",
-                MessageBoxButton.OKCancel,
-                MessageBoxImage.Information
-            ) == MessageBoxResult.OK
-        )
-            await model.ReloadAsync();
+        await model.ReloadAsync();
+        model.CancelEdit(row);
     }
 
     private void CopyName(object sender, RoutedEventArgs e)
@@ -160,21 +220,16 @@ public partial class PartListView : UserControl
         }
     }
 
-    private void DoubleClick(object sender, MouseButtonEventArgs e)
-    {
-        if (ItemsControl.ContainerFromElement(PartsGrid, e.OriginalSource as DependencyObject) is not DataGridRow)
-            return;
-        if (
-            e.OriginalSource is DependencyObject target
-            && (FindAncestor<TextBox>(target) != null || FindAncestor<Button>(target) != null)
-        )
-            return;
-        Edit(sender, e);
-    }
-
     private void GridKeyDown(object sender, KeyEventArgs e)
     {
-        if (Keyboard.FocusedElement is TextBox or Button)
+        if (
+            e.OriginalSource is DependencyObject source
+            && (
+                FindAncestor<TextBox>(source) != null
+                || FindAncestor<Button>(source) != null
+                || FindAncestor<ComboBox>(source) != null
+            )
+        )
             return;
         if (e.Key == Key.Delete)
         {
@@ -183,7 +238,8 @@ public partial class PartListView : UserControl
         }
         else if (e.Key is Key.Enter or Key.F2)
         {
-            Edit(sender, e);
+            if (Model?.Selected is { } row)
+                PartsGrid.ScrollIntoView(row, NotesColumn);
             e.Handled = true;
         }
         else if (e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control)
@@ -214,7 +270,7 @@ public partial class PartListView : UserControl
         }
         else if (e.Key == Key.Enter)
         {
-            SaveQuantity(sender, e);
+            SaveRow(sender, e);
             e.Handled = true;
         }
     }
@@ -224,57 +280,18 @@ public partial class PartListView : UserControl
         if (
             Model is not { } model
             || sender is not FrameworkElement { DataContext: PartRow row }
-            || !model.CanChangeQuantity(row)
+            || !model.CanMutate
             || !row.CanSaveQuantity
         )
             return;
-        var confirmed = false;
-        if (row.QuantityValue == 0 && row.QuantityOriginal is { } item)
-        {
-            confirmed = ConfirmRemoval(item);
-            if (!confirmed)
-            {
-                row.ResetQuantity();
-                return;
-            }
-        }
-        var result = await model.SaveQuantityAsync(row, confirmed);
-        if (!IsLoaded)
-            return;
-        if (result?.Status == CollectionResultStatus.Conflict)
-        {
-            if (
-                MessageBox.Show(
-                    Window.GetWindow(this),
-                    "This item changed. Reload current values and discard this quantity draft?",
-                    "Collection changed",
-                    MessageBoxButton.OKCancel,
-                    MessageBoxImage.Information
-                ) == MessageBoxResult.OK
-            )
-            {
-                row.ResetQuantity();
-                await model.ReloadAsync();
-            }
-        }
-        else if (result?.Succeeded == true && model.Rows.Contains(row))
+        var result = await model.SaveQuantityAsync(row);
+        if (IsLoaded && result?.Succeeded == true && model.Rows.Contains(row))
         {
             PartsGrid.SelectedItem = row;
             PartsGrid.ScrollIntoView(row, QuantityColumn);
             PartsGrid.Focus();
         }
     }
-
-    private bool ConfirmRemoval(CollectionSnapshot item) =>
-        MessageBox.Show(
-            Window.GetWindow(this),
-            $"Remove {item.Name}?\n\nThis removes its quantity ({item.Quantity:N0}) and notes."
-                + (item.CatalogEntryId == null ? "\nThis custom item cannot be restored from the catalog." : ""),
-            "Remove item",
-            MessageBoxButton.YesNo,
-            MessageBoxImage.Warning,
-            MessageBoxResult.No
-        ) == MessageBoxResult.Yes;
 
     private static T? FindAncestor<T>(DependencyObject? element)
         where T : DependencyObject

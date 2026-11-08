@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
@@ -11,22 +12,38 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
     public CollectionSnapshot? Item { get; private set; }
     public string Identity { get; } = identity;
     public bool IsNew => Item == null && Entry == null;
-    public string Section => Item == null && !IsNew ? "Catalog" : "Your collection";
+    public string Section => Item == null && !IsNew ? "Catalog" : "My collection";
     public string Name => Item?.Name ?? Entry?.Description.Name ?? "New custom item";
     public PartEditorViewModel? Editor { get; private set; }
-    public bool IsEditing => Editor != null;
+    public bool IsEditing => IsNew || HasQuantityDraft || Editor is { HasChanges: true } or { HasConflict: true };
+    public bool HasEditor => Editor != null;
+    public bool ShowSave => HasQuantityDraft || Editor?.HasChanges == true;
+    public bool CanSave =>
+        Editor != null
+            ? Editor.CanSave || HasQuantityDraft && QuantityValue == 0 && !Editor.HasConflict && !IsNew
+            : CanSaveQuantity;
     public bool IsDescribing => Editor?.CanDescribe == true;
     public bool CanAdd => !IsNew && Item == null && CanEditQuantity && !IsEditing && !HasQuantityDraft;
-    public bool CanAdjust => Item is { DetailsError: null } && !IsEditing && !HasQuantityDraft;
+    public bool CanAdjust =>
+        (IsNew || CanEditQuantity && (Item != null || HasQuantityDraft))
+        && Editor?.HasConflict != true
+        && Editor?.IsBusy != true;
+    public bool CanDecrease => CanAdjust && QuantityValue > 0;
+    public bool IsPendingRemoval => Item != null && HasQuantityDraft && QuantityValue == 0;
     public bool CanRemove => Item != null && !IsEditing;
-    public bool CanEdit => Item is { DetailsError: null } && !IsEditing && !HasQuantityDraft;
 
     public void SetEditor(PartEditorViewModel? editor)
     {
+        if (Editor != null)
+            Editor.PropertyChanged -= EditorChanged;
         Editor?.Dispose();
         Editor = editor;
+        if (Editor != null)
+            Editor.PropertyChanged += EditorChanged;
         OnPropertyChanged("");
     }
+
+    private void EditorChanged(object? sender, PropertyChangedEventArgs args) => OnPropertyChanged("");
 
     public string? Manufacturer => Item != null ? Item.Manufacturer : Entry?.Description.Manufacturer;
     public string? Brand => Item != null ? Item.Brand : Entry?.Description.Brand;
@@ -49,22 +66,36 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
     public DateTime? AddedAt => Item?.AddedAt;
     public string Status { get; private set; } = "";
     public bool CanEditQuantity { get; private set; }
+    public bool CanEnterQuantity => IsNew || CanEditQuantity;
     public string SearchText { get; private set; } = "";
     private string? _searchFields;
     private string _quantityText = "0";
-    public bool HasQuantityDraft { get; private set; }
-    public CollectionSnapshot? QuantityOriginal { get; private set; }
+    private bool _hasQuantityDraft;
+    private CollectionSnapshot? _quantityOriginal;
+    public bool HasQuantityDraft => Editor?.HasQuantityChanges ?? _hasQuantityDraft;
+    public CollectionSnapshot? QuantityOriginal => Editor?.OriginalItem ?? _quantityOriginal;
     public string QuantityText
     {
-        get => _quantityText;
+        get => Editor?.Quantity.Text ?? _quantityText;
         set
         {
+            if (Editor != null)
+            {
+                if (Editor.Quantity.Text != value)
+                    Editor.Quantity.Text = value;
+                return;
+            }
             if (value == _quantityText)
                 return;
             if (!HasQuantityDraft)
-                QuantityOriginal = Item;
-            HasQuantityDraft = true;
+                _quantityOriginal = Item;
+            _hasQuantityDraft = true;
             _quantityText = value;
+            if (QuantityValue == (QuantityOriginal?.Quantity ?? 0))
+            {
+                ResetQuantity();
+                return;
+            }
             OnPropertyChanged("");
         }
     }
@@ -76,13 +107,14 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
             : null;
     public string QuantityError =>
         QuantityValue.HasValue ? "" : $"Use a whole number from 0 to {PartKinds.MaxQuantity(kind):N0}.";
-    public bool CanSaveQuantity => HasQuantityDraft && QuantityValue.HasValue;
+    public bool CanSaveQuantity => HasQuantityDraft && QuantityValue.HasValue && Editor?.HasConflict != true;
 
     public void ResetQuantity()
     {
-        HasQuantityDraft = false;
-        QuantityOriginal = null;
+        _hasQuantityDraft = false;
+        _quantityOriginal = null;
         _quantityText = Quantity.ToString(CultureInfo.InvariantCulture);
+        Editor?.ResetQuantity();
         OnPropertyChanged("");
     }
 
@@ -143,7 +175,7 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
 
 public sealed class PartFilter(string label, Func<PartRow, string?> read) : ObservableObject
 {
-    public const string Any = "Any",
+    public const string Any = "",
         NotListed = "Not listed";
     public string Label { get; } = label;
     public ObservableCollection<string> Options { get; } = [Any];

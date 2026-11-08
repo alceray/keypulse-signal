@@ -14,6 +14,105 @@ namespace KeyPulse.Tests.ViewModels;
 
 public class PartsViewModelTests
 {
+    [Theory]
+    [InlineData("notes", false)]
+    [InlineData("notes", true)]
+    [InlineData("edit", false)]
+    [InlineData("edit", true)]
+    [InlineData("quantity", false)]
+    [InlineData("quantity", true)]
+    public void TabSwitchDuringWrite_DiscardsDraftAfterWriteFinishes(string operation, bool fail) =>
+        Run(async () =>
+        {
+            using var scope = new Scope();
+            using var list = scope.List();
+            await list.InitializeAsync();
+            var row = list.Rows.Cast<PartRow>().Single();
+            row.QuantityText = "70";
+            await list.SaveQuantityAsync(row);
+            await Pump();
+            row.QuantityText = operation == "notes" ? "0" : "90";
+            row.Editor!.Notes = "Accepted note";
+            var started = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+            using var release = new ManualResetEventSlim();
+            scope.Factory.FailAfterSave = fail;
+            scope.Factory.AfterSave = () =>
+            {
+                started.TrySetResult();
+                if (!release.Wait(TimeSpan.FromSeconds(10)))
+                    throw new TimeoutException();
+            };
+            Task write = operation switch
+            {
+                "notes" => list.SaveNotesAsync(row),
+                "edit" => list.SaveEditAsync(row),
+                _ => list.SaveQuantityAsync(row),
+            };
+            await started.Task;
+            try
+            {
+                list.DiscardPendingChanges();
+            }
+            finally
+            {
+                release.Set();
+            }
+            await write;
+            await Pump();
+            var committed = scope.Collection.Items.Single();
+            committed.Quantity.ShouldBe(fail || operation == "notes" ? 70 : 90);
+            committed.Notes.ShouldBe(fail ? null : "Accepted note");
+            row.IsEditing.ShouldBeFalse();
+            row.QuantityText.ShouldBe(committed.Quantity.ToString());
+            row.Editor!.Notes.ShouldBe(committed.Notes ?? "");
+        });
+
+    [Fact]
+    public void NotesSave_PreservesOtherDraftsAndCancelKeepsCommittedNotes() =>
+        Run(async () =>
+        {
+            using var scope = new Scope();
+            using var list = scope.List();
+            await list.InitializeAsync();
+            var row = list.Rows.Cast<PartRow>().Single();
+            row.QuantityText = "70";
+            await list.SaveQuantityAsync(row);
+            await Pump();
+            row.Editor.ShouldNotBeNull();
+            row.CanRemove.ShouldBeTrue();
+            row.QuantityText = "90";
+            row.Editor!.Notes = "Saved independently";
+            row.CanRemove.ShouldBeFalse();
+            await list.SaveNotesAsync(row);
+            await Pump();
+            row.Quantity.ShouldBe(70);
+            row.QuantityText.ShouldBe("90");
+            row.Editor.HasNotesChanges.ShouldBeFalse();
+            row.Editor.HasQuantityChanges.ShouldBeTrue();
+            (await list.SaveQuantityAsync(row))!.Succeeded.ShouldBeTrue();
+            row.Editor.HasConflict.ShouldBeFalse();
+            scope.Collection.Items.Single().Quantity.ShouldBe(90);
+            row.QuantityText = "100";
+            row.Editor.Notes = "Discard this note";
+            list.CancelEdit(row);
+            row.QuantityText.ShouldBe("90");
+            row.Editor!.Notes.ShouldBe("Saved independently");
+            row.CanRemove.ShouldBeTrue();
+            row.Editor.Notes = "Stale note";
+            await scope.Collection.UpdateAsync(row.Item!, 95, "External note");
+            await Pump();
+            await list.SaveNotesAsync(row);
+            row.Editor.HasConflict.ShouldBeTrue();
+            row.Editor.Notes.ShouldBe("Stale note");
+            scope.Collection.Items.Single().Notes.ShouldBe("External note");
+            await row.Editor.ReloadAsync();
+            row.Editor.Notes.ShouldBe("External note");
+            var custom = list.AddCustom()!;
+            custom.Editor!.Notes = "Unsaved custom note";
+            await list.SaveNotesAsync(custom);
+            scope.Collection.Items.Length.ShouldBe(1);
+        });
+
     [Fact]
     public void InlineCustomDraft_SaveCancelAndStaleNotes() =>
         Run(async () =>
@@ -26,7 +125,7 @@ public class PartsViewModelTests
             var draft = list.AddCustom()!;
             list.AddCustom().ShouldBeSameAs(draft);
             list.Rows.Contains(draft).ShouldBeTrue();
-            draft.Section.ShouldBe("Your collection");
+            draft.Section.ShouldBe("My collection");
             draft.Editor!.Quantity.Value.ShouldBe(10);
             draft.Editor.CanSave.ShouldBeFalse();
             draft.Editor.Name = "Handmade";
@@ -38,8 +137,7 @@ public class PartsViewModelTests
             list.ToastMessage.ShouldBe("Item saved.");
             list.ClearFilters();
             var owned = list.Rows.Cast<PartRow>().Single(x => x.Item != null);
-            list.Edit(owned);
-            list.CanChangeQuantity(owned).ShouldBeFalse();
+            list.CanChangeQuantity(owned).ShouldBeTrue();
             owned.Editor!.Notes = "Stale note";
             await scope.Collection.UpdateAsync(owned.Item!, 20, "Newer note");
             await Pump();
@@ -108,6 +206,12 @@ public class PartsViewModelTests
             await duplicate.SaveAsync();
             duplicate.Message.ShouldContain("already exists");
             using var editor = new PartEditorViewModel(PartKinds.Keycap, scope.Collection, original);
+            editor.HasChanges.ShouldBeFalse();
+            editor.CanSave.ShouldBeFalse();
+            editor.Notes = "Temporary note";
+            editor.HasChanges.ShouldBeTrue();
+            editor.Notes = original.Notes!;
+            editor.HasChanges.ShouldBeFalse();
             editor.Notes = "stale draft";
             await scope.Collection.UpdateAsync(original, 3, "Current note");
             await editor.SaveAsync();
@@ -116,6 +220,7 @@ public class PartsViewModelTests
             editor.CanSave.ShouldBeFalse();
             await editor.ReloadAsync();
             editor.HasConflict.ShouldBeFalse();
+            editor.HasChanges.ShouldBeFalse();
             editor.Notes.ShouldBe("Current note");
             editor.Quantity.Value.ShouldBe(3);
             editor.Name = "Renamed";
@@ -145,22 +250,18 @@ public class PartsViewModelTests
             (await list.SaveQuantityAsync(row))!.Succeeded.ShouldBeTrue();
             await Pump();
             list.Rows.Count.ShouldBe(1);
-            row.Section.ShouldBe("Your collection");
+            row.Section.ShouldBe("My collection");
             row.Quantity.ShouldBe(70);
             list.Rows.Groups!.Cast<CollectionViewGroup>()
                 .Select(x => x.Name)
-                .ShouldBe(new object[] { "Your collection", "Catalog" });
+                .ShouldBe(new object[] { "My collection", "Catalog" });
             row.QuantityText = "80";
             await list.SaveQuantityAsync(row);
             await Pump();
             row.Quantity.ShouldBe(80);
             row.QuantityText = "0";
-            (await list.SaveQuantityAsync(row)).ShouldBeNull();
-            row.Quantity.ShouldBe(80);
-            row.ResetQuantity();
-            row.QuantityText.ShouldBe("80");
-            row.QuantityText = "0";
-            await list.SaveQuantityAsync(row, removalConfirmed: true);
+            row.CanDecrease.ShouldBeFalse();
+            (await list.SaveQuantityAsync(row))!.Succeeded.ShouldBeTrue();
             await Pump();
             row.Section.ShouldBe("Catalog");
             row.Quantity.ShouldBe(0);
@@ -174,7 +275,7 @@ public class PartsViewModelTests
             await Pump();
             var custom = list.Rows.Cast<PartRow>().Single(x => x.Item?.CatalogEntryId == null && x.Item != null);
             custom.QuantityText = "0";
-            await list.SaveQuantityAsync(custom, true);
+            await list.SaveQuantityAsync(custom);
             await Pump();
             list.Rows.Count.ShouldBe(1);
             list.Category.ShouldBe("Switches");
@@ -211,7 +312,7 @@ public class PartsViewModelTests
             list.Rows.SortDescriptions.Clear();
             list.Rows.SortDescriptions.Add(new(nameof(PartRow.Quantity), ListSortDirection.Descending));
             var groups = list.Rows.Groups!.Cast<CollectionViewGroup>().ToArray();
-            groups[0].Name.ShouldBe("Your collection");
+            groups[0].Name.ShouldBe("My collection");
             groups[0].Items.Cast<PartRow>().Select(x => x.Quantity).ShouldBe(new[] { 20, 2 });
             groups[1].Items.Cast<PartRow>().Single().Quantity.ShouldBe(0);
             list.Rows.SortDescriptions.Clear();
@@ -291,14 +392,20 @@ public class PartsViewModelTests
             await list.ReloadAsync();
             await Pump();
             list.Selected = row;
-            list.CanEdit.ShouldBeFalse();
+            row.Editor.ShouldBeNull();
             list.CanRemove.ShouldBeTrue();
             list.CanChangeQuantity(row).ShouldBeFalse();
             row.Status.ShouldBe("Details unavailable");
+            row.QuantityText = "0";
+            row.IsPendingRemoval.ShouldBeTrue();
+            row.CanSave.ShouldBeTrue();
+            scope.Collection.Items.Count().ShouldBe(1);
+            (await list.SaveQuantityAsync(row))!.Succeeded.ShouldBeTrue();
+            scope.Collection.Items.ShouldBeEmpty();
             list.Dispose();
             var events = 0;
             list.PropertyChanged += (_, _) => events++;
-            await scope.Collection.RemoveAsync(scope.Collection.Items.Single());
+            await scope.Collection.AddCatalogAsync(PartKinds.Switch, "sample", 10);
             await Pump();
             events.ShouldBe(0);
         });

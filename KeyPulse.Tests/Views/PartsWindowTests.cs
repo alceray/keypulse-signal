@@ -2,6 +2,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using KeyPulse.Configuration;
@@ -110,6 +112,14 @@ public class PartsWindowTests
                 {
                     owner.Width = width;
                     await PartsViewModelTests.Pump();
+                    if (width == 800)
+                    {
+                        var lastFilter = Descendants<ComboBox>(host).Last(x => x.DataContext is PartFilter);
+                        var addCustom = Descendants<Button>(host).Single(x => Equals(x.Content, "Add custom item"));
+                        addCustom
+                            .TranslatePoint(new Point(0, addCustom.ActualHeight), owner)
+                            .Y.ShouldBe(lastFilter.TranslatePoint(new Point(0, lastFilter.ActualHeight), owner).Y, 1);
+                    }
                     var initialGrid = Descendants<DataGrid>(host).Single();
                     foreach (var column in initialGrid.Columns.Where(x => x.Visibility == Visibility.Visible))
                         column.ActualWidth.ShouldBe(column.Width.Value, 1);
@@ -160,6 +170,27 @@ public class PartsWindowTests
                 );
                 await PartsViewModelTests.Pump();
                 var switchModel = host.Switches;
+                var pinnedHeader = Descendants<ToggleButton>(host).Single(x => x.Name == "PinnedCollectionHeader");
+                var headerPosition = pinnedHeader.TranslatePoint(new Point(), owner);
+                var columnHeaders = Descendants<DataGridColumnHeadersPresenter>(measuredGrid).Single();
+                (
+                    columnHeaders.TranslatePoint(new Point(0, columnHeaders.ActualHeight), owner).Y <= headerPosition.Y
+                ).ShouldBeTrue();
+                for (var pass = 0; pass < 2; pass++)
+                {
+                    switchModel.IsCollectionExpanded.ShouldBeTrue();
+                    measuredScroll.ScrollToVerticalOffset(500);
+                    await PartsViewModelTests.Pump();
+                    switchModel.IsCollectionExpanded.ShouldBeFalse();
+                    pinnedHeader.TranslatePoint(new Point(), owner).ShouldBe(headerPosition);
+                    pinnedHeader.SetCurrentValue(ToggleButton.IsCheckedProperty, true);
+                    pinnedHeader.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                    await PartsViewModelTests.Pump();
+                    switchModel.IsCollectionExpanded.ShouldBeTrue();
+                    Save(owner, "reopened-collection", false);
+                    measuredScroll.VerticalOffset.ShouldBe(0);
+                    switchModel.IsCollectionExpanded.ShouldBeTrue();
+                }
                 var tabs = Descendants<TabControl>(host).Single();
                 Descendants<RadioButton>(host).ShouldBeEmpty();
                 var input = Descendants<TextBox>(host)
@@ -182,7 +213,7 @@ public class PartsWindowTests
                 var save = Descendants<Button>(host)
                     .Single(x =>
                         ReferenceEquals(x.DataContext, row)
-                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save quantity"
+                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save changes"
                     );
                 save.IsEnabled.ShouldBeTrue();
                 var saveWatch = Stopwatch.StartNew();
@@ -197,7 +228,7 @@ public class PartsWindowTests
                     File.WriteAllLines(Path.Combine(performanceDirectory, "render-performance.txt"), performance);
                 }
                 scope.Collection.Changed -= Changed;
-                row.Section.ShouldBe("Your collection");
+                row.Section.ShouldBe("My collection");
                 switchModel.Rows.Count.ShouldBe(originalCount);
                 switchModel.Selected.ShouldBeSameAs(row);
                 async Task ClickAction(PartRow target, string action, int expected)
@@ -221,7 +252,18 @@ public class PartsWindowTests
                                 && System.Windows.Automation.AutomationProperties.GetName(x) == action
                             );
                         button.IsEnabled.ShouldBeTrue();
+                        var original = target.Quantity;
                         button.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        await PartsViewModelTests.Pump();
+                        target.QuantityValue.ShouldBe(expected);
+                        target.Quantity.ShouldBe(original);
+                        completed.Task.IsCompleted.ShouldBeFalse();
+                        var commit = Descendants<Button>(host)
+                            .Single(x =>
+                                ReferenceEquals(x.DataContext, target)
+                                && System.Windows.Automation.AutomationProperties.GetName(x) == "Save changes"
+                            );
+                        commit.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                         await completed.Task.WaitAsync(TimeSpan.FromSeconds(5));
                         await PartsViewModelTests.Pump();
                         target.Quantity.ShouldBe(expected);
@@ -233,6 +275,107 @@ public class PartsWindowTests
                 }
                 await ClickAction(row, "Increase quantity", 80);
                 await ClickAction(row, "Decrease quantity", 70);
+                foreach (
+                    var action in new[]
+                    {
+                        "Increase quantity",
+                        "Increase quantity",
+                        "Decrease quantity",
+                        "Decrease quantity",
+                    }
+                )
+                {
+                    Descendants<Button>(host)
+                        .Single(x =>
+                            ReferenceEquals(x.DataContext, row)
+                            && System.Windows.Automation.AutomationProperties.GetName(x) == action
+                        )
+                        .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    await PartsViewModelTests.Pump();
+                    row.Quantity.ShouldBe(70);
+                }
+                row.QuantityValue.ShouldBe(70);
+                row.HasQuantityDraft.ShouldBeFalse();
+                Descendants<Button>(host)
+                    .Where(x =>
+                        ReferenceEquals(x.DataContext, row)
+                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save changes"
+                    )
+                    .ShouldBeEmpty();
+                async Task CommitNotes(string text, bool enter)
+                {
+                    var notes = Descendants<TextBox>(host)
+                        .Single(x =>
+                            ReferenceEquals(x.DataContext, row)
+                            && System.Windows.Automation.AutomationProperties.GetName(x) == "Notes"
+                        );
+                    var committed = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+                    void NotesChanged(string kind)
+                    {
+                        if (scope.Collection.FindOwned(PartKinds.Switch, row.Entry!.Id)?.Notes == text)
+                            committed.TrySetResult();
+                    }
+                    scope.Collection.Changed += NotesChanged;
+                    try
+                    {
+                        notes.SetCurrentValue(TextBox.TextProperty, text);
+                        notes.GetBindingExpression(TextBox.TextProperty)!.UpdateSource();
+                        row.CanRemove.ShouldBeFalse();
+                        if (enter)
+                            notes.RaiseEvent(
+                                new KeyEventArgs(
+                                    Keyboard.PrimaryDevice,
+                                    PresentationSource.FromVisual(notes),
+                                    0,
+                                    Key.Enter
+                                )
+                                {
+                                    RoutedEvent = Keyboard.PreviewKeyDownEvent,
+                                }
+                            );
+                        else
+                            notes.RaiseEvent(
+                                new KeyboardFocusChangedEventArgs(Keyboard.PrimaryDevice, 0, notes, tabs)
+                                {
+                                    RoutedEvent = Keyboard.LostKeyboardFocusEvent,
+                                }
+                            );
+                        await committed.Task.WaitAsync(TimeSpan.FromSeconds(5));
+                        await PartsViewModelTests.Pump();
+                    }
+                    finally
+                    {
+                        scope.Collection.Changed -= NotesChanged;
+                    }
+                }
+                row.QuantityText = "90";
+                await CommitNotes("Enter saves notes", true);
+                row.Quantity.ShouldBe(70);
+                row.QuantityText.ShouldBe("90");
+                switchModel.CancelEdit(row);
+                await PartsViewModelTests.Pump();
+                await CommitNotes("Click away saves notes", false);
+                row.CanRemove.ShouldBeTrue();
+                var cancelNotes = Descendants<TextBox>(host)
+                    .Single(x =>
+                        ReferenceEquals(x.DataContext, row)
+                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Notes"
+                    );
+                cancelNotes.SetCurrentValue(TextBox.TextProperty, "Do not save this");
+                cancelNotes.GetBindingExpression(TextBox.TextProperty)!.UpdateSource();
+                await PartsViewModelTests.Pump();
+                var cancelButton = Descendants<Button>(host)
+                    .Single(x => ReferenceEquals(x.DataContext, row) && x.Name == "CancelRowButton");
+                cancelNotes.RaiseEvent(
+                    new KeyboardFocusChangedEventArgs(Keyboard.PrimaryDevice, 0, cancelNotes, cancelButton)
+                    {
+                        RoutedEvent = Keyboard.LostKeyboardFocusEvent,
+                    }
+                );
+                cancelButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                await PartsViewModelTests.Pump();
+                row.Editor!.Notes.ShouldBe("Click away saves notes");
+                scope.Collection.FindOwned(PartKinds.Switch, row.Entry!.Id)!.Notes.ShouldBe("Click away saves notes");
                 tabs.SelectedIndex = 1;
                 await PartsViewModelTests.Pump();
                 var capRow = (PartRow)
@@ -245,6 +388,52 @@ public class PartsWindowTests
                 await ClickAction(capRow, "Add to collection", 1);
                 await ClickAction(capRow, "Increase quantity", 2);
                 await ClickAction(capRow, "Decrease quantity", 1);
+                var removed = new TaskCompletionSource();
+                void ObserveRemoval(string kind)
+                {
+                    if (kind == PartKinds.Keycap && scope.Collection.FindOwned(kind, capRow.Entry!.Id) == null)
+                        removed.TrySetResult();
+                }
+                scope.Collection.Changed += ObserveRemoval;
+                try
+                {
+                    var decrement = Descendants<Button>(host)
+                        .Single(x =>
+                            ReferenceEquals(x.DataContext, capRow)
+                            && System.Windows.Automation.AutomationProperties.GetName(x) == "Decrease quantity"
+                        );
+                    decrement.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    capRow.CanDecrease.ShouldBeFalse();
+                    capRow.IsPendingRemoval.ShouldBeTrue();
+                    host.Keycaps.CancelEdit(capRow);
+                    capRow.IsPendingRemoval.ShouldBeFalse();
+                    await PartsViewModelTests.Pump();
+                    Descendants<Button>(host)
+                        .Single(x =>
+                            ReferenceEquals(x.DataContext, capRow)
+                            && System.Windows.Automation.AutomationProperties.GetName(x) == "Remove item"
+                        )
+                        .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    capRow.IsPendingRemoval.ShouldBeTrue();
+                    scope.Collection.FindOwned(PartKinds.Keycap, capRow.Entry!.Id)!.Quantity.ShouldBe(1);
+                    await PartsViewModelTests.Pump();
+                    Descendants<DataGridRow>(host)
+                        .Single(x => ReferenceEquals(x.Item, capRow))
+                        .BorderThickness.Left.ShouldBe(3);
+                    Descendants<Button>(host)
+                        .Single(x => ReferenceEquals(x.DataContext, capRow) && x.Name == "SaveRowButton")
+                        .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    await removed.Task.WaitAsync(TimeSpan.FromSeconds(10));
+                    await PartsViewModelTests.Pump();
+                    capRow.Section.ShouldBe("Catalog");
+                    capRow.Quantity.ShouldBe(0);
+                    capRow.CanDecrease.ShouldBeFalse();
+                }
+                finally
+                {
+                    scope.Collection.Changed -= ObserveRemoval;
+                }
+                await ClickAction(capRow, "Add to collection", 1);
                 host.Keycaps.Search = "desk";
                 host.Keycaps.ApplySearch();
                 await PartsViewModelTests.Pump();
@@ -258,9 +447,7 @@ public class PartsWindowTests
                 await PartsViewModelTests.Pump();
                 host.Switches.Search.ShouldBeEmpty();
                 var collectionSection = Descendants<Expander>(host)
-                    .Single(x =>
-                        ((System.Windows.Data.CollectionViewGroup)x.DataContext).Name.Equals("Your collection")
-                    );
+                    .Single(x => ((System.Windows.Data.CollectionViewGroup)x.DataContext).Name.Equals("My collection"));
                 var catalogSection = Descendants<Expander>(host)
                     .Single(x => ((System.Windows.Data.CollectionViewGroup)x.DataContext).Name.Equals("Catalog"));
                 collectionSection.SetCurrentValue(Expander.IsExpandedProperty, false);
@@ -268,8 +455,15 @@ public class PartsWindowTests
                 host.Switches.IsCollectionExpanded.ShouldBeFalse();
                 host.Switches.IsCatalogExpanded.ShouldBeFalse();
                 host.Switches.ApplySearch();
+                row.QuantityText = "0";
+                var abandonedDraft = host.Switches.AddCustom()!;
+                abandonedDraft.Editor!.Name = "Discard on tab switch";
                 tabs.SelectedIndex = 1;
                 await PartsViewModelTests.Pump();
+                row.IsPendingRemoval.ShouldBeFalse();
+                row.QuantityText.ShouldBe(row.Quantity.ToString());
+                host.Switches.Rows.SourceCollection.Cast<PartRow>().ShouldNotContain(abandonedDraft);
+                host.Switches.IsCollectionExpanded = false;
                 tabs.SelectedIndex = 0;
                 await PartsViewModelTests.Pump();
                 Descendants<Expander>(host).ShouldAllBe(x => !x.IsExpanded);
@@ -296,7 +490,7 @@ public class PartsWindowTests
                     await PartsViewModelTests.Pump();
                     Descendants<DataGridRow>(host)
                         .Single(x => ReferenceEquals(x.Item, draft))
-                        .DetailsVisibility.ShouldBe(Visibility.Visible);
+                        .DetailsVisibility.ShouldBe(Visibility.Collapsed);
                     var nameInput = Descendants<TextBox>(host)
                         .Single(x =>
                             ReferenceEquals(x.DataContext, draft)

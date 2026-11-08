@@ -21,6 +21,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
     private string _search = "",
         _loadError = "";
     private PartRow? _selected;
+    private int _draftGeneration;
 
     public PartListViewModel(string kind, CollectionService collection, CatalogService catalogs)
     {
@@ -29,7 +30,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         _catalogs = catalogs;
         Rows = new ListCollectionView(_rows);
         var sections = new PropertyGroupDescription(nameof(PartRow.Section));
-        sections.GroupNames.Add("Your collection");
+        sections.GroupNames.Add("My collection");
         sections.GroupNames.Add("Catalog");
         Rows.GroupDescriptions.Add(sections);
         Rows.SortDescriptions.Add(new(nameof(PartRow.Name), ListSortDirection.Ascending));
@@ -109,19 +110,17 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
                 return;
             _selected = value;
             OnPropertyChanged();
-            OnPropertyChanged(nameof(CanEdit));
             OnPropertyChanged(nameof(CanRemove));
         }
     }
     public bool CanMutate => !_disposed && !_busy && _collection.IsLoaded && _loadError.Length == 0;
-    public bool CanEdit => CanMutate && Selected?.Item is { DetailsError: null };
-    public bool CanRemove => CanMutate && Selected?.Item != null;
+    public bool CanRemove => CanMutate && Selected?.CanRemove == true;
 
     public bool CanChangeQuantity(PartRow row) =>
         CanMutate
-        && !row.IsEditing
+        && row.Editor?.HasConflict != true
         && row.Item?.DetailsError == null
-        && (row.Item != null || _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready);
+        && (row.IsNew || row.Item != null || _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready);
 
     public string Message
     {
@@ -207,22 +206,36 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         return result;
     }
 
-    public async Task<CollectionResult?> SaveQuantityAsync(PartRow row, bool removalConfirmed = false)
+    public async Task<CollectionResult?> SaveQuantityAsync(PartRow row)
     {
-        if (!CanChangeQuantity(row) || row.QuantityValue is not int quantity || !row.HasQuantityDraft)
+        if (!CanMutate || !row.CanSaveQuantity || row.QuantityValue is not int quantity)
+            return null;
+        if (!row.IsPendingRemoval && !CanChangeQuantity(row))
             return null;
         var captured = row.QuantityOriginal;
-        if (quantity == 0 && captured != null && !removalConfirmed)
-            return null;
+        var draftGeneration = _draftGeneration;
         _busy = true;
         Message = "Saving quantity…";
         Notify();
         CollectionResult result;
         if (captured != null)
-            result =
-                quantity == 0
-                    ? await _collection.RemoveAsync(captured)
-                    : await _collection.UpdateAsync(captured, quantity, captured.Notes);
+        {
+            if (quantity == 0)
+                result = await _collection.RemoveAsync(captured);
+            else if (row.Editor is { } editor)
+            {
+                if (!editor.CanSave)
+                {
+                    _busy = false;
+                    Notify();
+                    return null;
+                }
+                await editor.SaveAsync();
+                result = editor.LastResult!;
+            }
+            else
+                result = await _collection.UpdateAsync(captured, quantity, captured.Notes);
+        }
         else if (_collection.FindOwned(Kind, row.Entry!.Id) != null)
             result = CollectionResult.Failure(
                 CollectionResultStatus.Conflict,
@@ -236,9 +249,18 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
             return result;
         _busy = false;
         if (result.Succeeded)
+        {
+            if (quantity == 0)
+                row.SetEditor(null);
             row.ResetQuantity();
-        Message = result.Succeeded ? $"Saved quantity for {row.Name}." : result.Message ?? "Could not save quantity.";
+        }
+        Message = result.Succeeded
+            ? quantity == 0 && captured != null
+                ? $"Removed {row.Name}."
+                : $"Saved quantity for {row.Name}."
+            : result.Message ?? "Could not save quantity.";
         Synchronize();
+        DiscardIfTabChanged(row, draftGeneration);
         return result;
     }
 
@@ -249,6 +271,10 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         if (_disposed)
             return;
         _loadError = result.Succeeded ? "" : result.Message ?? "Could not reload your collection.";
+        if (result.Succeeded)
+            foreach (var row in _rows.Where(x => x.Editor is { HasConflict: true, HasChanges: false }))
+                if (result.Items.FirstOrDefault(x => x.ItemKey == row.Editor!.OriginalItem?.ItemKey) is { } current)
+                    row.Editor!.Reset(current);
         Synchronize();
     }
 
@@ -269,19 +295,48 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         return row;
     }
 
-    public void Edit(PartRow row)
-    {
-        if (CanMutate && row.CanEdit)
-            row.SetEditor(new(Kind, _collection, row.Item));
-    }
-
     public void CancelEdit(PartRow row)
     {
         if (!CanMutate || row.Editor?.IsBusy == true)
             return;
-        row.SetEditor(null);
+        DiscardDraft(row);
+        Rows.Refresh();
+        Notify();
+    }
+
+    public void DiscardPendingChanges()
+    {
+        if (_disposed)
+            return;
+        _draftGeneration++;
+        var pending = _rows.Where(row => row.IsEditing && row.Editor?.IsBusy != true).ToArray();
+        if (pending.Length == 0)
+            return;
+        foreach (var row in pending)
+            DiscardDraft(row);
+        Rows.Refresh();
+        Notify();
+    }
+
+    private void DiscardDraft(PartRow row)
+    {
         if (row.IsNew)
+        {
+            row.SetEditor(null);
             _rows.Remove(row);
+        }
+        else
+        {
+            row.SetEditor(row.Item is { DetailsError: null } item ? new(Kind, _collection, item) : null);
+            row.ResetQuantity();
+        }
+    }
+
+    private void DiscardIfTabChanged(PartRow row, int generation)
+    {
+        if (generation == _draftGeneration || !_rows.Contains(row))
+            return;
+        DiscardDraft(row);
         Rows.Refresh();
         Notify();
     }
@@ -290,6 +345,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
     {
         if (!CanMutate || row.Editor is not { CanSave: true } editor)
             return;
+        var draftGeneration = _draftGeneration;
         _busy = true;
         Notify();
         var saved = await editor.SaveAsync();
@@ -298,15 +354,34 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         _busy = false;
         if (saved)
         {
-            row.SetEditor(null);
             if (row.IsNew)
             {
+                row.SetEditor(null);
                 _rows.Remove(row);
                 Rows.Refresh();
             }
         }
         Message = saved ? "Item saved." : editor.Message;
         Synchronize();
+        DiscardIfTabChanged(row, draftGeneration);
+    }
+
+    public async Task SaveNotesAsync(PartRow row)
+    {
+        if (_disposed || !_collection.IsLoaded || _loadError.Length > 0 || row.Editor == null)
+            return;
+        if (row.Editor[nameof(PartEditorViewModel.Notes)] is { Length: > 0 } error)
+        {
+            Message = error;
+            return;
+        }
+        var draftGeneration = _draftGeneration;
+        var result = await row.Editor.SaveNotesAsync();
+        if (_disposed || result == null)
+            return;
+        Message = result.Succeeded ? "Notes saved." : result.Message ?? "Could not save notes.";
+        Synchronize();
+        DiscardIfTabChanged(row, draftGeneration);
     }
 
     public void ShowMessage(string message) => Message = message;
@@ -334,6 +409,15 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
                 _catalogs.Search,
                 _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready
             );
+            if (item.DetailsError == null)
+            {
+                if (row.Editor == null && !row.HasQuantityDraft)
+                    row.SetEditor(new(Kind, _collection, item));
+                else
+                    row.Editor?.Refresh(item);
+            }
+            else if (row.Editor != null)
+                row.SetEditor(null);
             next.Add(row);
             if (item.CatalogEntryId != null)
                 ownedIds.Add(item.CatalogEntryId);
@@ -350,6 +434,8 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
                 _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready,
                 state.SearchText[entry.Id]
             );
+            if (row.Editor is { HasChanges: false, HasConflict: false, IsBusy: false })
+                row.SetEditor(null);
             next.Add(row);
         }
         if (!changed && _rows.SequenceEqual(next))
@@ -375,7 +461,6 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
     {
         OnPropertyChanged(nameof(Selected));
         OnPropertyChanged(nameof(CanMutate));
-        OnPropertyChanged(nameof(CanEdit));
         OnPropertyChanged(nameof(CanRemove));
         OnPropertyChanged(nameof(CatalogMessage));
         OnPropertyChanged(nameof(ShowRetry));
