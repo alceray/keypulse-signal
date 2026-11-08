@@ -24,6 +24,7 @@ public partial class PartListView : UserControl
     private double _verticalOffset,
         _horizontalOffset,
         _collectionHeight;
+    private bool _openingCollection;
 
     public PartListView()
     {
@@ -81,20 +82,32 @@ public partial class PartListView : UserControl
         }
     }
 
-    private void OpenPinnedCollection(object sender, RoutedEventArgs e)
+    private async void OpenPinnedCollection(object sender, RoutedEventArgs e)
     {
-        if (Model?.IsCollectionExpanded != true)
+        if (Model?.IsCollectionExpanded != true || _openingCollection)
             return;
-        Dispatcher.BeginInvoke(
-            DispatcherPriority.Loaded,
-            new Action(() =>
-            {
-                if (Model?.Rows.Cast<PartRow>().FirstOrDefault(row => row.Item != null || row.IsNew) is { } first)
-                    PartsGrid.ScrollIntoView(first);
-                PartsGrid.UpdateLayout();
-                FindScrollViewer(PartsGrid)?.ScrollToTop();
-            })
-        );
+        _openingCollection = true;
+        try
+        {
+            await Dispatcher.InvokeAsync(
+                () =>
+                {
+                    if (!IsLoaded || Model?.IsCollectionExpanded != true)
+                        return;
+                    if (Model?.Rows.Cast<PartRow>().FirstOrDefault(row => row.Item != null || row.IsNew) is { } first)
+                        PartsGrid.ScrollIntoView(first);
+                    PartsGrid.UpdateLayout();
+                    FindScrollViewer(PartsGrid)?.ScrollToTop();
+                },
+                DispatcherPriority.Loaded
+            );
+            // Expansion and ScrollToTop queue layout/scroll events; do not treat them as scrolling past the rows.
+            await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.ContextIdle);
+        }
+        finally
+        {
+            _openingCollection = false;
+        }
     }
 
     private void TableScrolled(object sender, ScrollChangedEventArgs e)
@@ -104,7 +117,11 @@ public partial class PartListView : UserControl
             return;
         if (e.ViewportWidthChange != 0 || e.ExtentWidthChange != 0)
             FillColumnSpace();
-        if (Model is not { IsCollectionExpanded: true } model || model.Rows.Groups is not { Count: > 0 } groups)
+        if (
+            _openingCollection
+            || Model is not { IsCollectionExpanded: true } model
+            || model.Rows.Groups is not { Count: > 0 } groups
+        )
             return;
         // Virtualization can release the collection group once it leaves the viewport.
         if (PartsGrid.ItemContainerGenerator.ContainerFromItem(groups[0]) is GroupItem { ActualHeight: > 0 } group)

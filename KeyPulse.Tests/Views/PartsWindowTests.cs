@@ -185,27 +185,41 @@ public class PartsWindowTests
                 );
                 await PartsViewModelTests.Pump();
                 var switchModel = host.Switches;
+                for (var index = 0; index < 24; index++)
+                    await scope.Collection.AddCustomAsync(
+                        PartKinds.Switch,
+                        new($"Reopen test {index}", null, null, null, new SwitchPartDetails()),
+                        10,
+                        null
+                    );
+                await PartsViewModelTests.Pump();
                 var pinnedHeader = Descendants<ToggleButton>(host).Single(x => x.Name == "PinnedCollectionHeader");
                 var headerPosition = pinnedHeader.TranslatePoint(new Point(), owner);
                 var columnHeaders = Descendants<DataGridColumnHeadersPresenter>(measuredGrid).Single();
                 (
                     columnHeaders.TranslatePoint(new Point(0, columnHeaders.ActualHeight), owner).Y <= headerPosition.Y
                 ).ShouldBeTrue();
-                for (var pass = 0; pass < 2; pass++)
+                foreach (var offset in new[] { 2000, 5000, 50000 })
                 {
                     switchModel.IsCollectionExpanded.ShouldBeTrue();
-                    measuredScroll.ScrollToVerticalOffset(500);
+                    measuredScroll.ScrollToVerticalOffset(offset);
                     await PartsViewModelTests.Pump();
                     switchModel.IsCollectionExpanded.ShouldBeFalse();
                     pinnedHeader.TranslatePoint(new Point(), owner).ShouldBe(headerPosition);
                     pinnedHeader.SetCurrentValue(ToggleButton.IsCheckedProperty, true);
                     pinnedHeader.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                    owner.UpdateLayout();
                     await PartsViewModelTests.Pump();
                     switchModel.IsCollectionExpanded.ShouldBeTrue();
                     Save(owner, "reopened-collection", false);
                     measuredScroll.VerticalOffset.ShouldBe(0);
                     switchModel.IsCollectionExpanded.ShouldBeTrue();
                 }
+                foreach (
+                    var temporary in scope.Collection.Items.Where(x => x.Name.StartsWith("Reopen test ")).ToArray()
+                )
+                    await scope.Collection.RemoveAsync(temporary);
+                await PartsViewModelTests.Pump();
                 var tabs = Descendants<TabControl>(host).Single();
                 Descendants<RadioButton>(host).ShouldBeEmpty();
                 var input = Descendants<TextBox>(host)
