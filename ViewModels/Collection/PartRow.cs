@@ -50,7 +50,11 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
     public string? Designer => Item != null ? Item.Designer : Entry?.Description.Designer;
     public PartDetails? Details => Item != null ? Item.Details : Entry?.Description.Details;
     public string Variants => string.Join(", ", Details?.Variants ?? []);
-    public string? Type => (Details as SwitchPartDetails)?.SwitchType;
+    public string? Type => FormatSwitchType((Details as SwitchPartDetails)?.SwitchType);
+
+    internal static string? FormatSwitchType(string? type) =>
+        type == null ? null : CultureInfo.InvariantCulture.TextInfo.ToTitleCase(type.ToLowerInvariant());
+
     public string? Family => (Details as SwitchPartDetails)?.SwitchFamily;
     public string LowProfile =>
         (Details as SwitchPartDetails)?.IsLowProfile switch

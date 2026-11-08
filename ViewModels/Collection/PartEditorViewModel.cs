@@ -100,7 +100,7 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
             : "Catalog description is read-only. You can change quantity and notes.";
     public QuantityViewModel Quantity { get; }
     public IReadOnlyList<string> Types { get; } =
-        ["Not listed", "linear", "tactile", "clicky", "linear/clicky", "latching"];
+        ["Not listed", "Linear", "Tactile", "Clicky", "Linear/Clicky", "Latching"];
     public IReadOnlyList<string> Families { get; } =
         ["Not listed", "MX", "Alps", "Choc", "HE", "EC", "Optical", "Legacy", "Other"];
     public IReadOnlyList<string> LowProfileOptions { get; } = ["Not listed", "Yes", "No"];
@@ -218,7 +218,7 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         return IsSwitch
             ? new SwitchPartDetails
             {
-                SwitchType = Type == "Not listed" ? null : Optional(Type),
+                SwitchType = Type == "Not listed" ? null : Optional(Type)?.ToLowerInvariant(),
                 SwitchFamily = Family == "Not listed" ? null : Optional(Family),
                 IsLowProfile = LowProfile switch
                 {
@@ -365,7 +365,7 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         _designer = item?.Designer ?? "";
         _notes = item?.Notes ?? "";
         _variants = string.Join(Environment.NewLine, item?.Details?.Variants ?? []);
-        _type = (item?.Details as SwitchPartDetails)?.SwitchType ?? "Not listed";
+        _type = PartRow.FormatSwitchType((item?.Details as SwitchPartDetails)?.SwitchType) ?? "Not listed";
         _family = (item?.Details as SwitchPartDetails)?.SwitchFamily ?? "Not listed";
         _lowProfile = (item?.Details as SwitchPartDetails)?.IsLowProfile switch
         {
