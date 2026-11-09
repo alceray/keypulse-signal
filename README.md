@@ -42,12 +42,9 @@ KeyPulse Signal is a Windows desktop app that tracks how much you use each USB k
 
 ### Manage your collection
 
-- Open **Collection** and choose the Switches or Keycaps subtab. Owned items appear above the catalog in one list.
-- Search and filter both sections. Enter a total quantity and press Enter or Save to add or update a product; saving zero removes ownership without a warning.
-- Add custom item inserts an editable row. Save the row to keep it in your database, or cancel to discard it.
-- Use row icons to prepare an addition, remove, or change quantity by 10 switches / 1 keycap kit. Quantity buttons update a draft; press Save once to commit the changes. Owned notes and custom descriptions edit directly in the table. Notes save on Enter or click-away without saving pending quantities; dirty rows show Cancel instead of Delete. New custom items still require Save. Delete prepares a zero-quantity draft highlighted in red; Cancel restores it and Save removes it. Decrement is disabled at zero; zero remains a draft until Save. Switching tabs discards unsaved changes and new custom rows, returns to the top, opens My collection, and closes Catalog. Filter dropdowns switch directly with one click. Searching automatically opens sections containing matching results. The collection header stays pinned; scrolling past its rows collapses them, and clicking the header reopens them at the top. Feedback uses toasts without expanding rows or opening confirmation dialogs.
-- Quantities count individual switches (up to 10,000 per product) or keycap sets/kits (up to 100).
-- Collections persist across restarts and supported database transfers. Subtabs retain their search, filters, and selection while the app is open.
+- Browse and search switch and keycap catalogs.
+- Track owned quantities and personal notes.
+- Collections persist across restarts and database transfers.
 
 ## Privacy and your data
 
