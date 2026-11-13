@@ -25,6 +25,53 @@ public class ThemeTestCollection;
 public class ThemeTests
 {
     [Fact]
+    public void Toast_RepeatedMessage_RestartsReadingInterval_WithoutRedundantNotifications() =>
+        KeyPulse.Tests.ViewModels.PartsViewModelTests.Run(async () =>
+        {
+            using var model = new ToastModel();
+            var notifications = 0;
+            model.PropertyChanged += (_, _) => notifications++;
+
+            model.Show("Saved");
+            await Task.Delay(700);
+            model.Show("Saved");
+            notifications.ShouldBe(2);
+
+            // The original deadline has passed, but the repeated action has its own interval.
+            await Task.Delay(500);
+            model.ToastVisibility.ShouldBe(Visibility.Visible);
+            model.ToastMessage.ShouldBe("Saved");
+
+            await Task.Delay(700);
+            model.ToastVisibility.ShouldBe(Visibility.Collapsed);
+            model.ToastMessage.ShouldBeEmpty();
+        });
+
+    private sealed class ToastModel() : KeyPulse.ViewModels.ToastMessageViewModelBase(1)
+    {
+        public void Show(string message) => ToastMessage = message;
+    }
+
+    [Fact]
+    public void Toast_LongRecoveryMessage_WrapsWithinNarrowViewport() =>
+        RunSta(() =>
+        {
+            var toast = new KeyPulse.Views.ToastMessagePanel
+            {
+                ToastMessage = "Saved",
+                ToastVisibility = Visibility.Visible,
+            };
+            toast.Measure(new Size(240, double.PositiveInfinity));
+            var shortHeight = toast.DesiredSize.Height;
+
+            toast.ToastMessage = "This item changed elsewhere. Reload current values from the row menu, then try again.";
+            toast.Dispatcher.Invoke(() => { }, System.Windows.Threading.DispatcherPriority.ContextIdle);
+            toast.Measure(new Size(240, double.PositiveInfinity));
+            toast.DesiredSize.Width.ShouldBeLessThanOrEqualTo(240);
+            toast.DesiredSize.Height.ShouldBeGreaterThan(shortHeight);
+        });
+
+    [Fact]
     public void ActualViews_RenderInBothThemes_WithoutStartingCaptureOrOpeningADatabase()
     {
         RunSta(() =>

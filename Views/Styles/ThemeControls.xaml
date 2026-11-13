@@ -217,7 +217,7 @@
             <TextBox x:Name="PART_EditableTextBox" Visibility="Hidden" Margin="2,2,24,2"
                      IsReadOnly="{TemplateBinding IsReadOnly}" Background="{TemplateBinding Background}" BorderThickness="0" />
             <Popup x:Name="PART_Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}"
-                   AllowsTransparency="True" Focusable="False" PopupAnimation="Fade">
+                   AllowsTransparency="True" Focusable="False" PopupAnimation="None">
               <Border MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}"
                       MaxHeight="{TemplateBinding MaxDropDownHeight}" Background="{DynamicResource WindowBackgroundBrush}"
                       BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Padding="2">

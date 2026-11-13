@@ -10,7 +10,7 @@ namespace KeyPulse.Helpers;
 /// </summary>
 public sealed class ToastClearTimer : IDisposable
 {
-    public const int DefaultIntervalSeconds = 3;
+    public const int DefaultIntervalSeconds = 5;
 
     private readonly DispatcherTimer _timer;
     private bool _disposed;

@@ -19,15 +19,16 @@ public abstract class ToastMessageViewModelBase : ObservableObject, IDisposable
         get => _toastMessage;
         protected set
         {
+            // Repeated actions deserve a full reading interval even when their message is unchanged.
+            if (!string.IsNullOrEmpty(value))
+                _toastClearTimer.Restart();
+
             if (_toastMessage == value)
                 return;
 
             _toastMessage = value;
             OnPropertyChanged();
             OnPropertyChanged(nameof(ToastVisibility));
-
-            if (!string.IsNullOrEmpty(value))
-                _toastClearTimer.Restart();
         }
     }
 

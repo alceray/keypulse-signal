@@ -7,7 +7,7 @@
       <StackPanel>
         <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1">
           <Border.Style><Style TargetType="Border"><Style.Triggers><DataTrigger Binding="{Binding Name}" Value="My collection"><Setter Property="Visibility" Value="Collapsed" /></DataTrigger></Style.Triggers></Style></Border.Style>
-          <ToggleButton Cursor="Hand" HorizontalAlignment="Stretch" Padding="4,0" BorderThickness="0" Background="{DynamicResource SurfaceBrush}" AutomationProperties.Name="{Binding Name}" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+          <ToggleButton Cursor="Hand" HorizontalAlignment="Stretch" Padding="12,8" BorderThickness="0" Background="{DynamicResource SurfaceBrush}" AutomationProperties.Name="{Binding Name}" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
             <ToggleButton.FocusVisualStyle>
               <Style TargetType="Control">
                 <Setter Property="Template">
@@ -21,7 +21,7 @@
             </ToggleButton.FocusVisualStyle>
             <ToggleButton.Template>
               <ControlTemplate TargetType="ToggleButton">
-                <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="1" Padding="{TemplateBinding Padding}">
+                <Border Background="Transparent" Padding="{TemplateBinding Padding}">
                   <ContentPresenter />
                 </Border>
               </ControlTemplate>
@@ -30,7 +30,7 @@
               <StackPanel.RenderTransform>
                 <TranslateTransform X="{Binding HorizontalOffset, RelativeSource={RelativeSource AncestorType=ScrollViewer}}" />
               </StackPanel.RenderTransform>
-              <TextBlock FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="4,0">
+              <TextBlock FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="0,0,10,0">
                 <TextBlock.Style>
                   <Style TargetType="TextBlock">
                     <Setter Property="Text" Value="" />
@@ -196,12 +196,10 @@
                         </Expander.Style>
                         <Expander.HeaderTemplate>
                           <DataTemplate>
-                            <Border Background="{DynamicResource SurfaceBrush}" Padding="8,8">
-                              <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
-                                <TextBlock Text="{Binding ItemCount, StringFormat={} ({0:N0})}" Margin="4,0,0,0" />
-                              </StackPanel>
-                            </Border>
+                            <StackPanel Orientation="Horizontal">
+                              <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                              <TextBlock Text="{Binding ItemCount, StringFormat={} ({0:N0})}" Margin="4,0,0,0" />
+                            </StackPanel>
                           </DataTemplate>
                         </Expander.HeaderTemplate>
                         <ItemsPresenter />
@@ -269,7 +267,7 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Grid Margin="3,2" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
-                  <TextBox Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="QuantityKeyDown" GotKeyboardFocus="QuantityFocused" AutomationProperties.Name="Quantity" IsEnabled="{Binding CanEnterQuantity}"></TextBox>
+                  <TextBox Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="QuantityKeyDown" GotKeyboardFocus="QuantityFocused" AutomationProperties.Name="Quantity" AutomationProperties.HelpText="Enter or Save commits the quantity. Escape resets the quantity. Saving zero removes the item." ToolTip="Enter or Save commits the quantity. Escape resets the quantity. Saving zero removes the item." IsEnabled="{Binding CanEnterQuantity}"></TextBox>
                 </Grid>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>

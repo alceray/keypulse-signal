@@ -10,6 +10,8 @@
     <Version>1.5.0</Version>
     <FileVersion>1.5.0.0</FileVersion>
     <ApplicationIcon>Assets\keypulse-signal-icon.ico</ApplicationIcon>
+    <!-- Verification output can contain copied XAML; never compile it as application source. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);artifacts\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
