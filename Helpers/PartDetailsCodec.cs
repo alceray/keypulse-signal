@@ -120,7 +120,8 @@ public static class PartDetailsCodec
             row.Notes,
             row.AddedAt,
             details,
-            error
+            error,
+            row.Variant
         );
     }
 }

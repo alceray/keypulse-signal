@@ -59,7 +59,9 @@ public class PartsViewModelTests
             list.IsCatalogExpanded.ShouldBeFalse();
 
             list.IsCollectionExpanded = list.IsCatalogExpanded = false;
-            manufacturer.Selected = manufacturer.Options.Single(option => option != PartFilter.Any && option != "Custom maker");
+            manufacturer.Selected = manufacturer.Options.Single(option =>
+                option != PartFilter.Any && option != "Custom maker"
+            );
             list.IsCollectionExpanded.ShouldBeFalse();
             list.IsCatalogExpanded.ShouldBeTrue();
 
@@ -542,6 +544,124 @@ public class PartsViewModelTests
             list.CatalogMessage.ShouldContain("refresh failed");
             list.CanChangeQuantity(list.Rows.Cast<PartRow>().Single(x => x.Item == null)).ShouldBeFalse();
             scope.Factory.FailAfterSave = false;
+        });
+
+    [Theory]
+    [InlineData(PartKinds.Switch, 10)]
+    [InlineData(PartKinds.Keycap, 1)]
+    public void Variants_ApplyOrCancel_WhileQuantitiesRemainDrafts(string kind, int initialQuantity) =>
+        Run(async () =>
+        {
+            using var scope = new Scope(new CatalogService());
+            using var list = scope.List(kind);
+            await list.InitializeAsync();
+            var row = list.Rows.Cast<PartRow>().First(x => x.VariantOptions.Count >= 2);
+            var id = row.Entry!.Id;
+            var labels = row.VariantOptions.Select(x => x.Label).ToArray();
+            row.HasVariantChoices.ShouldBeFalse();
+            row.Section.ShouldBe("Catalog");
+            list.BeginAdd(row);
+            row.HasVariantChoices.ShouldBeTrue();
+            row.Section.ShouldBe("My collection");
+            row.QuantityValue.ShouldBe(initialQuantity);
+            list.BeginVariantPicker(row);
+            row.VariantOptions[0].IsSelected = true;
+            row.VariantOptions[1].IsSelected = true;
+            (await list.SaveQuantityAsync(row)).ShouldBeNull();
+            scope.Collection.Items.ShouldNotContain(x => x.CatalogEntryId == id);
+            scope.Factory.FailAfterSave = true;
+            (await list.ApplyVariantsAsync())!.Status.ShouldBe(CollectionResultStatus.StorageFailure);
+            row.SelectedVariants.ShouldBe(labels[..2]);
+            scope.Collection.Items.ShouldNotContain(x => x.CatalogEntryId == id);
+            scope.Factory.FailAfterSave = false;
+            (await list.ApplyVariantsAsync())!.Succeeded.ShouldBeTrue();
+            await Pump();
+
+            var owned = list.Rows.Cast<PartRow>().Where(x => x.Item?.CatalogEntryId == id).ToArray();
+            owned.Length.ShouldBe(2);
+            owned.ShouldAllBe(x => x.Quantity == initialQuantity && x.HasVariantChoices);
+            owned.ShouldAllBe(x => x.VariantSummary == x.Item!.Variant);
+            list.Rows.Cast<PartRow>().ShouldNotContain(x => x.Entry != null && x.Entry.Id == id && x.Item == null);
+
+            var first = owned.Single(x => x.Variant == labels[0]);
+            first.QuantityText = (initialQuantity + 1).ToString();
+            list.CancelEdit(first);
+            first.SelectedVariants.ShouldBe(labels[..2]);
+            list.BeginVariantPicker(first);
+            (await list.ApplyVariantsAsync()).ShouldBeNull();
+            scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(2);
+            first.QuantityText = (initialQuantity + 1).ToString();
+            list.DiscardPendingChanges();
+            first.SelectedVariants.ShouldBe(labels[..2]);
+            first.QuantityText = (initialQuantity + 1).ToString();
+            scope.Collection.Items.Single(x => x.ItemKey == first.Item!.ItemKey).Quantity.ShouldBe(initialQuantity);
+            list.BeginVariantPicker(first);
+            first.VariantOptions.Single(x => x.Label == labels[1]).IsSelected = false;
+            scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(2);
+            list.CancelVariantPicker();
+            first.SelectedVariants.ShouldBe(labels[..2]);
+            scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(2);
+            list.BeginVariantPicker(first);
+            first.VariantOptions.Single(x => x.Label == labels[1]).IsSelected = false;
+            (await list.ApplyVariantsAsync())!.Succeeded.ShouldBeTrue();
+            await Pump();
+            first.QuantityValue.ShouldBe(initialQuantity + 1);
+            first.HasQuantityDraft.ShouldBeTrue();
+            scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(1);
+
+            // A stale menu cannot delete an item another writer has changed.
+            list.BeginVariantPicker(first);
+            (await scope.Collection.UpdateAsync(first.Item!, initialQuantity + 2, null)).Succeeded.ShouldBeTrue();
+            await Pump();
+            first.VariantOptions.Single(x => x.Label == labels[0]).IsSelected = false;
+            (await list.ApplyVariantsAsync())!.Status.ShouldBe(CollectionResultStatus.Conflict);
+            scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(1);
+            list.CancelVariantPicker();
+            list.CancelEdit(first);
+
+            first.QuantityText = "0";
+            scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(1);
+            (await list.SaveQuantityAsync(first))!.Succeeded.ShouldBeTrue();
+            await Pump();
+            var catalog = list.Rows.Cast<PartRow>().Single(x => x.Entry?.Id == id);
+            catalog.Section.ShouldBe("Catalog");
+            catalog.HasVariantChoices.ShouldBeFalse();
+        });
+
+    [Theory]
+    [InlineData(PartKinds.Switch, 30, false)]
+    [InlineData(PartKinds.Switch, 30, true)]
+    [InlineData(PartKinds.Keycap, 3, false)]
+    [InlineData(PartKinds.Keycap, 3, true)]
+    public void NewVariants_CopySourceSavedQuantity_NotItsDraft(string kind, int savedQuantity, bool namedSource) =>
+        Run(async () =>
+        {
+            using var scope = new Scope(new CatalogService());
+            using var list = scope.List(kind);
+            await list.InitializeAsync();
+            var catalog = list.Rows.Cast<PartRow>().First(x => x.VariantOptions.Count >= 3);
+            var id = catalog.Entry!.Id;
+            var labels = catalog.VariantOptions.Select(x => x.Label).ToArray();
+            (
+                await scope.Collection.AddCatalogAsync(kind, id, savedQuantity, namedSource ? [labels[0]] : null)
+            ).Succeeded.ShouldBeTrue();
+            await Pump();
+            var source = list.Rows.Cast<PartRow>().Single(x => x.Item?.CatalogEntryId == id);
+            source.QuantityText = (savedQuantity + 7).ToString();
+            list.BeginVariantPicker(source);
+            source.VariantOptions[1].IsSelected = true;
+            source.VariantOptions[2].IsSelected = true;
+            (await list.ApplyVariantsAsync())!.Succeeded.ShouldBeTrue();
+            await Pump();
+
+            var saved = scope.Collection.Items.Where(x => x.CatalogEntryId == id).ToArray();
+            saved.Length.ShouldBe(namedSource ? 3 : 2);
+            saved.ShouldAllBe(x => x.Quantity == savedQuantity);
+            if (namedSource)
+            {
+                source.QuantityValue.ShouldBe(savedQuantity + 7);
+                source.HasQuantityDraft.ShouldBeTrue();
+            }
         });
 
     [Fact]

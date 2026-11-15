@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Track individual switch and keycap variants in your collection, each with its own quantity.
+
 ## [1.5.0] - 2026-11-08
 
 ### Added

@@ -46,8 +46,8 @@ public sealed class CollectionService
             return _states.GetValueOrDefault(kind, CollectionCatalogStatus.Loading);
     }
 
-    public CollectionSnapshot? FindOwned(string kind, string id) =>
-        Items.FirstOrDefault(x => x.PartKind == kind && x.CatalogEntryId == id);
+    public CollectionSnapshot? FindOwned(string kind, string id, string variant = "") =>
+        Items.FirstOrDefault(x => x.PartKind == kind && x.CatalogEntryId == id && x.Variant == variant);
 
     public string GetItemStatus(CollectionSnapshot row)
     {
@@ -131,12 +131,17 @@ public sealed class CollectionService
         }
     }
 
-    public Task<CollectionResult> AddCatalogAsync(string kind, string id, int quantity) =>
+    public Task<CollectionResult> AddCatalogAsync(
+        string kind,
+        string id,
+        int quantity,
+        IReadOnlyList<string>? variants = null
+    ) =>
         WriteAsync(
             kind,
             () =>
                 GetCatalogStatus(kind) == CollectionCatalogStatus.Ready
-                    ? _data.AddCatalogCollectionItem(kind, id, quantity)
+                    ? _data.AddCatalogCollectionItem(kind, id, quantity, variants)
                     : CollectionResult.Failure(
                         CollectionResultStatus.ValidationError,
                         "Wait for the catalog to finish loading or retry its refresh."
@@ -160,6 +165,14 @@ public sealed class CollectionService
             item.PartKind,
             () => _data.UpdateCollectionItem(item.ItemKey, item.Revision, quantity, notes, description)
         );
+
+    public Task<CollectionResult> SetVariantsAsync(
+        string kind,
+        string id,
+        IReadOnlyList<string> variants,
+        IReadOnlyList<CollectionSnapshot> captured,
+        Guid? sourceItemKey
+    ) => WriteAsync(kind, () => _data.SetCollectionVariants(kind, id, variants, captured, sourceItemKey));
 
     public Task<CollectionResult> RemoveAsync(CollectionSnapshot item) =>
         WriteAsync(item.PartKind, () => _data.RemoveCollectionItem(item.ItemKey, item.Revision));

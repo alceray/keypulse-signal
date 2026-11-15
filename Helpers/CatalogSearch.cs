@@ -98,7 +98,7 @@ public sealed class CatalogSearch
         Prepare(
             string.Join(
                 " ",
-                new[] { item.Name, item.Manufacturer, item.Brand, item.Designer, item.Notes }.Concat(
+                new[] { item.Name, item.Variant, item.Manufacturer, item.Brand, item.Designer, item.Notes }.Concat(
                     DetailTerms(item.Details)
                 )
             )

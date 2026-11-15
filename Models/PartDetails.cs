@@ -64,7 +64,8 @@ public sealed record CollectionSnapshot(
     string? Notes,
     DateTime AddedAt,
     PartDetails? Details,
-    string? DetailsError
+    string? DetailsError,
+    string Variant = ""
 );
 
 public enum CollectionResultStatus

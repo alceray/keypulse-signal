@@ -135,12 +135,16 @@ namespace KeyPulse.Migrations
                         .HasColumnType("INTEGER")
                         .HasDefaultValue(1L);
 
+                    b.Property<string>("Variant")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("CollectionItemId");
 
                     b.HasIndex("ItemKey")
                         .IsUnique();
 
-                    b.HasIndex("PartKind", "CatalogEntryId")
+                    b.HasIndex("PartKind", "CatalogEntryId", "Variant")
                         .IsUnique();
 
                     b.ToTable("CollectionItems", null, t =>
@@ -148,6 +152,8 @@ namespace KeyPulse.Migrations
                             t.HasCheckConstraint("CK_CollectionItems_CatalogEntryId", "\"CatalogEntryId\" IS NULL OR length(trim(\"CatalogEntryId\")) > 0");
 
                             t.HasCheckConstraint("CK_CollectionItems_Quantity", "\"Quantity\" >= 1 AND \"Quantity\" <= 1000000");
+
+                            t.HasCheckConstraint("CK_CollectionItems_Variant", "\"CatalogEntryId\" IS NOT NULL OR \"Variant\" = ''");
                         });
                 });
 

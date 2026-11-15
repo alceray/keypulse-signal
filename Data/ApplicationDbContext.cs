@@ -192,10 +192,21 @@ public class ApplicationDbContext : DbContext
                     "CK_CollectionItems_CatalogEntryId",
                     "\"CatalogEntryId\" IS NULL OR length(trim(\"CatalogEntryId\")) > 0"
                 );
+                table.HasCheckConstraint(
+                    "CK_CollectionItems_Variant",
+                    "\"CatalogEntryId\" IS NOT NULL OR \"Variant\" = ''"
+                );
             }
         );
         collection.HasIndex(x => x.ItemKey).IsUnique();
-        collection.HasIndex(x => new { x.PartKind, x.CatalogEntryId }).IsUnique();
+        collection
+            .HasIndex(x => new
+            {
+                x.PartKind,
+                x.CatalogEntryId,
+                x.Variant,
+            })
+            .IsUnique();
         collection.Property(x => x.Revision).IsConcurrencyToken().HasDefaultValue(1L);
         collection.Property(x => x.DetailsSchemaVersion).HasDefaultValue(1);
         collection.Property(x => x.Quantity).HasDefaultValue(1);

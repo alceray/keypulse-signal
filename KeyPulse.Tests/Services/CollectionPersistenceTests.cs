@@ -24,6 +24,71 @@ public class CollectionPersistenceTests
         ExerciseConstraints(db.Factory);
     }
 
+    [Fact]
+    public async Task Sqlite_KeycapVariantsAreSeparateKits()
+    {
+        using var db = new SqliteTestDatabase();
+        using var timer = new AppTimerService();
+        using var daily = new DailyStatsService(db.Factory, timer);
+        using var databaseLock = new DatabaseInstanceLock();
+        var catalog = new CatalogService();
+        var state = await catalog.LoadAsync(PartKinds.Keycap);
+        var entry = state.Entries.First(x => x.Description.Details.Variants.Length >= 3);
+        var (first, second, third) = (
+            entry.Description.Details.Variants[0],
+            entry.Description.Details.Variants[1],
+            entry.Description.Details.Variants[2]
+        );
+        var data = new DataService(db.Factory, daily, databaseLock, catalog);
+        data.ReadCollectionItems().Succeeded.ShouldBeTrue();
+
+        var added = data.AddCatalogCollectionItem(PartKinds.Keycap, entry.Id, 2, [first, second]);
+        added.Items.Select(x => (x.Variant, x.Quantity)).Order().ShouldBe(new[] { (first, 2), (second, 2) }.Order());
+        var kit = added.Items.Single(x => x.Variant == first);
+        var increased = data.AddCatalogCollectionItem(PartKinds.Keycap, entry.Id, 1, [first]).Items;
+        increased
+            .Single(x => x.Variant == first)
+            .ShouldSatisfyAllConditions(x => x.Quantity.ShouldBe(3), x => x.ItemKey.ShouldBe(kit.ItemKey));
+        data.AddCatalogCollectionItem(PartKinds.Keycap, entry.Id, 1).Items.Count(x => x.Variant == "").ShouldBe(1);
+        data.AddCatalogCollectionItem(PartKinds.Keycap, entry.Id, 1, ["Not a variant"])
+            .Status.ShouldBe(CollectionResultStatus.ValidationError);
+        data.AddCatalogCollectionItem(PartKinds.Keycap, entry.Id, 1, [third, third.ToUpperInvariant()])
+            .Status.ShouldBe(CollectionResultStatus.ValidationError);
+        data.CollectionItems.Length.ShouldBe(3);
+
+        data.RefreshCollectionSnapshots(PartKinds.Keycap).Succeeded.ShouldBeTrue();
+        data.CollectionItems.Select(x => x.Variant).Order().ShouldBe(new[] { "", first, second }.Order());
+
+        var captured = data.CollectionItems;
+        var selected = data.SetCollectionVariants(
+            PartKinds.Keycap,
+            entry.Id,
+            [first, second, third],
+            captured,
+            kit.ItemKey
+        );
+        selected.Succeeded.ShouldBeTrue();
+        selected.Items.Select(x => x.Variant).Order().ShouldBe(new[] { first, second, third }.Order());
+        selected.Items.Single(x => x.Variant == first).Quantity.ShouldBe(3);
+        selected.Items.Single(x => x.Variant == third).Quantity.ShouldBe(3);
+        data.SetCollectionVariants(PartKinds.Keycap, entry.Id, [second, third], captured, kit.ItemKey)
+            .Status.ShouldBe(CollectionResultStatus.Conflict);
+        data.CollectionItems.Length.ShouldBe(3);
+
+        using var ctx = db.Factory.CreateDbContext();
+        ctx.CollectionItems.Add(
+            new CollectionItem
+            {
+                PartKind = PartKinds.Keycap,
+                Variant = first,
+                Name = "Custom",
+                QuantityUnit = "Kit",
+                DetailsJson = "{}",
+            }
+        );
+        Should.Throw<DbUpdateException>(() => ctx.SaveChanges());
+    }
+
     internal static PartDescription Custom(string name = "Café") =>
         new(name, null, null, null, new SwitchPartDetails { Variants = ["45g", "55g"] });
 

@@ -6,6 +6,7 @@ public class CollectionItem
     public Guid ItemKey { get; set; } = Guid.NewGuid();
     public string PartKind { get; set; } = "";
     public string? CatalogEntryId { get; set; }
+    public string Variant { get; set; } = "";
     public string Name { get; set; } = "";
     public string? Manufacturer { get; set; }
     public string? Brand { get; set; }

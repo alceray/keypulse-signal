@@ -54,6 +54,54 @@
         </Trigger>
       </ControlTemplate.Triggers>
     </ControlTemplate>
+    <Style x:Key="ApplyVariantsButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+      <EventSetter Event="Click" Handler="ApplyVariants" />
+    </Style>
+    <Style x:Key="CancelVariantsButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+      <EventSetter Event="Click" Handler="CancelVariants" />
+    </Style>
+    <Style x:Key="VariantPickerStyle" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+      <EventSetter Event="Loaded" Handler="VariantPickerLoaded" />
+      <EventSetter Event="Unloaded" Handler="VariantPickerUnloaded" />
+      <EventSetter Event="PreviewKeyDown" Handler="VariantPickerKeyDown" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ComboBox">
+            <Grid>
+              <ToggleButton x:Name="DropDownToggle" Focusable="False" ClickMode="Press"
+                            Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                            HorizontalContentAlignment="Right"
+                            IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                <Path Data="M 0,0 L 4,4 L 8,0" Stroke="{DynamicResource PrimaryTextBrush}" StrokeThickness="1.5" />
+              </ToggleButton>
+              <Popup x:Name="PART_Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}"
+                     AllowsTransparency="True" Focusable="False" PopupAnimation="None">
+                <Border MinWidth="240" MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                        Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1" Padding="4" KeyboardNavigation.TabNavigation="Cycle">
+                  <DockPanel>
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="4,8,4,4">
+                      <Button Content="Cancel" Style="{StaticResource CancelVariantsButton}" Margin="0,0,8,0"
+                              Tag="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+                      <Button Content="Apply" Style="{StaticResource ApplyVariantsButton}"
+                              Tag="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+                    </StackPanel>
+                    <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+                      <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                    </ScrollViewer>
+                  </DockPanel>
+                </Border>
+              </Popup>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter TargetName="DropDownToggle" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
     <BooleanToVisibilityConverter x:Key="Bool" />
     <Style x:Key="PartCellText" TargetType="TextBlock">
       <Setter Property="TextTrimming" Value="CharacterEllipsis" />
@@ -267,7 +315,8 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Grid Margin="3,2" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
-                  <TextBox Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="QuantityKeyDown" GotKeyboardFocus="QuantityFocused" AutomationProperties.Name="Quantity" AutomationProperties.HelpText="Enter or Save commits the quantity. Escape resets the quantity. Saving zero removes the item." ToolTip="Enter or Save commits the quantity. Escape resets the quantity. Saving zero removes the item." IsEnabled="{Binding CanEnterQuantity}"></TextBox>
+                  <TextBox Text="{Binding QuantityText, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="QuantityKeyDown" GotKeyboardFocus="QuantityFocused" AutomationProperties.Name="Quantity" AutomationProperties.HelpText="Enter or Save commits the quantity. Escape resets the quantity. Saving zero removes the item." ToolTip="Enter or Save commits the quantity. Escape resets the quantity. Saving zero removes the item." IsEnabled="{Binding CanEnterQuantity}">
+                  </TextBox>
                 </Grid>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
@@ -665,9 +714,23 @@
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
           <DataGridTemplateColumn x:Name="VariantsColumn" Header="Variants" Width="140" MinWidth="140" SortMemberPath="Variants">
+            <DataGridTemplateColumn.CellStyle>
+              <Style TargetType="DataGridCell" BasedOn="{StaticResource DeviceGridCellStyle}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                      <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter VerticalAlignment="Stretch" />
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </DataGridTemplateColumn.CellStyle>
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
-                <ContentControl Content="{Binding}" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}">
+                <ContentControl Content="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}" Selector.SelectionChanged="VariantPicked">
                   <ContentControl.Style>
                     <Style TargetType="ContentControl">
                       <Setter Property="ContentTemplate">
@@ -683,6 +746,30 @@
                             <Setter.Value>
                               <DataTemplate>
                                 <TextBox Text="{Binding Editor.Variants, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" AutomationProperties.Name="Variants" Margin="3,2" AcceptsReturn="True" ToolTip="One variant per line" />
+                              </DataTemplate>
+                            </Setter.Value>
+                          </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding HasVariantChoices}" Value="True">
+                          <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                              <DataTemplate>
+                                <Grid>
+                                  <ComboBox ItemsSource="{Binding VariantOptions}" AutomationProperties.Name="Collection variants" Style="{StaticResource VariantPickerStyle}" ToolTip="{Binding VariantSummary}">
+                                    <ComboBox.ItemContainerStyle>
+                                      <Style TargetType="ComboBoxItem" BasedOn="{StaticResource {x:Type ComboBoxItem}}">
+                                        <Setter Property="Padding" Value="0" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                      </Style>
+                                    </ComboBox.ItemContainerStyle>
+                                    <ComboBox.ItemTemplate>
+                                      <DataTemplate>
+                                        <CheckBox Content="{Binding Label}" IsChecked="{Binding IsSelected}" Padding="6,0,0,0" Margin="8,5" />
+                                      </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                  </ComboBox>
+                                  <TextBlock Text="{Binding VariantSummary}" Margin="7,0,24,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" IsHitTestVisible="False" />
+                                </Grid>
                               </DataTemplate>
                             </Setter.Value>
                           </Setter>

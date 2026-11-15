@@ -143,6 +143,7 @@ internal sealed class DatabaseSwitchTestScope : IDisposable
             {
                 PartKind = "Switch",
                 CatalogEntryId = "retired-switch",
+                Variant = "45g",
                 Name = "Stored switch",
                 Manufacturer = "Factory",
                 Brand = "Brand",

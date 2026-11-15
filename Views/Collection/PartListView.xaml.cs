@@ -228,7 +228,41 @@ public partial class PartListView : UserControl
             Model?.CancelEdit(row);
     }
 
-    private void Add(object sender, RoutedEventArgs e) => StepQuantity(sender, e, 1);
+    private async void Add(object sender, RoutedEventArgs e)
+    {
+        if (Model is not { CanMutate: true } model || ActionRow(sender) is not { } row)
+            return;
+        model.BeginAdd(row);
+        if (!row.HasVariantChoices)
+            return;
+        PartsGrid.ScrollIntoView(row, VariantsColumn);
+        await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.Loaded);
+        if (PartsGrid.ItemContainerGenerator.ContainerFromItem(row) is DataGridRow container)
+        {
+            var picker = FindVariantPicker(container);
+            if (picker != null)
+            {
+                picker.Focus();
+                picker.IsDropDownOpen = true;
+            }
+        }
+    }
+
+    private static ComboBox? FindVariantPicker(DependencyObject parent)
+    {
+        for (var i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+        {
+            var child = VisualTreeHelper.GetChild(parent, i);
+            if (
+                child is ComboBox box
+                && System.Windows.Automation.AutomationProperties.GetName(box) == "Collection variants"
+            )
+                return box;
+            if (FindVariantPicker(child) is { } found)
+                return found;
+        }
+        return null;
+    }
 
     private void Increase(object sender, RoutedEventArgs e) => StepQuantity(sender, e, 1);
 
@@ -273,7 +307,7 @@ public partial class PartListView : UserControl
             return;
         try
         {
-            Clipboard.SetText(row.Name);
+            Clipboard.SetText(row.Title);
         }
         catch (System.Runtime.InteropServices.COMException)
         {
@@ -392,6 +426,67 @@ public partial class PartListView : UserControl
                 }
             })
         );
+    }
+
+    private void VariantPicked(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.OriginalSource is not ComboBox box)
+            return;
+        e.Handled = true;
+        if (box.SelectedItem is not VariantOption option)
+            return;
+        box.SelectedIndex = -1;
+        option.IsSelected = !option.IsSelected;
+    }
+
+    private void VariantOpened(object? sender, EventArgs e)
+    {
+        if (sender is ComboBox { DataContext: PartRow row })
+            Model?.BeginVariantPicker(row);
+    }
+
+    private void VariantClosed(object? sender, EventArgs e) => Model?.CancelVariantPicker();
+
+    private async void ApplyVariants(object sender, RoutedEventArgs e)
+    {
+        if (sender is not Button { Tag: ComboBox picker } || Model is not { CanMutate: true } model)
+            return;
+        var result = await model.ApplyVariantsAsync();
+        if (result == null || result.Succeeded)
+            picker.IsDropDownOpen = false;
+        else if (!picker.IsLoaded || !picker.IsDropDownOpen)
+            model.CancelVariantPicker();
+    }
+
+    private void CancelVariants(object sender, RoutedEventArgs e)
+    {
+        if (sender is Button { Tag: ComboBox picker })
+            picker.IsDropDownOpen = false;
+    }
+
+    private void VariantPickerKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape && sender is ComboBox picker && picker.IsDropDownOpen)
+        {
+            picker.IsDropDownOpen = false;
+            e.Handled = true;
+        }
+    }
+
+    private void VariantPickerLoaded(object sender, RoutedEventArgs e)
+    {
+        var picker = (ComboBox)sender;
+        picker.DropDownOpened += VariantOpened;
+        picker.DropDownClosed += VariantClosed;
+    }
+
+    private void VariantPickerUnloaded(object sender, RoutedEventArgs e)
+    {
+        var picker = (ComboBox)sender;
+        picker.DropDownOpened -= VariantOpened;
+        picker.DropDownClosed -= VariantClosed;
+        if (picker.IsDropDownOpen)
+            Model?.CancelVariantPicker();
     }
 
     private static ScrollViewer? FindScrollViewer(DependencyObject parent)

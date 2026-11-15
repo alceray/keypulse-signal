@@ -326,6 +326,10 @@ public class PartsWindowTests
                         target.QuantityValue.ShouldBe(expected);
                         target.Quantity.ShouldBe(original);
                         completed.Task.IsCompleted.ShouldBeFalse();
+                        // A real click on the row Save button first dismisses the open dropdown.
+                        foreach (var picker in Descendants<ComboBox>(host).Where(x => x.IsDropDownOpen).ToArray())
+                            picker.IsDropDownOpen = false;
+                        await PartsViewModelTests.Pump();
                         var commit = Descendants<Button>(host)
                             .Single(x =>
                                 ReferenceEquals(x.DataContext, target)
@@ -506,6 +510,106 @@ public class PartsWindowTests
                     scope.Collection.Changed -= ObserveRemoval;
                 }
                 await ClickAction(capRow, "Add to collection", 1);
+                await AddKeycapKits();
+                async Task AddKeycapKits()
+                {
+                    var keycaps = host.Keycaps;
+                    var kitRow = keycaps.Rows.Cast<PartRow>().First(x => x.Item == null && x.VariantOptions.Count >= 3);
+                    kitRow.HasVariantChoices.ShouldBeFalse();
+                    var id = kitRow.Entry!.Id;
+                    var labels = kitRow.VariantOptions.Select(x => x.Label).ToArray();
+                    var capGrid = Descendants<DataGrid>(host).Single();
+                    capGrid.ScrollIntoView(kitRow);
+                    await PartsViewModelTests.Pump();
+                    Descendants<Button>(host)
+                        .Single(x =>
+                            ReferenceEquals(x.DataContext, kitRow)
+                            && System.Windows.Automation.AutomationProperties.GetName(x) == "Add to collection"
+                        )
+                        .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    await PartsViewModelTests.Pump();
+                    var picker = Descendants<ComboBox>(host).Single(x => ReferenceEquals(x.DataContext, kitRow));
+                    picker.IsDropDownOpen.ShouldBeTrue();
+                    foreach (var index in new[] { 0, 1 })
+                    {
+                        if (index == 0)
+                        {
+                            var option = (ComboBoxItem)picker.ItemContainerGenerator.ContainerFromIndex(index);
+                            var check = Descendants<CheckBox>(option).Single();
+                            (
+                                (System.Windows.Automation.Provider.IToggleProvider)
+                                    new System.Windows.Automation.Peers.CheckBoxAutomationPeer(check).GetPattern(
+                                        System.Windows.Automation.Peers.PatternInterface.Toggle
+                                    )
+                            ).Toggle();
+                        }
+                        else
+                            picker.SelectedIndex = index;
+                        var timeout = Stopwatch.StartNew();
+                        while (!keycaps.CanMutate && timeout.Elapsed < TimeSpan.FromSeconds(5))
+                            await Task.Delay(20);
+                        await PartsViewModelTests.Pump();
+                        kitRow.VariantOptions[index].IsSelected.ShouldBeTrue();
+                        picker.IsDropDownOpen.ShouldBeTrue();
+                    }
+                    scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(0);
+                    var menu = (FrameworkElement)((Popup)picker.Template.FindName("PART_Popup", picker)).Child;
+                    Descendants<Button>(menu)
+                        .Single(x => Equals(x.Content, "Apply"))
+                        .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    var saved = Stopwatch.StartNew();
+                    while (!keycaps.CanMutate && saved.Elapsed < TimeSpan.FromSeconds(5))
+                        await Task.Delay(20);
+                    await PartsViewModelTests.Pump();
+                    picker.IsDropDownOpen.ShouldBeFalse();
+                    var kits = keycaps.Rows.Cast<PartRow>().Where(x => x.Item?.CatalogEntryId == id).ToArray();
+                    kits.Length.ShouldBe(2);
+                    kits.ShouldAllBe(x => x.Quantity == 1 && x.HasVariantChoices);
+                    foreach (var kit in kits)
+                    {
+                        capGrid.ScrollIntoView(kit, capGrid.Columns.Single(x => Equals(x.Header, "Variants")));
+                        await PartsViewModelTests.Pump();
+                        Descendants<ComboBox>(host).ShouldContain(x => ReferenceEquals(x.DataContext, kit));
+                        kit.VariantSummary.ShouldBe(kit.Variant);
+                    }
+                    Save(owner, "keycap-variant-rows", false);
+                    var ownedPicker = Descendants<ComboBox>(host).First(x => kits.Contains(x.DataContext as PartRow));
+                    foreach (var dismiss in new[] { "Cancel", "Outside", "Escape" })
+                    {
+                        ownedPicker.IsDropDownOpen = true;
+                        await PartsViewModelTests.Pump();
+                        ownedPicker.SelectedIndex = 0;
+                        if (dismiss == "Cancel")
+                        {
+                            var content = (FrameworkElement)
+                                ((Popup)ownedPicker.Template.FindName("PART_Popup", ownedPicker)).Child;
+                            Descendants<Button>(content)
+                                .Single(x => Equals(x.Content, "Cancel"))
+                                .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        }
+                        else if (dismiss == "Escape")
+                            ownedPicker.RaiseEvent(
+                                new KeyEventArgs(
+                                    Keyboard.PrimaryDevice,
+                                    PresentationSource.FromVisual(owner),
+                                    0,
+                                    Key.Escape
+                                )
+                                {
+                                    RoutedEvent = Keyboard.PreviewKeyDownEvent,
+                                }
+                            );
+                        else
+                            ownedPicker.IsDropDownOpen = false;
+                        await PartsViewModelTests.Pump();
+                        ownedPicker.IsDropDownOpen.ShouldBeFalse();
+                        ((PartRow)ownedPicker.DataContext).SelectedVariants.ShouldBe(labels[..2]);
+                        scope.Collection.Items.Count(x => x.CatalogEntryId == id).ShouldBe(2);
+                    }
+                    foreach (var kit in kits)
+                        (await keycaps.RemoveAsync(kit.Item!))!.Succeeded.ShouldBeTrue();
+                    await PartsViewModelTests.Pump();
+                }
                 host.Keycaps.Search = "desk";
                 host.Keycaps.ApplySearch();
                 await PartsViewModelTests.Pump();
@@ -637,7 +741,7 @@ public class PartsWindowTests
         }
     }
 
-    private static void Save(Window window, string name, bool dark)
+    private static void Save(FrameworkElement window, string name, bool dark)
     {
         var directory = Environment.GetEnvironmentVariable("KEYPULSE_THEME_PREVIEW_DIR");
         if (directory == null)

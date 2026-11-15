@@ -12,8 +12,39 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
     public CollectionSnapshot? Item { get; private set; }
     public string Identity { get; } = identity;
     public bool IsNew => Item == null && Entry == null;
-    public string Section => Item == null && !IsNew ? "Catalog" : "My collection";
+    public string Section => Item == null && !IsNew && !IsAddingVariants ? "Catalog" : "My collection";
     public string Name => Item?.Name ?? Entry?.Description.Name ?? "New custom item";
+    public string Variant => Item?.Variant ?? "";
+    public string Title => Item == null ? Name : TitleOf(Item);
+    public IReadOnlyList<VariantOption> VariantOptions { get; private set; } = [];
+    public bool IsAddingVariants => Item == null && VariantOptions.Count > 0 && HasQuantityDraft;
+    public bool HasVariantChoices => Entry != null && VariantOptions.Count > 0 && (Item != null || IsAddingVariants);
+    public IReadOnlyList<string> SelectedVariants =>
+        VariantOptions.Where(x => x.IsSelected).Select(x => x.Label).ToArray();
+    public string VariantSummary => Item != null ? Variant : string.Join(", ", SelectedVariants);
+
+    internal static string TitleOf(CollectionSnapshot item) =>
+        item.Variant.Length > 0 ? $"{item.Name} {item.Variant}" : item.Name;
+
+    internal bool SetVariantOptions(IReadOnlyList<string> labels, IReadOnlySet<string> owned)
+    {
+        foreach (var option in VariantOptions)
+            option.IsSelected = owned.Contains(option.Label);
+        if (VariantOptions.Select(x => x.Label).SequenceEqual(labels))
+            return false;
+        VariantOptions = labels.Select(x => new VariantOption(x, owned.Contains(x), VariantsChanged)).ToArray();
+        OnPropertyChanged("");
+        return true;
+    }
+
+    public void ClearVariantSelection()
+    {
+        foreach (var option in VariantOptions)
+            option.IsSelected = false;
+    }
+
+    private void VariantsChanged() => OnPropertyChanged(nameof(VariantSummary));
+
     public PartEditorViewModel? Editor { get; private set; }
     public bool IsEditing => IsNew || HasQuantityDraft || Editor is { HasChanges: true } or { HasConflict: true };
     public bool HasEditor => Editor != null;
@@ -49,7 +80,7 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
     public string? Brand => Item != null ? Item.Brand : Entry?.Description.Brand;
     public string? Designer => Item != null ? Item.Designer : Entry?.Description.Designer;
     public PartDetails? Details => Item != null ? Item.Details : Entry?.Description.Details;
-    public string Variants => string.Join(", ", Details?.Variants ?? []);
+    public string Variants => Item != null && Variant.Length > 0 ? Variant : string.Join(", ", Details?.Variants ?? []);
     public string? Type => FormatSwitchType((Details as SwitchPartDetails)?.SwitchType);
 
     internal static string? FormatSwitchType(string? type) =>
@@ -174,6 +205,24 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
         }
         OnPropertyChanged("");
         return true;
+    }
+}
+
+public sealed class VariantOption(string label, bool selected, Action changed) : ObservableObject
+{
+    private bool _isSelected = selected;
+    public string Label { get; } = label;
+    public bool IsSelected
+    {
+        get => _isSelected;
+        set
+        {
+            if (_isSelected == value)
+                return;
+            _isSelected = value;
+            OnPropertyChanged();
+            changed();
+        }
     }
 }
 

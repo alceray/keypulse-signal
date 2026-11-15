@@ -45,6 +45,7 @@ public class CollectionTransferTests
                 x => x.ItemKey = Guid.NewGuid(),
                 x => x.PartKind = "Future",
                 x => x.CatalogEntryId = "changed",
+                x => x.Variant = "55g",
                 x => x.Name += "!",
                 x => x.Manufacturer += "!",
                 x => x.Brand += "!",
@@ -82,12 +83,27 @@ public class CollectionTransferTests
         context.GetService<IMigrator>().Migrate(previous);
         context.Devices.Add(new Device { DeviceId = "upgrade-fixture", DeviceName = "Keep me" });
         context.SaveChanges();
+        var itemKey = Guid.NewGuid();
+        var addedAt = new DateTime(2025, 10, 1, 0, 0, 0, DateTimeKind.Utc);
+        context.Database.ExecuteSqlInterpolated(
+            $$"""
+            INSERT INTO "CollectionItems"
+                ("ItemKey", "PartKind", "CatalogEntryId", "Name", "DetailsJson", "QuantityUnit", "Quantity", "AddedAt")
+            VALUES ({{itemKey}}, 'Switch', 'legacy-switch', 'Legacy switch', '{}', 'Piece', 70, {{addedAt}})
+            """
+        );
         context.Database.Migrate();
         context.Devices.Single().DeviceName.ShouldBe("Keep me");
-        context.CollectionItems.ShouldBeEmpty();
+        context
+            .CollectionItems.Single()
+            .ShouldSatisfyAllConditions(
+                x => x.ItemKey.ShouldBe(itemKey),
+                x => x.Variant.ShouldBeEmpty(),
+                x => x.Quantity.ShouldBe(70)
+            );
         context.Database.HasPendingModelChanges().ShouldBeFalse();
         DatabaseSwitchTestScope.SeedCollection(context);
-        context.CollectionItems.Count().ShouldBe(3);
+        context.CollectionItems.Count().ShouldBe(4);
     }
 }
 

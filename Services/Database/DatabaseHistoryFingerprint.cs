@@ -98,6 +98,7 @@ internal sealed record DatabaseHistoryFingerprint(
                     x.ItemKey,
                     x.PartKind,
                     x.CatalogEntryId,
+                    x.Variant,
                     x.Name,
                     x.Manufacturer,
                     x.Brand,

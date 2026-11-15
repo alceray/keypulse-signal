@@ -59,27 +59,41 @@ public partial class DataService
         }
     }
 
-    public CollectionResult AddCatalogCollectionItem(string kind, string id, int quantity) =>
+    public CollectionResult AddCatalogCollectionItem(
+        string kind,
+        string id,
+        int quantity,
+        IReadOnlyList<string>? variants = null
+    ) =>
         WriteCollection(context =>
         {
             ValidateQuantity(kind, quantity);
             var catalog = _catalogs.GetState(kind);
             if (catalog.Status != CatalogLoadStatus.Loaded || !catalog.ById.TryGetValue(id, out var entry))
                 throw new ArgumentException("Choose an entry from a loaded catalog.");
-            var row = context.CollectionItems.SingleOrDefault(x => x.PartKind == kind && x.CatalogEntryId == id);
-            if (row != null)
+            IReadOnlyList<string> labels = variants is { Count: > 0 } ? variants : [""];
+            if (labels.Distinct(StringComparer.OrdinalIgnoreCase).Count() != labels.Count)
+                throw new ArgumentException("Choose each variant once.");
+            if (labels.Any(x => x.Length > 0 && !entry.Description.Details.Variants.Contains(x)))
+                throw new ArgumentException("Choose variants listed in the catalog.");
+            foreach (var variant in labels)
             {
-                RequireReadable(row);
-                ValidateQuantity(kind, (long)row.Quantity + quantity);
-                row.Quantity += quantity;
-                row.Revision = checked(row.Revision + 1);
-            }
-            else
-            {
+                var row = context.CollectionItems.SingleOrDefault(x =>
+                    x.PartKind == kind && x.CatalogEntryId == id && x.Variant == variant
+                );
+                if (row != null)
+                {
+                    RequireReadable(row);
+                    ValidateQuantity(kind, (long)row.Quantity + quantity);
+                    row.Quantity += quantity;
+                    row.Revision = checked(row.Revision + 1);
+                    continue;
+                }
                 row = new CollectionItem
                 {
                     PartKind = kind,
                     CatalogEntryId = id,
+                    Variant = variant,
                     QuantityUnit = PartKinds.Unit(kind),
                     Quantity = quantity,
                 };
@@ -136,6 +150,73 @@ public partial class DataService
             context.ChangeTracker.DetectChanges();
             if (context.Entry(row).State == EntityState.Modified)
                 row.Revision = checked(row.Revision + 1);
+        });
+
+    public CollectionResult SetCollectionVariants(
+        string kind,
+        string id,
+        IReadOnlyList<string> variants,
+        IReadOnlyList<CollectionSnapshot> captured,
+        Guid? sourceItemKey
+    ) =>
+        WriteCollection(context =>
+        {
+            if (
+                variants.Any(string.IsNullOrWhiteSpace)
+                || variants.Distinct(StringComparer.OrdinalIgnoreCase).Count() != variants.Count
+            )
+                throw new ArgumentException("Choose each named variant once.");
+            var rows = context.CollectionItems.Where(x => x.PartKind == kind && x.CatalogEntryId == id).ToList();
+            if (rows.Count != captured.Count)
+                throw new DbUpdateConcurrencyException();
+            foreach (var row in rows)
+            {
+                var original = captured.SingleOrDefault(x => x.ItemKey == row.ItemKey);
+                if (original == null)
+                    throw new DbUpdateConcurrencyException();
+                CheckRevision(row, original.Revision);
+            }
+            var addedLabels = variants.Where(label => rows.All(x => x.Variant != label)).ToArray();
+            var source = sourceItemKey.HasValue ? rows.SingleOrDefault(x => x.ItemKey == sourceItemKey) : null;
+            if (sourceItemKey.HasValue && source == null)
+                throw new DbUpdateConcurrencyException();
+            var initialQuantity = source?.Quantity ?? (kind == PartKinds.Switch ? 10 : 1);
+            if (addedLabels.Length > 0)
+            {
+                ValidateQuantity(kind, initialQuantity);
+                if (source != null)
+                    RequireReadable(source);
+            }
+            var catalog = _catalogs.GetState(kind);
+            catalog.ById.TryGetValue(id, out var entry);
+            if (
+                addedLabels.Length > 0
+                && (
+                    catalog.Status != CatalogLoadStatus.Loaded
+                    || entry == null
+                    || addedLabels.Any(label => !entry.Description.Details.Variants.Contains(label))
+                )
+            )
+                throw new ArgumentException("Choose variants listed in the catalog.");
+            var unspecified = rows.SingleOrDefault(x => x.Variant.Length == 0);
+            if (unspecified != null && addedLabels.Length > 0)
+                RequireReadable(unspecified);
+            foreach (var row in rows.Where(x => !variants.Contains(x.Variant)))
+                context.CollectionItems.Remove(row);
+            foreach (var label in addedLabels)
+            {
+                var added = new CollectionItem
+                {
+                    PartKind = kind,
+                    CatalogEntryId = id,
+                    Variant = label,
+                    Quantity = initialQuantity,
+                    QuantityUnit = PartKinds.Unit(kind),
+                    Notes = unspecified?.Notes,
+                };
+                SetDescription(added, entry!.Description);
+                context.CollectionItems.Add(added);
+            }
         });
 
     public CollectionResult RemoveCollectionItem(Guid key, long revision) =>

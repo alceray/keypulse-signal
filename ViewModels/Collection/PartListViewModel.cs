@@ -22,6 +22,69 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         _loadError = "";
     private PartRow? _selected;
     private int _draftGeneration;
+    private PartRow? _variantPicker;
+    private IReadOnlyList<CollectionSnapshot> _variantItems = [];
+
+    public void BeginVariantPicker(PartRow row)
+    {
+        _variantPicker = row;
+        _variantItems = _rows
+            .Where(x => x.Item?.CatalogEntryId == row.Entry?.Id && x.Item != null)
+            .Select(x => x.Item!)
+            .ToArray();
+    }
+
+    public void CancelVariantPicker()
+    {
+        if (_busy || _variantPicker is not { } row)
+            return;
+        row.SetVariantOptions(
+            row.VariantOptions.Select(x => x.Label).ToArray(),
+            _variantItems.Select(x => x.Variant).ToHashSet()
+        );
+        _variantPicker = null;
+        Synchronize();
+    }
+
+    public async Task<CollectionResult?> ApplyVariantsAsync()
+    {
+        if (_busy || _variantPicker is not { Entry: { } entry } row)
+            return null;
+        var selected = row.SelectedVariants;
+        var original = _variantItems.Select(x => x.Variant).Where(x => x.Length > 0).ToHashSet();
+        if (original.SetEquals(selected))
+        {
+            _variantPicker = null;
+            Synchronize();
+            return null;
+        }
+        _busy = true;
+        Notify();
+        var result = await _collection.SetVariantsAsync(Kind, entry.Id, selected, _variantItems, row.Item?.ItemKey);
+        if (_disposed)
+            return result;
+        _busy = false;
+        Message = result.Succeeded ? $"Saved variants for {row.Name}." : result.Message ?? "Could not save variants.";
+        if (result.Succeeded)
+        {
+            _variantPicker = null;
+            if (row.Item == null)
+                row.ResetQuantity();
+            Synchronize();
+        }
+        // On failure retain the menu choices and quantity drafts so the user can retry or reload.
+        Notify();
+        return result;
+    }
+
+    public void BeginAdd(PartRow row)
+    {
+        if (!CanChangeQuantity(row))
+            return;
+        row.QuantityText = IsSwitch ? "10" : "1";
+        IsCollectionExpanded = true;
+        Rows.Refresh();
+    }
 
     public PartListViewModel(string kind, CollectionService collection, CatalogService catalogs)
     {
@@ -52,8 +115,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
             ];
         foreach (var filter in Filters)
             filter.PropertyChanged += FilterChanged;
-        Rows.Filter = o =>
-            o is PartRow row && (row.IsNew || (_searchFilter(row.SearchText) && Filters.All(f => f.Matches(row))));
+        Rows.Filter = o => o is PartRow row && (row.IsNew || IsVisible(row));
         _searchTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(250) };
         _searchTimer.Tick += SearchTick;
         RetryCommand = new AsyncRelayCommand(_ => InitializeAsync(true), _ => !_busy && !_loading);
@@ -172,6 +234,8 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         Synchronize();
     }
 
+    private bool IsVisible(PartRow row) => _searchFilter(row.SearchText) && Filters.All(f => f.Matches(row));
+
     public void ApplySearch()
     {
         _searchTimer.Stop();
@@ -185,10 +249,10 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
     {
         if (string.IsNullOrWhiteSpace(Search) && Filters.All(filter => filter.Selected == PartFilter.Any))
             return;
-        var matches = Rows.Cast<PartRow>().Where(row => !row.IsNew);
-        if (matches.Any(row => row.Item != null))
+        var sections = Rows.Cast<PartRow>().Where(row => !row.IsNew).Select(row => row.Section).ToHashSet();
+        if (sections.Contains("My collection"))
             IsCollectionExpanded = true;
-        if (matches.Any(row => row.Item == null))
+        if (sections.Contains("Catalog"))
             IsCatalogExpanded = true;
     }
 
@@ -212,7 +276,9 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         if (!_disposed)
         {
             _busy = false;
-            Message = result.Succeeded ? $"Removed {captured.Name}." : result.Message ?? "Could not remove item.";
+            Message = result.Succeeded
+                ? $"Removed {PartRow.TitleOf(captured)}."
+                : result.Message ?? "Could not remove item.";
             Synchronize();
         }
         return result;
@@ -220,11 +286,12 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
 
     public async Task<CollectionResult?> SaveQuantityAsync(PartRow row)
     {
-        if (!CanMutate || !row.CanSaveQuantity || row.QuantityValue is not int quantity)
+        if (!CanMutate || _variantPicker != null || !row.CanSaveQuantity || row.QuantityValue is not int quantity)
             return null;
         if (!row.IsPendingRemoval && !CanChangeQuantity(row))
             return null;
         var captured = row.QuantityOriginal;
+        var id = row.Entry?.Id ?? "";
         var draftGeneration = _draftGeneration;
         _busy = true;
         Message = "Saving quantity…";
@@ -248,7 +315,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
             else
                 result = await _collection.UpdateAsync(captured, quantity, captured.Notes);
         }
-        else if (_collection.FindOwned(Kind, row.Entry!.Id) != null)
+        else if (_collection.Items.Any(x => x.PartKind == Kind && x.CatalogEntryId == id))
             result = CollectionResult.Failure(
                 CollectionResultStatus.Conflict,
                 "This item changed. Reload before saving."
@@ -256,7 +323,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         else if (quantity == 0)
             result = new(CollectionResultStatus.Success, _collection.Items);
         else
-            result = await _collection.AddCatalogAsync(Kind, row.Entry!.Id, quantity);
+            result = await _collection.AddCatalogAsync(Kind, id, quantity);
         if (_disposed)
             return result;
         _busy = false;
@@ -265,11 +332,12 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
             if (quantity == 0)
                 row.SetEditor(null);
             row.ResetQuantity();
+            row.ClearVariantSelection();
         }
         Message = result.Succeeded
             ? quantity == 0 && captured != null
-                ? $"Removed {row.Name}."
-                : $"Saved quantity for {row.Name}."
+                ? $"Removed {PartRow.TitleOf(captured)}."
+                : $"Saved quantity for {row.Title}."
             : result.Message ?? "Could not save quantity.";
         Synchronize();
         DiscardIfTabChanged(row, draftGeneration);
@@ -321,6 +389,7 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         if (_disposed)
             return;
         _draftGeneration++;
+        CancelVariantPicker();
         var pending = _rows.Where(row => row.IsEditing && row.Editor?.IsBusy != true).ToArray();
         if (pending.Length == 0)
             return;
@@ -341,6 +410,8 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         {
             row.SetEditor(row.Item is { DetailsError: null } item ? new(Kind, _collection, item) : null);
             row.ResetQuantity();
+            if (row.Item == null)
+                row.ClearVariantSelection();
         }
     }
 
@@ -400,26 +471,33 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
 
     private void Synchronize()
     {
-        if (_disposed)
+        if (_disposed || _variantPicker != null)
             return;
         var selectedId = Selected?.Identity;
         var owned = _collection.Items.Where(x => x.PartKind == Kind).ToArray();
         var existing = _rows.ToDictionary(x => x.Identity);
         var next = _rows.Where(x => x.IsNew).ToList();
         var state = _catalogs.GetState(Kind);
-        var ownedIds = new HashSet<string>();
+        var ready = _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready;
+        var ownedByCatalog = owned.Where(x => x.CatalogEntryId != null).ToLookup(x => x.CatalogEntryId!);
         var changed = false;
         foreach (var item in owned)
         {
-            var identity = item.CatalogEntryId == null ? "custom:" + item.ItemKey : "catalog:" + item.CatalogEntryId;
+            var identity =
+                item.CatalogEntryId == null ? "custom:" + item.ItemKey
+                : item.Variant.Length == 0 ? "catalog:" + item.CatalogEntryId
+                : $"catalog:{item.CatalogEntryId}|{item.Variant}";
             var row = existing.GetValueOrDefault(identity) ?? new PartRow(Kind, identity);
             state.ById.TryGetValue(item.CatalogEntryId ?? "", out var entry);
-            changed |= row.Update(
-                item,
-                entry,
-                _collection.GetItemStatus(item),
-                _catalogs.Search,
-                _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready
+            changed |= row.Update(item, entry, _collection.GetItemStatus(item), _catalogs.Search, ready);
+            var labels = (entry?.Description.Details.Variants ?? [])
+                .Concat(ownedByCatalog[item.CatalogEntryId ?? ""].Select(x => x.Variant))
+                .Where(x => x.Length > 0)
+                .Distinct()
+                .ToArray();
+            changed |= row.SetVariantOptions(
+                labels,
+                ownedByCatalog[item.CatalogEntryId ?? ""].Select(x => x.Variant).ToHashSet()
             );
             if (item.DetailsError == null)
             {
@@ -431,21 +509,15 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
             else if (row.Editor != null)
                 row.SetEditor(null);
             next.Add(row);
-            if (item.CatalogEntryId != null)
-                ownedIds.Add(item.CatalogEntryId);
         }
-        foreach (var entry in state.Entries.Where(x => !ownedIds.Contains(x.Id)))
+        foreach (var entry in state.Entries)
         {
+            if (ownedByCatalog.Contains(entry.Id))
+                continue;
             var identity = "catalog:" + entry.Id;
             var row = existing.GetValueOrDefault(identity) ?? new PartRow(Kind, identity);
-            changed |= row.Update(
-                null,
-                entry,
-                "",
-                _catalogs.Search,
-                _collection.GetCatalogStatus(Kind) == CollectionCatalogStatus.Ready,
-                state.SearchText[entry.Id]
-            );
+            changed |= row.Update(null, entry, "", _catalogs.Search, ready, state.SearchText[entry.Id]);
+            changed |= row.SetVariantOptions(entry.Description.Details.Variants, new HashSet<string>());
             if (row.Editor is { HasChanges: false, HasConflict: false, IsBusy: false })
                 row.SetEditor(null);
             next.Add(row);
