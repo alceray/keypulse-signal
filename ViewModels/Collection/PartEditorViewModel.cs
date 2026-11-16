@@ -44,10 +44,10 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
             QuantityDraftValue,
         ];
 
-    public bool HasChanges =>
+    public bool HasChanges => HasDescriptionChanges || HasQuantityChanges || HasNotesChanges;
+    public bool HasDescriptionChanges =>
         (_item == null && !string.IsNullOrWhiteSpace(Name))
-        || HasNotesChanges
-        || !DraftValues().SequenceEqual(_originalValues);
+        || !DraftValues().SkipLast(1).SequenceEqual(_originalValues.SkipLast(1));
     public bool HasNotesChanges => Notes != (_item?.Notes ?? "");
     public bool HasQuantityChanges => QuantityDraftValue != _originalValues[^1];
     public CollectionSnapshot? OriginalItem => _item;
@@ -306,14 +306,27 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         return result.Succeeded;
     }
 
+    public async Task<CollectionResult?> SaveQuantityAsync()
+    {
+        if (_item == null || !HasQuantityChanges || Quantity.Value is not int quantity)
+            return null;
+        return await SaveFieldsAsync(quantity, _item.Notes);
+    }
+
     public async Task<CollectionResult?> SaveNotesAsync()
     {
-        if (_disposed || _busy || _conflict || _item == null || !HasNotesChanges || this[nameof(Notes)].Length > 0)
+        if (_item == null || !HasNotesChanges || this[nameof(Notes)].Length > 0)
+            return null;
+        return await SaveFieldsAsync(_item.Quantity, Notes);
+    }
+
+    private async Task<CollectionResult?> SaveFieldsAsync(int quantity, string? notes)
+    {
+        if (_disposed || _busy || _conflict || _item == null)
             return null;
         _busy = true;
         Changed();
-        // Commit notes only; leave quantity and descriptive drafts untouched.
-        var result = await _collection.UpdateAsync(_item, _item.Quantity, Notes);
+        var result = await _collection.UpdateAsync(_item, quantity, notes);
         if (_disposed)
             return result;
         _busy = false;
@@ -321,7 +334,10 @@ public sealed class PartEditorViewModel : ObservableObject, IDataErrorInfo, IDis
         _conflict = result.Status == CollectionResultStatus.Conflict;
         _message = result.Message ?? "";
         if (result.Succeeded)
+        {
             _item = result.Items.Single(x => x.ItemKey == _item.ItemKey);
+            _originalValues[^1] = _item.Quantity.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        }
         Changed();
         return result;
     }

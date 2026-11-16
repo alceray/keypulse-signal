@@ -24,6 +24,8 @@ public partial class PartListView : UserControl
     private double _horizontalOffset,
         _collectionHeight;
     private bool _openingCollection;
+    private Window? _owner;
+    private Task _pendingNotesSave = Task.CompletedTask;
 
     public PartListView()
     {
@@ -31,6 +33,9 @@ public partial class PartListView : UserControl
         DataContextChanged += (_, _) => ConfigureColumns();
         Loaded += (_, _) =>
         {
+            _owner = Window.GetWindow(this);
+            if (_owner != null)
+                _owner.PreviewMouseDown += NotesMouseDownOutside;
             ConfigureColumns();
             if (Model is { } model)
             {
@@ -50,6 +55,9 @@ public partial class PartListView : UserControl
         };
         Unloaded += (_, _) =>
         {
+            if (_owner != null)
+                _owner.PreviewMouseDown -= NotesMouseDownOutside;
+            _owner = null;
             var scroll = FindScrollViewer(PartsGrid);
             _horizontalOffset = scroll?.HorizontalOffset ?? 0;
             Model?.DiscardPendingChanges();
@@ -179,31 +187,48 @@ public partial class PartListView : UserControl
     private PartRow? ActionRow(object sender) =>
         (sender as FrameworkElement)?.DataContext as PartRow ?? Model?.Selected;
 
-    private async void SaveRow(object sender, RoutedEventArgs e)
+    private async void SaveCustom(object sender, RoutedEventArgs e)
     {
-        if (Model is { } model && ActionRow(sender) is { } row)
+        if (Model is { } model && ActionRow(sender) is { IsDescribing: true, Editor: { } editor } row)
         {
-            if (row.QuantityError.Length > 0)
-                model.ShowMessage(row.QuantityError);
-            else if (row.QuantityValue == 0 && row.Item != null || row.Editor == null)
-                SaveQuantity(sender, e);
-            else if (row.Editor.Error.Length > 0)
-                model.ShowMessage(row.Editor.Error);
+            if (editor.Error.Length > 0)
+                model.ShowMessage(editor.Error);
             else
                 await model.SaveEditAsync(row);
         }
     }
 
+    private void NotesMouseDownOutside(object sender, MouseButtonEventArgs e)
+    {
+        if (
+            e.ChangedButton != MouseButton.Left
+            || Keyboard.FocusedElement is not TextBox { Name: "NotesInput" } input
+            || !input.IsDescendantOf(this)
+            || e.OriginalSource is not Visual source
+            || FindAncestor<TextBox>(source) == input
+            || FindAncestor<Button>(source) is { Name: "CancelCustomButton" or "SaveCustomButton" }
+        )
+            return;
+        // Non-focusable surfaces otherwise leave the notes field focused and unsaved.
+        Keyboard.ClearFocus();
+    }
+
     private async void NotesLostFocus(object sender, KeyboardFocusChangedEventArgs e)
     {
-        if (e.NewFocus is Button { Name: "CancelRowButton" or "SaveRowButton" })
+        if (e.NewFocus is Button { Name: "CancelCustomButton" or "SaveCustomButton" })
             return;
         if (Model is { } model && ActionRow(sender) is { } row && IsLoaded)
         {
-            await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.Background);
-            if (IsLoaded)
-                await model.SaveNotesAsync(row);
+            _pendingNotesSave = SaveNotesAfterFocusAsync(model, row);
+            await _pendingNotesSave;
         }
+    }
+
+    private async Task SaveNotesAfterFocusAsync(PartListViewModel model, PartRow row)
+    {
+        await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.Background);
+        if (IsLoaded)
+            await model.SaveNotesAsync(row);
     }
 
     private async void NotesKeyDown(object sender, KeyEventArgs e)
@@ -226,6 +251,12 @@ public partial class PartListView : UserControl
     {
         if (ActionRow(sender) is { } row)
             Model?.CancelEdit(row);
+    }
+
+    private void CancelQuantity(object sender, RoutedEventArgs e)
+    {
+        if (ActionRow(sender) is { } row)
+            Model?.CancelQuantity(row);
     }
 
     private async void Add(object sender, RoutedEventArgs e)
@@ -369,18 +400,19 @@ public partial class PartListView : UserControl
             return;
         if (e.Key == Key.Escape)
         {
-            row.ResetQuantity();
+            Model?.CancelQuantity(row);
             e.Handled = true;
         }
         else if (e.Key == Key.Enter)
         {
-            SaveRow(sender, e);
+            SaveQuantity(sender, e);
             e.Handled = true;
         }
     }
 
     private async void SaveQuantity(object sender, RoutedEventArgs e)
     {
+        await _pendingNotesSave;
         if (
             Model is not { } model
             || sender is not FrameworkElement { DataContext: PartRow row }

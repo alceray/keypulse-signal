@@ -261,6 +261,11 @@ public class PartsWindowTests
                 await PartsViewModelTests.Pump();
                 var tabs = Descendants<TabControl>(host).Single();
                 Descendants<RadioButton>(host).ShouldBeEmpty();
+                measuredGrid.ScrollIntoView(
+                    switchModel.Rows.Cast<PartRow>().First(x => x.Item == null),
+                    measuredGrid.Columns.Single(x => Equals(x.Header, "Qty"))
+                );
+                await PartsViewModelTests.Pump();
                 var input = Descendants<TextBox>(host)
                     .First(x =>
                         x.DataContext is PartRow { Item: null }
@@ -278,10 +283,12 @@ public class PartsWindowTests
                         saved.TrySetResult();
                 }
                 scope.Collection.Changed += Changed;
+                measuredGrid.ScrollIntoView(row, measuredGrid.Columns.Single(x => Equals(x.Header, "")));
+                await PartsViewModelTests.Pump();
                 var save = Descendants<Button>(host)
                     .Single(x =>
                         ReferenceEquals(x.DataContext, row)
-                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save changes"
+                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save quantity"
                     );
                 save.IsEnabled.ShouldBeTrue();
                 var saveWatch = Stopwatch.StartNew();
@@ -314,6 +321,10 @@ public class PartsWindowTests
                     scope.Collection.Changed += Updated;
                     try
                     {
+                        var actionGrid = Descendants<DataGrid>(host).Single();
+                        var actionsColumn = actionGrid.Columns.Single(x => Equals(x.Header, ""));
+                        actionGrid.ScrollIntoView(target, actionsColumn);
+                        await PartsViewModelTests.Pump();
                         var button = Descendants<Button>(host)
                             .Single(x =>
                                 ReferenceEquals(x.DataContext, target)
@@ -329,11 +340,12 @@ public class PartsWindowTests
                         // A real click on the row Save button first dismisses the open dropdown.
                         foreach (var picker in Descendants<ComboBox>(host).Where(x => x.IsDropDownOpen).ToArray())
                             picker.IsDropDownOpen = false;
+                        actionGrid.ScrollIntoView(target, actionsColumn);
                         await PartsViewModelTests.Pump();
                         var commit = Descendants<Button>(host)
                             .Single(x =>
                                 ReferenceEquals(x.DataContext, target)
-                                && System.Windows.Automation.AutomationProperties.GetName(x) == "Save changes"
+                                && System.Windows.Automation.AutomationProperties.GetName(x) == "Save quantity"
                             );
                         commit.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                         await completed.Task.WaitAsync(TimeSpan.FromSeconds(5));
@@ -371,11 +383,13 @@ public class PartsWindowTests
                 Descendants<Button>(host)
                     .Where(x =>
                         ReferenceEquals(x.DataContext, row)
-                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save changes"
+                        && System.Windows.Automation.AutomationProperties.GetName(x) == "Save quantity"
                     )
                     .ShouldBeEmpty();
                 async Task CommitNotes(string text, bool enter)
                 {
+                    measuredGrid.ScrollIntoView(row, measuredGrid.Columns.Single(x => Equals(x.Header, "Notes")));
+                    await PartsViewModelTests.Pump();
                     var notes = Descendants<TextBox>(host)
                         .Single(x =>
                             ReferenceEquals(x.DataContext, row)
@@ -390,9 +404,15 @@ public class PartsWindowTests
                     scope.Collection.Changed += NotesChanged;
                     try
                     {
+                        notes.Focus().ShouldBeTrue();
                         notes.SetCurrentValue(TextBox.TextProperty, text);
                         notes.GetBindingExpression(TextBox.TextProperty)!.UpdateSource();
-                        row.CanRemove.ShouldBeFalse();
+                        row.CanRemove.ShouldBe(!row.HasQuantityDraft);
+                        row.ShowQuantityActions.ShouldBe(row.HasQuantityDraft);
+                        await PartsViewModelTests.Pump();
+                        Descendants<Button>(host)
+                            .Count(x => ReferenceEquals(x.DataContext, row) && x.Name == "CancelQuantityButton")
+                            .ShouldBe(row.HasQuantityDraft ? 1 : 0);
                         if (enter)
                             notes.RaiseEvent(
                                 new KeyEventArgs(
@@ -406,12 +426,23 @@ public class PartsWindowTests
                                 }
                             );
                         else
+                        {
                             notes.RaiseEvent(
-                                new KeyboardFocusChangedEventArgs(Keyboard.PrimaryDevice, 0, notes, tabs)
+                                new MouseButtonEventArgs(Mouse.PrimaryDevice, 0, MouseButton.Left)
                                 {
-                                    RoutedEvent = Keyboard.LostKeyboardFocusEvent,
+                                    RoutedEvent = Mouse.PreviewMouseDownEvent,
                                 }
                             );
+                            notes.IsKeyboardFocused.ShouldBeTrue();
+                            committed.Task.IsCompleted.ShouldBeFalse();
+                            owner.RaiseEvent(
+                                new MouseButtonEventArgs(Mouse.PrimaryDevice, 0, MouseButton.Left)
+                                {
+                                    RoutedEvent = Mouse.PreviewMouseDownEvent,
+                                }
+                            );
+                            notes.IsKeyboardFocused.ShouldBeFalse();
+                        }
                         await committed.Task.WaitAsync(TimeSpan.FromSeconds(5));
                         await PartsViewModelTests.Pump();
                     }
@@ -424,20 +455,24 @@ public class PartsWindowTests
                 await CommitNotes("Enter saves notes", true);
                 row.Quantity.ShouldBe(70);
                 row.QuantityText.ShouldBe("90");
+                await CommitNotes("Click away keeps quantity draft", false);
+                row.Quantity.ShouldBe(70);
+                row.QuantityText.ShouldBe("90");
                 switchModel.CancelEdit(row);
                 await PartsViewModelTests.Pump();
                 await CommitNotes("Click away saves notes", false);
                 row.CanRemove.ShouldBeTrue();
+                row.QuantityText = "90";
                 var cancelNotes = Descendants<TextBox>(host)
                     .Single(x =>
                         ReferenceEquals(x.DataContext, row)
                         && System.Windows.Automation.AutomationProperties.GetName(x) == "Notes"
                     );
-                cancelNotes.SetCurrentValue(TextBox.TextProperty, "Do not save this");
+                cancelNotes.SetCurrentValue(TextBox.TextProperty, "Notes survive quantity cancel");
                 cancelNotes.GetBindingExpression(TextBox.TextProperty)!.UpdateSource();
                 await PartsViewModelTests.Pump();
                 var cancelButton = Descendants<Button>(host)
-                    .Single(x => ReferenceEquals(x.DataContext, row) && x.Name == "CancelRowButton");
+                    .Single(x => ReferenceEquals(x.DataContext, row) && x.Name == "CancelQuantityButton");
                 cancelNotes.RaiseEvent(
                     new KeyboardFocusChangedEventArgs(Keyboard.PrimaryDevice, 0, cancelNotes, cancelButton)
                     {
@@ -446,21 +481,18 @@ public class PartsWindowTests
                 );
                 cancelButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                 await PartsViewModelTests.Pump();
-                row.Editor!.Notes.ShouldBe("Click away saves notes");
-                scope.Collection.FindOwned(PartKinds.Switch, row.Entry!.Id)!.Notes.ShouldBe("Click away saves notes");
+                row.QuantityText.ShouldBe("70");
+                row.Editor!.Notes.ShouldBe("Notes survive quantity cancel");
+                scope
+                    .Collection.FindOwned(PartKinds.Switch, row.Entry!.Id)!
+                    .Notes.ShouldBe("Notes survive quantity cancel");
                 tabs.SelectedIndex = 1;
                 await PartsViewModelTests.Pump();
                 host.Keycaps.IsCollectionExpanded.ShouldBeTrue();
                 host.Keycaps.IsCatalogExpanded.ShouldBeFalse();
                 host.Keycaps.IsCatalogExpanded = true;
                 await PartsViewModelTests.Pump();
-                var capRow = (PartRow)
-                    Descendants<Button>(host)
-                        .First(x =>
-                            x.IsVisible
-                            && System.Windows.Automation.AutomationProperties.GetName(x) == "Add to collection"
-                        )
-                        .DataContext;
+                var capRow = host.Keycaps.Rows.Cast<PartRow>().First(x => x.CanAdd);
                 await ClickAction(capRow, "Add to collection", 1);
                 await ClickAction(capRow, "Increase quantity", 2);
                 await ClickAction(capRow, "Decrease quantity", 1);
@@ -497,7 +529,7 @@ public class PartsWindowTests
                         .Single(x => ReferenceEquals(x.Item, capRow))
                         .BorderThickness.Left.ShouldBe(3);
                     Descendants<Button>(host)
-                        .Single(x => ReferenceEquals(x.DataContext, capRow) && x.Name == "SaveRowButton")
+                        .Single(x => ReferenceEquals(x.DataContext, capRow) && x.Name == "SaveQuantityButton")
                         .RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     await removed.Task.WaitAsync(TimeSpan.FromSeconds(10));
                     await PartsViewModelTests.Pump();
@@ -519,7 +551,7 @@ public class PartsWindowTests
                     var id = kitRow.Entry!.Id;
                     var labels = kitRow.VariantOptions.Select(x => x.Label).ToArray();
                     var capGrid = Descendants<DataGrid>(host).Single();
-                    capGrid.ScrollIntoView(kitRow);
+                    capGrid.ScrollIntoView(kitRow, capGrid.Columns.Single(x => Equals(x.Header, "")));
                     await PartsViewModelTests.Pump();
                     Descendants<Button>(host)
                         .Single(x =>
@@ -677,7 +709,36 @@ public class PartsWindowTests
                     nameInput.GetBindingExpression(TextBox.TextProperty)!.UpdateSource();
                     draft.Editor!.Name.ShouldBe("Inline custom draft");
                     Save(owner, "inline-custom", dark);
-                    host.Switches.CancelEdit(draft);
+                    draft.ShowQuantityActions.ShouldBeFalse();
+                    var customAction = Descendants<Button>(host)
+                        .Single(x =>
+                            ReferenceEquals(x.DataContext, draft)
+                            && x.Name == (dark ? "CancelCustomButton" : "SaveCustomButton")
+                        );
+                    customAction.IsEnabled.ShouldBeTrue();
+                    if (dark)
+                        customAction.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    else
+                    {
+                        var created = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+                        void CustomCreated(string kind)
+                        {
+                            if (scope.Collection.Items.Any(x => x.Name == "Inline custom draft"))
+                                created.TrySetResult();
+                        }
+                        scope.Collection.Changed += CustomCreated;
+                        try
+                        {
+                            customAction.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                            await created.Task.WaitAsync(TimeSpan.FromSeconds(5));
+                        }
+                        finally
+                        {
+                            scope.Collection.Changed -= CustomCreated;
+                        }
+                    }
+                    await PartsViewModelTests.Pump();
+                    host.Switches.Rows.Contains(draft).ShouldBeFalse();
                     owner.Width = 800;
                     owner.FontSize = 18;
                     await PartsViewModelTests.Pump();

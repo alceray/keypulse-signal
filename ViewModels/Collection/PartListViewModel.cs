@@ -303,14 +303,14 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
                 result = await _collection.RemoveAsync(captured);
             else if (row.Editor is { } editor)
             {
-                if (!editor.CanSave)
+                var saved = await editor.SaveQuantityAsync();
+                if (saved == null)
                 {
                     _busy = false;
                     Notify();
                     return null;
                 }
-                await editor.SaveAsync();
-                result = editor.LastResult!;
+                result = saved;
             }
             else
                 result = await _collection.UpdateAsync(captured, quantity, captured.Notes);
@@ -373,6 +373,17 @@ public sealed class PartListViewModel : ToastMessageViewModelBase
         }
         Selected = row;
         return row;
+    }
+
+    public void CancelQuantity(PartRow row)
+    {
+        if (!CanMutate || row.Editor?.IsBusy == true)
+            return;
+        row.ResetQuantity();
+        if (row.Item == null)
+            row.ClearVariantSelection();
+        Rows.Refresh();
+        Notify();
     }
 
     public void CancelEdit(PartRow row)

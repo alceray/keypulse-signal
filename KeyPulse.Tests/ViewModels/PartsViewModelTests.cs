@@ -129,7 +129,7 @@ public class PartsViewModelTests
             await Pump();
             var committed = scope.Collection.Items.Single();
             committed.Quantity.ShouldBe(fail || operation == "notes" ? 70 : 90);
-            committed.Notes.ShouldBe(fail ? null : "Accepted note");
+            committed.Notes.ShouldBe(fail || operation == "quantity" ? null : "Accepted note");
             row.IsEditing.ShouldBeFalse();
             row.QuantityText.ShouldBe(committed.Quantity.ToString());
             row.Editor!.Notes.ShouldBe(committed.Notes ?? "");
@@ -148,8 +148,11 @@ public class PartsViewModelTests
             await Pump();
             row.Editor.ShouldNotBeNull();
             row.CanRemove.ShouldBeTrue();
-            row.QuantityText = "90";
             row.Editor!.Notes = "Saved independently";
+            row.ShowQuantityActions.ShouldBeFalse();
+            row.CanRemove.ShouldBeTrue();
+            row.QuantityText = "90";
+            row.ShowQuantityActions.ShouldBeTrue();
             row.CanRemove.ShouldBeFalse();
             await list.SaveNotesAsync(row);
             await Pump();
@@ -167,10 +170,12 @@ public class PartsViewModelTests
             row.Editor!.Notes.ShouldBe("Saved independently");
             row.CanRemove.ShouldBeTrue();
             row.Editor.Notes = "Stale note";
+            row.ShowQuantityActions.ShouldBeFalse();
             await scope.Collection.UpdateAsync(row.Item!, 95, "External note");
             await Pump();
             await list.SaveNotesAsync(row);
             row.Editor.HasConflict.ShouldBeTrue();
+            row.ShowQuantityActions.ShouldBeFalse();
             row.Editor.Notes.ShouldBe("Stale note");
             scope.Collection.Items.Single().Notes.ShouldBe("External note");
             await row.Editor.ReloadAsync();
@@ -206,6 +211,24 @@ public class PartsViewModelTests
             list.ClearFilters();
             var owned = list.Rows.Cast<PartRow>().Single(x => x.Item != null);
             list.CanChangeQuantity(owned).ShouldBeTrue();
+            owned.Editor!.Name = "";
+            owned.Editor.Notes = new string('x', 2001);
+            owned.ShowQuantityActions.ShouldBeFalse();
+            owned.ShowCustomActions.ShouldBeTrue();
+            owned.QuantityText = "30";
+            (await list.SaveQuantityAsync(owned))!.Succeeded.ShouldBeTrue();
+            scope.Collection.Items.Single().Quantity.ShouldBe(30);
+            scope.Collection.Items.Single().Name.ShouldBe("Handmade");
+            scope.Collection.Items.Single().Notes.ShouldBe("First note");
+            owned.Editor.Name.ShouldBeEmpty();
+            owned.Editor.Notes.Length.ShouldBe(2001);
+            owned.ShowQuantityActions.ShouldBeFalse();
+            owned.QuantityText = "40";
+            list.CancelQuantity(owned);
+            owned.QuantityText.ShouldBe("30");
+            owned.Editor.Name.ShouldBeEmpty();
+            owned.Editor.Notes.Length.ShouldBe(2001);
+            list.CancelEdit(owned);
             owned.Editor!.Notes = "Stale note";
             await scope.Collection.UpdateAsync(owned.Item!, 20, "Newer note");
             await Pump();
@@ -434,7 +457,7 @@ public class PartsViewModelTests
             cap.QuantityText = "101";
             cap.CanSaveQuantity.ShouldBeFalse();
             cap.QuantityText = "100";
-            cap.CanSaveQuantity.ShouldBeTrue();
+            cap.QuantityValue.ShouldBe(100);
         });
 
     [Fact]
@@ -466,7 +489,7 @@ public class PartsViewModelTests
             row.Status.ShouldBe("Details unavailable");
             row.QuantityText = "0";
             row.IsPendingRemoval.ShouldBeTrue();
-            row.CanSave.ShouldBeTrue();
+            row.CanSaveQuantity.ShouldBeTrue();
             scope.Collection.Items.Count().ShouldBe(1);
             (await list.SaveQuantityAsync(row))!.Succeeded.ShouldBeTrue();
             scope.Collection.Items.ShouldBeEmpty();

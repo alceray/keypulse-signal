@@ -48,11 +48,9 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
     public PartEditorViewModel? Editor { get; private set; }
     public bool IsEditing => IsNew || HasQuantityDraft || Editor is { HasChanges: true } or { HasConflict: true };
     public bool HasEditor => Editor != null;
-    public bool ShowSave => HasQuantityDraft || Editor?.HasChanges == true;
-    public bool CanSave =>
-        Editor != null
-            ? Editor.CanSave || HasQuantityDraft && QuantityValue == 0 && !Editor.HasConflict && !IsNew
-            : CanSaveQuantity;
+    public bool ShowQuantityActions => !IsNew && HasQuantityDraft;
+    public bool ShowCustomActions =>
+        IsNew || IsDescribing && Editor is { HasDescriptionChanges: true } or { HasConflict: true };
     public bool IsDescribing => Editor?.CanDescribe == true;
     public bool CanAdd => !IsNew && Item == null && CanEditQuantity && !IsEditing && !HasQuantityDraft;
     public bool CanAdjust =>
@@ -61,7 +59,7 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
         && Editor?.IsBusy != true;
     public bool CanDecrease => CanAdjust && QuantityValue > 0;
     public bool IsPendingRemoval => Item != null && HasQuantityDraft && QuantityValue == 0;
-    public bool CanRemove => Item != null && !IsEditing;
+    public bool CanRemove => Item != null && !HasQuantityDraft;
 
     public void SetEditor(PartEditorViewModel? editor)
     {
@@ -142,7 +140,8 @@ public sealed class PartRow(string kind, string identity) : ObservableObject
             : null;
     public string QuantityError =>
         QuantityValue.HasValue ? "" : $"Use a whole number from 0 to {PartKinds.MaxQuantity(kind):N0}.";
-    public bool CanSaveQuantity => HasQuantityDraft && QuantityValue.HasValue && Editor?.HasConflict != true;
+    public bool CanSaveQuantity =>
+        !IsNew && HasQuantityDraft && QuantityValue.HasValue && Editor?.HasConflict != true && Editor?.IsBusy != true;
 
     public void ResetQuantity()
     {
