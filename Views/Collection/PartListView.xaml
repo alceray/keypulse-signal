@@ -582,20 +582,6 @@
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
           <DataGridTemplateColumn x:Name="VariantsColumn" Header="Variants" Width="140" MinWidth="140" SortMemberPath="Variants">
-            <DataGridTemplateColumn.CellStyle>
-              <Style TargetType="DataGridCell" BasedOn="{StaticResource DeviceGridCellStyle}">
-                <Setter Property="Template">
-                  <Setter.Value>
-                    <ControlTemplate TargetType="DataGridCell">
-                      <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
-                              BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter VerticalAlignment="Stretch" />
-                      </Border>
-                    </ControlTemplate>
-                  </Setter.Value>
-                </Setter>
-              </Style>
-            </DataGridTemplateColumn.CellStyle>
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <ContentControl Content="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsEnabled="{Binding DataContext.CanMutate, RelativeSource={RelativeSource AncestorType=DataGrid}}" Selector.SelectionChanged="VariantPicked">
@@ -622,7 +608,7 @@
                           <Setter Property="ContentTemplate">
                             <Setter.Value>
                               <DataTemplate>
-                                <Grid>
+                                <Grid Margin="3,2">
                                   <ComboBox ItemsSource="{Binding VariantOptions}" AutomationProperties.Name="Collection variants" Style="{StaticResource VariantPickerStyle}" ToolTip="{Binding VariantSummary}">
                                     <ComboBox.ItemContainerStyle>
                                       <Style TargetType="ComboBoxItem" BasedOn="{StaticResource {x:Type ComboBoxItem}}">
@@ -636,7 +622,7 @@
                                       </DataTemplate>
                                     </ComboBox.ItemTemplate>
                                   </ComboBox>
-                                  <TextBlock Text="{Binding VariantSummary}" Margin="7,0,24,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" IsHitTestVisible="False" />
+                                  <TextBlock Text="{Binding VariantSummary}" Margin="7,4,24,4" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" IsHitTestVisible="False" />
                                 </Grid>
                               </DataTemplate>
                             </Setter.Value>

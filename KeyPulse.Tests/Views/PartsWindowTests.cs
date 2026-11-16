@@ -599,9 +599,31 @@ public class PartsWindowTests
                     kits.ShouldAllBe(x => x.Quantity == 1 && x.HasVariantChoices);
                     foreach (var kit in kits)
                     {
-                        capGrid.ScrollIntoView(kit, capGrid.Columns.Single(x => Equals(x.Header, "Variants")));
+                        capGrid.ScrollIntoView(kit, capGrid.Columns.Single(x => Equals(x.Header, "Notes")));
                         await PartsViewModelTests.Pump();
-                        Descendants<ComboBox>(host).ShouldContain(x => ReferenceEquals(x.DataContext, kit));
+                        var variantField = Descendants<ComboBox>(host).Single(x => ReferenceEquals(x.DataContext, kit));
+                        foreach (var fieldName in new[] { "Quantity", "Notes" })
+                        {
+                            var field = Descendants<TextBox>(host)
+                                .Single(x =>
+                                    ReferenceEquals(x.DataContext, kit)
+                                    && System.Windows.Automation.AutomationProperties.GetName(x) == fieldName
+                                );
+                            variantField.ActualHeight.ShouldBe(field.ActualHeight, 0.1);
+                            variantField
+                                .TranslatePoint(new Point(), capGrid)
+                                .Y.ShouldBe(field.TranslatePoint(new Point(), capGrid).Y, 0.1);
+                            var variantCell = Descendants<DataGridCell>(capGrid)
+                                .Single(x => x.IsAncestorOf(variantField));
+                            var fieldCell = Descendants<DataGridCell>(capGrid).Single(x => x.IsAncestorOf(field));
+                            var variantLeft = variantField.TranslatePoint(new Point(), variantCell).X;
+                            var fieldLeft = field.TranslatePoint(new Point(), fieldCell).X;
+                            variantLeft.ShouldBe(fieldLeft, 0.1);
+                            (variantCell.ActualWidth - variantLeft - variantField.ActualWidth).ShouldBe(
+                                fieldCell.ActualWidth - fieldLeft - field.ActualWidth,
+                                0.1
+                            );
+                        }
                         kit.VariantSummary.ShouldBe(kit.Variant);
                     }
                     Save(owner, "keycap-variant-rows", false);
