@@ -1,483 +1,157 @@
-# AGENTS.md: KeyPulse Architecture Guide
-
-## Quick Overview
-
-**KeyPulse** is a .NET 8 WPF desktop app for tracking USB keyboard and mouse connections on Windows and recording
-per-device input activity. It uses WMI event watchers for device arrival/removal, Windows Raw Input for per-device
-keyboard/mouse activity, and EF Core with SQLite (default) or user-managed PostgreSQL for persistence. The app is single-instance and supports optional
-tray/background mode.
-
-**Key Tech Stack**: WPF, EF Core 9, SQLite/PostgreSQL, System.Management (WMI), Windows Raw Input (`WM_INPUT`), Dependency
-Injection
-
----
-
-## Architecture & Data Flow
-
-### Major Components
-
-1. **AppTimerService** (Singleton)
-    - Owns all periodic UI-thread timers: 1 second, 30 seconds (dashboard refresh), 1 minute (stats projection), and daily (update check, retention prune)
-    - Broadcasts `SecondTick`, `ThirtySecondTick`, `MinuteTick`, and `DailyTick` events to subscriber services and view-models
-    - Keeps transient view-models lean by centralizing timer ownership
-    - Allows timers to persist across view lifecycle changes (e.g., tab switches)
-    - See: `Services/AppTimerService.cs`
-
-2. **UsbMonitorService** (Singleton)
-    - Monitors USB device insertion/removal via WMI `__InstanceCreationEvent` and `__InstanceDeletionEvent`
-    - Maintains `DeviceList` and `DeviceEventList` as `ObservableCollection<T>` instances for UI binding
-    - Screens for HID keyboard/mouse devices only (`kbdhid`, `mouhid` services)
-    - Aggregates bursty insert callbacks into one logical `Connected` event per device burst
-    - Writes app/device lifecycle events and keeps the in-memory device snapshot in sync
-    - Owns the heartbeat timer for crash recovery (separate from UI timers)
-    - See: `Services/UsbMonitorService.cs`
-
-3. **RawInputService** (Singleton)
-    - Registers hidden `WM_INPUT` listeners using `RIDEV_INPUTSINK`, so activity is captured even in tray/background
-      mode
-    - Maps raw input handles back to KeyPulse `DeviceId` values
-    - Tracks per-device keystrokes, mouse clicks, and mouse-movement-active seconds in one-minute buckets
-    - Flushes completed minute buckets to `ActivitySnapshots` every minute and flushes the current partial minute on
-      shutdown
-    - Raises `ActivityStateChanged` (per-device hold-state) so the UI can highlight currently active devices
-    - Raises `InputDeltaIncremented` with per-device `(KeystrokeDelta, MouseClickDelta, MouseMovementDelta)` so live views (e.g. calendar today-overlay) can tick without waiting for the minute flush
-    - See: `Services/RawInputService.cs`
-
-4. **DataService** (Singleton)
-    - Single source for all database operations
-    - Runs the active provider's migration set and enables WAL only for SQLite
-    - Crash recovery: detects unclean shutdowns and writes missing `AppEnded`/`ConnectionEnded` events
-    - Rebuilds persisted device connection-duration snapshots from the event log on startup
-    - Persists and queries minute-level `ActivitySnapshot` rows
-    - See: `Services/DataService.cs`
-
-5. **DailyStatsService** (Singleton)
-    - Maintains `DailyDeviceStats` table from two write-through sources:
-        - **DeviceEvents**: on every closing lifecycle event, recomputes that day's `SessionCount` and `ConnectionSeconds` with a full non-cumulative replay of the day's events
-        - **ActivitySnapshots**: minute-delayed projector flushes closed minute buckets to `Keystrokes`, `MouseClicks`, `MouseMovementSeconds`, `ActiveSeconds` (distinct seconds with any input), and `HourlyInputCount` (a `long[24]` of combined input keyed by local clock-hour)
-    - `RecomputeDailyDeviceStatsForRange(from, to)` provides an idempotent full rebuild for any date range
-    - `RunStartupRebuild()` (called on a background thread from `App.OnStartup`) is the startup entry point:
-        - **First run only** (when the `DailyStatsFullBackfillAt` `AppMeta` marker is absent): runs a one-time full historical backfill from the earliest source day through today via `RebuildAllHistory(...)`, chunked month-by-month so memory stays bounded, then writes the marker
-        - **Every later run**: runs `ReconcileDriftedDays(today)` — a cheap, non-destructive integrity pass over the current month that heals only `(DeviceId, day)` rows MISSING from `DailyDeviceStats` despite a closing event or activity snapshot existing (the one drift the write-through / projector paths cannot self-heal), logging any discrepancy
-    - No recurring blind rebuild: ongoing data is kept current by write-through (connection) + the live projector (activity), which drains all unprojected closed minutes on startup regardless of age
-    - All `DailyDeviceStats` mutations (range recompute, live projector, connection write-through) serialize on a single in-process gate so concurrent writers can't collide on the unique `ActivityProjections(DeviceId, Minute)` / `DailyDeviceStats(Day, DeviceId)` indexes
-    - See: `Services/DailyStatsService.cs`
-
-6. **DataRetentionService** (Singleton)
-    - Applies the user's `ActivityRetentionMonths` setting (default 24; 0 = keep forever) by pruning `ActivitySnapshots` and `ActivityProjections` older than the cutoff day; `DailyDeviceStats` and `DeviceEvents` are always kept, so calendar history and connection totals survive pruning
-    - Invariants: never prunes before the `DailyStatsFullBackfillAt` marker exists (a later first-run backfill would recompute old days from pruned sources and zero them); drains `ProjectClosedActivityMinutes()` before deleting; within each batch window deletes snapshots **before** their projection checkpoints (orphan checkpoints are harmless, orphan snapshots would be re-projected and double-counted)
-    - Deletes in week-sized chunks (short write transactions under WAL); compacts via `VACUUM` only after large prunes
-    - Triggers: chained after `RunStartupRebuild()` on the startup background task, on `DailyTick`, and when the retention setting is tightened
-    - See: `Services/DataRetentionService.cs`
-
-7. **ApplicationDbContext** (`DbContext`)
-    - Six EF tables: `Devices`, `DeviceEvents`, `ActivitySnapshots`, `DailyDeviceStats`, `ActivityProjections` (per-minute projection checkpoints), and `CollectionItems`, plus the raw `AppMeta` key/value table created lazily outside EF
-    - Database stored at `%AppData%\KeyPulse Signal\keypulse-data.db` in Release and `%AppData%\KeyPulse Signal\Test\keypulse-data.db` in Debug/testing builds (folder name = `AppConstants.App.ProductName`, the assembly name)
-    - Unique constraint on `DeviceEvents(DeviceId, EventTime, EventType)` prevents duplicate lifecycle events
-    - Unique constraint on `ActivitySnapshots(DeviceId, Minute)` prevents duplicate minute buckets
-    - See: `Data/ApplicationDbContext.cs`
-
-8. **Database configuration and switching**
-    - SQLite remains the default; first-run setup and Settings can select a dedicated PostgreSQL database
-    - Settings uses **Save and restart**: save the pending change after confirmation, launch the same executable with preserved arguments, and shut down normally. The replacement waits for the previous process to exit before opening logs, acquiring the mutex, or transferring history; it reopens the main window even in tray mode. See `Services/AppRestartService.cs` and `App.Restart`.
-    - Startup database work runs off the UI thread. A themed transfer window reports preparation, copying, verification, and activation, and requests cancellation through Stop and exit. Recovery dialogs stay on the UI thread, and capture begins only after successful preflight. Completion logs include endpoints, current-attempt duration, and whether activation resumed a committed copy. Do not include row counts in completion logs.
-    - Non-secret PostgreSQL settings are build-isolated in `settings.json`; passwords use build-qualified Windows Credential Manager entries
-    - Direct PostgreSQL-to-PostgreSQL moves keep `PostgreSql` and its credential reference active until activation. `PendingPostgreSql` and its separate credential reference describe the destination. New credentials get unique build-qualified entries, and connection/reference changes publish together through atomic settings writes. Cleanup checks durable references and never deletes the legacy default entry.
-    - Direct transfers hold separate nonblocking source and destination advisory locks before target migrations or history reads. Source schema validation is read-only. Destination markers are checked before source access, so committed copies can activate without the source. Recovery can correct either connection's authentication but cannot change confirmed endpoints. See `Services/Database/DatabaseConnectionSettingsService.cs`.
-    - `PostgreSqlApplicationDbContext` owns a separate PostgreSQL migration set under `Migrations/PostgreSql`
-    - Provider switches run through one preflight/recovery loop before DI/monitoring and copy history in both directions. PostgreSQL replacement requires explicit confirmation. Transfers verify table counts and persisted-content fingerprints in one target transaction and preserve retention metadata.
-    - PostgreSQL-to-SQLite exports use a staging file, a verified `.pre-import` backup in `DbBackups`, and a checkpointed file replacement. After successful SQLite activation or initialization, cleanup keeps the three newest automatic backups per database, counting import and migration backups together. SQLite timestamp migration markers prevent repeated UTC conversion.
-    - The PostgreSQL advisory lock spans transfer and activation, then transfers to DI ownership when PostgreSQL stays active. Settings are published atomically. Destination-local `DatabaseImportSwitchId` markers make retries complete activation without recopying, including empty histories.
-    - Debug and Release must use separate PostgreSQL databases; a PostgreSQL advisory lock prevents concurrent KeyPulse writers
-    - See: `Services/Database/DatabaseSwitchService.cs`, `Services/Database/SqliteHistoryFile.cs`, `Data/ConfiguredDbContextFactory.cs`
-
-### Data Persistence Model
-
-- **CollectionItems** = user-owned parts, with stable unique `ItemKey`, application-managed `Revision`, quantity, notes, and descriptive snapshots. `PartKind` selects Switch/Piece or Keycap/Kit; details use the explicit immutable `SwitchPartDetails` and `KeycapPartDetails` JSON records at schema version 1. Custom rows have SQL NULL catalog references; non-null `(PartKind, CatalogEntryId, Variant)` is unique. `Variant` holds the chosen catalog kit label, or an empty string when none was chosen. Custom rows must keep it empty. Catalog snapshot refreshes never change it. Retention never touches these rows.
-- **CatalogService / CollectionService** = lazy singletons for bundled catalogs and collection state. No catalog parsing occurs during startup preflight. On first consumer access, owned snapshots load independently, then each catalog loads asynchronously and matching IDs refresh in one transaction per kind. Missing IDs retain snapshots; custom rows remain custom. Catalog load failures and refresh failures are distinct and retryable. Unreadable details retain raw bytes and allow removal, but prevent edits/additions/refresh for that row.
-- Collection writes in `DataService.Collection.cs` serialize through one gate, check captured revisions, and return typed results. The committed immutable cache updates under that gate; a separate short cache lock keeps readers independent of database work. `CollectionService` dispatches notifications afterward. Stale edits/removals conflict without retry; no-op writes preserve revisions. Consumers read the latest cache on notification. Prepare search predicates with `CatalogSearch.CreateFilter` once per query change and reuse them for prepared rows. Normal `App.OnExit` drains `StopAndDrainAsync` before disposing services and releasing the mutex; notifications never block database work. Windows session end keeps its existing nonblocking exit path.
-
-### Collection UI
-
-- `Views/Collection/CollectionView` owns two retained `PartListViewModel` instances with Switches/Keycaps subtabs. Each category has one grouped grid with independently collapsible sections: **My collection** first, **Catalog** below a divider. Catalog products show a read-only variant list. Owned products have one visible row per selected variant. Custom and missing-catalog items remain in the owned section. My collection and Catalog show their row counts in round brackets; tabs and the toolbar have no counts. Column headers stay at the top, with the pinned collection header directly beneath them. Scrolling past the collection rows collapses that section and preserves the catalog position; reopening it scrolls back to the collection. Pixel scrolling retains row virtualization.
-- Cell templates create custom/owned inputs and action buttons only when applicable; collapsed controls alone are not enough to avoid WPF template creation. Rows never expand for validation or saving captions; feedback uses the shared toast. Unchanged item revisions/catalog entries skip row notifications, duplicate synchronization skips view resets, and selection updates only its dependent properties.
-- Both sections share columns, search, filters, and numeric/text/date sorting. Nonblank search or active filters expand sections with visible matching rows, including after filter/catalog updates and when returning to a tab with a retained query; clearing all search/filter criteria and sections without matches do not change expansion. Clicking another filter while a dropdown is open switches directly to it in one click. Name and Notes split spare viewport width; all columns retain minimum widths and compact columns keep their fixed widths. Explicit pixel sizing avoids grouped-grid star-sizing compression and preserves horizontal scrolling on narrow windows. Explicit group names keep ownership order fixed while sorting within sections. Grouping keeps row virtualization enabled. Catalog search text is reused; owned search includes notes and is rebuilt only when searchable fields change.
-- Compact icon actions add/increment/decrement by 10 switches or 1 keycap kit; quantities remain drafts, including zero; decrement is disabled at zero, and Save removes the owned item without a warning. Notifications use the shared toast panel at the bottom left, matching Devices. Search has an inset icon and clear button to the right of the single-row filter/action toolbar; category subtabs use a distinct filled style with no top gap.
-- Quantities edit inline: Enter or Save commits a total, Escape discards the draft. Save appears only for changed quantities and disappears when the draft returns to its original value. Quantity Save and Cancel appear only for quantity drafts and affect quantity alone. Unowned products display zero; a positive quantity adds ownership and moves the same row above the divider. Delete sets a zero-quantity removal draft with a subtle red row tint and left border; Cancel restores it, and Save removes it without a confirmation dialog; catalog rows return to the catalog section, while custom rows disappear.
-- A quantity draft captures its original snapshot/revision and survives unrelated refreshes or storage failures. Conflicts use toasts; Reload current values is available in the row context menu, and Cancel discards the draft without silently retrying. Unreadable details block editing but still allow removal.
-- `PartEditorViewModel` supplies inline row drafts and validation. Add Custom Item inserts one unsaved editable row per category; Save persists it and Cancel discards it. Owned notes and custom descriptive cells are always direct inputs; there is no Edit button. Catalog descriptions stay read-only. Quantity drafts replace Delete with Cancel in the quantity controls. Custom item creation and description-edit actions sit beside Name; they do not activate quantity Save or Cancel. Notes save independently on Enter or focus loss, including clicks on non-focusable areas outside the field. Notes-only edits do not show the row Save or Cancel buttons. Custom-item Cancel and Save suppress the focus-loss save, and new custom notes wait for row creation. Notes-only writes preserve quantity/descriptive drafts and advance their captured revision only after a successful write. There are no editor or picker windows.
-- Tab switches retain search, filters, sorting, selection, and horizontal scroll, but reset to the top with My collection expanded and Catalog collapsed. They discard unsaved quantity/removal/description drafts and unsaved custom rows. Accepted writes finish normally. Main-window hide/restore retains state. Custom creation expands the collection section. Closing the main window disposes the host subscriptions; normal application exit drains accepted writes through the existing service hook.
-- Collection-read failures block mutations and offer Retry. Catalog failures preserve saved rows and custom creation; missing-catalog snapshots remain usable without a status column.
-- Catalog variants remain a read-only list until Add to collection is pressed. Adding exposes a multi-select dropdown in My collection with Apply and Cancel. Checkboxes stage selection changes; Apply saves additions and removals together in one revision-checked transaction. Cancel, Escape, and outside dismissal discard selection changes. Each selected variant has a separate visible row and its own label in the dropdown field, with new variants copying the source row's saved quantity. First-time additions default to 10 switches or 1 keycap kit. Unsaved quantity drafts are never copied. Retained variants keep their quantities and notes. Quantity changes remain independent drafts: Enter or row Save commits, including zero to remove a row. Failed Apply retains selections for retry or reload. Selecting named variants replaces an unspecified row atomically. There are no collapsed set summary rows.
-- Inline quantities allow zero only as a presentation/removal action. Saved rows remain positive and enforce `PartKinds.MaxQuantity`: 10,000 switches or 100 keycap sets/kits. The existing database constraint stays 1–1,000,000.
-- `PartsViewModelTests` cover grouped ownership, inline validation, conflicts, filters, sorting, and pending writes. `PartsWindowTests` run in a child process and verify subtabs, actual inline Save wiring, preserved tab state, both themes, and narrow/scaled layouts. Set `KEYPULSE_THEME_PREVIEW_DIR` to capture screenshots and Release timing diagnostics.
-
-- Database moves include every collection column except the generated integer row key. Verification orders by `ItemKey` and includes exact raw details, version, unit, revision, and UTC date ticks. A collection-only database counts as history. Source migrations remain read-only during transfer validation; migrate the active source before retrying a pending move.
-
-- **DeviceEvents** = immutable, append-only log of app/device lifecycle transitions (source of truth for connection
-  history)
-- **Devices** = mutable, fast-read snapshot used by the UI (`DeviceName`, `DeviceType`, `LastConnectedAt`, stored
-  `TotalConnectionSeconds`, `TotalInputCount`, `IsHiddenFromDisplay`)
-- **ActivitySnapshots** = immutable minute buckets storing `Keystrokes`, `MouseClicks`, and `MouseMovementSeconds`
-- **DailyDeviceStats** = mutable per-day per-device aggregates (`SessionCount`, `ConnectionSeconds`, `Keystrokes`, activity stats etc.) derived from DeviceEvents and ActivitySnapshots; backfilled in full once on first startup, then kept current by write-through + the live projector with a per-startup drift-recovery pass
-- **ActivityProjections** = per-(device, minute) checkpoints recording which snapshots were projected into `DailyDeviceStats`; grows in lockstep with `ActivitySnapshots` and is pruned together with it by retention
-- Retention prunes only the two per-minute tables; once pruned, `DailyDeviceStats` is the sole surviving record of those days. Pruning has no visible UI effect: the dashboard chart serves hour-aligned bucket tiers (1 Month and longer) from `HourlyInputCount` aggregates via `DashboardHourlyActivityAdapter`, and the raw-minute tiers (1 Day / 1 Week) only ever read windows far newer than the minimum retention cutoff
-- Updates flow in two directions:
-    - lifecycle changes append to `DeviceEvents` and update the corresponding `Device` snapshot
-    - raw input activity accumulates in memory, then flushes to `ActivitySnapshots`
-
-### Startup Sequence (See `App.OnStartup`, `UsbMonitorService`, and `RawInputService`)
-
-1. Register unhandled-exception cleanup hooks.
-2. Mutex check (single-instance enforcement). If another instance exists, signal it to restore/focus and exit.
-3. Resolve first-run database selection, pending imports, and PostgreSQL connection recovery before capture can start.
-   The application starts with explicit shutdown so closing setup/recovery dialogs cannot end startup during an await. Cancellation exits explicitly; the foreground/tray shutdown policy is applied after preflight.
-4. Resolve startup mode from build configuration (Debug foreground, Release tray), with launch args able to force tray mode, then build the DI container.
-5. Resolve `UsbMonitorService` (which also resolves `DataService`). During construction:
-    - database migrations run,
-    - SQLite WAL mode is enabled,
-    - `DataService.RecoverFromCrash()` backfills missing close events if needed,
-    - `DataService.RebuildDeviceSnapshots()` recomputes persisted `TotalConnectionSeconds`, `TotalInputCount`, and `DaysConnected` and clears stale `SessionStartedAt`,
-    - historical `Devices` / `DeviceEvents` are loaded,
-    - the heartbeat timer starts.
-6. `DailyStatsService.RunStartupRebuild()` and `DataRetentionService.RunStartupPrune()` run chained on one background
-   task (prune strictly after rebuild, so a first-run backfill never sees pruned sources).
-7. Show the main window immediately or initialize the tray icon, depending on background mode.
-8. Await `UsbMonitorService.StartAsync()`:
-    - `SetCurrentDevicesFromSystem()` writes `AppStarted`, snapshots currently connected HID devices, and emits
-      `ConnectionStarted` for each one,
-    - then WMI watchers are started for live insert/remove events.
-9. Resolve `RawInputService` and call `Start()` to create the hidden message-only window and begin receiving `WM_INPUT`.
-
-### Shutdown / Disposal Ownership
-
-- During normal application exit, DI owns disposal of singleton services via `ServiceProvider.Dispose()`.
-- Singleton `Dispose()` methods are idempotent and may still be called from crash/unhandled-exception cleanup paths.
-- Duplicate dispose attempts should return immediately and log a `Debug` message rather than performing cleanup twice.
-
----
-
-## Critical Patterns & Conventions
-
-### Event Types & Lifecycle
-
-Event types are defined in `Models/DeviceEvent.cs` and categorized by `EventTypeExtensions`:
-
-- **Opening**: `ConnectionStarted`, `Connected`
-- **Closing**: `ConnectionEnded`, `Disconnected`
-- **App-level**: `AppStarted`, `AppEnded`
-
-Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
-
-- opening events set `SessionStartedAt`
-- closing events commit elapsed time into stored connection duration and clear `SessionStartedAt`
-- app-level events are logged without touching per-device state
-
-### Device Identification
-
-- **Format**: `USB\VID_xxxx&PID_xxxx` (parsed from WMI `DeviceID`)
-- **Classification**: `UsbDeviceClassifier.GetInterfaceSignal()` probes WMI for `Service`, `ClassGuid`, `PNPClass`
-- **Type Resolution**: Multiple HID interfaces expected per device; wait for ≥2 signals before determining type (
-  keyboard vs. mouse)
-- **Manual Correction**: The Device List context menu lets the user write `Device.DeviceType` directly as Keyboard,
-  Mouse, or Other. The DB write must succeed before the shared in-memory device is updated.
-- **Raw Input Sanity Check**: `RawInputService` counts consecutive packets that oppose a saved Keyboard/Mouse type.
-  After 20 opposing packets it raises one session-only suggestion; `DeviceListViewModel` shows a toast while that tab
-  is open. Matching packets reset the count. This never changes the saved type automatically and does not run for
-  Unknown/Other devices.
-
-### Property Binding & Threading
-
-- **ObservableObject** base class (in `Helpers/`) wraps `INotifyPropertyChanged`
-- Automatically marshals property changes to UI thread via `Application.Current.Dispatcher`
-- See `Models/Device.cs` for example: `SessionStartedAt` triggers dependent notifications for `IsConnected` and
-  `TotalConnectionSeconds`
-- **Important**: `IsConnected` and `IsActive` are different concepts:
-    - `IsConnected` means the device currently has an open connection session (`SessionStartedAt.HasValue`)
-    - `IsActive` is a transient raw-input hold-state flag used to highlight devices while keys/buttons are currently
-      held
-    - `IsHiddenFromDisplay` is a persisted user preference that hides a device from **presentation only** (see "Device Display Visibility" below); it never gates capture, event logging, or stat projection
-- **Important**: `TotalConnectionSeconds` is computed while connected; its getter returns the stored seconds plus elapsed time since
-  `SessionStartedAt`
-
-### Raw Input Activity Semantics
-
-- `RawInputService` creates one in-memory bucket per `(DeviceId, Minute)`.
-- **Keyboard**: every key-down increments `Keystrokes`; key-up only updates hold state.
-- **Mouse buttons**: every button-down increments `MouseClicks`; button-up only updates hold state.
-- **Mouse movement**: movement is recorded as a set of second-of-minute values, then persisted as `MouseMovementSeconds` (
-  0–60).
-- Completed minutes flush every 60 seconds; dispose/shutdown flushes the current partial minute as well.
-
-### Dashboard Behavior (Connection Duration + Activity)
-
-- **Dashboard refresh**: `DashboardViewModel` subscribes to `AppTimerService.ThirtySecondTick` for periodic refresh
-  (Dashboard is transient, so subscriptions are cleaned up when the view is destroyed and re-created when the tab is switched back)
-- Dashboard top cards show current connected count and top-3 keyboard/mouse device connection-duration summaries.
-- Time-range filter supports `1 Day`, `1 Week`, `1 Month`, `3 Months`, `1 Year`, and `All Time`.
-- Activity chart bucket size is **derived from the selected range span**, not user-configurable (`DashboardActivityChartBuilder.ResolveBucketSize`): the finest size on a human-friendly ladder (1/2/5/10/15/30 min, 1/2/3/6/12 h, 1/2 d, 1/2 wk) that keeps the range under `MaxBucketCount` (400) points, so density stays roughly constant (e.g. 1 day → 5 min, 1 week → 30 min, 1 month → 2 h, 3 months → 6 h, 1 year → 1 day). The bucket is the data resolution: **zoom magnifies these points, it never re-aggregates to a finer bucket**. Each active run is plotted as a baseline-anchored polyline (straight segments through one raw per-bucket total at each bucket midpoint, no interpolation or moving-average smoothing) that breaks across inactive runs, so separate-time usage on different devices does not appear to overlap.
-- Activity chart zeroes buckets where no app-running interval overlaps (`AppStarted`/`AppEnded` reconstruction).
-- Activity chart series use:
-    - keyboard = `Keystrokes`
-    - mouse = `MouseClicks + MouseMovementSeconds`
-- Devices flagged `IsHiddenFromDisplay` are excluded from cards, charts, and the underlying snapshot/event queries (see "Device Display Visibility").
-- X-axis label format adapts by selected range:
-    - `< 7 days`: `MM-dd HH:mm`
-    - `>= 7 days and < 365 days`: `MM-dd`
-    - `>= 365 days`: `yyyy-MM`
-- Pie charts (`DashboardPieChartBuilder`) show connection-time **share** per device. Slices are colored by connection-time rank from `DashboardDeviceColorPalette` (cool palette = keyboards, warm = mice); devices past `MaxColoredDevicesPerType` (12) or below `OthersShareThreshold` (1%) collapse into a single grey "Others (n)" slice listing the grouped device names. Slices are ordered deterministically so equal values don't flip between refreshes.
-- Pie hover tracking surfaces metadata (status, connection time, share, last seen/connected) and pushes it into a bound `DashboardHoverPreview` via OxyPlot tracker events.
-
-### Calendar View Behavior
-
-- **Data source**: `DailyStatsService.GetVisibleDailyDeviceStats()` (plain `DailyDeviceStat` rows, hidden devices excluded); `CalendarSummaryBuilder` (in `ViewModels/Calendar/`) maps rows + in-memory device metadata to tile summaries and detail rows, so the service never references presentation types.
-- **Real-time overlay**: `CalendarViewModel` maintains a live in-memory input delta (`_todayLiveDeltaByDevice`) and connection overlay per device; `ApplyRealtimeTodayOverlay()` merges persisted + live state on every second tick and every `RawInputService.InputDeltaIncremented` event. There is **no** periodic DB-refresh timer — the calendar does not subscribe to `ThirtySecondTick`; the persisted baseline is re-read on month load, day selection, and day rollover only.
-- **`CalendarDaySummary.IsToday`**: computed property (`Day == DateOnly.FromDateTime(DateTime.Now)`), never stale.
-- **`CalendarDaySummary.IsSelected`**: UI-only flag toggled in-place via tile selection; never stored in DB.
-- **Calendar DTOs** (`CalendarDaySummary`, `CalendarTileDevice`, `CalendarDeviceDetail`) use the `DeviceTypes` enum, not raw strings, and report connection time in seconds (`ConnectionSeconds`).
-- **Hourly activity bars**: `CalendarDeviceDetail.HourlyInputBars` is a 24-slot bar series built by `CalendarHourlyInputBarBuilder` from the day's `HourlyInputCount`; bar heights are normalized to the day's peak hour (`IsPeak` flags it). The same `IReadOnlyList` reference is cached per device across per-second overlay updates so WPF doesn't recreate the bar elements (keeps tooltips alive).
-- **Arrow-key navigation**: `MoveSelectionByArrowAsync(±1)` moves the selection across data-bearing tiles, crossing month boundaries when needed; serialized through `_arrowNavigationGate` (a `SemaphoreSlim`) so rapid key-repeats don't interleave.
-- Calendar detail panel uses responsive `DockPanel` rows so labels/values stay readable at any panel width.
-- Devices flagged `IsHiddenFromDisplay` are excluded from summaries, tiles, and the detail panel; toggling visibility reloads the month (see "Device Display Visibility").
-
-### Duplicate Detection
-
-- WMI fires multiple insert events (~2-3) per physical USB connection
-- `_cachedDevices` stores aggregated keyboard/mouse interface signals inside a short time window
-- `_pendingCachedDeviceProcessing` ensures only one delayed aggregation callback runs per device burst, preventing a multi-callback race
-- Only then is a single `Connected` event recorded
-- `DeviceEvents` unique constraint prevents DB duplicates even if code fails
-
-### Device Display Visibility
-
-- `Device.IsHiddenFromDisplay` (persisted on `Devices`, default `false`, migration `AddDeviceDisplayVisibility`) is a **presentation-only** filter. Hidden devices still capture raw input, still append lifecycle events, and are still projected into `DailyDeviceStats` — only their *display* is suppressed.
-- **Toggle path**: right-clicking a row in `DeviceListView` opens a context menu ("Hide/Show in Dashboard and Calendar"). `DeviceListViewModel.ToggleDeviceDisplayVisibilityCommand` calls `DataService.SetDeviceHiddenFromDisplay(deviceId, ...)`, and only flips the in-memory `Device.IsHiddenFromDisplay` if the DB write succeeds.
-- **Unhide path**: the same context menu, which reads "Unhide Device" on a hidden row. Because the device list keeps hidden rows visible with a badge, the row is always reachable, so hiding and unhiding share one command and one code path.
-- **The device list itself does not hide hidden devices** — it shows a "Hidden" badge instead. Only the dashboard and calendar exclude them.
-- **Where filtering happens**:
-    - `DataService.GetDashboardDevices()` excludes hidden devices at the query.
-    - `DashboardViewModel` derives a visible-device id set from that and filters snapshots + events before charting; it refreshes when any `Device.IsHiddenFromDisplay` changes. The activity chart's snapshot source is tiered by range: hour-aligned bucket tiers read `GetVisibleDailyDeviceStats` + `DashboardHourlyActivityAdapter` pseudo-snapshots, finer tiers read raw minute rows.
-    - `DailyStatsService` excludes hidden devices from the earliest-day query and `GetVisibleDailyDeviceStats`. A day whose visible rows are empty yields `HasData = false` (via `CalendarSummaryBuilder`).
-    - `CalendarViewModel` excludes hidden devices from the realtime overlay, tile summary, and detail panel, and subscribes to per-device `PropertyChanged` (managed via `DeviceList.CollectionChanged`) so toggling visibility reloads the current month.
-
----
-
-## Workflows & Commands
-
-### Skill Usage
-
-- Use `caveman` by default for concise user-facing responses, preserving technical facts and essential caveats. Honor requests for normal mode; keep code, comments, and documentation in plain prose.
-- Use `ui-ux-pro-max` when designing or implementing UI.
-- After substantial code changes, use `thermo-nuclear-code-quality-review` on the changed code before reporting completion.
-- Use `grilling` when reviewing a proposed plan before implementation.
-- Announce which skills are being used.
-- Prefer simple fixes. Do not introduce abstractions solely to satisfy a review recommendation.
-
-### TODO Planning
-
-- Create TODO files only when the user explicitly requests one. They are reserved for long tasks that need written steps.
-- Every TODO must include **Created** and **Updated** dates near the top, using `YYYY-MM-DD`. Preserve the creation date and refresh the update date whenever the TODO changes.
-- Every TODO created or substantively updated must include a **code churn estimate**.
-- Estimate affected file counts and lines added/deleted as ranges, separating implementation, tests,
-  and documentation where useful. State the main assumptions and update the estimate if scope changes.
-- Label estimates clearly; do not present them as measured diffs. For tasks without code changes,
-  state that code churn is zero and describe the expected documentation or asset changes instead.
-
-### Test-Caught Bug Reporting
-
-- When a correct test fails because of a production-code bug, fix the code without weakening the test's intended assertion. After verification passes, append a dated entry to `Tasks/fixedBugs.md`.
-- Each entry must include the date (`YYYY-MM-DD`, no time), test name and file, expected versus actual behavior, root cause, production files changed, and the verification command/result. Record the observed failure before the fix and passing result afterward.
-- A new regression test qualifies if it was run and failed against the unfixed code. Do not count incorrect or stale test expectations, test-harness corrections, environment/build failures, or tests that were only run after the production fix. Do not invent or backfill entries without evidence of that failure-to-fix sequence.
-- Briefly mention qualifying test-caught bugs in the final report and link the log entry, rather than reporting only the final passing test count.
-
-### Database Migrations (via EF Core CLI in Developer PowerShell)
-
-```powershell
-# Add new migration from current model state
-dotnet ef migrations add MyMigrationName
-
-# Remove last unapplied migration
-dotnet ef migrations remove
-
-# Apply pending migrations to DB
-dotnet ef database update
-
-# Revert to specific migration target
-dotnet ef database update SomeOlderMigrationName
-```
-
-### Configuration
-
-- **AppConstants.App** structure consolidates application-level settings:
-  - `ProductName` = "KeyPulse Signal" (from assembly)
-  - `DefaultName` = "KeyPulse Signal" or "KeyPulse Signal (Test)" depending on Debug/Release build
-  - `TrayArgument` = `--tray`
-  - `ActivationEventSuffix` = `.ACTIVATE`
-  - `RunKeyPath` = Windows registry path for startup entries
-  - `TrayIconRelativePath` = relative path to the taskbar icon (`Assets\keypulse-signal-icon.ico`)
-  - `StartupWarningBalloonTimeoutMs` = 5000 (milliseconds for startup warning balloon)
-- **Build mode default**: Debug launches windowed; Release launches to tray/background
-- **`LaunchOnLogin` default**: `false` in Debug, `true` in Release (controlled via `#if DEBUG` in `AppUserSettings`)
-- **Launch args**: `--tray` forces tray/background startup for that process
-- **Application icon**: Set via `<ApplicationIcon>` in `.csproj` for both window and taskbar display; also used for tray icon
-- Tray icon created if background mode enabled; main window created on-demand or at startup
-
-### Build & Run
-
-- Target: `.net8.0-windows`, WPF enabled
-- Debug builds auto-generate WPF XAML behind the scenes
-- **Build may fail** if `KeyPulse Signal.exe` is locked — stop running instance first
-- **Assets**: `Assets\keypulse-signal-icon.ico` (the `<ApplicationIcon>`) copied to build output
-
----
-
-## File Organization & Responsibilities
-
-Use PascalCase for project-owned folders, including `Docs/`, `Scripts/`, `Installer/`, and `Tasks/`. Keep tool-managed and generated folder names such as `.github/`, `bin/`, `obj/`, `artifacts/`, `publish/`, and `Installer/output/` in their established form. Catalog import scripts and metadata live together in `Scripts/Catalogs/`; accepted catalogs live in `Assets/Catalogs/`.
-
-| Folder        | Purpose                                                                                                          |
-|---------------|------------------------------------------------------------------------------------------------------------------|
-| `Helpers/`    | `ObservableObject`, `RelayCommand`, `UsbDeviceClassifier`, `TimeFormatter`, `PowerShellScripts`, `HeartbeatFile` |
-| `Services/`   | `UsbMonitorService`, `RawInputService`, `DataService`, `DailyStatsService` — monitoring, activity capture, persistence, daily stats |
-| `Models/`     | `Device`, `DeviceEvent`, `ActivitySnapshot`, `DailyDeviceStat` + enums/extensions                               |
-| `Data/`       | `ApplicationDbContext`, database initialization                                                                  |
-| `Configuration/` | `AppConstants` plus `AppColorPalette` — the single source of light/dark UI colors. Brushes stay frozen; XAML uses `{DynamicResource PrimaryTextBrush}` (and the other named keys) so existing controls update immediately. Shared control templates live in `Views/Styles/ThemeControls.xaml`, and per-view reusable styles in `Views/Styles/AppStyles.xaml`; both are merged globally in `App.xaml`. The OxyPlot device palette (`DashboardDeviceColorPalette`) is intentionally separate. |
-| `ViewModels/` | MVVM viewmodels for each UI view; `StatusMessageViewModelBase` provides shared status toast behavior. `Dashboard/` and `Calendar/` subfolders hold the chart/pie/color builders, DTOs, and per-view helpers extracted from the larger view-models |
-| `Views/`      | XAML + code-behind for UI; `StatusMessagePanel` is a reusable status toast control; `SharedConverters.cs` holds shared `IValueConverter`s (e.g. `InverseBoolToVisibilityConverter`, `DurationSecondsConverter`); `Styles/AppStyles.xaml` holds the app-wide control styles |
-| `Migrations/` | EF Core snapshot migrations (read-only; auto-generated)                                                          |
-| `Docs/`       | release docs and other current project documentation                                         |
-
----
-
-## Crash Recovery & Consistency
-
-**Problem**: If app is force-killed (IDE stop, crash), devices may appear "stuck" as active in the DB.
-
-**Solution** (`DataService.RecoverFromCrash`):
-
-1. On startup, check if last app-lifecycle event was `AppStarted` (unmatched)
-2. If so, retroactively add `AppEnded` and `ConnectionEnded` for orphaned devices
-3. Event log stays consistent for future connection-duration calculations
-
-**Snapshot Rebuild** (`DataService.RebuildDeviceSnapshots`):
-
-- Recomputes persisted `TotalConnectionSeconds` from the event log (DeviceEvents are never pruned, so the event-pairing replay stays exact)
-- Recomputes persisted `TotalInputCount` from `DailyDeviceStats` sums plus any snapshots without a projection checkpoint — exact in every DB state (pre-backfill, steady-state, and after retention pruned old snapshots)
-- Recomputes persisted `DaysConnected` as the count of `DailyDeviceStats` rows with connection time (one row per local day, never pruned)
-- Clears runtime-only `SessionStartedAt` so devices do not appear connected after an unclean shutdown
-- Called at startup after recovery
-
----
-
-## Important Implementation Details
-
-### Duplicate Event Prevention
-
-- `DeviceInsertedEvent` accumulates keyboard/mouse signals until ≥2 are seen within a short timeframe
-- Only emits one `Connected` event per physical device insertion
-- DB unique constraint `(DeviceId, EventTime, EventType)` is secondary safeguard
-
-### Current Session Connection Duration ("Session" vs. "Total")
-
-- **SessionStartedAt**: Set when device becomes active (opening event), cleared when inactive
-- **IsConnected**: Computed from `SessionStartedAt.HasValue`
-- **IsActive**: Separate transient hold-state driven by `RawInputService.ActivityStateChanged`
-- **TotalConnectionSeconds**: getter returns stored seconds + elapsed since SessionStartedAt (live tick while active)
-- Avoids stale timing from unclean shutdown; current session always starts fresh
-
-### ActivitySnapshots
-
-- One row represents one device during one minute.
-- `Keystrokes` counts key-down events.
-- `MouseClicks` counts mouse button-down events.
-- `MouseMovementSeconds` stores how many distinct seconds within the minute saw mouse movement.
-- The current code persists snapshots, but the main UI primarily exposes live connection/activity state and total connection duration
-  rather than a dedicated activity-history view.
-
-### Device Name Resolution
-
-- `DeviceNameLookup.GetDeviceName(deviceId)` first attempts native SetupAPI/cfgmgr32 lookup
-- Falls back to `PowershellScripts.GetDeviceName(deviceId)` only if native lookup fails
-- Falls back to `"Unknown Device"` if lookup fails
-- Native lookup and PowerShell fallback paths log at `Debug`; lookup failures that throw log at `Warning`
-- User can rename devices; changes saved immediately to DB
-
-### Helper Logging Conventions
-
-- Pure helpers such as `RelayCommand`, `AsyncRelayCommand`, and `ObservableObject` should stay log-free. `TimeFormatter` is log-free except `ToRelativeTime`, which logs an error when given a future timestamp.
-- Log messages should state the condition in domain terms and must not expose internal code details (method or class names). For example, `ToRelativeTime`'s future-timestamp log reads `"Future timestamp received"`, not the method name.
-- Helpers that touch the file system, PowerShell, SetupAPI/cfgmgr32, or crash-recovery inputs should log meaningful failures.
-- `HeartbeatFile.Read()` should log `Debug` when no heartbeat file exists and `Warning` if the file exists but contains an invalid timestamp.
-- `UsbDeviceClassifier.ResolveDeviceType()` logs `Warning` when the observed signal pattern does not match a known keyboard/mouse shape.
-
-### TimeFormatter Helpers
-
-- `ToLocalTime(DateTime)` — converts any `DateTime` to local time, treating `Unspecified` as UTC (matches SQLite reads).
-- `ToLocalDay(DateTime)` — converts a UTC/unspecified timestamp to the local `DateOnly` day. Use this everywhere instead of `DateOnly.FromDateTime(ToLocalTime(...))`.
-- `LocalDayToUtc(DateOnly)` — converts a local day to its UTC start boundary for inclusive range queries.
-- `NormalizeUtcMinute(DateTime)` — converts to UTC then truncates to minute boundary; used by `DailyStatsService` projector.
-- `TruncateToMinute(DateTime)` — truncates to minute while preserving `DateTimeKind`; used by `RawInputService` for local-time minute buckets. **Not interchangeable with `NormalizeUtcMinute`.**
-- Timestamp truncation uses tick arithmetic to preserve the distinction between the two occurrences of a local clock time when daylight saving time ends. Do not reconstruct local timestamps from calendar components in the truncation helpers.
-
-### Status Message Pattern
-
-- `StatusMessageViewModelBase` (`ViewModels/`) provides `StatusMessage`, `StatusVisibility`, and auto-clear timer behavior.
-- ViewModels that need transient toast messages should inherit `StatusMessageViewModelBase` instead of duplicating these fields.
-- `StatusMessagePanel` (`Views/`) is the reusable XAML control with `StatusMessage` and `StatusVisibility` dependency properties.
-- Positioning (alignment, margin, grid row) is controlled by the host view — the panel itself is layout-agnostic.
-
-### Application Theme
-
-- `AppUserSettings.DarkMode` defaults to `false` and is saved by the General section in Settings.
-- `ThemeService` applies the saved palette before database setup/recovery windows open, then subscribes to settings changes through DI. All resource updates and `ThemeChanged` notifications run on the UI thread.
-- Use dynamic brush resources in XAML, including trigger setters. Log `Run` elements use `SetResourceReference` so a switch preserves the existing document, search match, and scroll position.
-- `DashboardViewModel` rebuilds plots from cached inputs on a theme change (no database query). `DashboardPlotTheme.Apply` runs after fresh series are installed on the UI thread, preserving activity axes and zoom; it expects original device-series colors, not previously themed colors.
-- Windows 11 title bars follow the theme through `WindowTheme`. Native Windows message boxes and tray menus retain their system appearance.
-
-### Dispatcher Safety in Services
-
-Services that receive background callbacks (WMI events, `RawInputService` message pump) and update UI-bound collections must guard Dispatcher calls.
-Use `ShutdownDispose.IsDispatcherUsable(dispatcher)` before any `Invoke`/`BeginInvoke`. Two shutdown scenarios require this:
-1. **Normal shutdown**: `_disposed = true` is set at Dispose start; subsequent callbacks skip UI updates.
-2. **Windows session end**: disposal is skipped (`_disposed` stays false) but the Dispatcher may be dead; `HasShutdownStarted`/`HasShutdownFinished` checks prevent deadlocks.
-
-Pure services (`DataService`, `DailyStatsService`, helpers) do **not** need dispatcher guards — they have no UI bindings.
-
-### Troubleshooting View Auto-scroll Behavior
-
-- Log viewer automatically scrolls to the bottom when:
-  - The tab becomes visible (`IsVisibleChanged` event fires true)
-  - New log content is loaded (`LogContent` property changes)
-  - Logs are refreshed via `RefreshLogs()` command
-- Scrolling uses `DispatcherPriority.Background` to allow layout to settle before scroll
-- Search and entry parsing preserve scroll position only when actively searching; log load and visibility changes always trigger scroll-to-bottom
-
-### Documentation Entry Points
-
-- `README.md` = project overview, quick-start, and release doc links
-- `Docs/RELEASE_PROCESS.md` = versioning, packaging, and deferred code-signing work
-
----
-
-## Common Issues & Troubleshooting
-
-| Issue                                                       | Cause                                                | Fix                                                   |
-|-------------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------|
-| Second launch opens existing window instead of new instance | Mutex check + activation signal                      | Expected behavior                                     |
-| Build fails, file locked                                    | `KeyPulse Signal.exe` running                        | Stop KeyPulse, then rebuild                           |
-| Device shows as "Unknown Device"                            | Windows didn't provide friendly name                 | Rename manually in UI or check Windows Device Manager |
-| Duplicate events in debug output                            | Expected behavior; deduped by cache or DB constraint | No action needed                                      |
-
----
-
-## Key Files to Read First
-
-- `App.xaml.cs` → DI setup, startup/shutdown lifecycle
-- `Services/UsbMonitorService.cs` → WMI monitoring, event handling
-- `Services/RawInputService.cs` → per-device raw input capture and minute-bucket flushing
-- `Services/DataService.cs` → crash recovery, snapshot rebuild, event persistence
-- `Services/DailyStatsService.cs` → daily stats write-through, activity projector, startup rebuild
-- `ViewModels/CalendarViewModel.cs` → calendar real-time overlay, persisted baseline refresh
-- `ViewModels/StatusMessageViewModelBase.cs` → shared status toast VM base
-- `Views/StatusMessagePanel.xaml` → reusable status toast control
-- `Models/Device.cs`, `Models/DeviceEvent.cs`, `Models/ActivitySnapshot.cs`, `Models/DailyDeviceStat.cs` → persisted models and runtime state
+# KeyPulse Architecture Guide
+
+KeyPulse is a single-instance .NET 8 WPF app for tracking Windows USB keyboard/mouse connections and per-device input activity. It uses WMI, Windows Raw Input, EF Core 9, SQLite by default, and optional PostgreSQL. Capture continues in tray mode.
+
+## Working conventions
+
+- Use `caveman` for concise user-facing responses unless normal mode is requested. Keep code, comments, and documentation in plain prose.
+- Use `ui-ux-pro-max` for UI work, `grilling` when reviewing proposed plans, and `thermo-nuclear-code-quality-review` after substantial code changes. Announce the skills used.
+- Prefer simple fixes and existing patterns. Do not add abstractions solely to satisfy a review recommendation.
+- Use PascalCase for project-owned folders (`Docs/`, `Scripts/`, `Installer/`, `Tasks/`). Preserve established tool/generated paths such as `.github/`, `bin/`, `obj/`, `artifacts/`, `publish/`, and `Installer/output/`.
+- Catalog import code and metadata belong in `Scripts/Catalogs/`; accepted catalogs belong in `Assets/Catalogs/`.
+
+### Plans and bug records
+
+- Create TODO files only when explicitly requested, for work that needs written steps. Include **Created** and **Updated** dates (`YYYY-MM-DD`), preserving Created and refreshing Updated when changed.
+- TODOs must estimate affected files and lines added/deleted as ranges, separating implementation, tests, and documentation. State assumptions, update estimates when scope changes, and distinguish estimates from measured diffs. Documentation-only work has zero code churn.
+- When a correct test exposes a production bug, fix the code without weakening the intended assertion. After verification passes, append to the gitignored `Tasks/fixedBugs.md` with the date only (`YYYY-MM-DD`), test/file, expected versus actual behavior, root cause, production files changed, and verification command/results.
+- Record the observed failure before the fix and passing result afterward. A new regression test qualifies only if it failed against unfixed code. Exclude stale/incorrect expectations, test-harness corrections, environment/build failures, and tests run only after a fix. Never invent retrospective entries.
+- Mention qualifying test-caught bugs in the final report and link the entry, rather than reporting only passing counts. Keep `Tasks/` gitignored.
+
+## Code map
+
+| Entry point | Responsibility |
+|---|---|
+| `App.xaml.cs` | DI, single-instance activation, startup and shutdown |
+| `Services/AppTimerService.cs` | Shared UI-thread second, 30-second, minute, and daily ticks |
+| `Services/UsbMonitorService.cs` | WMI detection, device/event collections, lifecycle writes, recovery heartbeat |
+| `Services/RawInputService.cs` | Background `WM_INPUT` capture, activity state, minute buckets |
+| `Services/DataService.cs` | Device/event persistence, crash recovery, snapshot rebuild |
+| `Services/DailyStatsService.cs` | Connection write-through, activity projection, historical rebuild |
+| `Services/DataRetentionService.cs` | Minute-data pruning and SQLite compaction |
+| `Services/Database/` | Provider configuration, recovery, transfers, credentials, verification |
+| `Services/DataService.Collection.cs` | Collection transactions, revision checks, committed cache |
+| `ViewModels/Collection/`, `Views/Collection/` | Catalog/owned rows, drafts, variants, grouped grids |
+| `ViewModels/Dashboard/`, `ViewModels/Calendar/` | Chart/summary builders and presentation DTOs |
+| `Data/ApplicationDbContext.cs` | SQLite model; PostgreSQL uses `PostgreSqlApplicationDbContext` |
+| `Configuration/`, `Views/Styles/` | App constants, palettes, shared WPF styles |
+
+Core services are DI-owned singletons; Dashboard is transient. Keep periodic UI timers in `AppTimerService`, not transient views. The USB heartbeat has separate ownership.
+
+## Persistence and lifecycle
+
+| Store | Meaning |
+|---|---|
+| `Devices` | Mutable device metadata and fast-read totals |
+| `DeviceEvents` | Append-only source of connection history; unique `(DeviceId, EventTime, EventType)` |
+| `ActivitySnapshots` | Minute input buckets; unique `(DeviceId, Minute)` |
+| `DailyDeviceStats` | Derived local-day totals; unique `(Day, DeviceId)` |
+| `ActivityProjections` | Per-device/minute checkpoints preventing duplicate activity projection |
+| `CollectionItems` | User-owned parts and descriptive snapshots, independent of activity retention |
+| `AppMeta` | Lazily created raw key/value table outside EF |
+
+### Startup and shutdown
+
+1. Register exception cleanup, enforce the single-instance mutex, and signal an existing instance to restore if needed.
+2. Complete database selection, pending transfers, and connection recovery before DI/monitoring. Use explicit shutdown during preflight so closing a dialog cannot terminate an outstanding await. Cancellation exits explicitly.
+3. Resolve startup mode and DI. Initialize `DataService`: provider migrations, SQLite-only WAL, crash recovery, device snapshot rebuild, history loading, then the USB heartbeat.
+4. Run `RunStartupRebuild()` followed by `RunStartupPrune()` on one background task. Show the main window or tray according to startup mode.
+5. Await USB startup: write `AppStarted`, detect connected HID devices and write `ConnectionStarted`, then start WMI watchers. Start Raw Input afterward.
+
+- Normal exit drains accepted collection writes through `StopAndDrainAsync` before disposing services and releasing the mutex. Windows session end retains its nonblocking exit path.
+- DI owns singleton disposal. `Dispose()` must be idempotent because exception cleanup can invoke it again; duplicate calls return with a Debug log.
+- Background callbacks updating UI-bound state must check `ShutdownDispose.IsDispatcherUsable` before dispatcher calls. `_disposed` alone is insufficient during Windows session end. Pure persistence services need no dispatcher guard.
+- `ObservableObject` marshals property-change notifications to the UI thread; dispose transient view-model subscriptions when their views are destroyed.
+
+### Device and input semantics
+
+- Device IDs use `USB\VID_xxxx&PID_xxxx`; identical devices can share this identity. Classify `kbdhid`/`mouhid` interfaces through `UsbDeviceClassifier`. Aggregate interface signals (at least two) and schedule only one delayed callback per insertion burst; the database uniqueness constraint is a second safeguard.
+- `UsbMonitorService.AddDeviceEvent()` owns state transitions. `ConnectionStarted`/`Connected` set `SessionStartedAt`; `ConnectionEnded`/`Disconnected` commit elapsed time and clear it. `AppStarted`/`AppEnded` do not change per-device state.
+- `IsConnected` means an open session. `IsActive` is transient Raw Input hold-state. `TotalConnectionSeconds` adds elapsed session time to the stored total while connected.
+- Every key-down increments keystrokes; every mouse button-down increments clicks. Releases only update hold-state. Mouse movement counts distinct active seconds within each minute (0-60); `ActiveSeconds` counts distinct seconds with any input.
+- Capture uses `RIDEV_INPUTSINK`, including tray mode. Flush closed minutes every minute and the current partial minute on shutdown. `ActivityStateChanged` drives highlighting; `InputDeltaIncremented` supplies immediate calendar deltas.
+- Manual type corrections persist before changing the shared device. Twenty consecutive packets contradicting a saved Keyboard/Mouse type produce one session-only suggestion; matching packets reset the count. Never automatically change the type or suggest for Unknown/Other.
+- Resolve names through native SetupAPI/cfgmgr32, then PowerShell, then "Unknown Device". Log lookup paths at Debug and thrown failures at Warning; user renames persist immediately.
+
+### Recovery, daily stats, and retention
+
+- Crash recovery closes orphan app/device sessions before rebuilding device snapshots. Rebuild connection totals from unpruned events, input totals from daily stats plus unprojected snapshots, and days connected from daily rows with connection time. Clear stale runtime session starts.
+- Closing lifecycle events recompute that day's connection seconds and session count through a full, non-cumulative replay. Closed minute snapshots project once into activity totals and `HourlyInputCount` (24 local-hour combined-input buckets).
+- All daily-stat mutations share one in-process gate: range recompute, activity projection, and connection write-through. `RecomputeDailyDeviceStatsForRange` must remain idempotent.
+- Without `DailyStatsFullBackfillAt`, startup rebuilds all history month by month, then writes the marker. Later startups reconcile only missing current-month device/day rows. Do not add recurring blind rebuilds. Drain all unprojected closed minutes at startup, regardless of age.
+- Retention defaults to 24 months; 0 means forever. Prune only `ActivitySnapshots` and `ActivityProjections`, never events, daily stats, or collections.
+- Never prune before the full-backfill marker exists. Drain `ProjectClosedActivityMinutes()` first; delete snapshots **before** their checkpoints so surviving snapshots cannot be projected twice. Use week-sized transactions and VACUUM only after large SQLite prunes.
+- Pruning runs after startup rebuild, on the daily tick, and when retention is tightened. Long-range activity charts use retained hourly/daily aggregates; short-range charts use recent minute snapshots.
+
+### Database switching
+
+See `DatabaseSwitchService`, `DatabaseConnectionSettingsService`, `SqliteHistoryFile`, `ConfiguredDbContextFactory`, and `AppRestartService`.
+
+- Debug and Release isolate settings, credentials, and databases. SQLite paths are `%AppData%\KeyPulse Signal\Test\keypulse-data.db` and `%AppData%\KeyPulse Signal\keypulse-data.db`, respectively. Use separate PostgreSQL databases and build-qualified Windows Credential Manager entries.
+- **Save and restart** preserves executable arguments and exits normally. The replacement waits for the old process before opening logs, claiming the mutex, or transferring history, then opens the main window even in tray mode.
+- Database work runs off the UI thread; recovery dialogs remain on it. The transfer window reports preparation, copying, verification, and activation and supports Stop and exit. Capture starts only after successful preflight.
+- PostgreSQL has its own migrations in `Migrations/PostgreSql`. Validate source schemas read-only; migrate the active source before retrying a pending transfer. PostgreSQL replacement requires explicit confirmation.
+- Direct PostgreSQL transfers acquire separate nonblocking source and destination advisory locks before target migrations or history reads. Check destination completion markers before source access so a committed copy can activate without its source. Authentication recovery must not change confirmed endpoints.
+- Keep the active `PostgreSql` connection/credential until activation; `PendingPostgreSql` describes the destination. Publish settings and credential references atomically. New credential entries are unique; cleanup checks durable references and never deletes the legacy default entry.
+- Copy and verify counts/content fingerprints in one target transaction, preserving retention metadata. `DatabaseImportSwitchId` makes activation retryable without recopying, including empty histories. Keep the destination lock through activation and hand it to DI when PostgreSQL stays active.
+- SQLite exports use staging, a verified `.pre-import` backup in `DbBackups`, and checkpointed replacement. After successful SQLite activation/initialization, retain the three newest automatic backups per database across imports and migrations. Timestamp migration markers prevent repeated UTC conversion.
+- Completion logs include endpoints, current-attempt duration, and resumed activation status, but no row counts.
+
+## Collections
+
+### Storage and services
+
+- `CollectionItems` use stable unique `ItemKey` and application-managed `Revision`. `PartKind` distinguishes Switch/Piece and Keycap/Kit; details are immutable `SwitchPartDetails`/`KeycapPartDetails` JSON records at schema version 1.
+- Custom rows have SQL NULL catalog references and empty `Variant`. Catalog rows are unique by `(PartKind, CatalogEntryId, Variant)`; an empty variant means unspecified. Snapshot refresh never changes the selected variant.
+- `CatalogService` and `CollectionService` load lazily, never during startup preflight. Owned snapshots load independently; catalogs load asynchronously and refresh matching IDs in one transaction per kind. Missing IDs retain snapshots; custom rows remain custom.
+- Catalog loading and snapshot-refresh failures are distinct and retryable. Preserve unreadable raw details: allow removal, but block edits, additions, and refresh for that row. A collection-read failure blocks mutations; a catalog failure still allows saved rows and custom creation.
+- Serialize writes through one gate, validate captured revisions, and return typed results. Update the committed immutable cache under that gate; a separate short cache lock keeps readers independent of database work. Dispatch notifications afterward; consumers read the latest cache. Stale edits/removals conflict without retries; no-op writes preserve revisions.
+- Prepare `CatalogSearch.CreateFilter` once per query change. Reuse catalog search text and rebuild owned search text only when searchable fields, including notes, change.
+- Transfers include every collection column except its generated integer key. Fingerprint in `ItemKey` order, including exact raw details, schema version, quantity unit, variant, revision, and UTC date ticks. A collection-only database counts as history.
+
+### Grid and editing behavior
+
+- `CollectionView` retains Switches/Keycaps `PartListViewModel`s. Each uses a shared-column grouped grid with My collection before Catalog, independently collapsible. Owned variants are separate visible rows, not collapsed set summaries; custom and missing-catalog items stay owned.
+- Pin column headers and the collection header. Scrolling past owned rows collapses the collection while preserving catalog position; reopening it scrolls back to the collection. Preserve pixel scrolling and virtualization while grouping.
+- Create editor/action templates only when applicable; merely collapsing controls still creates them. Skip unchanged row notifications and redundant view resets. Validation/saving feedback uses the shared toast, not expanding rows.
+- Search/filters expand groups with visible matches, including after refresh and tab return. Clearing criteria or groups without matches does not alter expansion. Switching between open filters takes one click. Sort within fixed ownership groups using numeric/text/date values.
+- Name and Notes share spare width; use explicit pixel widths and column minimums to preserve narrow-window horizontal scrolling. Only Name is frozen. Keep Variants, Qty and its controls, Notes, then Added together; variant fields use the same centered cell layout and outer spacing as other inputs.
+- Quantity changes are drafts. Enter/Save commits; Escape/Cancel resets quantity alone. Quantity action buttons appear only for quantity drafts, never notes or descriptive edits. Add/increment/decrement uses 10 switches or 1 keycap kit; decrement stops at zero.
+- Zero is a removal draft, never a persisted quantity. Delete sets that draft, Cancel restores it, and Save removes without confirmation. Catalog items return to Catalog; custom rows disappear. App limits are 10,000 switches or 100 keycap kits; the database constraint remains 1-1,000,000.
+- Drafts retain their captured snapshot/revision through unrelated refreshes and storage failures. Conflicts use toasts and explicit Reload current values; do not silently retry.
+- Notes save on Enter or focus loss, including clicks on non-focusable surfaces. Notes-only writes preserve quantity/descriptive drafts and advance the captured revision only after success. Custom-item Save/Cancel suppress the blur save; new custom notes wait for creation.
+- Custom creation supports one unsaved row per category, with Save/Cancel beside Name; owned custom descriptions are inline inputs and catalog descriptions are read-only. The Add custom item button is currently hidden. Do not introduce separate collection editor/picker windows.
+- Catalog variants stay a read-only list until Add. The owned dropdown stages selections: Apply atomically adds/removes variants with revision checks; Cancel, Escape, or outside dismissal discards them. Failed Apply retains selections for retry/reload.
+- New variants copy the source row's **saved** quantity, never its draft; first additions default to 10 switches or 1 kit. Retained variants keep quantity/notes. Replacing an unspecified row with named variants is atomic.
+- Tab switches retain search, filters, sorting, selection, and horizontal scroll, but reset to the top with My collection expanded and Catalog collapsed. Discard unsaved drafts/custom rows; accepted writes finish normally. Hide/restore retains state. Dispose host subscriptions when the main window closes.
+
+## Dashboard, calendar, and visibility
+
+- `IsHiddenFromDisplay` is presentation-only: never stop capture, events, or projection. Persist changes before updating the shared device. Hidden rows remain accessible in Devices; exclude them from dashboard queries/cards/charts and calendar queries/overlays/details. Visibility changes refresh both views; days without visible data have `HasData = false`.
+- Dashboard subscribes to the 30-second tick and disposes subscriptions with the transient view. `DashboardActivityChartBuilder` selects bucket size from the range, capped at 400 points; zoom never recomputes finer data. Use unsmoothed, baseline-anchored polylines broken across inactive runs, and zero buckets outside reconstructed app-running intervals.
+- Keyboard activity is keystrokes; mouse activity is clicks plus movement-active seconds. Hour-aligned chart tiers read `DailyDeviceStats` via `DashboardHourlyActivityAdapter`; finer tiers read raw minute snapshots.
+- Pie charts show connection-time share with deterministic rank/color ordering. Group devices beyond the top 12 or below 1% into Others, retaining their names for hover details. Use the separate `DashboardDeviceColorPalette`.
+- Calendar consumes plain daily rows through `GetVisibleDailyDeviceStats`; `CalendarSummaryBuilder` maps them with device metadata. Keep presentation DTOs out of services; use `DeviceTypes` and seconds for connection durations.
+- Calendar overlays live input deltas and connection time on second ticks and `InputDeltaIncremented`. Refresh persisted baselines on month load, day selection, and rollover only; do not add a periodic database-refresh timer.
+- Compute `IsToday` dynamically; selection is UI-only. Cache hourly-bar list references across second ticks so WPF preserves elements/tooltips. Serialize arrow navigation across data-bearing days/months with `_arrowNavigationGate`.
+
+## Shared UI, time, and logging
+
+- Use `ToastMessageViewModelBase` and `ToastMessagePanel` (`ToastMessage`, `ToastVisibility`) rather than duplicating notification state. The host controls placement; repeated messages restart the reading interval.
+- `AppColorPalette` owns shared frozen brush resources. Reference them dynamically, including trigger setters. Shared templates are in `Views/Styles/ThemeControls.xaml`; app styles are in `Views/Styles/AppStyles.xaml`.
+- `ThemeService` applies the saved palette before setup/recovery windows and updates resources/notifications on the UI thread. Log `Run`s use `SetResourceReference` to preserve document/search/scroll state.
+- Rebuild dashboard plots from cached inputs on theme changes, without querying the database. Apply `DashboardPlotTheme` after installing fresh series using original device colors, preserving axes/zoom. Windows 11 title bars follow `WindowTheme`; native dialogs/tray menus keep system appearance.
+- Use `TimeFormatter.ToLocalDay` for local dates and `LocalDayToUtc` for local-day UTC boundaries. `ToLocalTime` treats Unspecified as UTC. `NormalizeUtcMinute` converts to UTC before truncation; `TruncateToMinute` preserves DateTimeKind. They are not interchangeable.
+- Truncate timestamps using tick arithmetic, not reconstructed calendar components, to preserve the two occurrences of a repeated daylight-saving clock time.
+- Pure helpers stay log-free except `TimeFormatter.ToRelativeTime` errors for future timestamps. Log meaningful failures at filesystem/native/PowerShell/recovery boundaries. Use domain language, not method/class names.
+- Missing heartbeat files log Debug; malformed heartbeat timestamps and unrecognized device signal patterns log Warning.
+- Troubleshooting logs scroll to the bottom on visibility, load, or refresh after background-priority layout. Active search preserves scroll during search/parsing.
+
+## Build, test, and release
+
+- Debug opens a window and defaults LaunchOnLogin to false; Release starts in the tray and defaults it to true. `--tray` forces tray mode. Configuration lives in `AppConstants` and `AppUserSettings`.
+- Run `dotnet build "KeyPulse Signal.sln"` and `dotnet test "KeyPulse Signal.sln"`; use `-c Release` for Release checks. A running executable can lock the output; use a separate `OutputPath` when appropriate instead of disrupting the user's session.
+- Set `KEYPULSE_TEST_POSTGRES_BIN` to a PostgreSQL bin folder for disposable-cluster integration tests. Report skipped tests when it is unset.
+- `PartsViewModelTests` cover drafts, variants, conflicts, search, sorting, and pending writes. `PartsWindowTests` run in a child process to verify actual controls, both themes, and narrow/scaled layouts. `KEYPULSE_THEME_PREVIEW_DIR` captures screenshots and Release timings.
+- Generate migrations for both providers in Debug; keep generated migrations/snapshots tool-owned. SQLite: `dotnet ef migrations add Name -c ApplicationDbContext -o Migrations`. PostgreSQL: `dotnet ef migrations add Name -c PostgreSqlApplicationDbContext -o Migrations/PostgreSql`.
+- Follow [Docs/RELEASE_PROCESS.md](Docs/RELEASE_PROCESS.md) and [Docs/RELEASE_CHECKLIST.md](Docs/RELEASE_CHECKLIST.md) for versioning, packaging, tagging, and upgrade checks. The README is the overview/setup entry point; the changelog records user-facing release changes.
