@@ -283,6 +283,13 @@ Device state management is centralized in `UsbMonitorService.AddDeviceEvent()`:
 - Label estimates clearly; do not present them as measured diffs. For tasks without code changes,
   state that code churn is zero and describe the expected documentation or asset changes instead.
 
+### Test-Caught Bug Reporting
+
+- When a correct test fails because of a production-code bug, fix the code without weakening the test's intended assertion. After verification passes, append a dated entry to `Tasks/fixedBugs.md`.
+- Each entry must include the date (`YYYY-MM-DD`, no time), test name and file, expected versus actual behavior, root cause, production files changed, and the verification command/result. Record the observed failure before the fix and passing result afterward.
+- A new regression test qualifies if it was run and failed against the unfixed code. Do not count incorrect or stale test expectations, test-harness corrections, environment/build failures, or tests that were only run after the production fix. Do not invent or backfill entries without evidence of that failure-to-fix sequence.
+- Briefly mention qualifying test-caught bugs in the final report and link the log entry, rather than reporting only the final passing test count.
+
 ### Database Migrations (via EF Core CLI in Developer PowerShell)
 
 ```powershell
