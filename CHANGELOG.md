@@ -4,9 +4,15 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+## [1.5.1] - 2026-11-15
+
 ### Added
 
 - Track individual switch and keycap variants in your collection, each with its own quantity.
+
+### Changed
+
+- Collection notes save when you leave the field, independently of quantity changes.
 
 ## [1.5.0] - 2026-11-08
 

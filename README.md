@@ -44,7 +44,7 @@ KeyPulse Signal is a Windows desktop app that tracks how much you use each USB k
 
 - Browse and search switch and keycap catalogs.
 - Track owned quantities and personal notes.
-- Choose variants after adding to your collection. Apply saves the selection as separate rows, copying the source row's saved quantity (10 switches or 1 keycap kit for first-time additions); Cancel discards it. Quantity edits still use the row Save.
+- Track switch and keycap variants separately, each with its own quantity.
 - Collections persist across restarts and database transfers.
 
 ## Privacy and your data

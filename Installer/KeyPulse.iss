@@ -4,7 +4,7 @@
 
 #define AppName "KeyPulse Signal"
 #ifndef AppVersion
-  #define AppVersion "1.5.0"
+  #define AppVersion "1.5.1"
 #endif
 #define AppPublisher "KeyPulse Signal"
 #define AppExeName "KeyPulse Signal.exe"
