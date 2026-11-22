@@ -34,9 +34,12 @@ public partial class CalendarView
     }
 
     public CalendarView()
+        : this(App.ServiceProvider.GetRequiredService<CalendarViewModel>()) { }
+
+    internal CalendarView(object model)
     {
         InitializeComponent();
-        DataContext = App.ServiceProvider.GetRequiredService<CalendarViewModel>();
+        DataContext = model;
     }
 
     private void CalendarView_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

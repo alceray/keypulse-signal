@@ -272,6 +272,48 @@ namespace KeyPulse.Migrations.PostgreSql
                     b.ToTable("Devices", (string)null);
                 });
 
+            modelBuilder.Entity("KeyPulse.Models.DeviceBuildDay", b =>
+                {
+                    b.Property<int>("DeviceBuildDayId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DeviceBuildDayId"));
+
+                    b.Property<string>("BuildsJson")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("BuildsSchemaVersion")
+                        .HasColumnType("integer");
+
+                    b.Property<DateOnly>("Day")
+                        .HasColumnType("date");
+
+                    b.Property<Guid>("DayKey")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("DeviceId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<long>("Revision")
+                        .IsConcurrencyToken()
+                        .HasColumnType("bigint");
+
+                    b.HasKey("DeviceBuildDayId");
+
+                    b.HasIndex("Day");
+
+                    b.HasIndex("DayKey")
+                        .IsUnique();
+
+                    b.HasIndex("DeviceId", "Day")
+                        .IsUnique();
+
+                    b.ToTable("DeviceBuildDays", (string)null);
+                });
+
             modelBuilder.Entity("KeyPulse.Models.DeviceEvent", b =>
                 {
                     b.Property<int>("DeviceEventId")

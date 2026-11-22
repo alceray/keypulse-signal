@@ -557,6 +557,7 @@ public sealed class DatabaseSwitchService
             );
         if (replaceExisting)
         {
+            await target.DeviceBuildDays.ExecuteDeleteAsync(cancellationToken);
             await target.CollectionItems.ExecuteDeleteAsync(cancellationToken);
             await target.ActivityProjections.ExecuteDeleteAsync(cancellationToken);
             await target.DailyDeviceStats.ExecuteDeleteAsync(cancellationToken);
@@ -577,6 +578,17 @@ public sealed class DatabaseSwitchService
                 foreach (var row in batch)
                     row.CollectionItemId = 0;
                 target.CollectionItems.AddRange(batch);
+            },
+            target,
+            cancellationToken
+        );
+        await CopyInBatchesAsync(
+            source.DeviceBuildDays.AsNoTracking().OrderBy(x => x.DayKey),
+            batch =>
+            {
+                foreach (var row in batch)
+                    row.DeviceBuildDayId = 0;
+                target.DeviceBuildDays.AddRange(batch);
             },
             target,
             cancellationToken
@@ -609,6 +621,7 @@ public sealed class DatabaseSwitchService
         populated |= await context.DailyDeviceStats.AnyAsync(cancellationToken);
         populated |= await context.ActivityProjections.AnyAsync(cancellationToken);
         populated |= await context.CollectionItems.AnyAsync(cancellationToken);
+        populated |= await context.DeviceBuildDays.AnyAsync(cancellationToken);
         return populated;
     }
 

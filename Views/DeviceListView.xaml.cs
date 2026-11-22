@@ -8,9 +8,12 @@ namespace KeyPulse.Views;
 public partial class DeviceListView
 {
     public DeviceListView()
+        : this(App.ServiceProvider.GetRequiredService<DeviceListViewModel>()) { }
+
+    internal DeviceListView(object model)
     {
         InitializeComponent();
-        DataContext = App.ServiceProvider.GetRequiredService<DeviceListViewModel>();
+        DataContext = model;
     }
 
     private void DataGridRow_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)

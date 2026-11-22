@@ -42,7 +42,9 @@ All services are **DI singletons** registered in `App.xaml.cs` (`OnStartup`). Th
 - **`DailyStatsService`** — write-through projector maintaining per-day per-device aggregates from `DeviceEvents` + `ActivitySnapshots`.
 - **`DataRetentionService`** — prunes per-minute detail (`ActivitySnapshots` + `ActivityProjections`) older than the user's retention setting. Invariants: never runs before the daily-stats backfill marker exists, drains the projector first, and deletes snapshots **before** their projection checkpoints.
 
-### Data model (six tables + `AppMeta`)
+### Data model (seven tables + `AppMeta`)
+
+- **`DeviceBuildDays`** — independent local-day keyboard build lists with stable day/build keys, an application-managed day revision, and ordered versioned JSON part snapshots. Devices appends only while connected; Calendar edits/deletes existing builds in place even while unplugged. Initialize each connected day once from the latest prior current build; empty day headers prevent reseeding deleted entries. No timestamps, quantities, or collection foreign keys. Conflicts retain drafts until Reload. Midnight retargeting requires Reload for Devices; historical editors stay pinned. Retention excludes builds; transfers preserve exact raw payloads, dates, and revisions. Calendar activity remains separate. See `AGENTS.md` for the full daily-build contract.
 
 - **`CollectionItems`** — user-owned Switch/Piece and Keycap/Kit rows, stable `ItemKey`, optimistic `Revision`, quantity/notes, and versioned typed JSON descriptions. NULL catalog references identify custom items. Lazy catalog loading refreshes matching IDs only; missing or unreadable snapshots survive. `DataService.Collection` serializes writes and publishes committed state through `CollectionService`; transfers preserve all fields except the generated integer key. Retention excludes this table. UI consumers and shutdown draining are the next phase.
 

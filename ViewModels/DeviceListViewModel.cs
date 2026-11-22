@@ -18,6 +18,10 @@ public class DeviceListViewModel : ToastMessageViewModelBase
     private readonly RawInputService _rawInputService;
     private readonly AppTimerService _appTimerService;
     private readonly DataService _dataService;
+    private readonly DeviceBuildService _builds;
+    private bool _disposed;
+    private DateOnly _partsDay = DateOnly.FromDateTime(DateTime.Now);
+    public ICommand EditPartsCommand { get; }
     private bool _showAllDevices;
     private string _currentSessionTime = "00:00:00";
 
@@ -68,7 +72,9 @@ public class DeviceListViewModel : ToastMessageViewModelBase
         UsbMonitorService usbMonitorService,
         RawInputService rawInputService,
         AppTimerService appTimerService,
-        DataService dataService
+        DataService dataService,
+        DeviceBuildService builds,
+        PartsPromptService partsPrompts
     )
         : base(DeviceTypeToastDurationSeconds)
     {
@@ -76,6 +82,13 @@ public class DeviceListViewModel : ToastMessageViewModelBase
         _rawInputService = rawInputService;
         _appTimerService = appTimerService;
         _dataService = dataService;
+        _builds = builds;
+        EditPartsCommand = new RelayCommand(
+            p => partsPrompts.OpenEditor((Device)p!),
+            p => p is Device { DeviceType: DeviceTypes.Keyboard, IsConnected: true }
+        );
+        _builds.Changed += PartsChanged;
+        _ = LoadPartsAsync();
 
         DeviceListCollection = CollectionViewSource.GetDefaultView(_usbMonitorService.DeviceList);
         DeviceListCollection.Filter = device => ShowAllDevices || ((Device)device).IsConnected;
@@ -127,6 +140,13 @@ public class DeviceListViewModel : ToastMessageViewModelBase
 
     private void OnSecondTick(object? sender, EventArgs e)
     {
+        var today = DateOnly.FromDateTime(DateTime.Now);
+        if (_partsDay != today)
+        {
+            _partsDay = today;
+            foreach (var device in _usbMonitorService.DeviceList)
+                PartsChanged(device.DeviceId, today);
+        }
         // Update app session time from the AppStarted event timestamp.
         var elapsed = DateTime.Now - _usbMonitorService.AppSessionStartedAt;
         CurrentSessionTime = $"{(int)elapsed.TotalHours:D2}:{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
@@ -274,6 +294,10 @@ public class DeviceListViewModel : ToastMessageViewModelBase
 
     public override void Dispose()
     {
+        if (_disposed)
+            return;
+        _disposed = true;
+        _builds.Changed -= PartsChanged;
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged -= Device_PropertyChanged;
 
@@ -283,5 +307,33 @@ public class DeviceListViewModel : ToastMessageViewModelBase
         _rawInputService.DeviceTypeMismatchSuggested -= OnDeviceTypeMismatchSuggested;
         _appTimerService.SecondTick -= OnSecondTick;
         base.Dispose();
+    }
+
+    private async Task LoadPartsAsync()
+    {
+        await _builds.LoadAsync();
+        foreach (var device in _usbMonitorService.DeviceList)
+            PartsChanged(device.DeviceId, DateOnly.FromDateTime(DateTime.Now));
+    }
+
+    private void PartsChanged(string id, DateOnly day)
+    {
+        if (day != DateOnly.FromDateTime(DateTime.Now))
+            return;
+        var dispatcher = Application.Current?.Dispatcher;
+        if (!ShutdownDispose.IsDispatcherUsable(dispatcher))
+            return;
+        dispatcher!.BeginInvoke(() =>
+        {
+            if (_disposed)
+                return;
+            var device = _usbMonitorService.DeviceList.FirstOrDefault(x => x.DeviceId == id);
+            if (device != null)
+            {
+                device.PartsBuild = _builds.LoadError == null ? _builds.GetCurrent(id, day) : null;
+                device.PartsSummary =
+                    _builds.LoadError != null ? "Parts unavailable" : device.PartsBuild?.Summary ?? "";
+            }
+        });
     }
 }

@@ -3,6 +3,9 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:config="clr-namespace:KeyPulse.Configuration"
 >
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/KeyPulse Signal;component/Assets/PartIcons.xaml" />
+  </ResourceDictionary.MergedDictionaries>
   <!-- Circular icon button that fades in a hover disc (dashboard refresh / pause). -->
   <Style x:Key="RoundHoverIconButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
     <Setter Property="Background" Value="Transparent" />
@@ -151,6 +154,7 @@
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}"
+            Padding="{TemplateBinding Padding}"
           >
             <ContentPresenter VerticalAlignment="Center" />
           </Border>

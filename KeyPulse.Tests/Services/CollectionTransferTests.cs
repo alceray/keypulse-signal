@@ -79,7 +79,7 @@ public class CollectionTransferTests
 
     internal static void ExerciseUpgrade(ApplicationDbContext context)
     {
-        var previous = context.Database.GetMigrations().Reverse().Skip(1).First();
+        var previous = context.Database.GetMigrations().Single(x => x.EndsWith("_AddCollectionItems"));
         context.GetService<IMigrator>().Migrate(previous);
         context.Devices.Add(new Device { DeviceId = "upgrade-fixture", DeviceName = "Keep me" });
         context.SaveChanges();

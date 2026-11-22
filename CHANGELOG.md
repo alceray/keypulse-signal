@@ -4,6 +4,14 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Record several independent keyboard builds per day, preserving saved switch/keycap names and variants without timestamps.
+- Add today's builds from connected keyboards in Devices; edit or delete individual historical builds in Calendar, including while unplugged.
+- Copy the latest current build once on each connected day; retain empty days after all builds are deleted.
+- Non-activating reconnect prompts with Same and Change actions, including in tray mode.
+- Keyboard parts history preserved through SQLite and PostgreSQL transfers and activity retention.
+
 ## [1.5.1] - 2026-11-15
 
 ### Added

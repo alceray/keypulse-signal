@@ -76,7 +76,8 @@ public sealed class DatabaseConfigurationService
                 || ctx.ActivitySnapshots.Any()
                 || ctx.DailyDeviceStats.Any()
                 || ctx.ActivityProjections.Any()
-                || ctx.CollectionItems.Any();
+                || ctx.CollectionItems.Any()
+                || ctx.DeviceBuildDays.Any();
         }
         catch
         {

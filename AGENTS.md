@@ -48,6 +48,7 @@ Core services are DI-owned singletons; Dashboard is transient. Keep periodic UI 
 | `DailyDeviceStats` | Derived local-day totals; unique `(Day, DeviceId)` |
 | `ActivityProjections` | Per-device/minute checkpoints preventing duplicate activity projection |
 | `CollectionItems` | User-owned parts and descriptive snapshots, independent of activity retention |
+| `DeviceBuildDays` | Independent local-day keyboard build lists with saved part names and variants, independent of activity retention |
 | `AppMeta` | Lazily created raw key/value table outside EF |
 
 ### Startup and shutdown
@@ -124,6 +125,17 @@ See `DatabaseSwitchService`, `DatabaseConnectionSettingsService`, `SqliteHistory
 - Catalog variants stay a read-only list until Add. The owned dropdown stages selections: Apply atomically adds/removes variants with revision checks; Cancel, Escape, or outside dismissal discards them. Failed Apply retains selections for retry/reload.
 - New variants copy the source row's **saved** quantity, never its draft; first additions default to 10 switches or 1 kit. Retained variants keep quantity/notes. Replacing an unspecified row with named variants is atomic.
 - Tab switches retain search, filters, sorting, selection, and horizontal scroll, but reset to the top with My collection expanded and Catalog collapsed. Discard unsaved drafts/custom rows; accepted writes finish normally. Hide/restore retains state. Dispose host subscriptions when the main window closes.
+
+## Daily keyboard builds
+
+- `DeviceBuildDays` has a stable `DayKey`, unique `(DeviceId, Day)`, `DateOnly` local date, application-managed `Revision`, `BuildsSchemaVersion` (1), and ordered `BuildsJson`. Each build has a unique `BuildKey` and part snapshots (`ItemKey`, `PartKind`, `Name`, `Variant`). No timestamps, quantities, or collection foreign keys. Serialize parts by item key while preserving build order; unreadable payloads block writes and remain intact.
+- `DataService.Builds` writes transactionally under the collection gate. Check captured day key/revision and targeted build key. Devices appends changed parts only for a persisted, connected keyboard today. Calendar edits a selected build in place or deletes it, including while unplugged. No-op selections preserve revisions. Retained parts keep snapshots; new selections must be owned switches or keycaps.
+- The last remaining build is that day's current build. On startup connection detection, runtime connection, and local-day rollover, initialize the connected keyboard's day once by copying the latest prior day's current build with a fresh key. Empty daily records persist after deletion and prevent reseeding or falling back to older configurations. Days remain independent after copying.
+- `DeviceBuildService` loads lazily, caches immutable day snapshots, raises `Changed(deviceId, day)` after commits, and drains accepted writes on normal exit. `PartsPromptService` checks the local date on the shared second tick; database work occurs only on rollover or connection, never on every tick.
+- Devices shows today's current parts. Calendar shows cached lists beneath activity-derived keyboard details, with Edit/Delete on each row. Deletion confirms the keyboard/date/build. No build mutation changes activity, connection history, hidden-device filtering, or day availability. Distinguish an empty parts build from an empty day.
+- Reuse one editor per keyboard. Switching its target requires explicit draft discard. Revision conflicts retain drafts until Reload. Midnight blocks an open Devices add until Reload targets today; a Calendar editor stays on its selected date. Disconnect blocks additions without invalidating historical edits; same-day reconnection restores add eligibility.
+- `PartsPromptService` shows one non-activating tray-compatible prompt at a time, only for keyboards with assigned parts. Suppress reconnect gaps below 10 seconds and startup connections present at the previous exit. Same/dismiss adds nothing after daily initialization; Change opens today's add editor. Validate connection session before superseding a pending request, and reject stale prompt actions.
+- Retention and daily-stat rebuilds exclude build records. Transfers preserve every field except the generated integer key and fingerprint exact JSON/schema version in `DayKey` order. Even an empty daily record counts as application data. Both providers use `AddDeviceBuildDays`; the unshipped timestamp migrations were removed after rolling back the affected Debug database with authorized build-data deletion.
 
 ## Dashboard, calendar, and visibility
 

@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
@@ -16,6 +16,8 @@ public class UsbMonitorService : IDisposable
     public ObservableCollection<Device> DeviceList { get; }
     public ObservableCollection<DeviceEvent> DeviceEventList { get; }
     public DateTime AppSessionStartedAt { get; private set; }
+    public event Action<DeviceConnectedEvent>? DeviceConnected;
+    public event Action<string>? ConnectionChanged;
 
     // A single physical USB connect can raise multiple WMI insert events in quick succession,
     // so this cache aggregates interface signals into one logical connection and avoids duplicates.
@@ -176,6 +178,7 @@ public class UsbMonitorService : IDisposable
         }
 
         _dataService.SaveDevice(trackedDevice);
+        ConnectionChanged?.Invoke(trackedDevice.DeviceId);
     }
 
     private void DeviceInsertedEvent(object sender, EventArrivedEventArgs e)
@@ -281,6 +284,14 @@ public class UsbMonitorService : IDisposable
                 connectedEvent.EventTime.ToString(AppConstants.Date.DateFormat, CultureInfo.InvariantCulture)
             );
             AddDeviceEvent(connectedEvent, device);
+            DeviceConnected?.Invoke(
+                new(
+                    device,
+                    connectedEvent.EventTime,
+                    true,
+                    latestDeviceEvent?.EventType.IsClosingEvent() == true ? latestDeviceEvent.EventTime : null
+                )
+            );
             _cachedDevices.TryRemove(deviceId, out _);
         }
         catch (Exception ex)
@@ -451,7 +462,17 @@ public class UsbMonitorService : IDisposable
                 EventType = EventTypes.ConnectionStarted,
                 EventTime = AppSessionStartedAt,
             };
-            AddDeviceEvent(connectionStartedEvent, currDevice, devicesEndedLastSession.Contains(currDevice.DeviceId));
+            var previousEvent = _dataService.GetLastDeviceEvent(deviceId);
+            var wasConnected = devicesEndedLastSession.Contains(currDevice.DeviceId);
+            AddDeviceEvent(connectionStartedEvent, currDevice, wasConnected);
+            DeviceConnected?.Invoke(
+                new(
+                    currDevice,
+                    connectionStartedEvent.EventTime,
+                    !wasConnected,
+                    previousEvent?.EventType.IsClosingEvent() == true ? previousEvent.EventTime : null
+                )
+            );
         }
     }
 

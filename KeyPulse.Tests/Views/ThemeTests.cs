@@ -64,7 +64,8 @@ public class ThemeTests
             toast.Measure(new Size(240, double.PositiveInfinity));
             var shortHeight = toast.DesiredSize.Height;
 
-            toast.ToastMessage = "This item changed elsewhere. Reload current values from the row menu, then try again.";
+            toast.ToastMessage =
+                "This item changed elsewhere. Reload current values from the row menu, then try again.";
             toast.Dispatcher.Invoke(() => { }, System.Windows.Threading.DispatcherPriority.ContextIdle);
             toast.Measure(new Size(240, double.PositiveInfinity));
             toast.DesiredSize.Width.ShouldBeLessThanOrEqualTo(240);
@@ -89,6 +90,8 @@ public class ThemeTests
                     "DatabaseSetupWindow",
                     "DatabaseTransferWindow",
                     "CloseToTrayHintWindow",
+                    "DevicePartsPromptWindow",
+                    "DevicePartsEditorWindow",
                 }
             )
             {
@@ -135,9 +138,13 @@ public class ThemeTests
                             "WindowStartupLocation",
                             "ShowInTaskbar",
                             "Title",
+                            "ShowActivated",
+                            "Topmost",
                         }
                     )
                         view.Attribute(attribute)?.Remove();
+                    foreach (var resources in view.Elements(wpf + "Window.Resources"))
+                        resources.Name = wpf + "UserControl.Resources";
                 }
                 var gallery = (Border)
                     XamlReader.Parse(

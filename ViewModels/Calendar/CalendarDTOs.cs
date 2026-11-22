@@ -1,4 +1,4 @@
-﻿using KeyPulse.Helpers;
+using KeyPulse.Helpers;
 using KeyPulse.Models;
 
 namespace KeyPulse.ViewModels.Calendar;
@@ -35,8 +35,10 @@ public sealed class CalendarDaySummary
 }
 
 /// <summary>Per-device breakdown for a single day. Used in the day detail panel.</summary>
-public sealed class CalendarDeviceDetail
+public sealed record CalendarDeviceDetail
 {
+    public IReadOnlyList<CalendarBuildRow> Builds { get; init; } = [];
+    public string BuildsMessage { get; init; } = "";
     public string DeviceId { get; init; } = "";
     public string DeviceName { get; init; } = "";
     public DeviceTypes DeviceType { get; init; } = DeviceTypes.Unknown;

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using KeyPulse.Helpers;
 
@@ -39,6 +39,34 @@ public class Device : ObservableObject
     private bool _isHiddenFromDisplay;
     private long _totalInputCount;
     private int _daysConnected;
+    private string _partsSummary = "";
+    private DeviceBuildSnapshot? _partsBuild;
+
+    [NotMapped]
+    public DeviceBuildSnapshot? PartsBuild
+    {
+        get => DeviceType == DeviceTypes.Keyboard ? _partsBuild : null;
+        set
+        {
+            if (_partsBuild == value)
+                return;
+            _partsBuild = value;
+            OnPropertyChanged();
+        }
+    }
+
+    [NotMapped]
+    public string PartsSummary
+    {
+        get => DeviceType == DeviceTypes.Keyboard ? _partsSummary : "";
+        set
+        {
+            if (_partsSummary == value)
+                return;
+            _partsSummary = value;
+            OnPropertyChanged();
+        }
+    }
 
     /// <summary>
     /// Unique identifier for the device in format: USB\VID_xxxx&PID_xxxx
@@ -61,6 +89,8 @@ public class Device : ObservableObject
             _deviceType = value;
             OnPropertyChanged();
             OnPropertyChanged(nameof(TypeSortOrder));
+            OnPropertyChanged(nameof(PartsSummary));
+            OnPropertyChanged(nameof(PartsBuild));
         }
     }
 

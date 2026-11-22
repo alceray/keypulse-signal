@@ -256,6 +256,46 @@ namespace KeyPulse.Migrations
                     b.ToTable("Devices", (string)null);
                 });
 
+            modelBuilder.Entity("KeyPulse.Models.DeviceBuildDay", b =>
+                {
+                    b.Property<int>("DeviceBuildDayId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("BuildsJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("BuildsSchemaVersion")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly>("Day")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("DayKey")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeviceId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("Revision")
+                        .IsConcurrencyToken()
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("DeviceBuildDayId");
+
+                    b.HasIndex("Day");
+
+                    b.HasIndex("DayKey")
+                        .IsUnique();
+
+                    b.HasIndex("DeviceId", "Day")
+                        .IsUnique();
+
+                    b.ToTable("DeviceBuildDays", (string)null);
+                });
+
             modelBuilder.Entity("KeyPulse.Models.DeviceEvent", b =>
                 {
                     b.Property<int>("DeviceEventId")

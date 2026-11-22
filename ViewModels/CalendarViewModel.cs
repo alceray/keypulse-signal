@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows;
@@ -15,12 +15,20 @@ namespace KeyPulse.ViewModels;
 /// Shows a monthly grid of day tiles and a detail panel for a selected day.
 /// Subscribes to AppTimerService.SecondTick for per-second realtime overlay updates.
 /// </summary>
-public sealed class CalendarViewModel : ObservableObject, IDisposable
+public sealed class CalendarViewModel : ToastMessageViewModelBase
 {
     private readonly DailyStatsService _dailyStatsService;
     private readonly UsbMonitorService _usbMonitorService;
     private readonly RawInputService _rawInputService;
     private readonly AppTimerService _appTimerService;
+    private readonly DeviceBuildService _builds;
+    private readonly Dictionary<string, IReadOnlyList<CalendarBuildRow>> _partsCache = [];
+    private DateOnly? _partsDay;
+    private readonly PartsPromptService _partsPrompts;
+    private bool _changingBuild;
+    public ICommand EditBuildCommand { get; }
+    public ICommand DeleteBuildCommand { get; }
+    public ICommand ReloadBuildsCommand { get; }
 
     // UI-only realtime overlay state for today's row/details.
     private readonly object _liveInputLock = new();
@@ -114,13 +122,27 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         DailyStatsService dailyStatsService,
         UsbMonitorService usbMonitorService,
         RawInputService rawInputService,
-        AppTimerService appTimerService
+        AppTimerService appTimerService,
+        DeviceBuildService builds,
+        PartsPromptService partsPrompts
     )
     {
         _dailyStatsService = dailyStatsService;
         _usbMonitorService = usbMonitorService;
         _rawInputService = rawInputService;
         _appTimerService = appTimerService;
+        _builds = builds;
+        _partsPrompts = partsPrompts;
+        EditBuildCommand = new RelayCommand(
+            p => EditBuild((CalendarBuildRow)p!),
+            p => p is CalendarBuildRow && !_changingBuild
+        );
+        DeleteBuildCommand = new RelayCommand(
+            async p => await DeleteBuildAsync((CalendarBuildRow)p!),
+            p => p is CalendarBuildRow && !_changingBuild
+        );
+        ReloadBuildsCommand = new RelayCommand(async _ => await ReloadBuildsAsync(), _ => !_changingBuild);
+        _builds.Changed += PartsChanged;
 
         var today = DateOnly.FromDateTime(DateTime.Now);
         _currentDisplayMonth = today.AddDays(1 - today.Day); // First day of current month
@@ -321,6 +343,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         SelectedDayDetails.Clear();
         _todayPersistedDetailByDevice.Clear();
         _hourlyBarsCache.Clear();
+        _partsCache.Clear();
         if (_selectedDay == null || !_selectedDay.HasData)
             return;
 
@@ -331,6 +354,8 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         {
             var statRows = await Task.Run(() => _dailyStatsService.GetVisibleDailyDeviceStats(day, day));
             details = CalendarSummaryBuilder.BuildDayDetails(statRows, GetDevicesById(), isToday);
+            await _builds.LoadAsync();
+            _partsCache.Clear();
         }
         catch (Exception ex)
         {
@@ -343,7 +368,7 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
 
         SelectedDayDetails.Clear();
         foreach (var d in OrderDetailsForDisplay(details))
-            SelectedDayDetails.Add(d);
+            SelectedDayDetails.Add(WithBuilds(d, day));
 
         var today = DateOnly.FromDateTime(DateTime.Now);
         if (day != today)
@@ -683,6 +708,9 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
         }
 
         var ordered = OrderDetailsForDisplay(rows).ToList();
+        if (_selectedDay != null)
+            for (var i = 0; i < ordered.Count; i++)
+                ordered[i] = WithBuilds(ordered[i], _selectedDay.Day);
 
         // Update in-place when order is unchanged to keep tooltip targets alive.
         var canUpdateInPlace =
@@ -734,16 +762,118 @@ public sealed class CalendarViewModel : ObservableObject, IDisposable
             _ = LoadCurrentMonthAsync();
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (_disposed)
             return;
         _disposed = true;
+        _builds.Changed -= PartsChanged;
         _appTimerService.SecondTick -= OnSecondTick;
         _rawInputService.InputDeltaIncremented -= OnInputDeltaIncremented;
         _usbMonitorService.DeviceList.CollectionChanged -= DeviceList_CollectionChanged;
         foreach (var device in _usbMonitorService.DeviceList)
             device.PropertyChanged -= Device_PropertyChanged;
         _arrowNavigationGate.Dispose();
+        base.Dispose();
+    }
+
+    private CalendarDeviceDetail WithBuilds(CalendarDeviceDetail detail, DateOnly day)
+    {
+        if (detail.DeviceType != DeviceTypes.Keyboard)
+            return detail;
+        if (_partsDay != day)
+        {
+            _partsCache.Clear();
+            _partsDay = day;
+        }
+        if (!_partsCache.TryGetValue(detail.DeviceId, out var rows))
+        {
+            var saved = _builds.GetDay(detail.DeviceId, day);
+            rows =
+                saved == null
+                    ? []
+                    : saved.Builds.Select((build, index) => new CalendarBuildRow(saved, build, index + 1)).ToArray();
+            _partsCache[detail.DeviceId] = rows;
+        }
+        return detail with
+        {
+            Builds = rows,
+            BuildsMessage = _builds.LoadError ?? (rows.Count == 0 ? "No build recorded" : ""),
+        };
+    }
+
+    private void PartsChanged(string id, DateOnly day)
+    {
+        var dispatcher = Application.Current?.Dispatcher;
+        if (!ShutdownDispose.IsDispatcherUsable(dispatcher))
+            return;
+        dispatcher!.BeginInvoke(() =>
+        {
+            if (_disposed || _selectedDay?.Day != day)
+                return;
+            _partsCache.Remove(id);
+            for (var i = 0; i < SelectedDayDetails.Count; i++)
+                if (SelectedDayDetails[i].DeviceId == id)
+                    SelectedDayDetails[i] = WithBuilds(SelectedDayDetails[i], day);
+        });
+    }
+
+    private void EditBuild(CalendarBuildRow row)
+    {
+        var device = _usbMonitorService.DeviceList.FirstOrDefault(x => x.DeviceId == row.Day.DeviceId);
+        if (device != null)
+            _partsPrompts.OpenEditor(device, row.Day.Day, row.Build.BuildKey);
+    }
+
+    private async Task DeleteBuildAsync(CalendarBuildRow row)
+    {
+        var name =
+            _usbMonitorService.DeviceList.FirstOrDefault(x => x.DeviceId == row.Day.DeviceId)?.DeviceName
+            ?? row.Day.DeviceId;
+        if (
+            MessageBox.Show(
+                $"Delete {row.Label} for {name} on {row.Day.Day:yyyy-MM-dd}?",
+                "Delete build",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            ) != MessageBoxResult.Yes
+        )
+            return;
+        _changingBuild = true;
+        CommandManager.InvalidateRequerySuggested();
+        try
+        {
+            var result = await _builds.DeleteAsync(row.Day, row.Build.BuildKey);
+            if (!_disposed)
+                ToastMessage = result.Succeeded ? "Build deleted" : result.Error ?? "Could not delete build.";
+        }
+        finally
+        {
+            _changingBuild = false;
+            CommandManager.InvalidateRequerySuggested();
+        }
+    }
+
+    private async Task ReloadBuildsAsync()
+    {
+        _changingBuild = true;
+        CommandManager.InvalidateRequerySuggested();
+        try
+        {
+            await _builds.LoadAsync(retry: true);
+            if (_disposed || _selectedDay == null)
+                return;
+            _partsCache.Clear();
+            for (var i = 0; i < SelectedDayDetails.Count; i++)
+                if (SelectedDayDetails[i].DeviceType == DeviceTypes.Keyboard)
+                    SelectedDayDetails[i] = WithBuilds(SelectedDayDetails[i], _selectedDay.Day);
+            if (_builds.LoadError != null)
+                ToastMessage = _builds.LoadError;
+        }
+        finally
+        {
+            _changingBuild = false;
+            CommandManager.InvalidateRequerySuggested();
+        }
     }
 }

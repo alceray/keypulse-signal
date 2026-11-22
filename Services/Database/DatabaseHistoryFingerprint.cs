@@ -11,7 +11,8 @@ internal sealed record DatabaseHistoryFingerprint(
     HistoryTableFingerprint Snapshots,
     HistoryTableFingerprint DailyStats,
     HistoryTableFingerprint Projections,
-    HistoryTableFingerprint Collection
+    HistoryTableFingerprint Collection,
+    HistoryTableFingerprint Builds
 )
 {
     internal static async Task<DatabaseHistoryFingerprint> ReadAsync(
@@ -110,6 +111,19 @@ internal sealed record DatabaseHistoryFingerprint(
                     x.Quantity,
                     x.Notes,
                     AddedAt = UtcTicks(x.AddedAt),
+                },
+                cancellationToken
+            ),
+            await ReadTableAsync(
+                context.DeviceBuildDays.AsNoTracking().OrderBy(x => x.DayKey),
+                x => new
+                {
+                    x.DayKey,
+                    x.DeviceId,
+                    Day = x.Day.DayNumber,
+                    x.Revision,
+                    x.BuildsSchemaVersion,
+                    x.BuildsJson,
                 },
                 cancellationToken
             )

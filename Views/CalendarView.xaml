@@ -396,6 +396,27 @@
                             </StackPanel>
                           </Border>
                         </StackPanel>
+                        <StackPanel Margin="0,12,0,0" Visibility="{Binding DeviceType, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Keyboard}">
+                          <DockPanel>
+                            <Button DockPanel.Dock="Right" Content="Reload" Padding="6,2" Command="{Binding DataContext.ReloadBuildsCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                            <TextBlock Text="Builds" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                          </DockPanel>
+                          <TextBlock Text="{Binding BuildsMessage}" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                          <ItemsControl ItemsSource="{Binding Builds}">
+                            <ItemsControl.ItemTemplate><DataTemplate>
+                              <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1" Padding="0,8">
+                                <StackPanel>
+                                  <TextBlock Text="{Binding Label}" FontWeight="SemiBold"/>
+                                  <local:BuildPartsView Build="{Binding Build}" Margin="0,4,0,6"/>
+                                  <WrapPanel>
+                                    <Button Content="Edit" Padding="10,4" Margin="0,0,8,4" Command="{Binding DataContext.EditBuildCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"/>
+                                    <Button Content="Delete" Padding="10,4" Margin="0,0,0,4" Command="{Binding DataContext.DeleteBuildCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"/>
+                                  </WrapPanel>
+                                </StackPanel>
+                              </Border>
+                            </DataTemplate></ItemsControl.ItemTemplate>
+                          </ItemsControl>
+                        </StackPanel>
                       </StackPanel>
                     </Border>
                   </DataTemplate>
@@ -406,5 +427,6 @@
         </ScrollViewer>
       </Border>
     </Grid>
+    <local:ToastMessagePanel ToastMessage="{Binding ToastMessage}" ToastVisibility="{Binding ToastVisibility}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="8"/>
   </Grid>
 </UserControl>

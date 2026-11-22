@@ -234,6 +234,7 @@ public partial class App
         }
 
         // WMI device snapshot + watcher setup - awaited off the UI thread.
+        ServiceProvider.GetRequiredService<PartsPromptService>();
         // Failures here are logged but don't block; app continues in degraded mode.
         try
         {
@@ -312,6 +313,12 @@ public partial class App
             if (!_isSessionEnding)
                 ShutdownDispose.TryStep(
                     () =>
+                        ServiceProvider?.GetService<DeviceBuildService>()?.StopAndDrainAsync().GetAwaiter().GetResult(),
+                    "keyboard parts writes drain"
+                );
+            if (!_isSessionEnding)
+                ShutdownDispose.TryStep(
+                    () =>
                         ServiceProvider?.GetService<CollectionService>()?.StopAndDrainAsync().GetAwaiter().GetResult(),
                     "collection writes drain"
                 );
@@ -376,6 +383,8 @@ public partial class App
         services.AddSingleton<DataService>();
         services.AddSingleton<CatalogService>();
         services.AddSingleton<CollectionService>();
+        services.AddSingleton<DeviceBuildService>();
+        services.AddSingleton<PartsPromptService>();
         services.AddSingleton<LogAccessService>();
         services.AddSingleton<StartupRegistrationService>();
         services.AddSingleton<UsbMonitorService>();

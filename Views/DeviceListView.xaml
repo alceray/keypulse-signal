@@ -65,7 +65,9 @@
         <Style TargetType="DataGridRow" BasedOn="{StaticResource DeviceGridRowStyle}">
           <EventSetter Event="PreviewMouseRightButtonDown" Handler="DataGridRow_PreviewMouseRightButtonDown" />
         </Style>
-        <Style TargetType="DataGridCell" BasedOn="{StaticResource DeviceGridCellStyle}" />
+        <Style TargetType="DataGridCell" BasedOn="{StaticResource DeviceGridCellStyle}">
+          <Setter Property="Padding" Value="0,6" />
+        </Style>
       </DataGrid.Resources>
       <DataGrid.Columns>
         <!-- Device-type icon then status text in one cell. -->
@@ -85,7 +87,7 @@
               <Setter Property="Template">
                 <Setter.Value>
                   <ControlTemplate TargetType="DataGridCell">
-                    <Border Background="{TemplateBinding Background}" Padding="6,3,0,3">
+                    <Border Background="{TemplateBinding Background}" Padding="6,6,0,6">
                       <ContentPresenter VerticalAlignment="Center" />
                     </Border>
                   </ControlTemplate>
@@ -124,6 +126,11 @@
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
         <DataGridTextColumn Header="Device Name" Binding="{Binding DeviceName}" Width="*" />
+        <DataGridTemplateColumn Header="Parts" Width="220" MinWidth="120">
+          <DataGridTemplateColumn.CellTemplate><DataTemplate>
+            <local:BuildPartsView Build="{Binding PartsBuild}" EmptyText="{Binding PartsSummary}" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="4,0"/>
+          </DataTemplate></DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
         <DataGridTextColumn
           Header="Last Connected"
           Binding="{Binding LastConnectedRelative}"
@@ -159,6 +166,9 @@
             Command="{Binding RenameDeviceCommand}"
             CommandParameter="{Binding PlacementTarget.SelectedItem,RelativeSource={RelativeSource AncestorType=ContextMenu}}"
           />
+          <MenuItem Header="Edit Parts" Command="{Binding EditPartsCommand}"
+            CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+            Visibility="{Binding PlacementTarget.SelectedItem.DeviceType, RelativeSource={RelativeSource AncestorType=ContextMenu}, Converter={StaticResource DeviceTypeToVisibilityConverter}, ConverterParameter=Keyboard}"/>
           <MenuItem Header="Change Device Type">
             <MenuItem
               Header="Keyboard"

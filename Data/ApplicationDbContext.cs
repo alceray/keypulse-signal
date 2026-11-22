@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using KeyPulse.Configuration;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
@@ -21,6 +21,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<DailyDeviceStat> DailyDeviceStats { get; set; }
     public DbSet<ActivityProjection> ActivityProjections { get; set; }
     public DbSet<CollectionItem> CollectionItems { get; set; }
+    public DbSet<DeviceBuildDay> DeviceBuildDays { get; set; }
 
     private static string GetDatabasePath()
     {
@@ -179,6 +180,12 @@ public class ApplicationDbContext : DbContext
             .HasDatabaseName("Idx_DailyDeviceStats_DeviceIdDay");
 
         modelBuilder.Entity<ActivityProjection>().ToTable("ActivityProjections");
+        var builds = modelBuilder.Entity<DeviceBuildDay>();
+        builds.ToTable("DeviceBuildDays");
+        builds.HasIndex(x => x.DayKey).IsUnique();
+        builds.HasIndex(x => new { x.DeviceId, x.Day }).IsUnique();
+        builds.HasIndex(x => x.Day);
+        builds.Property(x => x.Revision).IsConcurrencyToken();
         var collection = modelBuilder.Entity<CollectionItem>();
         collection.ToTable(
             "CollectionItems",
