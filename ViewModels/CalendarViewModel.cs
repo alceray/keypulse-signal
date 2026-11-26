@@ -311,9 +311,9 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         DaySummaries.Clear();
         CalendarGridItems.Clear();
 
-        // Leading blank tiles so day 1 aligns with its weekday (Monday = 0).
+        // Leading blank tiles so day 1 aligns with its weekday (Sunday = 0).
         var firstDay = new DateTime(year, month, 1);
-        var leadingBlanks = ((int)firstDay.DayOfWeek + 6) % 7; // Mon=0 … Sun=6
+        var leadingBlanks = (int)firstDay.DayOfWeek;
         for (var i = 0; i < leadingBlanks; i++)
             CalendarGridItems.Add(null);
 

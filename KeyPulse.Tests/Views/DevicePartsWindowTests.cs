@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -174,7 +174,7 @@ public class DevicePartsWindowTests
                     deleted = null;
                 var month = day.AddDays(1 - day.Day);
                 var cells = Enumerable
-                    .Range(0, ((int)month.DayOfWeek + 6) % 7)
+                    .Range(0, (int)month.DayOfWeek)
                     .Select(_ => (object?)null)
                     .Concat(
                         Enumerable
