@@ -67,13 +67,14 @@ public class DevicePartsWindowTests
                 );
             using var db = new SqliteTestDatabase();
             using var scope = new DeviceBuildTests.BuildScope(db.Factory);
-            using var model = new DevicePartsEditorViewModel(
+            DevicePartsEditorViewModel NewModel() => new(
                 scope.Device,
                 scope.Builds,
                 scope.Collection,
                 scope.Timer,
                 DateOnly.FromDateTime(DateTime.Now)
             );
+            var model = NewModel();
             var editor = new DevicePartsEditorWindow(model);
             try
             {
@@ -90,8 +91,12 @@ public class DevicePartsWindowTests
                     () =>
                         scope.Builds.GetDay(scope.Device.DeviceId, DateOnly.FromDateTime(DateTime.Now))?.Builds.Length
                             == 1
-                        && !model.IsBusy
+                        && !editor.IsVisible
                 );
+                model = NewModel();
+                editor = new DevicePartsEditorWindow(model);
+                editor.Show();
+                await WaitUntil(() => model.CanEdit);
                 var build = scope.Builds.GetCurrent(scope.Device.DeviceId, DateOnly.FromDateTime(DateTime.Now))!;
                 build.Parts.Length.ShouldBe(1);
                 var foreground = GetForegroundWindow();
@@ -256,9 +261,8 @@ public class DevicePartsWindowTests
                 historicalModel.Choices.Single(x => x.Part.ItemKey == scope.First.ItemKey).IsSelected = true;
                 await PartsViewModelTests.Pump();
                 Click(FindButton(historical, "Save"));
-                await WaitUntil(() => !historicalModel.IsBusy && !historicalModel.HasChanges);
+                await WaitUntil(() => !historical.IsVisible);
                 scope.Builds.GetDay(scope.Device.DeviceId, day)!.Builds.Length.ShouldBe(2);
-                historical.Close();
                 var refreshed = scope.Builds.GetDay(scope.Device.DeviceId, day)!;
                 details[0] = details[0] with
                 {

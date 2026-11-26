@@ -9,8 +9,13 @@ public partial class DevicePartsEditorWindow : Window
     {
         InitializeComponent();
         DataContext = model;
+        model.Saved += Close;
         Loaded += async (_, _) => await model.ReloadAsync();
-        Closed += (_, _) => model.Dispose();
+        Closed += (_, _) =>
+        {
+            model.Saved -= Close;
+            model.Dispose();
+        };
     }
 
     private void CloseClick(object sender, RoutedEventArgs e) => Close();

@@ -8,12 +8,13 @@ using KeyPulse.Services;
 
 namespace KeyPulse.ViewModels;
 
-public sealed class DevicePartChoice(BuildPartSnapshot part, bool selected, bool removed) : ObservableObject
+public sealed class DevicePartChoice(BuildPartSnapshot part, bool selected, int quantity) : ObservableObject
 {
     private bool _selected = selected;
     public BuildPartSnapshot Part { get; } = part;
     public string Label => Part.Label;
-    public string Status => removed ? "Removed from collection" : "";
+    public int Quantity => quantity;
+    public string Status => Quantity == 0 ? "Removed from collection" : "";
     public bool IsSelected
     {
         get => _selected;
@@ -48,6 +49,8 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
     public string Title =>
         $"{(EditBuildKey.HasValue ? "Edit build" : "Add build")} for {_device.DeviceName} · {Day:yyyy-MM-dd}";
     public ObservableCollection<DevicePartChoice> Choices { get; } = [];
+    public DeviceBuildSnapshot Preview => new(Guid.Empty,
+        [.. Choices.Where(choice => choice.IsSelected).Select(choice => choice.Part).OrderBy(part => part.ItemKey)]);
     public IEnumerable<DevicePartChoice> Switches => Filter(PartKinds.Switch, _switchSearch);
     public IEnumerable<DevicePartChoice> Keycaps => Filter(PartKinds.Keycap, _keycapSearch);
     public string SwitchSearch
@@ -75,16 +78,9 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
     public bool HasChanges => !_saved.SetEquals(Choices.Where(x => x.IsSelected).Select(x => x.Part.ItemKey));
     public bool HasConflict => _conflict;
     public bool NeedsRetry => !_loaded && !_busy;
-    public string Status =>
-        _busy ? "Loading or saving parts…"
-        : _conflict ? "This day or its builds changed. Reload to continue; your selection is still here."
-        : !_loaded ? "Parts could not be loaded. Retry to continue."
-        : !EditBuildKey.HasValue && !_device.IsConnected ? "Connect this keyboard before adding a build."
-        : EditBuildKey.HasValue ? "Save changes this build only. Other days stay unchanged."
-        : "Save adds a build for today. Earlier builds stay in Calendar.";
     public ICommand SaveCommand { get; }
+    public event Action? Saved;
     public ICommand ReloadCommand { get; }
-    public ICommand CancelCommand { get; }
 
     public DevicePartsEditorViewModel(
         Device device,
@@ -107,14 +103,6 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
         _today = today ?? (() => DateOnly.FromDateTime(DateTime.Now));
         SaveCommand = new RelayCommand(async _ => await SaveAsync(), _ => CanSave);
         ReloadCommand = new RelayCommand(async _ => await ReloadAsync(), _ => !_busy);
-        CancelCommand = new RelayCommand(
-            _ =>
-            {
-                foreach (var choice in Choices)
-                    choice.IsSelected = _saved.Contains(choice.Part.ItemKey);
-            },
-            _ => !_busy && HasChanges
-        );
         _builds.Changed += BuildsChanged;
         _device.PropertyChanged += DeviceChanged;
         _timer.SecondTick += OnSecondTick;
@@ -125,8 +113,7 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
     private IEnumerable<DevicePartChoice> Filter(string kind, string search) =>
         Choices
             .Where(x => x.Part.PartKind == kind && x.Label.Contains(search, StringComparison.CurrentCultureIgnoreCase))
-            .OrderByDescending(x => x.IsSelected)
-            .ThenBy(x => x.Label, StringComparer.CurrentCultureIgnoreCase)
+            .OrderBy(x => x.Label, StringComparer.CurrentCultureIgnoreCase)
             .ToArray();
 
     public async Task ReloadAsync()
@@ -156,7 +143,7 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
             Choices.Clear();
             var saved = current?.Parts.ToDictionary(x => x.ItemKey) ?? [];
             _saved = saved.Keys.ToHashSet();
-            var ownedKeys = owned.Items.Select(x => x.ItemKey).ToHashSet();
+            var quantities = owned.Items.ToDictionary(x => x.ItemKey, x => x.Quantity);
             foreach (
                 var part in owned
                     .Items.Where(x => x.PartKind is PartKinds.Switch or PartKinds.Keycap)
@@ -164,17 +151,19 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
                         saved.GetValueOrDefault(x.ItemKey)
                         ?? new BuildPartSnapshot(x.ItemKey, x.PartKind, x.Name, x.Variant)
                     )
-                    .Concat(saved.Values.Where(x => !ownedKeys.Contains(x.ItemKey)))
+                    .Concat(saved.Values.Where(x => !quantities.ContainsKey(x.ItemKey)))
             )
             {
                 var choice = new DevicePartChoice(
                     part,
                     _saved.Contains(part.ItemKey),
-                    !ownedKeys.Contains(part.ItemKey)
+                    quantities.GetValueOrDefault(part.ItemKey)
                 );
                 choice.PropertyChanged += ChoiceChanged;
                 Choices.Add(choice);
             }
+            OnPropertyChanged(nameof(Switches));
+            OnPropertyChanged(nameof(Keycaps));
             _loaded = true;
         }
         else
@@ -211,8 +200,10 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
             return;
         if (result.Succeeded)
         {
-            await ReloadAsync();
-            ToastMessage = "Saved";
+            _captured = _builds.GetDay(_device.DeviceId, Day);
+            _saved = Choices.Where(choice => choice.IsSelected).Select(choice => choice.Part.ItemKey).ToHashSet();
+            NotifyState();
+            Saved?.Invoke();
         }
         else
         {
@@ -270,14 +261,12 @@ public sealed class DevicePartsEditorViewModel : ToastMessageViewModelBase
             var property in new[]
             {
                 nameof(Title),
-                nameof(Switches),
-                nameof(Keycaps),
                 nameof(IsBusy),
                 nameof(CanEdit),
                 nameof(HasChanges),
+                nameof(Preview),
                 nameof(HasConflict),
                 nameof(NeedsRetry),
-                nameof(Status),
             }
         )
             OnPropertyChanged(property);

@@ -8,37 +8,55 @@
   <BooleanToVisibilityConverter x:Key="VisibleWhenTrue" />
   <Style TargetType="ListBox" BasedOn="{StaticResource ThemedControlStyle}" />
   <DataTemplate x:Key="PartChoiceTemplate">
-   <CheckBox IsChecked="{Binding IsSelected}" Margin="4,6" HorizontalContentAlignment="Stretch">
-    <StackPanel><TextBlock Text="{Binding Label}" TextWrapping="Wrap"/><TextBlock Text="{Binding Status}" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"/></StackPanel>
+   <CheckBox IsChecked="{Binding IsSelected}" Padding="6,5" VerticalAlignment="Center" VerticalContentAlignment="Center">
+    <StackPanel>
+     <TextBlock TextWrapping="Wrap"><Run Text="{Binding Label, Mode=OneWay}"/> <Run Text="{Binding Quantity, Mode=OneWay, StringFormat='({0})'}" Foreground="{DynamicResource SecondaryTextBrush}"/></TextBlock>
+     <TextBlock Text="{Binding Status}" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12">
+      <TextBlock.Style>
+       <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Style.Triggers><DataTrigger Binding="{Binding Status}" Value=""><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers>
+       </Style>
+      </TextBlock.Style>
+     </TextBlock>
+    </StackPanel>
    </CheckBox>
   </DataTemplate>
  </Window.Resources>
  <Grid Margin="20">
-  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-  <DockPanel Margin="0,0,0,12">
-   <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-    <Button Content="Retry" Command="{Binding ReloadCommand}" Visibility="{Binding NeedsRetry, Converter={StaticResource VisibleWhenTrue}}" Margin="8,0,0,0" Padding="12,6"/>
-    <Button Content="Reload" Command="{Binding ReloadCommand}" Visibility="{Binding HasConflict, Converter={StaticResource VisibleWhenTrue}}" Margin="8,0,0,0" Padding="12,6"/>
-   </StackPanel><TextBlock Text="{Binding Status}" TextWrapping="Wrap" VerticalAlignment="Center"/>
-  </DockPanel>
-  <Grid Grid.Row="1" IsEnabled="{Binding CanEdit}">
+  <Grid.RowDefinitions><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <Grid Grid.Row="0" IsEnabled="{Binding CanEdit}">
    <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="16"/><ColumnDefinition/></Grid.ColumnDefinitions>
    <DockPanel>
     <Label DockPanel.Dock="Top" Content="Switches" FontWeight="SemiBold" Target="{Binding ElementName=SwitchSearch}"/>
-    <TextBox x:Name="SwitchSearch" DockPanel.Dock="Top" Text="{Binding SwitchSearch, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="Search switches" Margin="0,0,0,8" Padding="6"/>
+    <Grid DockPanel.Dock="Top" Margin="0,0,0,8">
+     <TextBox x:Name="SwitchSearch" Text="{Binding SwitchSearch, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="Search switches" Padding="28,6,6,6"/>
+     <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE721;" Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
+    </Grid>
     <ListBox ItemsSource="{Binding Switches}" ItemTemplate="{StaticResource PartChoiceTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch"/>
    </DockPanel>
    <DockPanel Grid.Column="2">
     <Label DockPanel.Dock="Top" Content="Keycaps" FontWeight="SemiBold" Target="{Binding ElementName=KeycapSearch}"/>
-    <TextBox x:Name="KeycapSearch" DockPanel.Dock="Top" Text="{Binding KeycapSearch, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="Search keycaps" Margin="0,0,0,8" Padding="6"/>
+    <Grid DockPanel.Dock="Top" Margin="0,0,0,8">
+     <TextBox x:Name="KeycapSearch" Text="{Binding KeycapSearch, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="Search keycaps" Padding="28,6,6,6"/>
+     <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE721;" Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
+    </Grid>
     <ListBox ItemsSource="{Binding Keycaps}" ItemTemplate="{StaticResource PartChoiceTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch"/>
    </DockPanel>
   </Grid>
-  <local:ToastMessagePanel Grid.Row="2" Margin="0,8" ToastMessage="{Binding ToastMessage}" ToastVisibility="{Binding ToastVisibility}"/>
+  <Border Grid.Row="1" Margin="0,12,0,0" Padding="10,8" Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="4">
+   <StackPanel>
+    <TextBlock Text="Build preview" FontWeight="SemiBold" Margin="0,0,0,4"/>
+    <ScrollViewer MaxHeight="76" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+     <local:BuildPartsView Build="{Binding Preview}"/>
+    </ScrollViewer>
+   </StackPanel>
+  </Border>
+  <local:ToastMessagePanel Grid.Row="2" ToastMessage="{Binding ToastMessage}" ToastVisibility="{Binding ToastVisibility}"/>
   <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
-   <Button Content="Save" Command="{Binding SaveCommand}" Visibility="{Binding HasChanges, Converter={StaticResource VisibleWhenTrue}}" MinWidth="80" Padding="12,6" Margin="0,0,8,0"/>
-   <Button Content="Cancel" Command="{Binding CancelCommand}" Visibility="{Binding HasChanges, Converter={StaticResource VisibleWhenTrue}}" MinWidth="80" Padding="12,6" Margin="0,0,8,0"/>
-   <Button Content="Close" Click="CloseClick" MinWidth="80" Padding="12,6"/>
+    <Button Content="Retry" Command="{Binding ReloadCommand}" Visibility="{Binding NeedsRetry, Converter={StaticResource VisibleWhenTrue}}" Margin="0,0,8,0" Padding="12,6"/>
+    <Button Content="Reload" Command="{Binding ReloadCommand}" Visibility="{Binding HasConflict, Converter={StaticResource VisibleWhenTrue}}" Margin="0,0,8,0" Padding="12,6"/>
+   <Button Content="Cancel" Click="CloseClick" MinWidth="80" Padding="12,6" Margin="0,0,8,0"/>
+   <Button Content="Save" Command="{Binding SaveCommand}" MinWidth="80" Padding="12,6"/>
   </StackPanel>
  </Grid>
 </Window>
