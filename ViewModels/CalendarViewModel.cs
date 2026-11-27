@@ -106,7 +106,7 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         get => _selectedDay;
         private set
         {
-            DateOnly? selectedDay = value?.HasData == true ? value.Day : null;
+            DateOnly? selectedDay = value?.IsSelectable == true ? value.Day : null;
             ApplySelectionState(selectedDay);
             _selectedDay = selectedDay.HasValue ? DaySummaries.FirstOrDefault(s => s.Day == selectedDay.Value) : null;
             OnPropertyChanged();
@@ -166,6 +166,13 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
     /// <summary>Called when the tab becomes visible. Loads current month and triggers rebuild.</summary>
     public async void OnVisible()
     {
+        var today = DateOnly.FromDateTime(DateTime.Now);
+        _currentDisplayMonth = today.AddDays(1 - today.Day);
+        OnPropertyChanged(nameof(MonthTitle));
+        OnPropertyChanged(nameof(CanGoNext));
+        OnPropertyChanged(nameof(CanGoPrevious));
+        SelectedDay = null;
+        var loadMonth = LoadCurrentMonthAsync(today);
         try
         {
             _earliestDataDay = await Task.Run(() => _dailyStatsService.GetEarliestDataDay());
@@ -177,7 +184,7 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
             Serilog.Log.Error(ex, "Failed to query earliest calendar data day");
         }
 
-        _ = LoadCurrentMonthAsync();
+        await loadMonth;
     }
 
     /// <summary>
@@ -197,10 +204,10 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         await LoadCurrentMonthAsync();
     }
 
-    /// <summary>Returns data-bearing day tiles in the visible month ordered from oldest to newest.</summary>
+    /// <summary>Returns selectable day tiles in the visible month ordered from oldest to newest.</summary>
     private List<CalendarDaySummary> GetSelectableDaysInCurrentMonth()
     {
-        return DaySummaries.Where(s => s.HasData).OrderBy(s => s.Day).ToList();
+        return DaySummaries.Where(s => s.IsSelectable).OrderBy(s => s.Day).ToList();
     }
 
     /// <summary>
@@ -267,20 +274,14 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         }
     }
 
-    /// <summary>Selects a day tile only when it has data; otherwise clears the current selection.</summary>
+    /// <summary>Selects today or a day with recorded data.</summary>
     private void SelectDay(CalendarDaySummary? day)
     {
-        if (day == null || !day.HasData)
-        {
-            SelectedDay = null;
-            return;
-        }
-
         SelectedDay = day;
     }
 
     /// <summary>Loads month summaries from persistence and applies them if the view is still on that month.</summary>
-    private async Task LoadCurrentMonthAsync()
+    private async Task LoadCurrentMonthAsync(DateOnly? defaultDay = null)
     {
         IsLoading = true;
         var year = _currentDisplayMonth.Year;
@@ -300,19 +301,19 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
             summaries = Array.Empty<CalendarDaySummary>();
         }
 
-        ApplySummaries(summaries, year, month);
+        ApplySummaries(summaries, year, month, defaultDay);
         IsLoading = false;
         CommandManager.InvalidateRequerySuggested();
     }
 
     /// <summary>Applies month summaries to tile collections, preserves selection, and refreshes today's realtime overlay.</summary>
-    private void ApplySummaries(IReadOnlyList<CalendarDaySummary> summaries, int year, int month)
+    private void ApplySummaries(IReadOnlyList<CalendarDaySummary> summaries, int year, int month, DateOnly? defaultDay)
     {
         // Only apply if still on the same month (user may have navigated away).
         if (year != _currentDisplayMonth.Year || month != _currentDisplayMonth.Month)
             return;
 
-        var selectedDay = _selectedDay?.Day;
+        var selectedDay = _selectedDay?.Day ?? defaultDay;
         DaySummaries.Clear();
         CalendarGridItems.Clear();
 
@@ -334,9 +335,9 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         ApplyRealtimeTodayOverlay();
 
         // Refresh selected day tile if it lives in this month.
-        if (_selectedDay != null && _selectedDay.Day.Year == year && _selectedDay.Day.Month == month)
+        if (selectedDay is { } day && day.Year == year && day.Month == month)
         {
-            var refreshed = summaries.FirstOrDefault(s => s.Day == _selectedDay.Day);
+            var refreshed = DaySummaries.FirstOrDefault(s => s.Day == day);
             if (refreshed != null)
                 SelectedDay = refreshed;
         }

@@ -116,12 +116,11 @@
                           <Border Margin="2" VerticalAlignment="Stretch" Padding="6" CornerRadius="4">
                             <Border.Style>
                               <Style TargetType="Border">
-                                <!-- Only days with activity are clickable, so only they get the hand cursor. -->
                                 <Setter Property="BorderThickness" Value="0" />
                                 <Setter Property="Cursor" Value="Arrow" />
                                 <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
                                 <Style.Triggers>
-                                  <DataTrigger Binding="{Binding HasData}" Value="True">
+                                  <DataTrigger Binding="{Binding IsSelectable}" Value="True">
                                     <Setter
                                       Property="Background"
                                       Value="{DynamicResource CalendarTileBackgroundBrush}"

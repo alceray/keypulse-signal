@@ -57,8 +57,7 @@ public partial class CalendarView
     {
         if (sender is FrameworkElement fe && fe.DataContext is CalendarDaySummary summary)
         {
-            // Days without activity are not selectable; clicking one leaves the detail panel untouched.
-            if (summary.HasData && DataContext is CalendarViewModel vm)
+            if (summary.IsSelectable && DataContext is CalendarViewModel vm)
                 vm.SelectDayCommand.Execute(summary);
 
             // Preserve keyboard navigation after mouse interactions.

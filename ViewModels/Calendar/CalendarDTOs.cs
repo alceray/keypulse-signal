@@ -30,6 +30,7 @@ public sealed class CalendarDaySummary
 
     /// <summary>Computed live comparison: always returns true if Day equals today.</summary>
     public bool IsToday => Day == DateOnly.FromDateTime(DateTime.Now);
+    public bool IsSelectable => HasData || IsToday;
 
     /// <summary>Devices for this day, ordered keyboards first then mice, alphabetically within each group.</summary>
     public IReadOnlyList<CalendarTileDevice> Devices { get; init; } = [];
