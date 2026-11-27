@@ -19,6 +19,8 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
 {
     private readonly DailyStatsService _dailyStatsService;
     private readonly UsbMonitorService _usbMonitorService;
+    private readonly IReadOnlyList<(DateTime Start, DateTime End)> _pastSessions;
+    private long _selectedDayPastSeconds;
     private readonly RawInputService _rawInputService;
     private readonly AppTimerService _appTimerService;
     private readonly DeviceBuildService _builds;
@@ -129,6 +131,9 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
     {
         _dailyStatsService = dailyStatsService;
         _usbMonitorService = usbMonitorService;
+        _pastSessions = AppRunningIntervals.FromOrderedEvents(
+            usbMonitorService.DeviceEventList.Where(e => e.EventType.IsAppEvent()).OrderBy(e => e.EventTime.ToUniversalTime()).ToArray(),
+            end: null);
         _rawInputService = rawInputService;
         _appTimerService = appTimerService;
         _builds = builds;
@@ -349,6 +354,10 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
 
         var day = _selectedDay.Day;
         var isToday = day == DateOnly.FromDateTime(DateTime.Now);
+        var start = TimeFormatter.LocalDayToUtc(day);
+        var end = TimeFormatter.LocalDayToUtc(day.AddDays(1));
+        _selectedDayPastSeconds = _pastSessions.Sum(session => OverlapSeconds(
+            session.Start.ToUniversalTime(), session.End.ToUniversalTime(), start, end));
         IReadOnlyList<CalendarDeviceDetail> details;
         try
         {
@@ -367,8 +376,9 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
             return;
 
         SelectedDayDetails.Clear();
+        var runningSeconds = AppRunningSeconds(day);
         foreach (var d in OrderDetailsForDisplay(details))
-            SelectedDayDetails.Add(WithBuilds(d, day));
+            SelectedDayDetails.Add(WithBuilds(d with { AppRunningSeconds = runningSeconds }, day));
 
         var today = DateOnly.FromDateTime(DateTime.Now);
         if (day != today)
@@ -464,7 +474,8 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
     /// </summary>
     private void ApplyRealtimeTodayOverlay(bool updateTileSummary = true)
     {
-        var today = DateOnly.FromDateTime(DateTime.Now);
+        var now = DateTimeOffset.Now;
+        var today = DateOnly.FromDateTime(now.DateTime);
 
         if (today.Year != _currentDisplayMonth.Year || today.Month != _currentDisplayMonth.Month)
             return;
@@ -477,11 +488,10 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         if (!updateTileSummary && !selectedToday)
             return;
 
-        var nowLocal = DateTime.Now;
-        var dayStartLocal = today.ToDateTime(TimeOnly.MinValue);
         Dictionary<string, long>? connectionOverlayByDevice = null;
         if (selectedToday)
         {
+            var midnight = TimeFormatter.LocalDayToUtc(today);
             // Connection overlay: open sessions contribute elapsed seconds since max(sessionStart, local midnight).
             connectionOverlayByDevice = new Dictionary<string, long>();
             foreach (var device in _usbMonitorService.DeviceList)
@@ -490,12 +500,11 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
                     continue;
 
                 var startLocal = TimeFormatter.ToLocalTime(device.SessionStartedAt!.Value);
-                if (startLocal < dayStartLocal)
-                    startLocal = dayStartLocal;
-                if (startLocal >= nowLocal)
+                var seconds = LiveConnectionSeconds(startLocal, midnight, now);
+                if (seconds <= 0)
                     continue;
 
-                connectionOverlayByDevice[device.DeviceId] = (long)(nowLocal - startLocal).TotalSeconds;
+                connectionOverlayByDevice[device.DeviceId] = seconds;
             }
         }
 
@@ -657,6 +666,7 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         // Union persisted + connected-now + live-input IDs so detail rows stay complete for today's view.
 
         var rows = new List<CalendarDeviceDetail>(ids.Count);
+        var runningSeconds = AppRunningSeconds(_selectedDay.Day);
         foreach (var id in ids)
         {
             _todayPersistedDetailByDevice.TryGetValue(id, out var persisted);
@@ -702,6 +712,7 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
                     Keystrokes = (persisted?.Keystrokes ?? 0) + liveDelta.KeystrokeDelta,
                     MouseClicks = (persisted?.MouseClicks ?? 0) + liveDelta.MouseClickDelta,
                     ActiveSeconds = activeSeconds,
+                    AppRunningSeconds = runningSeconds,
                     HourlyInputBars = stableBars,
                 }
             );
@@ -776,6 +787,22 @@ public sealed class CalendarViewModel : ToastMessageViewModelBase
         _arrowNavigationGate.Dispose();
         base.Dispose();
     }
+
+    internal static long LiveConnectionSeconds(DateTimeOffset connected, DateTimeOffset midnight, DateTimeOffset now)
+    {
+        var start = connected < midnight ? midnight : connected;
+        return Math.Max(0, (long)(now - start).TotalSeconds);
+    }
+
+    private long AppRunningSeconds(DateOnly day)
+    {
+        var start = _usbMonitorService.AppSessionStartedAt;
+        return start == default ? _selectedDayPastSeconds : _selectedDayPastSeconds + OverlapSeconds(
+            start.ToUniversalTime(), DateTime.UtcNow, TimeFormatter.LocalDayToUtc(day), TimeFormatter.LocalDayToUtc(day.AddDays(1)));
+    }
+
+    internal static long OverlapSeconds(DateTime start, DateTime end, DateTime dayStart, DateTime dayEnd) =>
+        Math.Max(0, Math.Min(end.Ticks, dayEnd.Ticks) - Math.Max(start.Ticks, dayStart.Ticks)) / TimeSpan.TicksPerSecond;
 
     private CalendarDeviceDetail WithBuilds(CalendarDeviceDetail detail, DateOnly day)
     {

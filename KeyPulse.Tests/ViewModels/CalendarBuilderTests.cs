@@ -1,4 +1,5 @@
-using KeyPulse.Models;
+﻿using KeyPulse.Models;
+using KeyPulse.ViewModels;
 using KeyPulse.ViewModels.Calendar;
 
 namespace KeyPulse.Tests.ViewModels;
@@ -60,6 +61,30 @@ public class CalendarHourlyInputBarBuilderTests
 public class CalendarDtoTests
 {
     [Theory]
+    [InlineData(11, 1, -4, -5, 10_800)]
+    [InlineData(3, 8, -5, -4, 7_200)]
+    public void LiveConnectionSeconds_CountsElapsedTimeAcrossClockChanges(
+        int month, int day, int startOffset, int endOffset, long expected)
+    {
+        var midnight = new DateTimeOffset(2026, month, day, 0, 0, 0, TimeSpan.FromHours(startOffset));
+        var connected = midnight.AddMinutes(30);
+        var now = new DateTimeOffset(2026, month, day, month == 11 ? 2 : 3, 30, 0, TimeSpan.FromHours(endOffset));
+        CalendarViewModel.LiveConnectionSeconds(connected, midnight, now).ShouldBe(expected);
+    }
+
+    [Fact]
+    public void RunningTime_CountsOnlySessionTimeInsideSelectedDay()
+    {
+        var start = new DateTime(2026, 11, 26, 5, 0, 0, DateTimeKind.Utc);
+        var end = start.AddDays(1);
+        var seconds = CalendarViewModel.OverlapSeconds(start.AddHours(-2), start.AddHours(3), start, end)
+            + CalendarViewModel.OverlapSeconds(end.AddHours(-5), end.AddHours(1), start, end);
+        var detail = new CalendarDeviceDetail { AppRunningSeconds = seconds, ConnectionSeconds = 14_400, ActiveSeconds = 7_200 };
+        detail.ConnectedPercent.ShouldBe(50);
+        detail.ActivePercent.ShouldBe(25);
+    }
+
+    [Theory]
     [InlineData(DeviceTypes.Keyboard, "⌨")]
     [InlineData(DeviceTypes.Mouse, "🖱")]
     [InlineData(DeviceTypes.Other, "?")]
@@ -109,15 +134,16 @@ public class CalendarDtoTests
     /// <summary>Coverage for CalendarDeviceDetail's computed time text: seconds tick on today's row, while
     /// settled past days floor to the minute.</summary>
     [Fact]
-    public void ActiveTimeText_Today_ShowsSecondsWithShareOfConnectedTime()
+    public void ActiveTimeText_Today_ShowsSecondsWithShareOfAppRuntime()
     {
         var detail = new CalendarDeviceDetail
         {
             ActiveSeconds = 3347,
             ConnectionSeconds = 9844,
+            AppRunningSeconds = 28_800,
             IsToday = true,
         };
-        detail.ActiveTimeText.ShouldBe("55m 47s · 34%");
+        detail.ActiveTimeText.ShouldBe("55m 47s · 12%");
     }
 
     [Fact]
@@ -127,9 +153,10 @@ public class CalendarDtoTests
         {
             ActiveSeconds = 3347,
             ConnectionSeconds = 9844,
+            AppRunningSeconds = 28_800,
             IsToday = false,
         };
-        detail.ActiveTimeText.ShouldBe("55m · 34%");
+        detail.ActiveTimeText.ShouldBe("55m · 12%");
     }
 
     [Fact]
@@ -137,36 +164,38 @@ public class CalendarDtoTests
     {
         var detail = new CalendarDeviceDetail
         {
-            ActiveSeconds = 600,
-            ConnectionSeconds = 600,
+            ActiveSeconds = 90_000,
+            ConnectionSeconds = 90_000,
+            AppRunningSeconds = 28_800,
             IsToday = true,
         };
-        detail.ActiveTimeText.ShouldBe("10m · 100%");
+        detail.ActiveTimeText.ShouldBe("1d 1h · 100%");
     }
 
     [Fact]
-    public void ActiveTimeText_OmitsShareWhenNotConnected()
+    public void ActiveTimeText_ShowsZeroPercentWhenInactive()
     {
         var detail = new CalendarDeviceDetail
         {
             ActiveSeconds = 0,
             ConnectionSeconds = 0,
+            AppRunningSeconds = 28_800,
             IsToday = true,
         };
-        detail.ActiveTimeText.ShouldBe("0s");
+        detail.ActiveTimeText.ShouldBe("0s · 0%");
     }
 
     [Fact]
     public void ConnectedTimeText_Today_ShowsSeconds()
     {
-        var detail = new CalendarDeviceDetail { ConnectionSeconds = 9844, IsToday = true };
-        detail.ConnectedTimeText.ShouldBe("2h 44m 4s");
+        var detail = new CalendarDeviceDetail { ConnectionSeconds = 9844, AppRunningSeconds = 28_800, IsToday = true };
+        detail.ConnectedTimeText.ShouldBe("2h 44m 4s · 34%");
     }
 
     [Fact]
     public void ConnectedTimeText_PastDay_TruncatesSeconds()
     {
-        var detail = new CalendarDeviceDetail { ConnectionSeconds = 9844, IsToday = false };
-        detail.ConnectedTimeText.ShouldBe("2h 44m");
+        var detail = new CalendarDeviceDetail { ConnectionSeconds = 9844, AppRunningSeconds = 28_800, IsToday = false };
+        detail.ConnectedTimeText.ShouldBe("2h 44m · 34%");
     }
 }

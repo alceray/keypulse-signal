@@ -1,4 +1,5 @@
-﻿using KeyPulse.Models;
+using KeyPulse.Helpers;
+using KeyPulse.Models;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
@@ -107,7 +108,7 @@ internal static class DashboardActivityChartBuilder
         if (bucketTimeline.Count == 0)
             return new ActivityPlotData(yAxisLabel, xMinimum, xMaximum, seriesList);
 
-        var appIntervals = BuildAppRunningIntervals(lifecycleEvents, to);
+        var appIntervals = AppRunningIntervals.FromOrderedEvents(lifecycleEvents, to);
         var isAppRunningByBucket = bucketTimeline.ToDictionary(
             bucket => bucket,
             bucket => appIntervals.Any(interval => BucketsOverlap(bucket, interval.Start, interval.End, bucketMinutes))
@@ -464,38 +465,6 @@ internal static class DashboardActivityChartBuilder
         var bucketTicks = TimeSpan.FromMinutes(bucketMinutes).Ticks;
         var normalizedTicks = minute.Ticks / bucketTicks * bucketTicks;
         return new DateTime(normalizedTicks, minute.Kind);
-    }
-
-    /// <summary>
-    /// Reconstructs app-running intervals from AppStarted/AppEnded lifecycle events.
-    /// </summary>
-    private static IReadOnlyList<(DateTime Start, DateTime End)> BuildAppRunningIntervals(
-        IReadOnlyCollection<DeviceEvent> lifecycleEvents,
-        DateTime chartEnd
-    )
-    {
-        var intervals = new List<(DateTime Start, DateTime End)>();
-        DateTime? openStart = null;
-
-        // lifecycleEvents are expected to be prefiltered and ordered by DataService.GetDashboardEvents.
-        foreach (var appEvent in lifecycleEvents)
-        {
-            if (appEvent.EventType == EventTypes.AppStarted)
-            {
-                openStart ??= appEvent.EventTime;
-                continue;
-            }
-
-            if (openStart.HasValue && appEvent.EventTime > openStart.Value)
-                intervals.Add((openStart.Value, appEvent.EventTime));
-
-            openStart = null;
-        }
-
-        if (openStart.HasValue && chartEnd > openStart.Value)
-            intervals.Add((openStart.Value, chartEnd));
-
-        return intervals;
     }
 
     /// <summary>

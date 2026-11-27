@@ -270,13 +270,15 @@
                             <TextBlock
                               DockPanel.Dock="Right"
                               Style="{StaticResource DetailValueStyle}"
+                              ToolTip="{Binding ConnectedTimeToolTip}"
                               Text="{Binding ConnectedTimeText}"
                             />
                           </DockPanel>
                           <ProgressBar
                             Style="{StaticResource ActivityProgressBarStyle}"
-                            Maximum="86400"
-                            Value="{Binding ConnectionSeconds, Mode=OneWay}"
+                            Maximum="100"
+                            ToolTip="{Binding ConnectedTimeToolTip}"
+                            Value="{Binding ConnectedPercent, Mode=OneWay}"
                             Foreground="{DynamicResource ConnectedBrush}"
                           />
                           <DockPanel Margin="0,0,0,3">
@@ -284,13 +286,15 @@
                             <TextBlock
                               DockPanel.Dock="Right"
                               Style="{StaticResource DetailValueStyle}"
+                              ToolTip="{Binding ActiveTimeToolTip}"
                               Text="{Binding ActiveTimeText}"
                             />
                           </DockPanel>
                           <ProgressBar
                             Style="{StaticResource ActivityProgressBarStyle}"
-                            Maximum="86400"
-                            Value="{Binding ActiveSeconds, Mode=OneWay}"
+                            Maximum="100"
+                            ToolTip="{Binding ActiveTimeToolTip}"
+                            Value="{Binding ActivePercent, Mode=OneWay}"
                             Foreground="{DynamicResource ActiveBrush}"
                           />
                           <DockPanel

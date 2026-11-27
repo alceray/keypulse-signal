@@ -1,3 +1,4 @@
+using KeyPulse.Configuration;
 using KeyPulse.Helpers;
 using KeyPulse.Models;
 
@@ -61,23 +62,34 @@ public sealed record CalendarDeviceDetail
     /// days drop their seconds so a frozen value isn't shown at misleading precision.</summary>
     public bool IsToday { get; init; }
 
-    /// <summary>Connected time, e.g. "2h 44m 4s" today or "2h 44m" on a settled past day.</summary>
-    public string ConnectedTimeText =>
-        TimeFormatter.FormatDuration(TimeSpan.FromSeconds(ConnectionSeconds), includeSeconds: IsToday);
+    public long AppRunningSeconds { get; init; }
+    public double ConnectedPercent => RunningPercent(ConnectionSeconds);
+    public double ActivePercent => RunningPercent(ActiveSeconds);
 
-    /// <summary>Active time with its share of connected time, e.g. "55m 47s · 34%". The share is &lt;= 100%.</summary>
-    public string ActiveTimeText
+    public string ConnectedTimeText => FormatRunningShare(ConnectionSeconds, ConnectedPercent);
+    public string ActiveTimeText => FormatRunningShare(ActiveSeconds, ActivePercent);
+    public string ConnectedTimeToolTip => FormatTimeToolTip("Connected for", ConnectionSeconds);
+    public string ActiveTimeToolTip => FormatTimeToolTip("Recorded input for", ActiveSeconds);
+
+    private string FormatTimeToolTip(string action, long seconds)
     {
-        get
-        {
-            var duration = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(ActiveSeconds), includeSeconds: IsToday);
-            if (ConnectionSeconds <= 0)
-                return duration;
+        var duration = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(seconds));
+        if (AppRunningSeconds <= 0)
+            return $"{action} {duration}. No running time was recorded for {AppConstants.App.ShortName} that day.";
 
-            var share = (int)Math.Round(100.0 * ActiveSeconds / ConnectionSeconds);
-            return $"{duration} · {share}%";
-        }
+        var runtime = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(AppRunningSeconds));
+        return $"{action} {duration} of the {runtime} {AppConstants.App.ShortName} ran that day.";
     }
+
+    private double RunningPercent(long seconds) =>
+        AppRunningSeconds > 0 ? Math.Clamp(100.0 * seconds / AppRunningSeconds, 0, 100) : 0;
+
+    private string FormatRunningShare(long seconds, double percent)
+    {
+        var duration = TimeFormatter.FormatDuration(TimeSpan.FromSeconds(seconds), includeSeconds: IsToday);
+        return AppRunningSeconds > 0 ? $"{duration} · {Math.Round(percent)}%" : duration;
+    }
+
     public IReadOnlyList<CalendarHourlyInputBar> HourlyInputBars { get; init; } =
         CalendarHourlyInputBarBuilder.Build(new long[24]);
 }
